@@ -4,6 +4,8 @@ import csv
 import json
 from pathlib import Path
 import time
+import os
+os.environ['MPLBACKEND']='Agg'
 import numpy as np
 import torch
 import matplotlib

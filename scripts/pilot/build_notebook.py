@@ -16,7 +16,7 @@ def build(output, commit, source_kernel=None):
 import os, sys, subprocess, json
 ROOT=Path('/tmp/nano-source'); OUT=Path('/kaggle/working')
 COMMIT={commit!r}
-env={{**os.environ,'UV_PYTHON_INSTALL_DIR':'/tmp/pilot-python','UV_CACHE_DIR':'/tmp/pilot-cache','UV_NATIVE_TLS':'true','CUBLAS_WORKSPACE_CONFIG':':4096:8','OMP_NUM_THREADS':'1','MPLCONFIGDIR':'/tmp/pilot-mpl','NANO_KERNEL_ID':{kernel!r},'NANO_SESSION_LIMIT_SECONDS':'7200'}}
+env={{**os.environ,'UV_PYTHON_INSTALL_DIR':'/tmp/pilot-python','UV_CACHE_DIR':'/tmp/pilot-cache','UV_NATIVE_TLS':'true','CUBLAS_WORKSPACE_CONFIG':':4096:8','OMP_NUM_THREADS':'1','MPLCONFIGDIR':'/tmp/pilot-mpl','MPLBACKEND':'Agg','NANO_KERNEL_ID':{kernel!r},'NANO_SESSION_LIMIT_SECONDS':'7200'}}
 def command(args,cwd=None):
     print('EXEC',args,flush=True)
     with (OUT/'bootstrap.log').open('a') as log:
@@ -45,7 +45,7 @@ if result.returncode: raise RuntimeError('Pilot failed; preserve outputs and ins
     if source_kernel:
         if not source_kernel.startswith('rayyannmerchant/'):
             raise ValueError('Recovery must use the authorized account')
-        bootstrap = bootstrap.replace("scripts/pilot/run.py", "scripts/pilot/recover.py").replace("OUT/'pilot'", "OUT/'pilot_recovery'")
+        bootstrap = bootstrap.replace("scripts/pilot/run.py", "scripts/pilot/postprocess_recovery.py").replace("OUT/'pilot'", "OUT/'pilot_recovered'")
     notebook = {'nbformat':4,'nbformat_minor':5,'metadata':{'kernelspec':{'name':'python3','display_name':'Python 3','language':'python'}},'cells':[
         {'id':'pilot-scope','cell_type':'markdown','metadata':{},'source':[f'# Authorized E01 seed42 {phase}\nPilot: exactly 5000 updates. Recovery: zero additional updates. Source {commit}. No other experiments or extension.']},
         {'id':'pilot-execution','cell_type':'code','metadata':{},'source':bootstrap.splitlines(True),'execution_count':None,'outputs':[]}]}
