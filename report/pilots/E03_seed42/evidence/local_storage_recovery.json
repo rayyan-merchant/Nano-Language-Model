@@ -1,0 +1,11 @@
+{
+  "failure": "Windows archive extraction OSError errno28 no space left on C",
+  "published_artifacts_unchanged": true,
+  "incomplete_extraction_bytes": 241837065,
+  "disposable_extraction_removed_only_after_archive_SHA_verification": true,
+  "E01_artifacts_unchanged": true,
+  "source_archive_sha256": "57feb9d606a1d733ce3ae301b9e401c12b200f32c1d3c3fca4c47c3c6117b110",
+  "new_unique_durable_local_path": "D:/Nano-Language-Model-artifacts/E03_seed42_3eddd727e88a4748b23b605c7c3590fd",
+  "available_D_bytes_before_copy": 117610446848,
+  "CPU_verification": "passed; independent_recovery.json is authoritative"
+}

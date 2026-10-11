@@ -60,3 +60,27 @@ Only small evidence/results/figures/report are committed. All comparisons agains
 E01 are one-seed descriptive comparisons, with matching byte/scoring policy and
 hardware/runtime caveats. Training, validation, IO and complete pipeline scopes
 remain separate. Actual result evidence is appended only after execution.
+
+
+## E03 seed42 execution evidence — 2026-10-12
+
+The individually authorized E03 RoPE run completed exactly5000 updates and20 full
+sliding validations. Clean training source0dd75296a773081f55a7a6d1da111e482562c1c1;
+scientific core hash matches E01. Best/final update5000: loss1.43708178,
+conditional BPB2.07327076,1804800 parameters. Train1107.721s; validation447.515s;
+complete measured notebook pipeline1951.871s; peakallocated151.71MiB.
+Published original notebook82f33b8a version1 and fresh recovery33b2c3ba version1
+are COMPLETE on rayyannmerchant. Archive402094081bytes SHA256
+57feb9d606a1d733ce3ae301b9e401c12b200f32c1d3c3fca4c47c3c6117b110:
+58 files independently verified;20 checkpoints/21 snapshots retained. CPU
+inference and fresh CUDA full-state restoration/generation passed with zero
+additional updates. Local C-drive extraction failure was recovered to unique D
+storage without changing E01 evidence. Report/evidence:
+report/pilots/E03_seed42/E03_seed42_analysis.md and interpretation.md.
+Pre-execution Windows tests36 passed,1 CUDA skip; actual CUDA RoPE audit13 passed.
+E03 improves final loss6.44% with20.84% more training time; greedy generation is
+more repetitive on4/5 fixed prompts. Single-seed descriptive comparison only.
+No other run or extension launched. E02 is the colleague's independent Colab
+execution, outside this evidence. The broader three-seed study remains separately
+gated; scoped E01/E03 completion is not global GO. Further experiments/extensions
+require authorization. PR6 is reviewable and is not merged.

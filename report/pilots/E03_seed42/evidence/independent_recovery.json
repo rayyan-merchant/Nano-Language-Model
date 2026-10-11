@@ -1,0 +1,33 @@
+{
+  "status": "published_archive_verified_and_best_final_CPU_inference_passed",
+  "run_id": "E03_seed42_3eddd727e88a4748b23b605c7c3590fd",
+  "archive_sha256": "57feb9d606a1d733ce3ae301b9e401c12b200f32c1d3c3fca4c47c3c6117b110",
+  "archive_bytes": 402094081,
+  "verified_file_count": 58,
+  "optimizer_updates": 5000,
+  "validation_count": 20,
+  "seconds": 25.736559899989516,
+  "samples": [
+    {
+      "policy": "best",
+      "checkpoint": "runs/E03_seed42_3eddd727e88a4748b23b605c7c3590fd/checkpoints/step_005000.pt",
+      "sha256": "d251d9b2e2d5b30bda3cf6db3a6e88ce37e8a97c5b778646c4d2ea9eca8d7f0a",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nThe prince of the prince of the prince,\nThe sense of the prince "
+    },
+    {
+      "policy": "final",
+      "checkpoint": "runs/E03_seed42_3eddd727e88a4748b23b605c7c3590fd/checkpoints/step_005000.pt",
+      "sha256": "d251d9b2e2d5b30bda3cf6db3a6e88ce37e8a97c5b778646c4d2ea9eca8d7f0a",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nThe prince of the prince of the prince,\nThe sense of the prince "
+    }
+  ],
+  "training_resume": "CPU inference only; no CUDA RNG restore or additional updates attempted"
+}
