@@ -25,3 +25,16 @@ records different GPU hardware as a confound; re-profile rather than assume spee
 Cloud research requires an export root, but users must verify its durability.
 Save/export and restore before stopping a runtime. Respect each member's legitimate
 account quotas; no account switching, quota circumvention or paid service needed.
+
+## Rayyan's tested Kaggle profile (2026-10-11)
+
+See docs/qualifications/KAGGLE_RAYYAN_20261011.md. The legitimate Rayyan
+account passed on Tesla T4 with isolated Python3.11.14, torch2.5.1+cu124,
+CUDA12.4 and NumPy1.26.4. Native Python3.13.15/torch2.11 was left untouched.
+The qualification builder provisions the approved primary pins through uv,
+checks CUDA and pip compatibility, and records a resolved freeze; compare all
+transitive versions before accepting another account. It invokes shared package
+entry points rather than duplicating notebook training. Saved output mounted
+in a fresh Kaggle notebook passed generation and exact AMP continuation.
+This satisfies one account's gate; the other member must independently repeat
+the profile and storage test before study approval. No policy change is implied.

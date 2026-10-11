@@ -1,0 +1,18 @@
+{
+  "devices": [
+    {
+      "index": 0,
+      "name": "Tesla T4",
+      "total_bytes": 15636037632,
+      "free_bytes": 15526068224
+    },
+    {
+      "index": 1,
+      "name": "Tesla T4",
+      "total_bytes": 15636037632,
+      "free_bytes": 15526068224
+    }
+  ],
+  "training_device": "cuda:0",
+  "parallel_training": false
+}
