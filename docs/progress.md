@@ -42,7 +42,7 @@ samples, measured GPU throughput or deployment results.
 5. Approved baseline pilot, then approved main 42 runs, actual analysis/plots,
    validation-based extensions and five fixed-prompt trained samples.
 6. Own-checkpoint FastAPI inference, hosting, running Colab demo, final Medium
-   report including at least two failure modes and 5ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“10 minute recorded demo.
+   report including at least two failure modes and 5ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“10 minute recorded demo.
 
 Other collaborator: fetch canonical main, create a feature branch, install pinned
 requirements, run pytest and the documented smoke/CLI; report hardware and errors.
@@ -69,3 +69,19 @@ Adam parameter-equality criterion for near-zero gradient reduction noise
 Real corpus revealed repeated Rust vocabulary-size queries; cached vocabulary
 and byte lengths fix the O(tokens*vocab) path. Full acquisition now validates:
 1,115,394 bytes; 1,003,854/55,770/55,770 partition bytes; vocabularies 65/1024.
+
+## Unified pipeline M3
+
+Verified immutable storage export/restore, schema/config/lineage/completeness
+checking, duplicate-copy handling, cross-member collection, mean/sample-SD
+tables and BPB figures, all-config instantiation audit and short benchmark
+entry point implemented. Actual Colab T4 CUDA float16 resume test passed:
+1 test in 11.93 seconds (Python 3.13.15, torch 2.11.0+cu130). This is a
+version-drift smoke verification, not qualification of the pinned research
+environment or either independent Kaggle account.
+
+M3 storage/results tests: 3 passed in 11.39 seconds. A Windows long-path
+staging-name failure was fixed using short unique temporary names. All 14
+models instantiate in the automated audit. Persistent snapshots retain latest
+and best checkpoints plus journals, metadata and summaries; corruption fails
+verification. Restored snapshots resume without resetting state.

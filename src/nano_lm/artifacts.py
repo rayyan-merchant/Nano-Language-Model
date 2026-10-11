@@ -18,7 +18,8 @@ def file_hash(path):
 def atomic_bytes(path, data):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    temp = path.with_name(path.name + "." + uuid.uuid4().hex + ".tmp")
+    # Keep staging names short for Windows paths; final artifact names stay stable.
+    temp = path.with_name(".t" + uuid.uuid4().hex[:12])
     try:
         with temp.open("xb") as f:
             f.write(data)

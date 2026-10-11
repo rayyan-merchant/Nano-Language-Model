@@ -98,7 +98,7 @@ def append_event(path, event):
         os.fsync(f.fileno())
 
 
-def train(root, dataset, experiment_id, settings, steps, output_root, resume=None, model_override=None):
+def train(root, dataset, experiment_id, settings, steps, output_root, resume=None, model_override=None, export_root=None):
     root, dataset, output_root = Path(root), Path(dataset), Path(output_root)
     manifest = validate(dataset)
     variant = json.loads((root / f"experiments/configs/{experiment_id}.json").read_text())
@@ -110,6 +110,8 @@ def train(root, dataset, experiment_id, settings, steps, output_root, resume=Non
             raise ValueError("Model overrides are permitted only for labeled smoke checks")
         config = model_override
     settings.validate(config.context_length)
+    if settings.run_kind == "research" and (str(root).startswith("/content") or os.environ.get("KAGGLE_KERNEL_RUN_TYPE")) and export_root is None:
+        raise ValueError("Cloud research requires an explicit durable export root")
     if steps < 1 or (settings.run_kind != "research" and steps > 100):
         raise ValueError("Invalid training target; smoke/benchmark limited to 100 steps")
     if manifest["source"].get("kind") != "tiny_shakespeare" and settings.run_kind != "smoke":
@@ -248,12 +250,18 @@ def train(root, dataset, experiment_id, settings, steps, output_root, resume=Non
             if (state["step"] % settings.checkpoint_every == 0 or "validation" in row or state["step"] == steps):
                 save_checkpoint(checkpoint, model, tokenizer, optimizer, scheduler, generator,
                                 state["step"], metadata, scaler=scaler, training_state=state)
+                if export_root is not None:
+                    from .storage import export_run
+                    export_run(directory, export_root, allow_active=True)
         summary = {"schema_version": 2, "run_id": metadata["run_id"], "config_hash": config_hash,
                    "status": "completed_segment", "step": state["step"],
                    "checkpoint": checkpoint.name, "best_checkpoint": state["best_checkpoint"],
                    "metrics": state["history"][-1], "eval_seconds": state["eval_seconds"],
                    "history_hash": digest(state["history"])}
         atomic_json(directory / f"summary_{state['step']:06d}.json", summary)
+        if export_root is not None:
+            from .storage import export_run
+            export_run(directory, export_root, allow_active=True)
         return directory, checkpoint, summary
     except BaseException as exc:
         append_event(directory / "events.jsonl", {"event": "failure", "step": state["step"],
@@ -271,12 +279,13 @@ def main():
     p.add_argument("--output", type=Path, default=Path("outputs/logs"))
     p.add_argument("--steps", type=int, default=10)
     p.add_argument("--resume", type=Path)
+    p.add_argument("--export-root", type=Path)
     for name, field in TrainSettings.__dataclass_fields__.items():
         p.add_argument("--" + name.replace("_", "-"), type=type(field.default), default=field.default)
     args = vars(p.parse_args())
     settings = TrainSettings(**{k: args.pop(k) for k in TrainSettings.__dataclass_fields__})
     directory, checkpoint, summary = train(args["root"], args["dataset"], args["experiment"], settings,
-                                         args["steps"], args["output"], args["resume"])
+                                         args["steps"], args["output"], args["resume"], export_root=args["export_root"])
     print(json.dumps({"run_dir": str(directory), "checkpoint": str(checkpoint), "summary": summary}, indent=2))
 
 
