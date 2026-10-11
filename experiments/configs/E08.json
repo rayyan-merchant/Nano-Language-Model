@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E08",
+  "baseline": "E01",
+  "factor": "depth",
+  "model_overrides": {
+    "n_layers": 6
+  },
+  "tokenizer": "character",
+  "owner": "UNASSIGNED",
+  "status": "DEFINED_NOT_RUN",
+  "correctness_adjustment": "MLP dimension derived from width and expansion; vocabulary from fitted tokenizer"
+}

@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E05",
+  "baseline": "E01",
+  "factor": "activation",
+  "model_overrides": {
+    "activation": "relu"
+  },
+  "tokenizer": "character",
+  "owner": "UNASSIGNED",
+  "status": "DEFINED_NOT_RUN",
+  "correctness_adjustment": "MLP dimension derived from width and expansion; vocabulary from fitted tokenizer"
+}

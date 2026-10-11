@@ -1,0 +1,15 @@
+experiment_id,factor,config,seeds,owner,status
+E01,baseline,experiments/configs/E01.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E02,tokenizer,experiments/configs/E02.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E03,position,experiments/configs/E03.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E04,position,experiments/configs/E04.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E05,activation,experiments/configs/E05.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E06,heads,experiments/configs/E06.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E07,heads,experiments/configs/E07.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E08,depth,experiments/configs/E08.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E09,depth,experiments/configs/E09.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E10,mlp_expansion,experiments/configs/E10.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E11,context,experiments/configs/E11.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E12,context,experiments/configs/E12.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E13,width,experiments/configs/E13.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN
+E14,width,experiments/configs/E14.json,42;123;456,UNASSIGNED,DEFINED_NOT_RUN

@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E12",
+  "baseline": "E01",
+  "factor": "context",
+  "model_overrides": {
+    "context_length": 256
+  },
+  "tokenizer": "character",
+  "owner": "UNASSIGNED",
+  "status": "DEFINED_NOT_RUN",
+  "correctness_adjustment": "MLP dimension derived from width and expansion; vocabulary from fitted tokenizer"
+}

@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E13",
+  "baseline": "E01",
+  "factor": "width",
+  "model_overrides": {
+    "d_model": 144
+  },
+  "tokenizer": "character",
+  "owner": "UNASSIGNED",
+  "status": "DEFINED_NOT_RUN",
+  "correctness_adjustment": "MLP dimension derived from width and expansion; vocabulary from fitted tokenizer"
+}

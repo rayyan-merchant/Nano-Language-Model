@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E10",
+  "baseline": "E01",
+  "factor": "mlp_expansion",
+  "model_overrides": {
+    "mlp_expansion": 2
+  },
+  "tokenizer": "character",
+  "owner": "UNASSIGNED",
+  "status": "DEFINED_NOT_RUN",
+  "correctness_adjustment": "MLP dimension derived from width and expansion; vocabulary from fitted tokenizer"
+}
