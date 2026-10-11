@@ -16,8 +16,29 @@ from recover import recover
 
 def postprocess(root,out):
     began=time.perf_counter()
-    sources=list(Path('/kaggle/input').rglob('completion.json'));assert len(sources)==1
-    original=sources[0].parent
+    sources=list(Path('/kaggle/input').rglob('completion.json'))
+    if sources:
+        assert len(sources)==1;original=sources[0].parent
+    else:
+        archives=list(Path('/kaggle/input').rglob('original_pilot.zip'));assert len(archives)==1
+        archive=archives[0];record=json.loads((archive.parent/'original_artifact_manifest.json').read_text())
+        assert file_hash(archive)==record['archive_sha256'] and archive.stat().st_size==record['archive_bytes']
+        original=Path('/tmp/recovered-pilot-original');original.mkdir(exist_ok=False)
+        with zipfile.ZipFile(archive) as z:
+            assert z.testzip() is None and set(z.namelist())==set(record['files'])
+            for name in z.namelist():assert original.resolve() in (original/name).resolve().parents
+            z.extractall(original)
+        for name,checksum in record['files'].items():assert file_hash(original/name)==checksum
+        run=next((original/'runs').iterdir())
+        for snapshot in (original/'snapshots').iterdir():
+            m=json.loads((snapshot/'export_manifest.json').read_text())
+            for relative,checksum in m['files'].items():
+                target=snapshot/relative
+                if not target.exists():
+                    assert relative.startswith('checkpoints/')
+                    source=run/relative;assert file_hash(source)==checksum
+                    target.parent.mkdir(parents=True,exist_ok=True);os.link(source,target)
+            verify_snapshot(snapshot)
     # Preserve original failure and all source artifacts; no train() call here.
     shutil.copytree(original,out)
     assert json.loads((out/'completion.json').read_text())['status']=='5000_completed_optimizer_updates'
@@ -29,7 +50,7 @@ def postprocess(root,out):
     assert normalize(env['packages'])==normalize(original_env['packages'])
     completion=json.loads((out/'completion.json').read_text());run=out/completion['final_checkpoint'];run=run.parent.parent
     subprocess.run([sys.executable,str(root/'scripts/pilot/analyze.py'),'--root',str(root),'--run',str(run),'--output',str(out/'analysis'),'--device','cuda'],check=True)
-    recover(root,out/'recovery_audit')
+    recover(root,out/'recovery_audit',original)
     snapshots=[]
     for path in (out/'snapshots').iterdir():
         m=verify_snapshot(path);snapshots.append({'snapshot':path.name,'step':m['step'],'hash':m['hash'],'files':m['files']})

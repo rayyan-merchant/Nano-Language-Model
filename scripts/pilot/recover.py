@@ -15,10 +15,12 @@ from nano_lm.train import environment
 from nano_lm.verification import equal_nested
 
 
-def recover(root,out):
+def recover(root,out,original=None):
     out.mkdir(parents=True,exist_ok=False);torch.set_num_threads(1)
-    completions=list(Path('/kaggle/input').rglob('completion.json'));assert len(completions)==1
-    original=completions[0].parent;completion=json.loads(completions[0].read_text())
+    if original is None:
+        completions=list(Path('/kaggle/input').rglob('completion.json'));assert len(completions)==1
+        original=completions[0].parent
+    completion=json.loads((original/'completion.json').read_text())
     snapshots=[]
     for path in (original/'snapshots').iterdir():
         manifest=verify_snapshot(path)
