@@ -120,12 +120,13 @@ and reserved memory; they are not whole-device memory use.
 | Actual verified snapshot-export calls | {export:.3f} |
 | Journal append/flush/fsync calls | {io['journal_seconds']:.3f} |
 | Training CLI wall time | {io['cli_wall_seconds']:.3f} |
-| Notebook pipeline wall, clone through archive completion | {timing['pipeline_wall_seconds']:.3f} |
+| Original notebook pipeline wall, clone through postprocessing failure | {timing['pipeline_wall_seconds']:.3f} |
 
-Pipeline wall uses actual Kaggle elapsed-log timestamps and includes isolated
-environment setup, data/preflight, training, analysis/generation and archive
-construction/hashing. Queue before execution, final platform conversion/output
-publication, independent download and recovery are separate. IO hook timings
+Original pipeline wall uses actual Kaggle elapsed-log timestamps and includes
+isolated environment setup, data/preflight, training and the subsequent plotting
+import failure. Postprocessing/recovery pipeline time is reported separately;
+the original notebook did not produce its planned archive. Queue before execution,
+final platform conversion/output publication and network retrieval are separate. IO hook timings
 forwarded original calls without changing their arguments/returns or training
 math. CLI wall minus measured scopes includes setup, loop bookkeeping and other
 unattributed overhead; it is not relabeled checkpoint IO. Individual validation
@@ -152,8 +153,8 @@ slope means the fitted late trend improved, not that every interval improved.
 Gradient norms exceeded clipping threshold on {observed['gradient_clipping_fraction']:.2%}
 of updates; the norms are measured before clipping. LR remained constant.
 
-Interpretation, sample-quality review and the budget recommendation are appended
-after inspecting the full curve and unedited generations. Neither plateau,
+Interpretation, sample-quality review and the budget recommendation follow the
+descriptive measurements after inspection of the full curve and unedited generations. Neither plateau,
 overfitting nor double descent is inferred solely from a local fluctuation.
 
 ## Genuine generations and limitations

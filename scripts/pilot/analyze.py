@@ -16,7 +16,7 @@ from nano_lm.checkpoint import read_checkpoint, load_for_inference
 from nano_lm.generate import generate
 
 
-def analyze(root,run,out,device):
+def analyze(root,run,out,device,skip_generation=False):
     out.mkdir(parents=True,exist_ok=False);torch.set_num_threads(1)
     payload,_=read_checkpoint(run/'checkpoints/step_005000.pt')
     state=payload['training_state'];history=state['history'];val=[r for r in history if 'validation' in r]
@@ -48,6 +48,9 @@ def analyze(root,run,out,device):
     final_metrics=last['validation'];late=[r for r in val if r['step']>=3000]
     summary={'label':'E01 seed42 single-seed research pilot','run_id':payload['metadata']['run_id'],'source_commit':payload['metadata']['environment']['git_commit'],'code_hash':payload['metadata']['resolved']['code_hash'],'config_hash':payload['metadata']['config_hash'],'parameters':payload['metadata']['parameters'],'completed_optimizer_updates':payload['step'],'initial_recorded_training':{'step':1,'loss':loss[0].item()},'initial_recorded_validation':{'step':val[0]['step'],**val[0]['validation']},'final_training_loss':last['training_loss'],'final_training_trailing_100_loss':float(smooth[-1]),'final_validation':final_metrics,'best_validation':{'step':best['step'],**best['validation']},'milestones':{str(r['step']):r['validation'] for r in val if r['step']%1000==0},'training_seconds':state['train_seconds'],'validation_seconds':state['eval_seconds'],'peak_gpu_bytes':state['peak_gpu_bytes'],'training_tokens':state['training_tokens'],'training_source_bytes':state['training_bytes'],'unique_target_bytes':last['unique_target_bytes'],'late_validation_slope_per_1000_steps':float(np.polyfit([r['step'] for r in late],[r['validation']['loss'] for r in late],1)[0]*1000),'loss_improvement_3000_to_5000':next(r['validation']['loss'] for r in val if r['step']==3000)-final_metrics['loss'],'train_loss_trailing_windows':{str(s):float(np.mean(loss[s-100:s])) for s in [1000,2000,3000,4000,5000]},'uncertainty':'One seed; no SD or significance estimate; full study remains NO-GO'}
     atomic_json(out/'summary.json',summary)
+    if skip_generation:
+        print(json.dumps(summary,indent=2),flush=True)
+        return
     protocol=json.loads((root/'configs/generation_protocol.json').read_text());samples=[];began=time.perf_counter()
     for label,name in [('best',state['best_checkpoint']),('final','step_005000.pt')]:
         checkpoint=run/'checkpoints'/name;model,tokenizer=load_for_inference(checkpoint);model.to(device)
@@ -67,5 +70,5 @@ def analyze(root,run,out,device):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--run',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--device',choices=['cpu','cuda'],default='cpu')
-    a=p.parse_args();analyze(a.root,a.run,a.output,a.device)
+    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--run',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--device',choices=['cpu','cuda'],default='cpu');p.add_argument('--skip-generation',action='store_true')
+    a=p.parse_args();analyze(a.root,a.run,a.output,a.device,a.skip_generation)

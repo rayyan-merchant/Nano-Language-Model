@@ -12,6 +12,7 @@ from nano_lm.artifacts import atomic_json, file_hash
 from nano_lm.storage import verify_snapshot
 from nano_lm.train import environment
 from recover import recover
+from rehydrate import complete_snapshots
 
 
 def postprocess(root,out):
@@ -19,6 +20,10 @@ def postprocess(root,out):
     sources=list(Path('/kaggle/input').rglob('completion.json'))
     if sources:
         assert len(sources)==1;original=sources[0].parent
+        records=list(Path('/kaggle/input').rglob('original_artifact_manifest.json'))
+        if records:
+            assert len(records)==1;record=json.loads(records[0].read_text())
+            for name,checksum in record['files'].items():assert file_hash(original/name)==checksum
     else:
         archives=list(Path('/kaggle/input').rglob('original_pilot.zip'));assert len(archives)==1
         archive=archives[0];record=json.loads((archive.parent/'original_artifact_manifest.json').read_text())
@@ -41,6 +46,9 @@ def postprocess(root,out):
             verify_snapshot(snapshot)
     # Preserve original failure and all source artifacts; no train() call here.
     shutil.copytree(original,out)
+    # Kaggle may automatically expand uploaded ZIPs. Always rebuild duplicate
+    # weight copies in writable output, never mutate mounted read-only inputs.
+    complete_snapshots(out)
     assert json.loads((out/'completion.json').read_text())['status']=='5000_completed_optimizer_updates'
     if (out/'analysis').exists():(out/'analysis').rename(out/'retained_partial_analysis')
     env=environment(root);assert not env['git_dirty']
@@ -49,8 +57,28 @@ def postprocess(root,out):
     normalize=lambda lines:sorted(x for x in lines if not x.startswith('-e '))
     assert normalize(env['packages'])==normalize(original_env['packages'])
     completion=json.loads((out/'completion.json').read_text());run=out/completion['final_checkpoint'];run=run.parent.parent
-    subprocess.run([sys.executable,str(root/'scripts/pilot/analyze.py'),'--root',str(root),'--run',str(run),'--output',str(out/'analysis'),'--device','cuda'],check=True)
-    recover(root,out/'recovery_audit',original)
+    analyses=list(Path('/kaggle/input').rglob('analysis_artifact_manifest.json'))
+    if analyses:
+        assert len(analyses)==1;receipt=json.loads(analyses[0].read_text());source=analyses[0].parent/'analysis'
+        if not source.is_dir():
+            packed=analyses[0].parent/'analysis.zip'
+            assert file_hash(packed)==receipt['archive_sha256'] and packed.stat().st_size==receipt['archive_bytes']
+            source=Path('/tmp/recovered-analysis');source.mkdir(exist_ok=False)
+            with zipfile.ZipFile(packed) as z:
+                assert z.testzip() is None and set(z.namelist())==set(receipt['files'])
+                for name in z.namelist():assert source.resolve() in (source/name).resolve().parents
+                z.extractall(source)
+        for name,checksum in receipt['files'].items():assert file_hash(source/name)==checksum
+        summary=json.loads((source/'summary.json').read_text());assert summary['run_id']==completion['run_id']
+        assert summary['source_commit']==original_env['git_commit'] and summary['code_hash']==env['code_hash']
+        generation=json.loads((source/'generation.json').read_text())
+        assert generation['protocol']==json.loads((root/'configs/generation_protocol.json').read_text()) and len(generation['samples'])==100
+        for sample in generation['samples']:
+            assert file_hash(run/'checkpoints'/sample['checkpoint'])==sample['checkpoint_sha256']
+        shutil.copytree(source,out/'analysis')
+    else:
+        subprocess.run([sys.executable,str(root/'scripts/pilot/analyze.py'),'--root',str(root),'--run',str(run),'--output',str(out/'analysis'),'--device','cuda'],check=True)
+    recover(root,out/'recovery_audit',out)
     snapshots=[]
     for path in (out/'snapshots').iterdir():
         m=verify_snapshot(path);snapshots.append({'snapshot':path.name,'step':m['step'],'hash':m['hash'],'files':m['files']})
