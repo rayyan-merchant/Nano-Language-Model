@@ -1,5 +1,14 @@
 # Experiment readiness audit
 
+## Scoped E01 pilot authorization — 2026-10-12
+
+Rayyan explicitly authorized E01 seed42 for exactly5000 optimizer updates on
+qualified Kaggle rayyannmerchant despite the unavailable second GPU account.
+This one-account exception permits the pilot only. Study-wide NO-GO remains;
+no remaining seeds, E02–E14 or 10k continuation are authorized. Execution and
+preservation procedure: docs/pilot_execution.md. Actual results must be recorded
+after successful completion/retrieval; authorization is not completion evidence.
+
 **Decision: NO-GO for the 5,000-step pilot and the 42-run study.**
 
 The integrated implementation passes real-data CPU and Colab T4 development
