@@ -1,0 +1,7 @@
+{
+  "label": "gpu_gate_not_research",
+  "native_torch": "2.11.0+cu128",
+  "native_cuda_available": true,
+  "nvidia_device_present": true,
+  "nvidia_smi_exit": 0
+}

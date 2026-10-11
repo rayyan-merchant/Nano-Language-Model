@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/tmp/qual-venv/bin/python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 0,
+  "seconds": 33.59774525199998,
+  "stdout": ".................................                                        [100%]\n33 passed in 31.21s\n",
+  "stderr": ""
+}
