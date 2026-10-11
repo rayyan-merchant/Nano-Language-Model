@@ -7,6 +7,7 @@ import random
 import subprocess
 import time
 import uuid
+from datetime import datetime, timezone
 from dataclasses import asdict, dataclass
 from pathlib import Path
 import numpy as np
@@ -23,6 +24,7 @@ from .prepare import validate
 @dataclass(frozen=True)
 class TrainSettings:
     seed: int = 42
+    optimizer: str = "AdamW"
     learning_rate: float = 3e-4
     weight_decay: float = 0.01
     tokens_per_update: int = 4096
@@ -39,6 +41,8 @@ class TrainSettings:
     run_kind: str = "research"
 
     def validate(self, context):
+        if self.optimizer not in {"AdamW", "Adam", "SGD"}:
+            raise ValueError("Unsupported optimizer")
         if self.seed not in {42, 123, 456}:
             raise ValueError("Study seeds are 42,123,456")
         if min(self.tokens_per_update, self.micro_batch_size, self.eval_every,
@@ -79,7 +83,7 @@ def seed_all(seed):
 def environment(root):
     commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=root, capture_output=True, text=True)
     status = subprocess.run(["git", "status", "--porcelain"], cwd=root, capture_output=True, text=True)
-    source = {str(p.relative_to(root)): p.read_text(encoding="utf-8")
+    source = {p.relative_to(root).as_posix(): p.read_text(encoding="utf-8")
               for folder in ("src", "configs", "experiments/configs") for p in (root / folder).rglob("*")
               if p.suffix in {".py", ".json"}}
     freeze = subprocess.run([os.sys.executable, "-m", "pip", "freeze"], capture_output=True, text=True)
@@ -92,6 +96,7 @@ def environment(root):
 
 
 def append_event(path, event):
+    event = {"timestamp_utc": datetime.now(timezone.utc).isoformat(), **event}
     with path.open("a", encoding="utf-8") as f:
         f.write(json.dumps(event, allow_nan=False) + "\n")
         f.flush()
@@ -99,6 +104,7 @@ def append_event(path, event):
 
 
 def train(root, dataset, experiment_id, settings, steps, output_root, resume=None, model_override=None, export_root=None):
+    wall_start = time.perf_counter()
     root, dataset, output_root = Path(root), Path(dataset), Path(output_root)
     manifest = validate(dataset)
     variant = json.loads((root / f"experiments/configs/{experiment_id}.json").read_text())
@@ -123,7 +129,8 @@ def train(root, dataset, experiment_id, settings, steps, output_root, resume=Non
     if settings.device == "cpu":
         torch.set_num_threads(1)
     model = GPT(config).to(settings.device)
-    optimizer = torch.optim.AdamW(model.parameters(), lr=settings.learning_rate, weight_decay=settings.weight_decay)
+    optimizer = getattr(torch.optim, settings.optimizer)(model.parameters(), lr=settings.learning_rate,
+                                                        weight_decay=settings.weight_decay)
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda _: 1.0)
     scaler = torch.amp.GradScaler("cuda", enabled=settings.precision == "float16")
     generator = torch.Generator().manual_seed(settings.seed)
@@ -167,7 +174,8 @@ def train(root, dataset, experiment_id, settings, steps, output_root, resume=Non
         run_id = f"{experiment_id}_seed{settings.seed}_{uuid.uuid4().hex}"
         directory = output_root / run_id
         directory.mkdir(parents=True, exist_ok=False)
-        metadata = {"schema_version": 2, "run_id": run_id, "resolved": resolved,
+        metadata = {"schema_version": 2, "run_id": run_id,
+                    "created_utc": datetime.now(timezone.utc).isoformat(), "resolved": resolved,
                     "config_hash": config_hash, "environment": env,
                     "parameters": model.parameter_count(), "source": manifest["source"],
                     "evaluation_text_hash": manifest["partitions"]["validation"]["sha256"]}
@@ -257,7 +265,9 @@ def train(root, dataset, experiment_id, settings, steps, output_root, resume=Non
                    "status": "completed_segment", "step": state["step"],
                    "checkpoint": checkpoint.name, "best_checkpoint": state["best_checkpoint"],
                    "metrics": state["history"][-1], "eval_seconds": state["eval_seconds"],
-                   "history_hash": digest(state["history"])}
+                   "history_hash": digest(state["history"]),
+                   "segment_wall_seconds": time.perf_counter() - wall_start,
+                   "segment_wall_policy": "includes setup, training, evaluation and checkpoint IO up to summary creation"}
         atomic_json(directory / f"summary_{state['step']:06d}.json", summary)
         if export_root is not None:
             from .storage import export_run

@@ -2,7 +2,24 @@
 import argparse
 import json
 from pathlib import Path
+import os
+import uuid
 from .artifacts import atomic_bytes, atomic_json, file_hash, digest
+
+
+def snapshot_file(path, data):
+    # Export destinations (e.g. Drive FUSE) may not support hard links. The
+    # snapshot directory has one exclusive creator and a completion manifest.
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists():
+        raise FileExistsError(path)
+    temp = path.with_name(".t" + uuid.uuid4().hex[:12])
+    with temp.open("xb") as f:
+        f.write(data)
+        f.flush()
+        os.fsync(f.fileno())
+    os.rename(temp, path)
 
 
 def verify_snapshot(directory):
@@ -45,13 +62,13 @@ def export_run(run_dir, destination, allow_active=False):
     snapshot.mkdir(parents=True, exist_ok=False)
     for path in files:
         relative = path.relative_to(run_dir).as_posix()
-        atomic_bytes(snapshot / relative, path.read_bytes())
+        snapshot_file(snapshot / relative, path.read_bytes())
         if file_hash(snapshot / relative) != checksums[relative]:
             raise ValueError("Source changed during export; partial snapshot retained")
     manifest = {"schema_version": 1, "run_id": metadata["run_id"], "step": payload["step"],
                 "config_hash": metadata["config_hash"], "files": checksums}
     manifest["hash"] = digest(manifest)
-    atomic_json(snapshot / "export_manifest.json", manifest)
+    snapshot_file(snapshot / "export_manifest.json", (json.dumps(manifest, indent=2) + "\n").encode())
     verify_snapshot(snapshot)
     return snapshot
 

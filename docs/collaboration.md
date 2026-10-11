@@ -9,3 +9,9 @@ Each PC/account/cloud GPU environment is independent. GitHub and committed docs
 are shared truth. Registry owners stay unassigned until measured runtime supports
 allocation. Run directories must include unique IDs and cannot be shared by two
 writers. Pin the code commit for research; document bugs and affected runs.
+
+Updated implementation ownership: Rayyan implements the entire shared dataset,
+tokenizer, model training, evaluation, checkpoint and analysis pipeline through
+one Codex instance. The second member independently verifies this implementation
+and later executes assigned experiments using the same pinned codebase. Do not
+split pipeline implementations across agents or develop competing notebook logic.

@@ -1,0 +1,443 @@
+{
+  "status": "integration_smoke_passed_not_experiment_go",
+  "device": "cpu",
+  "precision": "float32",
+  "dataset": {
+    "schema_version": 1,
+    "source": {
+      "kind": "tiny_shakespeare",
+      "repository": "https://github.com/karpathy/char-rnn.git",
+      "revision": "6f9487a6fe5b420b7ca9afb0d7c078e37c1d1b4e",
+      "path": "data/tinyshakespeare/input.txt",
+      "url": "https://raw.githubusercontent.com/karpathy/char-rnn/6f9487a6fe5b420b7ca9afb0d7c078e37c1d1b4e/data/tinyshakespeare/input.txt",
+      "transport": "http",
+      "sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "bytes": 1115394
+    },
+    "split": {
+      "unit": "unicode_code_points",
+      "boundaries": [
+        0,
+        1003854,
+        1059624,
+        1115394
+      ],
+      "sha256_utf8": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "policy": "contiguous 90/5/5; no normalization; tokenize each split separately"
+    },
+    "partitions": {
+      "train": {
+        "bytes": 1003854,
+        "characters": 1003854,
+        "sha256": "a9e24e23a1ec77744dad26844bfd5a09b6e041954e1eef0000e7f24cba6db735"
+      },
+      "validation": {
+        "bytes": 55770,
+        "characters": 55770,
+        "sha256": "c64e90c160750d91a9d2d9b1ace5eab1a440f5a1701d32a8e97a179b7839f1c8"
+      },
+      "test": {
+        "bytes": 55770,
+        "characters": 55770,
+        "sha256": "8b5a8c8af45905547ad03b7aae6980a277a5dd78924a6e6ac64b75d63d7d40bd"
+      }
+    },
+    "tokenizers": {
+      "character": {
+        "hash": "ed96787d2f3f9741d69eba15160f31634ba6755b47e4c261ffedbb975fa0af77",
+        "vocab_size": 65,
+        "fit_partition": "train",
+        "fit_sha256": "a9e24e23a1ec77744dad26844bfd5a09b6e041954e1eef0000e7f24cba6db735",
+        "tokens": {
+          "train": 1003854,
+          "validation": 55770,
+          "test": 55770
+        }
+      },
+      "bpe": {
+        "hash": "2d7b1e84c8055eb5b9483a3fe6e4e3c9e348f5a28506ba19a0dc1644f0b36d55",
+        "vocab_size": 1024,
+        "fit_partition": "train",
+        "fit_sha256": "a9e24e23a1ec77744dad26844bfd5a09b6e041954e1eef0000e7f24cba6db735",
+        "tokens": {
+          "train": 411158,
+          "validation": 24516,
+          "test": 24905
+        }
+      }
+    },
+    "manifest_hash": "76b594a1979107795734f8d2cda08b56c1520c8d44883dbaa5a61dbee53ba16f"
+  },
+  "configurations": [
+    {
+      "experiment_id": "E01",
+      "parameters": 1804800,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        128,
+        128
+      ],
+      "intended_delta": {},
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E02",
+      "parameters": 2173056,
+      "logits": [
+        1,
+        128,
+        1024
+      ],
+      "head_shape": [
+        1,
+        6,
+        128,
+        128
+      ],
+      "intended_delta": {},
+      "vocab_size": 1024
+    },
+    {
+      "experiment_id": "E03",
+      "parameters": 1804800,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        128,
+        128
+      ],
+      "intended_delta": {
+        "position": "rope"
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E04",
+      "parameters": 1829376,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        128,
+        128
+      ],
+      "intended_delta": {
+        "position": "learned"
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E05",
+      "parameters": 1804800,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        128,
+        128
+      ],
+      "intended_delta": {
+        "activation": "relu"
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E06",
+      "parameters": 1804800,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        4,
+        128,
+        128
+      ],
+      "intended_delta": {
+        "n_heads": 4
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E07",
+      "parameters": 1804800,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        8,
+        128,
+        128
+      ],
+      "intended_delta": {
+        "n_heads": 8
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E08",
+      "parameters": 2694528,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        128,
+        128
+      ],
+      "intended_delta": {
+        "n_layers": 6
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E09",
+      "parameters": 3584256,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        128,
+        128
+      ],
+      "intended_delta": {
+        "n_layers": 8
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E10",
+      "parameters": 1213440,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        128,
+        128
+      ],
+      "intended_delta": {
+        "mlp_expansion": 2
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E11",
+      "parameters": 1804800,
+      "logits": [
+        1,
+        64,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        64,
+        64
+      ],
+      "intended_delta": {
+        "context_length": 64
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E12",
+      "parameters": 1804800,
+      "logits": [
+        1,
+        256,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        256,
+        256
+      ],
+      "intended_delta": {
+        "context_length": 256
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E13",
+      "parameters": 1021824,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        128,
+        128
+      ],
+      "intended_delta": {
+        "d_model": 144
+      },
+      "vocab_size": 65
+    },
+    {
+      "experiment_id": "E14",
+      "parameters": 2808960,
+      "logits": [
+        1,
+        128,
+        65
+      ],
+      "head_shape": [
+        1,
+        6,
+        128,
+        128
+      ],
+      "intended_delta": {
+        "d_model": 240
+      },
+      "vocab_size": 65
+    }
+  ],
+  "exact_resume": {
+    "model": true,
+    "optimizer": true,
+    "scheduler": true,
+    "scaler": true,
+    "rng": true
+  },
+  "history_equal": true,
+  "storage_restore": "outputs\\logs\\m4-final-cpu\\restored\\E01_seed42_8e4da8622476499ba2b3a2eb5bbf6f96",
+  "character_summary": {
+    "schema_version": 2,
+    "run_id": "E01_seed42_8e4da8622476499ba2b3a2eb5bbf6f96",
+    "config_hash": "ae5cce7ff7e31c4c42bec47d305075c3cdebc75784a516a21b7923dec6a78e1c",
+    "status": "completed_segment",
+    "step": 4,
+    "checkpoint": "step_000004.pt",
+    "best_checkpoint": "step_000004.pt",
+    "metrics": {
+      "step": 4,
+      "training_loss": 3.7782609462738037,
+      "training_tokens": 512,
+      "training_bytes": 512,
+      "unique_target_bytes": 512,
+      "train_seconds": 0.9578488997649401,
+      "tokens_per_second": 534.5310728295943,
+      "steps_per_second": 4.176024006481206,
+      "peak_gpu_bytes": 0,
+      "gradient_norm": 2.2015585899353027,
+      "amp_skipped_updates": 0,
+      "lr": 0.0003,
+      "accumulation": 1,
+      "validation": {
+        "loss": 3.7200343012809753,
+        "perplexity": 41.265809554463054,
+        "bpb": 5.3668750383949035,
+        "nll_sum": 952.3287811279297,
+        "scored_tokens": 256,
+        "scored_bytes": 256,
+        "conditioning_bytes": 256,
+        "evaluated_text_bytes": 512,
+        "mode": "sliding",
+        "context_length": 128
+      },
+      "generalization_gap": -0.05822664499282837
+    },
+    "eval_seconds": 25.645875200163573,
+    "history_hash": "5c0d14dda1fd8b0913e8c75aaab5c6c43542cf8691bd49d062ce1fb8d9b3c802",
+    "segment_wall_seconds": 36.20829669991508,
+    "segment_wall_policy": "includes setup, training, evaluation and checkpoint IO up to summary creation"
+  },
+  "bpe_summary": {
+    "schema_version": 2,
+    "run_id": "E02_seed42_503dc97deeff443ba3c1ed78e44e0dbb",
+    "config_hash": "0a0da181e25150c10d80da9270e2168f046041852482abe496ee21e0fe943843",
+    "status": "completed_segment",
+    "step": 2,
+    "checkpoint": "step_000002.pt",
+    "best_checkpoint": "step_000002.pt",
+    "metrics": {
+      "step": 2,
+      "training_loss": 6.993796348571777,
+      "training_tokens": 256,
+      "training_bytes": 635,
+      "unique_target_bytes": 635,
+      "train_seconds": 0.48460800014436245,
+      "tokens_per_second": 528.2620178035419,
+      "steps_per_second": 4.127047014090171,
+      "peak_gpu_bytes": 0,
+      "gradient_norm": 1.8007290363311768,
+      "amp_skipped_updates": 0,
+      "lr": 0.0003,
+      "accumulation": 1,
+      "validation": {
+        "loss": 6.99554030621638,
+        "perplexity": 1091.7533995518054,
+        "bpb": 4.809674295274619,
+        "nll_sum": 853.4559173583984,
+        "scored_tokens": 122,
+        "scored_bytes": 256,
+        "conditioning_bytes": 256,
+        "evaluated_text_bytes": 512,
+        "mode": "sliding",
+        "context_length": 128
+      },
+      "generalization_gap": 0.0017439576446030003
+    },
+    "eval_seconds": 10.497409600066021,
+    "history_hash": "b220a41197d2eb13fe26d4610e2f88784aa23a22704c3a527253c7ab75145745",
+    "segment_wall_seconds": 33.3184229999315,
+    "segment_wall_policy": "includes setup, training, evaluation and checkpoint IO up to summary creation"
+  },
+  "samples": [
+    {
+      "checkpoint": "outputs\\logs\\m4-final-cpu\\restored\\E01_seed42_8e4da8622476499ba2b3a2eb5bbf6f96\\checkpoints\\step_000004.pt",
+      "text": "To be        ",
+      "label": "2–4 step smoke output, not research-quality generation"
+    },
+    {
+      "checkpoint": "outputs\\logs\\m4-final-cpu\\runs\\E02_seed42_503dc97deeff443ba3c1ed78e44e0dbb\\checkpoints\\step_000002.pt",
+      "text": "To beouscc fckasecc man�",
+      "label": "2–4 step smoke output, not research-quality generation"
+    }
+  ],
+  "limits": [
+    "Validation restricted to 512 bytes for smoke; prefix 256 bytes excluded",
+    "Two independent Kaggle environments still require actual verification",
+    "No pilot or ablation results produced"
+  ]
+}

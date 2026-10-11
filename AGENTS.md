@@ -24,6 +24,10 @@
 - Do not commit credentials, private data, dataset copies or large generated
   artifacts. Cite external sources and explain adapted ideas for the demo.
 - Thin Colab/Kaggle notebooks import this package; do not duplicate model code.
+- Rayyan owns the unified pipeline implementation in this Codex instance. The
+  second member independently verifies and later runs the same pinned codebase.
+  Do not split dataset, tokenizer, training, evaluation or checkpoint modules
+  across agents. Experimental execution ownership remains to be assigned.
 
 See docs/progress.md for implemented versus pending features and
 docs/assignment_compliance.md for handout acceptance requirements.

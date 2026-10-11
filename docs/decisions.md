@@ -21,3 +21,16 @@ choice); pilot may motivate an approved pre-study change.
 The earlier GitHub uninstall removed the installed integration at that moment,
 not repository membership or saved account authorizations. Current identity was
 verified as rayyan-merchant; no access was taken through the other account.
+
+Unified research pipeline: source revision/raw SHA pinned to original Karpathy
+Tiny Shakespeare, because the Hugging Face endpoint failed local TLS trust.
+No TLS bypass was used. Byte BPE's requested vocabulary is fixed at 1024 for
+E02; the full byte alphabet is a corpus-independent fallback, merges train-only.
+Conditional BPB uses forced common byte boundary and maximal preceding token
+windows; blocks mode is explicitly a separate policy. Code hashes normalize
+relative paths across Windows/Linux. Scientific collection rejects framework
+version/policy drift rather than treating different Colab/Kaggle stacks as equal.
+
+Research GO remains gated by actual independent Kaggle checks and persistent
+export/expiry recovery. The available Colab T4 has Python 3.13/torch 2.11, so
+actual successful GPU smoke evidence does not qualify the pinned 3.10/2.5 profile.

@@ -7,6 +7,7 @@ from pathlib import Path
 from .artifacts import atomic_json, digest
 from .checkpoint import read_checkpoint
 from .config import load_experiment
+from .bpe import from_artifact
 
 
 def validate_run(directory, root, expected_steps=5000, allow_checks=False):
@@ -31,6 +32,9 @@ def validate_run(directory, root, expected_steps=5000, allow_checks=False):
     payload, tokenizer = read_checkpoint(directory / "checkpoints" / summary["checkpoint"])
     if payload["metadata"] != metadata or payload["step"] != expected_steps:
         raise ValueError("Checkpoint lineage/step mismatch")
+    artifact = from_artifact(json.loads((directory / "tokenizer.json").read_text(encoding="utf-8")))
+    if artifact.checksum != tokenizer.checksum:
+        raise ValueError("Run tokenizer artifact mismatch")
     if tokenizer.checksum != resolved["tokenizer_hash"]:
         raise ValueError("Tokenizer mismatch")
     manifest = json.loads((directory / "dataset_manifest.json").read_text())
@@ -51,7 +55,8 @@ def validate_run(directory, root, expected_steps=5000, allow_checks=False):
     # retaining optimizer, precision, batching, evaluation, data and code policy.
     policy = {k: v for k, v in training.items() if k not in {"seed", "micro_batch_size"}}
     comparison = digest({"policy": policy, "dataset": resolved["dataset_hash"],
-                         "code": resolved["code_hash"], "evaluation_text": metadata["evaluation_text_hash"]})
+                         "code": resolved["code_hash"], "torch_version": metadata["environment"]["torch"],
+                         "evaluation_text": metadata["evaluation_text_hash"]})
     return {"run_id": metadata["run_id"], "experiment_id": resolved["experiment_id"],
             "seed": training["seed"], "comparison_hash": comparison, "step": expected_steps,
             "validation_loss": evaluation["loss"], "validation_bpb": evaluation["bpb"],

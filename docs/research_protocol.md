@@ -2,7 +2,7 @@
 
 ## Locked study
 
-E01 is the approved baseline in `configs/baseline.json`. E01–E14 in the registry
+E01 is the approved baseline in `configs/baseline.json`. E01â€“E14 in the registry
 are the only initial training configurations. Each variant changes one intended
 factor. E02 replaces the tokenizer; E13/E14 derive MLP dimensions from width,
 and vocabulary size is always resolved from the fitted tokenizer. No interaction
@@ -11,7 +11,7 @@ configurations are permitted without explicit approval.
 Stage A: correctness, numerical attention, causal invariance and tiny overfit.
 Stage B: explicitly approved baseline pilot to assess the 5k budget.
 Stage C: 14 configurations x seeds 42,123,456 = 42 approved 5k runs.
-Stage D: select 2–3 strongest configurations on validation and retain E01;
+Stage D: select 2â€“3 strongest configurations on validation and retain E01;
 continue saved model/optimizer/scheduler/scaler/RNG state from 5k to 10k.
 Stage E: optional approved prolonged study after reviewing evidence. Do not
 presume overfitting or double descent. No substantive training during bootstrap.
@@ -66,3 +66,24 @@ Across all three seeds report mean and sample standard deviation (ddof=1).
 Separate hypotheses, observations, interpretations and uncertainty. Include
 negative results and hardware/parameter-count/context confounds; no unsupported
 significance claims or test-selected favorable checkpoints.
+
+## Unified implementation update
+
+Pipeline ownership stays in this instance; the second member independently
+verifies and later executes approved runs from the exact shared commit. Modules
+are not split across agents. Implementation policies are in docs/bpb.md,
+docs/storage.md and docs/platforms.md. The baseline and 14 definitions remain
+unchanged. Fixed inference protocol is configs/generation_protocol.json.
+
+Training tokens count actual target exposure, including AMP-skipped attempts.
+training_bytes counts those targets' original source bytes, including repeats;
+unique_target_bytes tracks their union. These are target-exposure measures, not
+unique corpus epochs, input-memory traffic or FLOPs. Effective bytes per token
+can be computed from these exact counts. train_seconds excludes evaluation/IO;
+eval_seconds and per-segment wall-clock time are separate recorded outcomes.
+
+Full sliding validation and a fixed common conditioning prefix are canonical.
+The blocks evaluator and capped smoke metrics are different policies and must
+never be silently substituted in the scientific comparison. BPB still has
+context/token-boundary confounds explained in docs/bpb.md. Constant LR is the
+unchanged initial regime: extending the stop point never changes its schedule.

@@ -85,3 +85,26 @@ staging-name failure was fixed using short unique temporary names. All 14
 models instantiate in the automated audit. Persistent snapshots retain latest
 and best checkpoints plus journals, metadata and summaries; corruption fails
 verification. Restored snapshots resume without resetting state.
+
+## Unified pipeline M4 and readiness audit
+
+Final stable Windows suite: 31 passed, 1 CUDA skip in 184.73 seconds. Real
+Tiny Shakespeare CPU integration passed: original baseline E01 four updates,
+E02 two updates, conditional validation, save/reload and own-model generation.
+Exported/restored E01 continuation matches uninterrupted model, optimizer,
+scheduler, scaler, RNG and loss/validation histories exactly.
+
+Final actual Colab Tesla T4 suite: 32 passed in 50.16 seconds; Python 3.13.15,
+torch 2.11.0+cu130. Real-data float16 integration and exact resume passed.
+Independent cloud acquisition reproduces the local dataset/tokenizer hashes.
+This proves development execution on this GPU, not qualification of the pinned
+research profile or two independent Kaggle environments. No long run launched.
+
+EXPERIMENT_READINESS.md records acceptance criteria, actual model counts/shapes,
+scientific conditioning/source-exposure limitations and resolved failures. Fixed
+generation settings are committed. Results/figures consume genuine metrics,
+reject smoke outputs as study evidence and label incomplete seed grids.
+
+**NO-GO** remains until independent Kaggle/environment/storage verification and
+all-config GPU/full-validation overhead measurement pass. Review first, qualify
+both accounts, then request separate authorization for the 5,000-step pilot.
