@@ -1,2 +1,6 @@
 # Preserve downloaded qualification evidence bytes for SHA256 verification.
 docs/qualifications/evidence/* -text whitespace=cr-at-eol
+report/pilots/E01_seed42/evidence/* -text whitespace=cr-at-eol
+# Generated text includes genuine terminal spaces; preserve it without cleanup.
+report/pilots/E01_seed42/generation.* -text whitespace=-blank-at-eol,cr-at-eol
+report/pilots/E01_seed42/E01_seed42_analysis.md whitespace=-blank-at-eol

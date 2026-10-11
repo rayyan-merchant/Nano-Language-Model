@@ -6,16 +6,21 @@ Rayyan explicitly authorized E01 seed42 for exactly5000 optimizer updates on
 qualified Kaggle rayyannmerchant despite the unavailable second GPU account.
 This one-account exception permits the pilot only. Study-wide NO-GO remains;
 no remaining seeds, E02–E14 or 10k continuation are authorized. Execution and
-preservation procedure: docs/pilot_execution.md. Actual results must be recorded
-after successful completion/retrieval; authorization is not completion evidence.
+preservation procedure: docs/pilot_execution.md. The authorized pilot completed
+5000 updates and20 full validations. Published output was recovered in a fresh
+compatible CUDA environment with exact state restoration and zero extra updates.
+Actual results and independent archive verification:
+[E01 seed42 report](report/pilots/E01_seed42/E01_seed42_analysis.md).
 
-**Decision: NO-GO for the 5,000-step pilot and the 42-run study.**
+**Current decision: scoped E01 seed42 pilot executed; NO-GO for the distributed
+42-run study. No other seed/configuration or 10k extension is authorized.**
 
 The integrated implementation passes real-data CPU and Colab T4 development
 smokes. Rayyan's Kaggle environment is now qualified at merged main b2ef1ca; the second
 member's independent account remains unqualified. Passing
 unit tests or a smoke on a different dependency profile is insufficient for GO.
-No pilot, 5,000-step training, 10,000-step training or full study was launched.
+The historical audit below preceded the explicitly authorized 2026-10-12 pilot.
+No10k extension, other research seed/configuration or full study was launched.
 The locked baseline, E01â€“E14 definitions and seeds 42/123/456 are preserved.
 
 ## Actual execution evidence (2026-10-11)

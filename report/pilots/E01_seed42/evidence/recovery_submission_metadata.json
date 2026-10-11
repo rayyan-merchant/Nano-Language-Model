@@ -1,0 +1,17 @@
+{
+  "id": "rayyannmerchant/nano-e01-recovery-20261012-51b80b85",
+  "title": "nano-e01-recovery-20261012-51b80b85",
+  "code_file": "pilot.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "rayyannmerchant/nano-e01-pilot-rescue-20261012-a2466cf6",
+    "rayyannmerchant/nano-e01-pilot-analysis-20261012-3fc368d1"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

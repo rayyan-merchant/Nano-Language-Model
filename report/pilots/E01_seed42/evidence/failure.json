@@ -1,0 +1,4 @@
+{
+  "type": "CalledProcessError",
+  "message": "Command '['/tmp/pilot-venv/bin/python', '/tmp/nano-source/scripts/pilot/analyze.py', '--root', '/tmp/nano-source', '--run', '/kaggle/working/pilot/runs/E01_seed42_520167c37bfa4a11a25d565111d52de5', '--output', '/kaggle/working/pilot/analysis', '--device', 'cuda']' returned non-zero exit status 1."
+}

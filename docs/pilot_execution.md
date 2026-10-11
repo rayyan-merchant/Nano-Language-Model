@@ -44,3 +44,23 @@ Run completion is asserted only after5000 committed history rows and20 actual
 full validation measurements; processed targets/source bytes must both equal
 20480000. No early stopping or automatic extension. Single-seed conclusions
 remain provisional and cannot establish all14 configurations' convergence.
+
+## Actual pilot and recovery — 2026-10-12
+
+Training source444bca4c4ac19f97f46fae210a9fd361f8561537 completed E01 seed42:
+5000 updates,20 full sliding validations,20 resumable checkpoint states and21
+immutable snapshots. Original notebook37785014 failed only during plotting after
+training, because an inherited inline Matplotlib backend was absent in the
+isolated environment. Agg is now set before import; model/configuration/core hash
+remain unchanged. Recovery source42288f82ff4d83db1fd78e17e9289c7dacfc4d90
+published successful notebook51b80b85 version1, preserving the original failure.
+
+For recovery, prefer verified private dataset inputs when Kaggle rejects an
+ERROR notebook as a kernel source. Kaggle may expand ZIP inputs automatically.
+Copy them to a new writable directory; rehydrate omitted snapshot weight copies
+only from exact hash matches, never mutate read-only inputs. The recovery path
+performs no training updates. Immutable originals,100 genuine fixed-protocol
+samples, figures and full file hashes remain in published outputs. Independently
+download and inspect the final archive; a successful export alone is insufficient.
+See report/pilots/E01_seed42/E01_seed42_analysis.md for actual timings, results,
+failure history and retrieval commands. Study-wide NO-GO remains.
