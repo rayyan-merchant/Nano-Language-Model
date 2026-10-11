@@ -45,3 +45,10 @@ local completed checkpoints; do not continue pretending evidence was exported.
 Local export/restore/corruption and resumed-history tests are automated. A real
 Colab-to-PC export is included in the readiness audit. Mounted Drive and both
 Kaggle output-version/expiry workflows remain explicitly pending until executed.
+
+Actual Windows connector audit: a nested export failed because its temporary
+filename exceeded the supported path length. Packaging the remote evidence into
+a ZIP and exporting to a short local filename succeeded; SHA256, ZIP integrity
+and three snapshot manifests verified after download. The runtime was released
+after verified publication, and a downloaded GPU checkpoint loaded on CPU. Keep
+archives and separately verified manifests; see docs/evidence/gpu_export_validation.json.

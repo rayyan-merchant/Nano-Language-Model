@@ -15,12 +15,15 @@ The locked baseline, E01–E14 definitions and seeds 42/123/456 are preserved.
 | M1 preprocessing/BPB tests | 8 passed | Fixtures plus later real acquisition |
 | M2 engine tests | 12 passed, 1 CUDA skip | Windows CPU |
 | M3 storage/results tests | 3 passed | Local immutable export/restore |
-| Final Windows full suite | 31 passed, 1 skipped, 184.73 s | Python 3.10.11, torch 2.5.1+cpu |
+| Windows full suite before CLI fix | 31 passed, 1 skipped, 184.73 s | Python 3.10.11, torch 2.5.1+cpu |
+| Latest Windows full suite after CLI fix | 32 passed, 1 skipped, 227.06 s | Forced-CP1252 Unicode CLI regression included; CPU-only environment |
 | Final Colab full suite | 32 passed, 50.16 s | Python 3.13.15, torch 2.11.0+cu130, Tesla T4 |
 | Real Windows integration | Passed | E01 4 updates; E02 2 updates; 512 validation bytes |
 | Real T4 float16 integration | Passed | Same short workflow; not pinned research profile |
 | Independent Colab data acquisition | Passed | Same raw, tokenizer and manifest hashes |
 | Package dependency check | Passed | Windows installed environment |
+| Clean Ubuntu checkout CI | 31 passed, 1 CUDA skip, 20.24 s | Dependency/package installation succeeded; run 38158274754 |
+| Colab evidence exported to PC | Passed | 276,461,015-byte archive, SHA256 and 3 snapshot manifests verified; runtime released |
 
 Real integration prepares/validates data, trains both tokenizers, evaluates,
 saves/reloads, generates, and compares uninterrupted E01 with 2 updates followed
@@ -41,7 +44,7 @@ Evidence snapshots are development smokes; they must not enter research tables.
 | 6 | Full resume incl. sampling/RNG/AMP | PASS in CPU and T4 float16 smokes; same code/hardware resume gate; forced actual overflow/preemption remains untested |
 | 7 | Unique IDs and metadata lineage, no silent overwrite | PASS: UUID runs, exclusive atomic artifacts, immutable metadata, journal/history hash, dataset/tokenizer/config/code/Git linkage |
 | 8 | Both-member result aggregation | PASS on controlled test outputs: schema/metadata/hash/completeness checks, competing-run rejection and duplicate-copy deduplication; genuine study inputs not yet available |
-| 9 | Persistent export/recovery | PASS local snapshot/restore and corruption rejection; Colab-to-PC export evidence tracked separately; Kaggle download and mounted Drive qualification PENDING |
+| 9 | Persistent export/recovery | PASS local snapshot/restore, corruption rejection, actual Colab-to-PC verified archive export and GPU checkpoint CPU reload; Kaggle download and mounted Drive qualification PENDING |
 | 10 | GPU execution across both Kaggle accounts | PENDING: actual T4 CUDA/AMP execution passed, both Kaggle accounts and pinned GPU dependencies unverified |
 | 11 | All-config benchmark procedure | IMPLEMENTED in docs/commands.md; all-14 GPU benchmark NOT EXECUTED |
 | 12 | Tables/figures from real recorded metrics | IMPLEMENTED and collector tested; mean/sample SD and completeness explicit; no invented study figures |
@@ -136,6 +139,14 @@ Restore to a new directory after expiration; never remove an active writer's loc
 - Both independent Kaggle accounts, actual Kaggle persistence, mounted Drive,
   full-validation runtime, all-14 GPU benchmarking and genuine multi-seed results
   remain pending. Existing fixture/table tests do not establish real study quality.
+- Connector nested-directory export hit a Windows long-path temporary-name
+  failure. An archive export recovered full GPU evidence, SHA256
+  `9966c4bbc31d3479797ebace698c98d949200460d553d20c69586ad5877d4b03`.
+  Three snapshot manifests verified locally, a GPU checkpoint loaded for CPU
+  generation, and genuine smoke loss/throughput figures regenerated. The runtime
+  was released only after verified archive publication. The failed partial
+  transfer directory is retained. Use short archive paths with this connector
+  on Windows; Kaggle persistence and mounted Drive remain unverified.
 
 ## Reproduction commands actually executed
 
@@ -145,6 +156,8 @@ From the Windows checkout (the prepared real-data directory is ignored):
 .venv\Scripts\python -m pytest -q
 .venv\Scripts\python -m nano_lm.verification --dataset data/processed/tiny-shakespeare-v3 --output outputs/logs/m4-final-cpu --device cpu
 .venv\Scripts\python -m pip check
+.venv\Scripts\python outputs/logs/verify_gpu_export.py
+.venv\Scripts\python -m nano_lm.verification --dataset data/processed/tiny-shakespeare-v3 --output outputs/logs/m4-windows-utf8-cpu --device cpu
 ```
 
 On the actual Colab T4, the final process ran `pytest.main(['-q'])`, prepared
@@ -153,6 +166,31 @@ then called `verify(root, data, output, device='cuda', precision='float16')` and
 `export_run` on run directories. Source/modules/configs and actual prepared data
 were transferred explicitly; this was not a clean committed research checkout.
 Process ID: `54f5b121e98b45cfa59ff63d8463128f`.
+
+Small evidence is committed under docs/evidence; full checkpoints, archive and
+smoke figures remain ignored under outputs/logs/m4-final-gpu. CPU/GPU source hash
+matches: `5f1a5e15f888f942a9d3a841c4d32771ad0a83d5d24cacf3de76c0f7a7e1f7fe`.
+Development CPU snapshots record dirty source state; Colab records no Git checkout.
+These are not clean research runs. The implementation commit is
+`ffccc1a39c3a55c509534e5d84264653977fa07b`; later documentation-only commits
+preserved that audited source until the Windows CLI output fix below. Draft PR #1 is unmerged:
+https://github.com/rayyan-merchant/Nano-Language-Model/pull/1.
+Clean-install CI passed:
+https://github.com/rayyan-merchant/Nano-Language-Model/actions/runs/38158274754.
+
+Post-export real temperature generation exposed a CP1252 console printing error
+for generated Unicode. The CLI now explicitly outputs UTF-8; a subprocess test
+forces PYTHONIOENCODING=cp1252 and checks Unicode output. Repeating temperature
+0.7, seed 42, eight new tokens from the actual downloaded E02 checkpoint passed.
+The initial failure is recorded, not suppressed. This output-only change is later
+than the T4 audit; GPU training/evaluation/AMP implementations are unchanged.
+The T4 suite above therefore refers to the audited source hash, not a claim that
+the additional CLI regression test executed on a GPU. Latest Windows evidence
+is in docs/evidence/final_windows_tests.json; final CI is checked separately.
+The real-data CPU integration was also rerun successfully after the CLI fix;
+docs/evidence/latest_cpu_verification.json records this source and exact resume.
+Byte-BPE smoke samples can contain replacement
+characters from untrained byte tokens; they are not research-quality samples.
 
 For clean-checkout installation, CLI exports/restores, the short benchmark and
 subsequent result collection, follow README.md and docs/commands.md. Neither

@@ -108,3 +108,19 @@ reject smoke outputs as study evidence and label incomplete seed grids.
 **NO-GO** remains until independent Kaggle/environment/storage verification and
 all-config GPU/full-validation overhead measurement pass. Review first, qualify
 both accounts, then request separate authorization for the 5,000-step pilot.
+
+Post-audit preservation: Colab outputs exported as a 276,461,015-byte archive
+after a connector Windows long-path failure; SHA256 and three snapshot manifests
+verified on this PC. GPU checkpoint loaded for CPU inference and smoke figures
+regenerated. Runtime released after verified publication. Clean Ubuntu GitHub
+CI for implementation ffccc1a passed: 31 passed, 1 CUDA skip in 20.24 seconds,
+including clean dependency/package installation (run 38158274754). Draft PR #1
+is open and unmerged. These additional checks do not remove the Kaggle gates.
+
+Final Windows output correction: real BPE temperature CLI generation exposed
+CP1252 printing failure. Explicit UTF-8 stdout and a forced-CP1252 Unicode
+subprocess regression resolve it. Stable full rerun: 32 passed, 1 CUDA skip in
+227.06 seconds. Real CPU integration rerun at outputs/logs/m4-windows-utf8-cpu
+passed exact model/optimizer/scheduler/scaler/RNG and history comparisons again.
+Latest evidence is committed separately; T4 results refer to the earlier source
+and do not claim execution of this extra output-only CLI regression on a GPU.

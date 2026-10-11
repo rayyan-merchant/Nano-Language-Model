@@ -48,3 +48,24 @@ def test_checkpoint_rejects_bad_tokenizer(tmp_path):
     torch.save(payload, bad)
     with pytest.raises(ValueError, match="checksum"):
         read_checkpoint(bad)
+
+
+def test_unicode_cli_under_legacy_console_encoding(tmp_path):
+    from nano_lm.checkpoint import save_checkpoint
+    from nano_lm.config import ModelConfig
+    from nano_lm.model import GPT
+    from nano_lm.tokenizer import CharacterTokenizer
+    tokenizer = CharacterTokenizer.fit("aλ")
+    model = GPT(ModelConfig(vocab_size=2, d_model=8, n_heads=2, n_layers=1,
+                            context_length=4))
+    optimizer = torch.optim.AdamW(model.parameters())
+    scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda _: 1.)
+    path = tmp_path / "unicode.pt"
+    save_checkpoint(path, model, tokenizer, optimizer, scheduler,
+                    torch.Generator().manual_seed(42), 0, {})
+    result = subprocess.run([sys.executable, "-m", "nano_lm.generate",
+                             "--checkpoint", str(path), "--prompt", "λ",
+                             "--max-new-tokens", "0"], capture_output=True,
+                            env={**os.environ, "PYTHONIOENCODING": "cp1252"})
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.decode("utf-8").startswith("λ")
