@@ -171,7 +171,10 @@ GPU memory excludes reserved/driver/device overhead.
     text+='\n| Update | E01 loss | E03 loss | Î” loss | E01 BPB | E03 BPB |\n|---|---:|---:|---:|---:|---:|\n'
     for r in compared['matched_validation']:
         text+=f"| {r['step']} | {r['E01_loss']:.8f} | {r['E03_loss']:.8f} | {r['delta_loss']:.8f} | {r['E01_bpb']:.8f} | {r['E03_bpb']:.8f} |\n"
-    text+='\nThe shared results collector validated both final checkpoint histories, metadata,\nconfiguration/data/tokenizer hashes and comparison policy. Only position differs\nin the models. One seed per configuration means sample SD is undefined, not zero.\nMachine-readable comparison/CSV files preserve all20 matched validation points\nand explicit incomplete-study seed counts. No E02 data are included.\n\n'
+    text+='\nThe shared results collector validated both final checkpoint histories, metadata,\nconfiguration/data/tokenizer hashes and comparison policy. Final private sampling\nRNG states and source-byte coverage arrays also matched exactly. Only position\ndiffers in the models. One seed per configuration means sample SD is undefined,\nnot zero. Machine-readable comparison/CSV files preserve all20 matched validation\npoints and explicit incomplete-study seed counts. No E02 data are included.\n\n'
+    text+='| E01 reference update | E01 recorded loss | First observed E03 update at/below it |\n|---|---:|---:|\n'
+    for r in compared['retrospective_threshold_observations']:text+=f"| {r['E01_reference_step']} | {r['E01_reference_loss']:.8f} | {r['E03_first_observed_at_or_below_step']} |\n"
+    text+='\nThese are retrospective thresholds on actual250-update observations, not exact\ncrossing times, interpolated measurements or a modified stopping rule. Both runs\ncompleted5000 updates irrespective of intermediate comparisons.\n\n'
     for name in ['loss','bpb','training','throughput']:text+=f'![E01 vs E03 {name}](comparison/comparison_{name}.png)\n\n'
     text+=f'''## Runtime, throughput and overhead
 

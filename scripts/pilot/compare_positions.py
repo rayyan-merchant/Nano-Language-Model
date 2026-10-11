@@ -9,6 +9,7 @@ import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 import numpy as np
+import torch
 from nano_lm.artifacts import atomic_json
 from nano_lm.checkpoint import read_checkpoint
 from nano_lm.results import collect
@@ -34,6 +35,8 @@ def compare(baseline, rope, root, out):
     freeze=lambda e:sorted(x for x in e['packages'] if not x.startswith('-e '))
     assert freeze(a['environment'])==freeze(b['environment'])
     assert all(a['environment'][k]==b['environment'][k] for k in ['code_hash','python','torch','cuda','gpu'])
+    assert torch.equal(payloads[0]['rng']['sampling'],payloads[1]['rng']['sampling'])
+    assert np.array_equal(payloads[0]['training_state']['seen_bytes'],payloads[1]['training_state']['seen_bytes'])
     histories=[p['training_state']['history'] for p in payloads]
     values=[[r for r in h if 'validation' in r] for h in histories]
     assert all([r['step'] for r in v]==list(range(250,5001,250)) for v in values)
@@ -45,6 +48,14 @@ def compare(baseline, rope, root, out):
             row.update({f'E01_{metric}':x,f'E03_{metric}':y,f'delta_{metric}':y-x,f'relative_{metric}_percent':(y-x)/x*100})
         rows.append(row)
     summaries=[json.loads((p/'analysis/summary.json').read_text()) for p in [baseline,rope]]
+    thresholds=[]
+    for reference_step in [1000,2000,3000,4000,5000]:
+        reference=next(r for r in values[0] if r['step']==reference_step)['validation']['loss']
+        crossing=next((r for r in values[1] if r['validation']['loss']<=reference),None)
+        thresholds.append({'E01_reference_step':reference_step,'E01_reference_loss':reference,
+                           'E03_first_observed_at_or_below_step':crossing['step'] if crossing else None,
+                           'E03_training_seconds_at_that_observation':crossing['train_seconds'] if crossing else None,
+                           'interpretation':'Retrospective recorded-point threshold; not interpolated crossing or early stopping'})
     comparisons=[]
     for name,key,sub in [('best_loss','best_validation','loss'),('final_loss','final_validation','loss'),('best_bpb','best_validation','bpb'),('final_bpb','final_validation','bpb'),('final_training_loss','final_training_loss',None),('training_seconds','training_seconds',None),('validation_seconds','validation_seconds',None),('peak_gpu_bytes','peak_gpu_bytes',None),('parameters','parameters',None)]:
         x,y=[s[key][sub] if sub else s[key] for s in summaries]
@@ -53,7 +64,9 @@ def compare(baseline, rope, root, out):
             'delta_convention':'E03 minus E01; negative loss/BPB delta favors E03',
             'comparability_passed':True,'verified_runs':verified,'aggregate':aggregate,
             'same_training_settings':True,'same_dataset_tokenizer_code_environment':True,
+            'same_final_sampling_RNG_and_byte_coverage':True,
             'only_model_factor_difference':'position','matched_validation':rows,'summary_comparison':comparisons,
+            'retrospective_threshold_observations':thresholds,
             'limitations':['One seed; SD undefined','Same GPU model, separate sessions; no controlled speed repetitions',
                            'Validation loss and BPB mathematically related for matched character bytes',
                            'No test likelihood or cross-tokenizer ranking','No position extrapolation tested']}
