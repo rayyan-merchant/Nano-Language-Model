@@ -2,6 +2,13 @@
 
 **Decision: NO-GO for the 5,000-step pilot and the 42-run study.**
 
+Independent Kaggle qualification on the `srijaali` account is currently blocked:
+three private notebook versions requested T4 or L4, but Kaggle attached no GPU.
+No Kaggle CUDA tests, benchmarks, or storage recovery were claimed. See
+`docs/evidence/kaggle_gpu_qualification_srijaali_2026-10-11.md` for the exact
+attempts, observed environment, and required follow-up. This does not change
+the locked research dependency profile or authorize a pilot.
+
 The integrated implementation passes real-data CPU and Colab T4 development
 smokes. Neither independent Kaggle environment has been qualified. Passing
 unit tests or a smoke on a different dependency profile is insufficient for GO.
