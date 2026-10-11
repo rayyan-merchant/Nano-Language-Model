@@ -42,9 +42,17 @@ samples, measured GPU throughput or deployment results.
 5. Approved baseline pilot, then approved main 42 runs, actual analysis/plots,
    validation-based extensions and five fixed-prompt trained samples.
 6. Own-checkpoint FastAPI inference, hosting, running Colab demo, final Medium
-   report including at least two failure modes and 5â€“10 minute recorded demo.
+   report including at least two failure modes and 5Ã¢â‚¬â€œ10 minute recorded demo.
 
 Other collaborator: fetch canonical main, create a feature branch, install pinned
 requirements, run pytest and the documented smoke/CLI; report hardware and errors.
 Do not start GPU runs or change locked configs. Coordinate ownership through PRs
 and committed registry after runtime profiling. No automatic cross-chat sync.
+
+## Unified pipeline M1
+
+Single-instance implementation, second member independently verifies/runs the same code.
+Pinned original Karpathy Tiny Shakespeare revision and expected raw SHA256; immutable
+UTF-8 partitions and manifest; training-only character and byte BPE artifacts; lossless
+byte coverage and explicit conditional BPB. Eight preprocessing/BPB tests passed.
+Hugging Face TLS failed locally; no certificate verification was disabled.

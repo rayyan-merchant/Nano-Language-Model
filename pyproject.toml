@@ -7,7 +7,7 @@ name = "nano-language-model"
 version = "0.1.0"
 description = "Explicit GPT architecture for a controlled Tiny Shakespeare study"
 requires-python = ">=3.10"
-dependencies = ["torch==2.5.1", "numpy==1.26.4"]
+dependencies = ["torch==2.5.1", "numpy==1.26.4", "tokenizers==0.21.0", "matplotlib==3.9.4"]
 
 [project.optional-dependencies]
 dev = ["pytest==8.3.4"]
