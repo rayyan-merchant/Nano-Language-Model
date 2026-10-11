@@ -1,0 +1,2 @@
+# Preserve downloaded qualification evidence bytes for SHA256 verification.
+docs/qualifications/evidence/* -text whitespace=cr-at-eol
