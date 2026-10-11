@@ -1,0 +1,114 @@
+[
+  {
+    "run_id": "E01_seed42_6882e29e09494e3bba085695238acf36",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.10207166599997208,
+    "export_seconds": 0.29419100899997375,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E01_seed42_6882e29e09494e3bba085695238acf36_step000010_f7e5b6ebe759",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E02_seed42_83da26059ff04f1aad8a3f2ec0ac4ce5",
+    "checkpoint_bytes": 27224458,
+    "serialization_fsync_seconds": 0.12303248100005248,
+    "export_seconds": 0.3655254430000241,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E02_seed42_83da26059ff04f1aad8a3f2ec0ac4ce5_step000010_7c217dca7bc0",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E03_seed42_2e03cf7e37b34f8cb52e3f6b5a9df8af",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.10170054700006403,
+    "export_seconds": 0.2955531949999113,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E03_seed42_2e03cf7e37b34f8cb52e3f6b5a9df8af_step000010_5e3dcf96ccd7",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E04_seed42_6a15f6a687f84e3e9dfdd2516a809a0e",
+    "checkpoint_bytes": 23064450,
+    "serialization_fsync_seconds": 0.10172710300003018,
+    "export_seconds": 0.29375404100005653,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E04_seed42_6a15f6a687f84e3e9dfdd2516a809a0e_step000010_d5d276467bf0",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E05_seed42_a0f3647276aa4b849a74287ee6e03809",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.10087272900000244,
+    "export_seconds": 0.29266376000009586,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E05_seed42_a0f3647276aa4b849a74287ee6e03809_step000010_16921f2d7123",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E06_seed42_25935f1cc59947e4b2464bb615f9689e",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.09877914300000157,
+    "export_seconds": 0.29108403800000815,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E06_seed42_25935f1cc59947e4b2464bb615f9689e_step000010_ba516e388cbb",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E07_seed42_758a00843ccc4ccb90f1275cb1c48c82",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.10113920600008441,
+    "export_seconds": 0.2963040810000166,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E07_seed42_758a00843ccc4ccb90f1275cb1c48c82_step000010_127673ee536d",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E08_seed42_79cdc440392e4994908ae80a505eac95",
+    "checkpoint_bytes": 33482890,
+    "serialization_fsync_seconds": 0.14681860200005303,
+    "export_seconds": 0.4205219400000715,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E08_seed42_79cdc440392e4994908ae80a505eac95_step000010_3eb577b2e93b",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E09_seed42_e6dc41508eb747619f6df54a1a2c1ef8",
+    "checkpoint_bytes": 44197514,
+    "serialization_fsync_seconds": 0.18614534099992852,
+    "export_seconds": 0.6145934050000506,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E09_seed42_e6dc41508eb747619f6df54a1a2c1ef8_step000010_0de019ad8b18",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E10_seed42_b9e43dca0e8f42d8bc3a0d4778d3faa4",
+    "checkpoint_bytes": 15672010,
+    "serialization_fsync_seconds": 0.0712669619999815,
+    "export_seconds": 0.20993101200008368,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E10_seed42_b9e43dca0e8f42d8bc3a0d4778d3faa4_step000010_2fed9f9542eb",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E11_seed42_d9370215b6e042f1ac667be838e95e96",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.09896016799996232,
+    "export_seconds": 0.2922688119999748,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E11_seed42_d9370215b6e042f1ac667be838e95e96_step000010_a2642fa5d4c3",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E12_seed42_6fc8efd8004f4869b74ecd4a28f71832",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.09797507700000097,
+    "export_seconds": 0.2904571630000419,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E12_seed42_6fc8efd8004f4869b74ecd4a28f71832_step000010_559c5edbba37",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E13_seed42_5e292b45ca3242e9b066882704ff112d",
+    "checkpoint_bytes": 13372618,
+    "serialization_fsync_seconds": 0.060835309999902165,
+    "export_seconds": 0.1885188520000156,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E13_seed42_5e292b45ca3242e9b066882704ff112d_step000010_6da57fce7937",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E14_seed42_4e599a1a3d764e52a97cbcaafe1b6549",
+    "checkpoint_bytes": 34818250,
+    "serialization_fsync_seconds": 0.1475889680000364,
+    "export_seconds": 0.4597115520000443,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E14_seed42_4e599a1a3d764e52a97cbcaafe1b6549_step000010_88e632903179",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  }
+]

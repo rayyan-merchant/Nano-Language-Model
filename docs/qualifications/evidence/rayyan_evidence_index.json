@@ -1,0 +1,70 @@
+{
+  "label": "qualification_not_research",
+  "source_commit": "b2ef1ca842ff6b0794b802f1baae58226732674f",
+  "files": {
+    "rayyan_all14_benchmark.json": {
+      "bytes": 5646,
+      "sha256": "5e06224d11d0095013d1fbda2bcfda9430f869f095d4e8946c00084635444e51"
+    },
+    "rayyan_bundle_manifest.json": {
+      "bytes": 205,
+      "sha256": "96c79bf3f438059be2cc42fe4d38a8a65efd1ca5e727023bf202eb8161d20d60"
+    },
+    "rayyan_cuda_verification.json": {
+      "bytes": 10495,
+      "sha256": "f19adf31cb6fc36b927584c7a7c19b75a3caea438552094ffaadf507cc42aebe"
+    },
+    "rayyan_dataset_comparison.json": {
+      "bytes": 2402,
+      "sha256": "37edb692391339d0f7e6946bf2342ce76fcf6796377b229a208ced9785a773b7"
+    },
+    "rayyan_download_timing.json": {
+      "bytes": 229,
+      "sha256": "60f882887ca15b368c81ebff8e942e1514b4710dd1a6cb0c731f3501a0dd319f"
+    },
+    "rayyan_environment.json": {
+      "bytes": 1759,
+      "sha256": "e473ee7b9c68163d052f4ab9c87b2c96d475ed35d28ab773570bf736e4be0580"
+    },
+    "rayyan_fresh_gpu_recovery.json": {
+      "bytes": 2489,
+      "sha256": "e1451faf900319f6de33a0985e128932f6e5bc20c9db219e54260a490e3d7e77"
+    },
+    "rayyan_full_validation.json": {
+      "bytes": 7694,
+      "sha256": "c072d0716614f705c55355784a020236abe8fbac8b0fc970346970fe6f12f77d"
+    },
+    "rayyan_gpu_inventory.json": {
+      "bytes": 329,
+      "sha256": "bc3787de770ed5a4f051ff99afae20b0c3bcbeb190069d0e343c2771c2318577"
+    },
+    "rayyan_io_overhead.json": {
+      "bytes": 6027,
+      "sha256": "3316267f4c56926cb310e6cfe52a04140eeb0a45f03a08fc4cdaeefc21914ce7"
+    },
+    "rayyan_local_recovery.json": {
+      "bytes": 417,
+      "sha256": "b1bba70229c611306ea0854f170af06e70a9ff40c54e6e409dcdb4f0a0e63c72"
+    },
+    "rayyan_native_probe.json": {
+      "bytes": 3026,
+      "sha256": "51a0a6ce0360899b7ed3746501ee7d2abb0fb286cf2c2f6741c98c40e7e87074"
+    },
+    "rayyan_requirements_freeze.txt": {
+      "bytes": 1071,
+      "sha256": "f7843be71b69cad97722db12658cfb90a40d1e7c172511677e4bdd2e33cf108a"
+    },
+    "rayyan_saved_kernel_metadata.json": {
+      "bytes": 659,
+      "sha256": "27473138b1d275219059073a410c9f3de677d82110ef05918dac683708e87de6"
+    },
+    "rayyan_tests.json": {
+      "bytes": 273,
+      "sha256": "161e0763af86aa011c97e0c2b8b7a6cacd4a3746997c3e0d2be4ae326cc8214d"
+    },
+    "rayyan_warmup_benchmark.json": {
+      "bytes": 2210,
+      "sha256": "362a151feae1ec03d980e39b39d9e88e332542a008ba5514436a7b1e8a599025"
+    }
+  }
+}

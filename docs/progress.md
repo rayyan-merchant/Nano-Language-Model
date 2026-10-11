@@ -42,7 +42,7 @@ samples, measured GPU throughput or deployment results.
 5. Approved baseline pilot, then approved main 42 runs, actual analysis/plots,
    validation-based extensions and five fixed-prompt trained samples.
 6. Own-checkpoint FastAPI inference, hosting, running Colab demo, final Medium
-   report including at least two failure modes and 5ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“10 minute recorded demo.
+   report including at least two failure modes and 5ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ10 minute recorded demo.
 
 Other collaborator: fetch canonical main, create a feature branch, install pinned
 requirements, run pytest and the documented smoke/CLI; report hardware and errors.
@@ -124,3 +124,24 @@ subprocess regression resolve it. Stable full rerun: 32 passed, 1 CUDA skip in
 passed exact model/optimizer/scheduler/scaler/RNG and history comparisons again.
 Latest evidence is committed separately; T4 results refer to the earlier source
 and do not claim execution of this extra output-only CLI regression on a GPU.
+
+## Rayyan independent Kaggle GPU qualification (2026-10-11)
+
+Merged main b2ef1ca fetched and clean; separate qualification branch preserves
+canonical model/configurations. Legitimate Kaggle rayyannmerchant account: native
+Python3.13.15 / torch2.11.0+cu128 probed; isolated approved Python3.11.14 /
+torch2.5.1+cu124 / CUDA12.4 passed on Tesla T4. Full suite 33 passed in32.60s,
+all reference dataset/tokenizer hashes matched, real CUDA character/BPE and
+float16 exact-resume workflow passed. All14 ten-update benchmarks and baseline/
+deepest/longest/widest/BPE fifty-update warmup-aware benchmarks completed.
+Full validation and checkpoint/export timings recorded separately.
+
+Actual private saved notebook output version downloaded with SHA256/CRC/snapshot
+verification and CPU generation. Fresh Kaggle runtime mounted the saved version,
+loaded/generated and continued step4 to6 with exact model/optimizer/scheduler/
+scaler/RNG/history equivalence to uninterrupted training. Twenty-MB retrieval
+measured82.905s, distinct from local export and unmeasured publication latency.
+Both sessions completed. Detailed report and small evidence: docs/qualifications.
+No research run started; second independent team member remains pending, so
+study NO-GO persists. Earlier unmerged-PR and untested-Kaggle entries above are
+historical; PR1 is merged, this account's Kaggle qualification now passed.

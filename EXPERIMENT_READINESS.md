@@ -3,10 +3,11 @@
 **Decision: NO-GO for the 5,000-step pilot and the 42-run study.**
 
 The integrated implementation passes real-data CPU and Colab T4 development
-smokes. Neither independent Kaggle environment has been qualified. Passing
+smokes. Rayyan's Kaggle environment is now qualified at merged main b2ef1ca; the second
+member's independent account remains unqualified. Passing
 unit tests or a smoke on a different dependency profile is insufficient for GO.
 No pilot, 5,000-step training, 10,000-step training or full study was launched.
-The locked baseline, E01–E14 definitions and seeds 42/123/456 are preserved.
+The locked baseline, E01â€“E14 definitions and seeds 42/123/456 are preserved.
 
 ## Actual execution evidence (2026-10-11)
 
@@ -44,9 +45,9 @@ Evidence snapshots are development smokes; they must not enter research tables.
 | 6 | Full resume incl. sampling/RNG/AMP | PASS in CPU and T4 float16 smokes; same code/hardware resume gate; forced actual overflow/preemption remains untested |
 | 7 | Unique IDs and metadata lineage, no silent overwrite | PASS: UUID runs, exclusive atomic artifacts, immutable metadata, journal/history hash, dataset/tokenizer/config/code/Git linkage |
 | 8 | Both-member result aggregation | PASS on controlled test outputs: schema/metadata/hash/completeness checks, competing-run rejection and duplicate-copy deduplication; genuine study inputs not yet available |
-| 9 | Persistent export/recovery | PASS local snapshot/restore, corruption rejection, actual Colab-to-PC verified archive export and GPU checkpoint CPU reload; Kaggle download and mounted Drive qualification PENDING |
-| 10 | GPU execution across both Kaggle accounts | PENDING: actual T4 CUDA/AMP execution passed, both Kaggle accounts and pinned GPU dependencies unverified |
-| 11 | All-config benchmark procedure | IMPLEMENTED in docs/commands.md; all-14 GPU benchmark NOT EXECUTED |
+| 9 | Persistent export/recovery | PASS local/Colab plus genuine Rayyan Kaggle saved output, checksum download, Windows load and fresh Kaggle exact AMP resume; mounted Drive untested |
+| 10 | GPU execution across both Kaggle accounts | PARTIAL: Rayyan T4, isolated approved Python 3.11.14 / torch 2.5.1+cu124 passed; second member account PENDING |
+| 11 | All-config benchmark procedure | PASS on Rayyan T4: actual all-14 ten-step and five fifty-step warmup-aware benchmarks, separate full-validation/IO timings; second account PENDING |
 | 12 | Tables/figures from real recorded metrics | IMPLEMENTED and collector tested; mean/sample SD and completeness explicit; no invented study figures |
 | 13 | Fixed generation settings | PASS: configs/generation_protocol.json established before research execution |
 | 14 | Extend 5k to 10k without schedule reset | PASS structural/short extension tests: constant LambdaLR independent of stop target and full optimizer restore; no actual 5k/10k run |
@@ -173,7 +174,7 @@ matches: `5f1a5e15f888f942a9d3a841c4d32771ad0a83d5d24cacf3de76c0f7a7e1f7fe`.
 Development CPU snapshots record dirty source state; Colab records no Git checkout.
 These are not clean research runs. The implementation commit is
 `ffccc1a39c3a55c509534e5d84264653977fa07b`; later documentation-only commits
-preserved that audited source until the Windows CLI output fix below. Draft PR #1 is unmerged:
+preserved that audited source until the Windows CLI output fix below. PR #1 was subsequently merged as b2ef1ca; the earlier evidence below predates that merge:
 https://github.com/rayyan-merchant/Nano-Language-Model/pull/1.
 Clean-install CI passed:
 https://github.com/rayyan-merchant/Nano-Language-Model/actions/runs/38158274754.
@@ -205,3 +206,29 @@ benchmark all 14 models including full-validation/storage overhead. Record exact
 commits, hashes, hardware and dependencies. Resolve discrepancies before changing
 NO-GO to GO. Then seek separate approval for the 5,000-step E01 pilot; allocation
 and the 42-run study follow the measured pilot and another execution approval.
+
+## Independent Rayyan Kaggle qualification (2026-10-11)
+
+[Complete qualification report](docs/qualifications/KAGGLE_RAYYAN_20261011.md)
+records genuine private saved notebook versions and committed machine-readable
+evidence. Clean merged main `b2ef1ca842ff6b0794b802f1baae58226732674f` ran
+33 tests successfully (32.60 s; no skips), real character/BPE CUDA smoke, exact
+AMP resume, all audited data/tokenizer hash comparisons, fourteen ten-update
+float32 GPU benchmarks and five fifty-update warmup-aware benchmarks. Full
+sliding validation and local checkpoint/export overhead were measured for all14.
+Saved Kaggle output was checksum-downloaded, loaded on Windows CPU and restored
+in a separate Kaggle runtime. Float16 4-to-6 continuation exactly matched an
+uninterrupted run's model/optimizer/scheduler/scaler/RNG and loss/validation histories.
+
+Two Tesla T4s were allocated; only GPU0 trained. Untouched native Python3.13 /
+torch2.11 was incompatible with policy. Isolated Python3.11.14 / torch2.5.1+cu124 /
+CUDA12.4 / NumPy1.26.4 passed without replacing the base CUDA environment. The
+resolved freeze is recorded. No canonical architecture/config/seed/precision
+policy changed, no pilot or study launched. Both sessions were Rayyan's account;
+they do not qualify the second member.
+
+Historical pending Kaggle persistence, all-14 timing and pinned GPU-profile gates
+above are now passed for Rayyan only. Second member's hardware/profile, independent
+full workflow and discrepancy review remain pending. Forced expiry/AMP overflow
+and mounted Drive were not tested. **Global NO-GO remains.** Next: repeat the exact
+source/profile on the second account, reconcile evidence, then seek pilot approval.
