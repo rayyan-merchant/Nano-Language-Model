@@ -145,3 +145,38 @@ Both sessions completed. Detailed report and small evidence: docs/qualifications
 No research run started; second independent team member remains pending, so
 study NO-GO persists. Earlier unmerged-PR and untested-Kaggle entries above are
 historical; PR1 is merged, this account's Kaggle qualification now passed.
+
+## Authorized E01 seed42 research pilot — 2026-10-12
+
+Explicit single-account authorization superseded the earlier pilot hold only for
+E01 seed42,5000 updates. Clean trained source444bca4c4ac19f97f46fae210a9fd361f8561537
+on legitimate rayyannmerchant/Tesla T4, isolated Python3.11.14/torch2.5.1+cu124,
+float32, microbatch4/accumulation8/4096 predicted targets per update. Canonical
+model and core hash unchanged; parameter count1804800. All dataset/tokenizer and
+partition references matched. Full sliding validation every250, no test likelihood.
+
+Completed5000 uninterrupted optimizer updates,20480000 target/source-byte
+exposures,20 full validations,20 checkpoint states and21 immutable snapshots.
+Best4750: loss1.53466801/BPB2.21405793; final5000:
+loss1.53601210/BPB2.21599704/perplexity4.64602540. Training916.708s,
+validation420.908s; checkpoint/export/journal/pipeline costs reported separately.
+Late improvements diminished but remained measurable. Keep5k screening and
+prioritize separately approved10k extensions of selected configurations;
+one seed cannot establish all14 convergence or conclusive overfitting.
+
+Original notebook37785014 failed only in post-training Matplotlib import.
+Original evidence preserved, no retraining. Two failed postprocessing attempts
+documented. Recovery-only committed source42288f82 published COMPLETE notebook
+51b80b85 version1; compatible fresh CUDA state roundtrip passed with zero extra
+updates. Independently downloaded402620581-byte archive SHA256
+ba88b3291bf92e962735a3d3b43c50f461b7c989b171fa74d25746ba57e6ac79:
+58 files, ZIP CRC/path/hash checks and best/final CPU generation passed. All100
+genuine fixed-protocol GPU samples and9 figures preserved. Generation remains
+repetitive/grammatically weak; no favorable-only sample selection.
+
+Windows full suite34 passed,1 CUDA skip in155.11s; original orchestration and
+recovery source CPU CI passed. Detailed report and small byte-preserved receipts:
+report/pilots/E01_seed42/E01_seed42_analysis.md. Large artifacts remain in private
+saved Kaggle outputs/datasets and independently verified local storage, not Git.
+No other seeds/configurations or10k continuation executed. Shared study NO-GO
+remains pending the second independent environment and further execution approval.

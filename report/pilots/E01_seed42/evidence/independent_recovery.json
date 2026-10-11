@@ -1,0 +1,33 @@
+{
+  "status": "published_archive_verified_and_best_final_CPU_inference_passed",
+  "run_id": "E01_seed42_520167c37bfa4a11a25d565111d52de5",
+  "archive_sha256": "ba88b3291bf92e962735a3d3b43c50f461b7c989b171fa74d25746ba57e6ac79",
+  "archive_bytes": 402620581,
+  "verified_file_count": 58,
+  "optimizer_updates": 5000,
+  "validation_count": 20,
+  "seconds": 21.35976790008135,
+  "samples": [
+    {
+      "policy": "best",
+      "checkpoint": "runs/E01_seed42_520167c37bfa4a11a25d565111d52de5/checkpoints/step_004750.pt",
+      "sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nWhat shall I will not the world of the seal of the son\nThat the "
+    },
+    {
+      "policy": "final",
+      "checkpoint": "runs/E01_seed42_520167c37bfa4a11a25d565111d52de5/checkpoints/step_005000.pt",
+      "sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nThe shall be so so so so so so so so so so so.\n\nKING RICHARD III"
+    }
+  ],
+  "training_resume": "CPU inference only; no CUDA RNG restore or additional updates attempted"
+}

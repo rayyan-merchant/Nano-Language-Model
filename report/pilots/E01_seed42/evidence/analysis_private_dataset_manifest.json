@@ -1,0 +1,33 @@
+{
+  "files": {
+    "generation.json": "fa98275503b14b0f3a49306ae9ef30cf4f40ea6e548a94fc065c509c479d34c9",
+    "generation.md": "b0439924748b22dc24bfe6109b4e85709a2ad750bed1b6c6f3d775a3eadcef43",
+    "measured_history.json": "dd9e58bb446f8467abcc67ff2b31c644dd73ca82504d356118e1b56f785ca907",
+    "summary.json": "b108bc6e59acb65a13e8f95cdd8de11d5e50053174204aa6a13985d3c68cbbea",
+    "validation.csv": "c492c51f9298a44ba4e079a579edd2f673bf16e9e1939015f1383cc031a8338a",
+    "figures/combined_loss.pdf": "da9238fbb9b9d2af26d076fbe40953853f6835134e81f3d6bb33dc027d561f75",
+    "figures/combined_loss.png": "5f3bb6aedf46974e8848a8e563f962a8eead9368bc60ed8fcb246d302c8bf5ce",
+    "figures/generalization_gap.pdf": "1485cc6ad4fb937f6d07701efe8a404e719e5d3ce8ce196a42778334bf671447",
+    "figures/generalization_gap.png": "224308e9f6c4cb0882b0c120c1145c4ba14d0563ca1521fca57fb88bdfa00978",
+    "figures/gradient_norm.pdf": "c9d3a580960502da24b166cfe05aa2a2ee37104010748d2444922690c4814389",
+    "figures/gradient_norm.png": "75ef9e063bf6251c5c51bd11927ac37b6a36746b09830d8a06b3fcbac807aecc",
+    "figures/learning_rate.pdf": "a662b179dc9c50de29d12cb4fe8541b9e725afc1bc74b00329e9121b0b5b4175",
+    "figures/learning_rate.png": "3bf304adc675cef847583d44774c79f854258359cb1f4e46cf2403e8a55aa9f4",
+    "figures/throughput.pdf": "0a0ecf2a015939fb84263cd969414163c250c5c65e8da3907096ea595ffc42eb",
+    "figures/throughput.png": "e1f38b8fdabbf19860ae06117674a05be66bfe69049cc0fb363bf869b86ef197",
+    "figures/training_loss.pdf": "129c403c94d1a273d2ddfc7966393bd0188fe5ae9f7c748dd20fe341df804d24",
+    "figures/training_loss.png": "edcc1582b07788b31e0af7e90e8ef42e57cc8f62c3cea1b6a05db1633bff0dc1",
+    "figures/training_time.pdf": "60d0f8e8cb951d60164c4cbc0888cb2bc2cee4d1a823df6314e6335b6815d13b",
+    "figures/training_time.png": "d30cb50a723b38b0a61990396ae9bab06624b7e31948aad7f12039fc643517be",
+    "figures/validation_bpb.pdf": "535b4bd0e2ba935ad89a7678cddabe8fad41a5f5574293001bd1d5bddca962af",
+    "figures/validation_bpb.png": "5ea6fc0ff92d8303e85ae86bca4a68bb1bcd0e4fc1a24455df561632266103da",
+    "figures/validation_loss.pdf": "ecb1d6b4989f5323000ee0a713476fec8ee5239c077f4ffa6f5c870047644af8",
+    "figures/validation_loss.png": "bc6f98dfcd0d3799a93915c1f6763926ed0626d4d8fa67e913a545171247adfc"
+  },
+  "archive_sha256": "f9345d0e93aad47ce0179fe9cd49947d8765d128e6af99a9efb6adf773e50101",
+  "archive_bytes": 1300556,
+  "source_notebook": "rayyannmerchant/nano-e01-recovery-20261012-5a425214",
+  "source_version": 1,
+  "source_commit": "36b2ea23889e341f5addf75a4998d30197371bcd",
+  "samples": 100
+}
