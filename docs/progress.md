@@ -42,7 +42,7 @@ samples, measured GPU throughput or deployment results.
 5. Approved baseline pilot, then approved main 42 runs, actual analysis/plots,
    validation-based extensions and five fixed-prompt trained samples.
 6. Own-checkpoint FastAPI inference, hosting, running Colab demo, final Medium
-   report including at least two failure modes and 5Ã¢â‚¬â€œ10 minute recorded demo.
+   report including at least two failure modes and 5ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“10 minute recorded demo.
 
 Other collaborator: fetch canonical main, create a feature branch, install pinned
 requirements, run pytest and the documented smoke/CLI; report hardware and errors.
@@ -56,3 +56,16 @@ Pinned original Karpathy Tiny Shakespeare revision and expected raw SHA256; immu
 UTF-8 partitions and manifest; training-only character and byte BPE artifacts; lossless
 byte coverage and explicit conditional BPB. Eight preprocessing/BPB tests passed.
 Hugging Face TLS failed locally; no certificate verification was disabled.
+
+## Unified pipeline M2
+
+Training/validation engine, exact token-budget accumulation, deterministic RNG,
+conditional metrics, source-byte exposure and unique byte coverage, checkpoint
+history and append-only attempted-event journal, best/final artifacts and resume
+implemented. Tests: 12 passed, 1 CUDA-only test skipped on local CPU. Initial
+failures: Windows default encoding in a test (fixed explicit UTF-8), invalid
+Adam parameter-equality criterion for near-zero gradient reduction noise
+(replaced with direct first-moment gradient and output equivalence assertions).
+Real corpus revealed repeated Rust vocabulary-size queries; cached vocabulary
+and byte lengths fix the O(tokens*vocab) path. Full acquisition now validates:
+1,115,394 bytes; 1,003,854/55,770/55,770 partition bytes; vocabularies 65/1024.

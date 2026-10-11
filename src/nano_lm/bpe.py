@@ -8,6 +8,8 @@ from .tokenizer import CharacterTokenizer
 class BPETokenizer:
     def __init__(self, backend):
         self.backend = backend
+        self._vocab_size = backend.get_vocab_size()
+        self._byte_lengths = [len(backend.id_to_token(i)) for i in range(self._vocab_size)]
 
     @classmethod
     def fit(cls, training_text, vocab_size=1024):
@@ -23,7 +25,7 @@ class BPETokenizer:
 
     @property
     def vocab_size(self):
-        return self.backend.get_vocab_size()
+        return self._vocab_size
 
     def encode(self, text):
         return self.backend.encode(text, add_special_tokens=False).ids
@@ -36,7 +38,7 @@ class BPETokenizer:
     def byte_lengths(self, ids):
         # ByteLevel maps each input byte to one alphabet character, including
         # bytes inside multibyte UTF-8 characters. Do not use decoded token length.
-        return [len(self.backend.id_to_token(i)) for i in ids]
+        return [self._byte_lengths[i] for i in ids]
 
     def artifact(self):
         return {"kind": "bpe", "backend": json.loads(self.backend.to_str()),
