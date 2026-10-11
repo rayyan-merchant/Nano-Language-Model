@@ -1,0 +1,254 @@
+[
+  {
+    "run_id": "E01_seed42_3ed47bfe43cf4346b7d05d6cb52d7900",
+    "experiment_id": "E01",
+    "seconds": 18.12286905399992,
+    "metrics": {
+      "loss": 3.161119289475842,
+      "perplexity": 23.59699301926761,
+      "bpb": 4.560531122585242,
+      "nll_sum": 175486.3762359619,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E02_seed42_7c884a18ad994779a50969c5ba22032d",
+    "experiment_id": "E02",
+    "seconds": 8.379558151999959,
+    "metrics": {
+      "loss": 6.142837754756953,
+      "perplexity": 465.37231133352185,
+      "bpb": 3.892975156229941,
+      "nll_sum": 149799.24148750305,
+      "scored_tokens": 24386,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E03_seed42_b73713b3ba344c8c937fd748f90174e4",
+    "experiment_id": "E03",
+    "seconds": 20.933284353999966,
+    "metrics": {
+      "loss": 3.035307791346702,
+      "perplexity": 20.807381245872843,
+      "bpb": 4.379023498147519,
+      "nll_sum": 168502.0767288208,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E04_seed42_d72431dd83914a95a347d7b66d966cca",
+    "experiment_id": "E04",
+    "seconds": 18.94690579199994,
+    "metrics": {
+      "loss": 3.2752071110836414,
+      "perplexity": 26.448702732827293,
+      "bpb": 4.725125057044638,
+      "nll_sum": 181819.84756469727,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E05_seed42_a287bef01c3e486695db3f6c46bef702",
+    "experiment_id": "E05",
+    "seconds": 18.973067891000028,
+    "metrics": {
+      "loss": 3.1971393667251924,
+      "perplexity": 24.462451906845608,
+      "bpb": 4.612497109405316,
+      "nll_sum": 177485.99480438232,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E06_seed42_2ff3f0f546f249449c2647a76dcd6ac2",
+    "experiment_id": "E06",
+    "seconds": 17.52008944499994,
+    "metrics": {
+      "loss": 3.160881870782534,
+      "perplexity": 23.5913913170197,
+      "bpb": 4.560188599813791,
+      "nll_sum": 175473.19617462158,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E07_seed42_f77c5d2ba9574cb9b91c8cd133cafd0d",
+    "experiment_id": "E07",
+    "seconds": 20.20617426199999,
+    "metrics": {
+      "loss": 3.1605263252476816,
+      "perplexity": 23.583004994124153,
+      "bpb": 4.55967565603385,
+      "nll_sum": 175453.4584197998,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E08_seed42_08191f3e68eb41bc9f38f08dc60c9e52",
+    "experiment_id": "E08",
+    "seconds": 27.491786316999992,
+    "metrics": {
+      "loss": 3.0601302695711556,
+      "perplexity": 21.330335674726097,
+      "bpb": 4.414834764384514,
+      "nll_sum": 169880.07178497314,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E09_seed42_b7bfc347f8e3474ab0d3b8b22a3ef10e",
+    "experiment_id": "E09",
+    "seconds": 36.29889111800003,
+    "metrics": {
+      "loss": 2.9837276798059595,
+      "perplexity": 19.7613434783974,
+      "bpb": 4.304609127019191,
+      "nll_sum": 165638.65841674805,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E10_seed42_036584eaff5f4a01a69b57ab993951ce",
+    "experiment_id": "E10",
+    "seconds": 15.822055584000054,
+    "metrics": {
+      "loss": 3.265473157677436,
+      "perplexity": 26.192501242374558,
+      "bpb": 4.711081930737261,
+      "nll_sum": 181279.47687530518,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E11_seed42_e1183747ca0d460fa6058ca85c089150",
+    "experiment_id": "E11",
+    "seconds": 13.208088965000002,
+    "metrics": {
+      "loss": 3.146423223851226,
+      "perplexity": 23.252745796890142,
+      "bpb": 4.539329181588029,
+      "nll_sum": 174670.53884887695,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 64
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E12_seed42_7a328b43cdda449fb8f794a26d5ea484",
+    "experiment_id": "E12",
+    "seconds": 45.34795686699999,
+    "metrics": {
+      "loss": 3.173543187165572,
+      "perplexity": 23.891988347767224,
+      "bpb": 4.578455018170726,
+      "nll_sum": 176176.07649230957,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 256
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E13_seed42_6426dc79d7f24db0aa325194ff250d02",
+    "experiment_id": "E13",
+    "seconds": 15.02517672700003,
+    "metrics": {
+      "loss": 3.3643126944177633,
+      "perplexity": 28.913617977209892,
+      "bpb": 4.853677240236294,
+      "nll_sum": 186766.45491790771,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  },
+  {
+    "run_id": "E14_seed42_c1d571ffc1fe4ef98fd59154ee4502d9",
+    "experiment_id": "E14",
+    "seconds": 24.102486375000012,
+    "metrics": {
+      "loss": 3.0347934939630496,
+      "perplexity": 20.796682815460635,
+      "bpb": 4.378281523862582,
+      "nll_sum": 168473.52602386475,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "label": "10-step qualification validation, not research result"
+  }
+]

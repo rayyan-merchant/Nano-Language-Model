@@ -1,0 +1,62 @@
+[
+  {
+    "experiment_id": "E01",
+    "run_id": "E01_seed42_d5168266953f4def80477d8bc21c3ae0",
+    "warmup_steps_excluded": 10,
+    "measured_steps": 40,
+    "train_seconds": 7.430260265999948,
+    "steps_per_second": 5.383391505548681,
+    "tokens_per_second": 22050.371606727396,
+    "peak_gpu_bytes": 139291648,
+    "projected_5000_train_seconds": 928.7825332499934,
+    "projection_limit": "training only; not measured full-run time"
+  },
+  {
+    "experiment_id": "E09",
+    "run_id": "E09_seed42_1c1549b8f4754439abb19bf424b3c291",
+    "warmup_steps_excluded": 10,
+    "measured_steps": 40,
+    "train_seconds": 14.08993815399998,
+    "steps_per_second": 2.838905292756337,
+    "tokens_per_second": 11628.156079129956,
+    "peak_gpu_bytes": 208006144,
+    "projected_5000_train_seconds": 1761.2422692499977,
+    "projection_limit": "training only; not measured full-run time"
+  },
+  {
+    "experiment_id": "E12",
+    "run_id": "E12_seed42_9c321ff42c7241eba05519966ca23076",
+    "warmup_steps_excluded": 10,
+    "measured_steps": 40,
+    "train_seconds": 3.8142911699993647,
+    "steps_per_second": 10.486876386001402,
+    "tokens_per_second": 42954.24567706174,
+    "peak_gpu_bytes": 212504064,
+    "projected_5000_train_seconds": 476.78639624992064,
+    "projection_limit": "training only; not measured full-run time"
+  },
+  {
+    "experiment_id": "E14",
+    "run_id": "E14_seed42_2f60a2e27fe34fe0af926ff6356b72d1",
+    "warmup_steps_excluded": 10,
+    "measured_steps": 40,
+    "train_seconds": 7.426042687999939,
+    "steps_per_second": 5.386448971622223,
+    "tokens_per_second": 22062.894987764626,
+    "peak_gpu_bytes": 163552256,
+    "projected_5000_train_seconds": 928.2553359999923,
+    "projection_limit": "training only; not measured full-run time"
+  },
+  {
+    "experiment_id": "E02",
+    "run_id": "E02_seed42_cdc764e171e743619cfa23c717384d8b",
+    "warmup_steps_excluded": 10,
+    "measured_steps": 40,
+    "train_seconds": 7.570222256999955,
+    "steps_per_second": 5.283860716640547,
+    "tokens_per_second": 21642.69349535968,
+    "peak_gpu_bytes": 149411840,
+    "projected_5000_train_seconds": 946.2777821249944,
+    "projection_limit": "training only; not measured full-run time"
+  }
+]

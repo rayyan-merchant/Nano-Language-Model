@@ -1,0 +1,9 @@
+{
+  "archive_sha256": "47a93fd1ee804506ced5393b673bc394cc7e17a1cc274a979323f5a5a108f81c",
+  "snapshot_count": 1,
+  "checkpoint_sha256": "915251ce689f4d8cf3cb1ff9cf01b33da090138f0fa085dca2cf3ec55effb9f1",
+  "cpu_load_and_generation": true,
+  "text": "To be        ",
+  "label": "qualification_not_research",
+  "local_restore": "/private/tmp/nlm-kaggle-qualification-new-account-7143b258/local-restore/local_restore/E01_seed42_dd2aec7f2ac34409b9c50b57bc4f3350"
+}

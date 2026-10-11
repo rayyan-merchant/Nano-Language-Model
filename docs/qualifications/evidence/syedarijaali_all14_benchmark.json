@@ -1,0 +1,128 @@
+[
+  {
+    "experiment_id": "E01",
+    "run_dir": "/kaggle/working/qualification/all14/E01_seed42_3ed47bfe43cf4346b7d05d6cb52d7900",
+    "steps_per_second": 4.575501468440787,
+    "tokens_per_second": 18741.254014733462,
+    "peak_gpu_bytes": 139815936,
+    "projected_5000_train_seconds": 1092.7763950000156,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E02",
+    "run_dir": "/kaggle/working/qualification/all14/E02_seed42_7c884a18ad994779a50969c5ba22032d",
+    "steps_per_second": 5.161996923361963,
+    "tokens_per_second": 21143.5393980906,
+    "peak_gpu_bytes": 149936128,
+    "projected_5000_train_seconds": 968.6173925000219,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E03",
+    "run_dir": "/kaggle/working/qualification/all14/E03_seed42_b73713b3ba344c8c937fd748f90174e4",
+    "steps_per_second": 4.416261904228732,
+    "tokens_per_second": 18089.008759720888,
+    "peak_gpu_bytes": 139947008,
+    "projected_5000_train_seconds": 1132.179229500025,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E04",
+    "run_dir": "/kaggle/working/qualification/all14/E04_seed42_d72431dd83914a95a347d7b66d966cca",
+    "steps_per_second": 5.250880005218911,
+    "tokens_per_second": 21507.60450137666,
+    "peak_gpu_bytes": 140210176,
+    "projected_5000_train_seconds": 952.2213410000688,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E05",
+    "run_dir": "/kaggle/working/qualification/all14/E05_seed42_a287bef01c3e486695db3f6c46bef702",
+    "steps_per_second": 5.360082391413138,
+    "tokens_per_second": 21954.897475228212,
+    "peak_gpu_bytes": 134113280,
+    "projected_5000_train_seconds": 932.82148199998,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E06",
+    "run_dir": "/kaggle/working/qualification/all14/E06_seed42_2ff3f0f546f249449c2647a76dcd6ac2",
+    "steps_per_second": 5.36430035210117,
+    "tokens_per_second": 21972.17424220639,
+    "peak_gpu_bytes": 134573056,
+    "projected_5000_train_seconds": 932.0880024999951,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E07",
+    "run_dir": "/kaggle/working/qualification/all14/E07_seed42_f77c5d2ba9574cb9b91c8cd133cafd0d",
+    "steps_per_second": 5.401092489996375,
+    "tokens_per_second": 22122.874839025153,
+    "peak_gpu_bytes": 147155968,
+    "projected_5000_train_seconds": 925.7386369999666,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E08",
+    "run_dir": "/kaggle/working/qualification/all14/E08_seed42_08191f3e68eb41bc9f38f08dc60c9e52",
+    "steps_per_second": 3.725230321016453,
+    "tokens_per_second": 15258.54339488339,
+    "peak_gpu_bytes": 174173184,
+    "projected_5000_train_seconds": 1342.198889499997,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E09",
+    "run_dir": "/kaggle/working/qualification/all14/E09_seed42_b7bfc347f8e3474ab0d3b8b22a3ef10e",
+    "steps_per_second": 2.7983555686250208,
+    "tokens_per_second": 11462.064409088085,
+    "peak_gpu_bytes": 209054720,
+    "projected_5000_train_seconds": 1786.7636464999916,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E10",
+    "run_dir": "/kaggle/working/qualification/all14/E10_seed42_036584eaff5f4a01a69b57ab993951ce",
+    "steps_per_second": 5.392949269665711,
+    "tokens_per_second": 22089.52020855075,
+    "peak_gpu_bytes": 122457088,
+    "projected_5000_train_seconds": 927.1364795000068,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E11",
+    "run_dir": "/kaggle/working/qualification/all14/E11_seed42_e1183747ca0d460fa6058ca85c089150",
+    "steps_per_second": 2.707826022240902,
+    "tokens_per_second": 11091.255387098734,
+    "peak_gpu_bytes": 114400256,
+    "projected_5000_train_seconds": 1846.4997229999938,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E12",
+    "run_dir": "/kaggle/working/qualification/all14/E12_seed42_7a328b43cdda449fb8f794a26d5ea484",
+    "steps_per_second": 10.533294174477513,
+    "tokens_per_second": 43144.37293865989,
+    "peak_gpu_bytes": 214076928,
+    "projected_5000_train_seconds": 474.685309000023,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E13",
+    "run_dir": "/kaggle/working/qualification/all14/E13_seed42_6426dc79d7f24db0aa325194ff250d02",
+    "steps_per_second": 5.25835190777368,
+    "tokens_per_second": 21538.20941424099,
+    "peak_gpu_bytes": 121142272,
+    "projected_5000_train_seconds": 950.8682734999638,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  },
+  {
+    "experiment_id": "E14",
+    "run_dir": "/kaggle/working/qualification/all14/E14_seed42_c1d571ffc1fe4ef98fd59154ee4502d9",
+    "steps_per_second": 5.368268170174488,
+    "tokens_per_second": 21988.426425034704,
+    "peak_gpu_bytes": 162896896,
+    "projected_5000_train_seconds": 931.3990734999891,
+    "projection_limit": "training only; excludes validation/checkpoint IO; warmup included"
+  }
+]

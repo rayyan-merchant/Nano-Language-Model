@@ -3,9 +3,12 @@
 **Decision: NO-GO for the 5,000-step pilot and the 42-run study.**
 
 The integrated implementation passes real-data CPU and Colab T4 development
-smokes. Rayyan's Kaggle environment is now qualified at merged main b2ef1ca; the second
-member's independent account remains unqualified. Passing
-unit tests or a smoke on a different dependency profile is insufficient for GO.
+smokes. Rayyan's Kaggle environment is qualified at merged main b2ef1ca. The
+second member's new `syedarijaali` Kaggle account passed the independent GPU
+compute checks on main 36ffee3, but fresh saved-output recovery remains
+inconclusive because Kaggle has not finalized that run. See the 2026-10-12
+qualification report below. Passing unit tests or a smoke on a different
+dependency profile is insufficient for GO.
 No pilot, 5,000-step training, 10,000-step training or full study was launched.
 The locked baseline, E01â€“E14 definitions and seeds 42/123/456 are preserved.
 
@@ -46,8 +49,8 @@ Evidence snapshots are development smokes; they must not enter research tables.
 | 7 | Unique IDs and metadata lineage, no silent overwrite | PASS: UUID runs, exclusive atomic artifacts, immutable metadata, journal/history hash, dataset/tokenizer/config/code/Git linkage |
 | 8 | Both-member result aggregation | PASS on controlled test outputs: schema/metadata/hash/completeness checks, competing-run rejection and duplicate-copy deduplication; genuine study inputs not yet available |
 | 9 | Persistent export/recovery | PASS local/Colab plus genuine Rayyan Kaggle saved output, checksum download, Windows load and fresh Kaggle exact AMP resume; mounted Drive untested |
-| 10 | GPU execution across both Kaggle accounts | PARTIAL: Rayyan T4, isolated approved Python 3.11.14 / torch 2.5.1+cu124 passed; second member account PENDING |
-| 11 | All-config benchmark procedure | PASS on Rayyan T4: actual all-14 ten-step and five fifty-step warmup-aware benchmarks, separate full-validation/IO timings; second account PENDING |
+| 10 | GPU execution across both Kaggle accounts | PARTIAL: Rayyan and syedarijaali T4 compute passed with isolated approved Python 3.11.14 / torch 2.5.1+cu124; syedarijaali fresh recovery pending |
+| 11 | All-config benchmark procedure | PASS on both accounts: actual all-14 ten-step and five fifty-step warmup-aware benchmarks, separate full-validation/IO timings |
 | 12 | Tables/figures from real recorded metrics | IMPLEMENTED and collector tested; mean/sample SD and completeness explicit; no invented study figures |
 | 13 | Fixed generation settings | PASS: configs/generation_protocol.json established before research execution |
 | 14 | Extend 5k to 10k without schedule reset | PASS structural/short extension tests: constant LambdaLR independent of stop target and full optimizer restore; no actual 5k/10k run |
@@ -228,7 +231,27 @@ policy changed, no pilot or study launched. Both sessions were Rayyan's account;
 they do not qualify the second member.
 
 Historical pending Kaggle persistence, all-14 timing and pinned GPU-profile gates
-above are now passed for Rayyan only. Second member's hardware/profile, independent
-full workflow and discrepancy review remain pending. Forced expiry/AMP overflow
-and mounted Drive were not tested. **Global NO-GO remains.** Next: repeat the exact
-source/profile on the second account, reconcile evidence, then seek pilot approval.
+above passed for Rayyan. The second member's new account has passed the same GPU
+compute/profile checks; its independent fresh saved-output recovery is still
+unverified as detailed below. Forced expiry/AMP overflow and mounted Drive were
+not tested. **Global NO-GO remains.** Reconcile both accounts' evidence and
+resolve the recovery gate before seeking pilot approval.
+
+## Independent syedarijaali Kaggle qualification (2026-10-12)
+
+[Measured qualification report](docs/qualifications/KAGGLE_SYEDARIJAALI_20261012.md)
+records a new, user-confirmed Kaggle account. Its private hardware probe attached
+two Tesla T4s. On clean main `36ffee3926f12f58582b3502f725aecc529a1f8d`,
+the isolated approved Python 3.11.14 / torch 2.5.1+cu124 profile passed 33 tests,
+all audited data/tokenizer comparisons, real-data float16 CUDA smoke and exact
+local resume, all-14 short benchmarks, five warmup-aware benchmarks, full
+sliding validation and separate local save/export timings. A saved Kaggle
+output bundle was checksum-downloaded and restored on the Mac for CPU generation.
+
+The separate fresh Kaggle recovery notebook remained `RUNNING` more than
+40 minutes after its recorded start, exceeding its requested 1,800-second
+limit, and published no logs or outputs by the last check. Saved-output
+mount, remote generation and exact GPU resume therefore remain
+**unverified on this account**. The earlier `srijaali` account's CPU-only
+GPU requests are a distinct unresolved account issue. The global decision remains
+**NO-GO**; no pilot or study run is authorized by these engineering checks.

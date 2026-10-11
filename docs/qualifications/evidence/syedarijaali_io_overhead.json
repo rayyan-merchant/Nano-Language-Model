@@ -1,0 +1,114 @@
+[
+  {
+    "run_id": "E01_seed42_3ed47bfe43cf4346b7d05d6cb52d7900",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.09994252799992864,
+    "export_seconds": 0.29525362999993376,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E01_seed42_3ed47bfe43cf4346b7d05d6cb52d7900_step000010_62b7ac97c5e2",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E02_seed42_7c884a18ad994779a50969c5ba22032d",
+    "checkpoint_bytes": 27224458,
+    "serialization_fsync_seconds": 0.12397533399996519,
+    "export_seconds": 0.35313326000004963,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E02_seed42_7c884a18ad994779a50969c5ba22032d_step000010_f040c4cfd03e",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E03_seed42_b73713b3ba344c8c937fd748f90174e4",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.10236399099994742,
+    "export_seconds": 0.2932732819999728,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E03_seed42_b73713b3ba344c8c937fd748f90174e4_step000010_7b3f1040d4bd",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E04_seed42_d72431dd83914a95a347d7b66d966cca",
+    "checkpoint_bytes": 23064450,
+    "serialization_fsync_seconds": 0.1006116020000718,
+    "export_seconds": 0.2908450710000352,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E04_seed42_d72431dd83914a95a347d7b66d966cca_step000010_6527575f83be",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E05_seed42_a287bef01c3e486695db3f6c46bef702",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.09993994900003145,
+    "export_seconds": 0.29509215400003086,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E05_seed42_a287bef01c3e486695db3f6c46bef702_step000010_fed80ca2beac",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E06_seed42_2ff3f0f546f249449c2647a76dcd6ac2",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.10076176399991255,
+    "export_seconds": 0.28784537499996077,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E06_seed42_2ff3f0f546f249449c2647a76dcd6ac2_step000010_26d9639ca61c",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E07_seed42_f77c5d2ba9574cb9b91c8cd133cafd0d",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.10015358700002253,
+    "export_seconds": 0.2841679299999669,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E07_seed42_f77c5d2ba9574cb9b91c8cd133cafd0d_step000010_5fa63b90b3d9",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E08_seed42_08191f3e68eb41bc9f38f08dc60c9e52",
+    "checkpoint_bytes": 33482890,
+    "serialization_fsync_seconds": 0.14834564399995998,
+    "export_seconds": 0.4213657999999896,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E08_seed42_08191f3e68eb41bc9f38f08dc60c9e52_step000010_0725fa7c26ed",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E09_seed42_b7bfc347f8e3474ab0d3b8b22a3ef10e",
+    "checkpoint_bytes": 44197514,
+    "serialization_fsync_seconds": 0.1824876000000586,
+    "export_seconds": 0.6108766350000678,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E09_seed42_b7bfc347f8e3474ab0d3b8b22a3ef10e_step000010_d6b4bbed6048",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E10_seed42_036584eaff5f4a01a69b57ab993951ce",
+    "checkpoint_bytes": 15672010,
+    "serialization_fsync_seconds": 0.07308100000000195,
+    "export_seconds": 0.20660767800006852,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E10_seed42_036584eaff5f4a01a69b57ab993951ce_step000010_56111b888a31",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E11_seed42_e1183747ca0d460fa6058ca85c089150",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.1028385030000436,
+    "export_seconds": 0.28635665800004517,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E11_seed42_e1183747ca0d460fa6058ca85c089150_step000010_eace54f34af0",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E12_seed42_7a328b43cdda449fb8f794a26d5ea484",
+    "checkpoint_bytes": 22768330,
+    "serialization_fsync_seconds": 0.1029917649999561,
+    "export_seconds": 0.28968834199997673,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E12_seed42_7a328b43cdda449fb8f794a26d5ea484_step000010_b26eb1dfa9b2",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E13_seed42_6426dc79d7f24db0aa325194ff250d02",
+    "checkpoint_bytes": 13372618,
+    "serialization_fsync_seconds": 0.06225776499991298,
+    "export_seconds": 0.18523143400000208,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E13_seed42_6426dc79d7f24db0aa325194ff250d02_step000010_7ea0dff1e56a",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  },
+  {
+    "run_id": "E14_seed42_c1d571ffc1fe4ef98fd59154ee4502d9",
+    "checkpoint_bytes": 34818250,
+    "serialization_fsync_seconds": 0.15051044899996668,
+    "export_seconds": 0.46097607000001517,
+    "snapshot": "/kaggle/working/qualification/benchmark_exports/E14_seed42_c1d571ffc1fe4ef98fd59154ee4502d9_step000010_296e621e0837",
+    "scope": "local /kaggle/working IO; saved-version/download overhead separately measured"
+  }
+]
