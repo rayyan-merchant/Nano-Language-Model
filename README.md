@@ -1,13 +1,14 @@
 # Nano Language Model
 
-A from-scratch causal GPT for Tiny Shakespeare, shared by two students. The
-initial foundation implements explicit attention, all three positional methods,
-strict configuration, character tokenization, synthetic CPU smoke training,
-checkpoint resume and own-checkpoint CLI inference. Research training has not run.
+One from-scratch GPT research pipeline for Tiny Shakespeare. Research status is
+**NO-GO** until the gates in EXPERIMENT_READINESS.md pass. Short CPU/Colab GPU
+checks are evidence of implementation correctness, not pilot/ablation results.
+No pretrained weights or black-box Transformer architecture are used.
 
-## Setup
+## Install
 
-Python 3.10 or 3.11 is recommended. Create a local environment:
+Locked research profile: Python 3.10/3.11, torch 2.5.1, numpy 1.26.4,
+tokenizers 0.21.0, pytest 8.3.4, matplotlib 3.9.4. Use an isolated environment.
 
 ```powershell
 python -m venv .venv
@@ -16,54 +17,86 @@ python -m venv .venv
 .venv\Scripts\python -m pytest -q
 ```
 
-Linux, Colab and Kaggle use `python -m pip install -r requirements.txt` and
-`python -m pip install -e . --no-deps` in the selected environment. For CPU-only
-PyTorch install `torch==2.5.1` using the official CPU wheel index first:
-`python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu`.
-The exact validated Windows CPU dependency snapshot is in
-`requirements-cpu-windows.lock.txt`; notebook accelerator dependencies must be
-recorded separately. Do not replace a notebook's CUDA build with a CPU wheel.
+For CPU install torch from `https://download.pytorch.org/whl/cpu` first.
+Linux/Kaggle/Colab use the same commands with the selected environment's `python`.
+Do not install the CPU wheel into a GPU environment. Modern Colab Python 3.13
+cannot install this locked profile directly: provision a compatible isolated
+Python or explicitly qualify a new dependency lock before research. See
+`docs/platforms.md`. The newer Colab profile tested here is smoke-only evidence.
 
-## Run a CPU smoke check
-
-Use a fresh directory each time. This uses synthetic repeated text and a tiny
-24-wide model, not E01 or Tiny Shakespeare training.
+## Prepare and verify real data
 
 ```text
-python -m nano_lm.smoke --run-dir outputs/logs/local_smoke --steps 3
-python -m nano_lm.smoke --run-dir outputs/logs/local_smoke --steps 6 --resume outputs/logs/local_smoke/step_000003.pt
-python -m nano_lm.generate --checkpoint outputs/logs/local_smoke/step_000006.pt --prompt "To be" --max-new-tokens 20 --greedy
+python -m nano_lm.prepare --output data/processed/tiny-shakespeare
+python -m nano_lm.prepare --output data/processed/tiny-shakespeare --validate
+python -m nano_lm.verification --dataset data/processed/tiny-shakespeare --output outputs/logs/cpu_audit --device cpu
 ```
 
-Expected behavior: smoke writes JSON metadata, append-only metrics and distinct
-step checkpoints; generation prints the prompt, model-generated continuation and
-parameters. A smoke checkpoint is not a trained research model. Only load trusted
-project checkpoints; optimizer and RNG state use PyTorch pickle serialization.
+Preparation uses an immutable original Karpathy Tiny Shakespeare revision and
+expected SHA256. If local HTTPS trust fails, `--transport git` fetches the same
+commit without disabling TLS. New preparation/audit directories must not exist.
+No source text is normalized. 90/5/5 splits precede vocabulary fitting and windows.
+Character and byte BPE artifacts, split statistics and hashes are validated.
 
-## Project map
+## Short training, resume and inference
 
-- `src/nano_lm`: tokenizer, partition/batching, attention, positions, blocks/GPT,
-  generation, checkpoint management and CPU smoke runner.
-- `configs/baseline.json`, `experiments/registry.csv`, `experiments/configs`:
-  locked E01–E14 definitions, each with three seeds.
-- `tests`: numerical attention, causal influence, shapes, positions, gradients,
-  overfit, checkpoint compatibility, exact CPU resume and subprocess CLI tests.
-- `docs`: research controls, collaboration, assignment compliance and progress.
-- `notebooks`: thin platform entry point; `api`, `report`, `experiments/analysis`:
-  documented future deliverables rather than fake implementations.
+These examples are **2-step smoke checks**, with a smaller effective token
+budget and validation byte cap, not approved research settings:
 
-Baseline: width 192, 6 heads, 4 layers, context 128, 4x MLP, GELU, sinusoidal
-positions, dropout 0.1, AdamW 3e-4, 5,000 steps, seeds 42/123/456.
-Run allocation remains unassigned. Subsequent pilot/GPU jobs require approval.
+```text
+python -m nano_lm.train --dataset data/processed/tiny-shakespeare --experiment E01 --run-kind smoke --steps 2 --tokens-per-update 128 --micro-batch-size 1 --eval-every 1 --checkpoint-every 1 --eval-max-bytes 512
+python -m nano_lm.generate --checkpoint RUN/checkpoints/step_000002.pt --prompt "To be" --max-new-tokens 80 --greedy
+python -m nano_lm.plot_run RUN/checkpoints/step_000002.pt outputs/figures/smoke_run
+```
 
-## Dataset and limits
+Replace RUN with the printed unique directory. Resume uses the same exact
+configuration and `--resume RUN/checkpoints/step_000002.pt --steps 4` (total target,
+not additional steps). Extend an approved 5k run to 10k the same way; constant LR
+and optimizer/scheduler/scaler/RNG/data sampling continue without schedule reset.
+Use E02 for BPE; E01–E14 load from the unchanged registry. All meaningful training
+settings have CLI options. Research requires a clean committed checkout; smoke
+and benchmark modes are capped at 100 steps. Long research jobs require separate
+user approval; no bulk 42-run launch is built into initialization.
 
-Required source: [Hugging Face Tiny Shakespeare](https://huggingface.co/datasets/karpathy/tiny_shakespeare).
-No dataset has been downloaded or prepared yet. See `data/README.md`.
-BPE training, BPB evaluation, research training/validation, mixed precision,
-analysis plots, FastAPI hosting and final checkpoint distribution are pending.
-There are no research losses, trained samples or deployed service to report.
-Read `docs/progress.md` before using this foundation for experiments.
+Baseline remains width 192, 6 heads, 4 blocks, context 128, 4x MLP, GELU,
+sinusoidal positions, dropout 0.1, AdamW 3e-4, 5,000 steps and seeds 42/123/456.
+Main comparisons target 4096 tokens/update. Microbatch size controls accumulation;
+invalid divisibility fails explicitly. Generation protocol is fixed in
+`configs/generation_protocol.json` before scientific runs.
 
-After bootstrap, fetch `origin/main`, create your own descriptive branch and use
-PRs. Never force-push or overwrite another member's work. See `AGENTS.md`.
+## Platforms, storage and analysis
+
+Thin `notebooks/kaggle_research.ipynb` and `notebooks/colab_research.ipynb` call
+this package. For GPU audit add `--device cuda --precision float16` to verification.
+GPU absence fails; float32 is baseline and AMP alternatives need qualification.
+
+At checkpoint boundaries, `--export-root DURABLE_ROOT` publishes verified immutable
+snapshots. Cloud research requires this option. The caller must verify that the
+path is actually persistent: `/content` and unsaved `/kaggle/working` are ephemeral.
+See `docs/storage.md` for export, verification, restoration and session-expiry gates.
+Only load trusted project checkpoints; PyTorch optimizer/RNG artifacts use pickle.
+
+`nano_lm.results` validates run schemas, hashes, canonical variants, completed
+checkpoints and evaluation policy, merges both members' outputs, rejects smoke
+or incomplete research evidence, and produces per-run CSV, mean/sample-SD tables
+and genuine-metric figures. Missing seeds stay missing. See `docs/commands.md`.
+
+## Layout and limitations
+
+`src/nano_lm`: data/tokenizers, explicit attention/positions/blocks/GPT, evaluation,
+training, checkpointing, generation, storage, collection, figures and audits.
+`configs`/`experiments`: locked definitions and inference protocol. `tests`: fast
+numerical, integration, resume, storage and compatibility tests. `docs`: protocols,
+readiness evidence and limits. `api`/`report`: final delivery milestones still pending.
+
+Validation BPB excludes a common 256-byte conditioning prefix and scores each
+suffix token once with up to the configured preceding token context. Prefix and
+suffix are tokenized separately to force a shared original-byte boundary.
+This is conditional likelihood; BPE/character contexts cover different byte spans.
+Token losses/perplexities must not be ranked across tokenizers. Test data is
+reserved for final evaluation. See `docs/bpb.md` for the exact policies.
+
+The second member verifies and runs the same code; pipeline ownership stays in
+this instance. Work on feature branches and reviewed PRs. Never force-push or merge
+without authorization. No actual research-quality checkpoint or deployed API is
+claimed. Read EXPERIMENT_READINESS.md before any experiment approval.

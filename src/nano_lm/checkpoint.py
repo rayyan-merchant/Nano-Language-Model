@@ -6,16 +6,17 @@ import numpy as np
 import torch
 from .config import ModelConfig
 from .model import GPT
-from .tokenizer import CharacterTokenizer
+from .bpe import from_artifact, vocabulary_size
 
 
-def save_checkpoint(path: Path, model, tokenizer, optimizer, scheduler, generator, step, metadata):
+def save_checkpoint(path: Path, model, tokenizer, optimizer, scheduler, generator, step, metadata, scaler=None, training_state=None):
     if path.exists():
         raise FileExistsError(path)
     payload = {"format_version": 1, "config": model.config.to_dict(),
                "model": model.state_dict(), "tokenizer": tokenizer.artifact(),
                "tokenizer_hash": tokenizer.checksum, "optimizer": optimizer.state_dict(),
-               "scheduler": scheduler.state_dict(), "scaler": None, "step": step,
+               "scheduler": scheduler.state_dict(), "scaler": scaler.state_dict() if scaler else None, "step": step,
+               "training_state": training_state,
                "rng": {"python": random.getstate(), "numpy": np.random.get_state(),
                        "torch": torch.get_rng_state(), "sampling": generator.get_state(),
                        "cuda": torch.cuda.get_rng_state_all() if torch.cuda.is_available() else []},
@@ -34,14 +35,24 @@ def save_checkpoint(path: Path, model, tokenizer, optimizer, scheduler, generato
 
 def read_checkpoint(path):
     # Only load our trusted artifacts: pickle-based optimizer/RNG data are not untrusted input.
-    payload = torch.load(path, map_location="cpu", weights_only=False)
+    try:
+        payload = torch.load(path, map_location="cpu", weights_only=False)
+    except Exception as exc:
+        raise ValueError(f"Unreadable/corrupt trusted checkpoint: {path}") from exc
     if payload.get("format_version") != 1:
         raise ValueError("Unsupported checkpoint format")
-    tokenizer = CharacterTokenizer(payload["tokenizer"]["characters"])
+    tokenizer = from_artifact(payload["tokenizer"])
     if tokenizer.checksum != payload["tokenizer_hash"]:
         raise ValueError("Tokenizer checksum mismatch")
-    if payload["config"]["vocab_size"] != len(tokenizer.characters):
+    if payload["config"]["vocab_size"] != vocabulary_size(tokenizer):
         raise ValueError("Tokenizer/model vocabulary mismatch")
+    metadata = payload.get("metadata", {})
+    if metadata.get("schema_version") == 2:
+        from .artifacts import digest
+        if digest(metadata["resolved"]) != metadata["config_hash"] or payload["config"] != metadata["resolved"]["model"]:
+            raise ValueError("Checkpoint configuration lineage mismatch")
+        if tokenizer.checksum != metadata["resolved"]["tokenizer_hash"]:
+            raise ValueError("Checkpoint tokenizer lineage mismatch")
     return payload, tokenizer
 
 

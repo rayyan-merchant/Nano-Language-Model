@@ -1,0 +1,264 @@
+[
+  {
+    "experiment_id": "E01",
+    "parameters": 1804800,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      128,
+      128
+    ],
+    "intended_delta": {},
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E02",
+    "parameters": 2173056,
+    "logits": [
+      1,
+      128,
+      1024
+    ],
+    "head_shape": [
+      1,
+      6,
+      128,
+      128
+    ],
+    "intended_delta": {},
+    "vocab_size": 1024
+  },
+  {
+    "experiment_id": "E03",
+    "parameters": 1804800,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      128,
+      128
+    ],
+    "intended_delta": {
+      "position": "rope"
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E04",
+    "parameters": 1829376,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      128,
+      128
+    ],
+    "intended_delta": {
+      "position": "learned"
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E05",
+    "parameters": 1804800,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      128,
+      128
+    ],
+    "intended_delta": {
+      "activation": "relu"
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E06",
+    "parameters": 1804800,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      4,
+      128,
+      128
+    ],
+    "intended_delta": {
+      "n_heads": 4
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E07",
+    "parameters": 1804800,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      8,
+      128,
+      128
+    ],
+    "intended_delta": {
+      "n_heads": 8
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E08",
+    "parameters": 2694528,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      128,
+      128
+    ],
+    "intended_delta": {
+      "n_layers": 6
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E09",
+    "parameters": 3584256,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      128,
+      128
+    ],
+    "intended_delta": {
+      "n_layers": 8
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E10",
+    "parameters": 1213440,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      128,
+      128
+    ],
+    "intended_delta": {
+      "mlp_expansion": 2
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E11",
+    "parameters": 1804800,
+    "logits": [
+      1,
+      64,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      64,
+      64
+    ],
+    "intended_delta": {
+      "context_length": 64
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E12",
+    "parameters": 1804800,
+    "logits": [
+      1,
+      256,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      256,
+      256
+    ],
+    "intended_delta": {
+      "context_length": 256
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E13",
+    "parameters": 1021824,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      128,
+      128
+    ],
+    "intended_delta": {
+      "d_model": 144
+    },
+    "vocab_size": 65
+  },
+  {
+    "experiment_id": "E14",
+    "parameters": 2808960,
+    "logits": [
+      1,
+      128,
+      65
+    ],
+    "head_shape": [
+      1,
+      6,
+      128,
+      128
+    ],
+    "intended_delta": {
+      "d_model": 240
+    },
+    "vocab_size": 65
+  }
+]

@@ -1,8 +1,8 @@
-# Notebook entry points
+# Shared-code platform entry points
 
-bootstrap.ipynb imports installed shared code and runs a tiny synthetic CPU smoke
-check. It is not a working trained-model Colab demonstration. On Kaggle/Colab,
-clone the pinned main commit and install documented dependencies, record actual
-GPU/CUDA/runtime, configure data/run/export paths and use authorized training
-entry points once implemented. Copy artifacts to durable storage before expiry;
-stop GPU runtimes after use. No quota/account-switching automation.
+kaggle_research.ipynb and colab_research.ipynb invoke the installed package only;
+no model/training copy exists in notebooks. They check the locked Python profile,
+prepare real data and run short CUDA verification. They never launch the main
+study. See docs/platforms.md for newer Colab profiles and docs/storage.md for
+persistent export/restore requirements. bootstrap.ipynb remains a synthetic
+CPU foundation demonstration, not a trained-model Colab demo.

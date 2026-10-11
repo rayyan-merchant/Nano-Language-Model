@@ -1,5 +1,6 @@
 """Autoregressive generation and own-checkpoint command line inference."""
 import argparse
+import sys
 from pathlib import Path
 import torch
 from .checkpoint import load_for_inference
@@ -25,6 +26,9 @@ def generate(model, ids, max_new_tokens=80, temperature=1.0, greedy=False, seed=
 
 
 def main():
+    # Redirected Windows consoles may default to CP1252; generated text is UTF-8.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--prompt", required=True)
