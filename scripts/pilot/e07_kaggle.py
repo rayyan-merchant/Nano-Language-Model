@@ -102,7 +102,11 @@ if __name__=='__main__':
             qualified(a.root)
             # Import verified saved smoke evidence; reacquire canonical data in this runtime.
             for path in (a.recovery_receipt.parent/'published').glob('*.json'):
-                if path.name!='preflight.json':shutil.copyfile(path,a.output/path.name)
+                if path.name not in {'preflight.json','environment.json','hardware.json'}:shutil.copyfile(path,a.output/path.name)
+            current=qualified(a.root);atomic_json(a.output/'environment.json',current)
+            hardware={'gpu_count':torch.cuda.device_count(),'training_device':'cuda:0','nvidia_smi':subprocess.check_output(['nvidia-smi'],text=True),'local_disk_free_bytes':shutil.disk_usage(a.output).free,'devices':[{'name':torch.cuda.get_device_name(i),'total_bytes':torch.cuda.get_device_properties(i).total_memory,'free_bytes':torch.cuda.mem_get_info(i)[0]} for i in range(torch.cuda.device_count())]}
+            assert hardware['local_disk_free_bytes']>5*2**30 and hardware['devices'][0]['free_bytes']>2*2**30
+            atomic_json(a.output/'hardware.json',hardware)
             manifest=prepare(a.output/'data');validate(a.output/'data')
             assert manifest==json.loads((a.root/'docs/evidence/dataset_manifest.json').read_text())
             atomic_json(a.output/'preflight.json',{'status':'passed','platform':'Kaggle','persistent_recovery':gate,'scope':'Saved smoke version independently retrieved before launch and recovered in this fresh compatible CUDA process. Research fresh initialization; no weights transferred from smoke.'})
