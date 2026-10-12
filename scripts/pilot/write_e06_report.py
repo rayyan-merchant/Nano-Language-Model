@@ -47,7 +47,7 @@ def report(artifacts, comparison, platform, recovery, manifest, diagnostics, rev
                   'pipeline_wall_seconds':t['pipeline_wall_seconds'],'archive_seconds':m['archive_seconds'],
                   'same_run_no_restart':d['failures']==d['resumes']==0,'generation_seconds':generations['seconds']}
     (out/'observations.json').write_text(json.dumps(observations,indent=2))
-    text=f'''# E06 seed42 four-head attention experiment â€” 2026-10-12
+    text=f'''# E06 seed42 four-head attention experiment -- 2026-10-12
 
 One explicitly authorized attention-head ablation: **5000 completed optimizer
 updates**, seed42. E01–E04 historical evidence is preserved. The second researcher
@@ -125,7 +125,7 @@ counted as experimental optimizer updates or validation observations.
 
 Full sliding validation every250 updates, complete55770-byte validation partition,
 256 original conditioning bytes excluded,55514 target bytes/tokens scored once.
-Conditional BPB=sum NLL/(ln2Â·scored bytes), perplexity=exp(token NLL). Character
+Conditional BPB=sum NLL/(ln2 * scored bytes), perplexity=exp(token NLL). Character
 BPB equals token loss/ln2 here; these are related measures, not independent evidence.
 No capped/sampled validation or invented step-zero measurement is included.
 The existing checkpoint policy saves every validation state and every500-step
@@ -163,9 +163,9 @@ GPU memory excludes reserved/driver/device overhead.
 '''
     for r in val:
         v=r['validation'];text+=f"| {r['step']} | {v['loss']:.8f} | {v['bpb']:.8f} | {v['perplexity']:.8f} |\n"
-    text+='\n## E01 versus E06: matched observations\n\nÎ”=E06âˆ’E01; negative loss/BPB differences favor E06. Relative differences are\npercentages of the E01 metric, not statistical effect-size estimates.\n\n| Metric | E01 | E06 | Î” | Relative,% |\n|---|---:|---:|---:|---:|\n'
+    text+='\n## E01 versus E06: matched observations\n\nDelta=E06 minus E01; negative loss/BPB differences favor E06. Relative differences are\npercentages of the E01 metric, not statistical effect-size estimates.\n\n| Metric | E01 | E06 | Delta | Relative,% |\n|---|---:|---:|---:|---:|\n'
     for r in compared['summary_comparison']:text+=f"| {r['metric']} | {r['E01']:.8f} | {r['E06']:.8f} | {r['delta_E06_minus_E01']:.8f} | {r['relative_percent']:.3f} |\n"
-    text+='\n| Update | E01 loss | E06 loss | Î” loss | E01 BPB | E06 BPB |\n|---|---:|---:|---:|---:|---:|\n'
+    text+='\n| Update | E01 loss | E06 loss | Delta loss | E01 BPB | E06 BPB |\n|---|---:|---:|---:|---:|---:|\n'
     for r in compared['matched_validation']:
         text+=f"| {r['step']} | {r['E01_loss']:.8f} | {r['E06_loss']:.8f} | {r['delta_loss']:.8f} | {r['E01_bpb']:.8f} | {r['E06_bpb']:.8f} |\n"
     text+='\nThe shared results collector validated both final checkpoint histories, metadata,\nconfiguration/data/tokenizer hashes and comparison policy. Final private sampling\nRNG states and source-byte coverage arrays also matched exactly. Only attention head count\ndiffers in the models. One seed per configuration means sample SD is undefined,\nnot zero. Machine-readable comparison/CSV files preserve all20 matched validation\npoints and explicit incomplete-study seed counts. No E02 data are included.\n\n'
@@ -189,15 +189,15 @@ GPU memory excludes reserved/driver/device overhead.
 | Journal fsync/flush calls | {io['journal_seconds']:.3f} |
 | Training CLI wall | {io['cli_wall_seconds']:.3f} |
 | Archive compression and checksum scope | {m['archive_seconds']:.3f} |
-| Notebook cloneâ†’archive-complete pipeline | {t['pipeline_wall_seconds']:.3f} |
+| Notebook clone to archive-complete pipeline | {t['pipeline_wall_seconds']:.3f} |
 | Complete genuine100-sample generation | {generations['seconds']:.3f} |
 
 Training-only average: {observations['training_steps_per_second']:.4f} updates/sec,
 {observations['training_tokens_per_second']:.2f} predicted tokens/sec. Generation
 and archive scopes lie within the measured notebook pipeline; do not double-count
 them. Pipeline timestamps exclude queue, final notebook conversion/output
-publication and external download. Recovery and transfer costs are separately
-recorded below. Individual validation times were not logged; cumulative total is
+publication and external download. Recovery evidence is recorded below; full network-transfer and
+recovery wall time were not measured. Individual validation times were not logged; cumulative total is
 genuine. No measured dollars or full-session lifetime is invented.
 
 ## E06 measured figures
@@ -209,9 +209,9 @@ declared100-step trailing mean. Full PNG/PDF evidence is in the verified archive
     for name in ['training_loss','validation_loss','combined_loss','validation_bpb','generalization_gap','throughput','training_time','gradient_norm','learning_rate']:text+=f'![{name}](figures/{name}.png)\n\n'
     text+=f'''## Convergence descriptors and interpretation boundary
 
-**Observation:** Actual3000â†’5000 validation loss improvement is
+**Observation:** Actual3000 to 5000 validation loss improvement is
 {s['loss_improvement_3000_to_5000']:.8f} nats/token. A descriptive least-squares
-slope through actual3000â€“5000 points is {s['late_validation_slope_per_1000_steps']:.8f}
+slope through actual3000-5000 points is {s['late_validation_slope_per_1000_steps']:.8f}
 nats/token per1000 updates. Best observed step{s['best_validation']['step']}; final
 is {s['final_validation']['loss']-s['best_validation']['loss']:.8f} above that minimum.
 The subsequent reviewed interpretation discusses the shape, intervals, generation

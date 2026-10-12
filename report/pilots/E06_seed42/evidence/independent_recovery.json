@@ -1,0 +1,33 @@
+{
+  "status": "published_archive_verified_and_best_final_CPU_inference_passed",
+  "run_id": "E06_seed42_98d4288fc83b430ebc931365a541345f",
+  "archive_sha256": "bf224ad20d4eca03359d08da820289ac1e9cef2c8f082f9d94e229f8edb29530",
+  "archive_bytes": 402500855,
+  "verified_file_count": 58,
+  "optimizer_updates": 5000,
+  "validation_count": 20,
+  "seconds": 42.00684509985149,
+  "samples": [
+    {
+      "policy": "best",
+      "checkpoint": "runs/E06_seed42_98d4288fc83b430ebc931365a541345f/checkpoints/step_004750.pt",
+      "sha256": "df84b991b93f346aec4deaa6595a1d08c86ca8576944954824b977a9ca7e4807",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nI would not so do the so die to the soul\nAnd the seem of the sen"
+    },
+    {
+      "policy": "final",
+      "checkpoint": "runs/E06_seed42_98d4288fc83b430ebc931365a541345f/checkpoints/step_005000.pt",
+      "sha256": "2a032889bdd3c894093cd1d4fc99edc0becda62953b6ab67d57679d283a8ef85",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nThe shall be so so so so so so so so so so so,\nThe shall be so s"
+    }
+  ],
+  "training_resume": "CPU inference only; no CUDA RNG restore or additional updates attempted"
+}

@@ -1,0 +1,52 @@
+{
+  "starting_main": "31e974b23b7e73b2f48b080b36865608efb879b8",
+  "E04_PR8_merged": true,
+  "E04_formal_review_submissions": 0,
+  "trained_source": "fc08577afb63d4bd3ecad43bf33355c65ddd985c",
+  "code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "scientific_source_config_diff_from_E01_empty": true,
+  "review_scope": "Explicit source/diff/CLI/numerical tests and CI; no human approval represented",
+  "windows_full_suite": {
+    "passed": 39,
+    "skipped": 1,
+    "seconds": 138.03,
+    "CUDA_skip": true
+  },
+  "expanded_notebook_scope_tests": {
+    "passed": 3,
+    "seconds": 0.93
+  },
+  "training_source_CI": {
+    "run_id": 38231286634,
+    "conclusion": "success"
+  },
+  "CPU_attention_checks": 13,
+  "initial_test_attempt_failure": "Missing D test-fixture parent caused15 setup errors;24 passed,1 skipped. Parent created and full suite rerun successfully.",
+  "authorized_scope": "E06 seed42 exactly5000 research optimizer updates; only this configuration/seed; no extension",
+  "local_storage": "outputs junction to D:/Nano-Language-Model-workspace/outputs; large independent artifacts in unique D directory",
+  "PR": "https://github.com/rayyan-merchant/Nano-Language-Model/pull/9",
+  "reporting_utility_CI": {
+    "committed_source": "ea89bf5091eee16a10bfd6829d1540bbf21a9a5a",
+    "runs": [
+      38234831659,
+      38234825784
+    ],
+    "conclusion": "success"
+  },
+  "generation_grid_regression": {
+    "passed": 1,
+    "seconds": 0.22,
+    "scope": "Synthetic fixture only; CRLF canonical protocol identity and missing-row rejection; no research results"
+  },
+  "reporting_limitations_fixed": [
+    "Windows working-copy CRLF protocol file hash differs from canonical Git blob; canonical hash and semantic protocol validated without changing protocol",
+    "Inherited E03 template punctuation encoding repaired only in new E06 renderer"
+  ],
+  "final_windows_full_suite": {
+    "passed": 41,
+    "skipped": 1,
+    "seconds": 285.62,
+    "CUDA_skip": true
+  },
+  "approval_service_interruption": "Post-run check denied because review service usage limit; action not executed. User continued; retry approved. No bypass or training change."
+}
