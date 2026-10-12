@@ -98,6 +98,15 @@ if __name__=='__main__':
         elif a.phase=='recover-smoke':recover_smoke(a.root,a.output,a.archive,a.manifest)
         elif a.phase=='research':
             gate=json.loads(a.recovery_receipt.read_text());assert gate['status']=='saved_output_archive_and_fresh_compatible_CUDA_full_state_recovery_passed'
+            a.output.mkdir(parents=True,exist_ok=False)
+            qualified(a.root)
+            # Import verified saved smoke evidence; reacquire canonical data in this runtime.
+            for path in (a.recovery_receipt.parent/'published').glob('*.json'):
+                if path.name!='preflight.json':shutil.copyfile(path,a.output/path.name)
+            manifest=prepare(a.output/'data');validate(a.output/'data')
+            assert manifest==json.loads((a.root/'docs/evidence/dataset_manifest.json').read_text())
+            atomic_json(a.output/'preflight.json',{'status':'passed','platform':'Kaggle','persistent_recovery':gate,'scope':'Saved smoke version independently retrieved before launch and recovered in this fresh compatible CUDA process. Research fresh initialization; no weights transferred from smoke.'})
+            a.store.mkdir(parents=True,exist_ok=False)
             research(a.root,a.output,a.store)
         else:finish(a.root,a.output,a.store)
     except BaseException as exc:
