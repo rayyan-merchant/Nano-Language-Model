@@ -253,3 +253,23 @@ report/pilots/E04_seed42/E04_seed42_analysis.md plus interpretation.md.
 E01/E02/E03 evidence and canonical definitions unchanged. E04 seed42 alone is
 complete; broader three-seed study remains separately gated. No other experiment,
 seed or10k extension launched. PR8 is reviewable and is not merged by this task.
+
+## E07 seed42 preflight blocked — 2026-10-12
+
+Reviewed main5bb03b1 synchronized; scientific source unchanged and audited hash
+cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6 reproduced.
+Dedicated E07 branch and draft PR11; E06 remains independently owned on PR9.
+CPU eight-head numerical audit passed all four blocks, dim24/sqrt24, masking,
+softmax/dropout/merge,1804800parameters,GELU/sinusoidal,finite projection gradients,
+future invariance, shifted targets, context-cropped generation and seed42 initial
+E01 tensor equality. Local CPU profile is not qualified research software.
+
+Colab T4 allocation failed with its explicit GPU usage-limit message before
+provisioning code executed. Zero E07 research or smoke updates, zero validations,
+zero checkpoints/snapshots. CUDA/environment/data/Drive checkpoint recovery gates
+remain pending. No CPU fallback, alternative seed/configuration, extension or
+quota workaround launched. Exact attempted notebook, separate launcher, source/
+configuration provenance and failure screenshot preserved. Partial report:
+report/pilots/E07_seed42/E07_seed42_analysis.md. No E07 predictive, efficiency,
+generation or preservation result is claimed. Training may proceed only when
+legitimate GPU availability returns and all mandatory preflight gates pass.

@@ -1,0 +1,175 @@
+{
+  "status": "passed",
+  "experiment": "E07",
+  "device": "cpu",
+  "parameters": 1804800,
+  "model": {
+    "vocab_size": 65,
+    "d_model": 192,
+    "n_heads": 8,
+    "n_layers": 4,
+    "context_length": 128,
+    "mlp_expansion": 4,
+    "activation": "gelu",
+    "position": "sinusoidal",
+    "dropout": 0.1
+  },
+  "all_initial_E01_parameter_tensors_equal": true,
+  "matching_state_tensors": 68,
+  "initial_parameter_sha256": "820edf70949b4519dec02ab81610c6549e89bead9efdcef06d3005044d666b14",
+  "numerical_attention_probes": [
+    {
+      "block": 0,
+      "qkv_shape": [
+        2,
+        8,
+        7,
+        24
+      ],
+      "logits_shape": [
+        2,
+        8,
+        7,
+        7
+      ],
+      "scale_divisor": 4.898979485566356,
+      "wrong_scale_max_probability_difference": {
+        "32": 0.022556573152542114,
+        "192": 0.10485175251960754
+      },
+      "merged_shape": [
+        2,
+        7,
+        192
+      ],
+      "dropout_train_eval_passed": true
+    },
+    {
+      "block": 1,
+      "qkv_shape": [
+        2,
+        8,
+        7,
+        24
+      ],
+      "logits_shape": [
+        2,
+        8,
+        7,
+        7
+      ],
+      "scale_divisor": 4.898979485566356,
+      "wrong_scale_max_probability_difference": {
+        "32": 0.0357021689414978,
+        "192": 0.17314736545085907
+      },
+      "merged_shape": [
+        2,
+        7,
+        192
+      ],
+      "dropout_train_eval_passed": true
+    },
+    {
+      "block": 2,
+      "qkv_shape": [
+        2,
+        8,
+        7,
+        24
+      ],
+      "logits_shape": [
+        2,
+        8,
+        7,
+        7
+      ],
+      "scale_divisor": 4.898979485566356,
+      "wrong_scale_max_probability_difference": {
+        "32": 0.014215350151062012,
+        "192": 0.06569166481494904
+      },
+      "merged_shape": [
+        2,
+        7,
+        192
+      ],
+      "dropout_train_eval_passed": true
+    },
+    {
+      "block": 3,
+      "qkv_shape": [
+        2,
+        8,
+        7,
+        24
+      ],
+      "logits_shape": [
+        2,
+        8,
+        7,
+        7
+      ],
+      "scale_divisor": 4.898979485566356,
+      "wrong_scale_max_probability_difference": {
+        "32": 0.01802237331867218,
+        "192": 0.08333849906921387
+      },
+      "merged_shape": [
+        2,
+        7,
+        192
+      ],
+      "dropout_train_eval_passed": true
+    }
+  ],
+  "projection_gradient_norms": [
+    {
+      "block": 0,
+      "q": 0.018215429037809372,
+      "k": 0.018556514754891396,
+      "v": 0.07616320997476578,
+      "output": 0.06977201253175735
+    },
+    {
+      "block": 1,
+      "q": 0.01802489161491394,
+      "k": 0.01780851185321808,
+      "v": 0.06766419857740402,
+      "output": 0.06570316106081009
+    },
+    {
+      "block": 2,
+      "q": 0.017499547451734543,
+      "k": 0.017304616048932076,
+      "v": 0.06161578372120857,
+      "output": 0.064429372549057
+    },
+    {
+      "block": 3,
+      "q": 0.01668154075741768,
+      "k": 0.017516423016786575,
+      "v": 0.06103548780083656,
+      "output": 0.058544646948575974
+    }
+  ],
+  "checks": [
+    "sole_n_heads_override",
+    "eight_heads_dim24",
+    "QKV_and_logits_shapes",
+    "sqrt24_manual_reference",
+    "wrong_sqrt32_sqrt192_distinguished",
+    "per_head_key_softmax",
+    "causal_mask",
+    "dropout_train_eval",
+    "merge_width192",
+    "GELU_sinusoidal_no_ReLU_RoPE_learned",
+    "seed42_initial_E01_tensors_equal",
+    "shifted_targets_manual_CE",
+    "finite_all_parameter_gradients",
+    "nonzero_QKV_output_gradients",
+    "future_token_invariance",
+    "generation_context_crop128"
+  ],
+  "limits": "Preflight correctness only; no trained head diversity or causal mechanism inferred."
+}

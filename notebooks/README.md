@@ -22,3 +22,17 @@ CPU foundation demonstration, not a trained-model Colab demo.
 [Original executed Colab notebook](https://colab.research.google.com/drive/1jXE5OshAxWDrT4i0F8bw7OuFM59HXUjz).
 The two files serve different purposes; the launcher does not contain the final
 publication/status cells or the executed output history.
+
+## E07 seed42 notebooks
+
+- [Exact attempted E07 notebook](E07_seed42_EightHead_Colab_pilot.ipynb): byte-for-byte
+  Drive snapshot with one provisioning cell. Colab refused T4 allocation due to
+  usage limits before code execution; it contains no training outputs.
+  [Provenance](E07_seed42_EightHead_Colab_pilot.provenance.json).
+- [Clean E07 launcher](colab_e07_seed42_pilot.ipynb): reproducible pinned setup,
+  preflight/research/recovery phases; fresh quota required and research disabled
+  by default. The scoped seed42/5000 request is authorized subject to all gates.
+
+[Original attempted E07 Colab notebook](https://colab.research.google.com/drive/1JqPgdwg__E-jLj32-ibFPM_pc6AwK1S3).
+These files do not demonstrate a completed E07 run; see its partial report and
+GPU allocation failure screenshot.

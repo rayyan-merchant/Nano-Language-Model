@@ -1,0 +1,31 @@
+{
+  "status": "blocked_before_execution",
+  "observed_utc": "2026-10-12 16:32:43 UTC",
+  "blocking_gate": "Colab CUDA allocation",
+  "provider_message": "You cannot currently connect to a GPU due to usage limits in Colab.",
+  "planned_source_commit": "5bb03b18943e7c45a305ce1d78b3446c31829ae7",
+  "scientific_code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "planned_resolved_config_hash": "77fe03469eb15eaba27561b0f59adacee2dfee37548d5ece3ddb2cd3aeaa3147",
+  "source_equivalence": "git diff 31e974b origin/main -- src configs experiments/configs produced no changes; local hash matched audited source",
+  "orchestration_commit": "4098d8b8e2d3a14c8cfdf885244dbfc93d0fae3e",
+  "notebook_url": "https://colab.research.google.com/drive/1JqPgdwg__E-jLj32-ibFPM_pc6AwK1S3",
+  "research_optimizer_updates": 0,
+  "smoke_optimizer_updates": 0,
+  "full_validations": 0,
+  "checkpoint_count": 0,
+  "snapshot_count": 0,
+  "actual_GPU_environment": null,
+  "CUDA_audit": "pending",
+  "qualified_package_freeze": "pending",
+  "dataset_reacquisition": "pending",
+  "Drive_checkpoint_export_restore": "pending",
+  "research_archive": null,
+  "CPU_audit_environment": {
+    "python": "3.10.0",
+    "torch": "2.11.0",
+    "device": "cpu",
+    "scope": "correctness only; not qualified research environment"
+  },
+  "scope": "E07 seed42 exactly5000 requested; no training began and no other experiments or extensions were launched",
+  "PR": "https://github.com/rayyan-merchant/Nano-Language-Model/pull/11"
+}
