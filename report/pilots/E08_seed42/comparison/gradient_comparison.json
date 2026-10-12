@@ -1,0 +1,25 @@
+{
+  "scope": "Descriptive within-run norm statistics; not across-seed uncertainty",
+  "rows": [
+    {
+      "experiment": "E01",
+      "scope": "Recorded pre-clipping aggregate norms, not per-layer research gradients",
+      "maximum": 1.8328568935394287,
+      "median": 0.4978237450122833,
+      "p95": 0.5419636189937591,
+      "clipped_updates": 7,
+      "first100_mean": 0.4534429593384266,
+      "last100_mean": 0.5208895719051361
+    },
+    {
+      "experiment": "E08",
+      "scope": "Recorded pre-clipping aggregate norms, not per-layer research gradients",
+      "maximum": 2.1641902923583984,
+      "median": 0.49895140528678894,
+      "p95": 0.5418434172868729,
+      "clipped_updates": 5,
+      "first100_mean": 0.440497008562088,
+      "last100_mean": 0.5125839173793793
+    }
+  ]
+}

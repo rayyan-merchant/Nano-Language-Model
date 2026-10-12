@@ -47,7 +47,7 @@ def report(artifacts, comparison, platform, recovery, manifest, diagnostics, rev
                   'pipeline_wall_seconds':t['pipeline_wall_seconds'],'archive_seconds':m['archive_seconds'],
                   'same_run_no_restart':d['failures']==d['resumes']==0,'generation_seconds':generations['seconds']}
     (out/'observations.json').write_text(json.dumps(observations,indent=2))
-    text=f'''# E08 seed42 six-block attention experiment -- 2026-10-13
+    text=f'''# E08 seed42 six-block Transformer experiment -- 2026-10-13
 
 One explicitly authorized depth ablation: **5000 completed optimizer updates**,
 seed42. Prior E01-E06 evidence is preserved; E07 Colab work is untouched.
@@ -113,7 +113,9 @@ clean and CPU-CI tested before submission.
 Pinned Karpathy char-rnn revision6f9487a6fe5b420b7ca9afb0d7c078e37c1d1b4e;
 raw SHA25686c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed.
 Character tokenizer SHA256ed96787d2f3f9741d69eba15160f31634ba6755b47e4c261ffedbb975fa0af77;
-vocabulary65. Source/splits/tokenizers/manifest match E01 exactly. Contiguous
+vocabulary65. The reference tokenizer hash is SHA256 of its canonical sorted
+JSON descriptor; archive file checksums separately identify serialized bytes.
+Source/splits/tokenizers/manifest match E01 exactly. Contiguous
 train/validation/test bytes1003854/55770/55770; fit on training only and no windows
 cross partitions. The test partition was not used for likelihood or selection.
 
@@ -199,8 +201,9 @@ Training-only average: {observations['training_steps_per_second']:.4f} updates/s
 {observations['training_tokens_per_second']:.2f} predicted tokens/sec. Generation
 and archive scopes lie within the measured notebook pipeline; do not double-count
 them. Pipeline timestamps exclude queue, final notebook conversion/output
-publication and external download. Recovery evidence is recorded below; full network-transfer and
-recovery wall time were not measured. Individual validation times were not logged; cumulative total is
+publication and external download. Local archive verification and CPU recovery took
+{local['seconds']:.3f}s. Network-transfer and full fresh-GPU-recovery wall time were
+not measured. Individual validation times were not logged; cumulative total is
 genuine. No measured dollars or full-session lifetime is invented.
 
 ## E08 measured figures
@@ -232,6 +235,8 @@ Qualitative comparisons use the same settings; coherent-looking output does not
 establish statistical superiority, understanding or memorization absence.
 
 '''
+    if c['best_checkpoint']==c['final_checkpoint']:
+        text+='Best and final identify the same weight state. Their50-setting grids are\nexpected duplicates, not100 independent model draws. Both policies remain labeled.\n\n'
     for sample in generations['samples']:
         if sample['checkpoint_policy']=='best' and sample['greedy']:
             text+=f"### Prompt {sample['prompt']!r}\n\nCheckpoint `{sample['checkpoint']}`, greedy,seed42,256 new tokens.\n\n```text\n{sample['text']}\n```\n\n"
@@ -268,7 +273,7 @@ selects checkpoints; held-out test remains reserved. This is a fixed-context
 depth comparison, not proof about other widths, depths or long-range
 reasoning. Speed comparisons use separate sessions of the same GPU model, not
 controlled repeated timing trials. Framework/seed matching does not guarantee
-identical optimization trajectories when attention math changes. Greedy and
+identical optimization trajectories when depth and RNG consumption change. Greedy and
 stochastic decoding quality are different diagnostics. Short phrase overlaps
 may be ordinary Shakespeare language; they neither prove nor exclude memorization.
 Baseline convergence cannot establish every architecture's training requirement.
