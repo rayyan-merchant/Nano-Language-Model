@@ -8,7 +8,8 @@ import subprocess
 from nano_lm.artifacts import atomic_json, file_hash
 
 
-def describe(root, baseline, candidate, output):
+def describe(root, baseline, candidate, output, experiment="E06"):
+    assert experiment in {"E06", "E08"}
     protocol = json.loads((root/'configs/generation_protocol.json').read_text())
     # Windows autocrlf can change working-copy bytes without changing the protocol.
     canonical_bytes = subprocess.check_output(['git', 'show', 'HEAD:configs/generation_protocol.json'], cwd=root)
@@ -16,7 +17,7 @@ def describe(root, baseline, candidate, output):
     protocol_hash = hashlib.sha256(canonical_bytes).hexdigest()
     groups, matched = [], []
     grids = []
-    for label, path in [('E01', baseline), ('E06', candidate)]:
+    for label, path in [('E01', baseline), (experiment, candidate)]:
         grid = json.loads(path.read_text(encoding='utf8'))
         assert grid['protocol'] == protocol and grid['protocol_sha256'] == protocol_hash
         assert len(grid['samples']) == 100
@@ -50,10 +51,10 @@ def describe(root, baseline, candidate, output):
     assert set(grids[0]) == set(grids[1])
     for key, value in grids[0].items():
         matched.append({'policy': key[0], 'prompt': key[1], 'greedy': key[2], 'temperature': key[3], 'seed': key[4],
-                        'E01': value, 'E06': grids[1][key]})
+                        'E01': value, experiment: grids[1][key]})
     atomic_json(output, {'schema_version': 1, 'protocol_sha256': protocol_hash,
                         'working_copy_protocol_file_sha256': file_hash(root/'configs/generation_protocol.json'),
-                        'generation_file_sha256': {'E01': file_hash(baseline), 'E06': file_hash(candidate)},
+                        'generation_file_sha256': {'E01': file_hash(baseline), experiment: file_hash(candidate)},
                         'groups': groups, 'matched_settings': matched,
                         'scope': 'All100 rows per genuine checkpoint grid. Repetition is descriptive, not a coherence score, significance result or memorization proof.'})
 
@@ -61,4 +62,5 @@ def describe(root, baseline, candidate, output):
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, required=True)
     for name in ['baseline', 'candidate', 'output']: p.add_argument('--'+name, type=Path, required=True)
-    a = p.parse_args(); describe(a.root, a.baseline, a.candidate, a.output)
+    p.add_argument('--experiment',choices=['E06','E08'],default='E06')
+    a = p.parse_args(); describe(a.root, a.baseline, a.candidate, a.output,a.experiment)

@@ -20,7 +20,7 @@ from nano_lm.train import TrainSettings, environment, seed_all, train
 
 
 def run(root, out, experiment='E01'):
-    if experiment not in {'E01','E03','E04','E06'}:raise ValueError('Unsupported authorized experiment')
+    if experiment not in {'E01','E03','E04','E06','E08'}:raise ValueError('Unsupported authorized experiment')
     total_start=time.perf_counter();out.mkdir(parents=True,exist_ok=False)
     torch.set_num_threads(1)
     env=environment(root)
@@ -41,9 +41,9 @@ def run(root, out, experiment='E01'):
     assert all(manifest[k]==reference[k] for k in ['source','split','partitions','tokenizers','manifest_hash'])
     atomic_json(out/'dataset_validation.json',{'all_reference_fields_match':True,'manifest':manifest})
     config,defaults,variant=load_experiment(root,experiment,65)
-    positions={'E01':'sinusoidal','E03':'rope','E04':'learned','E06':'sinusoidal'}
-    parameters=1829376 if experiment=='E04' else 1804800
-    expected_override = ({} if experiment=='E01' else {'n_heads':4} if experiment=='E06' else {'position':positions[experiment]})
+    positions={'E01':'sinusoidal','E03':'rope','E04':'learned','E06':'sinusoidal','E08':'sinusoidal'}
+    parameters=2694528 if experiment=='E08' else 1829376 if experiment=='E04' else 1804800
+    expected_override = ({} if experiment=='E01' else {'n_heads':4} if experiment=='E06' else {'n_layers':6} if experiment=='E08' else {'position':positions[experiment]})
     assert variant['model_overrides']==expected_override and variant['tokenizer']=='character'
     assert GPT(config).parameter_count()==parameters
     settings=TrainSettings(seed=42,device='cuda',precision='float32',run_kind='research',eval_every=250,checkpoint_every=500)
@@ -52,6 +52,7 @@ def run(root, out, experiment='E01'):
     expected_model={'vocab_size':65,**json.loads((root/'configs/baseline.json').read_text())['model']}
     expected_model['position']=positions[experiment]
     if experiment=='E06':expected_model['n_heads']=4
+    if experiment=='E08':expected_model['n_layers']=6
     assert config.to_dict()==expected_model
     assert defaults['optimizer']=='AdamW' and defaults['learning_rate']==settings.learning_rate and defaults['scheduler']=='constant'
     # Separate one-update labeled smoke tests CUDA backward and checkpoint reload.
@@ -65,10 +66,27 @@ def run(root, out, experiment='E01'):
     if experiment=='E06':
         from heads_audit import audit
         atomic_json(out/'heads_audit.json',audit(root,'cuda'))
+    if experiment=='E08':
+        from depth_audit import audit
+        atomic_json(out/'depth_audit.json',audit(root,'cuda'))
+        subprocess.run([sys.executable,'-m','pytest','-q','--basetemp','/tmp/e08-pytest'],cwd=root,check=True)
     _,checkpoint,_=train(root,data,experiment,smoke_settings,1,out/'preflight_smoke')
     payload,_=read_checkpoint(checkpoint);model,_=load_for_inference(checkpoint)
     assert payload['step']==1 and model.parameter_count()==parameters
     verify_snapshot(export_run(checkpoint.parent.parent,out/'preflight_snapshots'))
+    if experiment=='E08':
+        from nano_lm.storage import restore_snapshot
+        from nano_lm.verification import equal_nested
+        snapshot=next((out/'preflight_snapshots').iterdir())
+        restored=restore_snapshot(snapshot,out/'preflight_snapshots'/'restored')
+        recovered,_=read_checkpoint(restored/'checkpoints'/checkpoint.name)
+        assert all(equal_nested(payload[k],recovered[k]) for k in ['model','optimizer','scheduler','scaler','rng','training_state'])
+        budget=100*checkpoint.stat().st_size+2*2**30
+        assert shutil.disk_usage(out).free>budget,'Insufficient checkpoint/snapshot/archive headroom'
+        archive=out/'preflight_snapshots'/'smoke.zip'
+        with zipfile.ZipFile(archive,'x') as z:z.write(checkpoint,'checkpoint.pt')
+        with zipfile.ZipFile(archive) as z:assert z.testzip() is None
+        atomic_json(out/'storage_preflight.json',{'status':'smoke_export_restore_and_ZIP_verified','smoke_checkpoint_bytes':checkpoint.stat().st_size,'conservative_required_free_bytes':budget,'available_bytes':shutil.disk_usage(out).free,'plan':'20 checkpoints plus21 best/latest snapshots and archive;100 weight-file equivalents plus2GiB margin'})
     del model,payload;torch.cuda.empty_cache()
     subprocess.run([sys.executable,str(root/'scripts/pilot/analyze.py'),'--root',str(root),'--run',str(checkpoint.parent.parent),'--output',str(out/'preflight_analysis'),'--device','cuda','--development-check'],check=True)
     atomic_json(out/'preflight.json',{'status':'passed','parameters':parameters,'model':config.to_dict(),'settings':asdict(settings),'accumulation':8,'updates_authorized':5000,'no_test_evaluation':True,'storage_plan':'private saved notebook output version; verify and retrieve archive after automatic publication; restore from verified snapshot if interrupted','prior_saved_output_recovery':'docs/qualifications/evidence/rayyan_fresh_gpu_recovery.json'})
@@ -126,7 +144,7 @@ def run(root, out, experiment='E01'):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--experiment',choices=['E01','E03','E04','E06'],default='E01')
+    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--experiment',choices=['E01','E03','E04','E06','E08'],default='E01')
     a=p.parse_args()
     try:run(a.root,a.output,a.experiment)
     except BaseException as e:
