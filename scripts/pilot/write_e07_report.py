@@ -88,7 +88,7 @@ Best loss/BPB reduction: {c['best_loss_reduction_percent']:+.4f}%; final reducti
 
 Loss decrease3k→5k: E01 {a['loss_improvement_3000_to_5000']:.8f}, E07 {b['loss_improvement_3000_to_5000']:.8f}. Descriptive late fitted loss slopes per1000updates: E01 {a['late_validation_slope_per_1000_steps']:.8f}, E07 {b['late_validation_slope_per_1000_steps']:.8f}; no prediction of longer-run behavior.
 
-Measured local checkpoint overhead {c['checkpoint_seconds']:.3f}s; snapshot export into Kaggle saved-output staging {c['Drive_export_seconds']:.3f}s (historical comparison JSON key `Drive_export_seconds`; **these are Kaggle local exports**, not Drive upload latency); journal/fsync {c['journal_seconds']:.3f}s; engine wall {c['engine_wall_seconds']:.3f}s. Archive construction/local staged publication {archive['archive_and_publication_seconds']:.3f}s. Platform saved-version publication and later Drive uploads are distinct stages; only separately recorded timings are claimed. Peak allocated memory excludes reserved memory/driver overhead.
+Measured local checkpoint overhead {c['checkpoint_seconds']:.3f}s; snapshot export into Kaggle saved-output staging {c['snapshot_export_seconds']:.3f}s (**Kaggle local exports**, not Drive upload latency); journal/fsync {c['journal_seconds']:.3f}s; engine wall {c['engine_wall_seconds']:.3f}s. Archive construction/local staged publication {archive['archive_and_publication_seconds']:.3f}s. Platform saved-version publication and later Drive uploads are distinct stages; only separately recorded timings are claimed. Peak allocated memory excludes reserved memory/driver overhead.
 
 ![Throughput](figures/throughput.png)
 ![Training time](figures/training_time.png)

@@ -37,7 +37,7 @@ def compare(root, evidence, output):
         fig,ax=plt.subplots(figsize=(8,4.5))
         for label in ['E01','E07']:ax.plot([r['step'] for r in rows],[r[label+'_'+metric] for r in rows],label=label+(' 6 heads' if label=='E01' else ' 8 heads'),marker='o',markersize=3)
         ax.set(xlabel='Completed optimizer updates',ylabel=ylabel,title='E01 vs E07 seed42: matched character protocol')
-        ax.grid(alpha=.2);ax.legend();fig.text(.5,.01,'Single seed; equal parameters/context/exposure; Kaggle vs Colab runtime confound',ha='center',fontsize=8)
+        ax.grid(alpha=.2);ax.legend();fig.text(.5,.01,'Single seed; equal parameters/context/exposure; separate Kaggle sessions; host/runtime confound',ha='center',fontsize=8)
         fig.tight_layout(rect=[0,.04,1,1]);fig.savefig(figures/f'e01_e07_validation_{metric}.png',dpi=200);plt.close(fig)
     gen_stats=[]
     for label,path in [('E01',baseline/'generation.json'),('E07',evidence/'analysis/generation.json')]:
@@ -66,9 +66,9 @@ def compare(root, evidence, output):
              'training_time_change_percent':100*(b['training_seconds']-a['training_seconds'])/a['training_seconds'],
              'E01_clipping_frequency':baseline_obs['gradient_clipping_fraction'],'E07_clipping_frequency':float((norms>1).mean()),
              'checkpoint_seconds':sum(r['seconds'] for r in io['records'] if r['operation']=='checkpoint'),
-             'Drive_export_seconds':sum(r['seconds'] for r in io['records'] if r['operation']=='export'),
+             'snapshot_export_seconds':sum(r['seconds'] for r in io['records'] if r['operation']=='export'),
              'journal_seconds':io['journal_seconds'],'engine_wall_seconds':io['engine_wall_seconds'],
-             'generation_repetition':gen_stats,'limit':'One seed; no statistical significance. Runtime platform/driver/host uncontrolled. Repetition is descriptive, not a quality score.'}
+             'generation_repetition':gen_stats,'limit':'One seed; no statistical significance. Separate host/session scheduling and runtime conditions uncontrolled. Repetition is descriptive, not a quality score.'}
     atomic_json(output/'comparison.json',receipt)
 
 
