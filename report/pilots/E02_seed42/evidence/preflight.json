@@ -1,0 +1,21 @@
+{
+  "source_commit": "2cf39518492652e2ed05e459318e6166e4275814",
+  "core_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "python": "3.11.14",
+  "torch": "2.5.1+cu124",
+  "cuda": "12.4",
+  "gpu": "Tesla T4",
+  "dependency_freeze_matches_E01": true,
+  "automated_tests_passed": 35,
+  "raw_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+  "bpe_sha256": "2d7b1e84c8055eb5b9483a3fe6e4e3c9e348f5a28506ba19a0dc1644f0b36d55",
+  "storage": "/content/drive/MyDrive/Nano-Language-Model/E02_seed42/pilot_a720edb219da4ff5b0d83a4e1ce7532f",
+  "drive_storage_ui_used_gb": 8.03,
+  "drive_storage_ui_total_gb": 400,
+  "smoke_checkpoint_bytes": 27223436,
+  "conservative_100_checkpoint_bytes": 2722343600,
+  "verified_smoke_snapshots": 3,
+  "recovered_inference": true,
+  "recovered_cuda_resume_to_smoke_step": 4,
+  "research_optimizer_updates": 0
+}

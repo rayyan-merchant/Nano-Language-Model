@@ -1,0 +1,18 @@
+{
+  "training_128_token_context_bytes": {
+    "mean": 312.5137532540204,
+    "min": 211,
+    "max": 401,
+    "median": 313.0
+  },
+  "validation_scored_target_preceding_context_bytes": {
+    "mean": 291.12777823341264,
+    "min": 204,
+    "max": 405,
+    "median": 291.0
+  },
+  "training_exposure_bytes_per_predicted_token": 2.441012255859375,
+  "training_unique_byte_coverage_fraction": 0.9999731036585001,
+  "E01_128_token_full_context_bytes": 128,
+  "policy": "Actual BPE byte lengths; exhaustive possible training windows and canonical separately tokenized validation prefix/suffix. No test likelihood."
+}

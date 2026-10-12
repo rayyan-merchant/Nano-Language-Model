@@ -1,0 +1,131 @@
+{
+  "label": "E02 seed42 single-seed research pilot",
+  "run_id": "E02_seed42_8130615f7e7144ad9a0abad20d0497e8",
+  "source_commit": "2cf39518492652e2ed05e459318e6166e4275814",
+  "code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "config_hash": "822afd303fcc1e67523a4811ecfe6a71f3b8325820b291c309c4950b0718e8e1",
+  "parameters": 2173056,
+  "completed_optimizer_updates": 5000,
+  "initial_recorded_training": {
+    "step": 1,
+    "loss": 7.111644744873047
+  },
+  "initial_recorded_validation": {
+    "step": 250,
+    "loss": 4.362304530835549,
+    "perplexity": 78.43768836862334,
+    "bpb": 2.7645762171239405,
+    "nll_sum": 106379.15828895569,
+    "scored_tokens": 24386,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "final_training_loss": 2.7889231145381927,
+  "final_training_trailing_100_loss": 2.88480975329876,
+  "final_validation": {
+    "loss": 3.197823023508642,
+    "perplexity": 24.479181546045588,
+    "bpb": 2.026595212432371,
+    "nll_sum": 77982.11225128174,
+    "scored_tokens": 24386,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "best_validation": {
+    "step": 5000,
+    "loss": 3.197823023508642,
+    "perplexity": 24.479181546045588,
+    "bpb": 2.026595212432371,
+    "nll_sum": 77982.11225128174,
+    "scored_tokens": 24386,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "milestones": {
+    "1000": {
+      "loss": 3.774641597318872,
+      "perplexity": 43.58188565162222,
+      "bpb": 2.392149450904043,
+      "nll_sum": 92048.40999221802,
+      "scored_tokens": 24386,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "2000": {
+      "loss": 3.4760191977723123,
+      "perplexity": 32.33076319211853,
+      "bpb": 2.2028998517870426,
+      "nll_sum": 84766.20415687561,
+      "scored_tokens": 24386,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "3000": {
+      "loss": 3.3084304494442467,
+      "perplexity": 27.342176846835542,
+      "bpb": 2.0966917994581973,
+      "nll_sum": 80679.3849401474,
+      "scored_tokens": 24386,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "4000": {
+      "loss": 3.2410657369287805,
+      "perplexity": 25.560948483238825,
+      "bpb": 2.0539999422581277,
+      "nll_sum": 79036.62906074524,
+      "scored_tokens": 24386,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "5000": {
+      "loss": 3.197823023508642,
+      "perplexity": 24.479181546045588,
+      "bpb": 2.026595212432371,
+      "nll_sum": 77982.11225128174,
+      "scored_tokens": 24386,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    }
+  },
+  "training_seconds": 1128.892874364992,
+  "validation_seconds": 198.577174338001,
+  "peak_gpu_bytes": 164972032,
+  "training_tokens": 20480000,
+  "training_source_bytes": 49991931,
+  "unique_target_bytes": 1003827,
+  "late_validation_slope_per_1000_steps": -0.05193113385531085,
+  "loss_improvement_3000_to_5000": 0.11060742593560491,
+  "train_loss_trailing_windows": {
+    "1000": 3.720706298649311,
+    "2000": 3.3859302386641503,
+    "3000": 3.152841925919056,
+    "4000": 3.0004958748817443,
+    "5000": 2.8848097532987595
+  },
+  "uncertainty": "One seed; no SD or significance estimate; full study remains NO-GO"
+}

@@ -1,0 +1,23 @@
+{
+  "archive": "E02_seed42_complete.zip",
+  "archive_sha256": "a08db901c3adb9a70357f0f3beb54fbf11c273fbb95383184d442b195a30ee5c",
+  "archive_bytes": 477310968,
+  "parts": [
+    {
+      "name": "part_00.bin",
+      "bytes": 209715200,
+      "sha256": "3bde11cc6760c5a91056438fa565ccc4fdd550e34313023ecea78c6c3506f7cf"
+    },
+    {
+      "name": "part_01.bin",
+      "bytes": 209715200,
+      "sha256": "2162fc98c5a06d30d45ca4c67b0542a11e490a74fb328e1466471c23b1fbc3cf"
+    },
+    {
+      "name": "part_02.bin",
+      "bytes": 57880568,
+      "sha256": "09671fac3bdaddf562b4bc801ad0693a4435a34651266a1c254df40c26fee9db"
+    }
+  ],
+  "reassemble": "Concatenate parts in numeric order, then verify archive SHA256 and every manifest entry."
+}
