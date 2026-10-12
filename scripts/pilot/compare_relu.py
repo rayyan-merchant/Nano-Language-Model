@@ -16,7 +16,7 @@ def compare(root, evidence, output):
     a=json.loads((baseline/'summary.json').read_text())
     b=json.loads((evidence/'analysis/summary.json').read_text())
     h=json.loads((evidence/'analysis/measured_history.json').read_text())
-    metadata=json.loads(next((evidence/'independent_runs').glob('*/metadata.json')).read_text())
+    metadata=json.loads(next((evidence/'runs').glob('*/metadata.json')).read_text())
     assert a['parameters']==b['parameters']==1804800 and a['code_hash']==b['code_hash']
     assert a['completed_optimizer_updates']==b['completed_optimizer_updates']==5000
     baseline_config={'vocab_size':65,**json.loads((root/'configs/baseline.json').read_text())['model']}

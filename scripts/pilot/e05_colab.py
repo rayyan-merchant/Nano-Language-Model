@@ -214,15 +214,18 @@ def package(root,out,store,run):
     started=time.perf_counter();archive=out.parent/'E05_seed42_complete.zip'
     included=list(run.rglob('*'))+list((out/'analysis').rglob('*'))+list(out.glob('*.json'))+[out/'cuda_recovery/recovery.json']
     files=[p for p in included if p.is_file()]
+    # Canonical archive paths keep completion.json directly usable after extraction.
+    sources={('runs/'+run.name+'/'+p.relative_to(run).as_posix() if p.is_relative_to(run) else p.relative_to(out).as_posix()):p for p in files}
+    assert len(sources)==len(files)
     with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=1) as z:
-        for p in files:z.write(p,p.relative_to(out).as_posix())
+        for name,p in sources.items():z.write(p,name)
     with zipfile.ZipFile(archive) as z:
         assert z.testzip() is None
         hashes={name:hashlib.sha256(z.read(name)).hexdigest() for name in z.namelist()}
-    assert all(file_hash(out/name)==h for name,h in hashes.items())
+    assert all(file_hash(sources[name])==h for name,h in hashes.items())
     snapshot_file(store/archive.name,archive.read_bytes())
     assert file_hash(store/archive.name)==file_hash(archive)
-    manifest={'run_id':run.name,'run_prefix':run.relative_to(out).as_posix()+'/', 'source_commit':SOURCE,
+    manifest={'run_id':run.name,'run_prefix':'runs/'+run.name+'/', 'source_commit':SOURCE,
               'archive_bytes':archive.stat().st_size,'archive_sha256':file_hash(archive),'files':hashes,
               'crc_and_source_hashes_verified':True,'archive_and_publication_seconds':time.perf_counter()-started}
     atomic_json(out/'artifact_manifest.json',manifest);publish_json(store/'artifact_manifest.json',manifest)
