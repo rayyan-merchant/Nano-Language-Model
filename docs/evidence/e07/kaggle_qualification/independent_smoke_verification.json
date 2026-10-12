@@ -1,0 +1,15 @@
+{
+  "status": "independent_saved_Kaggle_smoke_archive_hashes_snapshot_restore_CPU_loading_inference_passed",
+  "archive_sha256": "7f0dbb4a5522b9ed5b8b80fffb97f079cedadc80126256e47fb8e85962eec50e",
+  "archive_bytes": 20201339,
+  "archive_entries": 15,
+  "checkpoint_sha256": "f83de0f32853fcb5bf36171e1d4c3fafad95032b36067a79ed3d3df5b413963e",
+  "snapshot_hash": "2adfff78ff5cf156480d7a85c214a7fba292a1346cae48441f93e0e88b77a19c",
+  "step": 2,
+  "CPU_inference": "To bergf  tq     tWo ",
+  "additional_research_optimizer_updates": 0,
+  "limits": "CPU inference migration only; exact compatible fresh CUDA full-state recovery pending.",
+  "Drive_smoke_archive_url": "https://drive.google.com/file/d/1_ZvLD8HDCFxbaWFnMe4LR7xu3k7t4cO_/view",
+  "Drive_readback_status": "complete_hash_verified",
+  "Drive_upload_and_independent_readback_SHA256_equal": true
+}

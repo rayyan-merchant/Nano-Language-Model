@@ -1,0 +1,17 @@
+{
+  "status": "local_preflight_passed_persistent_publication_pending",
+  "experiment": "E07",
+  "seed": 42,
+  "source_commit": "5bb03b18943e7c45a305ce1d78b3446c31829ae7",
+  "code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "parameters": 1804800,
+  "dependency_packages": 46,
+  "smoke_checkpoint_bytes": 22767562,
+  "conservative_artifact_budget_bytes": 3350498024,
+  "local_restored_state_equal": true,
+  "smoke_verified_snapshot_count": 3,
+  "smoke_total_optimizer_step": 4,
+  "research_updates": 0,
+  "seconds": 54.595377267,
+  "storage_policy": "Kaggle saved output version must be independently retrieved and mounted/recovered in a fresh compatible GPU process before research. /kaggle/working alone is ephemeral."
+}
