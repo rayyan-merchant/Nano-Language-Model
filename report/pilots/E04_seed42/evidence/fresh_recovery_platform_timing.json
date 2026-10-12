@@ -1,0 +1,11 @@
+{
+  "kernel": "rayyannmerchant/nano-e04-recovery-20261012-d31e262c",
+  "status": "KernelWorkerStatus.COMPLETE",
+  "first_recorded_log_seconds": 7.530754616,
+  "last_recorded_log_seconds": 99.579998099,
+  "execution_pipeline_start_seconds": 9.300355298,
+  "execution_pipeline_complete_seconds": null,
+  "pipeline_wall_seconds": null,
+  "pipeline_termination": "completed_without_pipeline_marker",
+  "scope": "Platform-measured elapsed timestamps: clone/environment setup through the terminal archive-complete marker or original postprocessing failure. Excludes queue before execution, final notebook conversion/publication and network retrieval. Without a terminal pipeline marker, pipeline duration is unavailable. Log span is not exact platform session lifetime."
+}

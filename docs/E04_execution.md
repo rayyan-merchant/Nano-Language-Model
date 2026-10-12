@@ -38,3 +38,31 @@ Publication success is established by actual terminal saved output and subsequen
 independent checksum verification, not mere working-directory export.
 
 Status before execution: preflight/tests pending; no research result claimed.
+
+
+## E04 seed42 complete — 2026-10-12
+
+Individually authorized E04 learned-position run completed exactly5000 updates
+and all20 full sliding validations on rayyannmerchant's qualified T4 GPU0.
+Clean trained source b260264521ceb280f356b82ecd8cf4b69cb8af21; unchanged audited
+scientific core cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6.
+Parameters1829376 (+24576). Best/final5000 loss1.55111692,BPB2.23778869;
+all matched E01/E03 validation losses are lower than E04. Extra capacity and
+canonical initialization RNG consumption limit pure representation attribution.
+Training1001.78457s,validation413.79723s,pipeline1766.15717s,peak152.0874MiB.
+Original Kaggle5e7b13ef/v1 and fresh recoveryd31e262c/v1 are COMPLETE.
+Independently retrieved407744239-byte archive SHA256
+60b25eeab43606cedf1ef1e4ab86f9dfbbe10ccc366c1bac290015996e3a86fe:
+58 files verified;20 checkpoints and21 snapshots preserved. Independent CPU
+inference and exact fresh CUDA full-state roundtrip/generation passed,zero
+extra optimizer updates. Read-only monitoring connections dropped/reconnected;
+research journal has no failures/resumes. D recovery prevented C-space problems.
+Windows38 passed/1 CUDA skip; CPU/CUDA13 learned-position checks passed; training
+commit CI green before submission. Actual20 checkpoint counters and character
+BPB identity independently audited.100 unedited generation rows/50 duplicate
+best-final pairs; strong greedy loops/malformed words retained.14 measured figures,
+three-way character comparisons and separate contextual E02 BPB summary:
+report/pilots/E04_seed42/E04_seed42_analysis.md plus interpretation.md.
+E01/E02/E03 evidence and canonical definitions unchanged. E04 seed42 alone is
+complete; broader three-seed study remains separately gated. No other experiment,
+seed or10k extension launched. PR8 is reviewable and is not merged by this task.

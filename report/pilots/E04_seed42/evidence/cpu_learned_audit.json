@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "experiment": "E04",
+  "device": "cpu",
+  "parameters": 1829376,
+  "additional_parameters": 24576,
+  "model": {
+    "vocab_size": 65,
+    "d_model": 192,
+    "n_heads": 6,
+    "n_layers": 4,
+    "context_length": 128,
+    "mlp_expansion": 4,
+    "activation": "gelu",
+    "position": "learned",
+    "dropout": 0.1
+  },
+  "token_initial_weights_match_E01": true,
+  "all_shared_initial_weights_match_E01": false,
+  "initialization_limit": "Canonical extra embedding consumes seeded RNG before later layers; shared later weights differ. No custom initialization introduced.",
+  "checks": [
+    "only_position_factor",
+    "embedding_shape_parameter_count_delta",
+    "shared_parameter_shapes",
+    "token_plus_learned_positions",
+    "local_indices_0_to_127",
+    "no_RoPE",
+    "sinusoidal_unused",
+    "attention_shapes_causal_mask",
+    "finite_forward_manual_CE",
+    "future_token_invariance",
+    "finite_nonzero_all_position_gradients",
+    "QKV_gradients",
+    "cropped_generation_consistency"
+  ],
+  "limit": "Fixed context correctness only; no extrapolation or language quality proof"
+}

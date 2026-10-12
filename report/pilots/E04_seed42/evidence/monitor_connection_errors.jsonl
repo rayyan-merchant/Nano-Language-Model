@@ -1,0 +1,6 @@
+{"attempt": 0, "error": "ChunkedEncodingError", "scope": "local read-only log connection; not a training failure"}
+{"attempt": 1, "error": "ChunkedEncodingError", "scope": "local read-only log connection; not a training failure"}
+{"attempt": 2, "error": "ChunkedEncodingError", "scope": "local read-only log connection; not a training failure"}
+{"attempt": 3, "error": "ChunkedEncodingError", "scope": "local read-only log connection; not a training failure"}
+{"attempt": 4, "error": "ChunkedEncodingError", "scope": "local read-only log connection; not a training failure"}
+{"attempt": 5, "error": "ChunkedEncodingError", "scope": "local read-only log connection; not a training failure"}

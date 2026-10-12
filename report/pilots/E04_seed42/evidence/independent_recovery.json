@@ -1,0 +1,33 @@
+{
+  "status": "published_archive_verified_and_best_final_CPU_inference_passed",
+  "run_id": "E04_seed42_f3121bbd190e44f984afbd5dfaea57a0",
+  "archive_sha256": "60b25eeab43606cedf1ef1e4ab86f9dfbbe10ccc366c1bac290015996e3a86fe",
+  "archive_bytes": 407744239,
+  "verified_file_count": 58,
+  "optimizer_updates": 5000,
+  "validation_count": 20,
+  "seconds": 33.17413840000518,
+  "samples": [
+    {
+      "policy": "best",
+      "checkpoint": "runs/E04_seed42_f3121bbd190e44f984afbd5dfaea57a0/checkpoints/step_005000.pt",
+      "sha256": "c2041f88a6643bc6330c2fcf60b07216f7138d87037671ef5d62ca0d4878b317",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nI will not the season of the senators of the season\nThat with th"
+    },
+    {
+      "policy": "final",
+      "checkpoint": "runs/E04_seed42_f3121bbd190e44f984afbd5dfaea57a0/checkpoints/step_005000.pt",
+      "sha256": "c2041f88a6643bc6330c2fcf60b07216f7138d87037671ef5d62ca0d4878b317",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nI will not the season of the senators of the season\nThat with th"
+    }
+  ],
+  "training_resume": "CPU inference only; no CUDA RNG restore or additional updates attempted"
+}
