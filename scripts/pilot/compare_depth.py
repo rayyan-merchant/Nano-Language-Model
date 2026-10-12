@@ -80,6 +80,22 @@ def compare(baseline, six_layer, root, out):
                                 'final_bpb':summary['final_validation']['bpb'] if summary else None,
                                 'training_seconds':summary['training_seconds'] if summary else None})
     atomic_json(out/'depth_framework.json',{'scope':'Depth also changes capacity/compute; E09 metrics intentionally absent','rows':depth_framework})
+    gradient_rows=[]
+    for eid,h in zip(['E01','E08'],histories):
+        norms=np.array([r['gradient_norm'] for r in h])
+        assert np.isfinite(norms).all()
+        gradient_rows.append({'experiment':eid,'scope':'Recorded pre-clipping aggregate norms, not per-layer research gradients',
+                              'maximum':float(norms.max()),'median':float(np.median(norms)),
+                              'p95':float(np.percentile(norms,95)),
+                              'clipped_updates':int((norms>1).sum()),
+                              'first100_mean':float(norms[:100].mean()),'last100_mean':float(norms[-100:].mean())})
+    atomic_json(out/'gradient_comparison.json',{'scope':'Descriptive within-run norm statistics; not across-seed uncertainty','rows':gradient_rows})
+    for metric,ylabel in [('training_seconds','Training-only seconds'),('peak_gpu_bytes','Peak allocated memory (MiB)')]:
+        fig,ax=plt.subplots(figsize=(7,4.5));data=[s[metric] for s in summaries]
+        if metric=='peak_gpu_bytes':data=[v/2**20 for v in data]
+        ax.bar(['E01:4 blocks','E08:6 blocks'],data,color=['tab:blue','tab:orange'])
+        ax.set(ylabel=ylabel,title='Measured seed42 runs; separate T4 sessions')
+        fig.tight_layout();fig.savefig(out/('comparison_'+metric+'.png'),dpi=200);plt.close(fig)
     for name,data in [('matched_validation',rows),('summary_comparison',comparisons),('verified_runs',verified),('aggregate',aggregate)]:
         with (out/(name+'.csv')).open('x',newline='',encoding='utf-8') as f:
             w=csv.DictWriter(f,fieldnames=list(data[0]));w.writeheader();w.writerows(data)
