@@ -120,7 +120,7 @@ and not equal-protocol corpus likelihood comparisons. No step-zero validation is
 | Final conditional BPB | {s['final_validation']['bpb']:.8f} |
 | Final within-character perplexity | {s['final_validation']['perplexity']:.8f} |
 | Predicted token exposure | {history[-1]['training_tokens']} |
-| Source-byte exposure including repeats | {history[-1]['training_source_bytes']} |
+| Source-byte exposure including repeats | {history[-1]['training_bytes']} |
 | Unique target bytes | {history[-1]['unique_target_bytes']} |
 | Updates with preclip gradient norm>1 | {clipped} ({clipped/5000*100:.4f}%) |
 
