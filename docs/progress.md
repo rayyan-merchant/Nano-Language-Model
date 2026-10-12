@@ -273,3 +273,23 @@ configuration provenance and failure screenshot preserved. Partial report:
 report/pilots/E07_seed42/E07_seed42_analysis.md. No E07 predictive, efficiency,
 generation or preservation result is claimed. Training may proceed only when
 legitimate GPU availability returns and all mandatory preflight gates pass.
+
+## E07 Kaggle qualification passed; research in progress — 2026-10-12
+
+User authorized Kaggle fallback on verified syedarijaali account after Colab's
+GPU limit. Exact isolated Python3.11.14/torch2.5.1+cu124/CUDA12.4 and46-package
+freeze reproduced on two visible Tesla T4 devices; cuda:0 only.40 tests passed
+in31.68s plus focused attention test in0.40s. Eight-head CUDA audit,1804800params,
+GELU/sinusoidal,all68 E01 initial tensors and pinned data/tokenizer controls passed.
+Smoke archive20201339bytes SHA2567f0dbb4a5522b9ed5b8b80fffb97f079cedadc80126256e47fb8e85962eec50e
+saved as private Kaggle qualification version2, independently downloaded/verified
+with CPU loading/inference, published/read back from Drive, and mounted/recovered
+in a new exact-profile CUDA runtime with six full state structures equal.
+
+E07 research run E07_seed42_f00363fe26f64ec1b3bb5ad00d19c4bd now runs the unchanged
+canonical engine from clean reviewed5bb03b1/cdea42, seed42,float32,micro4/accum8,
+exact5000-stop. Latest observation471 updates/one full validation; no failure.
+This is progress, not completion. Research notebook:
+https://www.kaggle.com/code/syedarijaali/e07-seed42-eight-head-research/edit .
+Draft PR11; E06 remains independently owned and draft. No other research run
+or extension. Historical Colab/queue/session-cap observations are preserved.

@@ -1,10 +1,17 @@
-# E07 seed42 eight-head attention — preflight blocked
+# E07 seed42 eight-head attention — research in progress
 
-**Research execution has not started.** On 2026-10-12, Colab refused the requested
-T4 runtime with: “You cannot currently connect to a GPU due to usage limits in Colab.”
-Completed E07 research updates: **0/5000**. Full validations: **0/20**. Smoke updates:
-**0**. No checkpoint, research archive, trained sample or measured research result
-exists. This document preserves the actual preflight outcome, not a completed study.
+**Research is now in progress on the user-authorized Kaggle fallback.**
+Run `E07_seed42_f00363fe26f64ec1b3bb5ad00d19c4bd` completed471 updates and the
+step250 full validation at the latest observation. Qualification passed40 existing
+tests and1 focused attention test in the exact approved profile. The published
+smoke archive was independently retrieved/verified from Kaggle and Google Drive;
+a fresh compatible CUDA runtime restored all six complete state structures exactly.
+Research final results, archive/recovery and final report remain pending.
+
+The following sections preserve the earlier Colab gate failure and CPU preparation
+as historical preflight evidence. Their pending/zero-count statements describe that
+attempt, not the active Kaggle research run. The complete measured research report
+will replace this interim record after verified completion.
 
 ## Objective and hypothesis
 
