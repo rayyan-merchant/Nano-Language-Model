@@ -320,3 +320,28 @@ report/pilots/E04_seed42/E04_seed42_analysis.md plus interpretation.md.
 E01/E02/E03 evidence and canonical definitions unchanged. E04 seed42 alone is
 complete; broader three-seed study remains separately gated. No other experiment,
 seed or10k extension launched. PR8 is reviewable and is not merged by this task.
+
+## E06 seed42 completed and independently recovered -- 2026-10-12
+
+The explicitly authorized E06 four-head run completed5000 optimizer updates and
+all20 full sliding validations on TeslaT4/Python3.11.14/torch2.5.1+cu124,
+float32,seed42. Clean trained source fc08577afb63d4bd3ecad43bf33355c65ddd985c;
+scientific hash cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6.
+Only head count6->4 differs; head dimension48,parameters1804800. All13 CPU
+and actualCUDA attention checks passed. Final Windows suite41 passed/1 CUDA
+skip (285.62s); no full Kagglepytest suite is claimed. Best4750 loss1.52865285
+BPB2.20537989; final5000 loss1.52920435 BPB2.20617553. Training917.232s,
+validation389.111s, allocated peak145.712MiB. Twenty resumable states and21
+snapshots are published in private Kaggle notebook version1
+rayyannmerchant/nano-e06-pilot-20261012-62c30c02. Independent402500855-byte
+archive SHA256 bf224ad20d4eca03359d08da820289ac1e9cef2c8f082f9d94e229f8edb29530
+passed58 file hashes/ZIP checks and CPU inference. Fresh savedCUDA recovery
+rayyannmerchant/nano-e06-recovery-20261012-cab9c7aa verified exact full state
+and best/final inference with zero extra updates. No research failure/resume
+event.100 genuine samples and13 figures retained, including greedy loops.
+Small E01 advantage is descriptive for one seed, not significant evidence.
+Full report: report/pilots/E06_seed42/E06_seed42_analysis.md and interpretation.md.
+Large artifacts are onD and saved Kaggle output, excluded fromGit. PR9 is for
+review; no merge or extra configuration/seed/extension was performed. Historical
+E01-E04 evidence preserved; E05 Colab execution untouched. Broader three-seed
+study remains separately gated/NO-GO, not authorized by this scoped completion.

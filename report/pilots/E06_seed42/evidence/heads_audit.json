@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "experiment": "E06",
+  "device": "cuda",
+  "parameters": 1804800,
+  "model": {
+    "vocab_size": 65,
+    "d_model": 192,
+    "n_heads": 4,
+    "n_layers": 4,
+    "context_length": 128,
+    "mlp_expansion": 4,
+    "activation": "gelu",
+    "position": "sinusoidal",
+    "dropout": 0.1
+  },
+  "head_shape": [
+    2,
+    4,
+    128,
+    48
+  ],
+  "scale_denominator": 6.928203230275509,
+  "all_initial_parameter_values_match_E01": true,
+  "checks": [
+    "sole_head_count_override",
+    "parameters_and_initial_values_equal",
+    "QKV_head_shapes",
+    "split_merge_identity",
+    "manual_sqrt48_attention",
+    "wrong_scaling_rejected",
+    "sinusoidal_only_no_RoPE",
+    "causal_mask",
+    "finite_forward_manual_CE",
+    "future_token_invariance",
+    "finite_QKV_backward",
+    "train_eval_dropout",
+    "cropped_generation"
+  ],
+  "limit": "Numerical fixed-context correctness; not language quality or statistical evidence"
+}
