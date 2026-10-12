@@ -1,0 +1,13 @@
+{
+  "E01_trained_commit": "444bca4c4ac19f97f46fae210a9fd361f8561537",
+  "E02_trained_commit": "2cf39518492652e2ed05e459318e6166e4275814",
+  "canonical_code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "canonical_changed_files": [],
+  "PR4_status_at_preflight": "MERGED",
+  "scope": [
+    "src",
+    "configs",
+    "experiments/configs"
+  ],
+  "baseline_and_E02_configuration_unchanged": true
+}

@@ -17,7 +17,7 @@ from nano_lm.artifacts import atomic_json, file_hash
 from nano_lm.bpe import encode_with_bytes, from_artifact
 from nano_lm.checkpoint import read_checkpoint, load_for_inference
 from nano_lm.generate import generate
-from nano_lm.storage import restore_snapshot, verify_snapshot
+from nano_lm.storage import restore_snapshot, verify_snapshot, snapshot_file
 from nano_lm.train import environment
 
 CORE = 'cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6'
@@ -138,14 +138,35 @@ def recover(root, store, out, analyzer):
             for p in folder.rglob('*'):
                 if p.is_file(): z.write(p,p.relative_to(out).as_posix())
         for p in out.glob('*.json'): z.write(p,p.name)
-    atomic_json(store/'artifact_manifest.json', {'run_id':run.name,'archive_sha256':file_hash(archive),
-                'archive_bytes':archive.stat().st_size,'files':{p.relative_to(out).as_posix():file_hash(p) for folder in [run,out/'analysis'] for p in folder.rglob('*') if p.is_file()},
-                'storage':str(store),'source_commit':metadata['environment']['git_commit']})
+    finalize_archive(store, out)
     print('E02 RECOVERY AND ANALYSIS COMPLETE', json.dumps(evidence), flush=True)
+
+
+def finalize_archive(store, out):
+    """Check every archived file; publish using Drive-compatible staged rename."""
+    archive = store/'E02_seed42_complete.zip'
+    run = next((out/'runs').iterdir())
+    metadata = json.loads((run/'metadata.json').read_text())
+    with zipfile.ZipFile(archive) as z:
+        names = z.namelist()
+        assert len(names) == len(set(names))
+        assert all(not Path(n).is_absolute() and '..' not in Path(n).parts for n in names)
+        assert z.testzip() is None
+        import hashlib
+        hashes = {n:hashlib.sha256(z.read(n)).hexdigest() for n in names}
+        assert all(file_hash(out/n) == checksum for n,checksum in hashes.items())
+    manifest = {'run_id':run.name,'archive_sha256':file_hash(archive),
+                'archive_bytes':archive.stat().st_size,'files':hashes,
+                'archive_crc_and_all_entry_source_hashes_verified':True,
+                'storage':str(store),'source_commit':metadata['environment']['git_commit']}
+    snapshot_file(store/'artifact_manifest.json', (json.dumps(manifest,indent=2)+'\n').encode())
+    print('ARCHIVE MANIFEST VERIFIED AND PUBLISHED',manifest['archive_sha256'],flush=True)
 
 
 if __name__ == '__main__':
     p=argparse.ArgumentParser()
     for name in ['root','store','output','analyzer']: p.add_argument('--'+name,type=Path,required=True)
+    p.add_argument('--finalize-only',action='store_true')
     a=p.parse_args()
-    recover(a.root,a.store,a.output,a.analyzer)
+    if a.finalize_only: finalize_archive(a.store,a.output)
+    else: recover(a.root,a.store,a.output,a.analyzer)

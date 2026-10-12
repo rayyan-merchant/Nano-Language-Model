@@ -1,0 +1,30 @@
+[
+  {
+    "setting": "greedy",
+    "samples": 5,
+    "mean_continuation_characters": 632.2,
+    "mean_repeated_8gram_position_fraction": 0.6257702997935974,
+    "replacement_characters": 0
+  },
+  {
+    "setting": "0.7",
+    "samples": 15,
+    "mean_continuation_characters": 595.2,
+    "mean_repeated_8gram_position_fraction": 0.05885296589103643,
+    "replacement_characters": 0
+  },
+  {
+    "setting": "1.0",
+    "samples": 15,
+    "mean_continuation_characters": 619.1333333333333,
+    "mean_repeated_8gram_position_fraction": 0.02808338720417835,
+    "replacement_characters": 0
+  },
+  {
+    "setting": "1.2",
+    "samples": 15,
+    "mean_continuation_characters": 638.8,
+    "mean_repeated_8gram_position_fraction": 0.0111305396775249,
+    "replacement_characters": 1
+  }
+]
