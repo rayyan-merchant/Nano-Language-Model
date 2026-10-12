@@ -1,0 +1,25 @@
+{
+  "role": "Exact executed Colab notebook snapshot, including outputs and final verification cells",
+  "source_url": "https://colab.research.google.com/drive/1jXE5OshAxWDrT4i0F8bw7OuFM59HXUjz",
+  "source_modified_utc": "2026-10-12T12:03:44.730Z",
+  "bytes": 25440,
+  "sha256": "1b08e0fda817157442c476b0e98d73c494b13a07a0d081035b6b89dae79ec5a4",
+  "byte_for_byte_copy": true,
+  "cells": 10,
+  "outputs_preserved": true,
+  "final_verification": {
+    "experiment": "E05 ReLU seed42",
+    "completed_updates": 5000,
+    "full_validations": 20,
+    "best_and_final_step": 5000,
+    "validation_loss": 1.55449909,
+    "conditional_BPB": 2.24266813,
+    "verified_checkpoint_states": 20,
+    "genuine_generation_labels": 100,
+    "independent_integrity_and_inference": true,
+    "report_files_hash_verified": 46,
+    "additional_optimizer_updates": 0
+  },
+  "reproducible_launcher": "notebooks/colab_e05_seed42_pilot.ipynb",
+  "scope": "Historical execution record; no cells rerun or research optimizer updates performed during this delivery correction"
+}
