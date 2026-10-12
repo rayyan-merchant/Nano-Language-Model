@@ -48,5 +48,22 @@
     "seconds": 285.62,
     "CUDA_skip": true
   },
-  "approval_service_interruption": "Post-run check denied because review service usage limit; action not executed. User continued; retry approved. No bypass or training change."
+  "approval_service_interruption": "Post-run check denied because review service usage limit; action not executed. User continued; retry approved. No bypass or training change.",
+  "reviewed_main_integration": {
+    "main": "5bb03b18943e7c45a305ce1d78b3446c31829ae7",
+    "merge_commit": "3a6babd7b730dcc9846de8df09f77fbc2b80135f",
+    "sole_conflict": ".gitattributes append rules; both retained",
+    "E05_files_unchanged": true,
+    "scientific_core_unchanged": true
+  },
+  "post_merge_focused_tests": {
+    "passed": 3,
+    "seconds": 0.86,
+    "first_attempt": "2passed,1setup PermissionError from default Windows pytest temp; explicit D basetemp fixed"
+  },
+  "report_commit_CI": {
+    "commit": "d959661f015d22838f13988a584e0479561fcf6f",
+    "run": 38287295207,
+    "conclusion": "success"
+  }
 }

@@ -127,6 +127,15 @@ protocol bytes plus identical semantic settings across WindowsCRLF copies.
 Historical reports and genuine generated text were preserved. Scientific core,
 configuration and evaluation semantics were unchanged.
 
+While the E06 report was being finalized, reviewed E05 PR10 was merged into
+main (`5bb03b18943e7c45a305ce1d78b3446c31829ae7`). The E06 branch incorporated
+that main commit; the sole conflict was additive `.gitattributes` rules, resolved
+by retaining both. E05 files remain byte-identical to main and the trained source
+is unchanged. Three post-merge integration tests passed in0.86s with an explicit
+D temporary directory. Their first attempt had two passes and one setup error
+because the default Windows pytest temporary directory denied access; no model
+failure was involved. The report commit's CI run38287295207 passed.
+
 ## Reproducing the actual analysis
 
 The clean trained source is `fc08577afb63d4bd3ecad43bf33355c65ddd985c`.
