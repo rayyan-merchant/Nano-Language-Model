@@ -49,7 +49,12 @@ def preflight(root, out, store, saved):
     assert all(int(v['step']) == payload['step'] for v in payload['optimizer']['state'].values())
     recovered = state_restore(cp, out/'resume_roundtrip.pt')
     assert all(recovered['exact_state'].values()) and recovered['additional_optimizer_updates'] == 0
+    # Preserve any saved attempts beyond the durable checkpoint as separate evidence.
     original = saved/'e07_pilot'
+    attempted = original/'runs'/run.name/'events.jsonl'
+    if attempted.exists():
+        events = [json.loads(line) for line in attempted.read_text().splitlines()]
+        atomic_json(out/'original_saved_attempts.json',{'source_sha256':file_hash(attempted),'committed_resume_step':payload['step'],'events':events,'scope':'Saved original journal, including any attempts beyond the restored checkpoint. Never merged or truncated to manufacture continuation.'})
     for source in original.glob('*.json'):
         if source.name not in {'completion.json','io_timing.json','preflight.json','environment.json','hardware.json','execution.json'}:
             shutil.copyfile(source, out/source.name)
