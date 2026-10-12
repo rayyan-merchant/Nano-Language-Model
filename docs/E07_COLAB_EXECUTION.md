@@ -44,3 +44,21 @@ verify with `verify_e07_archive.py`, then build matched comparison and report.
 Preserve both the clean reproducible launcher and exact executed Colab notebook
 with outputs. Never represent the launcher as the executed evidence. Keep weights,
 dataset and archives outside GitHub. Open review PR; no merge.
+
+## Authorized Kaggle fallback
+
+After Colab refused GPU allocation, the user requested Kaggle and signed into
+verified account `syedarijaali`. Native CUDA probe attached two Tesla T4 GPUs
+(driver580.178.04); native Python3.13/PyTorch2.11 remains unqualified. User then
+instructed completion of the same E07 task on this available platform. The frozen
+scientific configuration and exactly5000-update scope remain unchanged.
+
+`scripts/pilot/e07_kaggle.py` uses the committed E07 audit and same training/finish
+functions. Its platform preflight reproduces the exact approved environment,
+data, tests and complete-state smoke workflow. Publish a saved Kaggle output
+version, independently retrieve/hash the smoke archive, then mount that saved
+output in a new notebook and execute compatible fresh CUDA state recovery before
+research. Saved output versions provide platform persistence; working-directory
+snapshots alone are explicitly ephemeral. Final verified archives/parts also go
+to the authorized Google Drive destination through the connected file uploader.
+No Drive mount or continuous Drive export is falsely claimed for Kaggle.
