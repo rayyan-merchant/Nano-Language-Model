@@ -100,9 +100,15 @@ def preflight(root, out, store, quota_free):
     print('E07 PREFLIGHT PASSED',json.dumps(record),flush=True)
 
 
-def research(root,out,store):
+def research(root,out,store,resume=None):
     qualified(root); assert json.loads((out/'preflight.json').read_text())['status']=='passed'
-    assert not (out/'runs').exists() and not (store/'research_snapshots').exists()
+    if resume is None:
+        assert not (out/'runs').exists() and not (store/'research_snapshots').exists()
+    else:
+        gate=json.loads((out/'resume_preflight.json').read_text())
+        assert gate['status']=='hash_verified_full_state_CUDA_restoration_passed'
+        assert file_hash(resume)==gate['checkpoint_sha256']
+        assert read_checkpoint(resume)[0]['step']==gate['checkpoint_step']<5000
     import nano_lm.train as engine
     import nano_lm.storage as storage
     timers=[]; journal=[0.]
@@ -122,10 +128,10 @@ def research(root,out,store):
     engine.append_event=event
     settings=TrainSettings(seed=42,device='cuda',precision='float32',run_kind='research',eval_every=250,checkpoint_every=500)
     atomic_json(out/'execution.json',{'entrypoint':'nano_lm.train.train','settings':asdict(settings),'steps':5000,
-                                    'source_commit':SOURCE,'timing_hooks':'Forward unchanged calls; no numerical or RNG changes'})
+                                    'source_commit':SOURCE,'resume_checkpoint':str(resume) if resume else None,'timing_hooks':'Forward unchanged calls; no numerical or RNG changes'})
     began=time.perf_counter()
-    run,checkpoint,summary=engine.train(root,out/'data','E07',settings,5000,out/'runs',export_root=store/'research_snapshots')
-    atomic_json(out/'io_timing.json',{'records':timers,'journal_seconds':journal[0],'engine_wall_seconds':time.perf_counter()-began})
+    run,checkpoint,summary=engine.train(root,out/'data','E07',settings,5000,out/'runs',resume=resume,export_root=store/'research_snapshots')
+    atomic_json(out/'io_timing.json',{'records':timers,'journal_seconds':journal[0],'engine_wall_seconds':time.perf_counter()-began,'scope':'resumed segment only; prior checkpoint/export overhead unavailable' if resume else 'complete original research segment'})
     atomic_json(out/'completion.json',{'status':'5000_completed_optimizer_updates','run_id':run.name,
                                       'final_checkpoint':str(checkpoint.relative_to(out)),'best_checkpoint':summary['best_checkpoint'],
                                       'source_commit':SOURCE,'code_hash':CORE,'validation_steps':list(range(250,5001,250))})
