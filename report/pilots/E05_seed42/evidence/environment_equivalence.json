@@ -1,0 +1,7 @@
+{
+  "all_E01_E02_E05_46_transitive_packages_match": true,
+  "package_count": 46,
+  "normalized_freeze_sha256": "4298fd772be7d82c2fe7ffd73e3e012890ab20bdaccb3af124b996ae787313aa",
+  "editable_project_paths_excluded": true,
+  "hardware_platform_confounds": "Kaggle E01 driver580.178.04 vs Colab E05 driver580.82.07; T4 GPU0 used, E01 two devices allocated versus E05 one."
+}

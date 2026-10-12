@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "experiment": "E05",
+  "seed": 42,
+  "authorized_research_updates": 5000,
+  "source_commit": "31e974b23b7e73b2f48b080b36865608efb879b8",
+  "code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "parameters": 1804800,
+  "dependency_packages": 46,
+  "actual_drive_quota_free_bytes": 390460000000,
+  "quota_source": "Google Drive storage UI observed before launch",
+  "smoke_checkpoint_bytes": 22767372,
+  "conservative_artifact_budget_bytes": 3350479024,
+  "smoke_verified_snapshot_count": 3,
+  "fresh_restore_hash_equal": true,
+  "fresh_cuda_smoke_inference": "To be        ",
+  "restored_smoke_total_step": 4,
+  "research_updates": 0,
+  "storage": "/content/drive/MyDrive/Nano-Language-Model/E05_seed42/pilot_e2a4d3081a4344559641bdacaac89e54",
+  "seconds": 67.805317532
+}
