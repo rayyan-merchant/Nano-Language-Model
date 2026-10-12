@@ -1,5 +1,27 @@
 # Experiment readiness audit
 
+## Scoped E02 seed42 Colab pilot — 2026-10-12
+
+The second member explicitly authorized E02 seed42 for exactly 5,000 optimizer
+updates after source, CUDA/software and durable-storage qualification. This one-run
+exception completed on Colab Tesla T4 at clean main
+`2cf39518492652e2ed05e459318e6166e4275814`, with the identical E01 canonical core
+hash and exact Python3.11.14 / torch2.5.1+cu124 / CUDA12.4 dependency freeze.
+35 automated tests passed. Drive smoke export/restore and CUDA continuation passed
+before research. Twenty full sliding validations, all twenty checkpoint counters,
+21 durable snapshots, fresh-runtime best/final inference and the complete genuine
+generation grid were verified. The archive was independently retrieved in checked
+parts, reconstructed, CRC/file-hash audited, and loaded for CPU inference.
+
+Best/final update is 5,000; conditional validation BPB is 2.02659521. Measured
+comparison and parameter/context/exposure confounds are in the
+[E02 report](report/pilots/E02_seed42/E02_seed42_analysis.md). A postprocessing Drive
+hard-link manifest error was repaired with staged rename; no extra training
+updates occurred. Definitions in the configuration registry remain unchanged.
+
+**Study-wide NO-GO remains. No further research seed, configuration or 10k
+continuation is authorized.** Historical E01 and qualification records follow.
+
 ## Scoped E01 pilot authorization — 2026-10-12
 
 Rayyan explicitly authorized E01 seed42 for exactly5000 optimizer updates on

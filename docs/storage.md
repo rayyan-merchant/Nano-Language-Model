@@ -1,5 +1,24 @@
 # Persistent storage and interruption recovery
 
+## Actual E02 Colab/Drive evidence — 2026-10-12
+
+The scoped E02 seed42 pilot verified a mounted writable Drive directory, actual
+Drive account quota, a smoke snapshot export/checksum/fresh restore/inference and
+CUDA continuation before training. The 5k run preserved all twenty validation
+states in twenty-one immutable snapshots. The original local runtime was absent
+after completion; all artifacts were recovered in a fresh matching runtime with
+zero additional updates. Every optimizer/scheduler counter and archive file hash
+was independently checked, including downloaded archive reconstruction and CPU
+inference. This is evidence for this account/run, not a blanket claim for all cloud
+storage accounts. See [the E02 report](../report/pilots/E02_seed42/E02_seed42_analysis.md).
+
+The archive manifest initially used `atomic_json`, whose hard-link publication is
+unsupported on Drive FUSE. Postprocessing now uses the storage module's staged
+rename publisher. Preserve the failed temporary file/log as evidence. The complete
+477,310,968-byte ZIP exceeds this connector's 268,435,456-byte download limit;
+ordered parts under the limit preserve the original archive SHA256. Verify part
+hashes, concatenate in numeric order, and verify the full archive and entry hashes.
+
 Each run has a UUID identity, immutable metadata, tokenizer/dataset manifests,
 versioned step checkpoints, segment summaries and append-only attempted events.
 Checkpoint history is authoritative. Events after the latest checkpoint remain

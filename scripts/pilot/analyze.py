@@ -18,9 +18,12 @@ from nano_lm.generate import generate
 
 def analyze(root,run,out,device,skip_generation=False,development_check=False):
     out.mkdir(parents=True,exist_ok=False);torch.set_num_threads(1)
-    checkpoint_path=max((run/'checkpoints').glob('step_*.pt')) if development_check else run/'checkpoints/step_005000.pt'
+    checkpoint_path = (max((run/'checkpoints').glob('step_*.pt'))
+                       if development_check else run/'checkpoints/step_005000.pt')
     payload,_=read_checkpoint(checkpoint_path)
-    experiment=payload['metadata']['resolved']['experiment_id'];label=f'{experiment} seed42: '+('DEVELOPMENT postprocessing check' if development_check else 'measured research experiment')
+    experiment=payload['metadata']['resolved']['experiment_id']
+    seed=payload['metadata']['resolved']['training']['seed']
+    label=f'{experiment} seed{seed}: '+('DEVELOPMENT postprocessing check' if development_check else 'single-seed research pilot')
     state=payload['training_state'];history=state['history'];val=[r for r in history if 'validation' in r]
     if not development_check:assert len(history)==5000 and len(val)==20
     else:assert payload['metadata']['resolved']['training']['run_kind']=='smoke' and val
@@ -56,7 +59,7 @@ def analyze(root,run,out,device,skip_generation=False,development_check=False):
         return
     protocol=json.loads((root/'configs/generation_protocol.json').read_text());samples=[];began=time.perf_counter()
     if development_check:protocol={**protocol,'max_new_tokens':2,'sampling_seeds':[42],'temperatures':[0.7]}
-    for label,name in [('development',checkpoint_path.name)] if development_check else [('best',state['best_checkpoint']),('final','step_005000.pt')]:
+    for checkpoint_policy,name in ([('development',checkpoint_path.name)] if development_check else [('best',state['best_checkpoint']),('final','step_005000.pt')]):
         checkpoint=run/'checkpoints'/name;model,tokenizer=load_for_inference(checkpoint);model.to(device)
         for prompt in protocol['prompts']:
             settings=[{'greedy':True,'temperature':1.0,'seed':protocol['sampling_seeds'][0]}] if protocol['greedy'] else []
@@ -64,11 +67,11 @@ def analyze(root,run,out,device,skip_generation=False,development_check=False):
             for setting in settings:
                 ids=torch.tensor([tokenizer.encode(prompt)],device=device)
                 result=generate(model,ids,protocol['max_new_tokens'],**setting)
-                samples.append({'checkpoint_policy':label,'checkpoint':name,'checkpoint_sha256':file_hash(checkpoint),'prompt':prompt,'max_new_tokens':protocol['max_new_tokens'],**setting,'generation_device':device,'text':tokenizer.decode(result[0].tolist())})
+                samples.append({'checkpoint_policy':checkpoint_policy,'checkpoint':name,'checkpoint_sha256':file_hash(checkpoint),'prompt':prompt,'max_new_tokens':protocol['max_new_tokens'],**setting,'generation_device':device,'text':tokenizer.decode(result[0].tolist())})
         del model;torch.cuda.empty_cache() if device=='cuda' else None
     atomic_json(out/'generation.json',{'protocol':protocol,'protocol_sha256':digest(protocol) if development_check else file_hash(root/'configs/generation_protocol.json'),'protocol_source_sha256':file_hash(root/'configs/generation_protocol.json'),'development_check':development_check,'samples':samples,'seconds':time.perf_counter()-began,'selection':'Entire fixed grid; no cherry-picking; best and final separately labeled'})
     with (out/'generation.md').open('x',encoding='utf-8') as f:
-        f.write(f'# Genuine {experiment} seed42 model generations\n\n'+('DEVELOPMENT: shortened generation plumbing check, not research.\n' if development_check else 'All fixed prompts/settings included. No editing of generated text.\n'))
+        f.write(f'# Genuine {experiment} seed{seed} model generations\n\n'+('DEVELOPMENT: shortened generation plumbing check, not research.\n' if development_check else 'All fixed prompts/settings included. No editing of generated text.\n'))
         for i,s in enumerate(samples):f.write(f"\n## {i+1}: {s['checkpoint_policy']} {s['checkpoint']}; greedy={s['greedy']}, temperature={s['temperature']}, seed={s['seed']}\n\nPrompt: {s['prompt']!r}\n\n```text\n{s['text']}\n```\n")
     print(json.dumps(summary,indent=2),flush=True)
 

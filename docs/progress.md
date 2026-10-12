@@ -204,3 +204,24 @@ No other run or extension launched. E02 is the colleague's independent Colab
 execution, outside this evidence. The broader three-seed study remains separately
 gated; scoped E01/E03 completion is not global GO. Further experiments/extensions
 require authorization. PR6 is reviewable and is not merged.
+## Authorized E02 seed42 Colab pilot — 2026-10-12
+
+The scoped second-member authorization completed exactly 5,000 updates with the
+shared E02 Byte-BPE definition, clean main `2cf39518492652e2ed05e459318e6166e4275814`
+and the unchanged E01 core hash. Isolated Python3.11.14/torch2.5.1+cu124 on Tesla
+T4 matched the full E01 dependency freeze; 35 tests and E02 CUDA/Drive recovery
+qualification passed. The run recorded 20 full validations and 20 resumable
+checkpoint states in 21 verified Drive snapshots. Best/final update5000 BPB is
+2.02659521; training-only1128.893s, validation198.577s. Equal20,480,000 predicted
+tokens exposed49,991,931 source bytes, with mean312.514-byte training contexts.
+The report documents the additional parameters/context/exposure confounds.
+
+Fresh-runtime best/final GPU inference, all100 fixed-protocol generation records,
+independent local archive reconstruction/hash audits and CPU inference passed.
+Postprocessing manifest publication failed on Drive hard links and was repaired
+without additional training. The 477,310,968-byte archive remains outside Git;
+the connector's download-size cap was handled using verified numbered parts.
+Detailed measured evidence: `report/pilots/E02_seed42/E02_seed42_analysis.md`.
+This one-seed BPB observation does not establish a definitive tokenizer winner.
+No other research seed/configuration or10k continuation was started; global
+study NO-GO and review-before-merge remain in force.
