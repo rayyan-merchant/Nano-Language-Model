@@ -20,7 +20,7 @@ from nano_lm.train import TrainSettings, environment, seed_all, train
 
 
 def run(root, out, experiment='E01'):
-    if experiment not in {'E01','E03','E04'}:raise ValueError('Unsupported authorized experiment')
+    if experiment not in {'E01','E03','E04','E06'}:raise ValueError('Unsupported authorized experiment')
     total_start=time.perf_counter();out.mkdir(parents=True,exist_ok=False)
     torch.set_num_threads(1)
     env=environment(root)
@@ -41,15 +41,17 @@ def run(root, out, experiment='E01'):
     assert all(manifest[k]==reference[k] for k in ['source','split','partitions','tokenizers','manifest_hash'])
     atomic_json(out/'dataset_validation.json',{'all_reference_fields_match':True,'manifest':manifest})
     config,defaults,variant=load_experiment(root,experiment,65)
-    positions={'E01':'sinusoidal','E03':'rope','E04':'learned'}
+    positions={'E01':'sinusoidal','E03':'rope','E04':'learned','E06':'sinusoidal'}
     parameters=1829376 if experiment=='E04' else 1804800
-    assert variant['model_overrides']==({} if experiment=='E01' else {'position':positions[experiment]}) and variant['tokenizer']=='character'
+    expected_override = ({} if experiment=='E01' else {'n_heads':4} if experiment=='E06' else {'position':positions[experiment]})
+    assert variant['model_overrides']==expected_override and variant['tokenizer']=='character'
     assert GPT(config).parameter_count()==parameters
     settings=TrainSettings(seed=42,device='cuda',precision='float32',run_kind='research',eval_every=250,checkpoint_every=500)
     settings.validate(128)
     assert settings.tokens_per_update==4096 and settings.micro_batch_size==4
     expected_model={'vocab_size':65,**json.loads((root/'configs/baseline.json').read_text())['model']}
     expected_model['position']=positions[experiment]
+    if experiment=='E06':expected_model['n_heads']=4
     assert config.to_dict()==expected_model
     assert defaults['optimizer']=='AdamW' and defaults['learning_rate']==settings.learning_rate and defaults['scheduler']=='constant'
     # Separate one-update labeled smoke tests CUDA backward and checkpoint reload.
@@ -60,6 +62,9 @@ def run(root, out, experiment='E01'):
     if experiment=='E04':
         from learned_audit import audit
         atomic_json(out/'learned_audit.json',audit(root,'cuda'))
+    if experiment=='E06':
+        from heads_audit import audit
+        atomic_json(out/'heads_audit.json',audit(root,'cuda'))
     _,checkpoint,_=train(root,data,experiment,smoke_settings,1,out/'preflight_smoke')
     payload,_=read_checkpoint(checkpoint);model,_=load_for_inference(checkpoint)
     assert payload['step']==1 and model.parameter_count()==parameters
@@ -121,7 +126,7 @@ def run(root, out, experiment='E01'):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--experiment',choices=['E01','E03','E04'],default='E01')
+    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--experiment',choices=['E01','E03','E04','E06'],default='E01')
     a=p.parse_args()
     try:run(a.root,a.output,a.experiment)
     except BaseException as e:
