@@ -1,0 +1,25 @@
+{
+  "nonresearch_observations": [
+    {
+      "phase": "notebook_authoring",
+      "error": "unterminated string literal from initial multiline cell newline",
+      "outcome": "corrected before provisioning; no research updates executed"
+    },
+    {
+      "phase": "local_preflight",
+      "error": "pytest unavailable on host Python",
+      "outcome": "direct CPU audit passed; all real tests executed in qualified Colab"
+    },
+    {
+      "phase": "receipt_retrieval",
+      "error": "curl config ended with empty next transfer",
+      "outcome": "corrected final separator; all seven JSON receipts independently downloaded and parsed"
+    },
+    {
+      "phase": "independent_archive_download",
+      "error": "curl HTTP/2 INTERNAL_ERROR92; part00 stopped after partial transfer",
+      "outcome": "part01 hash passed; part00 resumed via HTTP/1.1 with a refreshed authenticated reference; both hashes and whole archive verified"
+    }
+  ],
+  "research_failures_or_resumes": []
+}

@@ -1,0 +1,17 @@
+{
+  "archive": "E05_seed42_complete.zip",
+  "archive_bytes": 402733955,
+  "archive_sha256": "c965eb22ca41bcd884e74ff74743d983d62942c53b1212e7c1e3df062a33b859",
+  "parts": [
+    {
+      "name": "part_00.bin",
+      "bytes": 209715200,
+      "sha256": "483ec8ba1bb7547fd1d8afe28fc03153a8b6299b7975eadd8b9ecf37a6d048ec"
+    },
+    {
+      "name": "part_01.bin",
+      "bytes": 193018755,
+      "sha256": "75290e500c74b34e204a0cf144005db58f08589deed709e373c8957a543ab30c"
+    }
+  ]
+}
