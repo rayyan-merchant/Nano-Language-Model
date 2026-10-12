@@ -72,6 +72,20 @@ def compare(artifacts,root,out):
     for name,data in [('matched_validation',rows),('summary_comparison',summary_rows),('verified_runs',verified),('aggregate',aggregate)]:
         with (out/(name+'.csv')).open('x',newline='',encoding='utf8') as f:
             w=csv.DictWriter(f,fieldnames=list(data[0]));w.writeheader();w.writerows(data)
+    overall=[]
+    indexed=dict(zip(ids,summaries))
+    if e02:indexed['E02']=e02
+    for eid in ['E01','E02','E03','E04']:
+        if eid not in indexed:continue
+        s=indexed[eid]
+        overall.append({'experiment_id':eid,'seed':42,'tokenizer':'BPE' if eid=='E02' else 'character',
+                        'parameters':s['parameters'],'completed_updates':s['completed_optimizer_updates'],
+                        'best_step':s['best_validation']['step'],'best_conditional_bpb':s['best_validation']['bpb'],
+                        'final_conditional_bpb':s['final_validation']['bpb'],'training_predicted_tokens':s['training_tokens'],
+                        'training_source_byte_exposure':s['training_source_bytes'],
+                        'comparison_scope':'Contextual BPE comparison;capacity/byte-context/exposure differ' if eid=='E02' else 'Character positional comparison;E04 adds capacity and changes initialization RNG consumption'})
+    with (out/'overall_bpb.csv').open('x',newline='',encoding='utf8') as f:
+        w=csv.DictWriter(f,fieldnames=list(overall[0]));w.writeheader();w.writerows(overall)
     for metric,ylabel in [('loss','Full sliding validation NLL (nats)'),('bpb','Conditional validation bits/source byte')]:
         fig,ax=plt.subplots(figsize=(8,4.5))
         for eid,pos,v in zip(ids,positions,values):ax.plot([r['step'] for r in v],[r['validation'][metric] for r in v],marker='.',label=f'{eid} {pos}')
