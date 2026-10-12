@@ -65,7 +65,19 @@ def verify(evidence):
         assert payload['metadata']==final['metadata'] and len(payload['training_state']['history'])==step
         checks.append({'checkpoint':Path(name).name,'step':step,'optimizer_counters':counters,'sha256':checksum(extracted/name)})
     generation=json.loads((extracted/'analysis/generation.json').read_text())
-    assert len(generation['samples'])==100
+    assert len(generation['samples'])==100 and not generation['development_check']
+    protocol_path=Path(__file__).resolve().parents[2]/'configs/generation_protocol.json'
+    protocol=json.loads(protocol_path.read_text())
+    assert generation['protocol']==protocol and generation['protocol_source_sha256']==checksum(protocol_path)
+    expected_grid={(prompt,True,1.0,42) for prompt in protocol['prompts']}
+    expected_grid|={(prompt,False,temp,seed) for prompt in protocol['prompts'] for temp in protocol['temperatures'] for seed in protocol['sampling_seeds']}
+    policies={policy:[x for x in generation['samples'] if x['checkpoint_policy']==policy] for policy in ['best','final']}
+    for policy,rows in policies.items():
+        assert len(rows)==50 and {(x['prompt'],x['greedy'],x['temperature'],x['seed']) for x in rows}==expected_grid
+        assert all(x['max_new_tokens']==256 and x['generation_device']=='cuda' for x in rows)
+    identical_policies=state['best_checkpoint']=='step_005000.pt'
+    if identical_policies:
+        assert all(x['text']==y['text'] for x,y in zip(policies['best'],policies['final']))
     for sample in generation['samples']:
         assert checksum(extracted/prefix/'checkpoints'/sample['checkpoint'])==sample['checkpoint_sha256']
     torch.set_num_threads(1);samples=[]
@@ -77,7 +89,7 @@ def verify(evidence):
              'archive_sha256':checksum(archive),'archive_bytes':archive.stat().st_size,'verified_parts':parts['parts'],
              'archive_entries':len(names),'all_archive_hashes_and_CRC_passed':True,'checkpoint_count':len(checks),'checks':checks,
              'completed_optimizer_updates':5000,'full_validations':20,'generation_records':100,
-             'best_equals_final':state['best_checkpoint']=='step_005000.pt','CPU_inference':samples,
+             'best_equals_final':identical_policies,'duplicate_policy_outputs_verified':identical_policies,'fixed_protocol_50_settings_per_policy_verified':True,'CPU_inference':samples,
              'CPU_environment':{'python':platform.python_version(),'torch':str(torch.__version__),'device':'cpu'},
              'additional_optimizer_updates':0,'scope':'CPU inference migration; compatible exact CUDA optimizer/RNG restoration audited separately.',
              'seconds_excluding_download':time.perf_counter()-started}

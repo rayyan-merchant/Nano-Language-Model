@@ -1,0 +1,9 @@
+{
+  "setup_first_recorded_gpu_timestamp_utc": "2026-10-12T11:07:05+00:00",
+  "independent_verification_receipt_written_utc": "2026-10-12T11:53:14.636233+00:00",
+  "observed_notebook_workflow_wall_seconds": 2769.636233,
+  "preflight_launch_to_independent_verification_wall_seconds": 2501.820233,
+  "finish_phase_seconds": 286.8614758239996,
+  "independent_verification_seconds_excluding_download": 8.15029666700866,
+  "scope": "Observed workflow envelope from first actual setup GPU timestamp through independent verification; includes provisioning, mount, preflight, training/evaluation, interactive pauses, recovery, generation, publication and retrieval. Start has one-second precision and different-host clock-source caveat; distinct from measured engine/phase timers."
+}

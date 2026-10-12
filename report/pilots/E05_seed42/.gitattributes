@@ -1,0 +1,5 @@
+# Preserve measured CSV and genuine generation bytes, including terminal spaces.
+*.csv -text whitespace=cr-at-eol
+generation.* -text whitespace=-blank-at-eol,cr-at-eol
+evidence/* -text whitespace=cr-at-eol
+E05_seed42_analysis.md whitespace=-blank-at-eol
