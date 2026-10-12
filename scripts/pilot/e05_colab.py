@@ -204,7 +204,9 @@ def finish(root,out,store):
     for p in out.glob('*.json'):
         if not (store/p.name).exists():snapshot_file(store/p.name,p.read_bytes())
     snapshot_file(store/'cuda_recovery.json',(out/'cuda_recovery/recovery.json').read_bytes())
+    atomic_json(out/'postprocessing_wall_time.json', {'seconds_before_archive':time.perf_counter()-began, 'scope':'Verified snapshot restore/counter audit, fresh CUDA optimizer/RNG recovery, complete GPU generation, activation diagnostics and initial Drive publication; excludes training, bootstrap and independent retrieval'})
     package(root,out,store,run)
+    publish_json(store/'postprocessing_complete.json', {'finish_phase_seconds':time.perf_counter()-began, 'additional_optimizer_updates':0, 'scope':'Complete finish phase including verification, analysis, generation, archive construction/publication and numbered parts; excludes bootstrap, training and independent retrieval'})
     print('E05 RECOVERY GENERATION AND PUBLICATION PASSED',flush=True)
 
 
