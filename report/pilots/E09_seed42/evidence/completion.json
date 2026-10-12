@@ -1,0 +1,31 @@
+{
+  "status": "5000_completed_optimizer_updates",
+  "run_id": "E09_seed42_380197e606df4082b22b5ddff146946d",
+  "source_commit": "c555269ad6de293c016d88beec2e1437e4289e3f",
+  "code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "final_checkpoint": "runs/E09_seed42_380197e606df4082b22b5ddff146946d/checkpoints/step_005000.pt",
+  "best_checkpoint": "runs/E09_seed42_380197e606df4082b22b5ddff146946d/checkpoints/step_004750.pt",
+  "validation_steps": [
+    250,
+    500,
+    750,
+    1000,
+    1250,
+    1500,
+    1750,
+    2000,
+    2250,
+    2500,
+    2750,
+    3000,
+    3250,
+    3500,
+    3750,
+    4000,
+    4250,
+    4500,
+    4750,
+    5000
+  ],
+  "wrapper_seconds_before_postprocessing": 2656.9566876870003
+}

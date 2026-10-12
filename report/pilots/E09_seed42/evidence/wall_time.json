@@ -1,0 +1,5 @@
+{
+  "wrapper_total_seconds_before_archive": 3009.0594297999996,
+  "cli_wall_seconds": 2597.751873072,
+  "note": "excludes environment bootstrap, archive construction, platform publication and download"
+}
