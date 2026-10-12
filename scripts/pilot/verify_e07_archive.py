@@ -20,6 +20,22 @@ def checksum(path):
     return h.hexdigest()
 
 
+def reconstruct_snapshots(extracted,prefix,output):
+    reconstructed=output;reconstructed.mkdir(exist_ok=False)
+    manifests=[]
+    for source in (extracted/'snapshots').iterdir():
+        target=reconstructed/source.name;shutil.copytree(source,target)
+        manifest=json.loads((target/'export_manifest.json').read_text())
+        for relative,h in manifest['files'].items():
+            path=target/relative
+            if not path.exists():
+                assert relative.startswith('checkpoints/')
+                weight=extracted/prefix/relative
+                assert checksum(weight)==h
+                path.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(weight,path)
+        manifests.append(verify_snapshot(target))
+    return manifests
+
 def verify(evidence):
     started=time.perf_counter()
     parts=json.loads((evidence/'archive_parts.json').read_text())
@@ -53,20 +69,7 @@ def verify(evidence):
         # Extract every entry after path/CRC/hash checks, then audit actual optimizer state.
         extracted=evidence/'extracted';extracted.mkdir(exist_ok=False)
         z.extractall(extracted)
-    # Reconstruct all immutable snapshots from their exact metadata and canonical weight files.
-    reconstructed=evidence/'reconstructed_snapshots';reconstructed.mkdir(exist_ok=False)
-    manifests=[]
-    for source in (extracted/'snapshots').iterdir():
-        target=reconstructed/source.name;shutil.copytree(source,target)
-        manifest=json.loads((target/'export_manifest.json').read_text())
-        for relative,h in manifest['files'].items():
-            path=target/relative
-            if not path.exists():
-                assert relative.startswith('checkpoints/')
-                weight=extracted/prefix/relative
-                assert checksum(weight)==h
-                path.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(weight,path)
-        manifests.append(verify_snapshot(target))
+    manifests=reconstruct_snapshots(extracted,prefix,evidence/'reconstructed_snapshots')
     assert len(manifests)==21 and sorted(set(m['step'] for m in manifests))==list(range(250,5001,250))
     final_path=extracted/prefix/'checkpoints/step_005000.pt'
     final,_=read_checkpoint(final_path);state=final['training_state'];history=state['history']
