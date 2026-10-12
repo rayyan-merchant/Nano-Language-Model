@@ -293,3 +293,7 @@ This is progress, not completion. Research notebook:
 https://www.kaggle.com/code/syedarijaali/e07-seed42-eight-head-research/edit .
 Draft PR11; E06 remains independently owned and draft. No other research run
 or extension. Historical Colab/queue/session-cap observations are preserved.
+
+### E07 interruption recovery — 2026-10-13
+
+The original Kaggle draft session was off. Its saved version 2 preserved eleven immutable snapshots through update 2750. A fresh matching T4/Python 3.11.14/PyTorch 2.5.1+cu124 runtime verified every snapshot and restored all six state structures exactly with zero optimizer updates. The original run ID is resumed toward total update 5000; later lost volatile progress remains unknown and unclaimed. Recovery orchestration is committed and CI passed. At the latest observed boundary, update 3000 and twelve full validations were recorded. Final preservation, generation, comparisons and report remain pending. Prior checkpoint/export overhead was not durably recorded and will not be invented.
