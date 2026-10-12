@@ -1,0 +1,18 @@
+{
+  "completed_updates": 5000,
+  "validation_count": 20,
+  "gradient_clipped_updates": 7,
+  "gradient_clipping_fraction": 0.0014,
+  "learning_rates": [
+    0.0003
+  ],
+  "checkpoint_seconds": 2.5821503150003764,
+  "snapshot_export_seconds": 6.796549603999608,
+  "journal_seconds": 18.126520696999307,
+  "training_steps_per_second": 4.5137713509186215,
+  "training_tokens_per_second": 18488.407453362674,
+  "pipeline_wall_seconds": 1951.8714794260002,
+  "archive_seconds": 20.846143173999735,
+  "same_run_no_restart": true,
+  "generation_seconds": 240.68365899000014
+}

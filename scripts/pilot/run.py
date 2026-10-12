@@ -19,11 +19,13 @@ from nano_lm.storage import export_run, verify_snapshot
 from nano_lm.train import TrainSettings, environment, seed_all, train
 
 
-def run(root, out):
+def run(root, out, experiment='E01'):
+    if experiment not in {'E01','E03'}:raise ValueError('Unsupported authorized experiment')
     total_start=time.perf_counter();out.mkdir(parents=True,exist_ok=False)
     torch.set_num_threads(1)
     env=environment(root)
     assert not env['git_dirty'] and env['git_commit']
+    assert env['code_hash']=='cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6','Core differs from audited E01'
     assert env['python']=='3.11.14' and env['torch']=='2.5.1+cu124' and env['cuda']=='12.4'
     assert torch.cuda.is_available() and torch.cuda.get_device_name(0)=='Tesla T4'
     expected=(root/'docs/qualifications/evidence/rayyan_requirements_freeze.txt').read_text().splitlines()
@@ -38,20 +40,27 @@ def run(root, out):
     reference=json.loads((root/'docs/evidence/dataset_manifest.json').read_text())
     assert all(manifest[k]==reference[k] for k in ['source','split','partitions','tokenizers','manifest_hash'])
     atomic_json(out/'dataset_validation.json',{'all_reference_fields_match':True,'manifest':manifest})
-    config,defaults,variant=load_experiment(root,'E01',65)
-    assert variant['model_overrides']=={} and variant['tokenizer']=='character'
+    config,defaults,variant=load_experiment(root,experiment,65)
+    assert variant['model_overrides']==({} if experiment=='E01' else {'position':'rope'}) and variant['tokenizer']=='character'
     assert GPT(config).parameter_count()==1804800
     settings=TrainSettings(seed=42,device='cuda',precision='float32',run_kind='research',eval_every=250,checkpoint_every=500)
     settings.validate(128)
     assert settings.tokens_per_update==4096 and settings.micro_batch_size==4
-    assert config.to_dict()=={'vocab_size':65,**json.loads((root/'configs/baseline.json').read_text())['model']}
+    expected_model={'vocab_size':65,**json.loads((root/'configs/baseline.json').read_text())['model']}
+    if experiment=='E03':expected_model['position']='rope'
+    assert config.to_dict()==expected_model
     assert defaults['optimizer']=='AdamW' and defaults['learning_rate']==settings.learning_rate and defaults['scheduler']=='constant'
     # Separate one-update labeled smoke tests CUDA backward and checkpoint reload.
-    smoke_settings=TrainSettings(device='cuda',run_kind='smoke',eval_every=250,checkpoint_every=500)
-    _,checkpoint,_=train(root,data,'E01',smoke_settings,1,out/'preflight_smoke')
+    smoke_settings=TrainSettings(device='cuda',run_kind='smoke',eval_every=1,checkpoint_every=1,eval_max_bytes=512)
+    if experiment=='E03':
+        from rope_audit import audit
+        atomic_json(out/'rope_audit.json',audit(root,'cuda'))
+    _,checkpoint,_=train(root,data,experiment,smoke_settings,1,out/'preflight_smoke')
     payload,_=read_checkpoint(checkpoint);model,_=load_for_inference(checkpoint)
     assert payload['step']==1 and model.parameter_count()==1804800
+    verify_snapshot(export_run(checkpoint.parent.parent,out/'preflight_snapshots'))
     del model,payload;torch.cuda.empty_cache()
+    subprocess.run([sys.executable,str(root/'scripts/pilot/analyze.py'),'--root',str(root),'--run',str(checkpoint.parent.parent),'--output',str(out/'preflight_analysis'),'--device','cuda','--development-check'],check=True)
     atomic_json(out/'preflight.json',{'status':'passed','parameters':1804800,'model':config.to_dict(),'settings':asdict(settings),'accumulation':8,'updates_authorized':5000,'no_test_evaluation':True,'storage_plan':'private saved notebook output version; verify and retrieve archive after automatic publication; restore from verified snapshot if interrupted','prior_saved_output_recovery':'docs/qualifications/evidence/rayyan_fresh_gpu_recovery.json'})
     # Timing hooks forward calls unchanged. No optimizer/model/evaluation changes.
     import nano_lm.train as engine
@@ -71,7 +80,7 @@ def run(root, out):
         if value['event']=='step' and value['metric']['step']%250==0:
             print('PILOT PROGRESS',json.dumps(value['metric']),flush=True)
     engine.append_event=event
-    argv=[sys.executable,'--root',str(root),'--dataset',str(data),'--experiment','E01','--seed','42','--steps','5000','--device','cuda','--precision','float32','--run-kind','research','--tokens-per-update','4096','--micro-batch-size','4','--optimizer','AdamW','--learning-rate','0.0003','--weight-decay','0.01','--gradient-clip','1.0','--eval-every','250','--checkpoint-every','500','--conditioning-bytes','256','--eval-max-bytes','0','--eval-mode','sliding','--eval-batch-size','32','--output',str(out/'runs'),'--export-root',str(out/'snapshots')]
+    argv=[sys.executable,'--root',str(root),'--dataset',str(data),'--experiment',experiment,'--seed','42','--steps','5000','--device','cuda','--precision','float32','--run-kind','research','--tokens-per-update','4096','--micro-batch-size','4','--optimizer','AdamW','--learning-rate','0.0003','--weight-decay','0.01','--gradient-clip','1.0','--eval-every','250','--checkpoint-every','500','--conditioning-bytes','256','--eval-max-bytes','0','--eval-mode','sliding','--eval-batch-size','32','--output',str(out/'runs'),'--export-root',str(out/'snapshots')]
     atomic_json(out/'execution_command.json',{'entrypoint':'python -m nano_lm.train','arguments':argv[1:],'timing_hooks':'checkpoint/export/journal calls only; original arguments and return values preserved'})
     sys.argv=argv;began=time.perf_counter()
     engine.main()
@@ -90,23 +99,26 @@ def run(root, out):
     atomic_json(out/'completion.json',{'status':'5000_completed_optimizer_updates','run_id':directory.name,'source_commit':env['git_commit'],'code_hash':env['code_hash'],'final_checkpoint':str(final.relative_to(out)),'best_checkpoint':str((directory/'checkpoints'/state['best_checkpoint']).relative_to(out)),'validation_steps':[r['step'] for r in val],'wrapper_seconds_before_postprocessing':time.perf_counter()-total_start})
     # Committed analysis script reads only genuine committed checkpoint history.
     subprocess.run([sys.executable,str(root/'scripts/pilot/analyze.py'),'--root',str(root),'--run',str(directory),'--output',str(out/'analysis'),'--device','cuda'],check=True)
-    for snapshot in (out/'snapshots').iterdir():verify_snapshot(snapshot)
+    snapshot_index=[]
+    for snapshot in (out/'snapshots').iterdir():
+        m=verify_snapshot(snapshot);snapshot_index.append({'snapshot':snapshot.name,'step':m['step'],'hash':m['hash'],'files':m['files']})
+    atomic_json(out/'snapshot_index.json',snapshot_index)
     atomic_json(out/'wall_time.json',{'wrapper_total_seconds_before_archive':time.perf_counter()-total_start,'cli_wall_seconds':cli_seconds,'note':'excludes environment bootstrap, archive construction, platform publication and download'})
     # Preserve every periodic/validation checkpoint once plus all logs and manifests.
-    archive=out.parent/'E01_seed42_pilot.zip';began=time.perf_counter()
+    archive=out.parent/f'{experiment}_seed42_pilot.zip';began=time.perf_counter()
     with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=1) as z:
         for path in out.rglob('*'):
-            if path.is_file() and 'snapshots' not in path.relative_to(out).parts and 'preflight_smoke' not in path.relative_to(out).parts:
+            if path.is_file() and 'snapshots' not in path.relative_to(out).parts and 'preflight_smoke' not in path.relative_to(out).parts and 'preflight_analysis' not in path.relative_to(out).parts and 'preflight_snapshots' not in path.relative_to(out).parts:
                 z.write(path,path.relative_to(out).as_posix())
-    files={p.relative_to(out).as_posix():file_hash(p) for p in out.rglob('*') if p.is_file() and 'snapshots' not in p.relative_to(out).parts and 'preflight_smoke' not in p.relative_to(out).parts}
+    files={p.relative_to(out).as_posix():file_hash(p) for p in out.rglob('*') if p.is_file() and 'snapshots' not in p.relative_to(out).parts and 'preflight_smoke' not in p.relative_to(out).parts and 'preflight_analysis' not in p.relative_to(out).parts and 'preflight_snapshots' not in p.relative_to(out).parts}
     atomic_json(out.parent/'artifact_manifest.json',{'source_commit':env['git_commit'],'run_id':directory.name,'archive_sha256':file_hash(archive),'archive_bytes':archive.stat().st_size,'files':files,'archive_seconds':time.perf_counter()-began,'snapshot_policy':'all immutable snapshots remain in saved output; archive contains complete run with all checkpoints, analysis and supplemental evidence'})
     print('PILOT COMPLETE ARCHIVE',archive,flush=True)
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
+    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--experiment',choices=['E01','E03'],default='E01')
     a=p.parse_args()
-    try:run(a.root,a.output)
+    try:run(a.root,a.output,a.experiment)
     except BaseException as e:
         if a.output.exists():
             (a.output/'failure.json').write_text(json.dumps({'type':type(e).__name__,'message':str(e)},indent=2))
