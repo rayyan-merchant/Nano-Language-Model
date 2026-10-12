@@ -201,6 +201,13 @@ def package(root,out,store,run):
     # Canonical archive paths keep completion.json directly usable after extraction.
     sources={('runs/'+run.name+'/'+p.relative_to(run).as_posix() if p.is_relative_to(run) else p.relative_to(out).as_posix()):p for p in files}
     assert len(sources)==len(files)
+    # Preserve every snapshot's exact small metadata/journal/manifest, sharing weight bytes.
+    for snapshot in (store/'research_snapshots').iterdir():
+        for path in snapshot.rglob('*'):
+            if path.is_file() and path.suffix!='.pt':
+                name='snapshots/'+snapshot.name+'/'+path.relative_to(snapshot).as_posix()
+                assert name not in sources
+                sources[name]=path
     with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=1) as z:
         for name,p in sources.items():z.write(p,name)
     with zipfile.ZipFile(archive) as z:

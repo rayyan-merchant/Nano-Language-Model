@@ -8,6 +8,7 @@ import shutil
 import time
 import zipfile
 import torch
+from nano_lm.storage import verify_snapshot
 from nano_lm.checkpoint import read_checkpoint, load_for_inference
 from nano_lm.generate import generate
 
@@ -52,6 +53,21 @@ def verify(evidence):
         # Extract every entry after path/CRC/hash checks, then audit actual optimizer state.
         extracted=evidence/'extracted';extracted.mkdir(exist_ok=False)
         z.extractall(extracted)
+    # Reconstruct all immutable snapshots from their exact metadata and canonical weight files.
+    reconstructed=evidence/'reconstructed_snapshots';reconstructed.mkdir(exist_ok=False)
+    manifests=[]
+    for source in (extracted/'snapshots').iterdir():
+        target=reconstructed/source.name;shutil.copytree(source,target)
+        manifest=json.loads((target/'export_manifest.json').read_text())
+        for relative,h in manifest['files'].items():
+            path=target/relative
+            if not path.exists():
+                assert relative.startswith('checkpoints/')
+                weight=extracted/prefix/relative
+                assert checksum(weight)==h
+                path.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(weight,path)
+        manifests.append(verify_snapshot(target))
+    assert len(manifests)==21 and sorted(set(m['step'] for m in manifests))==list(range(250,5001,250))
     final_path=extracted/prefix/'checkpoints/step_005000.pt'
     final,_=read_checkpoint(final_path);state=final['training_state'];history=state['history']
     assert final['step']==5000 and [r['step'] for r in history]==list(range(1,5001))
@@ -87,7 +103,7 @@ def verify(evidence):
         samples.append({'policy':policy,'checkpoint':name,'text':tok.decode(generated[0].tolist()),'sha256':checksum(path)})
     receipt={'status':'independent_download_reconstruction_all_hashes_and_CPU_inference_passed',
              'archive_sha256':checksum(archive),'archive_bytes':archive.stat().st_size,'verified_parts':parts['parts'],
-             'archive_entries':len(names),'all_archive_hashes_and_CRC_passed':True,'checkpoint_count':len(checks),'checks':checks,
+             'archive_entries':len(names),'all_archive_hashes_and_CRC_passed':True,'checkpoint_count':len(checks),'checks':checks,'independently_reconstructed_verified_snapshots':len(manifests),
              'completed_optimizer_updates':5000,'full_validations':20,'generation_records':100,
              'best_equals_final':identical_policies,'duplicate_policy_outputs_verified':identical_policies,'fixed_protocol_50_settings_per_policy_verified':True,'CPU_inference':samples,
              'CPU_environment':{'python':platform.python_version(),'torch':str(torch.__version__),'device':'cpu'},
