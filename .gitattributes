@@ -4,3 +4,8 @@ report/pilots/E01_seed42/evidence/* -text whitespace=cr-at-eol
 # Generated text includes genuine terminal spaces; preserve it without cleanup.
 report/pilots/E01_seed42/generation.* -text whitespace=-blank-at-eol,cr-at-eol
 report/pilots/E01_seed42/E01_seed42_analysis.md whitespace=-blank-at-eol
+# Preserve genuine E02 receipts and generation output bytes.
+report/pilots/E02_seed42/evidence/* -text whitespace=cr-at-eol
+report/pilots/E02_seed42/validation.csv -text whitespace=cr-at-eol
+report/pilots/E02_seed42/generation.* -text whitespace=-blank-at-eol,cr-at-eol
+report/pilots/E02_seed42/E02_seed42_analysis.md whitespace=-blank-at-eol
