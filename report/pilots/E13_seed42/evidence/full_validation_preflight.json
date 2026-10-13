@@ -1,0 +1,12 @@
+{
+  "loss": 4.149489439637104,
+  "perplexity": 63.401621678234456,
+  "bpb": 5.986447836785573,
+  "nll_sum": 230354.75675201416,
+  "scored_tokens": 55514,
+  "scored_bytes": 55514,
+  "conditioning_bytes": 256,
+  "evaluated_text_bytes": 55770,
+  "mode": "sliding",
+  "context_length": 128
+}

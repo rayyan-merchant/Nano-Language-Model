@@ -106,3 +106,7 @@ API is claimed. Read EXPERIMENT_READINESS.md before further experiment approval.
 ## Scoped E11 seed42 context64 evidence
 
 [Detailed E11 report](report/pilots/E11_seed42/E11_seed42_analysis.md):5000updates/20fullvalidations, context64/accumulation16/4096targets,1804800parameters. Best=final5000loss1.49301304/BPB2.15396251. Publishedarchive independently verified and best/final CPUinference passed. Fresh zero-update CUDA recovery now passed exact full-state restoration and CPU/CUDA generation equality; full E11 acceptanceCOMPLETE. NoE12,otherseed or extension authorized or launched.
+
+## Scoped E13 seed42 width144 evidence
+
+[Accepted E13 report](report/pilots/E13_seed42/E13_seed42_analysis.md):5000updates/20fullvalidations,1021824parameters,best=final5000loss1.61153841/BPB2.32495848. Publishedarchive/allfilehashes/CPUinference/freshCUDAfullstate5000to5000zeroextra passed. Smallerparametercountdidnot improvepredictivequalityorobservedtrainingspeed;memory/validationcostlower. All100uneditedgenerations and15PNG/15PDFfigurespreserved. E14/otherseed/extensionnotlaunched;study-wideauthorization separatelygated.

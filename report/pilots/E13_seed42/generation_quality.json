@@ -1,0 +1,2274 @@
+{
+  "schema_version": 1,
+  "protocol_sha256": "fd27b0ced14a8c2aea456a01f7ab426bb69b91c4403720ff7c7f7d7703e52c7c",
+  "working_copy_protocol_file_sha256": "300c8fdb997ac296873a9323e46dd8e41c1ed021e99ec1b1c07afbb4af23f96b",
+  "generation_file_sha256": {
+    "E01": "fa98275503b14b0f3a49306ae9ef30cf4f40ea6e548a94fc065c509c479d34c9",
+    "E13": "ef8bb21527d01a0eb53c1348a9eaae52d4e6dc1c21f5807fbc435c53a2f1d885"
+  },
+  "groups": [
+    {
+      "experiment": "E01",
+      "checkpoint_policy": "best",
+      "greedy": true,
+      "temperature": 1.0,
+      "samples": 5,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.5228915662650603,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E01",
+      "checkpoint_policy": "best",
+      "greedy": false,
+      "temperature": 0.7,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0013386880856760394,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E01",
+      "checkpoint_policy": "best",
+      "greedy": false,
+      "temperature": 1.0,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E01",
+      "checkpoint_policy": "best",
+      "greedy": false,
+      "temperature": 1.2,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0013386880856760394,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E01",
+      "checkpoint_policy": "final",
+      "greedy": true,
+      "temperature": 1.0,
+      "samples": 5,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.5437751004016065,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E01",
+      "checkpoint_policy": "final",
+      "greedy": false,
+      "temperature": 0.7,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.00562248995983936,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E01",
+      "checkpoint_policy": "final",
+      "greedy": false,
+      "temperature": 1.0,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0026773761713520714,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E01",
+      "checkpoint_policy": "final",
+      "greedy": false,
+      "temperature": 1.2,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0008032128514056325,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E13",
+      "checkpoint_policy": "best",
+      "greedy": true,
+      "temperature": 1.0,
+      "samples": 5,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.7630522088353414,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E13",
+      "checkpoint_policy": "best",
+      "greedy": false,
+      "temperature": 0.7,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0005354752342704216,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E13",
+      "checkpoint_policy": "best",
+      "greedy": false,
+      "temperature": 1.0,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0037483266398928997,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E13",
+      "checkpoint_policy": "best",
+      "greedy": false,
+      "temperature": 1.2,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0010709504685408359,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E13",
+      "checkpoint_policy": "final",
+      "greedy": true,
+      "temperature": 1.0,
+      "samples": 5,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.7630522088353414,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E13",
+      "checkpoint_policy": "final",
+      "greedy": false,
+      "temperature": 0.7,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0005354752342704216,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E13",
+      "checkpoint_policy": "final",
+      "greedy": false,
+      "temperature": 1.0,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0037483266398928997,
+      "replacement_characters": 0
+    },
+    {
+      "experiment": "E13",
+      "checkpoint_policy": "final",
+      "greedy": false,
+      "temperature": 1.2,
+      "samples": 15,
+      "mean_continuation_characters": 256,
+      "mean_repeated_8gram_position_fraction": 0.0010709504685408359,
+      "replacement_characters": 0
+    }
+  ],
+  "matched_settings": [
+    {
+      "policy": "best",
+      "prompt": "To be, or not to be",
+      "greedy": true,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.5341365461847389
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.7710843373493976
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.012048192771084376
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.40963855421686746
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.7951807228915663
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.008032128514056214
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.02409638554216864
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "JULIET:\n",
+      "greedy": true,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.4899598393574297
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.7710843373493976
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.008032128514056214
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.016064257028112428
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.012048192771084376
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "First Citizen:\n",
+      "greedy": true,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.5742971887550201
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.7550200803212852
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "The king",
+      "greedy": true,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.606425702811245
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.7228915662650602
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.02409638554216864
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "best",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_004750.pt",
+        "checkpoint_sha256": "39f7c577ae183e0ecfdad5f8c770c0862ea2bcc4fd6e0f97b55d553606f47e6e",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "To be, or not to be",
+      "greedy": true,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.4337349397590361
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.7710843373493976
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.016064257028112428
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.008032128514056214
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "To be, or not to be",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.5461847389558233
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.7951807228915663
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.02008032128514059
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.008032128514056214
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.02409638554216864
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "ROMEO:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "JULIET:\n",
+      "greedy": true,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.5622489959839357
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.7710843373493976
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.028112449799196804
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.016064257028112428
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.008032128514056214
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.012048192771084376
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "JULIET:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "First Citizen:\n",
+      "greedy": true,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.5943775100401607
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.7550200803212852
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.016064257028112428
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.008032128514056214
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "First Citizen:\n",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "The king",
+      "greedy": true,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.5823293172690763
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.7228915662650602
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 0.7,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.004016064257028162
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.02409638554216864
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.0,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 42,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 123,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    },
+    {
+      "policy": "final",
+      "prompt": "The king",
+      "greedy": false,
+      "temperature": 1.2,
+      "seed": 456,
+      "E01": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "e35494c3f6568df8f36f5965a4b2728b50e85c5b54d215778ca9851518599008",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      },
+      "E13": {
+        "checkpoint": "step_005000.pt",
+        "checkpoint_sha256": "fad206f744375ae0bbe9618017ec87ad16b50c8377957a449c13c8fffea10896",
+        "characters": 256,
+        "replacement_characters": 0,
+        "repeated_8gram_position_fraction": 0.0
+      }
+    }
+  ],
+  "scope": "All100 rows per genuine checkpoint grid. Repetition is descriptive, not a coherence score, significance result or memorization proof."
+}

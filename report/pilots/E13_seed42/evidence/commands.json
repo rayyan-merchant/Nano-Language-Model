@@ -1,0 +1,35 @@
+{
+  "source": [
+    "git fetch origin",
+    "git switch -c codex/e13-width144-seed42-20261013 origin/main",
+    "git diff e7f77205 origin/main -- src/nano_lm:empty"
+  ],
+  "PhaseA": [
+    "Existing E11recovery statusCOMPLETE;genuine receiptallstate5000\u21925000zeroextra reverified against original checkpoint;PR15mergedb37c2d82bfee067c28d06c2b3c8c0649774a6388"
+  ],
+  "tests": [
+    "python -m pytest -q --basetemp .../pytest_initial:63passed1skip146.20s",
+    "python -m pytest -q width/notebook/generation regressions --basetemp .../pytest_focused:14passed1.85s",
+    "python -m pytest -q width/context/notebook/generation regressions --basetemp .../pytest_reporting:17passed4.27s",
+    "python -m pytest -q --basetemp .../pytest_delivery:63passed1skip157.49s",
+    "ActualKaggle pinned-source python -m pytest -q --basetemp /tmp/e13-pytest:64passed34.95s"
+  ],
+  "execution": [
+    "build_notebook.py --experiment E13 --commit a62cd6cebda71d5fbe1606add9efd9f71171076a",
+    "kaggle kernels push -p outputs/logs/e13-research-submit-20261013",
+    "Exact canonical researchCLI arguments:execution_command.json",
+    "build_notebook.py --experiment E13 --restore-only --source-kernel rayyannmerchant/nano-e13-pilot-20261013-ee39c7d3/1 --commit a62cd6cebda71d5fbe1606add9efd9f71171076a"
+  ],
+  "verification": [
+    "Real-data CPUsmoke state roundtrip/inference:passed",
+    "ActualCUDA20-check width audit/fullvalidation/optimizer-scheduler-scaler-RNG-sampler roundtrip/ZIPhash-safe paths/Agg/generation preflight:passed",
+    "download_kaggle_archive.py --ranges:full230564978-byte SHA256verified",
+    "inspect_archive.py:CRC/safe paths/all61files/hashes/history/bestfinalCPUinference passed",
+    "diagnostics.py:all20optimizer/scheduler counters/journal/BPB/10fixedoverlap descriptions passed",
+    "compare_heads.py --experiment E13:solewidthfactor/profile/data/tokenizer/20matchedpoints/independent sampler replay passed",
+    "compare_generation_grid.py --experiment E13:all100settings/hash/protocol passed",
+    "kaggle kernels output publishedsnapshotmanifests:initialdisconnect;freshretryfolder21manifest/indexparity passed",
+    "FreshCUDA recoveryreceipt:allstate5000\u21925000zeroextra,CPU/CUDA bestfinaltext and originalCP hashes match"
+  ],
+  "scope": "No E12/E14/extra seeds/hybrid/extension;development fixtures and one-update smoke are not research outcomes"
+}

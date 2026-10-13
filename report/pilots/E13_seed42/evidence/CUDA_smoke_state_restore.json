@@ -1,0 +1,19 @@
+{
+  "status": "development_full_state_roundtrip_and_inference_passed",
+  "device": "cuda",
+  "experiment": "E13",
+  "parameters": 1021824,
+  "step_before": 1,
+  "step_after": 1,
+  "additional_optimizer_updates": 0,
+  "exact_state": {
+    "model": true,
+    "optimizer": true,
+    "scheduler": true,
+    "scaler": true,
+    "rng": true,
+    "training_state": true
+  },
+  "genuine_development_text": "ROMEO:\nixLQ",
+  "scope": "Real-data development checkpoint, not a research measurement or published-output durability claim"
+}

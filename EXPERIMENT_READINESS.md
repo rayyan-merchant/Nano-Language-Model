@@ -495,3 +495,10 @@ Sourcee7f77205de0c7eabddf6c299029ef5d4b685ffc8; corehashcdea42adb930904fb0cefcd2
 ## E11 recovery gate resolved — 2026-10-13
 
 The existing rayyannmerchant/nano-e11-recovery-20261013-e7000753/1 job isCOMPLETE. Independently retrieved receipt verifies exact model/optimizer/scheduler/scaler/RNG/sampling/training-state restoration,5000→5000zeroadditionalupdates, matching qualified source/profile and best/final CPU/CUDA generation equality. FullE11single-runacceptance isCOMPLETE. The prior queued/HTTP500 delay is retained as historical evidence. No duplicate research/extra seeds/E12/extension. Study-wide approval remains separately gated. See report/pilots/E11_seed42/evidence/cuda_recovery.json.
+
+## E13 seed42 width144 — accepted 2026-10-13
+
+E11exactfreshCUDAacceptance and PR15integration were reverified beforeE13. Clean
+trainedsourcea62cd6cebda71d5fbe1606add9efd9f71171076a;scientific hashcdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6unchanged. Onlywidth144/head24/MLP576 mechanicallyderived;1021824parameters(−43.383%). Exactly5000updates/20fullvalidations/context128/microbatch4/accumulation8/4096targets. Best=final5000loss1.61153841/BPB2.32495848,5.009%higherBPBthanE01-best. Training941.393s,validation310.326s,pipeline1625.390s,peak132.291MiB. No recordedresearchfailure/resume;no replay.
+
+Published230564978-byte archiveSHA2560ddce4c76829e961ff862ab61f7d67f9a8ca679260d4fc3a8219fc617becf7e7independently passedCRC/exactinventory/all61hashes/CPUbestfinalinference/all20counters/samplerreplay/21snapshotmanifest parity. FreshqualifiedCUDAallstate5000to5000zeroextra andCPU/CUDAgeneration match passed. Full100uneditedgrid/15PNG/15PDFfigures/machinecomparisons/detailedreport preserved outsideGitforlargefiles. CPU63passed1skip;actualGPU64passed. NoE12/E14/otherseed/hybrid/extension. E13accepted;study-wideapprovalremains separatelygated. See report/pilots/E13_seed42/E13_seed42_analysis.md.

@@ -1,0 +1,131 @@
+{
+  "label": "E13 seed42: single-seed research pilot",
+  "run_id": "E13_seed42_40d4850f3eb143058a6a447e071252c6",
+  "source_commit": "a62cd6cebda71d5fbe1606add9efd9f71171076a",
+  "code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "config_hash": "a380c3701aff5f9c690f37ed2a9c7550cd32792edde84bc52f07824c61ce193d",
+  "parameters": 1021824,
+  "completed_optimizer_updates": 5000,
+  "initial_recorded_training": {
+    "step": 1,
+    "loss": 4.344226241111755
+  },
+  "initial_recorded_validation": {
+    "step": 250,
+    "loss": 2.4757836589200974,
+    "perplexity": 11.891021968222514,
+    "bpb": 3.5718008070379574,
+    "nll_sum": 137440.65404129028,
+    "scored_tokens": 55514,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "final_training_loss": 1.5974347293376923,
+  "final_training_trailing_100_loss": 1.5846749457716942,
+  "final_validation": {
+    "loss": 1.6115384142925455,
+    "perplexity": 5.01051354728946,
+    "bpb": 2.3249584785019195,
+    "nll_sum": 89462.94353103638,
+    "scored_tokens": 55514,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "best_validation": {
+    "step": 5000,
+    "loss": 1.6115384142925455,
+    "perplexity": 5.01051354728946,
+    "bpb": 2.3249584785019195,
+    "nll_sum": 89462.94353103638,
+    "scored_tokens": 55514,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "milestones": {
+    "1000": {
+      "loss": 2.073061452456672,
+      "perplexity": 7.949121762646992,
+      "bpb": 2.990795476917312,
+      "nll_sum": 115083.93347167969,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "2000": {
+      "loss": 1.8654053745049197,
+      "perplexity": 6.458553488323581,
+      "bpb": 2.6912110830458675,
+      "nll_sum": 103556.11396026611,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "3000": {
+      "loss": 1.74559284236592,
+      "perplexity": 5.729297038816487,
+      "bpb": 2.5183581370925827,
+      "nll_sum": 96904.84105110168,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "4000": {
+      "loss": 1.6656116286731744,
+      "perplexity": 5.288907107936727,
+      "bpb": 2.4029696367337783,
+      "nll_sum": 92464.7639541626,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "5000": {
+      "loss": 1.6115384142925455,
+      "perplexity": 5.01051354728946,
+      "bpb": 2.3249584785019195,
+      "nll_sum": 89462.94353103638,
+      "scored_tokens": 55514,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    }
+  },
+  "training_seconds": 941.393111036003,
+  "validation_seconds": 310.3261028199996,
+  "peak_gpu_bytes": 138716672,
+  "training_tokens": 20480000,
+  "training_source_bytes": 20480000,
+  "unique_target_bytes": 1003848,
+  "late_validation_slope_per_1000_steps": -0.06558126083855746,
+  "loss_improvement_3000_to_5000": 0.13405442807337442,
+  "train_loss_trailing_windows": {
+    "1000": 2.0977963256835936,
+    "2000": 1.845086633861065,
+    "3000": 1.7135836018621922,
+    "4000": 1.6388029661774635,
+    "5000": 1.5846749457716942
+  },
+  "uncertainty": "One seed; no SD or significance estimate; full study remains NO-GO"
+}
