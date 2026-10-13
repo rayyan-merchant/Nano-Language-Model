@@ -1,0 +1,13 @@
+{
+  "status": "E11_acceptance_reverified_before_E13",
+  "merged_PR": 15,
+  "merged_main": "b37c2d82bfee067c28d06c2b3c8c0649774a6388",
+  "E11_source": "e7f77205de0c7eabddf6c299029ef5d4b685ffc8",
+  "run_id": "E11_seed42_67e185eafe9243dab68959e730a72eec",
+  "parameters": 1804800,
+  "steps": 5000,
+  "validations": 20,
+  "qualified_full_state_CUDA_recovery": true,
+  "additional_updates": 0,
+  "receipt": "report/pilots/E11_seed42/evidence/cuda_recovery.json"
+}

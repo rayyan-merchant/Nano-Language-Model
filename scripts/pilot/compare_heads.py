@@ -97,7 +97,7 @@ def compare(baseline, four_head, root, out, experiment="E06"):
         atomic_json(out/'context_study_framework.json',{'E11':summaries[1],'E01':summaries[0],'E12':None,'E12_status':'NOT_AUTHORIZED_NOT_RUN'})
     if experiment=='E13':
         result['width_capacity_tradeoff']={'parameters_removed':782976,'reduction_percent':100*782976/1804800,'head_dimensions':[32,24],'MLP_hidden_dimensions':[768,576],'scope':'Width changes capacity/head dimension/MLP width together; no isolated causal claim'}
-        atomic_json(out/'width_study_framework.json',{'E13':summaries[1],'E01':summaries[0],'E14':None,'E14_status':'NOT_AUTHORIZED_NOT_RUN'})
+        atomic_json(out/'width_study_framework.json',{'widths':{'E13':144,'E01':192,'E14':240},'E13':summaries[1],'E01':summaries[0],'E14':None,'E14_status':'NOT_AUTHORIZED_NOT_RUN'})
     atomic_json(out/'comparison.json',result)
     for name,data in [('matched_validation',rows),('summary_comparison',comparisons),('verified_runs',verified),('aggregate',aggregate)]:
         with (out/(name+'.csv')).open('x',newline='',encoding='utf-8') as f:

@@ -490,3 +490,10 @@ The existing rayyannmerchant/nano-e11-recovery-20261013-e7000753/1 job isCOMPLET
 ## E13 scoped execution preparation — 2026-10-13
 
 PhaseA resolved:the original E11 recovery completed, exactallstate5000to5000zeroextra verified, PR15 merged atb37c2d82bfee067c28d06c2b3c8c0649774a6388. No duplicate recovery. User now authorized onlyE13seed42/5000updates. Width144/head24/MLP576/1021824parameters; derived accumulation8/context128/microbatch4/4096targets. Twenty numerical width checks, real-data CPU smoke exactstate roundtrip/inference passed. FullCPU63passed1CUDA-only skip146.20s; finalfocused14passed1.85s. Scientific core remainscdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6. ActualCUDA/fullvalidation/export/restoration/Agg/data/profile gates still required before substantive training. NoE12/E14/otherseed/extension.
+
+## E13 seed42 width144 — accepted 2026-10-13
+
+E11exactfreshCUDAacceptance and PR15integration were reverified beforeE13. Clean
+trainedsourcea62cd6cebda71d5fbe1606add9efd9f71171076a;scientific hashcdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6unchanged. Onlywidth144/head24/MLP576 mechanicallyderived;1021824parameters(−43.383%). Exactly5000updates/20fullvalidations/context128/microbatch4/accumulation8/4096targets. Best=final5000loss1.61153841/BPB2.32495848,5.009%higherBPBthanE01-best. Training941.393s,validation310.326s,pipeline1625.390s,peak132.291MiB. No recordedresearchfailure/resume;no replay.
+
+Published230564978-byte archiveSHA2560ddce4c76829e961ff862ab61f7d67f9a8ca679260d4fc3a8219fc617becf7e7independently passedCRC/exactinventory/all61hashes/CPUbestfinalinference/all20counters/samplerreplay/21snapshotmanifest parity. FreshqualifiedCUDAallstate5000to5000zeroextra andCPU/CUDAgeneration match passed. Full100uneditedgrid/15PNG/15PDFfigures/machinecomparisons/detailedreport preserved outsideGitforlargefiles. CPU63passed1skip;actualGPU64passed. NoE12/E14/otherseed/hybrid/extension. E13accepted;study-wideapprovalremains separatelygated. See report/pilots/E13_seed42/E13_seed42_analysis.md.
