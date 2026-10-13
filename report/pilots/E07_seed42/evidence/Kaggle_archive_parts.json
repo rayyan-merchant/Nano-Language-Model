@@ -1,0 +1,17 @@
+{
+  "archive": "E07_seed42_complete.zip",
+  "archive_bytes": 408106575,
+  "archive_sha256": "ba92cd87bd6a3aafa6164cdaef037a47d0fae9c208e0648c3775b19c9e6aa06d",
+  "parts": [
+    {
+      "name": "part_00.bin",
+      "bytes": 209715200,
+      "sha256": "42e220683d1d2187b500e44b750cff90f2875eb91b13f6b99136a5d83ee9d2a7"
+    },
+    {
+      "name": "part_01.bin",
+      "bytes": 198391375,
+      "sha256": "87eea3fb27099c8155224094c298cbeeda913ba940b2d8ab8e6b56da39373bf9"
+    }
+  ]
+}

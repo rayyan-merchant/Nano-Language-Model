@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "checkpoint_sha256": "f83de0f32853fcb5bf36171e1d4c3fafad95032b36067a79ed3d3df5b413963e",
+  "step": 2,
+  "exact_state": {
+    "model": true,
+    "optimizer": true,
+    "scheduler": true,
+    "scaler": true,
+    "rng": true,
+    "training_state": true
+  },
+  "text": "ROMEO:\n trere   tqWo tq",
+  "additional_optimizer_updates": 0
+}

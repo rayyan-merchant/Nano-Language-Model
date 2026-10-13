@@ -39,6 +39,28 @@ def compare(root, evidence, output):
         ax.set(xlabel='Completed optimizer updates',ylabel=ylabel,title='E01 vs E07 seed42: matched character protocol')
         ax.grid(alpha=.2);ax.legend();fig.text(.5,.01,'Single seed; equal parameters/context/exposure; separate Kaggle sessions; host/runtime confound',ha='center',fontsize=8)
         fig.tight_layout(rect=[0,.04,1,1]);fig.savefig(figures/f'e01_e07_validation_{metric}.png',dpi=200);fig.savefig(figures/f'e01_e07_validation_{metric}.pdf');plt.close(fig)
+    fig,axes=plt.subplots(1,3,figsize=(12,4.2))
+    labels=['E01: 6 heads','E07: 8 heads']
+    panels=[('Retained trajectory training time',[a['training_seconds'],b['training_seconds']],'seconds'),
+            ('Retained predicted-token throughput',[20480000/a['training_seconds'],20480000/b['training_seconds']],'tokens / second'),
+            ('Peak allocated GPU memory',[a['peak_gpu_bytes']/2**20,b['peak_gpu_bytes']/2**20],'MiB')]
+    for ax,(title,values,units) in zip(axes,panels):
+        bars=ax.bar(labels,values,color=['#455b8f','#c97543']);ax.set(title=title,ylabel=units)
+        ax.grid(axis='y',alpha=.2);ax.set_axisbelow(True);ax.margins(y=.18)
+        for bar,value in zip(bars,values):
+            ax.annotate(f'{value:,.2f}',(bar.get_x()+bar.get_width()/2,value),ha='center',va='bottom',fontsize=9,xytext=(0,4),textcoords='offset points')
+    fig.text(.5,.015,'Equal parameters/context/retained 5,000-update budget. Separate Kaggle sessions; E07 replay attempts excluded from these counters.',ha='center',fontsize=8)
+    fig.tight_layout(rect=[0,.07,1,1])
+    for suffix in ['png','pdf']:fig.savefig(figures/f'e01_e07_efficiency.{suffix}',dpi=200)
+    plt.close(fig)
+    fig,ax=plt.subplots(figsize=(8,4.5))
+    ax.plot([r['step'] for r in rows],[r['loss_difference_E07_minus_E01'] for r in rows],marker='o',markersize=4)
+    ax.axhline(0,color='black',linewidth=.8)
+    ax.set(xlabel='Completed optimizer updates',ylabel='E07 minus E01 validation loss (nats/character)',title='Measured matched loss difference; negative favors E07')
+    ax.grid(alpha=.2);fig.text(.5,.01,'One seed; 20 full validations; no significance or attention-mechanism claim',ha='center',fontsize=8)
+    fig.tight_layout(rect=[0,.04,1,1])
+    for suffix in ['png','pdf']:fig.savefig(figures/f'e01_e07_loss_difference.{suffix}',dpi=200)
+    plt.close(fig)
     gen_stats=[]
     for label,path in [('E01',baseline/'generation.json'),('E07',evidence/'analysis/generation.json')]:
         grid=json.loads(path.read_text());assert len(grid['samples'])==100

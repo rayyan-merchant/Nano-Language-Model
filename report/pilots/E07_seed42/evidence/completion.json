@@ -1,0 +1,30 @@
+{
+  "status": "5000_completed_optimizer_updates",
+  "run_id": "E07_seed42_f00363fe26f64ec1b3bb5ad00d19c4bd",
+  "final_checkpoint": "runs/E07_seed42_f00363fe26f64ec1b3bb5ad00d19c4bd/checkpoints/step_005000.pt",
+  "best_checkpoint": "step_005000.pt",
+  "source_commit": "5bb03b18943e7c45a305ce1d78b3446c31829ae7",
+  "code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "validation_steps": [
+    250,
+    500,
+    750,
+    1000,
+    1250,
+    1500,
+    1750,
+    2000,
+    2250,
+    2500,
+    2750,
+    3000,
+    3250,
+    3500,
+    3750,
+    4000,
+    4250,
+    4500,
+    4750,
+    5000
+  ]
+}
