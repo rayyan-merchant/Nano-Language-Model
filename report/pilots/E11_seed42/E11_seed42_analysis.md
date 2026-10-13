@@ -4,7 +4,7 @@
 
 One explicitly authorized E11 seed42 run: 5,000 completed updates, twenty full
 sliding validations. No additional seeds, E12, hybrid or extension were launched.
-The broader three-seed study remains separately gated. Earlier evidence is preserved. Full acceptance status: INCOMPLETE — fresh CUDA restoration pending.
+The broader three-seed study remains separately gated. Earlier evidence is preserved. Full acceptance status: COMPLETE — fresh CUDA restoration verified.
 Question: how does shortening causal context128→64 affect prediction,
 optimization, runtime, memory and generated text? Less available preceding text
 may remove useful dependencies; shorter tensors may reduce computation, but
@@ -340,7 +340,7 @@ Generation quality statistics and100 matched E01/E11 settings are preserved in g
 
 ## Durable publication and independent recovery
 
-Archive:402,283,332 bytes, SHA256`a23789511ce10aa70ac3484ca279f2327eee5a9d1d4db319e4ab2f47df7484ce`. Independently retrieved archive:CRC/exact inventory/60 file hashes verified. All20 resumable validation checkpoint states and21 immutable snapshots verified. Best/final recovered CPU inference passed. Fresh compatible CUDA full-state restoration is PENDING: existing zero-update recovery notebook remains RUNNING, log endpoint returns HTTP500, and no recovery receipt is available. No success or additional updates are claimed. Full E11 acceptance remains incomplete until this gate passes. Constant LR retains its regime for a later separately approved extension.
+Archive:402,283,332 bytes, SHA256`a23789511ce10aa70ac3484ca279f2327eee5a9d1d4db319e4ab2f47df7484ce`. Independently retrieved archive:CRC/exact inventory/60 file hashes verified. All20 resumable validation checkpoint states and21 immutable snapshots verified. Best/final recovered CPU inference passed. Fresh compatible T4 restoration passed:all model/optimizer/scheduler/scaler/RNG/sampling/training-state fields restored exactly at5000→5000, with zero additional updates. Recovered best/final CUDA and CPU greedy generations match. The earlier queued/HTTP500 delay is preserved as operational history. Constant LR retains its regime for a later separately approved extension.
 
 Large artifacts are outside Git. Local retrieval root:`D:\Nano-Language-Model-artifacts\E11_published_20261013_dafeeadf_resume1\verified`. Durable source:the private research version1 linked above; snapshots remain in its saved outputs. Complete run/logs/metadata/generation/figures are in E11_seed42_pilot.zip with artifact_manifest.json. Use scripts/pilot/download_kaggle_archive.py and inspect_archive.py; fresh CUDA recovery uses build_notebook.py --restore-only --source-kernel with exact trained source. Never treat /kaggle/working alone as permanent.
 
@@ -354,8 +354,12 @@ Interpretation and budget recommendation must follow actual late validation tren
 
 CPU initial58passed1skip92.80s; final59passed1CUDA-only skip105.72s; focused13passed3.07s. Actual Kaggle suite60passed33.76s. CPU/CUDA context audits passed14checks each. [Actual commands](evidence/commands.json), [test/CI receipts](evidence/execution_review.json), [interpretation](interpretation.md), [operational failures and remaining gate](operations.md). No fresh GPU success is claimed until a genuine recovery receipt is available.
 
-### Remaining acceptance blocker
+### Resolved platform delay
 
-The zero-update fresh CUDA recovery submission is over two hours old, including queue time. User-visible status confirms stillqueued/running; API statusRUNNING, empty failure_message, log endpointHTTP500, no recovery receipt. This is not a measured GPU execution duration or proof that restoration failed. FullE11acceptance isINCOMPLETE until the existing job becomes verifiable. Independent publication/archive/CPUinference are already passed. No duplicate recovery or training was launched. [All21 independently downloaded snapshotmanifest/index checks](evidence/snapshot_manifest_verification.json) passed; physical snapshotexports were verified natively before publication.
+The zero-update fresh CUDA recovery submission is over two hours old, including queue time. User-visible status confirms stillqueued/running; API statusRUNNING, empty failure_message, log endpointHTTP500, no recovery receipt. This is not a measured GPU execution duration or proof that restoration failed. This was the original delivery status; the same recovery job has now completed and passed full-state verification. Independent publication/archive/CPUinference are already passed. No duplicate recovery or training was launched. [All21 independently downloaded snapshotmanifest/index checks](evidence/snapshot_manifest_verification.json) passed; physical snapshotexports were verified natively before publication.
 
-Final delivery rerun:59passed/1CUDA-only skip110.70s. SourceCI38355927555 and reportingCI38360929613 bothsuccess. [Available acceptance checks](evidence/final_checks.json) passed with freshCUDArestoration explicitlypending. Driver580.178.04 advertisesCUDA13.0 maximum compatibility; the approved PyTorch build/runtime remainsCUDA12.4. NativeKaggle packages were untouched.
+Final delivery rerun:59passed/1CUDA-only skip110.70s. SourceCI38355927555 and reportingCI38360929613 bothsuccess. [Available acceptance checks](evidence/final_checks.json) passed with freshCUDArestoration now verified. Driver580.178.04 advertisesCUDA13.0 maximum compatibility; the approved PyTorch build/runtime remainsCUDA12.4. NativeKaggle packages were untouched.
+
+## Final acceptance resolution
+
+The existing recovery notebook version1 is nowCOMPLETE. Its independently retrieved genuine receipt verifies all six state groups exactly,5000→5000optimizer updates and zeroextra. Source/environment/core hashes match, and best/final CUDA generations match independently recovered CPU outputs. [Current recovery receipt](evidence/cuda_recovery.json), [historical pending status](evidence/cuda_recovery_pending_history.json). AllE11acceptance criteria now pass. No additional research run or extension was launched. Study-wide authorization remains separately gated.

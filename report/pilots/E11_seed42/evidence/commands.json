@@ -26,7 +26,8 @@
     "diagnostics.py --training-text data/processed/tiny-shakespeare-v3/train.txt:all20counters/journal/BPB/10predeterminedoverlapdescriptionspassed",
     "compare_generation_grid.py --experiment E11:all100settings/protocol/filehashespassed",
     "write_e11_report.py:actual verified evidence; pending CUDA status explicit",
-    "kaggle kernels output ... --file-pattern publishedsnapshot/export_manifest:21manifests independently retrieved and index/hash inventoryparitypassed"
+    "kaggle kernels output ... --file-pattern publishedsnapshot/export_manifest:21manifests independently retrieved and index/hash inventoryparitypassed",
+    "Completed recovery version1:download genuine recovery_audit/recovery.json; verify exactmodel/optimizer/scheduler/scaler/RNG/training_state,5000to5000zeroextra and bestfinalGPU/CPUgeneration equality:passed"
   ],
   "scope": "Commands/results actually executed; GPU recovery remains pending; no E12/extra seeds/extensions"
 }

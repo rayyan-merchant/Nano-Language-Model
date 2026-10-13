@@ -23,7 +23,7 @@ and freshCUDA acceptance are recorded separately. Complete100fixed generations,
 matchedE01tables and15PNG/15PDFfigures are in the detailed report directory.
 
 Fresh zero-update GPU recovery version1:rayyannmerchant/nano-e11-recovery-20261013-e7000753.
-LateststateRUNNING/logHTTP500/no receipt; fullE11acceptance isPENDING this gate.
+OriginalstateRUNNING/logHTTP500/no receipt delayed delivery. The same job is nowCOMPLETE:exactallstate restoration at5000→5000zeroextra, matchingCPU/CUDA best/final inference. FullE11acceptanceCOMPLETE.
 Do not launch duplicate research training. No E12,additionalseed or10k extension.
 PR15 is reviewable; do not merge without review. See
 ../report/pilots/E11_seed42/E11_seed42_analysis.md and operations.md.
