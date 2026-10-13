@@ -45,7 +45,7 @@ command([str(PY),'-m','pip','check'])
 assert len(archives)==1
 archive=archives[0];manifest=archive.parent/'E12_smoke_manifest.json'
 command([str(PY),str(ROOT/'scripts/pilot/e12_kaggle.py'),'recover-smoke','--root',str(ROOT),'--output',str(OUT/'persistent_recovery'),'--archive',str(archive),'--manifest',str(manifest)],ROOT)
-command([str(PY),str(ROOT/'scripts/pilot/e12_kaggle.py'),'research','--root',str(ROOT),'--output',str(OUT/'research'),'--store',str(OUT/'durable_staging'),'--recovery-receipt',str(OUT/'persistent_recovery/persistent_recovery.json')],ROOT)
+subprocess.run([str(PY),str(ROOT/'scripts/pilot/e12_kaggle.py'),'research','--root',str(ROOT),'--output',str(OUT/'research'),'--store',str(OUT/'durable_staging'),'--recovery-receipt',str(OUT/'persistent_recovery/persistent_recovery.json')],cwd=ROOT,env=env,check=True)
 command([str(PY),str(ROOT/'scripts/pilot/e12_kaggle.py'),'finish','--root',str(ROOT),'--output',str(OUT/'research'),'--store',str(OUT/'durable_staging')],ROOT)
 '''
     else:

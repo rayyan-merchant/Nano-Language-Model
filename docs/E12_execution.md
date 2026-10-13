@@ -61,3 +61,18 @@ was retrieved directly without credentials or any change to storage permissions.
 The qualificationT4session was stopped after successful savedoutputpublication.
 A new notebook mounts that immutable output for freshCUDAstate/continuation gates;
 research remains unlaunched until those pass.
+
+E12-specific interruption recovery is in scripts/pilot/e12_resume.py. It verifies
+one incomplete snapshot lineage, restores in a fresh directory, checks E12 model/
+parameters/accumulation and original scientific hash, preserves original attempted
+journals separately, and resumes to total5000. No fresh initialization is used on
+resume. A later orchestration Git commit may differ while scientific bytes remain
+identical; the original checkpoint source remains explicitly recorded. Existing
+verify_e07_replay.py performs generic recorded-metric comparison without executing
+updates and can inspect any genuine E12 replay if required. Do not imply exactly
+5000 physical updates if saved or unknown superseded attempts exist.
+
+Research notebook generation now exposes scheduled progress on stdout while the
+canonical engine/checkpoint/export timing calls remain unchanged. All four E12
+correctness/budget/notebook-scope/resume-lineage tests pass locally; actual initial
+qualified Kaggle full suite67passed. No additional research configuration launched.
