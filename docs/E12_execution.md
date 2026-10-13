@@ -90,3 +90,24 @@ upload bridging took600seconds before returning; no optimizer work occurred.
 Fresh recovery must independently verify every manifest/file hash again and
 perform compatibleCUDAstate/continuation checks on this compact input.
 Both.zip and.bin transports are supported; exactlyone must be present.
+
+## Research launch
+
+The first compact-input attempt hit the legitimate account's single interactive
+GPU session cap; the stalled original E12 draft was cancelled through active
+session management, freeing that same account's slot. No account switching or
+quota circumvention occurred. The compact input then allocatedT4 and isolated
+Python3.11.14/torch2.5.1+cu124/CUDA12.4/exact46-package freeze. Full CUDA state
+roundtrip and smoke2→4 continuation matched model/optimizer/scheduler/scaler/RNG
+exactly. The state-roundtrip itself performszero optimizer calls; continuation
+performs2development calls, separately from research. The successful receipt was
+preserved as private quick version358083761, and that GPU draft was stopped.
+
+The sole research run launched in saved batchversion358085129 at23:02PKT on
+2026-10-13. Clean trained sourcee1f0c9861fcdd38d07cd24e746900d53a314b740;
+notebook-driver delivery commit18bbaab. Fresh research initialization follows
+another development-only recovery check. No model/sampling/optimizer/evaluation
+settings were changed in response to measurements. At1000, recorded fullvalidation
+loss2.1301234439388494/BPB3.073118529051898; accumulation4/scored55514/context256
+are confirmed in actualprogress. Early performance is behind matched E01; negative
+outcomes remain preserved. Completion/finalpublication/recovery are still pending.

@@ -33,6 +33,16 @@ def report(root,artifacts,verification,recovery,output,kernel,recovery_kernel):
     (output/'evidence/sampling_audit.json').write_text(json.dumps(sampling,indent=2))
     references={'E01':root/'report/pilots/E01_seed42','E11':root/'report/pilots/E11_seed42'}
     summaries={eid:read(folder/'summary.json') for eid,folder in references.items()};summaries['E12']=s
+    reference_validation={}
+    for eid,folder in references.items():
+        reference_env=read(folder/'evidence/environment.json')
+        assert all(reference_env[k]==env[k] for k in ['code_hash','python','torch','cuda','gpu'])
+        normalize=lambda e:sorted(x for x in e['packages'] if not x.startswith('-e '))
+        assert normalize(reference_env)==normalize(env)
+        dataset_path=folder/'evidence/dataset_validation.json'
+        data=read(dataset_path)['manifest']
+        assert data==read(artifacts/'dataset_verification.json')['manifest']
+        reference_validation[eid]={'same_scientific_profile':True,'same_dataset_manifest':True,'environment_file_sha256':file_hash(folder/'evidence/environment.json'),'dataset_receipt_file_sha256':file_hash(dataset_path)}
     values={eid:list(csv.DictReader((folder/'validation.csv').open())) for eid,folder in references.items()}
     values['E12']=[{'step':r['step'],**r['validation']} for r in val]
     for eid in values:
@@ -44,7 +54,7 @@ def report(root,artifacts,verification,recovery,output,kernel,recovery_kernel):
         for eid in values:
             for metric in ['loss','bpb','perplexity']:row[eid+'_'+metric]=float(values[eid][i][metric])
         row['delta_E12_minus_E01_bpb']=row['E12_bpb']-row['E01_bpb'];rows.append(row)
-    comparison={'reference_scope':'Reviewed Git report values; E12 independently recovered here. E01/E11 original archive/recovery receipts remain in their reviewed report directories. No fresh E01/E11 inference claimed.','reference_file_sha256':{eid:{name:file_hash(folder/name) for name in ['summary.json','validation.csv','generation.json']} for eid,folder in references.items()},'summaries':summaries,'matched_validation':rows,'E12_sampling':sampling,'context_lengths':{'E11':64,'E01':128,'E12':256},'single_seed_only':True}
+    comparison={'reference_scope':'Reviewed Git report values; E12 independently recovered here. E01/E11 original archive/recovery receipts remain in their reviewed report directories. No fresh E01/E11 inference claimed.','reference_file_sha256':{eid:{name:file_hash(folder/name) for name in ['summary.json','validation.csv','generation.json']} for eid,folder in references.items()},'reference_profile_checks':reference_validation,'summaries':summaries,'matched_validation':rows,'E12_sampling':sampling,'context_lengths':{'E11':64,'E01':128,'E12':256},'single_seed_only':True}
     (output/'comparison.json').write_text(json.dumps(comparison,indent=2))
     with (output/'matched_validation.csv').open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
@@ -56,7 +66,8 @@ def report(root,artifacts,verification,recovery,output,kernel,recovery_kernel):
     assert len(generation['samples'])==100 and generation['protocol']==read(root/'configs/generation_protocol.json')
     quality=[]
     for eid,path in [('E01',references['E01']/'generation.json'),('E11',references['E11']/'generation.json'),('E12',output/'generation.json')]:
-        grid=read(path);assert len(grid['samples'])==100
+        grid=read(path);assert len(grid['samples'])==100 and grid['protocol']==read(root/'configs/generation_protocol.json')
+        assert grid['protocol_source_sha256']==file_hash(root/'configs/generation_protocol.json')
         for sample in grid['samples']:
             text=sample['text'][len(sample['prompt']):];windows=[text[i:i+8] for i in range(len(text)-7)]
             quality.append({'experiment':eid,'policy':sample['checkpoint_policy'],'prompt':sample['prompt'],'temperature':sample['temperature'],'greedy':sample['greedy'],'seed':sample['seed'],'repeated_8gram_fraction':1-len(set(windows))/len(windows)})
