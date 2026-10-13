@@ -1,0 +1,14 @@
+{
+  "research_version": 358085129,
+  "recovery_version": 358138796,
+  "research_platform_seconds": 1796.6,
+  "recovery_platform_seconds": 105.0,
+  "research_and_finish_seconds": 1684.1594004631042,
+  "research_physical_optimizer_updates_known": 5000,
+  "authoritative_updates": 5000,
+  "research_replays": 0,
+  "engineering_optimizer_updates_known": 18,
+  "synthetic_fixture_calls": "not included in either count",
+  "all_completion_gates_passed": true,
+  "PR": "https://github.com/rayyan-merchant/Nano-Language-Model/pull/18"
+}
