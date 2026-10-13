@@ -9,7 +9,7 @@ from nano_lm.artifacts import atomic_json, file_hash
 
 
 def describe(root, baseline, candidate, output, experiment="E06"):
-    assert experiment in {"E06", "E08", "E09"}
+    assert experiment in {"E06", "E08", "E09", "E10"}
     protocol = json.loads((root/'configs/generation_protocol.json').read_text())
     # Windows autocrlf can change working-copy bytes without changing the protocol.
     canonical_bytes = subprocess.check_output(['git', 'show', 'HEAD:configs/generation_protocol.json'], cwd=root)

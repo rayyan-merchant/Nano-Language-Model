@@ -48,6 +48,7 @@ def compare(baseline, four_head, root, out, experiment="E06"):
     rows=[]
     for av,bv in zip(*values):
         row={'step':av['step']}
+        if experiment=='E10':row.update({'E01_training_seconds':av['train_seconds'],'E10_training_seconds':bv['train_seconds']})
         for metric in ['loss','bpb','perplexity']:
             x,y=av['validation'][metric],bv['validation'][metric]
             row.update({f'E01_{metric}':x,f'{experiment}_{metric}':y,f'delta_{metric}':y-x,f'relative_{metric}_percent':(y-x)/x*100})
@@ -77,6 +78,10 @@ def compare(baseline, four_head, root, out, experiment="E06"):
                            'No test likelihood or cross-tokenizer ranking','No other widths/depths tested']}
     if experiment=='E10':
         x,y=summaries
+        result['gradient_statistics']=[]
+        for eid,h in zip(['E01','E10'],histories):
+            norms=np.array([r['gradient_norm'] for r in h]);assert np.isfinite(norms).all()
+            result['gradient_statistics'].append({'experiment':eid,'median':float(np.median(norms)),'p95':float(np.percentile(norms,95)),'maximum':float(norms.max()),'clipped_updates':int((norms>1).sum()),'clipping_fraction':float((norms>1).mean()),'first100_mean':float(norms[:100].mean()),'last100_mean':float(norms[-100:].mean()),'scope':'Aggregate pre-clipping research norms; no longitudinal per-layer gradient data'})
         result['efficiency_tradeoffs']={'parameters_removed':591360,'parameter_reduction_percent':100*591360/1804800,'delta_best_BPB_per_million_parameters_removed':(y['best_validation']['bpb']-x['best_validation']['bpb'])/(591360/1e6),'E01_targets_per_training_second':x['training_tokens']/x['training_seconds'],'E10_targets_per_training_second':y['training_tokens']/y['training_seconds'],'training_seconds_saved':x['training_seconds']-y['training_seconds'],'GPU_allocated_bytes_saved':x['peak_gpu_bytes']-y['peak_gpu_bytes'],'scope':'Descriptive quality-resource tradeoffs; BPB divided by parameters is not an intrinsic quality/efficiency score. Capacity and MLP architecture change together.'}
     atomic_json(out/'comparison.json',result)
     for name,data in [('matched_validation',rows),('summary_comparison',comparisons),('verified_runs',verified),('aggregate',aggregate)]:
@@ -86,7 +91,9 @@ def compare(baseline, four_head, root, out, experiment="E06"):
         fig,ax=plt.subplots(figsize=(8,4.5))
         for i,eid in enumerate(labels):ax.plot([r['step'] for r in values[i]],[r['validation'][metric] for r in values[i]],marker='.',label=eid)
         ax.set(xlabel='Completed optimizer updates',ylabel=ylabel,title=f'Matched seed42 {factor} ablation; observed points')
-        ax.legend();ax.grid(alpha=.2);fig.tight_layout();fig.savefig(out/('comparison_'+metric+'.png'),dpi=200);plt.close(fig)
+        ax.legend();ax.grid(alpha=.2);fig.tight_layout();fig.savefig(out/('comparison_'+metric+'.png'),dpi=200)
+        if experiment=='E10':fig.savefig(out/('comparison_'+metric+'.pdf'))
+        plt.close(fig)
     for name,key,ylabel,smooth in [('training','training_loss','Training NLL (100-step trailing mean)',True),('throughput','tokens_per_second','Cumulative targets / training second',False)]:
         fig,ax=plt.subplots(figsize=(8,4.5))
         for i,eid in enumerate(labels):
@@ -95,7 +102,18 @@ def compare(baseline, four_head, root, out, experiment="E06"):
             else:steps=[r['step'] for r in h]
             ax.plot(steps,v,label=eid)
         ax.set(xlabel='Completed optimizer updates',ylabel=ylabel,title='Measured single-seed runs; separate GPU sessions')
-        ax.legend();ax.grid(alpha=.2);fig.tight_layout();fig.savefig(out/('comparison_'+name+'.png'),dpi=200);plt.close(fig)
+        ax.legend();ax.grid(alpha=.2);fig.tight_layout();fig.savefig(out/('comparison_'+name+'.png'),dpi=200)
+        if experiment=='E10':fig.savefig(out/('comparison_'+name+'.pdf'))
+        plt.close(fig)
+    if experiment=='E10':
+        fig,ax=plt.subplots(figsize=(8,4.5))
+        for label,v in zip(labels,values):ax.plot([r['train_seconds'] for r in v],[r['validation']['bpb'] for r in v],marker='.',label=label)
+        ax.set(xlabel='Measured cumulative training-only seconds',ylabel='Conditional validation BPB',title='Observed seed42 quality/cost tradeoff; separate T4 sessions')
+        ax.legend();ax.grid(alpha=.2);fig.tight_layout();fig.savefig(out/'comparison_bpb_training_time.png',dpi=200);fig.savefig(out/'comparison_bpb_training_time.pdf');plt.close(fig)
+        fig,axes=plt.subplots(1,3,figsize=(11,4))
+        for ax,key,scale,label in zip(axes,['parameters','training_seconds','peak_gpu_bytes'],[1e6,1,2**20],['Parameters (millions)','Training-only seconds','Peak allocated GPU MiB']):
+            ax.bar(['E01','E10'],[s[key]/scale for s in summaries]);ax.set(ylabel=label)
+        fig.suptitle('Genuine single-seed resource measurements');fig.tight_layout();fig.savefig(out/'comparison_resources.png',dpi=200);fig.savefig(out/'comparison_resources.pdf');plt.close(fig)
     print(json.dumps(comparisons,indent=2))
 
 
