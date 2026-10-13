@@ -6,7 +6,7 @@ import uuid
 
 
 def build(output, commit, source_kernel=None, source_dataset=None, analysis_dataset=None, experiment='E01', restore_only=False):
-    if experiment not in {'E01','E03','E04','E06','E08','E09'}:raise ValueError('Unsupported experiment')
+    if experiment not in {'E01','E03','E04','E06','E08','E09','E10'}:raise ValueError('Unsupported experiment')
     if restore_only and not source_kernel:raise ValueError('Restore-only requires published notebook source')
     if len(commit) != 40 or any(c not in '0123456789abcdef' for c in commit):
         raise ValueError('An exact source SHA is required')
@@ -16,7 +16,7 @@ def build(output, commit, source_kernel=None, source_dataset=None, analysis_data
     phase = 'recovery' if source_kernel or source_dataset else 'pilot'
     if analysis_dataset and (not source_dataset or not analysis_dataset.startswith('rayyannmerchant/')):
         raise ValueError('Analysis reuse requires authorized private dataset recovery')
-    date = '20261013' if experiment in {'E08','E09'} else '20261012'
+    date = '20261013' if experiment in {'E08','E09','E10'} else '20261012'
     kernel = f'rayyannmerchant/nano-{experiment.lower()}-{phase}-{date}-' + uuid.uuid4().hex[:8]
     bootstrap = f'''from pathlib import Path
 import os, sys, subprocess, json
@@ -66,5 +66,5 @@ if result.returncode: raise RuntimeError('Pilot failed; preserve outputs and ins
 
 
 if __name__ == '__main__':
-    p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--commit',required=True);p.add_argument('--source-kernel');p.add_argument('--source-dataset');p.add_argument('--analysis-dataset');p.add_argument('--experiment',choices=['E01','E03','E04','E06','E08','E09'],default='E01');p.add_argument('--restore-only',action='store_true')
+    p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--commit',required=True);p.add_argument('--source-kernel');p.add_argument('--source-dataset');p.add_argument('--analysis-dataset');p.add_argument('--experiment',choices=['E01','E03','E04','E06','E08','E09','E10'],default='E01');p.add_argument('--restore-only',action='store_true')
     args=p.parse_args();build(args.output,args.commit,args.source_kernel,args.source_dataset,args.analysis_dataset,args.experiment,args.restore_only)

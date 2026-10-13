@@ -1,0 +1,20 @@
+{
+  "training_updates_per_second": 5.426934115966539,
+  "predicted_tokens_per_training_second": 22228.722138998943,
+  "checkpoint_seconds": 2.154987072999859,
+  "export_seconds": 4.9749637449998545,
+  "journal_seconds": 16.3675267379939,
+  "generation_seconds": 175.08269476100008,
+  "archive_seconds": 14.249198202000116,
+  "pipeline_seconds": 1586.808630495,
+  "efficiency_tradeoffs": {
+    "parameters_removed": 591360,
+    "parameter_reduction_percent": 32.765957446808514,
+    "delta_best_BPB_per_million_parameters_removed": 0.08972664582860328,
+    "E01_targets_per_training_second": 22340.8010235238,
+    "E10_targets_per_training_second": 22228.722138998943,
+    "training_seconds_saved": -4.622112528996922,
+    "GPU_allocated_bytes_saved": 12591104,
+    "scope": "Descriptive quality-resource tradeoffs; BPB divided by parameters is not an intrinsic quality/efficiency score. Capacity and MLP architecture change together."
+  }
+}

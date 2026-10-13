@@ -1,0 +1,129 @@
+{
+  "status": "passed",
+  "experiment": "E10",
+  "device": "cpu",
+  "model": {
+    "vocab_size": 65,
+    "d_model": 192,
+    "n_heads": 6,
+    "n_layers": 4,
+    "context_length": 128,
+    "mlp_expansion": 2,
+    "activation": "gelu",
+    "position": "sinusoidal",
+    "dropout": 0.1
+  },
+  "parameters": 1213440,
+  "parameter_reduction": 591360,
+  "MLP_parameters_per_block": [
+    148032,
+    148032,
+    148032,
+    148032
+  ],
+  "projection_weight_gradients": [
+    {
+      "block": 0,
+      "projection_weight_gradient_norms": [
+        0.1538304090499878,
+        0.2100086212158203
+      ]
+    },
+    {
+      "block": 1,
+      "projection_weight_gradient_norms": [
+        0.1542166918516159,
+        0.20840385556221008
+      ]
+    },
+    {
+      "block": 2,
+      "projection_weight_gradient_norms": [
+        0.14603136479854584,
+        0.19828522205352783
+      ]
+    },
+    {
+      "block": 3,
+      "projection_weight_gradient_norms": [
+        0.14449559152126312,
+        0.1958063840866089
+      ]
+    }
+  ],
+  "seed42_compatible_shape_parameter_equality": {
+    "token_embedding.weight": true,
+    "blocks.0.norm1.weight": true,
+    "blocks.0.norm1.bias": true,
+    "blocks.0.norm2.weight": true,
+    "blocks.0.norm2.bias": true,
+    "blocks.0.attention.q.weight": true,
+    "blocks.0.attention.q.bias": true,
+    "blocks.0.attention.k.weight": true,
+    "blocks.0.attention.k.bias": true,
+    "blocks.0.attention.v.weight": true,
+    "blocks.0.attention.v.bias": true,
+    "blocks.0.attention.output.weight": true,
+    "blocks.0.attention.output.bias": true,
+    "blocks.0.mlp.2.bias": false,
+    "blocks.1.norm1.weight": true,
+    "blocks.1.norm1.bias": true,
+    "blocks.1.norm2.weight": true,
+    "blocks.1.norm2.bias": true,
+    "blocks.1.attention.q.weight": false,
+    "blocks.1.attention.q.bias": false,
+    "blocks.1.attention.k.weight": false,
+    "blocks.1.attention.k.bias": false,
+    "blocks.1.attention.v.weight": false,
+    "blocks.1.attention.v.bias": false,
+    "blocks.1.attention.output.weight": false,
+    "blocks.1.attention.output.bias": false,
+    "blocks.1.mlp.2.bias": false,
+    "blocks.2.norm1.weight": true,
+    "blocks.2.norm1.bias": true,
+    "blocks.2.norm2.weight": true,
+    "blocks.2.norm2.bias": true,
+    "blocks.2.attention.q.weight": false,
+    "blocks.2.attention.q.bias": false,
+    "blocks.2.attention.k.weight": false,
+    "blocks.2.attention.k.bias": false,
+    "blocks.2.attention.v.weight": false,
+    "blocks.2.attention.v.bias": false,
+    "blocks.2.attention.output.weight": false,
+    "blocks.2.attention.output.bias": false,
+    "blocks.2.mlp.2.bias": false,
+    "blocks.3.norm1.weight": true,
+    "blocks.3.norm1.bias": true,
+    "blocks.3.norm2.weight": true,
+    "blocks.3.norm2.bias": true,
+    "blocks.3.attention.q.weight": false,
+    "blocks.3.attention.q.bias": false,
+    "blocks.3.attention.k.weight": false,
+    "blocks.3.attention.k.bias": false,
+    "blocks.3.attention.v.weight": false,
+    "blocks.3.attention.v.bias": false,
+    "blocks.3.attention.output.weight": false,
+    "blocks.3.attention.output.bias": false,
+    "blocks.3.mlp.2.bias": false,
+    "norm.weight": true,
+    "norm.bias": true,
+    "head.weight": false
+  },
+  "checks": [
+    "sole_MLP_override_training_unchanged",
+    "repeat_seed42_initialization",
+    "four_independent_blocks",
+    "192_384_192_projections",
+    "GELU_manual_MLP_reference",
+    "MLP_and_total_parameter_counts",
+    "preLN_residual_reference",
+    "manual_sqrt32_causal_attention",
+    "sinusoidal_no_RoPE_or_learned",
+    "finite_shifted_CE_forward",
+    "future_token_invariance",
+    "finite_all_gradients_both_MLP_projections",
+    "train_eval_dropout_01",
+    "cropped_generation"
+  ],
+  "limit": "Development gradients establish connectivity, not longitudinal research gradient behavior; changed tensor shapes consume initialization RNG differently."
+}
