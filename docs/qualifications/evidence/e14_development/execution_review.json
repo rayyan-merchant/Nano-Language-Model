@@ -1,0 +1,56 @@
+{
+  "status": "committed_source_and_orchestration_review_passed",
+  "source_commit": "ab1da4e05005413807d20802fff4153d97ebfa10",
+  "scientific_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "reviewed_main": "2d698a671ebdae8e43d66e3062df174edd81cab0",
+  "model": {
+    "vocab_size": 65,
+    "d_model": 240,
+    "n_heads": 6,
+    "n_layers": 4,
+    "context_length": 128,
+    "mlp_expansion": 4,
+    "activation": "gelu",
+    "position": "sinusoidal",
+    "dropout": 0.1
+  },
+  "training_defaults": {
+    "dataset": "tiny_shakespeare",
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "optimizer_steps": 5000,
+    "seeds": [
+      42,
+      123,
+      456
+    ],
+    "target_tokens_per_update": 4096,
+    "weight_decay": 0.01,
+    "scheduler": "constant",
+    "precision": "float32",
+    "gradient_clip_norm": 1.0,
+    "tokenizer": "character"
+  },
+  "model_overrides": {
+    "d_model": 240
+  },
+  "token_budget": {
+    "context_length": 128,
+    "micro_batch_size": 4,
+    "accumulation": 8,
+    "sampled_windows_per_update": 32,
+    "predicted_positions_per_update": 4096
+  },
+  "E13_PR16_merged": true,
+  "E12_separation": "No E12 notebooks or active scientific GPU jobs on rayyannmerchant; separate E14 UUIDs/branch. No E12 branch/artifact edits or submissions.",
+  "CPU_full_suite": "68 passed,1 CUDA-only skip,193.45s",
+  "final_focused": "20 passed,1.95s",
+  "CPU_real_smoke_all_six_state_fields": "passed",
+  "cloud_acceptance": "pending published development and fresh CUDA recovery; no research launched",
+  "CPU_final_full_suite": "69 passed,1 CUDA-only skip,116.89s",
+  "source_CI": {
+    "id": 38409926632,
+    "status": "completed",
+    "conclusion": "success"
+  }
+}
