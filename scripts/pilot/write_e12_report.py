@@ -10,7 +10,7 @@ from scripts.pilot.sampling_audit import replay
 
 
 def report(root,artifacts,verification,recovery,output,kernel,recovery_kernel):
-    read=lambda p:json.loads(p.read_text())
+    read=lambda p:json.loads(p.read_text(encoding='utf-8-sig'))
     s=read(artifacts/'analysis/summary.json');done=read(artifacts/'completion.json')
     verified=read(verification);cuda=read(recovery)
     assert s['completed_optimizer_updates']==5000 and s['parameters']==1804800
@@ -43,7 +43,7 @@ def report(root,artifacts,verification,recovery,output,kernel,recovery_kernel):
         data=read(dataset_path)['manifest']
         assert data==read(artifacts/'dataset_verification.json')['manifest']
         reference_validation[eid]={'same_scientific_profile':True,'same_dataset_manifest':True,'environment_file_sha256':file_hash(folder/'evidence/environment.json'),'dataset_receipt_file_sha256':file_hash(dataset_path)}
-    values={eid:list(csv.DictReader((folder/'validation.csv').open())) for eid,folder in references.items()}
+    values={eid:list(csv.DictReader((folder/'validation.csv').open(encoding='utf-8-sig'))) for eid,folder in references.items()}
     values['E12']=[{'step':r['step'],**r['validation']} for r in val]
     for eid in values:
         assert [int(r['step']) for r in values[eid]]==list(range(250,5001,250))
