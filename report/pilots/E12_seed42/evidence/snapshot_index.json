@@ -1,0 +1,319 @@
+[
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step001750_0e9837157c87",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 1750,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "39671cbff2cba779a3bb877ad61f3e7bc997c1159d0a0d062ec6fddbae1d60a5",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_001750.pt": "a43548f09a6800a549706ce5b42333fad411a9bb847e546aeaf70625f2a8c286"
+    },
+    "hash": "c33165122ad92b6e74bd7781f035228fee87da982c1d681579f61061e3a5c5a7"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step004250_0e7da090521c",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 4250,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "9f4a834ca22b3b22e367748829e9bf88444f0b7ff95fd12d28c938912ae560d9",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_004250.pt": "bb72c5a4cd5d78d3eebfb784eb47f0dea5d75bba1bcb3083ff119a806344b000"
+    },
+    "hash": "58e4d2d2ac7a01d8aeb8f512f2cd5ab093b23cfd1ab0585438b0b9af76876c5a"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step003750_7050780ac043",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 3750,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "a2feb6f0c2c767abf8a859bf4eefcd7f58f9f8f1c7944dc21880402e7d189f1d",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_003750.pt": "330b4ac54ccc6991d0fc820a48ca0ff7cb43717f8f078873faaa54eb639deb5c"
+    },
+    "hash": "2603162141909a33235216b003ba41077b31ffa6eb40b5f82b400b024669950e"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step002250_4c61800c3acd",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 2250,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "16e8ad5fe5aa7d015ded872217fe4b3033dd3dea304eaf0966e3ba7bbabf3cc6",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_002250.pt": "cc716487fea48e936b8a9de137ff29aa9449616ce8acaaedabd0a8e707b6240e"
+    },
+    "hash": "63f499fab110f02f233045b4a71a950457fd69759408dd4988c339bf1bb890e7"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step001250_c1884ffc5a69",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 1250,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "883ddc774d3d572e9874cdf9cd8a01de02a72f140c0cd282a9562bbe6dd0773e",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_001250.pt": "72c2d416dbac52ba5df62e32594c0d78afed270079adb650b0c509bb504541c5"
+    },
+    "hash": "6c8b5a46a8cee4891e4f5292dd423a2498883ed2de410954c1aa911e15435a68"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step005000_1ffc87d37e0f",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 5000,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "003d8522890a5d7f66390319e4c916a2ab2bfb7d7e157a3651b858e370bf216c",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_005000.pt": "8b5f7ea1a474fe194f2a579bc8828cea9d48c79e23f10777ff5eef6fe4e9b00b"
+    },
+    "hash": "0e325a71f90c2f038152a719977486bfb5d6a6386a769738f647279683c79a16"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step000500_937938870ddd",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 500,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "bbc292e3c9f430c7f13a7c998d7f883eebacecab5c3a77b10be6c50e2c06bf53",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_000500.pt": "e1e78e5ccd660352cda4c1a3dfce06a737f1f003f801514d607fdb0c7d5721bd"
+    },
+    "hash": "b198230147790852040d8f16938353ad65d3cae5351b3e6a90c36e15bd5ae5e0"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step001000_e1acdfa119b7",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 1000,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "5e48d42f1a8a656fb2bf98ea3ac3d1686229b2f23ca4deea9bac98732c9b7a06",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_001000.pt": "9ecd5d14b99e35485be159a44ee1cdac965e013db40e8cef0a85a0b612583e3e"
+    },
+    "hash": "db2100b136f787ce02ff86684c1d6d5e080d8307a4841eaa8c77cb5f258d5878"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step003000_9191ac52f8ef",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 3000,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "988f79ee87a0b9b5e793e4b5f43e693ebf48ad515a4c62e06d3c3afec50addaf",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_003000.pt": "2fa37514cb65ce4657a737c473cec2c4bb322221429ab7df5321237b4d96569d"
+    },
+    "hash": "b5f7ee97fc0b76ff4ef053a23661a55abb7464a6c2f1e1d87a6082902b0fad2b"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step000250_98bd827ac1bb",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 250,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "06f8d0df93f299563eb8ee1fd6b3104d4d62a2ed470983a9348011144cb61490",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_000250.pt": "dd3c14182c783802a824541d779ee7f0f7f6aba9182bebe64db5dd3653331efe"
+    },
+    "hash": "9f420cad6e53a9dc385032143f7b4845348e71141ff0d9bcdd61c869291b22e3"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step003250_26be1d6c1c94",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 3250,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "1ff465a1ca25fde22106e7c21770a032f440913708ba1fd2d6de1bd4ee8fc0dd",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_003250.pt": "5e7ed88f18d86e588cb9a36a56993b38f7424d523c34632fce5910b8a607d6c9",
+      "checkpoints/step_003000.pt": "2fa37514cb65ce4657a737c473cec2c4bb322221429ab7df5321237b4d96569d"
+    },
+    "hash": "dd383db038b82299f77e9c283bc3adeebc32313dafcfe74eda48a087b75128e4"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step004750_ab756e4bdf9c",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 4750,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "aca1527edf7ec28398e863f1f2098816945912ef8a0252c39ee8bd4c159846a5",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_004750.pt": "54179bd69d71266880a4a8f8ee51392c8966a87ccbb1d50542af8e57245627ee"
+    },
+    "hash": "518e8a96a6df294ed5549a0707574062c3745ee954f2e277c60bf4884d0e1873"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step005000_5420db9efa9c",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 5000,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "summary_005000.json": "6705c8b413d9ffbc3bb3760eb8330bd97ca161779be7f62121b2d190e807722e",
+      "events.jsonl": "003d8522890a5d7f66390319e4c916a2ab2bfb7d7e157a3651b858e370bf216c",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_005000.pt": "8b5f7ea1a474fe194f2a579bc8828cea9d48c79e23f10777ff5eef6fe4e9b00b"
+    },
+    "hash": "ae524d98b1fb54b58166edddac97536af48ea88a7d9ce209652aeabc88a2eb82"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step001500_ea84110478fb",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 1500,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "3a1ea499affedced136577524b892687689e75de9dec5f7ceb284ad0f338311f",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_001500.pt": "d24efa042a2bf547c5865f1bc0f4b165aacf37b282b11ede1097d164c362c353"
+    },
+    "hash": "4c35969328a77e32d18c346cdb545eb910b1d89ccca1c66488a108702da03c94"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step003500_d29ca9ccb4c6",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 3500,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "a1cb674403671febb8e8e29b19612e884cd67ead84a3a87e81712e1447b98680",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_003500.pt": "8e091cb211dcd6ea6f4b2eb063a586a0a6abd0fde8f7c00708266764d7cd7c40"
+    },
+    "hash": "332b8690f609a4e612389f81d4107acf0f6da749ff548bbf1c9d330d239c3775"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step004500_cc4d256c00cc",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 4500,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "a0b24a4ee71df42a07b471231dac461391b3d84a3859da9404c97fdcfb393071",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_004500.pt": "6ce2bf611c856f6a810da272499891aebd389ce7173afac90839ed62d6429b9c"
+    },
+    "hash": "026748d46ab0b3b9f85641d6feccbb0bbb0ea0df682354786857c6a971c092d3"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step000750_6c5b5d9a63c9",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 750,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "b0e3a5dbb4b7024b845a2c43952fcd3baa8a2099930f2a2b1a36d4f5d3bb345a",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_000750.pt": "a2addf341799df154f62f3b606c55a1f9d3ee8edad825a1ed91316ae6ee6f29f"
+    },
+    "hash": "6a5b4b62219531385fb4f12580e01206937f0007a847a41e228ea7f8b822e9df"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step002750_f4000324c4f3",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 2750,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "e021e68d83a76b1b4a9a75b5eeef04f8486a6564b542a0c6e4b83c3065cd3e34",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_002750.pt": "1aea25a62f8b250a1a08696da1bb7fd8e01dc3238e5faf2258e40fa12fc52c28"
+    },
+    "hash": "795f7d7df462812466597a59a1d54afafe18f2946805da988380ecaa4b33e4bd"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step002000_93a2b19b0d4a",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 2000,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "9030c3ae9e9dd238e93e5d147c0f03a5235d15a7f4c922d0fb372517e011b8cc",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_002000.pt": "f3818b9f13ad87abacbf7d10da6cbb21e2b057d62e22ee894cb7211d2c9f9adb"
+    },
+    "hash": "4f18ea18a4525afb50eaa307f98214de3e8499354d4ed3923b2cba5ca05445d0"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step002500_258fa11ef543",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 2500,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "7989385795072bd28c276e672b6a544bfdbc6c341c0e13ab8993c859aa89773f",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_002500.pt": "40921543f44881ac45dd788d24a683a99f4fe326bdfecbcc43a99bfd28ea1bd0"
+    },
+    "hash": "f9dc8a84834f7d46dbb891c56f690f50ef3834674148c7389557cfa79434724f"
+  },
+  {
+    "directory": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step004000_1c3d8137b699",
+    "schema_version": 1,
+    "run_id": "E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b",
+    "step": 4000,
+    "config_hash": "3b79b376bc9eafbca71c3a077bbbd410d1bd6fe463254a77c23947e3583583ca",
+    "files": {
+      "tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+      "metadata.json": "1101b9e1a636b1ca339ad199db15d34df3e9bdc5b79315f35853a70f4644fb2c",
+      "events.jsonl": "1e860a5219094e436db87d0a229ecde1dc93563fe55fbd96c405030d63c2c3e9",
+      "dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+      "checkpoints/step_004000.pt": "c87a8d79a3b5644991072829937db8f75108f757f30029d5d50ba78b37f75ab0"
+    },
+    "hash": "7aec6cdede2874e1658f457d8e837dcb6ac83aad42b607c0d3eb7a4065a19e44"
+  }
+]

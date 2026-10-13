@@ -1,0 +1,212 @@
+{
+  "records": [
+    {
+      "operation": "checkpoint",
+      "seconds": 0.11742093899999873,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_000250.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.31446828399998594,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step000250_98bd827ac1bb"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.11923458399996889,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_000500.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.29848881500004154,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step000500_937938870ddd"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.11904902799994943,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_000750.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3018783609999218,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step000750_6c5b5d9a63c9"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.12027539400003207,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_001000.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.30483697400006804,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step001000_e1acdfa119b7"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.12215803499998401,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_001250.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3057947529999865,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step001250_c1884ffc5a69"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.12297291599998061,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_001500.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.31166615200004344,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step001500_ea84110478fb"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.12761510300015289,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_001750.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3101274610000928,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step001750_0e9837157c87"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.13243702199997642,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_002000.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.31097882800008847,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step002000_93a2b19b0d4a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.12871916300014163,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_002250.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3095208760000787,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step002250_4c61800c3acd"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.1305928369999947,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_002500.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3139931090001937,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step002500_258fa11ef543"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.1310835719998522,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_002750.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3153257360002044,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step002750_f4000324c4f3"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.1340940740001315,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_003000.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.31799272900002507,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step003000_9191ac52f8ef"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.1361388979998992,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_003250.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.5662672099999781,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step003250_26be1d6c1c94"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.1356430690000252,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_003500.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3231513460000315,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step003500_d29ca9ccb4c6"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.13799175399981323,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_003750.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3256324669998776,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step003750_7050780ac043"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.13766906399996515,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_004000.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.33113619499999913,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step004000_1c3d8137b699"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.14194733299996187,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_004250.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.32917649099999835,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step004250_0e7da090521c"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.1405921830000807,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_004500.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3393304670000816,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step004500_cc4d256c00cc"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.14086851399997613,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_004750.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.33140782400005264,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step004750_ab756e4bdf9c"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.14317558299990196,
+      "reference": "/kaggle/working/research/runs/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b/checkpoints/step_005000.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3274358129997381,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step005000_1ffc87d37e0f"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.3264087029997427,
+      "reference": "/kaggle/working/durable_staging/research_snapshots/E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b_step005000_5420db9efa9c"
+    }
+  ],
+  "journal_seconds": 18.0317381969935,
+  "engine_wall_seconds": 1439.4443965990001,
+  "scope": "complete original research segment"
+}
