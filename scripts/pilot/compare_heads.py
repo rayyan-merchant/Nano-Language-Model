@@ -83,7 +83,7 @@ def compare(baseline, four_head, root, out, experiment="E06"):
             'retrospective_threshold_observations':thresholds,
             'limitations':['One seed; SD undefined','Same GPU model, separate sessions; no controlled speed repetitions',
                            'Validation loss and BPB mathematically related for matched character bytes',
-                           'No test likelihood or cross-tokenizer ranking','No other widths/depths tested']}
+                           'No test likelihood or cross-tokenizer ranking','Single-seed matched-factor comparison; no inference beyond the measured configurations']}
     if experiment in {'E10','E11','E13','E14'}:
         x,y=summaries
         result['gradient_statistics']=[]
