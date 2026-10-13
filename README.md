@@ -102,3 +102,7 @@ without authorization. E01, E02, E03, E04, E06, E08, E09 and E10 seed42 each com
 5000-update research run with verified published checkpoints; their reports are in
 `report/pilots`. The broader three-seed study remains separately gated. No deployed
 API is claimed. Read EXPERIMENT_READINESS.md before further experiment approval.
+
+## Scoped E11 seed42 context64 evidence
+
+[Detailed E11 report](report/pilots/E11_seed42/E11_seed42_analysis.md):5000updates/20fullvalidations, context64/accumulation16/4096targets,1804800parameters. Best=final5000loss1.49301304/BPB2.15396251. Publishedarchive independently verified and best/final CPUinference passed. Fresh zero-update CUDA recovery remainsqueued/running withHTTP500logs; full acceptanceINCOMPLETE. NoE12,otherseed or extension authorized or launched.

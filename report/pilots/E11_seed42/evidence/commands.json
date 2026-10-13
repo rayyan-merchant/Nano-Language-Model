@@ -1,0 +1,32 @@
+{
+  "source_sync": [
+    "git fetch origin",
+    "git log --oneline -6 origin/main",
+    "git diff75bc0c4 origin/main -- src/nano_lm",
+    "git switch -c codex/e11-context64-seed42-20261013 origin/main"
+  ],
+  "actual_tests": [
+    "python -m pytest -q --basetemp D:/Nano-Language-Model-artifacts/E11_qualification_20261013/pytest_initial:58passed1skip92.80s",
+    "python -m pytest -q tests/test_context_research.py tests/test_generation_grid.py tests/test_research_notebook.py --basetemp .../pytest_focused:13passed3.07s",
+    "python -m pytest -q --basetemp .../pytest_final:59passed1skip105.72s",
+    "Kaggle pinned source python -m pytest -q --basetemp /tmp/e11-pytest:60passed33.76s",
+    "python -m pytest -q --basetemp .../pytest_delivery:59passed1skip110.70s"
+  ],
+  "execution": [
+    "build_notebook.py --experiment E11 --commit e7f77205de0c7eabddf6c299029ef5d4b685ffc8",
+    "kaggle kernels push -p outputs/logs/e11-research-submit-20261013",
+    "Canonical complete training CLI arguments:execution_command.json",
+    "build_notebook.py --experiment E11 --restore-only --source-kernel rayyannmerchant/nano-e11-pilot-20261013-dafeeadf/1 --commit e7f77205de0c7eabddf6c299029ef5d4b685ffc8; recovery gatePENDING"
+  ],
+  "independent_verification": [
+    "download_kaggle_archive.py --ranges:connection retries exhausted; parts retained",
+    "download_kaggle_archive.py --ranges --resume-pieces original/pieces:35complete ranges reused; full SHA256verified",
+    "inspect_archive.py archive manifest exclusive verified destination:CRC/inventory/all60hashes/history/bestfinal CPU inference passed",
+    "compare_heads.py --experiment E11:solecontextdifference/profile/tokenizer/data/20matchedpoints/private sampler replay passed",
+    "diagnostics.py --training-text data/processed/tiny-shakespeare-v3/train.txt:all20counters/journal/BPB/10predeterminedoverlapdescriptionspassed",
+    "compare_generation_grid.py --experiment E11:all100settings/protocol/filehashespassed",
+    "write_e11_report.py:actual verified evidence; pending CUDA status explicit",
+    "kaggle kernels output ... --file-pattern publishedsnapshot/export_manifest:21manifests independently retrieved and index/hash inventoryparitypassed"
+  ],
+  "scope": "Commands/results actually executed; GPU recovery remains pending; no E12/extra seeds/extensions"
+}

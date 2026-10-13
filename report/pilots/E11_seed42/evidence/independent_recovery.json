@@ -1,0 +1,33 @@
+{
+  "status": "published_archive_verified_and_best_final_CPU_inference_passed",
+  "run_id": "E11_seed42_67e185eafe9243dab68959e730a72eec",
+  "archive_sha256": "a23789511ce10aa70ac3484ca279f2327eee5a9d1d4db319e4ab2f47df7484ce",
+  "archive_bytes": 402283332,
+  "verified_file_count": 60,
+  "optimizer_updates": 5000,
+  "validation_count": 20,
+  "seconds": 37.13495010021143,
+  "samples": [
+    {
+      "policy": "best",
+      "checkpoint": "runs/E11_seed42_67e185eafe9243dab68959e730a72eec/checkpoints/step_005000.pt",
+      "sha256": "8511bd6016e6a7e3fb6f369ebc37f670f8aebadd58b5a30a901f426fc90d244e",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nI will not the stand of the world of the world\nThat I will see t"
+    },
+    {
+      "policy": "final",
+      "checkpoint": "runs/E11_seed42_67e185eafe9243dab68959e730a72eec/checkpoints/step_005000.pt",
+      "sha256": "8511bd6016e6a7e3fb6f369ebc37f670f8aebadd58b5a30a901f426fc90d244e",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nI will not the stand of the world of the world\nThat I will see t"
+    }
+  ],
+  "training_resume": "CPU inference only; no CUDA RNG restore or additional updates attempted"
+}

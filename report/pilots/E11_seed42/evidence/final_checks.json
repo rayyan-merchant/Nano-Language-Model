@@ -1,0 +1,19 @@
+{
+  "status": "all_available_E11_delivery_checks_passed_except_pending_fresh_CUDA_restoration",
+  "optimizer_updates": 5000,
+  "validation_count": 20,
+  "contexts_all64": true,
+  "accumulation_all16": true,
+  "parameters": 1804800,
+  "predicted_targets_and_bytes": 20480000,
+  "generation_rows": 100,
+  "PNG_figures": 15,
+  "PDF_figures": 15,
+  "unaltered_generation_bytes": true,
+  "all_report_links_exist": true,
+  "scientific_package_unchanged": true,
+  "independent_archive_all60files_CRC_hashes_CPU_inference": true,
+  "independent_snapshot_manifest_count": 21,
+  "fresh_CUDA_acceptance": "PENDING_platform_RUNNING_HTTP500_no_receipt",
+  "scope": "No E12/additional seed/extension; checkpoint binaries/full data/logs outside Git"
+}

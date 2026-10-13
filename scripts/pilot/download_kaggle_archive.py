@@ -10,10 +10,14 @@ import requests
 from kaggle.api.kaggle_api_extended import KaggleApi, ApiListKernelSessionOutputRequest
 
 
-def download(kernel, manifest, output, prefix=None, ranges=False):
+def download(kernel, manifest, output, prefix=None, ranges=False, resume_pieces=None):
     owner,slug,version=kernel.split('/')
     if owner!='rayyannmerchant' or version!='1':raise ValueError('Only assigned account saved version1 is supported')
-    reference=json.loads(manifest.read_text(encoding='utf-8'));name=reference['run_id'].split('_seed42_')[0]+'_seed42_pilot.zip'
+    reference=json.loads(manifest.read_text(encoding='utf-8'))
+    if resume_pieces is not None:
+        assert json.loads((resume_pieces.parent/'artifact_manifest.json').read_text(encoding='utf-8'))==reference
+        ranges=True
+    name=reference['run_id'].split('_seed42_')[0]+'_seed42_pilot.zip'
     api=KaggleApi();api.authenticate()
     assert api.config_values[api.CONFIG_NAME_USER]==owner
     output.mkdir(parents=True,exist_ok=False);shutil.copyfile(manifest,output/'artifact_manifest.json')
@@ -32,9 +36,14 @@ def download(kernel, manifest, output, prefix=None, ranges=False):
         assert 0<=offset<reference['archive_bytes']
         pieces=output/'pieces';pieces.mkdir()
         ranges=[(i,min(i+8*2**20,reference['archive_bytes'])-1) for i in range(offset,reference['archive_bytes'],8*2**20)]
+        reused=[]
         def piece(pair):
             start,end=pair
-            for attempt in range(6):
+            if resume_pieces is not None:
+                prior=next((p for p in sorted(resume_pieces.glob(f'{start:012d}_{end:012d}_attempt*.part')) if p.stat().st_size==end-start+1),None)
+                if prior is not None:
+                    reused.append(prior.name);return prior
+            for attempt in range(20):
                 path=pieces/f'{start:012d}_{end:012d}_attempt{attempt}.part'
                 try:
                     with requests.get(item.url,headers={'Range':f'bytes={start}-{end}'},stream=True,timeout=(30,60)) as response:
@@ -47,7 +56,7 @@ def download(kernel, manifest, output, prefix=None, ranges=False):
                     assert path.stat().st_size==end-start+1
                     return path
                 except (requests.RequestException,OSError):
-                    if attempt==5:raise
+                    if attempt==19:raise
                     time.sleep(min(2**(attempt+1),30))
         with ThreadPoolExecutor(max_workers=4) as pool:paths=list(pool.map(piece,ranges))
         with partial.open('xb') as f:
@@ -58,7 +67,7 @@ def download(kernel, manifest, output, prefix=None, ranges=False):
                         block=old.read(min(2**20,remaining));assert block;f.write(block);remaining-=len(block)
             for path in paths:
                 with path.open('rb') as part:shutil.copyfileobj(part,f,2**20)
-        transport=f'Official Kaggle API output URL; four bounded byte-range streams with exact206/Content-Range/size validation; retained{offset}byte prefix; full object SHA256 verified'
+        transport=f'Official Kaggle API output URL; four bounded byte-range streams with exact206/Content-Range/size validation; retained{offset}byte prefix and{len(reused)} completed immutable ranges; full object SHA256 verified'
     else:
         with requests.get(item.url,stream=True,timeout=(30,60)) as response:
             response.raise_for_status()
@@ -75,9 +84,9 @@ def download(kernel, manifest, output, prefix=None, ranges=False):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--kernel',required=True);p.add_argument('--manifest',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--prefix',type=Path);p.add_argument('--ranges',action='store_true')
+    p=argparse.ArgumentParser();p.add_argument('--kernel',required=True);p.add_argument('--manifest',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--prefix',type=Path);p.add_argument('--ranges',action='store_true');p.add_argument('--resume-pieces',type=Path)
     a=p.parse_args()
-    try:download(a.kernel,a.manifest,a.output,a.prefix,a.ranges)
+    try:download(a.kernel,a.manifest,a.output,a.prefix,a.ranges,a.resume_pieces)
     except Exception as error:
         if a.output.exists():(a.output/'download_failure.json').write_text(json.dumps({'error_type':type(error).__name__,'scope':'Independent artifact transfer, not training; partial evidence retained'}))
         print('DOWNLOAD FAILED:',type(error).__name__,flush=True);raise SystemExit(1)

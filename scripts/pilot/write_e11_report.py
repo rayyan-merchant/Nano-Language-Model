@@ -25,8 +25,13 @@ def report(a):
     assert comparison['comparability_passed'] and comparison['only_model_factor_difference']=='context_length'
     assert len(comparison['sampling_audits'])==2
     assert diagnostics['journal_steps']==5000 and diagnostics['failures']==diagnostics['resumes']==0
-    assert recovery['optimizer_updates_before']==recovery['optimizer_updates_after']==5000
-    assert recovery['additional_optimizer_updates']==0 and all(recovery['exact_state'].values())
+    cuda_verified=recovery['status']=='fresh_saved_output_CUDA_state_restore_passed_no_updates'
+    if cuda_verified:
+        assert recovery['optimizer_updates_before']==recovery['optimizer_updates_after']==5000
+        assert recovery['additional_optimizer_updates']==0 and all(recovery['exact_state'].values())
+    else:
+        assert recovery['status']=='pending_platform_verification' and recovery['platform_status']=='RUNNING'
+    recovery_description=('Fresh compatible T4 restoration preserved every model/optimizer/scheduler/scaler/RNG/sampling/training-state field with5000→5000 updates; zero extra research updates.' if cuda_verified else 'Fresh compatible CUDA full-state restoration is PENDING: existing zero-update recovery notebook remains RUNNING, log endpoint returns HTTP500, and no recovery receipt is available. No success or additional updates are claimed. Full E11 acceptance remains incomplete until this gate passes.')
     assert local['archive_sha256']==manifest['archive_sha256'] and local['verified_file_count']==len(manifest['files'])
     assert len(generation['samples'])==100 and generation['protocol']==read(a.root/'configs/generation_protocol.json')
     assert quality['generation_file_sha256']['E11']==hashlib.sha256((source/'analysis/generation.json').read_bytes()).hexdigest()
@@ -55,7 +60,7 @@ def report(a):
 
 One explicitly authorized E11 seed42 run: 5,000 completed updates, twenty full
 sliding validations. No additional seeds, E12, hybrid or extension were launched.
-The broader three-seed study remains separately gated. Earlier evidence is preserved.
+The broader three-seed study remains separately gated. Earlier evidence is preserved. Full acceptance status: {'COMPLETE' if cuda_verified else 'INCOMPLETE — fresh CUDA restoration pending'}.
 Question: how does shortening causal context128→64 affect prediction,
 optimization, runtime, memory and generated text? Less available preceding text
 may remove useful dependencies; shorter tensors may reduce computation, but
@@ -87,7 +92,7 @@ still differ through window shapes, dropout draws and private sampling progressi
 - Run:`{s['run_id']}`; configuration hash:`{s['config_hash']}`.
 - [Kaggle research version1](https://www.kaggle.com/code/{hardware['kernel_id']}).
 - [Fresh zero-update recovery version1](https://www.kaggle.com/code/{a.recovery_kernel}).
-- GPU:{env['gpu']}, training device0, {hardware['devices'][0]['total_bytes']:,} available device bytes;
+- GPU:{env['gpu']}, training device0, {hardware['devices'][0]['total_bytes']:,} total device-memory bytes;
   {hardware['gpu_count']} devices attached, one used for training.
 - Python{env['python']}, torch{env['torch']}, CUDA{env['cuda']}, NumPy1.26.4.
 - OS:{env['platform']}. Exact qualified transitive freeze and driver output preserved.
@@ -188,7 +193,7 @@ excludes validation/IO. Separately measured overheads:
         if sample['checkpoint_policy']=='best' and sample['greedy']:
             text+=f"\n### Prompt {sample['prompt']!r}\n\nCheckpoint:{sample['checkpoint']}; seed{sample['seed']}; greedy;256 new tokens.\n\n```text\n{sample['text']}\n```\n"
     text+='\nGeneration quality statistics and100 matched E01/E11 settings are preserved in generation_quality.json. Repeated8-grams describe loops, not grammatical quality. Exact train-text overlap in checkpoint_diagnostics.json is a descriptive memorization indicator, not proof. Context-related failures must be interpreted alongside sampling/optimization differences. See interpretation.md for observations from the actual full grid.\n'
-    text+=f"\n## Durable publication and independent recovery\n\nArchive:{manifest['archive_bytes']:,} bytes, SHA256`{manifest['archive_sha256']}`. Independently retrieved archive:CRC/exact inventory/{len(manifest['files'])} file hashes verified. All20 resumable validation checkpoint states and21 immutable snapshots verified. Best/final recovered CPU inference passed. Fresh compatible T4 restoration preserved every model/optimizer/scheduler/scaler/RNG/sampling/training-state field with5000→5000 updates; zero extra research updates. Constant LR retains its regime for a later separately approved extension.\n\nLarge artifacts are outside Git. Local retrieval root:`{source}`. Durable source:the private research version1 linked above; snapshots remain in its saved outputs. Complete run/logs/metadata/generation/figures are in E11_seed42_pilot.zip with artifact_manifest.json. Use scripts/pilot/download_kaggle_archive.py and inspect_archive.py; fresh CUDA recovery uses build_notebook.py --restore-only --source-kernel with exact trained source. Never treat /kaggle/working alone as permanent.\n\n## Failures, evidence boundaries and recommendations\n\nJournal reports{diagnostics['failures']} research failures and{diagnostics['resumes']} resumes. Transport/platform/setup evidence and actual commands are recorded in evidence; later operational issues must remain explicit. No invented missing metrics or standard deviation.\n\nInterpretation and budget recommendation must follow actual late validation trend and matched comparisons, not the assumption that shorter context is faster or weaker. One dataset and one seed cannot establish generalization or significance. The future context framework contains genuine E11/E01 results and E12=null/NOT_AUTHORIZED_NOT_RUN. No E12 launch or10k extension. Additional seeds/context256 require separate approval.\n"
+    text+=f"\n## Durable publication and independent recovery\n\nArchive:{manifest['archive_bytes']:,} bytes, SHA256`{manifest['archive_sha256']}`. Independently retrieved archive:CRC/exact inventory/{len(manifest['files'])} file hashes verified. All20 resumable validation checkpoint states and21 immutable snapshots verified. Best/final recovered CPU inference passed. {recovery_description} Constant LR retains its regime for a later separately approved extension.\n\nLarge artifacts are outside Git. Local retrieval root:`{source}`. Durable source:the private research version1 linked above; snapshots remain in its saved outputs. Complete run/logs/metadata/generation/figures are in E11_seed42_pilot.zip with artifact_manifest.json. Use scripts/pilot/download_kaggle_archive.py and inspect_archive.py; fresh CUDA recovery uses build_notebook.py --restore-only --source-kernel with exact trained source. Never treat /kaggle/working alone as permanent.\n\n## Failures, evidence boundaries and recommendations\n\nJournal reports{diagnostics['failures']} research failures and{diagnostics['resumes']} resumes. Transport/platform/setup evidence and actual commands are recorded in evidence; later operational issues must remain explicit. No invented missing metrics or standard deviation.\n\nInterpretation and budget recommendation must follow actual late validation trend and matched comparisons, not the assumption that shorter context is faster or weaker. One dataset and one seed cannot establish generalization or significance. The future context framework contains genuine E11/E01 results and E12=null/NOT_AUTHORIZED_NOT_RUN. No E12 launch or10k extension. Additional seeds/context256 require separate approval.\n"
     (out/'E11_seed42_analysis.md').write_text(text,encoding='utf-8')
 
 
