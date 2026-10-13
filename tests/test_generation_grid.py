@@ -7,7 +7,7 @@ import pytest
 from scripts.pilot.compare_generation_grid import describe
 
 
-@pytest.mark.parametrize('experiment',['E06','E10','E11'])
+@pytest.mark.parametrize('experiment',['E06','E10','E11','E13'])
 def test_grid_accepts_windows_newlines_and_rejects_missing_samples(tmp_path,experiment):
     protocol = json.loads((Path(__file__).resolve().parents[1]/'configs/generation_protocol.json').read_text())
     canonical = (json.dumps(protocol, indent=2)+'\n').encode()

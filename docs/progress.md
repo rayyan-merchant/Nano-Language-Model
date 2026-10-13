@@ -486,3 +486,7 @@ Sourcee7f77205de0c7eabddf6c299029ef5d4b685ffc8; corehashcdea42adb930904fb0cefcd2
 ## E11 recovery gate resolved — 2026-10-13
 
 The existing rayyannmerchant/nano-e11-recovery-20261013-e7000753/1 job isCOMPLETE. Independently retrieved receipt verifies exact model/optimizer/scheduler/scaler/RNG/sampling/training-state restoration,5000→5000zeroadditionalupdates, matching qualified source/profile and best/final CPU/CUDA generation equality. FullE11single-runacceptance isCOMPLETE. The prior queued/HTTP500 delay is retained as historical evidence. No duplicate research/extra seeds/E12/extension. Study-wide approval remains separately gated. See report/pilots/E11_seed42/evidence/cuda_recovery.json.
+
+## E13 scoped execution preparation — 2026-10-13
+
+PhaseA resolved:the original E11 recovery completed, exactallstate5000to5000zeroextra verified, PR15 merged atb37c2d82bfee067c28d06c2b3c8c0649774a6388. No duplicate recovery. User now authorized onlyE13seed42/5000updates. Width144/head24/MLP576/1021824parameters; derived accumulation8/context128/microbatch4/4096targets. Twenty numerical width checks, real-data CPU smoke exactstate roundtrip/inference passed. FullCPU63passed1CUDA-only skip146.20s; finalfocused14passed1.85s. Scientific core remainscdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6. ActualCUDA/fullvalidation/export/restoration/Agg/data/profile gates still required before substantive training. NoE12/E14/otherseed/extension.
