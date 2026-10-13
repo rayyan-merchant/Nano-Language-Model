@@ -20,7 +20,7 @@ from nano_lm.train import TrainSettings, environment, seed_all, train
 
 
 def run(root, out, experiment='E01'):
-    if experiment not in {'E01','E03','E04','E06','E08','E09','E10'}:raise ValueError('Unsupported authorized experiment')
+    if experiment not in {'E01','E03','E04','E06','E08','E09','E10','E11'}:raise ValueError('Unsupported authorized experiment')
     total_start=time.perf_counter();out.mkdir(parents=True,exist_ok=False)
     torch.set_num_threads(1)
     env=environment(root)
@@ -41,18 +41,21 @@ def run(root, out, experiment='E01'):
     assert all(manifest[k]==reference[k] for k in ['source','split','partitions','tokenizers','manifest_hash'])
     atomic_json(out/'dataset_validation.json',{'all_reference_fields_match':True,'manifest':manifest})
     config,defaults,variant=load_experiment(root,experiment,65)
-    positions={'E01':'sinusoidal','E03':'rope','E04':'learned','E06':'sinusoidal','E08':'sinusoidal','E09':'sinusoidal','E10':'sinusoidal'}
+    positions={'E01':'sinusoidal','E03':'rope','E04':'learned','E06':'sinusoidal','E08':'sinusoidal','E09':'sinusoidal','E10':'sinusoidal','E11':'sinusoidal'}
     parameters=1213440 if experiment=='E10' else 3584256 if experiment=='E09' else 2694528 if experiment=='E08' else 1829376 if experiment=='E04' else 1804800
-    expected_override = ({} if experiment=='E01' else {'mlp_expansion':2} if experiment=='E10' else {'n_heads':4} if experiment=='E06' else {'n_layers':8} if experiment=='E09' else {'n_layers':6} if experiment=='E08' else {'position':positions[experiment]})
+    expected_override = ({} if experiment=='E01' else {'context_length':64} if experiment=='E11' else {'mlp_expansion':2} if experiment=='E10' else {'n_heads':4} if experiment=='E06' else {'n_layers':8} if experiment=='E09' else {'n_layers':6} if experiment=='E08' else {'position':positions[experiment]})
     assert variant['model_overrides']==expected_override and variant['tokenizer']=='character'
     assert GPT(config).parameter_count()==parameters
     settings=TrainSettings(seed=42,device='cuda',precision='float32',run_kind='research',eval_every=250,checkpoint_every=500)
-    settings.validate(128)
+    settings.validate(config.context_length)
+    from context_audit import token_budget
+    budget_info=token_budget(config,settings)
     assert settings.tokens_per_update==4096 and settings.micro_batch_size==4
     expected_model={'vocab_size':65,**json.loads((root/'configs/baseline.json').read_text())['model']}
     expected_model['position']=positions[experiment]
     if experiment=='E06':expected_model['n_heads']=4
     if experiment=='E10':expected_model['mlp_expansion']=2
+    if experiment=='E11':expected_model['context_length']=64
     if experiment in {'E08','E09'}:expected_model['n_layers']=6 if experiment=='E08' else 8
     assert config.to_dict()==expected_model
     assert defaults['optimizer']=='AdamW' and defaults['learning_rate']==settings.learning_rate and defaults['scheduler']=='constant'
@@ -67,8 +70,11 @@ def run(root, out, experiment='E01'):
     if experiment=='E06':
         from heads_audit import audit
         atomic_json(out/'heads_audit.json',audit(root,'cuda'))
-    if experiment in {'E08','E09','E10'}:
-        if experiment=='E10':
+    if experiment in {'E08','E09','E10','E11'}:
+        if experiment=='E11':
+            from context_audit import audit
+            atomic_json(out/'context_audit.json',audit(root,'cuda'))
+        elif experiment=='E10':
             from mlp_audit import audit
             atomic_json(out/'mlp_audit.json',audit(root,'cuda'))
         else:
@@ -79,7 +85,7 @@ def run(root, out, experiment='E01'):
     payload,_=read_checkpoint(checkpoint);model,_=load_for_inference(checkpoint)
     assert payload['step']==1 and model.parameter_count()==parameters
     verify_snapshot(export_run(checkpoint.parent.parent,out/'preflight_snapshots'))
-    if experiment in {'E08','E09','E10'}:
+    if experiment in {'E08','E09','E10','E11'}:
         from nano_lm.storage import restore_snapshot
         from nano_lm.verification import equal_nested
         snapshot=next((out/'preflight_snapshots').iterdir())
@@ -92,9 +98,15 @@ def run(root, out, experiment='E01'):
         with zipfile.ZipFile(archive,'x') as z:z.write(checkpoint,'checkpoint.pt')
         with zipfile.ZipFile(archive) as z:assert z.testzip() is None
         atomic_json(out/'storage_preflight.json',{'status':'smoke_export_restore_and_ZIP_verified','smoke_checkpoint_bytes':checkpoint.stat().st_size,'conservative_required_free_bytes':budget,'available_bytes':shutil.disk_usage(out).free,'plan':'20 checkpoints plus21 best/latest snapshots and archive;100 weight-file equivalents plus2GiB margin'})
+    if experiment=='E11':
+        from nano_lm.bpe import from_artifact
+        from nano_lm.evaluate import evaluate
+        full_validation=evaluate(model.to('cuda'),from_artifact(payload['tokenizer']), (data/'validation.txt').read_text(encoding='utf-8'))
+        assert full_validation['scored_bytes']==55514 and full_validation['context_length']==64
+        atomic_json(out/'full_validation_preflight.json',full_validation)
     del model,payload;torch.cuda.empty_cache()
     subprocess.run([sys.executable,str(root/'scripts/pilot/analyze.py'),'--root',str(root),'--run',str(checkpoint.parent.parent),'--output',str(out/'preflight_analysis'),'--device','cuda','--development-check'],check=True)
-    atomic_json(out/'preflight.json',{'status':'passed','parameters':parameters,'model':config.to_dict(),'settings':asdict(settings),'accumulation':8,'updates_authorized':5000,'no_test_evaluation':True,'storage_plan':'private saved notebook output version; verify and retrieve archive after automatic publication; restore from verified snapshot if interrupted','prior_saved_output_recovery':'docs/qualifications/evidence/rayyan_fresh_gpu_recovery.json'})
+    atomic_json(out/'preflight.json',{'status':'passed','parameters':parameters,'model':config.to_dict(),'settings':asdict(settings),**budget_info,'updates_authorized':5000,'no_test_evaluation':True,'storage_plan':'private saved notebook output version; verify and retrieve archive after automatic publication; restore from verified snapshot if interrupted','prior_saved_output_recovery':'docs/qualifications/evidence/rayyan_fresh_gpu_recovery.json'})
     # Timing hooks forward calls unchanged. No optimizer/model/evaluation changes.
     import nano_lm.train as engine
     import nano_lm.storage as storage
@@ -125,8 +137,8 @@ def run(root, out, experiment='E01'):
     assert payload['step']==5000 and len(history)==5000 and [r['step'] for r in history]==list(range(1,5001))
     assert [r['step'] for r in val]==list(range(250,5001,250))
     assert state['training_tokens']==20480000 and state['training_bytes']==20480000 and state['amp_skipped_updates']==0
-    assert all(r['lr']==0.0003 and r['accumulation']==8 for r in history)
-    assert all(r['validation']['scored_bytes']==55514 and r['validation']['mode']=='sliding' for r in val)
+    assert all(r['lr']==0.0003 and r['accumulation']==budget_info['accumulation'] for r in history)
+    assert all(r['validation']['scored_bytes']==55514 and r['validation']['mode']=='sliding' and r['validation']['context_length']==config.context_length and r['validation']['conditioning_bytes']==256 for r in val)
     for step in [1000,2000,3000,4000,5000]:assert (directory/f'checkpoints/step_{step:06d}.pt').exists()
     assert (directory/'checkpoints'/state['best_checkpoint']).exists()
     atomic_json(out/'completion.json',{'status':'5000_completed_optimizer_updates','run_id':directory.name,'source_commit':env['git_commit'],'code_hash':env['code_hash'],'final_checkpoint':str(final.relative_to(out)),'best_checkpoint':str((directory/'checkpoints'/state['best_checkpoint']).relative_to(out)),'validation_steps':[r['step'] for r in val],'wrapper_seconds_before_postprocessing':time.perf_counter()-total_start})
@@ -149,7 +161,7 @@ def run(root, out, experiment='E01'):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--experiment',choices=['E01','E03','E04','E06','E08','E09','E10'],default='E01')
+    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--experiment',choices=['E01','E03','E04','E06','E08','E09','E10','E11'],default='E01')
     a=p.parse_args()
     try:run(a.root,a.output,a.experiment)
     except BaseException as e:

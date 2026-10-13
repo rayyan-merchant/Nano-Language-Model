@@ -474,3 +474,7 @@ gated/NO-GO. No other configuration, seed, hybrid or10k extension was launched.
 Keep5k screening; additional seeds and selected extensions require separate
 approval. Retain4× for observed predictive quality;2× is a compact candidate with
 an explicit likelihood penalty, not an established overall improvement.
+
+## E11 scoped execution preparation — 2026-10-13
+
+User authorized only E11 seed42 at5000 updates. Main317ba67 includes E10PR14 and E07PR11. Scientific package hash remains cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6. Thin orchestration now derives accumulation from resolved context: E01 128x4x8, E11 64x4x16, both4096 targets. Context audit checks independent attention/evaluator references and generation cropping. Private sampler replay validates each run separately; different window counts/RNG progression are expected, not errors. CPU initial suite:58passed1CUDA skip. CUDA/data/storage/full-validation gates remain required before the scoped research execution. No E12 authorization or study-wide GO.

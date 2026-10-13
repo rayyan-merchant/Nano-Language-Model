@@ -16,10 +16,10 @@ from nano_lm.results import collect
 
 
 def compare(baseline, four_head, root, out, experiment="E06"):
-    if experiment not in {"E06","E10"}:raise ValueError("Unsupported comparison")
-    factor="n_heads" if experiment=="E06" else "mlp_expansion"
-    sizes=(1804800,1804800) if experiment=="E06" else (1804800,1213440)
-    labels=["E01: baseline", "E06: four heads" if experiment=="E06" else "E10: 2x MLP"]
+    if experiment not in {"E06","E10","E11"}:raise ValueError("Unsupported comparison")
+    factor="context_length" if experiment=="E11" else "n_heads" if experiment=="E06" else "mlp_expansion"
+    sizes=(1804800,1804800) if experiment in {"E06","E11"} else (1804800,1213440)
+    labels=["E01: baseline", "E11: context64" if experiment=="E11" else "E06: four heads" if experiment=="E06" else "E10: 2x MLP"]
     out.mkdir(parents=True,exist_ok=False)
     runs=[]; payloads=[]
     for artifact,eid in [(baseline,'E01'),(four_head,experiment)]:
@@ -36,12 +36,17 @@ def compare(baseline, four_head, root, out, experiment="E06"):
     assert (a['parameters'],b['parameters'])==sizes
     ma,mb=a['resolved']['model'],b['resolved']['model']
     assert {k for k in ma if ma[k]!=mb[k]}=={factor}
-    assert ma[factor]==(6 if experiment=='E06' else 4) and mb[factor]==(4 if experiment=='E06' else 2)
+    assert ma[factor]==(128 if experiment=='E11' else 6 if experiment=='E06' else 4) and mb[factor]==(64 if experiment=='E11' else 4 if experiment=='E06' else 2)
     freeze=lambda e:sorted(x for x in e['packages'] if not x.startswith('-e '))
     assert freeze(a['environment'])==freeze(b['environment'])
     assert all(a['environment'][k]==b['environment'][k] for k in ['code_hash','python','torch','cuda','gpu'])
-    assert torch.equal(payloads[0]['rng']['sampling'],payloads[1]['rng']['sampling'])
-    assert np.array_equal(payloads[0]['training_state']['seen_bytes'],payloads[1]['training_state']['seen_bytes'])
+    sampling=[]
+    if experiment=='E11':
+        from sampling_audit import replay
+        sampling=[replay(p) for p in payloads]
+    else:
+        assert torch.equal(payloads[0]['rng']['sampling'],payloads[1]['rng']['sampling'])
+        assert np.array_equal(payloads[0]['training_state']['seen_bytes'],payloads[1]['training_state']['seen_bytes'])
     histories=[p['training_state']['history'] for p in payloads]
     values=[[r for r in h if 'validation' in r] for h in histories]
     assert all([r['step'] for r in v]==list(range(250,5001,250)) for v in values)
@@ -70,7 +75,7 @@ def compare(baseline, four_head, root, out, experiment="E06"):
             'delta_convention':f'{experiment} minus E01; negative loss/BPB delta favors {experiment}',
             'comparability_passed':True,'verified_runs':verified,'aggregate':aggregate,
             'same_training_settings':True,'same_dataset_tokenizer_code_environment':True,
-            'same_final_sampling_RNG_and_byte_coverage':True,
+            'same_final_sampling_RNG_and_byte_coverage':experiment!='E11','sampling_audits':sampling,
             'only_model_factor_difference':factor,'matched_validation':rows,'summary_comparison':comparisons,
             'retrospective_threshold_observations':thresholds,
             'limitations':['One seed; SD undefined','Same GPU model, separate sessions; no controlled speed repetitions',
@@ -83,6 +88,9 @@ def compare(baseline, four_head, root, out, experiment="E06"):
             norms=np.array([r['gradient_norm'] for r in h]);assert np.isfinite(norms).all()
             result['gradient_statistics'].append({'experiment':eid,'median':float(np.median(norms)),'p95':float(np.percentile(norms,95)),'maximum':float(norms.max()),'clipped_updates':int((norms>1).sum()),'clipping_fraction':float((norms>1).mean()),'first100_mean':float(norms[:100].mean()),'last100_mean':float(norms[-100:].mean()),'scope':'Aggregate pre-clipping research norms; no longitudinal per-layer gradient data'})
         result['efficiency_tradeoffs']={'parameters_removed':591360,'parameter_reduction_percent':100*591360/1804800,'delta_best_BPB_per_million_parameters_removed':(y['best_validation']['bpb']-x['best_validation']['bpb'])/(591360/1e6),'E01_targets_per_training_second':x['training_tokens']/x['training_seconds'],'E10_targets_per_training_second':y['training_tokens']/y['training_seconds'],'training_seconds_saved':x['training_seconds']-y['training_seconds'],'GPU_allocated_bytes_saved':x['peak_gpu_bytes']-y['peak_gpu_bytes'],'scope':'Descriptive quality-resource tradeoffs; BPB divided by parameters is not an intrinsic quality/efficiency score. Capacity and MLP architecture change together.'}
+    if experiment=='E11':
+        result['limitations'] += ['64 vs128 conditioning tokens; common256-byte exclusion is not context length','64 vs32 sampled windows/update; equal4096 targets do not imply identical compute or sampler/dropout progression']
+        atomic_json(out/'context_study_framework.json',{'E11':summaries[1],'E01':summaries[0],'E12':None,'E12_status':'NOT_AUTHORIZED_NOT_RUN'})
     atomic_json(out/'comparison.json',result)
     for name,data in [('matched_validation',rows),('summary_comparison',comparisons),('verified_runs',verified),('aggregate',aggregate)]:
         with (out/(name+'.csv')).open('x',newline='',encoding='utf-8') as f:
@@ -119,5 +127,5 @@ def compare(baseline, four_head, root, out, experiment="E06"):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--baseline',type=Path,required=True);p.add_argument('--four-head','--candidate',dest='four_head',type=Path,required=True);p.add_argument('--root',type=Path,default=Path('.'));p.add_argument('--output',type=Path,required=True)
-    p.add_argument('--experiment',choices=['E06','E10'],default='E06')
+    p.add_argument('--experiment',choices=['E06','E10','E11'],default='E06')
     a=p.parse_args();compare(a.baseline,a.four_head,a.root,a.output,a.experiment)
