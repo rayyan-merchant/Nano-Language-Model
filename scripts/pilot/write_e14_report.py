@@ -30,6 +30,9 @@ def prose_spacing(text):
             for i in range(0,len(parts),2):
                 for old,new in substitutions.items():parts[i]=parts[i].replace(old,new)
                 parts[i]=re.sub(r'\bseed42\b','seed 42',parts[i])
+                parts[i]=re.sub(r'(?i)(width|context|head|dropout|vocabulary|clipping|decay|training|validation|loss|BPB|temperatures|temperatures|microbatch|accumulation|seed|sinusoidal)(?=\d)',r'\1 ',parts[i])
+                parts[i]=re.sub(r'(\d)(parameters|dimensions|tokens|targets|bytes|updates|prompts|seeds|new characters|nats)(?=\b)',r'\1 \2',parts[i])
+                parts[i]=parts[i].replace('for5000','for 5,000').replace('full validations','full validations').replace('all LayerNorm dimensions240','all LayerNorm dimensions 240')
             line=''.join(parts)
         result.append(line)
     return ''.join(result)

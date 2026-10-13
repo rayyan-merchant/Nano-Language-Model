@@ -113,3 +113,16 @@ not a separately measured final-validation/postprocessing peak. All three full
 width runs share this policy. The short benchmark's final row precedes its only
 full validation, so its memory reading is not substituted for research telemetry.
 No FLOPs, energy, financial cost, queue duration or unrecorded timing was invented.
+
+
+## Reviewed main integration at delivery
+
+E12 PR18 merged during E14 execution at59f9d360875d3b29b6886378861b12de49b958f8.
+It changes no scientific module or locked configuration. Reviewed main was merged
+only into the E14 feature branch; the sole conflict in.gitattributes retained both
+E12/E14 evidence-preservation intents. All85 imported E12 files matched reviewed
+Git-index/working-copy bytes after normalizing ordinary Windows checkout line
+endings. Combined delivery CPU suite:73passed,1CUDA-only skip,127.52s. The actual
+E14 CUDA suite remains70passed on its frozen trained source; no extra GPU tests
+or research were launched for the later reporting integration. PR17 is left for
+review and is not merged automatically.

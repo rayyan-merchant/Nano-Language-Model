@@ -2,7 +2,7 @@
 
 ## Hypothesis before execution
 
-Increasing width192→240 could improve next-character modeling through additional
+Increasing width 192→240 could improve next-character modeling through additional
 capacity, or increase cost without a useful predictive gain. Width also changes
 head dimensions32→40, MLP hidden dimensions768→960, tensor shapes, initialization
 RNG consumption/fan-in and sinusoidal frequency spacing. No direction was assumed.
@@ -10,16 +10,16 @@ RNG consumption/fan-in and sinusoidal frequency spacing. No direction was assume
 ## Observations
 
 E14 has lower full-validation NLL than E01 at all 20 matched scheduled points.
-Best BPB2.14189208 at4750 is0.07216585 lower than E01-best2.21405793 (−3.259438%).
-Final BPB2.14505608 is0.07094096 lower (−3.201311%). E13/E01/E14 best BPB is
+Best BPB 2.14189208 at4750 is0.07216585 lower than E01-best2.21405793 (−3.259438%).
+Final BPB 2.14505608 is0.07094096 lower (−3.201311%). E13/E01/E14 best BPB is
 2.32495848/2.21405793/2.14189208 for widths144/192/240. These are measured
 single-seed results, not means across training seeds. The twenty points share one
 trajectory and held-out corpus; they are not twenty independent replicates.
 
-E14 adds1,004,160parameters (+55.638298%). Training978.158s versus916.708s
-(+6.703340%); validation490.769s versus420.908s (+16.597806%). Recorded allocator
-peak177.283MiB versus151.712MiB (+16.854464%). Throughput5.111646updates/sec,
-20,937.302targets/sec. E13's smaller model trained941.393s, slightly slower than
+E14 adds1,004,160 parameters (+55.638298%). Training 978.158s versus916.708s
+(+6.703340%); validation 490.769s versus420.908s (+16.597806%). Recorded allocator
+peak177.283MiB versus151.712MiB (+16.854464%). Throughput5.111646 updates/sec,
+20,937.302 targets/sec. E13's smaller model trained941.393s, slightly slower than
 E01 despite fewer parameters. Parameter count therefore did not scale measured
 runtime proportionally on these separate T4 sessions. No FLOP/kernel/energy
 profiling or controlled speed repetitions were performed.
@@ -31,19 +31,19 @@ validation. Its155.351MiB reading is not substituted for the actual research
 177.283MiB. This scope is common to the recorded full research comparisons.
 
 E14 first reaches or beats E01's final loss at the recorded3750 checkpoint
-(loss1.52954764; training736.750s). This is a retrospective observed-point
+(loss 1.52954764; training 736.750s). This is a retrospective observed-point
 threshold, not an interpolated crossing, early stopping rule or proof of a
 universal sample-efficiency advantage.
 
-Validation decreases1.58088056→1.48683957 across3k→5k (−0.09404099nats).
+Validation decreases1.58088056→1.48683957 across3k→5k (−0.09404099 nats).
 Successive1k improvements are0.20682089(1k→2k),0.10655250(2k→3k),
 0.05768975(3k→4k),0.03635124(4k→5k). Improvement diminishes but remains positive.
-Best4750→final5000 loss increases0.00219312nats. That single small deterioration
+Best4750→final5000 loss increases0.00219312 nats. That single small deterioration
 does not establish sustained overfitting or an asymptotic plateau. Full
 dropout-free validation is fixed; variation here belongs to optimization/model
 changes, not capped stochastic validation sampling.
 
-Final training loss1.42570889, trailing100 mean1.41597478. Global pre-clipping
+Final training loss 1.42570889, trailing100 mean1.41597478. Global pre-clipping
 gradient median0.49777606,p950.53976347,maximum2.05958056;4/5,000 updates exceeded
 clipping threshold1(0.08%), versus7/5000forE01. Norms remain finite; these global
 statistics do not diagnose per-layer vanishing/exploding gradients. No research
@@ -66,7 +66,7 @@ SICINIUS turn. More varied word formation does not yield coherent dialogue.
 “the prince of the prince” has no useful semantic progression.
 
 Sampling reduces local repetition: best mean fractions0.002410/0.001339/0.0
-at temperatures0.7/1.0/1.2, respectively. Low repetition is not a coherence
+at temperatures 0.7/1.0/1.2, respectively. Low repetition is not a coherence
 score. Predetermined seed 42 samples contain internal malformed words such as
 “distressived”, “appaint”, “profide”, “promismal”, “brunishments”, “medditation”
 and altered speaker labels. Higher-temperature samples are more varied but

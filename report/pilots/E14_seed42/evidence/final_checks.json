@@ -38,7 +38,8 @@
     "CPU_final": "69passed1CUDA-only skip116.89s",
     "focused": "20passed1.95s",
     "CUDA_development": "70passed33.40s",
-    "CUDA_research_preflight": "70passed37.03s"
+    "CUDA_research_preflight": "70passed37.03s",
+    "CPU_delivery_after_reviewed_E12_merge": "73passed1CUDA-only skip127.52s"
   },
   "source_CI": {
     "id": 38409926632,
@@ -57,5 +58,8 @@
     "Separate-session resource noise",
     "Peak allocator sampling includes prior validation; final postprocessing peak not separately logged",
     "Final written report is a separate lightweight Git artifact, not retroactively inserted into immutable ZIP"
-  ]
+  ],
+  "reviewed_main_at_delivery": "59f9d360875d3b29b6886378861b12de49b958f8",
+  "reviewed_E12_files_preserved_byte_exact": 85,
+  "merge_scope": "Reviewed main intoE14feature only; conflict.gitattributes preserved both sets; no main/other branch merge"
 }

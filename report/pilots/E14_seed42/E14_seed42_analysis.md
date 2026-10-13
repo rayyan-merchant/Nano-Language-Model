@@ -2,21 +2,21 @@
 
 ## Objective, hypothesis and authorized scope
 
-Question: how does model width192→240 change next-character prediction,
+Question: how does model width 192→240 change next-character prediction,
 optimization, resource cost and generation on Tiny Shakespeare? Before the run,
 additional capacity could improve fitting or cost more without a predictive gain;
-no outcome was assumed. One E14 seed 42 run was authorized for5000 updates.
+no outcome was assumed. One E14 seed 42 run was authorized for 5,000 updates.
 Earlier experiments and the collaborator's E12 work were preserved. No additional
 research configuration, seed, hybrid or extension was launched.
 
 ## Architecture and correctness
 
 The sole intended override is d_model240. Four independent pre-LayerNorm blocks,
-six heads,40dimensions/head, context 128, MLP 240→960→240, GELU, sinusoidal
-positions and dropout0.1. Vocabulary65; embedding65×240; LMhead240→65;
-attention/output240→240; all LayerNorm dimensions240. No RoPE, learned positions,
+six heads,40 dimensions/head, context 128, MLP 240→960→240, GELU, sinusoidal
+positions and dropout 0.1. Vocabulary 65; embedding65×240; LMhead 240→65;
+attention/output240→240; all LayerNorm dimensions 240. No RoPE, learned positions,
 ReLU or BPE. Parameters **2,808,960**, **1,004,160 more** than E01
-(55.638298% increase); each MLP has462,000parameters.
+(55.638298% increase); each MLP has462,000 parameters.
 
 Twenty CPU and real CUDA checks verify sole override/defaults, repeat seed 42
 initialization, independent blocks, projections/counts, manual sqrt40 attention,
@@ -39,7 +39,7 @@ identical initial tensors across widths. No width-only mechanism is established.
 - [Fresh compatible zero-update recovery](https://www.kaggle.com/code/rayyannmerchant/nano-e14-recovery-20261013-1bd9f987).
 - Qualified Tesla T4GPU0; Python3.11.14, torch2.5.1+cu124, CUDA12.4.
 - Qualified NumPy1.26.4 and complete transitive freeze; native Kaggle packages unchanged.
-- OS:Linux-6.18.48+-x86_64-with-glibc2.39; GPU usable memory15,636,037,632bytes.
+- OS:Linux-6.18.48+-x86_64-with-glibc2.39; GPU usable memory15,636,037,632 bytes.
 
 Pinned Tiny Shakespeare revision6f9487a6fe5b420b7ca9afb0d7c078e37c1d1b4e.
 Raw SHA25686c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed.
@@ -50,7 +50,7 @@ No test likelihood or test selection was performed.
 
 ## Training, evaluation and pre-run persistence
 
-Fresh seed 42; AdamW0.0003constant, weight decay0.01, clipping1.0, float32 CUDA,
+Fresh seed 42; AdamW0.0003constant, weight decay 0.01, clipping 1.0, float32 CUDA,
 microbatch 4/accumulation 8/4,096 targets/update/32 sampled windows/update. Exactly 5,000
 authoritative updates,20 validations every 250, all validation checkpoint states
 preserved alongside periodic 500 cadence and best-loss selection. No AMP, early
@@ -165,7 +165,7 @@ E14 minus E01 (negative likelihood/BPB delta favors E14):
 
 Observed3k→5k validation loss change (improvement positive):
 0.09404099. Recorded3k–5k fitted slope:
--0.04761045nats/1000updates.
+-0.04761045 nats/1000 updates.
 Best checkpoint is4750; final minus best loss is
 0.00219312.
 These scheduled observations do not establish an asymptotic plateau, significant
@@ -208,7 +208,7 @@ Aggregate actual pre-clipping gradient statistics:
 ## Complete genuine generations
 
 All 100 best/final protocol slots are preserved byte-for-byte in generation.json
-and generation.md: five fixed prompts, greedy(seed 42), temperatures0.7/1.0/1.2
+and generation.md: five fixed prompts, greedy(seed 42), temperatures 0.7/1.0/1.2
 with seeds42/123/456,256 new characters. Best/final identical checkpoint:
 False; duplicate slots are explicitly the same weights when true.
 No output was rewritten. Five predetermined best greedy examples follow; all
@@ -464,7 +464,7 @@ Training phrase overlap is checked on ten predetermined outputs; ordinary phrase
 
 ## Durable artifacts and independent acceptance
 
-Archive size623,713,697bytes.
+Archive size623,713,697 bytes.
 SHA256:`e41393c4a97c2ec565558df4ca0997d74275cf62e69c57b466c4794855b26fd7`.
 All62exact archive entries passed independent CRC/path-safety/
 SHA256 checks. All 20 checkpoint counters/history/optimizer/scheduler states and
