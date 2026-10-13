@@ -1,0 +1,3 @@
+experiment_id,n_seeds,complete_seeds,validation_bpb_mean,validation_bpb_sd,parameters_mean,parameters_sd,train_seconds_mean,train_seconds_sd,tokens_per_second_mean,tokens_per_second_sd,peak_gpu_bytes_mean,peak_gpu_bytes_sd
+E01,1,False,2.2159970425594078,,1804800,,916.7084017460043,,22340.8010235238,,159081984,
+E10,1,False,2.267118679758884,,1213440,,921.3305142750012,,22228.722138998943,,146490880,

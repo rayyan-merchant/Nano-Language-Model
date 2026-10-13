@@ -337,8 +337,12 @@ allowlist omission; the guard and parameterized regression were fixed without
 changing trained scientific code or outputs. A later default-temp permission
 error was resolved by explicit D-drive basetemp. Two standard CLI archive
 downloads ended in IncompleteRead; failed attempts were preserved. The unmodified
-official Kaggle streaming/resume downloader recovered the archive and verified
-its full size/SHA256 before local CRC/all-file checks. Exact receipts and commands
+official Kaggle API supplied the authorized output URL. A streaming attempt
+retained45MiB, then four bounded HTTP-range streams recovered the remaining
+bytes. Exact206/Content-Range/size checks and full-archive SHA256 passed before
+local CRC/all-file checks. An optional CPU-only fallback submission was rejected
+by notebook-title validation before execution and was not retried after local
+recovery succeeded; it used no compute. Exact receipts and commands
 document these events, rather than presenting them as research restarts.
 
 ## Recommendation and optimized-model implications
