@@ -30,24 +30,44 @@ def require_recovery_receipt(root, out):
 def publish_development(root,out,data,experiment,checkpoint,env):
     assert experiment=='E14'
     settings=TrainSettings(device='cuda',run_kind='benchmark',eval_every=10,checkpoint_every=10)
+    import nano_lm.storage as storage
+    original_export=storage.export_run;export_times=[]
+    def timed_export(*args,**kwargs):
+        start=time.perf_counter();result=original_export(*args,**kwargs)
+        export_times.append(time.perf_counter()-start);return result
+    storage.export_run=timed_export
     began=time.perf_counter()
-    _,benchmark,_=train(root,data,'E14',settings,10,out/'benchmark',export_root=out/'benchmark_snapshots')
+    try:
+        _,benchmark,_=train(root,data,'E14',settings,10,out/'benchmark',export_root=out/'benchmark_snapshots')
+    finally:
+        storage.export_run=original_export
     payload,_=read_checkpoint(benchmark);h=payload['training_state']['history']
     assert len(h)==10 and h[-1]['accumulation']==8 and h[-1]['validation']['scored_bytes']==55514
     warm_seconds=h[-1]['train_seconds']-h[1]['train_seconds']
+    projected=5000*warm_seconds/8+20*payload['training_state']['eval_seconds']+600
+    hardware=json.loads((out/'hardware.json').read_text())
+    assert projected<hardware['session_limit_seconds'],'Measured estimate exceeds session budget including postprocessing margin'
     atomic_json(out/'development_benchmark.json',{'label':'E14 development qualification, not research measurements',
         'optimizer_updates':10,'warmup_updates_excluded':2,'training_seconds':h[-1]['train_seconds'],
         'warmup_excluded_updates_per_second':8/warm_seconds,'warmup_excluded_tokens_per_second':8*4096/warm_seconds,
         'projected_5000_training_only_seconds':5000*warm_seconds/8,'full_validation_seconds':payload['training_state']['eval_seconds'],
         'peak_gpu_bytes':h[-1]['peak_gpu_bytes'],'checkpoint_bytes':benchmark.stat().st_size,
-        'benchmark_wall_seconds':time.perf_counter()-began,'scope':'Short benchmark projection is not measured full-run time'})
+        'benchmark_wall_seconds':time.perf_counter()-began,'snapshot_export_seconds':export_times,
+        'projected_training_validation_plus_600s_margin':projected,
+        'scope':'Short benchmark projection is not measured full-run time'})
+    began=time.perf_counter()
     snapshot=export_run(checkpoint.parent.parent,out/'development_snapshots')
     manifest=verify_snapshot(snapshot)
+    snapshot_bytes=sum(p.stat().st_size for p in snapshot.rglob('*') if p.is_file())
+    seconds=time.perf_counter()-began
+    atomic_json(out/'development_export_timing.json',{'snapshot_bytes':snapshot_bytes,'export_and_verify_seconds':seconds,
+        'bytes_per_second':snapshot_bytes/seconds,'scope':'Actual local immutable export and hash verification; publication/download measured separately'})
     atomic_json(out/'development_completion.json',{'experiment':'E14','run_kind':'smoke','step':1,
         'source_commit':env['git_commit'],'code_hash':env['code_hash'],'run_id':checkpoint.parent.parent.name,
         'checkpoint':str(checkpoint.relative_to(out)),'snapshot':str(snapshot.relative_to(out)),
         'snapshot_hash':manifest['hash'],'research_updates':0})
     archive=out.parent/'E14_development.zip'
+    began=time.perf_counter()
     files={p.relative_to(out).as_posix():file_hash(p) for p in out.rglob('*') if p.is_file()}
     with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=1) as z:
         for name in files:z.write(out/name,name)
@@ -55,7 +75,7 @@ def publish_development(root,out,data,experiment,checkpoint,env):
         assert z.testzip() is None and set(z.namelist())==set(files)
     atomic_json(out.parent/'artifact_manifest.json',{'archive_file':archive.name,'source_commit':env['git_commit'],
         'run_id':checkpoint.parent.parent.name,'run_kind':'development','archive_sha256':file_hash(archive),
-        'archive_bytes':archive.stat().st_size,'files':files,'research_updates':0})
+        'archive_bytes':archive.stat().st_size,'files':files,'research_updates':0,'archive_and_CRC_seconds':time.perf_counter()-began})
     print('E14 DEVELOPMENT PUBLICATION READY',flush=True)
 
 
