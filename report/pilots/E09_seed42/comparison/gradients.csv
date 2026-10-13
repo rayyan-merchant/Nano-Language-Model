@@ -1,0 +1,4 @@
+experiment,maximum,median,p95,clipped_updates,first100_mean,last100_mean,scope
+E01,1.8328568935394287,0.4978237450122833,0.5419636189937591,7,0.4534429593384266,0.5208895719051361,Pre-clipping aggregate norms; no longitudinal per-layer gradient measurements
+E08,2.1641902923583984,0.49895140528678894,0.5418434172868729,5,0.440497008562088,0.5125839173793793,Pre-clipping aggregate norms; no longitudinal per-layer gradient measurements
+E09,2.39997935295105,0.4962291717529297,0.5381551176309586,4,0.44272668480873106,0.5123647719621658,Pre-clipping aggregate norms; no longitudinal per-layer gradient measurements

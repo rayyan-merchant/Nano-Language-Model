@@ -1,0 +1,63 @@
+{
+  "main": "d1ca09df3d20478aabcdd3b4999f8cef6e0d5782",
+  "E08_PR12_owner_merged": true,
+  "formal_review_submissions_returned": 0,
+  "source_commit": "c555269ad6de293c016d88beec2e1437e4289e3f",
+  "code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "scientific_diff_from_E01_empty": true,
+  "CPU_audit_checks": 15,
+  "windows_suite": {
+    "passed": 46,
+    "skipped": 1,
+    "seconds": 152.01
+  },
+  "focused_suite": {
+    "passed": 8,
+    "seconds": 19.03
+  },
+  "scope": "E09 seed42 exactly5000 only; no other experiments/extensions",
+  "PR": "https://github.com/rayyan-merchant/Nano-Language-Model/pull/13",
+  "review": "Thin orchestration/source diff inspected; automated tests; no human approval represented as obtained",
+  "storage": "D-drive existing outputs junction, fresh unique directories",
+  "training_source_CI": {
+    "run_id": 38308915245,
+    "conclusion": "success"
+  },
+  "actual_Kaggle_suite": {
+    "passed": 47,
+    "seconds": 32.43,
+    "duplicate_terminal_line_counted_once": true
+  },
+  "actual_preflight_passed_before_research_progress": {
+    "cuda_depth_audit_checks": 15,
+    "real_data_training_save_reload_export_full_state_restore_ZIP_Agg_generation": true,
+    "research_progress_first_validation_step": 250
+  },
+  "monitoring_authentication_event": {
+    "symptom": "Local read-only status/log API returned 401 after OAuth access expiry",
+    "action": "Refreshed existing official Kaggle OAuth credentials for rayyannmerchant; authenticated status RUNNING recovered",
+    "research_action": "No restart, no extra optimizer updates, no account change",
+    "user_private_reconnection": "User also confirmed done"
+  },
+  "final_windows_suite": {
+    "passed": 46,
+    "skipped": 1,
+    "seconds": 122.72,
+    "skip": "CUDA-only test on Windows CPU",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "--basetemp",
+      "D:\\Nano-Language-Model-artifacts\\E09_qualification_20261013\\pytest-final"
+    ]
+  },
+  "published_research_version": {
+    "kernel": "rayyannmerchant/nano-e09-pilot-20261013-b9ea5610",
+    "version": 1,
+    "observed_status": "KernelWorkerStatus.COMPLETE",
+    "verified_at_utc": "2026-10-12T22:06:25.349858+00:00"
+  },
+  "main_refetched_after_training": "d1ca09df3d20478aabcdd3b4999f8cef6e0d5782"
+}

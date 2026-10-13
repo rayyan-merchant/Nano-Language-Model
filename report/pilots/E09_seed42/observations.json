@@ -1,0 +1,22 @@
+{
+  "updates": 5000,
+  "validations": 20,
+  "training_steps_per_second": 2.760714133612519,
+  "tokens_per_second": 11307.885091276878,
+  "checkpoint_seconds": 4.375552372999721,
+  "export_seconds": 14.797970171999566,
+  "journal_seconds": 17.726482349991386,
+  "generation_seconds": 343.6498261009997,
+  "archive_seconds": 42.67366342200012,
+  "pipeline_seconds": 3117.8716451160003,
+  "gradient_statistics": {
+    "experiment": "E09",
+    "maximum": 2.39997935295105,
+    "median": 0.4962291717529297,
+    "p95": 0.5381551176309586,
+    "clipped_updates": 4,
+    "first100_mean": 0.44272668480873106,
+    "last100_mean": 0.5123647719621658,
+    "scope": "Pre-clipping aggregate norms; no longitudinal per-layer gradient measurements"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "status": "published_archive_verified_and_best_final_CPU_inference_passed",
+  "run_id": "E09_seed42_380197e606df4082b22b5ddff146946d",
+  "archive_sha256": "293aaecba3bd794fcd41a58dff08791a63d897bf20a5b913a75b2adbaa3a7b21",
+  "archive_bytes": 794894378,
+  "verified_file_count": 59,
+  "optimizer_updates": 5000,
+  "validation_count": 20,
+  "seconds": 32.289071100065485,
+  "samples": [
+    {
+      "policy": "best",
+      "checkpoint": "runs/E09_seed42_380197e606df4082b22b5ddff146946d/checkpoints/step_004750.pt",
+      "sha256": "3aac39addc38f06d7b4f93f27566fe6a25dc3512a344c1bb212d97905cf8255a",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nI will not so so much a man of the season.\n\nSecond Murderer:\nWha"
+    },
+    {
+      "policy": "final",
+      "checkpoint": "runs/E09_seed42_380197e606df4082b22b5ddff146946d/checkpoints/step_005000.pt",
+      "sha256": "975612fa647b60ce02f077801bc1b617e7c2568efc7bacb2ffdb9efe9a8c7e2e",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nI will not so so so so so so so so so so.\n\nKING RICHARD II:\nWhat"
+    }
+  ],
+  "training_resume": "CPU inference only; no CUDA RNG restore or additional updates attempted"
+}
