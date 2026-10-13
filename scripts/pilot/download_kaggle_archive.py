@@ -10,7 +10,7 @@ import requests
 from kaggle.api.kaggle_api_extended import KaggleApi, ApiListKernelSessionOutputRequest
 
 
-def download(kernel, manifest, output, prefix=None):
+def download(kernel, manifest, output, prefix=None, ranges=False):
     owner,slug,version=kernel.split('/')
     if owner!='rayyannmerchant' or version!='1':raise ValueError('Only assigned account saved version1 is supported')
     reference=json.loads(manifest.read_text(encoding='utf-8'));name=reference['run_id'].split('_seed42_')[0]+'_seed42_pilot.zip'
@@ -27,9 +27,9 @@ def download(kernel, manifest, output, prefix=None):
             token=response.next_page_token
             if item is None and not token:raise FileNotFoundError('Published archive missing')
     partial=output/(name+'.part')
-    if prefix is not None:
-        offset=prefix.stat().st_size
-        assert 0<offset<reference['archive_bytes']
+    if prefix is not None or ranges:
+        offset=prefix.stat().st_size if prefix is not None else 0
+        assert 0<=offset<reference['archive_bytes']
         pieces=output/'pieces';pieces.mkdir()
         ranges=[(i,min(i+8*2**20,reference['archive_bytes'])-1) for i in range(offset,reference['archive_bytes'],8*2**20)]
         def piece(pair):
@@ -51,13 +51,14 @@ def download(kernel, manifest, output, prefix=None):
                     time.sleep(min(2**(attempt+1),30))
         with ThreadPoolExecutor(max_workers=4) as pool:paths=list(pool.map(piece,ranges))
         with partial.open('xb') as f:
-            with prefix.open('rb') as old:
-                remaining=offset
-                while remaining:
-                    block=old.read(min(2**20,remaining));assert block;f.write(block);remaining-=len(block)
+            if prefix is not None:
+                with prefix.open('rb') as old:
+                    remaining=offset
+                    while remaining:
+                        block=old.read(min(2**20,remaining));assert block;f.write(block);remaining-=len(block)
             for path in paths:
                 with path.open('rb') as part:shutil.copyfileobj(part,f,2**20)
-        transport='Official Kaggle API output URL; four bounded byte-range streams with exact206/Content-Range/size validation; retained45MiB prefix; full object SHA256 verified'
+        transport=f'Official Kaggle API output URL; four bounded byte-range streams with exact206/Content-Range/size validation; retained{offset}byte prefix; full object SHA256 verified'
     else:
         with requests.get(item.url,stream=True,timeout=(30,60)) as response:
             response.raise_for_status()
@@ -74,9 +75,9 @@ def download(kernel, manifest, output, prefix=None):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--kernel',required=True);p.add_argument('--manifest',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--prefix',type=Path)
+    p=argparse.ArgumentParser();p.add_argument('--kernel',required=True);p.add_argument('--manifest',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--prefix',type=Path);p.add_argument('--ranges',action='store_true')
     a=p.parse_args()
-    try:download(a.kernel,a.manifest,a.output,a.prefix)
+    try:download(a.kernel,a.manifest,a.output,a.prefix,a.ranges)
     except Exception as error:
         if a.output.exists():(a.output/'download_failure.json').write_text(json.dumps({'error_type':type(error).__name__,'scope':'Independent artifact transfer, not training; partial evidence retained'}))
         print('DOWNLOAD FAILED:',type(error).__name__,flush=True);raise SystemExit(1)
