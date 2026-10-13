@@ -313,6 +313,60 @@ Earlier reports/configurations and E07 Colab work are unchanged. No other
 configuration, seed or10k extension was launched. E09 depth-framework metrics
 remain null/not-run. This scoped E08 run is complete; the broader three-seed
 study remains separately gated/NO-GO. Final test evidence is in the E08 report.
+## E07 seed42 preflight blocked — 2026-10-12
+
+Reviewed main5bb03b1 synchronized; scientific source unchanged and audited hash
+cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6 reproduced.
+Dedicated E07 branch and draft PR11; E06 remains independently owned on PR9.
+CPU eight-head numerical audit passed all four blocks, dim24/sqrt24, masking,
+softmax/dropout/merge,1804800parameters,GELU/sinusoidal,finite projection gradients,
+future invariance, shifted targets, context-cropped generation and seed42 initial
+E01 tensor equality. Local CPU profile is not qualified research software.
+
+Colab T4 allocation failed with its explicit GPU usage-limit message before
+provisioning code executed. Zero E07 research or smoke updates, zero validations,
+zero checkpoints/snapshots. CUDA/environment/data/Drive checkpoint recovery gates
+remain pending. No CPU fallback, alternative seed/configuration, extension or
+quota workaround launched. Exact attempted notebook, separate launcher, source/
+configuration provenance and failure screenshot preserved. Partial report:
+report/pilots/E07_seed42/E07_seed42_analysis.md. No E07 predictive, efficiency,
+generation or preservation result is claimed. Training may proceed only when
+legitimate GPU availability returns and all mandatory preflight gates pass.
+
+## E07 Kaggle qualification passed; research in progress — 2026-10-12
+
+User authorized Kaggle fallback on verified syedarijaali account after Colab's
+GPU limit. Exact isolated Python3.11.14/torch2.5.1+cu124/CUDA12.4 and46-package
+freeze reproduced on two visible Tesla T4 devices; cuda:0 only.40 tests passed
+in31.68s plus focused attention test in0.40s. Eight-head CUDA audit,1804800params,
+GELU/sinusoidal,all68 E01 initial tensors and pinned data/tokenizer controls passed.
+Smoke archive20201339bytes SHA2567f0dbb4a5522b9ed5b8b80fffb97f079cedadc80126256e47fb8e85962eec50e
+saved as private Kaggle qualification version2, independently downloaded/verified
+with CPU loading/inference, published/read back from Drive, and mounted/recovered
+in a new exact-profile CUDA runtime with six full state structures equal.
+
+E07 research run E07_seed42_f00363fe26f64ec1b3bb5ad00d19c4bd now runs the unchanged
+canonical engine from clean reviewed5bb03b1/cdea42, seed42,float32,micro4/accum8,
+exact5000-stop. Latest observation471 updates/one full validation; no failure.
+This is progress, not completion. Research notebook:
+https://www.kaggle.com/code/syedarijaali/e07-seed42-eight-head-research/edit .
+Draft PR11; E06 remains independently owned and draft. No other research run
+or extension. Historical Colab/queue/session-cap observations are preserved.
+
+### E07 interruption recovery — 2026-10-13
+
+The original Kaggle draft session was off. Its saved version 2 preserved eleven immutable snapshots through update 2750. A fresh matching T4/Python 3.11.14/PyTorch 2.5.1+cu124 runtime verified every snapshot and restored all six state structures exactly with zero optimizer updates. The original run ID is resumed toward total update 5000; later lost volatile progress remains unknown and unclaimed. Recovery orchestration is committed and CI passed. At the latest observed boundary, update 3000 and twelve full validations were recorded. Final preservation, generation, comparisons and report remain pending. Prior checkpoint/export overhead was not durably recorded and will not be invented.
+
+
+### E07 complete and independently recovered — 2026-10-13
+
+E07 seed42 completed its authoritative 5,000-update trajectory, all 20 full sliding validations, 20 complete checkpoint states and 21 immutable snapshots. Best/final step 5000: loss 1.532212439757386, BPB 2.2105152884263606. Frozen reviewed source 5bb03b18943e7c45a305ce1d78b3446c31829ae7, scientific hash cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6, qualified Kaggle T4/Python 3.11.14/PyTorch 2.5.1+cu124 after authorized Colab quota fallback.
+
+Recovery replayed 207 recorded steps from durable update 2750; all eight recorded numerical fields matched exactly. The authoritative counter is 5000; known physical research calls are at least 5207, with later unsaved original progress unknown. Original attempt evidence remains preserved. No other research seed/configuration or extension ran.
+
+The 408,106,575-byte archive has SHA256 ba92cd87bd6a3aafa6164cdaef037a47d0fae9c208e0648c3775b19c9e6aa06d. Independent Kaggle and Google Drive downloads passed all hashes, CRCs, 20 checkpoint inventories and 21 reconstructed snapshots, with best/final inference. Fresh compatible CUDA full-state restoration passed before final publication; independently downloaded final artifacts were subsequently checked by CPU inference. These are distinct checks, not a claim of a new CUDA session loading the final Drive download. All 100 authentic generation slots are preserved; best/final weights coincide.
+
+Report: report/pilots/E07_seed42/E07_seed42_analysis.md. Exact executed notebooks: notebooks/kaggle_e07_seed42_research_executed.ipynb and notebooks/kaggle_e07_seed42_recovery_executed.ipynb. PR11 is for review only. E06 approved merged evidence supports the three-way comparison; its files and branch remain untouched. E07 improves best loss by 0.1600% and final loss by 0.2474% versus E01, with increased memory and more greedy repetition. One seed provides no significance or attention-mechanism evidence.
 
 ## E09 seed42 eight-block research run — completed 2026-10-13
 

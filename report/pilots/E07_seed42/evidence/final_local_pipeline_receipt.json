@@ -1,0 +1,68 @@
+{
+  "run_id": "E07_seed42_f00363fe26f64ec1b3bb5ad00d19c4bd",
+  "completed_optimizer_updates": 5000,
+  "full_validations": 20,
+  "checkpoint_count": 20,
+  "snapshot_count": 21,
+  "parameters": 1804800,
+  "source_commit": "5bb03b18943e7c45a305ce1d78b3446c31829ae7",
+  "scientific_code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "config_hash": "77fe03469eb15eaba27561b0f59adacee2dfee37548d5ece3ddb2cd3aeaa3147",
+  "best_validation": {
+    "step": 5000,
+    "loss": 1.532212439757386,
+    "perplexity": 4.62840557138126,
+    "bpb": 2.2105152884263606,
+    "nll_sum": 85059.24138069153,
+    "scored_tokens": 55514,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "final_validation": {
+    "loss": 1.532212439757386,
+    "perplexity": 4.62840557138126,
+    "bpb": 2.2105152884263606,
+    "nll_sum": 85059.24138069153,
+    "scored_tokens": 55514,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "training_seconds": 946.0003841339926,
+  "validation_seconds": 425.20904057700034,
+  "peak_gpu_bytes": 169584128,
+  "generation_slots": 100,
+  "best_final_duplicate_weights": true,
+  "CUDA_exact_state": {
+    "model": true,
+    "optimizer": true,
+    "scheduler": true,
+    "scaler": true,
+    "rng": true,
+    "training_state": true
+  },
+  "additional_optimizer_updates_during_recovery": 0,
+  "archive": {
+    "archive": "E07_seed42_complete.zip",
+    "archive_bytes": 408106575,
+    "archive_sha256": "ba92cd87bd6a3aafa6164cdaef037a47d0fae9c208e0648c3775b19c9e6aa06d",
+    "parts": [
+      {
+        "name": "part_00.bin",
+        "bytes": 209715200,
+        "sha256": "42e220683d1d2187b500e44b750cff90f2875eb91b13f6b99136a5d83ee9d2a7"
+      },
+      {
+        "name": "part_01.bin",
+        "bytes": 198391375,
+        "sha256": "87eea3fb27099c8155224094c298cbeeda913ba940b2d8ab8e6b56da39373bf9"
+      }
+    ]
+  },
+  "publication_retrieval": "independent download and Drive publication pending"
+}

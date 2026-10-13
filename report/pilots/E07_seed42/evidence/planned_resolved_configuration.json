@@ -1,0 +1,42 @@
+{
+  "hash": "77fe03469eb15eaba27561b0f59adacee2dfee37548d5ece3ddb2cd3aeaa3147",
+  "resolved": {
+    "experiment_id": "E07",
+    "model": {
+      "vocab_size": 65,
+      "d_model": 192,
+      "n_heads": 8,
+      "n_layers": 4,
+      "context_length": 128,
+      "mlp_expansion": 4,
+      "activation": "gelu",
+      "position": "sinusoidal",
+      "dropout": 0.1
+    },
+    "training": {
+      "seed": 42,
+      "optimizer": "AdamW",
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "tokens_per_update": 4096,
+      "micro_batch_size": 4,
+      "gradient_clip": 1.0,
+      "precision": "float32",
+      "device": "cuda",
+      "eval_every": 250,
+      "checkpoint_every": 500,
+      "conditioning_bytes": 256,
+      "eval_max_bytes": 0,
+      "eval_mode": "sliding",
+      "eval_batch_size": 32,
+      "run_kind": "research"
+    },
+    "schedule": "constant",
+    "tokenizer_kind": "character",
+    "dataset_hash": "76b594a1979107795734f8d2cda08b56c1520c8d44883dbaa5a61dbee53ba16f",
+    "tokenizer_hash": "ed96787d2f3f9741d69eba15160f31634ba6755b47e4c261ffedbb975fa0af77",
+    "variant_hash": "fb3062817592cb98955d6576b645ad3eb126cf9d3bf6b03950f6ad2c907bfd12",
+    "code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6"
+  },
+  "status": "planned_not_executed"
+}

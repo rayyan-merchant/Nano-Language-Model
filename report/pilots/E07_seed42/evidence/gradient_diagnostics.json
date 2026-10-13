@@ -1,0 +1,10 @@
+{
+  "finite_steps": 5000,
+  "norm_mean": 0.49647127496004106,
+  "norm_median": 0.5077377259731293,
+  "norm_min": 0.2511727809906006,
+  "norm_max": 1.8374472856521606,
+  "steps_above_clipping_threshold": 7,
+  "clipping_frequency": 0.0014,
+  "final_norm": 0.5678972005844116
+}

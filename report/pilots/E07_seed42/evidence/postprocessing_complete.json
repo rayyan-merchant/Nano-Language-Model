@@ -1,0 +1,6 @@
+{
+  "finish_phase_seconds": 245.79944239999986,
+  "additional_optimizer_updates": 0,
+  "source": "Saved final notebook stdout from e07_store/postprocessing_complete.json",
+  "scope": "Complete finish phase including verification, analysis, generation, local archive construction/publication and numbered parts; excludes bootstrap, training and independent retrieval"
+}

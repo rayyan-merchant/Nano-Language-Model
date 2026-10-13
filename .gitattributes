@@ -27,6 +27,12 @@ report/pilots/E08_seed42/evidence/* -text whitespace=cr-at-eol
 report/pilots/E08_seed42/generation.* -text whitespace=-blank-at-eol,cr-at-eol
 report/pilots/E08_seed42/validation.csv -text whitespace=cr-at-eol
 report/pilots/E08_seed42/E08_seed42_analysis.md whitespace=-blank-at-eol
+# Preserve genuine E07 generations, receipts and executed notebook captures.
+report/pilots/E07_seed42/evidence/* -text whitespace=cr-at-eol
+report/pilots/E07_seed42/*.csv -text whitespace=cr-at-eol
+report/pilots/E07_seed42/generation.* -text whitespace=-blank-at-eol,cr-at-eol
+report/pilots/E07_seed42/E07_seed42_analysis.md whitespace=-blank-at-eol
+notebooks/kaggle_e07_seed42_*_executed.ipynb -text
 report/pilots/E09_seed42/evidence/* -text whitespace=cr-at-eol
 report/pilots/E09_seed42/generation.* -text whitespace=-blank-at-eol,cr-at-eol
 report/pilots/E09_seed42/validation.csv -text whitespace=cr-at-eol
