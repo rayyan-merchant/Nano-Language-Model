@@ -502,3 +502,30 @@ Published230564978-byte archiveSHA2560ddce4c76829e961ff862ab61f7d67f9a8ca679260d
 ## E14 width240 preparation — 2026-10-13
 
 E13 PR16 is merged at2d698a671ebdae8e43d66e3062df174edd81cab0. Only E14 seed42/5000updates is authorized. Width240 derives head40 and MLP960;2808960parameters. Scientific hash remains cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6. CPU20-check numerical audit passed. Qualified CUDA and a separately published development snapshot with independent fresh full-state restoration are mandatory before research; the E14 builder/wrapper fail closed without that receipt. Separate smoke/10-update benchmark/recovery notebooks precede research. Earlier results and E12 work are preserved; account job inventory shows no active scientific GPU jobs, and no E12 work is submitted here. Large artifacts remain on D: and saved Kaggle outputs. Research has not started; no other runs/extensions are authorized.
+
+
+## E14 width240 seed42 — accepted 2026-10-14
+
+E13 PR16 was verified merged before preparation. Frozen trained source
+`ab1da4e05005413807d20802fff4153d97ebfa10`; scientific hash
+`cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6` unchanged.
+Only width240, deriving head40/MLP960; 2,808,960 parameters (+55.638%).
+A separate published E14 development artifact passed independent 81-file/CRC/
+snapshot/CPU/fresh-CUDA full-state recovery before research. The one authorized
+run completed exactly 5,000 authoritative/known physical updates and 20 full
+sliding validations, context128/microbatch4/accumulation8/4,096 targets.
+Best4750 loss1.48464646/BPB2.14189208; final loss1.48683957/BPB2.14505608.
+Best BPB is3.259% lower than E01; training978.158s (+6.703%), validation490.769s,
+recorded allocator peak177.283MiB. Source-clone to archive1903.251s.
+
+Research archive623,713,697bytes, SHA256
+`e41393c4a97c2ec565558df4ca0997d74275cf62e69c57b466c4794855b26fd7` independently
+passed CRC/safe paths/exact62-file inventory/allhashes, all20optimizer/scheduler
+counters, sampler replay and best/final CPU inference. All21published snapshot
+manifests matched; fresh compatible CUDA final full-state5000→5000zeroextra and
+best/final inference matched. All100 unedited generations, 20PNG/20PDF figures,
+full E13/E01/E14 comparisons and detailed report are preserved. No research
+failure/resume/replay; log-service disconnects retained separately. CPU69passed
+1CUDA-only skip; actual CUDA70passed. Single-seed/confounding/peak-sampling scopes
+are explicit. No other research run or extension launched; study-wide approval
+remains separately gated. See report/pilots/E14_seed42/E14_seed42_analysis.md.

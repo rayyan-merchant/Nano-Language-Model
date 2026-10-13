@@ -6,6 +6,35 @@ from pathlib import Path
 import shutil
 
 
+def prose_spacing(text):
+    """Space human prose while preserving every fenced generated/code block."""
+    import re
+    substitutions={'completed5000':'completed 5,000','Exactly5000':'Exactly 5,000',
+                   '5000updates':'5,000 updates','4096targets':'4,096 targets',
+                   '32sampled':'32 sampled','20full':'20 full','20 validations':'20 validations',
+                   'every250':'every 250','periodic500':'periodic 500','250step':'250 step',
+                   '256-character':'256-character','256 new':'256 new','256 common':'256 common',
+                   'zeroextra':'zero extra','zero additional':'zero additional','21 immutable':'21 immutable',
+                   'all20':'all 20','All20':'All 20','all100':'all 100','All100':'All 100',
+                   'all21':'all 21','context128':'context 128','batch32':'batch 32',
+                   'float32CUDA':'float32 CUDA','microbatch4':'microbatch 4','accumulation8':'accumulation 8',
+                   'MLP240':'MLP 240','width240':'width 240','width144':'width 144',
+                   '960parameters':'960 parameters','additionalupdates':'additional updates',
+                   'four-character':'four-character','five fixed':'five fixed','preLayerNorm':'pre-LayerNorm'}
+    result=[];fenced=False
+    for line in text.splitlines(keepends=True):
+        if line.lstrip().startswith('```'):
+            fenced=not fenced;result.append(line);continue
+        if not fenced:
+            parts=re.split(r'(`[^`]*`)',line)
+            for i in range(0,len(parts),2):
+                for old,new in substitutions.items():parts[i]=parts[i].replace(old,new)
+                parts[i]=re.sub(r'\bseed42\b','seed 42',parts[i])
+            line=''.join(parts)
+        result.append(line)
+    return ''.join(result)
+
+
 def report(a):
     read=lambda p:json.loads(p.read_text(encoding='utf-8-sig'))
     source=a.artifacts;s=read(source/'analysis/summary.json');c=read(source/'completion.json')
@@ -147,6 +176,11 @@ this report. A short projection is not a measured5000-step runtime.
 Training excludes evaluation and IO. Pipeline timing below spans source clone to
 archive-complete log events, excluding queue, saved-output publication, network
 retrieval and fresh recovery. Allocated memory excludes reserved/driver memory.
+Canonical peak telemetry resets once and samples after optimizer updates, before
+validation; full-run readings include earlier validation allocations but do not
+measure a separate final-validation/postprocessing peak. The short benchmark
+reads its peak before its sole final validation, so its memory number cannot
+replace the recorded research-run peak. E01/E13/E14 share this measurement policy.
 Target bytes count repeated target exposure, not input traffic, unique examples,
 epochs or FLOPs. Sampler RNG and target union matched E01 and were independently
 replayed; different width/dropout/global RNG consumption need not match.
@@ -241,7 +275,7 @@ artifact_retrieval.md for immutable saved versions/checkpoint locations.
     text+='\n## Genuine figures\n\n'
     for directory in ['figures','comparison','width_comparison']:
         for p in sorted((out/directory).glob('*.png')):text+=f"![{p.stem}]({directory}/{p.name})\n\n"
-    (out/'E14_seed42_analysis.md').write_text(text,encoding='utf-8')
+    (out/'E14_seed42_analysis.md').write_text(prose_spacing(text).rstrip()+'\n',encoding='utf-8')
     print(json.dumps({'report':str(out),'run_id':s['run_id'],'accepted_state_groups':gpu['exact_state']}))
 
 

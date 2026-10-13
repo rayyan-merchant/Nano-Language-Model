@@ -110,3 +110,15 @@ API is claimed. Read EXPERIMENT_READINESS.md before further experiment approval.
 ## Scoped E13 seed42 width144 evidence
 
 [Accepted E13 report](report/pilots/E13_seed42/E13_seed42_analysis.md):5000updates/20fullvalidations,1021824parameters,best=final5000loss1.61153841/BPB2.32495848. Publishedarchive/allfilehashes/CPUinference/freshCUDAfullstate5000to5000zeroextra passed. Smallerparametercountdidnot improvepredictivequalityorobservedtrainingspeed;memory/validationcostlower. All100uneditedgenerations and15PNG/15PDFfigurespreserved. E14/otherseed/extensionnotlaunched;study-wideauthorization separatelygated.
+
+
+## Scoped E14 width240 seed42 evidence
+
+[Accepted E14 report](report/pilots/E14_seed42/E14_seed42_analysis.md): 5,000 updates,
+20 full validations, 2,808,960 parameters; best4750 loss1.48464646/BPB2.14189208,
+final BPB2.14505608. Published archive/all62filehashes/CPUinference/freshCUDAfinal
+full-state5000→5000zeroextra passed. Best BPB is3.259% belowE01 with55.638% more
+parameters and6.703% more measured training time. Complete100-slot grid and
+20PNG/20PDF figures preserved; greedy repetition remains despite lowerloss.
+No other seed/configuration/extension launched; single-seed and resource scopes
+are explicit, and broader study approval remains separate.

@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "experiment": "E14",
+  "device": "cuda",
+  "model": {
+    "vocab_size": 65,
+    "d_model": 240,
+    "n_heads": 6,
+    "n_layers": 4,
+    "context_length": 128,
+    "mlp_expansion": 4,
+    "activation": "gelu",
+    "position": "sinusoidal",
+    "dropout": 0.1
+  },
+  "parameters": 2808960,
+  "parameter_reduction": -1004160,
+  "MLP_parameters_per_block": [
+    462000,
+    462000,
+    462000,
+    462000
+  ],
+  "projection_weight_gradients": [
+    {
+      "block": 0,
+      "projection_weight_gradient_norms": [
+        0.1668044775724411,
+        0.3281615972518921
+      ]
+    },
+    {
+      "block": 1,
+      "projection_weight_gradient_norms": [
+        0.16071727871894836,
+        0.3178836405277252
+      ]
+    },
+    {
+      "block": 2,
+      "projection_weight_gradient_norms": [
+        0.1638146936893463,
+        0.3232102692127228
+      ]
+    },
+    {
+      "block": 3,
+      "projection_weight_gradient_norms": [
+        0.16055768728256226,
+        0.3142305612564087
+      ]
+    }
+  ],
+  "seed42_compatible_shape_parameter_equality": {},
+  "checks": [
+    "sole_width_override_training_unchanged",
+    "repeat_seed42_initialization",
+    "four_independent_blocks",
+    "240_960_240_MLP_projections",
+    "GELU_manual_MLP_reference",
+    "MLP_and_total_parameter_counts",
+    "preLN_residual_reference",
+    "manual_sqrt40_causal_attention",
+    "sinusoidal_no_RoPE_or_learned",
+    "finite_shifted_CE_forward",
+    "future_token_invariance",
+    "finite_all_gradients_both_MLP_projections",
+    "train_eval_dropout_01",
+    "cropped_generation128",
+    "six_heads_dimension40",
+    "attention_output_width240",
+    "all_LayerNorm_width240",
+    "sinusoidal128_by240",
+    "embedding_and_LMhead_shapes",
+    "overlength_rejection"
+  ],
+  "limit": "Development gradients establish connectivity, not longitudinal research gradient behavior; changed tensor shapes consume initialization RNG differently."
+}
