@@ -20,7 +20,7 @@ from nano_lm.storage import export_run, verify_snapshot, restore_snapshot
 from nano_lm.train import TrainSettings, train
 from nano_lm.verification import equal_nested
 from e07_colab import qualified, research, finish, CORE, SOURCE
-from heads_audit import audit
+from e07_heads_audit import audit
 
 
 def state_restore(checkpoint, output):
@@ -44,7 +44,7 @@ def preflight(root,out):
     hardware={'gpu_count':torch.cuda.device_count(),'training_device':'cuda:0','nvidia_smi':subprocess.check_output(['nvidia-smi'],text=True),'local_disk_free_bytes':shutil.disk_usage(out).free,'devices':[{'name':torch.cuda.get_device_name(i),'total_bytes':torch.cuda.get_device_properties(i).total_memory,'free_bytes':torch.cuda.mem_get_info(i)[0]} for i in range(torch.cuda.device_count())]}
     assert hardware['local_disk_free_bytes']>5*2**30 and hardware['devices'][0]['free_bytes']>2*2**30
     atomic_json(out/'hardware.json',hardware);atomic_json(out/'heads_audit.json',audit(root,'cuda'))
-    for name,args in [('tests',[sys.executable,'-m','pytest','-q']),('attention_test',[sys.executable,'-m','pytest','-q',str(Path(__file__).resolve().parents[2]/'tests/test_heads_research.py')])]:
+    for name,args in [('tests',[sys.executable,'-m','pytest','-q']),('attention_test',[sys.executable,'-m','pytest','-q',str(Path(__file__).resolve().parents[2]/'tests/test_e07_heads_research.py')])]:
         result=subprocess.run(args,cwd=root,capture_output=True,text=True)
         atomic_json(out/(name+'.json'),{'returncode':result.returncode,'output':result.stdout+result.stderr});result.check_returncode()
     manifest=prepare(out/'data');validate(out/'data')

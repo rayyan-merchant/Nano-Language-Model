@@ -1,100 +1,96 @@
-"""Matched E01/E07 comparison from verified recorded checkpoints and committed E01."""
+"""Generate a validated, single-seed E01/E06 comparison from genuine checkpoints."""
 import argparse
 import csv
 import json
+import os
 from pathlib import Path
-import numpy as np
+os.environ['MPLBACKEND']='Agg'
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
-from nano_lm.artifacts import atomic_json, file_hash
+import numpy as np
+import torch
+from nano_lm.artifacts import atomic_json
+from nano_lm.checkpoint import read_checkpoint
+from nano_lm.results import collect
 
 
-def compare(root, evidence, output):
-    output.mkdir(parents=True,exist_ok=False)
-    baseline=root/'report/pilots/E01_seed42'
-    a=json.loads((baseline/'summary.json').read_text())
-    b=json.loads((evidence/'analysis/summary.json').read_text())
-    h=json.loads((evidence/'analysis/measured_history.json').read_text())
-    metadata=json.loads(next((evidence/'runs').glob('*/metadata.json')).read_text())
-    assert a['parameters']==b['parameters']==1804800 and a['code_hash']==b['code_hash']
-    assert a['completed_optimizer_updates']==b['completed_optimizer_updates']==5000
-    baseline_config={'vocab_size':65,**json.loads((root/'configs/baseline.json').read_text())['model']}
-    delta={k:v for k,v in metadata['resolved']['model'].items() if baseline_config[k]!=v}
-    assert delta=={'n_heads':8}
-    with (baseline/'validation.csv').open(newline='') as f:av=list(csv.DictReader(f))
-    bv=h['validation'];assert [int(r['step']) for r in av]==[r['step'] for r in bv]==list(range(250,5001,250))
+def compare(baseline, four_head, root, out):
+    out.mkdir(parents=True,exist_ok=False)
+    runs=[]; payloads=[]
+    for artifact,eid in [(baseline,'E01'),(four_head,'E06')]:
+        completion=json.loads((artifact/'completion.json').read_text())
+        checkpoint=artifact/completion['final_checkpoint'];runs.append(checkpoint.parent.parent)
+        payload,_=read_checkpoint(checkpoint)
+        assert payload['metadata']['resolved']['experiment_id']==eid and payload['step']==5000
+        payloads.append(payload)
+    verified,aggregate=collect(runs,root,5000,require_complete=False)
+    a,b=[p['metadata'] for p in payloads]
+    assert a['resolved']['training']==b['resolved']['training']
+    assert a['resolved']['tokenizer_hash']==b['resolved']['tokenizer_hash']
+    assert a['resolved']['tokenizer_kind']==b['resolved']['tokenizer_kind']=='character'
+    assert a['parameters']==b['parameters']==1804800
+    ma,mb=a['resolved']['model'],b['resolved']['model']
+    assert {k for k in ma if ma[k]!=mb[k]}=={'n_heads'} and ma['n_heads']==6 and mb['n_heads']==4
+    freeze=lambda e:sorted(x for x in e['packages'] if not x.startswith('-e '))
+    assert freeze(a['environment'])==freeze(b['environment'])
+    assert all(a['environment'][k]==b['environment'][k] for k in ['code_hash','python','torch','cuda','gpu'])
+    assert torch.equal(payloads[0]['rng']['sampling'],payloads[1]['rng']['sampling'])
+    assert np.array_equal(payloads[0]['training_state']['seen_bytes'],payloads[1]['training_state']['seen_bytes'])
+    histories=[p['training_state']['history'] for p in payloads]
+    values=[[r for r in h if 'validation' in r] for h in histories]
+    assert all([r['step'] for r in v]==list(range(250,5001,250)) for v in values)
     rows=[]
-    for x,y in zip(av,bv):
-        loss_a=float(x['loss']);loss_b=y['validation']['loss'];bpb_a=float(x['bpb']);bpb_b=y['validation']['bpb']
-        rows.append({'step':y['step'],'E01_loss':loss_a,'E07_loss':loss_b,'loss_difference_E07_minus_E01':loss_b-loss_a,
-                     'E01_bpb':bpb_a,'E07_bpb':bpb_b,'bpb_difference_E07_minus_E01':bpb_b-bpb_a,
-                     'relative_loss_reduction_percent':100*(loss_a-loss_b)/loss_a})
-    with (output/'matched_validation.csv').open('x',newline='') as f:
-        w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
-    figures=output/'figures';figures.mkdir()
-    for metric,ylabel in [('loss','Full sliding validation loss (nats/character)'),('bpb','Conditional bits per source byte')]:
+    for av,bv in zip(*values):
+        row={'step':av['step']}
+        for metric in ['loss','bpb','perplexity']:
+            x,y=av['validation'][metric],bv['validation'][metric]
+            row.update({f'E01_{metric}':x,f'E06_{metric}':y,f'delta_{metric}':y-x,f'relative_{metric}_percent':(y-x)/x*100})
+        rows.append(row)
+    summaries=[json.loads((p/'analysis/summary.json').read_text()) for p in [baseline,four_head]]
+    thresholds=[]
+    for reference_step in [1000,2000,3000,4000,5000]:
+        reference=next(r for r in values[0] if r['step']==reference_step)['validation']['loss']
+        crossing=next((r for r in values[1] if r['validation']['loss']<=reference),None)
+        thresholds.append({'E01_reference_step':reference_step,'E01_reference_loss':reference,
+                           'E06_first_observed_at_or_below_step':crossing['step'] if crossing else None,
+                           'E06_training_seconds_at_that_observation':crossing['train_seconds'] if crossing else None,
+                           'interpretation':'Retrospective recorded-point threshold; not interpolated crossing or early stopping'})
+    comparisons=[]
+    for name,key,sub in [('best_loss','best_validation','loss'),('final_loss','final_validation','loss'),('best_bpb','best_validation','bpb'),('final_bpb','final_validation','bpb'),('final_training_loss','final_training_loss',None),('training_seconds','training_seconds',None),('validation_seconds','validation_seconds',None),('peak_gpu_bytes','peak_gpu_bytes',None),('parameters','parameters',None)]:
+        x,y=[s[key][sub] if sub else s[key] for s in summaries]
+        comparisons.append({'metric':name,'E01':x,'E06':y,'delta_E06_minus_E01':y-x,'relative_percent':(y-x)/x*100})
+    result={'schema_version':1,'label':'E01 vs E06, one seed42 each; descriptive, no statistical significance',
+            'delta_convention':'E06 minus E01; negative loss/BPB delta favors E06',
+            'comparability_passed':True,'verified_runs':verified,'aggregate':aggregate,
+            'same_training_settings':True,'same_dataset_tokenizer_code_environment':True,
+            'same_final_sampling_RNG_and_byte_coverage':True,
+            'only_model_factor_difference':'n_heads','matched_validation':rows,'summary_comparison':comparisons,
+            'retrospective_threshold_observations':thresholds,
+            'limitations':['One seed; SD undefined','Same GPU model, separate sessions; no controlled speed repetitions',
+                           'Validation loss and BPB mathematically related for matched character bytes',
+                           'No test likelihood or cross-tokenizer ranking','No other widths/depths tested']}
+    atomic_json(out/'comparison.json',result)
+    for name,data in [('matched_validation',rows),('summary_comparison',comparisons),('verified_runs',verified),('aggregate',aggregate)]:
+        with (out/(name+'.csv')).open('x',newline='',encoding='utf-8') as f:
+            w=csv.DictWriter(f,fieldnames=list(data[0]));w.writeheader();w.writerows(data)
+    for metric,ylabel in [('loss','Full sliding validation NLL (nats)'),('bpb','Conditional validation bits/byte')]:
         fig,ax=plt.subplots(figsize=(8,4.5))
-        for label in ['E01','E07']:ax.plot([r['step'] for r in rows],[r[label+'_'+metric] for r in rows],label=label+(' 6 heads' if label=='E01' else ' 8 heads'),marker='o',markersize=3)
-        ax.set(xlabel='Completed optimizer updates',ylabel=ylabel,title='E01 vs E07 seed42: matched character protocol')
-        ax.grid(alpha=.2);ax.legend();fig.text(.5,.01,'Single seed; equal parameters/context/exposure; separate Kaggle sessions; host/runtime confound',ha='center',fontsize=8)
-        fig.tight_layout(rect=[0,.04,1,1]);fig.savefig(figures/f'e01_e07_validation_{metric}.png',dpi=200);fig.savefig(figures/f'e01_e07_validation_{metric}.pdf');plt.close(fig)
-    fig,axes=plt.subplots(1,3,figsize=(12,4.2))
-    labels=['E01: 6 heads','E07: 8 heads']
-    panels=[('Retained trajectory training time',[a['training_seconds'],b['training_seconds']],'seconds'),
-            ('Retained predicted-token throughput',[20480000/a['training_seconds'],20480000/b['training_seconds']],'tokens / second'),
-            ('Peak allocated GPU memory',[a['peak_gpu_bytes']/2**20,b['peak_gpu_bytes']/2**20],'MiB')]
-    for ax,(title,values,units) in zip(axes,panels):
-        bars=ax.bar(labels,values,color=['#455b8f','#c97543']);ax.set(title=title,ylabel=units)
-        ax.grid(axis='y',alpha=.2);ax.set_axisbelow(True);ax.margins(y=.18)
-        for bar,value in zip(bars,values):
-            ax.annotate(f'{value:,.2f}',(bar.get_x()+bar.get_width()/2,value),ha='center',va='bottom',fontsize=9,xytext=(0,4),textcoords='offset points')
-    fig.text(.5,.015,'Equal parameters/context/retained 5,000-update budget. Separate Kaggle sessions; E07 replay attempts excluded from these counters.',ha='center',fontsize=8)
-    fig.tight_layout(rect=[0,.07,1,1])
-    for suffix in ['png','pdf']:fig.savefig(figures/f'e01_e07_efficiency.{suffix}',dpi=200)
-    plt.close(fig)
-    fig,ax=plt.subplots(figsize=(8,4.5))
-    ax.plot([r['step'] for r in rows],[r['loss_difference_E07_minus_E01'] for r in rows],marker='o',markersize=4)
-    ax.axhline(0,color='black',linewidth=.8)
-    ax.set(xlabel='Completed optimizer updates',ylabel='E07 minus E01 validation loss (nats/character)',title='Measured matched loss difference; negative favors E07')
-    ax.grid(alpha=.2);fig.text(.5,.01,'One seed; 20 full validations; no significance or attention-mechanism claim',ha='center',fontsize=8)
-    fig.tight_layout(rect=[0,.04,1,1])
-    for suffix in ['png','pdf']:fig.savefig(figures/f'e01_e07_loss_difference.{suffix}',dpi=200)
-    plt.close(fig)
-    gen_stats=[]
-    for label,path in [('E01',baseline/'generation.json'),('E07',evidence/'analysis/generation.json')]:
-        grid=json.loads(path.read_text());assert len(grid['samples'])==100
-        for policy in ['best','final']:
-            samples=[s for s in grid['samples'] if s['checkpoint_policy']==policy]
-            for mode in ['greedy',.7,1.,1.2]:
-                selected=[s for s in samples if s['greedy']] if mode=='greedy' else [s for s in samples if not s['greedy'] and s['temperature']==mode]
-                fractions=[]
-                for s in selected:
-                    text=s['text'][len(s['prompt']):];grams=[text[i:i+8] for i in range(max(0,len(text)-7))]
-                    fractions.append(1-len(set(grams))/len(grams) if grams else 0)
-                gen_stats.append({'experiment':label,'policy':policy,'mode':mode,'samples':len(selected),
-                                  'mean_repeated_8gram_position_fraction':float(np.mean(fractions)),
-                                  'mean_continuation_characters':float(np.mean([len(s['text'])-len(s['prompt']) for s in selected]))})
-    initial=json.loads((evidence/'heads_audit.json').read_text())
-    norms=np.array([r['gradient_norm'] for r in h['training']])
-    baseline_obs=json.loads((baseline/'pilot_observations.json').read_text())
-    io=json.loads((evidence/'io_timing.json').read_text())
-    receipt={'source_commit':b['source_commit'],'scientific_code_hash':b['code_hash'],'resolved_config_hash':b['config_hash'],
-             'E01_reference_summary_sha256':file_hash(baseline/'summary.json'),'E01_reference_validation_sha256':file_hash(baseline/'validation.csv'),
-             'initial_parameter_identity':initial['all_initial_E01_parameter_tensors_equal'],'sole_model_difference':delta,
-             'matched_validation_points':20,'rows':rows,'E01':a,'E07':b,
-             'best_loss_reduction_percent':100*(a['best_validation']['loss']-b['best_validation']['loss'])/a['best_validation']['loss'],
-             'final_loss_reduction_percent':100*(a['final_validation']['loss']-b['final_validation']['loss'])/a['final_validation']['loss'],
-             'training_time_change_percent':100*(b['training_seconds']-a['training_seconds'])/a['training_seconds'],
-             'E01_clipping_frequency':baseline_obs['gradient_clipping_fraction'],'E07_clipping_frequency':float((norms>1).mean()),
-             'checkpoint_seconds':sum(r['seconds'] for r in io['records'] if r['operation']=='checkpoint'),
-             'snapshot_export_seconds':sum(r['seconds'] for r in io['records'] if r['operation']=='export'),
-             'journal_seconds':io['journal_seconds'],'engine_wall_seconds':io['engine_wall_seconds'],'io_scope':io.get('scope','complete original research segment'),
-             'generation_repetition':gen_stats,'limit':'One seed; no statistical significance. Separate host/session scheduling and runtime conditions uncontrolled. Repetition is descriptive, not a quality score.'}
-    atomic_json(output/'comparison.json',receipt)
+        for i,eid in enumerate(['E01 six heads','E06 four heads']):ax.plot([r['step'] for r in values[i]],[r['validation'][metric] for r in values[i]],marker='.',label=eid)
+        ax.set(xlabel='Completed optimizer updates',ylabel=ylabel,title='Matched seed42 attention-head ablation; observed points')
+        ax.legend();ax.grid(alpha=.2);fig.tight_layout();fig.savefig(out/('comparison_'+metric+'.png'),dpi=200);plt.close(fig)
+    for name,key,ylabel,smooth in [('training','training_loss','Training NLL (100-step trailing mean)',True),('throughput','tokens_per_second','Cumulative targets / training second',False)]:
+        fig,ax=plt.subplots(figsize=(8,4.5))
+        for i,eid in enumerate(['E01 six heads','E06 four heads']):
+            h=histories[i];v=[r[key] for r in h]
+            if smooth:v=np.convolve(v,np.ones(100)/100,'valid');steps=[r['step'] for r in h][99:]
+            else:steps=[r['step'] for r in h]
+            ax.plot(steps,v,label=eid)
+        ax.set(xlabel='Completed optimizer updates',ylabel=ylabel,title='Measured single-seed runs; separate GPU sessions')
+        ax.legend();ax.grid(alpha=.2);fig.tight_layout();fig.savefig(out/('comparison_'+name+'.png'),dpi=200);plt.close(fig)
+    print(json.dumps(comparisons,indent=2))
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser()
-    for name in ['root','evidence','output']:p.add_argument('--'+name,type=Path,required=True)
-    a=p.parse_args();compare(a.root,a.evidence,a.output)
+    p=argparse.ArgumentParser();p.add_argument('--baseline',type=Path,required=True);p.add_argument('--four-head',type=Path,required=True);p.add_argument('--root',type=Path,default=Path('.'));p.add_argument('--output',type=Path,required=True)
+    a=p.parse_args();compare(a.baseline,a.four_head,a.root,a.output)

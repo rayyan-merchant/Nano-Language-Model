@@ -21,7 +21,7 @@ from nano_lm.generate import generate
 from nano_lm.prepare import prepare, validate
 from nano_lm.storage import snapshot_file, verify_snapshot, restore_snapshot
 from nano_lm.train import TrainSettings, environment, train
-from heads_audit import audit
+from e07_heads_audit import audit
 
 CORE = 'cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6'
 SOURCE = '5bb03b18943e7c45a305ce1d78b3446c31829ae7'
@@ -59,7 +59,7 @@ def preflight(root, out, store, quota_free):
     atomic_json(out/'tests.json', {'returncode':result.returncode,'output':result.stdout+result.stderr})
     result.check_returncode()
     # Run the additional attention test against the clean trained source from an external script directory.
-    test = subprocess.run([sys.executable,'-m','pytest','-q',str(Path(__file__).resolve().parents[2]/'tests/test_heads_research.py')],cwd=root,capture_output=True,text=True)
+    test = subprocess.run([sys.executable,'-m','pytest','-q',str(Path(__file__).resolve().parents[2]/'tests/test_e07_heads_research.py')],cwd=root,capture_output=True,text=True)
     atomic_json(out/'attention_test.json', {'returncode':test.returncode,'output':test.stdout+test.stderr})
     test.check_returncode()
     data = out/'data'; manifest = prepare(data); validate(data)

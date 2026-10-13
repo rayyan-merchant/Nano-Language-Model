@@ -1,0 +1,44 @@
+{
+  "starting_main": "fad0afe2fc6259bd5fd2ddb5f004ce57e87bd34c",
+  "E06_PR9_already_merged": true,
+  "E06_formal_review_submissions_returned": 0,
+  "trained_source": "72fdd4b64610e8e6df178e7fd452ec9429faab8f",
+  "code_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "scientific_source_config_diff_from_E01_empty": true,
+  "review_scope": "Local source/diff/numerical and CLI review plus actual CI; no human approval represented",
+  "windows_full_suite": {
+    "passed": 44,
+    "skipped": 1,
+    "seconds": 105.56,
+    "CUDA_skip": true
+  },
+  "focused_tests": {
+    "passed": 6,
+    "seconds": 2.33
+  },
+  "training_source_CI": {
+    "runs": [
+      38298229488,
+      38298192733
+    ],
+    "conclusion": "success"
+  },
+  "CPU_depth_checks": 13,
+  "scope": "One E08 seed42 exactly5000 research updates; E07 untouched; no other research run/seed/extension",
+  "local_storage": "D outputs junction and unique artifact retrieval directory; no large Git files",
+  "PR": "https://github.com/rayyan-merchant/Nano-Language-Model/pull/12",
+  "reporting_utility_CI": {
+    "source": "298eac42f8fb5aca58c5bcf1c791eee17265a5f6",
+    "runs": [
+      38299024161,
+      38299017958
+    ],
+    "conclusion": "success"
+  },
+  "Kaggle_applicable_suite": {
+    "passed": 45,
+    "seconds": 33.84,
+    "CUDA_amp_resume_executed": true,
+    "evidence": "Actual notebook stdout; platform duplicates identical terminal line; count once"
+  }
+}

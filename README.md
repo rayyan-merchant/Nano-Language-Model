@@ -98,7 +98,7 @@ reserved for final evaluation. See `docs/bpb.md` for the exact policies.
 
 The second member verifies and runs the same code; pipeline ownership stays in
 this instance. Work on feature branches and reviewed PRs. Never force-push or merge
-without authorization. E01, E02, E03 and E04 seed42 each completed an individually authorized
+without authorization. E01, E02, E03, E04, E06 and E08 seed42 each completed an individually authorized
 5000-update research run with verified published checkpoints; their reports are in
 `report/pilots`. The broader three-seed study remains separately gated. No deployed
 API is claimed. Read EXPERIMENT_READINESS.md before further experiment approval.

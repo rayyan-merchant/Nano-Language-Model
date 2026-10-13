@@ -10,3 +10,5 @@ The original session expired. Recovery restored the verified step-2750 state and
 | `kaggle_e07_seed42_recovery_executed.ipynb` | 9612665d8d3a6c68a1aade38841afa331fbc83cb8eca19802213e12e8904ecd1 |
 
 See ../report/pilots/E07_seed42/E07_seed42_analysis.md and its evidence for full provenance, archive recovery and replay accounting.
+
+After integrating reviewed main, conflicting E06 orchestration names were preserved unchanged. E07 counterparts are now `scripts/pilot/e07_heads_audit.py`, `compare_e07_heads.py`, and `tests/test_e07_heads_research.py`. Historical executed notebooks keep their original pinned orchestration commits and names. This file-name isolation changes no scientific source.

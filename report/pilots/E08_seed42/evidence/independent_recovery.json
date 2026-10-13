@@ -1,0 +1,33 @@
+{
+  "status": "published_archive_verified_and_best_final_CPU_inference_passed",
+  "run_id": "E08_seed42_a3d3b380c15940599e2efc2e08ac584a",
+  "archive_sha256": "f1071463a41c18954cb8eb177b9e8a24ba9a692077ddb97e438c8af49d881fb4",
+  "archive_bytes": 598768138,
+  "verified_file_count": 59,
+  "optimizer_updates": 5000,
+  "validation_count": 20,
+  "seconds": 51.75133250001818,
+  "samples": [
+    {
+      "policy": "best",
+      "checkpoint": "runs/E08_seed42_a3d3b380c15940599e2efc2e08ac584a/checkpoints/step_004750.pt",
+      "sha256": "f8031ed720f2ad4d050fbbe84d2e828cc6cfc6ac2d44fbb15b7d7e27043adabb",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nAnd the world the world the seat of the world,\nAnd the send the "
+    },
+    {
+      "policy": "final",
+      "checkpoint": "runs/E08_seed42_a3d3b380c15940599e2efc2e08ac584a/checkpoints/step_005000.pt",
+      "sha256": "8e755113d38f1c2e53133e21e934f0fc27f2fd2a39cc31f84759e573e94250ad",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nWhat is the sent the sea of the season of the sea\nThat the sente"
+    }
+  ],
+  "training_resume": "CPU inference only; no CUDA RNG restore or additional updates attempted"
+}

@@ -254,6 +254,65 @@ E01/E02/E03 evidence and canonical definitions unchanged. E04 seed42 alone is
 complete; broader three-seed study remains separately gated. No other experiment,
 seed or10k extension launched. PR8 is reviewable and is not merged by this task.
 
+## E06 seed42 completed and independently recovered -- 2026-10-12
+
+The explicitly authorized E06 four-head run completed5000 optimizer updates and
+all20 full sliding validations on TeslaT4/Python3.11.14/torch2.5.1+cu124,
+float32,seed42. Clean trained source fc08577afb63d4bd3ecad43bf33355c65ddd985c;
+scientific hash cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6.
+Only head count6->4 differs; head dimension48,parameters1804800. All13 CPU
+and actualCUDA attention checks passed. Final Windows suite41 passed/1 CUDA
+skip (285.62s); no full Kagglepytest suite is claimed. Best4750 loss1.52865285
+BPB2.20537989; final5000 loss1.52920435 BPB2.20617553. Training917.232s,
+validation389.111s, allocated peak145.712MiB. Twenty resumable states and21
+snapshots are published in private Kaggle notebook version1
+rayyannmerchant/nano-e06-pilot-20261012-62c30c02. Independent402500855-byte
+archive SHA256 bf224ad20d4eca03359d08da820289ac1e9cef2c8f082f9d94e229f8edb29530
+passed58 file hashes/ZIP checks and CPU inference. Fresh savedCUDA recovery
+rayyannmerchant/nano-e06-recovery-20261012-cab9c7aa verified exact full state
+and best/final inference with zero extra updates. No research failure/resume
+event.100 genuine samples and13 figures retained, including greedy loops.
+Small E01 advantage is descriptive for one seed, not significant evidence.
+Full report: report/pilots/E06_seed42/E06_seed42_analysis.md and interpretation.md.
+Large artifacts are onD and saved Kaggle output, excluded fromGit. PR9 is for
+review; no merge or extra configuration/seed/extension was performed. Historical
+E01-E04 evidence preserved; E05 Colab execution untouched. Broader three-seed
+study remains separately gated/NO-GO, not authorized by this scoped completion.
+
+## E08 seed42 completed and independently recovered -- 2026-10-13
+
+The explicitly authorized six-block E08 run completed exactly5000 optimizer
+updates and20 full sliding validations on TeslaT4 GPU0,Python3.11.14,
+torch2.5.1+cu124/CUDA12.4/NumPy1.26.4,float32. Clean trained source
+72fdd4b64610e8e6df178e7fd452ec9429faab8f; scientific hash
+cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6.
+Only n_layers4->6 differs;2694528 parameters (+889728 capacity confound).
+CPU/CUDA13 depth checks passed. Before launch Windows44 passed/1 CUDA skip;
+actual full Kaggle suite45 passed33.84s, including CUDA AMP-resume tests.
+Best4750 loss1.48713993/BPB2.14548940; final5000 loss1.48858993/BPB2.14758132.
+Training1511.357s, validation593.279s, clone-to-archive pipeline2602.147s;
+allocated peak166.104MiB. Lower best BPB than E01 by3.097% costs64.868% more
+training time. One seed does not establish significance or depth-only causality.
+
+Research private saved notebook version1:
+rayyannmerchant/nano-e08-pilot-20261013-79fc614d. All20 resumable states and21
+immutable snapshots published. Independently downloaded598768138-byte archive
+SHA256 f1071463a41c18954cb8eb177b9e8a24ba9a692077ddb97e438c8af49d881fb4
+passed59 file hashes/ZIP checks and best/final CPU inference. Fresh saved CUDA
+recovery rayyannmerchant/nano-e08-recovery-20261013-75b12285 verified exact model,
+optimizer/scheduler/scaler/RNG/sampling state at5000, zero additional updates.
+All20 checkpoint counters and character BPB independently audited. No research
+failure/resume event.100 unedited generations and15 measured PNG figures retained;
+greedy loops/malformed words remain despite improved validation likelihood.
+Full report and interpretation: report/pilots/E08_seed42/E08_seed42_analysis.md.
+Large artifacts remain onD and saved Kaggle outputs, excluded fromGit.
+
+E06 PR9 was already owner-merged before source synchronization; no formal review
+submission is claimed. E08 PR12 is for review and not merged by this task.
+Earlier reports/configurations and E07 Colab work are unchanged. No other
+configuration, seed or10k extension was launched. E09 depth-framework metrics
+remain null/not-run. This scoped E08 run is complete; the broader three-seed
+study remains separately gated/NO-GO. Final test evidence is in the E08 report.
 ## E07 seed42 preflight blocked — 2026-10-12
 
 Reviewed main5bb03b1 synchronized; scientific source unchanged and audited hash

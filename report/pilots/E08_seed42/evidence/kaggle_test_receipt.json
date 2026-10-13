@@ -1,0 +1,12 @@
+{
+  "status": "actually_executed",
+  "source_commit": "72fdd4b64610e8e6df178e7fd452ec9429faab8f",
+  "passed": 45,
+  "seconds": 33.84,
+  "raw_log_file_sha256": "072ae0537bc6e56e20ce90d6bc918745747d7ebd99da595b7fde14b84481f964",
+  "matching_log_lines": [
+    ",{\"stream_name\":\"stdout\",\"time\":123.277062664,\"data\":\"45 passed in 33.84s\\n\"}",
+    ",{\"stream_name\":\"stdout\",\"time\":123.475821007,\"data\":\"45 passed in 33.84s\\n\"}"
+  ],
+  "duplicate_identical_terminal_result_counted_once": true
+}
