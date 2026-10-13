@@ -62,5 +62,5 @@ def describe(root, baseline, candidate, output, experiment="E06"):
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, required=True)
     for name in ['baseline', 'candidate', 'output']: p.add_argument('--'+name, type=Path, required=True)
-    p.add_argument('--experiment',choices=['E06','E08','E09'],default='E06')
+    p.add_argument('--experiment',choices=['E06','E08','E09','E10'],default='E06')
     a = p.parse_args(); describe(a.root, a.baseline, a.candidate, a.output,a.experiment)
