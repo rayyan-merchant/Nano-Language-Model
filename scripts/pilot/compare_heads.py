@@ -47,6 +47,9 @@ def compare(baseline, four_head, root, out, experiment="E06"):
     else:
         assert torch.equal(payloads[0]['rng']['sampling'],payloads[1]['rng']['sampling'])
         assert np.array_equal(payloads[0]['training_state']['seen_bytes'],payloads[1]['training_state']['seen_bytes'])
+    if experiment=='E13':
+        from sampling_audit import replay
+        sampling=[replay(p) for p in payloads]
     histories=[p['training_state']['history'] for p in payloads]
     values=[[r for r in h if 'validation' in r] for h in histories]
     assert all([r['step'] for r in v]==list(range(250,5001,250)) for v in values)
