@@ -1,0 +1,10 @@
+{
+  "status": "smoke_export_restore_and_ZIP_verified",
+  "smoke_checkpoint_bytes": 34817226,
+  "smoke_checkpoint_SHA256": "81d14c92ae147126e353a516eec1ccf1a2e7d9d3642837c31fdad1bb6b52ec69",
+  "smoke_archive_SHA256": "55935208f48b7254429aa78320d8470d007b14072ed89c4cb2958a3c20ca641e",
+  "ZIP_CRC_safe_paths_and_embedded_checkpoint_hash_passed": true,
+  "conservative_required_free_bytes": 5629206248,
+  "available_bytes": 20801130496,
+  "plan": "20 checkpoints plus21 best/latest snapshots and archive;100 weight-file equivalents plus2GiB margin"
+}

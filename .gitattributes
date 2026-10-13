@@ -51,6 +51,13 @@ report/pilots/E13_seed42/evidence/* -text whitespace=cr-at-eol
 report/pilots/E13_seed42/generation.* -text whitespace=-blank-at-eol,cr-at-eol
 report/pilots/E13_seed42/validation.csv -text whitespace=cr-at-eol
 report/pilots/E13_seed42/E13_seed42_analysis.md whitespace=-blank-at-eol
+
+docs/qualifications/evidence/e14_development/* -text whitespace=cr-at-eol
+
+report/pilots/E14_seed42/evidence/* -text whitespace=cr-at-eol
+report/pilots/E14_seed42/generation.* -text whitespace=-blank-at-eol,cr-at-eol
+report/pilots/E14_seed42/validation.csv -text whitespace=cr-at-eol
+report/pilots/E14_seed42/E14_seed42_analysis.md whitespace=-blank-at-eol
 # Preserve genuine E12 receipts, metrics and unedited generated text.
 report/pilots/E12_seed42/evidence/* -text whitespace=cr-at-eol
 report/pilots/E12_seed42/preflight_evidence/* -text whitespace=cr-at-eol

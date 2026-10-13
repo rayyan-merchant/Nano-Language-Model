@@ -1,0 +1,65 @@
+{
+  "status": "E14_scoped_research_acceptance_passed",
+  "source_commit": "ab1da4e05005413807d20802fff4153d97ebfa10",
+  "scientific_hash": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+  "parameter_count": 2808960,
+  "model_context": 128,
+  "microbatch": 4,
+  "accumulation": 8,
+  "authoritative_optimizer_updates": 5000,
+  "known_physical_research_updates": 5000,
+  "validation_count": 20,
+  "training_tokens": 20480000,
+  "source_bytes": 20480000,
+  "unique_target_bytes": 1003848,
+  "run_id": "E14_seed42_91b80cdf4163420f8767b58010eb4e9a",
+  "all62_archive_hashes_and_CRC_safe_paths": "passed",
+  "all20_optimizer_scheduler_checkpoint_counters": "passed",
+  "all21_published_snapshot_manifests": "passed",
+  "full_final_CUDA_state_roundtrip": {
+    "model": true,
+    "optimizer": true,
+    "scheduler": true,
+    "scaler": true,
+    "rng": true,
+    "training_state": true
+  },
+  "CUDA_recovery_extra_optimizer_updates": 0,
+  "best_final_CPU_CUDA_inference_match": "passed",
+  "both_private_samplers_and_target_unions_independently_replayed": "passed",
+  "all100_original_protocol_generation_slots": "passed",
+  "raw_generation_summary_CSV_bytes_unchanged": "passed",
+  "all_five_report_greedy_quotes_exact": "passed",
+  "figures": {
+    "PNG": 20,
+    "PDF": 20
+  },
+  "tests": {
+    "CPU_final": "69passed1CUDA-only skip116.89s",
+    "focused": "20passed1.95s",
+    "CUDA_development": "70passed33.40s",
+    "CUDA_research_preflight": "70passed37.03s",
+    "CPU_delivery_after_reviewed_E12_merge": "73passed1CUDA-only skip127.52s"
+  },
+  "source_CI": {
+    "id": 38409926632,
+    "conclusion": "success"
+  },
+  "report_renderer_CI": {
+    "id": 38411947768,
+    "conclusion": "success"
+  },
+  "research_failures": 0,
+  "research_resumes": 0,
+  "no_additional_configuration_training_seed_or_extension": true,
+  "limitations": [
+    "Single seed; SD/significance undefined",
+    "Width/capacity/head/MLP/initialization change together",
+    "Separate-session resource noise",
+    "Peak allocator sampling includes prior validation; final postprocessing peak not separately logged",
+    "Final written report is a separate lightweight Git artifact, not retroactively inserted into immutable ZIP"
+  ],
+  "reviewed_main_at_delivery": "59f9d360875d3b29b6886378861b12de49b958f8",
+  "reviewed_E12_files_preserved_byte_exact": 85,
+  "merge_scope": "Reviewed main intoE14feature only; conflict.gitattributes preserved both sets; no main/other branch merge"
+}

@@ -19,8 +19,9 @@ from nano_lm.storage import export_run, verify_snapshot
 from nano_lm.train import TrainSettings, environment, seed_all, train
 
 
-def run(root, out, experiment='E01'):
-    if experiment not in {'E01','E03','E04','E06','E08','E09','E10','E11','E13'}:raise ValueError('Unsupported authorized experiment')
+def run(root, out, experiment='E01', development_only=False):
+    if development_only and experiment!='E14':raise ValueError('Development publication is authorized only for E14')
+    if experiment not in {'E01','E03','E04','E06','E08','E09','E10','E11','E13','E14'}:raise ValueError('Unsupported authorized experiment')
     total_start=time.perf_counter();out.mkdir(parents=True,exist_ok=False)
     torch.set_num_threads(1)
     env=environment(root)
@@ -41,9 +42,9 @@ def run(root, out, experiment='E01'):
     assert all(manifest[k]==reference[k] for k in ['source','split','partitions','tokenizers','manifest_hash'])
     atomic_json(out/'dataset_validation.json',{'all_reference_fields_match':True,'manifest':manifest})
     config,defaults,variant=load_experiment(root,experiment,65)
-    positions={'E01':'sinusoidal','E03':'rope','E04':'learned','E06':'sinusoidal','E08':'sinusoidal','E09':'sinusoidal','E10':'sinusoidal','E11':'sinusoidal','E13':'sinusoidal'}
-    parameters=1021824 if experiment=='E13' else 1213440 if experiment=='E10' else 3584256 if experiment=='E09' else 2694528 if experiment=='E08' else 1829376 if experiment=='E04' else 1804800
-    expected_override = ({} if experiment=='E01' else {'d_model':144} if experiment=='E13' else {'context_length':64} if experiment=='E11' else {'mlp_expansion':2} if experiment=='E10' else {'n_heads':4} if experiment=='E06' else {'n_layers':8} if experiment=='E09' else {'n_layers':6} if experiment=='E08' else {'position':positions[experiment]})
+    positions={'E01':'sinusoidal','E03':'rope','E04':'learned','E06':'sinusoidal','E08':'sinusoidal','E09':'sinusoidal','E10':'sinusoidal','E11':'sinusoidal','E13':'sinusoidal','E14':'sinusoidal'}
+    parameters=2808960 if experiment=='E14' else 1021824 if experiment=='E13' else 1213440 if experiment=='E10' else 3584256 if experiment=='E09' else 2694528 if experiment=='E08' else 1829376 if experiment=='E04' else 1804800
+    expected_override = ({} if experiment=='E01' else {'d_model':240} if experiment=='E14' else {'d_model':144} if experiment=='E13' else {'context_length':64} if experiment=='E11' else {'mlp_expansion':2} if experiment=='E10' else {'n_heads':4} if experiment=='E06' else {'n_layers':8} if experiment=='E09' else {'n_layers':6} if experiment=='E08' else {'position':positions[experiment]})
     assert variant['model_overrides']==expected_override and variant['tokenizer']=='character'
     assert GPT(config).parameter_count()==parameters
     settings=TrainSettings(seed=42,device='cuda',precision='float32',run_kind='research',eval_every=250,checkpoint_every=500)
@@ -56,7 +57,7 @@ def run(root, out, experiment='E01'):
     if experiment=='E06':expected_model['n_heads']=4
     if experiment=='E10':expected_model['mlp_expansion']=2
     if experiment=='E11':expected_model['context_length']=64
-    if experiment=='E13':expected_model['d_model']=144
+    if experiment in {'E13','E14'}:expected_model['d_model']=144 if experiment=='E13' else 240
     if experiment in {'E08','E09'}:expected_model['n_layers']=6 if experiment=='E08' else 8
     assert config.to_dict()==expected_model
     assert defaults['optimizer']=='AdamW' and defaults['learning_rate']==settings.learning_rate and defaults['scheduler']=='constant'
@@ -71,10 +72,10 @@ def run(root, out, experiment='E01'):
     if experiment=='E06':
         from heads_audit import audit
         atomic_json(out/'heads_audit.json',audit(root,'cuda'))
-    if experiment in {'E08','E09','E10','E11','E13'}:
-        if experiment=='E13':
+    if experiment in {'E08','E09','E10','E11','E13','E14'}:
+        if experiment in {'E13','E14'}:
             from width_audit import audit
-            atomic_json(out/'width_audit.json',audit(root,'cuda'))
+            atomic_json(out/'width_audit.json',audit(root,'cuda',experiment))
         elif experiment=='E11':
             from context_audit import audit
             atomic_json(out/'context_audit.json',audit(root,'cuda'))
@@ -89,7 +90,7 @@ def run(root, out, experiment='E01'):
     payload,_=read_checkpoint(checkpoint);model,_=load_for_inference(checkpoint)
     assert payload['step']==1 and model.parameter_count()==parameters
     verify_snapshot(export_run(checkpoint.parent.parent,out/'preflight_snapshots'))
-    if experiment in {'E08','E09','E10','E11','E13'}:
+    if experiment in {'E08','E09','E10','E11','E13','E14'}:
         from nano_lm.storage import restore_snapshot
         from nano_lm.verification import equal_nested
         snapshot=next((out/'preflight_snapshots').iterdir())
@@ -106,18 +107,25 @@ def run(root, out, experiment='E01'):
             import hashlib
             assert hashlib.sha256(z.read('checkpoint.pt')).hexdigest()==file_hash(checkpoint)
         atomic_json(out/'storage_preflight.json',{'status':'smoke_export_restore_and_ZIP_verified','smoke_checkpoint_bytes':checkpoint.stat().st_size,'smoke_checkpoint_SHA256':file_hash(checkpoint),'smoke_archive_SHA256':file_hash(archive),'ZIP_CRC_safe_paths_and_embedded_checkpoint_hash_passed':True,'conservative_required_free_bytes':budget,'available_bytes':shutil.disk_usage(out).free,'plan':'20 checkpoints plus21 best/latest snapshots and archive;100 weight-file equivalents plus2GiB margin'})
-    if experiment in {'E11','E13'}:
+    if experiment in {'E11','E13','E14'}:
         from nano_lm.bpe import from_artifact
         from nano_lm.evaluate import evaluate
         full_validation=evaluate(model.to('cuda'),from_artifact(payload['tokenizer']), (data/'validation.txt').read_text(encoding='utf-8'))
         assert full_validation['scored_bytes']==55514 and full_validation['context_length']==config.context_length
         atomic_json(out/'full_validation_preflight.json',full_validation)
-    if experiment=='E13':
+    if experiment in {'E13','E14'}:
         from preflight_restore import audit_restore
         atomic_json(out/'CUDA_smoke_state_restore.json',audit_restore(checkpoint,out/'preflight_snapshots'/'state_roundtrip.pt'))
     del model,payload;torch.cuda.empty_cache()
     subprocess.run([sys.executable,str(root/'scripts/pilot/analyze.py'),'--root',str(root),'--run',str(checkpoint.parent.parent),'--output',str(out/'preflight_analysis'),'--device','cuda','--development-check'],check=True)
     atomic_json(out/'preflight.json',{'status':'passed','parameters':parameters,'model':config.to_dict(),'settings':asdict(settings),**budget_info,'updates_authorized':5000,'no_test_evaluation':True,'storage_plan':'private saved notebook output version; verify and retrieve archive after automatic publication; restore from verified snapshot if interrupted','prior_saved_output_recovery':'docs/qualifications/evidence/rayyan_fresh_gpu_recovery.json'})
+    if development_only:
+        from development import publish_development
+        publish_development(root,out,data,experiment,checkpoint,env)
+        return
+    if experiment=='E14':
+        from development import require_recovery_receipt
+        require_recovery_receipt(root,out)
     # Timing hooks forward calls unchanged. No optimizer/model/evaluation changes.
     import nano_lm.train as engine
     import nano_lm.storage as storage
@@ -172,9 +180,9 @@ def run(root, out, experiment='E01'):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--experiment',choices=['E01','E03','E04','E06','E08','E09','E10','E11','E13'],default='E01')
+    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--development-only',action='store_true');p.add_argument('--experiment',choices=['E01','E03','E04','E06','E08','E09','E10','E11','E13','E14'],default='E01')
     a=p.parse_args()
-    try:run(a.root,a.output,a.experiment)
+    try:run(a.root,a.output,a.experiment,a.development_only)
     except BaseException as e:
         if a.output.exists():
             (a.output/'failure.json').write_text(json.dumps({'type':type(e).__name__,'message':str(e)},indent=2))

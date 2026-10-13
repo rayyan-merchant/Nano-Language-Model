@@ -1,0 +1,12 @@
+{
+  "status": "published_development_archive_integrity_snapshot_and_CPU_inference_passed",
+  "archive_sha256": "981ddb740545097312b82660e9b3d521a3e03ae3352983aaa2710e2b61239679",
+  "archive_bytes": 282780282,
+  "verified_file_count": 81,
+  "checkpoint_sha256": "74d5a23cdaf81d30703163f04896fba97e786c9134eba4db0799a984975e7801",
+  "source_commit": "ab1da4e05005413807d20802fff4153d97ebfa10",
+  "optimizer_step": 1,
+  "genuine_CPU_text": "ROMEO:\ng.A\n",
+  "additional_optimizer_updates": 0,
+  "scope": "CPU inference only; full CUDA state restoration verified separately"
+}

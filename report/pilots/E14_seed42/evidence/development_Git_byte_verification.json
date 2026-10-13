@@ -1,0 +1,65 @@
+{
+  "status": "all_original_receipt_bytes_match_committed_Git_blobs",
+  "files": [
+    {
+      "file": "docs/qualifications/evidence/e14_development/artifact_manifest.json",
+      "sha256": "e6fbdd2ebb4c29849ac48db5136b867dfbd6d0e8757d14279c8de7a755c882bb"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/CUDA_smoke_state_restore.json",
+      "sha256": "3640f32854bba9140cc5f034d32102ded9c375965408c99ad1c8cac76da9d34f"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/development_benchmark.json",
+      "sha256": "ead35ec6ed353c4f5356c8d301da0a0f4d10fbff2bcc7969ae790574d8642dab"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/development_completion.json",
+      "sha256": "405d1469bcaec10185cee4775ba78907a29eace8e43d3f02a5a9f07ab5543f53"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/development_export_timing.json",
+      "sha256": "b8860d150f79a288870318f040cc867806bb9563027c25ba4b1d0289ea1bbdf2"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/download_receipt.json",
+      "sha256": "c431f7d9b81baada20b401ad2ffc4ecfefaca1488a9a6a7e2b85135449240105"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/environment.json",
+      "sha256": "848daa46ac4d41a495e22266138f2b005dcf3505ebf264a7ec70effbead90768"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/execution_review.json",
+      "sha256": "0b3d960e0259e3601719e3075d0a08ad83e696c28e78d46a01b3a9e57555abd7"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/fresh_CUDA_recovery.json",
+      "sha256": "74ab8cc81737c0374e02857347fa7f47ed5e1d640ac675943459e06b486cc1b4"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/full_validation_preflight.json",
+      "sha256": "c8d0a61a6f63a32c6de7e34df07b3318a8c8345bb80c40e41467255dbd05588e"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/hardware.json",
+      "sha256": "f8596bdb81dec9ac87212c5859180ba1c9b9ae06c5d247fbfd2ba53146e4033e"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/independent_CPU_recovery.json",
+      "sha256": "264e7b36b94bdebea62823c616e654c2077603d36d438b83fee5e5e5d12d5878"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/preparation_incidents.json",
+      "sha256": "972acec4a434ca524520d75663b78328626b0e65f6d534d5c63878e7cb7d0c5f"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/storage_preflight.json",
+      "sha256": "d6baf2300c905b96b2d006970791245495318a2ddc332ad85ddc611dd3931730"
+    },
+    {
+      "file": "docs/qualifications/evidence/e14_development/width_audit.json",
+      "sha256": "0089172ba43f519f0356e433598f6b53a53c6cc3c8cc019b6fc7fa5cc1679eb5"
+    }
+  ]
+}

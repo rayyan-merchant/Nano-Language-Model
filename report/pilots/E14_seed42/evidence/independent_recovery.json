@@ -1,0 +1,33 @@
+{
+  "status": "published_archive_verified_and_best_final_CPU_inference_passed",
+  "run_id": "E14_seed42_91b80cdf4163420f8767b58010eb4e9a",
+  "archive_sha256": "e41393c4a97c2ec565558df4ca0997d74275cf62e69c57b466c4794855b26fd7",
+  "archive_bytes": 623713697,
+  "verified_file_count": 62,
+  "optimizer_updates": 5000,
+  "validation_count": 20,
+  "seconds": 30.67086989991367,
+  "samples": [
+    {
+      "policy": "best",
+      "checkpoint": "runs/E14_seed42_91b80cdf4163420f8767b58010eb4e9a/checkpoints/step_004750.pt",
+      "sha256": "61d53c46b5b8f30bf58fc0ade1625460b03eada4c488dc27b6e02b71796ab300",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nI will not the grace of the courts of the world,\nAnd the season "
+    },
+    {
+      "policy": "final",
+      "checkpoint": "runs/E14_seed42_91b80cdf4163420f8767b58010eb4e9a/checkpoints/step_005000.pt",
+      "sha256": "f16a09408c934b2e87690675765562238339900bb76cd074cbd74cbec812b339",
+      "prompt": "ROMEO:\n",
+      "greedy": true,
+      "seed": 42,
+      "max_new_tokens": 64,
+      "text": "ROMEO:\nThe prince of the senators of the seas of the sea\nThat I shall b"
+    }
+  ],
+  "training_resume": "CPU inference only; no CUDA RNG restore or additional updates attempted"
+}
