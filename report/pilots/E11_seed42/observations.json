@@ -1,0 +1,10 @@
+{
+  "training_updates_per_second": 2.6756651243771663,
+  "targets_per_training_second": 10959.524349448873,
+  "checkpoint_seconds": 2.6071815250001578,
+  "export_seconds": 6.863361045000147,
+  "journal_seconds": 17.160218080993445,
+  "generation_seconds": 182.44072139799982,
+  "archive_seconds": 21.605344756999784,
+  "pipeline_seconds": 2523.689202022
+}

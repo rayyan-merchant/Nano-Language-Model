@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "experiment": "E11",
+  "device": "cuda",
+  "parameters": 1804800,
+  "model": {
+    "vocab_size": 65,
+    "d_model": 192,
+    "n_heads": 6,
+    "n_layers": 4,
+    "context_length": 64,
+    "mlp_expansion": 4,
+    "activation": "gelu",
+    "position": "sinusoidal",
+    "dropout": 0.1
+  },
+  "seed42_initial_trainable_weights_equal_E01": true,
+  "evaluation_reference": {
+    "loss": 4.506651076403531,
+    "perplexity": 90.61783757565142,
+    "bpb": 6.501723158944284,
+    "nll_sum": 198.29264736175537,
+    "scored_tokens": 44,
+    "scored_bytes": 44,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 300,
+    "mode": "sliding",
+    "context_length": 64
+  },
+  "checks": [
+    "sole_context_override",
+    "equal_initial_trainable_weights",
+    "sinusoidal_prefix64",
+    "shifted_targets64",
+    "finite_forward_CE",
+    "causal_masks64",
+    "manual_sqrt32_attention",
+    "future_invariance",
+    "reject_overlength",
+    "all_parameter_gradients",
+    "dropout_train_eval",
+    "generation_crop64",
+    "independent_sliding_reference64",
+    "conditional_byte_BPB"
+  ],
+  "limitations": "Synthetic numerical fixture is development evidence, not research data; full real-data validation is a separate gate."
+}

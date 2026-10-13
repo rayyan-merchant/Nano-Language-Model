@@ -1,0 +1,20 @@
+{
+  "status": "all_E11_delivery_and_fresh_CUDA_recovery_checks_passed",
+  "optimizer_updates": 5000,
+  "validation_count": 20,
+  "contexts_all64": true,
+  "accumulation_all16": true,
+  "parameters": 1804800,
+  "predicted_targets_and_bytes": 20480000,
+  "generation_rows": 100,
+  "PNG_figures": 15,
+  "PDF_figures": 15,
+  "unaltered_generation_bytes": true,
+  "all_report_links_exist": true,
+  "scientific_package_unchanged": true,
+  "independent_archive_all60files_CRC_hashes_CPU_inference": true,
+  "independent_snapshot_manifest_count": 21,
+  "fresh_CUDA_acceptance": "PASSED_exact_all_state_fields_5000_to_5000_zero_additional_updates",
+  "scope": "No E12/additional seed/extension; checkpoint binaries/full data/logs outside Git",
+  "recovered_CPU_CUDA_best_final_generations_match": true
+}

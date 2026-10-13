@@ -41,3 +41,8 @@ report/pilots/E10_seed42/evidence/* -text whitespace=cr-at-eol
 report/pilots/E10_seed42/generation.* -text whitespace=-blank-at-eol,cr-at-eol
 report/pilots/E10_seed42/validation.csv -text whitespace=cr-at-eol
 report/pilots/E10_seed42/E10_seed42_analysis.md whitespace=-blank-at-eol
+
+report/pilots/E11_seed42/evidence/* -text whitespace=cr-at-eol
+report/pilots/E11_seed42/generation.* -text whitespace=-blank-at-eol,cr-at-eol
+report/pilots/E11_seed42/validation.csv -text whitespace=cr-at-eol
+report/pilots/E11_seed42/E11_seed42_analysis.md whitespace=-blank-at-eol

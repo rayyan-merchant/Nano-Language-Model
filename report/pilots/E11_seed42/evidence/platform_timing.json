@@ -1,0 +1,6 @@
+{
+  "pipeline_wall_seconds": 2523.689202022,
+  "start_log_seconds": 8.474469785,
+  "end_log_seconds": 2532.163671807,
+  "scope": "Measured log interval from source-clone execution to archive-complete event; excludes queue/publication/network retrieval/fresh recovery; duplicate event second timestamp retained"
+}
