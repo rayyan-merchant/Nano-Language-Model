@@ -41,7 +41,7 @@ command([str(PY),'-m','pip','check'])
         bootstrap+="command([str(PY),str(ROOT/'scripts/pilot/e12_kaggle.py'),'preflight','--root',str(ROOT),'--output',str(OUT/'preflight')],ROOT)\n"
         bootstrap+="command([str(PY),str(ROOT/'scripts/pilot/e12_export_benchmark.py'),'--output',str(OUT)],ROOT)\n"
     elif phase=='research':
-        bootstrap+='''archives=list(Path('/kaggle/input').rglob('E12_smoke_bundle.zip'))
+        bootstrap+='''archives=list(Path('/kaggle/input').rglob('E12_smoke_bundle.zip'))+list(Path('/kaggle/input').rglob('E12_smoke_bundle.bin'))
 assert len(archives)==1
 archive=archives[0];manifest=archive.parent/'E12_smoke_manifest.json'
 command([str(PY),str(ROOT/'scripts/pilot/e12_kaggle.py'),'recover-smoke','--root',str(ROOT),'--output',str(OUT/'persistent_recovery'),'--archive',str(archive),'--manifest',str(manifest)],ROOT)

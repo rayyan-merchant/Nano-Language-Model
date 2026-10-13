@@ -76,3 +76,17 @@ Research notebook generation now exposes scheduled progress on stdout while the
 canonical engine/checkpoint/export timing calls remain unchanged. All four E12
 correctness/budget/notebook-scope/resume-lineage tests pass locally; actual initial
 qualified Kaggle full suite67passed. No additional research configuration launched.
+
+## Saved-output mount delay and compact input bridge
+
+The first fresh research draft remained in Addingdata before executing its
+recovery cell. No research or recovery success is claimed for that draft.
+The saved qualification output remains intact. A compact private dataset mirror
+was created atsyedarijaali/e12-seed42-verified-smoke-recovery-20261013 from the
+independently downloaded exact40363360-byte smoke ZIP, renamed.bin without
+changing bytes to avoid automatic ZIP expansion, plus the independently captured
+manifest values. Private dataset UI publication succeeded. Actual filepicker/
+upload bridging took600seconds before returning; no optimizer work occurred.
+Fresh recovery must independently verify every manifest/file hash again and
+perform compatibleCUDAstate/continuation checks on this compact input.
+Both.zip and.bin transports are supported; exactlyone must be present.
