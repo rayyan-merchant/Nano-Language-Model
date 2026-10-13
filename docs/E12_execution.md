@@ -1,113 +1,69 @@
-# E12 seed42 authorized execution preparation
+# E12 seed42 execution and delivery
 
-The user authorized only E12 seed42: context256, exactly5000 authoritative
-optimizer updates, full sliding validation every250 and checkpoint every500
-plus all validation states. Main synchronized at2d698a6 (newer than the supplied
-317ba67). The scientific hash remains
-cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6.
+E12 completed its sole authorized scientific run on 2026-10-13. Context 256 is the
+only model override; 1,804,800 parameters, microbatch four, accumulation four,
+float32 CUDA and 4,096 targets/update. Exactly 5,000 authoritative and known
+physical research updates, twenty full validations, twenty checkpoint states and
+twenty-one immutable snapshots are preserved. No research interruption or replay
+occurred. No additional seed, configuration, combined run or extension was trained.
 
-Dedicated research/e12-context256-seed42-kaggle-20261013 branch and isolated
-checkout. Shared scientific code, generation protocol, E11 orchestration,
-configurations and prior reports are unchanged. No primary-researcher chat was
-available on this host; this separate branch and reviewable PR are the repository
-coordination boundary. Never merge without approval.
+Reviewed main was synchronized at 2d698a6. Scientific code remains unchanged:
+`cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6`.
+Clean trained source: `e1f0c9861fcdd38d07cd24e746900d53a314b740`.
+The separate E12 branch isolates orchestration/reporting from the primary
+researcher's E11 work. No primary chat was available on this host; the reviewable
+PR is the coordination boundary. Do not merge without approval.
 
-E12 derives accumulation4:256*4*4=4096 targets/update and16 windows/update.
-Parameters1804800. Development numerical audit tests256-position masks,
-sinusoidal positions, shifted targets, six heads/scaling32, causal invariance,
-all finite gradients, dropout, original MLP and256-token generation/evaluation.
-CPU suite65passed/1skipped before notebook-builder test; CUDA suite remains a gate.
+Use the [complete report](../report/pilots/E12_seed42/E12_seed42_analysis.md),
+[interpretation](../report/pilots/E12_seed42/interpretation.md) and its evidence.
+Best/final BPB is 2.25627886 at 5,000, worse than matched E01 at all twenty points.
+Training took 475.030 seconds, validation 927.393 seconds, peak allocation
+277.908 MiB. The report records all metrics, comparisons, generation and limits.
 
-On2026-10-13 syedarijaali UI showed27GPU hours remaining and12-hour draft session
-limit. Resource-only cell allocated two TeslaT4s and20940603392 free working bytes.
-Training uses CUDA0 only and the isolated Python3.11.14/torch2.5.1+cu124/freeze.
-The nvidia-smi driver CUDA13 banner does not identify the research torch runtime.
+## Persistent qualification and final recovery
 
-Before research, e12_kaggle preflight runs real E12 smoke and a10-update development
-benchmark with full55514-byte sliding validation, measures memory/throughput,
-snapshot and checkpoint sizes, and checks conservative session/storage budgets.
-It saves an immutable smoke snapshot and all hashes in E12_smoke_bundle.zip.
-That saved-output archive must be independently retrieved before a fresh notebook
-mounts it read-only. recover-smoke restores complete CUDA state and compares
-continued smoke weights/optimizer/scheduler/scaler/RNG exactly to the reference.
-Only after those gates may the notebook call the E12-only research function.
-No development measurements are research results.
+Qualification version 358073577 passed all 67 CUDA tests in isolated Python
+3.11.14/PyTorch 2.5.1+cu124/CUDA 12.4 on Tesla T4. It measured real E12 resource
+and IO costs and published a real immutable smoke archive. Independent download,
+CRC, safe paths and all file hashes passed. The initial notebook-output mount
+stalled; a byte-identical compact private input was published. Unused stalled
+E12 GPU draft was stopped on the same account. Fresh full-state roundtrip and
+step-2→4 continuation were exact before substantive training. Receipt quick
+version 358083761 preserved this gate. All development calls are separately labeled.
 
-Research reseeds from fresh initialization. It stops at5000, expects20validation
-checkpoints/21snapshots and generates the unchanged100-record best/final grid.
-The complete archive preserves every immutable snapshot's metadata and references
-exact checkpoint bytes without redundant weight copies; independent verification
-reconstructs and verifies each snapshot. Transfer parts are at most64MiB.
-Final saved-output retrieval and fresh zero-update CUDA recovery are mandatory.
-No publication or research completion is claimed in this preparation record.
+[Research saved version 358085129](https://www.kaggle.com/code/syedarijaali/e12-seed42-context-256-verified-research?scriptVersionId=358085129)
+finished successfully. Complete archive: 407,902,560 bytes; SHA256
+`d5f5c534cf3a8f939bbc52657fbb086b8b39ef28b42c52822bcc88153aea94a1`.
+Seven published parts are at most 64 MiB. Independent complete-archive retrieval
+passed all 171 hashes, ZIP CRC, paths, checkpoint counters/history, twenty full
+validations, twenty-one reconstructed snapshots and CPU best/final inference.
+Local slices match the independently retrieved published part index; separate
+network downloads of every part are not claimed.
 
-## Actual qualification and independent download
+[Fresh CUDA recovery version 358138796](https://www.kaggle.com/code/syedarijaali/e12-seed42-final-cuda-recovery?scriptVersionId=358138796)
+mounted published output in a new T4 job and verified full model, optimizer,
+scheduler, scaler, RNG, sampling and history equality at 5000→5000, with zero
+additional updates. Compatible software/freeze and source matched. Best/final
+inference matched CPU recovery. Its saved receipt was independently downloaded
+and agreed with published stdout. Both saved batch jobs finished; unused drafts
+remain off. Working-directory files alone were not accepted as persistence.
 
-Qualified source54f077905be03cded3ed4542b7b4ba1867c8c695 matched the exact
-46-package freeze and passed actual CUDA context tests and the complete suite.
-Ten development updates:0.957251466 trainingseconds,42.762532966 fullvalidation
-seconds,214076928 peakallocatedbytes, accumulation4. Measured export22778042bytes
-in1.746138913seconds and ZIP20198050bytes in0.912430535seconds. These are smoke/
-benchmark measurements and do not establish final research performance.
-Conservative local artifactbudget3350498024bytes; estimated5k pipeline3133.876s
-with1800s postprocessingmargin versus43200s actual draftsessionlimit.
+## Reproduction and authorization boundaries
 
-Private saved qualificationversion358073577 completed successfully. Smoke archive
-40363360bytes,SHA25647f045f5eb3ef0388102830b02fd62ae5b07372ff532cbcdfae1d5fbf69e6568
-was downloaded through its observed signed artifact URL. IndependentCRC/path/
-17filehash checks and snapshot/checkpointcontext256/parameters1804800/accumulation4
-passed. Browser download-event handling timed out; the published signed file URL
-was retrieved directly without credentials or any change to storage permissions.
-The qualificationT4session was stopped after successful savedoutputpublication.
-A new notebook mounts that immutable output for freshCUDAstate/continuation gates;
-research remains unlaunched until those pass.
+`build_e12_notebook.py` supports only preflight, research and recover-final.
+Research first verifies durable smoke continuation, then starts only E12 seed42
+and stops at 5,000. Recovery selects the recorded complete E12 lineage and runs
+no training. Historical executed captures must not be blindly rerun; see
+[notebook provenance](../notebooks/E12_notebook_provenance.md).
 
-E12-specific interruption recovery is in scripts/pilot/e12_resume.py. It verifies
-one incomplete snapshot lineage, restores in a fresh directory, checks E12 model/
-parameters/accumulation and original scientific hash, preserves original attempted
-journals separately, and resumes to total5000. No fresh initialization is used on
-resume. A later orchestration Git commit may differ while scientific bytes remain
-identical; the original checkpoint source remains explicitly recorded. Existing
-verify_e07_replay.py performs generic recorded-metric comparison without executing
-updates and can inspect any genuine E12 replay if required. Do not imply exactly
-5000 physical updates if saved or unknown superseded attempts exist.
+`verify_e12_archive.py` validates published part/file hashes, safe paths, checkpoint
+counters/history, all snapshots, complete generation grid and CPU inference.
+`write_e12_report.py` derives metrics and figures from verified checkpoint history,
+checks reviewed E01/E11 environment/dataset/protocol equality and replays private
+sampling without optimizer updates. Final reporting accepts an independently
+retrieved zero-update CUDA receipt. The report preserves genuine negative outcomes.
 
-Research notebook generation now exposes scheduled progress on stdout while the
-canonical engine/checkpoint/export timing calls remain unchanged. All four E12
-correctness/budget/notebook-scope/resume-lineage tests pass locally; actual initial
-qualified Kaggle full suite67passed. No additional research configuration launched.
-
-## Saved-output mount delay and compact input bridge
-
-The first fresh research draft remained in Addingdata before executing its
-recovery cell. No research or recovery success is claimed for that draft.
-The saved qualification output remains intact. A compact private dataset mirror
-was created atsyedarijaali/e12-seed42-verified-smoke-recovery-20261013 from the
-independently downloaded exact40363360-byte smoke ZIP, renamed.bin without
-changing bytes to avoid automatic ZIP expansion, plus the independently captured
-manifest values. Private dataset UI publication succeeded. Actual filepicker/
-upload bridging took600seconds before returning; no optimizer work occurred.
-Fresh recovery must independently verify every manifest/file hash again and
-perform compatibleCUDAstate/continuation checks on this compact input.
-Both.zip and.bin transports are supported; exactlyone must be present.
-
-## Research launch
-
-The first compact-input attempt hit the legitimate account's single interactive
-GPU session cap; the stalled original E12 draft was cancelled through active
-session management, freeing that same account's slot. No account switching or
-quota circumvention occurred. The compact input then allocatedT4 and isolated
-Python3.11.14/torch2.5.1+cu124/CUDA12.4/exact46-package freeze. Full CUDA state
-roundtrip and smoke2→4 continuation matched model/optimizer/scheduler/scaler/RNG
-exactly. The state-roundtrip itself performszero optimizer calls; continuation
-performs2development calls, separately from research. The successful receipt was
-preserved as private quick version358083761, and that GPU draft was stopped.
-
-The sole research run launched in saved batchversion358085129 at23:02PKT on
-2026-10-13. Clean trained sourcee1f0c9861fcdd38d07cd24e746900d53a314b740;
-notebook-driver delivery commit18bbaab. Fresh research initialization follows
-another development-only recovery check. No model/sampling/optimizer/evaluation
-settings were changed in response to measurements. At1000, recorded fullvalidation
-loss2.1301234439388494/BPB3.073118529051898; accumulation4/scored55514/context256
-are confirmed in actualprogress. Early performance is behind matched E01; negative
-outcomes remain preserved. Completion/finalpublication/recovery are still pending.
+`e12_resume.py` is available only for an incomplete hash-verified single E12
+lineage and retains original attempted journals separately. It was not used in this
+run. All large checkpoints, raw datasets, archives and expiring URLs stay outside
+GitHub. PR #18 is for review; approval to merge or conduct further research is separate.

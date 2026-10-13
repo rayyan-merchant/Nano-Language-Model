@@ -1,0 +1,11 @@
+{
+  "status": "private_sampling_RNG_and_exact_target_union_replayed",
+  "context_length": 256,
+  "micro_batch_size": 4,
+  "accumulation": 4,
+  "sampled_windows_per_update": 16,
+  "total_sampled_windows": 80000,
+  "target_positions": 20480000,
+  "unique_target_bytes": 1003849,
+  "scope": "ASCII canonical character dataset; exact RNG/window union replay, no optimizer updates"
+}

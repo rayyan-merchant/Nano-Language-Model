@@ -49,7 +49,28 @@ subprocess.run([str(PY),str(ROOT/'scripts/pilot/e12_kaggle.py'),'research','--ro
 command([str(PY),str(ROOT/'scripts/pilot/e12_kaggle.py'),'finish','--root',str(ROOT),'--output',str(OUT/'research'),'--store',str(OUT/'durable_staging')],ROOT)
 '''
     else:
-        bootstrap+="command([str(PY),str(ROOT/'scripts/pilot/recover.py'),'--root',str(ROOT),'--output',str(OUT/'fresh_final_recovery')],ROOT)\n"
+        bootstrap+='''from shutil import copytree, copyfile
+original=OUT/'verified_final_original'; (original/'snapshots').mkdir(parents=True)
+candidates=[]
+for path in Path('/kaggle/input').rglob('export_manifest.json'):
+    if 'research_snapshots' in path.parts:
+        m=json.loads(path.read_text())
+        if m['step']==5000: candidates.append((len(m['files']),path))
+assert candidates, 'No durable step5000 snapshot mounted'
+selected=max(candidates,key=lambda item:item[0])[1].parent
+copytree(selected,original/'snapshots'/selected.name)
+completions=[]
+for path in Path('/kaggle/input').rglob('completion.json'):
+    if path.parent.name=='research':
+        c=json.loads(path.read_text())
+        if c['run_id']=='E12_seed42_4fef43b3dd454ee0bda3a63d52280c8b': completions.append(path)
+assert len(completions)==1
+copyfile(completions[0],original/'completion.json')
+env['PYTHONPATH']=str(ROOT/'scripts/pilot')
+code="from pathlib import Path; from recover import recover; recover(Path('/tmp/e12_source'),Path('/kaggle/working/fresh_final_recovery'),Path('/kaggle/working/verified_final_original'))"
+command([str(PY),'-c',code],ROOT)
+print((OUT/'fresh_final_recovery/recovery.json').read_text(),flush=True)
+'''
     nb={'nbformat':4,'nbformat_minor':5,'metadata':{'kernelspec':{'name':'python3','display_name':'Python 3','language':'python'}},'cells':[{'id':'scope','cell_type':'markdown','metadata':{},'source':[f'# E12 seed42 {phase}\nOnly context256, accumulation4. Preflight/restore are development evidence. Research stops at5000. Source {commit}.']},{'id':'execute','cell_type':'code','metadata':{},'source':bootstrap.splitlines(True),'execution_count':None,'outputs':[]}]}
     Path(output).write_text(json.dumps(nb,indent=2),encoding='utf-8')
     return nb

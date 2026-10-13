@@ -1,0 +1,25 @@
+{
+  "entrypoint": "nano_lm.train.train",
+  "settings": {
+    "seed": 42,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "tokens_per_update": 4096,
+    "micro_batch_size": 4,
+    "gradient_clip": 1.0,
+    "precision": "float32",
+    "device": "cuda",
+    "eval_every": 250,
+    "checkpoint_every": 500,
+    "conditioning_bytes": 256,
+    "eval_max_bytes": 0,
+    "eval_mode": "sliding",
+    "eval_batch_size": 32,
+    "run_kind": "research"
+  },
+  "steps": 5000,
+  "source_commit": "e1f0c9861fcdd38d07cd24e746900d53a314b740",
+  "resume_checkpoint": null,
+  "timing_hooks": "Forward unchanged calls; no numerical or RNG changes"
+}
