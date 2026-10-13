@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "file_id": "1_OgoGoz7rHx54BJP_uQPBFy7Z3q-nSmZ",
+  "url": "https://drive.google.com/file/d/1_OgoGoz7rHx54BJP_uQPBFy7Z3q-nSmZ/view",
+  "size": 2028936,
+  "sha256": "ff4261847c20a7c6b22cd7f4b73f782c73aedfec491b0d50507e9ad747b072e2",
+  "entry_count": 78,
+  "checks": [
+    "independent Drive download",
+    "full archive SHA256",
+    "ZIP CRC",
+    "exact inventory",
+    "every per-file SHA256"
+  ],
+  "core_scientific_archive_sha256": "ba92cd87bd6a3aafa6164cdaef037a47d0fae9c208e0648c3775b19c9e6aa06d"
+}
