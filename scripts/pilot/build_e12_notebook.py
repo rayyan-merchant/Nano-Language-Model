@@ -39,6 +39,7 @@ command([str(PY),'-m','pip','check'])
 '''
     if phase=='preflight':
         bootstrap+="command([str(PY),str(ROOT/'scripts/pilot/e12_kaggle.py'),'preflight','--root',str(ROOT),'--output',str(OUT/'preflight')],ROOT)\n"
+        bootstrap+="command([str(PY),str(ROOT/'scripts/pilot/e12_export_benchmark.py'),'--output',str(OUT)],ROOT)\n"
     elif phase=='research':
         bootstrap+='''archives=list(Path('/kaggle/input').rglob('E12_smoke_bundle.zip'))
 assert len(archives)==1

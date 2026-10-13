@@ -40,3 +40,24 @@ exact checkpoint bytes without redundant weight copies; independent verification
 reconstructs and verifies each snapshot. Transfer parts are at most64MiB.
 Final saved-output retrieval and fresh zero-update CUDA recovery are mandatory.
 No publication or research completion is claimed in this preparation record.
+
+## Actual qualification and independent download
+
+Qualified source54f077905be03cded3ed4542b7b4ba1867c8c695 matched the exact
+46-package freeze and passed actual CUDA context tests and the complete suite.
+Ten development updates:0.957251466 trainingseconds,42.762532966 fullvalidation
+seconds,214076928 peakallocatedbytes, accumulation4. Measured export22778042bytes
+in1.746138913seconds and ZIP20198050bytes in0.912430535seconds. These are smoke/
+benchmark measurements and do not establish final research performance.
+Conservative local artifactbudget3350498024bytes; estimated5k pipeline3133.876s
+with1800s postprocessingmargin versus43200s actual draftsessionlimit.
+
+Private saved qualificationversion358073577 completed successfully. Smoke archive
+40363360bytes,SHA25647f045f5eb3ef0388102830b02fd62ae5b07372ff532cbcdfae1d5fbf69e6568
+was downloaded through its observed signed artifact URL. IndependentCRC/path/
+17filehash checks and snapshot/checkpointcontext256/parameters1804800/accumulation4
+passed. Browser download-event handling timed out; the published signed file URL
+was retrieved directly without credentials or any change to storage permissions.
+The qualificationT4session was stopped after successful savedoutputpublication.
+A new notebook mounts that immutable output for freshCUDAstate/continuation gates;
+research remains unlaunched until those pass.

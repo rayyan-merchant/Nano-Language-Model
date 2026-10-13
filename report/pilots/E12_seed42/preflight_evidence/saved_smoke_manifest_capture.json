@@ -1,0 +1,32 @@
+{
+  "status": "independently_retrieved_saved_Kaggle_smoke_archive_SHA256_CRC_path_safety_passed",
+  "source_version": 358073577,
+  "archive_sha256": "47f045f5eb3ef0388102830b02fd62ae5b07372ff532cbcdfae1d5fbf69e6568",
+  "archive_bytes": 40363360,
+  "research_updates": 0,
+  "all17_saved_manifest_file_hashes_verified": true,
+  "snapshot_verified": true,
+  "checkpoint_context_length": 256,
+  "accumulation": 4,
+  "parameters": 1804800,
+  "files": {
+    "snapshot/tokenizer.json": "0dd20d5438ba408377aace335e51941fa54f3cb1d48fd1bb017c7235e1d511b8",
+    "snapshot/summary_000002.json": "c4a7215857a511d4582f195687a187b200d110f6eee2e4111c139cc9bf664f66",
+    "snapshot/metadata.json": "e683f14fcce5393c5e29a58f858502d6eac17e672be0c1099dd9a6936224c59c",
+    "snapshot/events.jsonl": "deb862af85d16b329ffa8505e97fcecc15b9495256ec37ab26c07753e160182e",
+    "snapshot/export_manifest.json": "64567a9b2d7526b454e29a089e5fb8e85eead9f387df68836ee0ca4e69b0a17b",
+    "snapshot/dataset_manifest.json": "46e2267d23b34d622b40f68b70dfecfd0ff90c4ff6dd25602c86804312aa0011",
+    "snapshot/checkpoints/step_000002.pt": "79f951b2e55884399c425ec9f3530be987463bc76c46f0d5ed22239e551500d1",
+    "local_smoke_recovery.json": "9a3beab5cfaf7a2a2e2a93ae29114595690448ef5e1f6449f420825e1de93252",
+    "environment.json": "f6d6454d125fadaa8de1aa4b1652cbc83ac69c7337f45c95b76dce1c45cd7955",
+    "hardware.json": "66b31d35103e625e7590369cb0651a24bc7e43e953b3ccbc74fba22b86223680",
+    "dataset_verification.json": "9da8e83593aad95e5890f6d81f9e522e04e50e8aab3d448bfba1bbc04e070bc8",
+    "resource_benchmark.json": "5647b07ae2e23ff7c9abbcf4ccd4a9dd4a74811f57abfc8d15e81acdf9cc1c0a",
+    "context_audit.json": "7df931744956ecb498edcebadd7ed08130f6dda10474c1f858abe62da15e65aa",
+    "preflight.json": "9e3a7ad4884a088b85e82a6aad46e54859adad4851aff08a8e07d29217035135",
+    "attention_test.json": "83eefed9b3a1d7d2632fe16c824d9759cdac39ebb6152786f3e9cb5dd5172653",
+    "tests.json": "37b5a9508fbedce7d77859abf0f7efad8e02ef96f39f4c2d738acbd08b2343b3",
+    "expected_smoke_step4.pt": "cb24bdea6fc8efd425531a065ab81749a51c4cdd8b25f0c1f7bde538a0750456"
+  },
+  "manifest_capture": "Fields from saved version manifest UI; formatting regenerated locally"
+}
