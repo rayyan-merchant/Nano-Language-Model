@@ -1,0 +1,280 @@
+{
+  "operations": [
+    {
+      "operation": "checkpoint",
+      "seconds": 0.18865878200000452,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_000250.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6223241769999959,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6014683459999901,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.18390385899999728,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_000500.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.607591884000044,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.602920420999908,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.19455002500001228,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_000750.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6405059749999964,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6168424439999853,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.19999709100000018,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_001000.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6577749419999463,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.630644339000014,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.2012420870000824,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_001250.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.7909808649999377,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6293493199999602,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.20741101700014042,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_001500.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.647340376000102,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6412210219998542,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.20588033599983646,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_001750.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.652512803000036,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6511433849998411,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.2070411189999959,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_002000.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6587010309999641,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6622455220001484,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.21087817399984488,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_002250.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6927994220000073,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.65043007700001,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.19454343400002472,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_002500.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6739039469998716,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6666249079999034,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.20484146800004055,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_002750.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.6901935099999719,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.7159836790001464,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.21320915699993748,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_003000.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.684850865000044,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 0.689695588999939,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.19635486600009244,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_003250.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.2514446319999024,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.2381429909999042,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.19725372300035815,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_003500.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.2244474750000336,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.2068772100001297,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.20316347200014206,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_003750.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.236081294000087,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.2320089410000037,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.2163204029998269,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_004000.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.1927663279998342,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.209991331999845,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.21863745900009235,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_004250.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.2345019320000574,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.2245654309999736,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "checkpoint",
+      "seconds": 0.2106096349998552,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a/checkpoints/step_004500.pt"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.1303119210001569,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.1735157560001426,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    },
+    {
+      "operation": "export",
+      "seconds": 1.156432037000286,
+      "reference": "/kaggle/working/balanced/runs/B01_seed42_c1b6b391cd9b476994325a85c264493a"
+    }
+  ],
+  "scope": "Original checkpoint/snapshot calls measured without changed arguments or optimization"
+}

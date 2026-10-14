@@ -30,20 +30,22 @@ def reference_rotation(x, wrong=False):
     return y
 
 
-def audit(root, data, device='cpu'):
+def audit(root, data, device='cpu', *, configuration_fn=configuration,
+          parameter_fn=parameter_breakdown, parameters=PARAMETERS, provenance_fn=provenance):
     root, data = Path(root), Path(data)
     torch.set_num_threads(1); seed_all(42)
-    config = configuration(root); model = GPT(config).to(device)
+    config = configuration_fn(root); model = GPT(config).to(device)
+    width, layers, head = config.d_model, config.n_layers, config.d_model//config.n_heads
     seed_all(42); repeat = GPT(config).to(device)
     assert all(torch.equal(v,repeat.state_dict()[k]) for k,v in model.state_dict().items())
     del repeat
-    assert model.parameter_count() == parameter_breakdown()['total'] == PARAMETERS
+    assert model.parameter_count() == parameter_fn()['total'] == parameters
     assert model.head.weight.data_ptr() != model.token_embedding.weight.data_ptr()
     assert model.position_embedding is None and model.config.position == 'rope'
-    assert len(model.blocks) == 8
+    assert len(model.blocks) == layers
     pointers = [p.data_ptr() for b in model.blocks for p in b.parameters()]
     assert len(set(pointers)) == len(pointers)
-    assert model.token_embedding.weight.shape == model.head.weight.shape == (1024,240)
+    assert model.token_embedding.weight.shape == model.head.weight.shape == (1024,width)
     tok = from_artifact(json.loads((data/'bpe.json').read_text(encoding='utf-8')))
     assert tok.vocab_size == 1024 and tok.checksum == BPE
     for text in ['ROMEO:\n', 'To be, or not to be', 'é € Shakespeare\n']:
@@ -67,11 +69,11 @@ def audit(root, data, device='cpu'):
     for block in model.blocks:
         att=block.attention;first,activation,last=block.mlp
         assert att.heads==6 and att.rope and isinstance(activation,nn.GELU)
-        assert first.weight.shape==(960,240) and last.weight.shape==(240,960)
-        assert block.norm1.normalized_shape==block.norm2.normalized_shape==(240,)
+        assert first.weight.shape==(4*width,width) and last.weight.shape==(width,4*width)
+        assert block.norm1.normalized_shape==block.norm2.normalized_shape==(width,)
         assert block.dropout.p==att.dropout.p==model.dropout.p==0.1
         normalized=block.norm1(x)
-        q,k,v=[layer(normalized).reshape(2,128,6,40).transpose(1,2) for layer in (att.q,att.k,att.v)]
+        q,k,v=[layer(normalized).reshape(2,128,6,head).transpose(1,2) for layer in (att.q,att.k,att.v)]
         qr,kr=reference_rotation(q),reference_rotation(k)
         # Division versus the canonical float32 inverse-frequency multiplication
         # rounds high-position angles differently. Bound this reference error.
@@ -81,14 +83,15 @@ def audit(root, data, device='cpu'):
         mask=torch.ones(128,128,device=device,dtype=torch.bool).triu(1)
         def probabilities(qq,kk,scale):
             return (qq@kk.transpose(-2,-1)/scale).masked_fill(mask,float('-inf')).softmax(-1)
-        p=probabilities(qr,kr,math.sqrt(40))
-        attended=F.linear((p@v).transpose(1,2).reshape(2,128,240),att.output.weight,att.output.bias)
+        p=probabilities(qr,kr,math.sqrt(head))
+        attended=F.linear((p@v).transpose(1,2).reshape(2,128,width),att.output.weight,att.output.bias)
         observed,weights=att(normalized)
         torch.testing.assert_close(observed,attended,rtol=2e-5,atol=2e-5)
         torch.testing.assert_close(weights,p,rtol=2e-5,atol=2e-5)
-        assert not torch.allclose(p, probabilities(qr,kr,math.sqrt(32)))
-        assert not torch.allclose(p, probabilities(reference_rotation(q,True),kr,math.sqrt(40)))
-        incorrect_reference_detected.append(['sqrt32_scale','incorrect_rotary_sign'])
+        wrong_head=40 if head==32 else 32
+        assert not torch.allclose(p, probabilities(qr,kr,math.sqrt(wrong_head)))
+        assert not torch.allclose(p, probabilities(reference_rotation(q,True),kr,math.sqrt(head)))
+        incorrect_reference_detected.append([f'sqrt{wrong_head}_scale','incorrect_rotary_sign'])
         y=x+attended;normalized_mlp=block.norm2(y)
         reference=y+F.linear(F.gelu(F.linear(normalized_mlp,first.weight,first.bias)),last.weight,last.bias)
         actual,_=block(x);torch.testing.assert_close(actual,reference,rtol=1e-5,atol=4e-6);x=actual
@@ -119,8 +122,8 @@ def audit(root, data, device='cpu'):
     measured=evaluate(model,tok,snippet,batch_size=7)
     assert math.isclose(nll,measured['nll_sum'],rel_tol=1e-6)
     assert measured['scored_bytes']==sum(lens)==64
-    return {'status':'passed','device':device,'model':config.to_dict(),'parameters':PARAMETERS,
-            'parameter_breakdown':parameter_breakdown(),'provenance':provenance(root),
+    return {'status':'passed','device':device,'model':config.to_dict(),'parameters':parameters,
+            'parameter_breakdown':parameter_fn(),'provenance':provenance_fn(root),
             'all_eight_block_gradient_norms':gradients,'wrong_reference_detection':incorrect_reference_detected,
             'BPE_checksum':tok.checksum,'BPE_scored_tokens':len(seq)-start,'scored_validation_bytes':55514,
             'incomplete_UTF8_single_token_ids':undecodable,'independent_sliding_reference':measured,

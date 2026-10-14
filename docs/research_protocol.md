@@ -110,3 +110,25 @@ again from test results. No additional architecture, seed or extension is
 authorized. Record the changed aggregate hash caused by F01.json separately
 from the byte-verified unchanged scientific implementation fingerprint.
 See report/final/F01_architecture_decision.md. F01 acceptance is currently pending.
+
+## Separately authorized B01 balanced model — 2026-10-14
+
+F01 acceptance is complete in its immutable report/receipts and merged PR19;
+the preceding pending phrase is a historical pre-execution record. The user now
+authorizes one fresh B01 seed42, BPE1024/RoPE/d192/sixblocks/sixheads/context128/
+MLP4x/GELU/preLN/dropout.1/untiedhead,3,062,784parameters. Preserve canonical
+AdamW/constant3e-4/wd.01/clip1/FP32/micro4/accumulation8/4,096targets.
+Maximum5,000updates; full sliding validation250; patience6, minimum meaningful
+improvement.001BPB, eligibility2,000. First250 initializes reference; strict
+`bpb < reference - .001` resets, equality does not. Counter accrues before
+eligibility; absolute best is separately selected without tolerance. Keep all
+planned250-step resume checkpoints/snapshots and stop at first valid boundary.
+
+No B01 test likelihood evaluation or external dataset download/evaluation.
+Prior F01 test exposure is acknowledged but must not tune B01. Segmented execution
+must prove full optimizer/RNG/sampling/loss/validation equivalence; variable
+measurement telemetry is reported separately, and raw full-state roundtrip is
+exact. Qualification/published development/independent freshCUDA recovery must
+precede research. No other seed/model/hyperparameter search/research restart or
+extension. Original E01–E14/F01 configurations and evidence remain unchanged.
+See docs/B01_execution.md and report/balanced/B01_architecture_decision.md.
