@@ -1,0 +1,13 @@
+{
+  "experiment_id": "B01",
+  "baseline": "E01",
+  "factor": "separately_authorized_balanced_combined_architecture",
+  "model_overrides": {"n_layers": 6, "position": "rope"},
+  "tokenizer": "bpe",
+  "owner": "Rayyan",
+  "status": "AUTHORIZED_NOT_TRAINED",
+  "authorized_seed": 42,
+  "authorized_maximum_optimizer_updates": 5000,
+  "early_stopping": {"metric": "full_sliding_validation_BPB", "interval": 250, "minimum_updates": 2000, "patience": 6, "minimum_improvement": 0.001, "comparison": "bpb < patience_reference - minimum_improvement", "best_selection": "absolute_minimum_without_tolerance"},
+  "authorization": "User B01 request, 2026-10-14; one fresh trajectory; no test evaluation or extension"
+}

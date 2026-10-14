@@ -1,0 +1,77 @@
+# B01 authorization and frozen preparation — 2026-10-14
+
+Reviewed main d43cfbf7e3af6c982a8bcf1509a5f45b8e17ef4b includes merged F01 PR19.
+One fresh B01 seed42 trajectory is authorized, maximum5,000 updates, with the
+user-defined stopping rule. No test likelihood, other dataset download, other
+configuration/seed, tuning, repeated research initialization or extension.
+
+BPE1024/d192/layers6/heads6/head32/RoPE/context128/MLP768/GELU/preLN/dropout.1,
+untied LM head:3,062,784 parameters. Independent component count: embeddings
+196,608, six blocks2,669,184, finalLN384, head196,608. Train AdamW3e-4constant,
+wd.01/clip1/FP32/micro4/accumulation8/4,096 targets per update. Canonical raw/BPE
+hashes and contiguous partitions remain unchanged; no vocabulary refitting.
+
+## Frozen stopping semantics
+
+Initialize reference and counter0 at first full validation250. Later observations
+reset reference and counter only when `bpb < reference - 0.001` using unrounded
+Python double precision. Equality with that computed threshold does not reset;
+next representable values on either side are tested. Small cumulative improvements
+can cross the frozen reference threshold later. Absolute minimum BPB is tracked
+independently without tolerance; ties retain the first minimum. Counter increments
+before eligibility; no artificial reset at2,000. At eligible scheduled boundaries
+stop when counter>=6. At5,000, an eligible early-stop condition takes precedence
+if simultaneous, otherwise reason budget_exhausted. No observation/update follows
+the decision. Stop history and configuration hashes are preserved.
+
+## Planned segmentation and equivalence gate
+
+The existing canonical CLI supports target-total-step exact resume. B01 invokes
+it at250,500,... with the same run and last committed checkpoint. Each invocation
+uses the original optimizer, constant scheduler, scaler, RNG and sampling state.
+These are planned segments, not new models, failures or replay. The original
+engine exports at validation and after each segment summary:2*N snapshots for N
+observed validations, plus a final stopping-summary snapshot. Preserve all of them.
+
+Development compares two4-update B01 smoke trajectories, uninterrupted versus
+2+2 resumed, with the same settings and real Tiny Shakespeare. Model/optimizer/
+scheduler/scaler/allRNG and every nontelemetry nested training field—including
+loss, validation, gradient norms, source-byte union and private sampling state—
+must match exactly. Only measured train/eval times, throughput and peak-memory
+telemetry are excluded from trajectory equality: they cannot be identical wall
+clock measurements. Their raw inequality is reported, not concealed. Complete
+six-field checkpoint save/restore roundtrip requires exact raw equality, including
+all telemetry/history. CUDA gate uses uncapped full sliding validation; CPU smoke
+may explicitly cap512bytes and is labeled development only.
+
+## Preflight and execution gates
+
+1. Config/count/history parity and independent CPU mathematics; stopping tests.
+2. Commit all orchestration and rule before training; no changes to src algorithms.
+3. Qualified T4/Python3.11.14/torch2.5.1+cu124/CUDA12.4/NumPy1.26.4/freeze.
+4. Actual CUDA math, full suite, segmentation, benchmark/full validation and storage.
+5. Publish development snapshot/ZIP, independently retrieve/check CRC/all hashes/CPU.
+6. Fresh qualified CUDA exact state and segmented-continuation equivalence.
+7. Only then one B01 research trajectory with frozen rule; preserve every validation.
+8. Publish/retrieve all real stopping artifacts, CPU and fresh CUDA recovery,
+   exact100-slot generation reproduction, inference timing and reports/PR.
+
+Initial read-only quota:21.57GPUh remaining. This is not GPU allocation proof.
+No research run has launched. F01's severe late deterioration motivates B01 but
+does not isolate parameter count or clipping as its cause. Early stopping changes
+selection opportunities/budget and does not guarantee better text. Original F01
+test exposure is acknowledged; it is not used or reevaluated in B01. An external
+held-out evaluation may be proposed later with rules frozen before inspection;
+none is downloaded or evaluated here.
+
+## Actual CPU preparation evidence
+
+All six-block CPU math/gradient/causal/RoPE-relative checks passed at3,062,784
+parameters. Real-data development4-update uninterrupted versus2+2 segmented
+state matches all optimization/RNG/nontelemetry-history fields exactly; raw
+six-field zero-update snapshot roundtrip also passed. Headless Agg smoke plotting,
+generation and raw-byte diagnosis passed. Initial full suite90passed/onefailed/
+oneCUDA-onlyskip: the new tokenizer test relied on Windows cp1252 rather than
+explicit UTF8. Corrected all new text readers to UTF8; full suite91passed/
+oneCUDA-onlyskip in123.63s. No vocabulary, model or optimizer fix was needed.
+These are CPU development checks, not CUDA qualification or research results.

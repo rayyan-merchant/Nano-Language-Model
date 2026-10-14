@@ -560,3 +560,15 @@ Small reports, machine tables, actual figures, presentation evidence and receipt
 are in report/final; large archive/weights/journals on D: and saved Kaggle version1.
 Reviewable PR19 is not merged automatically. The user discontinued the former
 three-seed grid; no further research run, seed or extension was launched.
+
+## B01 separately approved preparation — 2026-10-14
+
+Reviewed main d43cfbf includes the now-merged F01 PR19. User authorizes one B01
+seed42 balanced BPE/RoPE/d192/sixblock model,3,062,784parameters, maximum5,000
+updates with frozen full-validation early stopping. Original src algorithms and
+all historical experiments/evidence remain unchanged. B01 rule/audits/segmented
+CLI orchestration, canonical tokenizer reuse (no refitting), variable-stop
+analysis and recovery checks are implemented. CPU numerical/continuation/raw
+roundtrip/headless checks pass; corrected CPU suite91passed1CUDA-onlyskip.
+Qualified GPU/published development/freshCUDA continuation remain pending;
+no B01 research run is launched. No test likelihood or external dataset is used.
