@@ -1,3 +1,5 @@
+> Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
+
 # E05 seed42 Colab execution and recovery
 
 This execution is scoped to the user's explicit E05 seed42 authorization for

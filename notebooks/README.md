@@ -1,38 +1,41 @@
-# Shared-code platform entry points
+# Notebook catalog
 
-kaggle_research.ipynb and colab_research.ipynb invoke the installed package only;
-no model/training copy exists in notebooks. They check the locked Python profile,
-prepare real data and run short CUDA verification. They never launch the main
-study. See docs/platforms.md for newer Colab profiles and docs/storage.md for
-persistent export/restore requirements. bootstrap.ipynb remains a synthetic
-CPU foundation demonstration, not a trained-model Colab demo.
+All 15 notebook files and their provenance bytes/paths are preserved. Five other files in this directory are navigation/provenance records; the directory's20 files are not20 executable notebooks. None was executed by cleanup. These are thin wrappers around the pinned shared package, not separate training implementations.
 
-## E05 seed42 notebooks
+## Current development entry points
 
-- [Executed E05 ReLU notebook](E05_seed42_ReLU_Colab_pilot.ipynb): exact snapshot
-  of the Colab notebook opened in Codex's browser, with all ten cells, execution
-  counts, genuine outputs, Drive report publication and final verification summary.
-  This is the historical completed-run record. Its last cell records5000updates,
-  20full validations,100generation labels and independent integrity/inference pass.
-  [Snapshot provenance and SHA256](E05_seed42_ReLU_Colab_pilot.provenance.json).
-- [Reproducible E05 launcher](colab_e05_seed42_pilot.ipynb): prepared source-only
-  version with outputs cleared, a fresh Drive quota placeholder and research
-  execution disabled by default. Use this for a separately authorized future run.
+| Notebook | Scope |
+|---|---|
+| [bootstrap.ipynb](bootstrap.ipynb) | Synthetic CPU foundation smoke; not trained-model evidence or the final submission demo |
+| [kaggle_research.ipynb](kaggle_research.ipynb) | Shared-package short CUDA verification; requires compatible isolated profile and actual storage qualification |
+| [colab_research.ipynb](colab_research.ipynb) | Shared-package short CUDA verification; not authorization for research training |
 
-[Original executed Colab notebook](https://colab.research.google.com/drive/1jXE5OshAxWDrT4i0F8bw7OuFM59HXUjz).
-The two files serve different purposes; the launcher does not contain the final
-publication/status cells or the executed output history.
+Native cloud Python/PyTorch may differ from the qualified profile. Read [platform guidance](../docs/platforms.md) before any separately approved execution. The final demo/submission notebook remains a later task.
 
-## E07 seed42 notebooks
+## Source-only historical launchers
 
-- [Exact attempted E07 notebook](E07_seed42_EightHead_Colab_pilot.ipynb): byte-for-byte
-  Drive snapshot with one provisioning cell. Colab refused T4 allocation due to
-  usage limits before code execution; it contains no training outputs.
-  [Provenance](E07_seed42_EightHead_Colab_pilot.provenance.json).
-- [Clean E07 launcher](colab_e07_seed42_pilot.ipynb): reproducible pinned setup,
-  preflight/research/recovery phases; fresh quota required and research disabled
-  by default. The scoped seed42/5000 request is authorized subject to all gates.
+| Notebook | Preserved purpose |
+|---|---|
+| [colab_e02_seed42_pilot.ipynb](colab_e02_seed42_pilot.ipynb) | Original E02 BPE Colab provisioning/research procedure |
+| [colab_e05_seed42_pilot.ipynb](colab_e05_seed42_pilot.ipynb) | Clean E05 launcher; research disabled by default |
+| [colab_e07_seed42_pilot.ipynb](colab_e07_seed42_pilot.ipynb) | Clean E07 Colab launcher; distinct from the failed allocation snapshot |
+| [kaggle_e07_seed42_qualification.ipynb](kaggle_e07_seed42_qualification.ipynb) | Historical E07 account/profile/persistence qualification |
+| [kaggle_e07_seed42_research.ipynb](kaggle_e07_seed42_research.ipynb) | Historical E07 Kaggle research launcher |
+| [kaggle_e12_seed42_research.ipynb](kaggle_e12_seed42_research.ipynb) | Historical E12 context256 launcher |
 
-[Original attempted E07 Colab notebook](https://colab.research.google.com/drive/1JqPgdwg__E-jLj32-ibFPM_pc6AwK1S3).
-These files do not demonstrate a completed E07 run; see its partial report and
-GPU allocation failure screenshot.
+These contain exact source/account/protocol assumptions. Use their recorded trained commit when studying reproduction; do not change source guards or rerun completed trajectories on current main. Source-only files do not prove execution by themselves.
+
+## Genuine executed and failed-attempt records
+
+| Notebook | Evidence and scope |
+|---|---|
+| [E05_seed42_ReLU_Colab_pilot.ipynb](E05_seed42_ReLU_Colab_pilot.ipynb) | Ten-cell completed Colab capture with actual outputs and final evidence; [provenance](E05_seed42_ReLU_Colab_pilot.provenance.json) |
+| [E07_seed42_EightHead_Colab_pilot.ipynb](E07_seed42_EightHead_Colab_pilot.ipynb) | One-cell failed T4 allocation attempt before training; no completed-run evidence; [provenance](E07_seed42_EightHead_Colab_pilot.provenance.json) |
+| [kaggle_e07_seed42_research_executed.ipynb](kaggle_e07_seed42_research_executed.ipynb) | Actual Kaggle research capture; interruption/replay accounting belongs to the [accepted E07 report](../report/pilots/E07_seed42/E07_seed42_analysis.md) |
+| [kaggle_e07_seed42_recovery_executed.ipynb](kaggle_e07_seed42_recovery_executed.ipynb) | Actual saved recovery capture; [capture method](E07_notebook_provenance.md) |
+| [kaggle_e12_seed42_research_executed.ipynb](kaggle_e12_seed42_research_executed.ipynb) | Actual saved research capture; historical stdout is retained |
+| [kaggle_e12_seed42_recovery_executed.ipynb](kaggle_e12_seed42_recovery_executed.ipynb) | Actual zero-update recovery capture; [capture method/SHA256](E12_notebook_provenance.md) |
+
+Some notebook containers were reconstructed from rendered code/output blocks, not original downloaded ipynb bytes. Their metadata/provenance states that boundary; no captured code/output was edited. A pending phrase in historic stdout is not the current experiment status: see the [accepted reports](../docs/README.md) for later closure receipts.
+
+Unique failed attempts and completed snapshots remain at their existing paths so exact identities and pinned builders stay valid. Reviewer navigation is organized here rather than moving evidence into a generic legacy folder. No new Kaggle/Colab job, final demo notebook or model code was created by cleanup.

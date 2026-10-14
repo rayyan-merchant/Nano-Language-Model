@@ -1,3 +1,5 @@
+> Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
+
 # F01 separately approved execution — 2026-10-14
 
 The user discontinued the three-seed grid and approved one fresh F01 seed42

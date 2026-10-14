@@ -1,164 +1,65 @@
-# Nano Language Model
+# Nano-Language-Model
 
-One from-scratch GPT research pipeline for Tiny Shakespeare. Research status is
-**NO-GO** until the gates in EXPERIMENT_READINESS.md pass. Short CPU/Colab GPU
-checks are evidence of implementation correctness, not pilot/ablation results.
-No pretrained weights or black-box Transformer architecture are used.
+A decoder-only GPT built from scratch in PyTorch for a controlled Tiny Shakespeare study. Attention explicitly implements Q/K/V projections, head splitting, scaled scores, causal masking, softmax and value aggregation. There are no pretrained language-model weights or black-box Transformer layers.
 
-## Install
+## Completed research and remaining delivery work
 
-Locked research profile: Python 3.10/3.11, torch 2.5.1, numpy 1.26.4,
-tokenizers 0.21.0, pytest 8.3.4, matplotlib 3.9.4. Use an isolated environment.
+**E01–E14 seed 42 are complete:** fourteen single-factor ablations, each with a 5,000-update authoritative trajectory and 20 full sliding validations. The proposed three-seed/42-run expansion was discontinued; no replicated significance is claimed. Two separately approved combined models also completed and passed independent artifact and compatible CPU/CUDA recovery:
+
+| Model | Parameters | Actual updates | Best update | Best conditional BPB |
+|---|---:|---:|---:|---:|
+| E02 BPE reference | 2,173,056 | 5,000 | 5,000 | 2.02659521 |
+| F01 quality-focused | 6,046,560 | 10,000 | 1,750 | 1.98376817 |
+| B01 balanced | 3,062,784 | 4,500, frozen early stop | 3,000 | 1.98493095 |
+
+All reports retain negative results, genuine generations and recovery evidence. F01 deteriorated with prolonged training; B01 nearly matches its selected likelihood at roughly half its parameters but still produces greedy loops, malformed language and invalid byte sequences. Smaller size or lower BPB does not establish better text quality. The final academic report, standalone model packaging, FastAPI, frontend, deployment and final demo/presentation are **pending**. No further research training or test evaluation is currently authorized.
+
+Start with the [project map and current status](docs/README.md), [fourteen-run analysis](report/final/E01_E14_consolidated_analysis.md), [F01 report](report/final/F01_10000_analysis.md) and [B01 model selection](report/balanced/B01_model_selection.md).
+
+## Installation and verification
+
+Research pins: Python 3.10/3.11, PyTorch 2.5.1, NumPy 1.26.4, tokenizers 0.21.0, Matplotlib 3.9.4 and pytest 8.3.4. Use an isolated environment. For local **CPU** work:
 
 ```powershell
 python -m venv .venv
+.venv\Scripts\python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
 .venv\Scripts\python -m pip install -r requirements.txt
 .venv\Scripts\python -m pip install -e . --no-deps
 .venv\Scripts\python -m pytest -q
+.venv\Scripts\python -m pip check
 ```
 
-For CPU install torch from `https://download.pytorch.org/whl/cpu` first.
-Linux/Kaggle/Colab use the same commands with the selected environment's `python`.
-Do not install the CPU wheel into a GPU environment. Modern Colab Python 3.13
-cannot install this locked profile directly: provision a compatible isolated
-Python or explicitly qualify a new dependency lock before research. See
-`docs/platforms.md`. The newer Colab profile tested here is smoke-only evidence.
+On Linux use the selected environment's `python`. Qualified GPU research used isolated Python 3.11.14/PyTorch 2.5.1+cu124/CUDA 12.4/Tesla T4; **do not install the CPU wheel into a CUDA environment**. See [platforms](docs/platforms.md) and the [qualified dependency freeze](docs/qualifications/evidence/rayyan_requirements_freeze.txt).
 
-## Prepare and verify real data
+## Scientific package and commands
+
+The authoritative implementation is [src/nano_lm](src/nano_lm). Stable configuration paths are [configs](configs) and [experiments/configs](experiments/configs). Character vocabulary 65 and byte BPE 1024 fit only training text; canonical artifacts are in [assets/tokenizers](assets/tokenizers). Pinned original text has contiguous 90/5/5 partitions with no crossing windows; see [data provenance](data/README.md).
+
+The following are interface/reproducibility examples, not authorization to launch another scientific run:
 
 ```text
-python -m nano_lm.prepare --output data/processed/tiny-shakespeare
-python -m nano_lm.prepare --output data/processed/tiny-shakespeare --validate
-python -m nano_lm.verification --dataset data/processed/tiny-shakespeare --output outputs/logs/cpu_audit --device cpu
+python -m nano_lm.prepare --help
+python -m nano_lm.train --help
+python -m nano_lm.verification --help
+python -m nano_lm.generate --help
+python -m nano_lm.storage --help
 ```
 
-Preparation uses an immutable original Karpathy Tiny Shakespeare revision and
-expected SHA256. If local HTTPS trust fails, `--transport git` fetches the same
-commit without disabling TLS. New preparation/audit directories must not exist.
-No source text is normalized. 90/5/5 splits precede vocabulary fitting and windows.
-Character and byte BPE artifacts, split statistics and hashes are validated.
-
-## Short training, resume and inference
-
-These examples are **2-step smoke checks**, with a smaller effective token
-budget and validation byte cap, not approved research settings:
+For a fresh local development dataset, `python -m nano_lm.prepare --output DATA` followed by `--output DATA --validate` acquires and checks the pinned corpus. Research reproduction must use its exact trained commit, configuration and tokenizer; F01/B01 reuse audited vocabulary artifacts without refitting. Generation from a trusted recovered model uses:
 
 ```text
-python -m nano_lm.train --dataset data/processed/tiny-shakespeare --experiment E01 --run-kind smoke --steps 2 --tokens-per-update 128 --micro-batch-size 1 --eval-every 1 --checkpoint-every 1 --eval-max-bytes 512
-python -m nano_lm.generate --checkpoint RUN/checkpoints/step_000002.pt --prompt "To be" --max-new-tokens 80 --greedy
-python -m nano_lm.plot_run RUN/checkpoints/step_000002.pt outputs/figures/smoke_run
+python -m nano_lm.generate --checkpoint CHECKPOINT --prompt "ROMEO:" --max-new-tokens 256 --greedy
 ```
 
-Replace RUN with the printed unique directory. Resume uses the same exact
-configuration and `--resume RUN/checkpoints/step_000002.pt --steps 4` (total target,
-not additional steps). Extend an approved 5k run to 10k the same way; constant LR
-and optimizer/scheduler/scaler/RNG/data sampling continue without schedule reset.
-Use E02 for BPE; E01–E14 load from the unchanged registry. All meaningful training
-settings have CLI options. Research requires a clean committed checkout; smoke
-and benchmark modes are capped at 100 steps. Long research jobs require separate
-user approval; no bulk 42-run launch is built into initialization.
+Complete commands and resume/storage boundaries are in [docs/commands.md](docs/commands.md) and [scripts/README.md](scripts/README.md). Historical notebooks and failed attempts are indexed in [notebooks/README.md](notebooks/README.md); do not blindly rerun them.
 
-Baseline remains width 192, 6 heads, 4 blocks, context 128, 4x MLP, GELU,
-sinusoidal positions, dropout 0.1, AdamW 3e-4, 5,000 steps and seeds 42/123/456.
-Main comparisons target 4096 tokens/update. Microbatch size controls accumulation;
-invalid divisibility fails explicitly. Generation protocol is fixed in
-`configs/generation_protocol.json` before scientific runs.
+Evaluation is the reusable Python function `nano_lm.evaluate.evaluate`, called by
+training and verification. It has no standalone evaluation CLI.
 
-## Platforms, storage and analysis
+## Results, checkpoints and reproducibility
 
-Thin `notebooks/kaggle_research.ipynb` and `notebooks/colab_research.ipynb` call
-this package. For GPU audit add `--device cuda --precision float16` to verification.
-GPU absence fails; float32 is baseline and AMP alternatives need qualification.
+[report/pilots](report/pilots) contains E01–E14, [report/final](report/final) F01, and [report/balanced](report/balanced) B01. Figures, machine-readable tables, complete fixed generation grids, hashes and genuine recovery receipts are preserved. Large datasets, full checkpoints, archives and training journals are **outside Git**. For retrieval use each pilot report, [F01 instructions](report/final/artifact_retrieval.md) or [B01 instructions](report/balanced/artifact_retrieval.md). Only deserialize trusted project checkpoints; optimizer/RNG payloads use PyTorch pickle.
 
-At checkpoint boundaries, `--export-root DURABLE_ROOT` publishes verified immutable
-snapshots. Cloud research requires this option. The caller must verify that the
-path is actually persistent: `/content` and unsaved `/kaggle/working` are ephemeral.
-See `docs/storage.md` for export, verification, restoration and session-expiry gates.
-Only load trusted project checkpoints; PyTorch optimizer/RNG artifacts use pickle.
+Conditional BPB scores the same 55,514 validation bytes after a 256-byte conditioning exclusion, with each model's context and explicit tokenizer-boundary policy. Token loss/perplexity is not comparable across tokenizers. Equal target-token budgets do not imply equal compute/source exposure. One seed supplies no cross-seed variance; initialization, capacity, context, hardware and stopping opportunities are confounders. F01 received one frozen reserved-test assessment; B01 did not reuse that test for tuning or evaluation. See [BPB policy](docs/bpb.md) and [research protocol](docs/research_protocol.md).
 
-`nano_lm.results` validates run schemas, hashes, canonical variants, completed
-checkpoints and evaluation policy, merges both members' outputs, rejects smoke
-or incomplete research evidence, and produces per-run CSV, mean/sample-SD tables
-and genuine-metric figures. Missing seeds stay missing. See `docs/commands.md`.
-
-## Layout and limitations
-
-`src/nano_lm`: data/tokenizers, explicit attention/positions/blocks/GPT, evaluation,
-training, checkpointing, generation, storage, collection, figures and audits.
-`configs`/`experiments`: locked definitions and inference protocol. `tests`: fast
-numerical, integration, resume, storage and compatibility tests. `docs`: protocols,
-readiness evidence and limits. `api`/`report`: final delivery milestones still pending.
-
-Validation BPB excludes a common 256-byte conditioning prefix and scores each
-suffix token once with up to the configured preceding token context. Prefix and
-suffix are tokenized separately to force a shared original-byte boundary.
-This is conditional likelihood; BPE/character contexts cover different byte spans.
-Token losses/perplexities must not be ranked across tokenizers. Test data is
-reserved for final evaluation. See `docs/bpb.md` for the exact policies.
-
-The second member verifies and runs the same code; pipeline ownership stays in
-this instance. Work on feature branches and reviewed PRs. Never force-push or merge
-without authorization. E01, E02, E03, E04, E06, E08, E09 and E10 seed42 each completed an individually authorized
-5000-update research run with verified published checkpoints; their reports are in
-`report/pilots`. The broader three-seed study remains separately gated. No deployed
-API is claimed. Read EXPERIMENT_READINESS.md before further experiment approval.
-
-## Scoped E11 seed42 context64 evidence
-
-[Detailed E11 report](report/pilots/E11_seed42/E11_seed42_analysis.md):5000updates/20fullvalidations, context64/accumulation16/4096targets,1804800parameters. Best=final5000loss1.49301304/BPB2.15396251. Publishedarchive independently verified and best/final CPUinference passed. Fresh zero-update CUDA recovery now passed exact full-state restoration and CPU/CUDA generation equality; full E11 acceptanceCOMPLETE. NoE12,otherseed or extension authorized or launched.
-
-## Scoped E13 seed42 width144 evidence
-
-[Accepted E13 report](report/pilots/E13_seed42/E13_seed42_analysis.md):5000updates/20fullvalidations,1021824parameters,best=final5000loss1.61153841/BPB2.32495848. Publishedarchive/allfilehashes/CPUinference/freshCUDAfullstate5000to5000zeroextra passed. Smallerparametercountdidnot improvepredictivequalityorobservedtrainingspeed;memory/validationcostlower. All100uneditedgenerations and15PNG/15PDFfigurespreserved. E14/otherseed/extensionnotlaunched;study-wideauthorization separatelygated.
-
-
-## Scoped E14 width240 seed42 evidence
-
-[Accepted E14 report](report/pilots/E14_seed42/E14_seed42_analysis.md): 5,000 updates,
-20 full validations, 2,808,960 parameters; best4750 loss1.48464646/BPB2.14189208,
-final BPB2.14505608. Published archive/all62filehashes/CPUinference/freshCUDAfinal
-full-state5000→5000zeroextra passed. Best BPB is3.259% belowE01 with55.638% more
-parameters and6.703% more measured training time. Complete100-slot grid and
-20PNG/20PDF figures preserved; greedy repetition remains despite lowerloss.
-No other seed/configuration/extension launched; single-seed and resource scopes
-are explicit, and broader study approval remains separate.
-
-## Accepted F01 final-model research evidence
-
-[F01 analysis](report/final/F01_10000_analysis.md) documents the one explicitly
-authorized combined BPE/RoPE/width240/eight-block seed42 run: 6,046,560 parameters,
-10,000 completed updates, 40 full sliding validations and independently verified
-published CPU/CUDA full-state recovery with zero extra research updates.
-Best validation BPB1.98376817 occurs at1750; final BPB3.05346210 shows substantial
-late deterioration. The selected state received one frozen reserved test
-assessment (BPB2.24333983). All100 genuine best/final outputs are preserved,
-including severe loops, malformed words and five invalidUTF8 samples.
-
-[Consolidated results](report/final/E01_E14_consolidated_analysis.md),
-[interpretation](report/final/interpretation.md),
-[retrieval instructions](report/final/artifact_retrieval.md) and
-[presentation support](report/final/presentation_support/README.md) distinguish
-predictive improvements, execution acceptance and text-quality limitations.
-The user discontinued the three-seed grid; historical pilot configurations and
-evidence remain frozen. No further research training is authorized. PR19 awaits
-review; no automatic merge or deployed API is claimed.
-
-## B01 separately authorized balanced-model evidence
-
-The preceding F01 delivery status is historical; PR19 is now merged. The separately
-approved [B01 analysis](report/balanced/B01_seed42_analysis.md) records one fresh
-seed42 BPE/RoPE/width192/six-block model with3,062,784 parameters. Frozen validation
-early stopping ended at4,500 updates and18 full validations; best BPB1.98493095
-at3,000, final2.04445796. All18 checkpoints and37 native snapshots are published.
-Independent ZIP/all96 hashes/counter/sampling/CPU audit and fresh CUDA all-six-field
-zero-update restoration pass; all100 original256-token sequences reproduce.
-
-[Model selection](report/balanced/B01_model_selection.md) distinguishes near-F01
-selected likelihood at roughly half its parameters from poor genuine text quality.
-Greedy loops, malformed text and five invalidUTF8 outputs remain. E02 is smaller
-and cheaper; no single-seed superiority claim or B01 original-test assessment is
-made. [Recovery evidence](report/balanced/B01_acceptance.md) and
-[retrieval instructions](report/balanced/artifact_retrieval.md) identify immutable
-artifacts on D: and saved Kaggle versions. Reviewable PR20 is not merged
-automatically; no further model, seed, original-test evaluation or extension is
-authorized.
+The [cleanup verification](docs/maintenance/cleanup_verification.md) records source, configuration, tokenizer, evidence and notebook integrity plus build/link checks. [AGENTS.md](AGENTS.md) governs future changes. Submit reviewed feature PRs; never force-push, overwrite evidence or merge without authorization.

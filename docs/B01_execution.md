@@ -1,3 +1,5 @@
+> Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
+
 # B01 authorization and frozen preparation — 2026-10-14
 
 Reviewed main d43cfbf7e3af6c982a8bcf1509a5f45b8e17ef4b includes merged F01 PR19.

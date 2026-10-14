@@ -1,3 +1,9 @@
+# Current command scope and historical benchmark procedures
+
+The scientific CLI interfaces remain supported. E01-E14 seed42/F01/B01 are already complete; the original multi-seed expansion is discontinued. Examples below are interface/reproduction documentation, not authorization to run benchmarks, train, extend or evaluate the original test split. Use [script catalog](../scripts/README.md), [recorded-results guidance](results_analysis.md) and exact report source commits. The evaluator is a Python API, not a standalone evaluation CLI.
+
+---
+
 # Reproducible commands and benchmark procedure
 
 Use the installed package from a pinned clean checkout; ROOT is the repository,

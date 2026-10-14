@@ -1,3 +1,13 @@
+# Current assignment compliance and historical initialization audit
+
+Research pipeline, genuine Tiny Shakespeare training/validation, conditional BPB, all14 single-seed ablations, F01/B01 inference/generations, measured resource plots and independent recovery are complete. Existing F01 architecture/RoPE material is [indexed here](../report/final/presentation_support/README.md).
+
+The final academic/Medium report, standalone selected-model package, final Colab/demo notebook, hosted FastAPI/frontend/deployment, recorded presentation and complete handout acceptance audit remain pending. The relocated [handwritten assignment PDF](handwritten-assignment.pdf) is preserved byte-for-byte; this cleanup does not certify its calculation correctness. Handout-specific manual three-token derivation/heatmaps, MLM-versus-CLM presentation and trained-attention evidence must be checked for the final submission, rather than inferred from model unit tests.
+
+The original bootstrap audit below is preserved as historical context; its pending training/ablation statements have been superseded by accepted research. No final-submission-complete claim is made.
+
+---
+
 # Assignment compliance and initialization audit
 
 Source: supplied A1_AIE.pdf at Downloads/7th sem/ai eng/A1, all 11 pages read.

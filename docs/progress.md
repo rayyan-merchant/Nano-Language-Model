@@ -1,3 +1,11 @@
+# Current status and preserved progress chronology
+
+Research acceptance is complete for E01-E14 seed42, F01 and B01; the three-seed expansion was discontinued and PR20 merged. Current navigation and remaining delivery milestones are in [the project map](README.md). No new research run/test assessment is authorized.
+
+All original entries below are preserved chronologically, including failures, pending states and later closures. Their present-tense status and PR statements apply at the date of each entry. Cleanup does not rewrite their measurements or histories.
+
+---
+
 # Progress
 
 ## Foundation implemented

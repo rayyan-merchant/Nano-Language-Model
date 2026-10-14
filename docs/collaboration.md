@@ -1,3 +1,9 @@
+# Current collaboration scope and historical foundation record
+
+Completed owners and source/profile/recovery records are in [the project map](README.md). Rayyan remains responsible for the one shared scientific pipeline; the second member independently verified and executed assigned runs. Earlier UNASSIGNED/pending wording below describes the foundation stage. Research is complete; later delivery work requires its own assigned scope and reviewed PRs.
+
+---
+
 # Collaboration
 
 Coordinator verified as rayyan-merchant; bootstrap adds the canonical foundation

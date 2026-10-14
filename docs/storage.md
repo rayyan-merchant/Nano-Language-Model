@@ -1,3 +1,11 @@
+# Current artifact access and preserved storage procedures
+
+Accepted per-run publication/retrieval/CPU and compatible CUDA recovery receipts are indexed in [the project map](README.md). Earlier Drive/Kaggle-PENDING statements below are original task snapshots; persistence was subsequently tested for the recorded completed runs. This is not a guarantee for a future account/session.
+
+F01 [retrieval](../report/final/artifact_retrieval.md) and B01 [retrieval](../report/balanced/artifact_retrieval.md) identify exact immutable versions/checkpoints/hashes; each pilot has its own record. Cleanup downloads, rewrites and deletes no external model artifact. Large weights remain outside Git.
+
+---
+
 # Persistent storage and interruption recovery
 
 ## Actual E02 Colab/Drive evidence — 2026-10-12

@@ -1,3 +1,5 @@
+> Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
+
 # E08 seed42 execution plan -- 2026-10-13
 
 Scope: one explicitly authorized six-block run, seed42, exactly5000 completed

@@ -1,3 +1,5 @@
+> Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
+
 # E10 seed42 execution record — 2026-10-13
 
 Authorization is one E10 seed42 run, exactly 5,000 completed optimizer updates.

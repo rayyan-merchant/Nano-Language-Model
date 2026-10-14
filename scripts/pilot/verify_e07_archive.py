@@ -12,29 +12,11 @@ from nano_lm.storage import verify_snapshot
 from nano_lm.checkpoint import read_checkpoint, load_for_inference
 from nano_lm.generate import generate
 
+if __package__:
+    from .archive_tools import checksum, reconstruct_snapshots
+else:
+    from archive_tools import checksum, reconstruct_snapshots
 
-def checksum(path):
-    h=hashlib.sha256()
-    with path.open('rb') as f:
-        for chunk in iter(lambda:f.read(2**20),b''):h.update(chunk)
-    return h.hexdigest()
-
-
-def reconstruct_snapshots(extracted,prefix,output):
-    reconstructed=output;reconstructed.mkdir(exist_ok=False)
-    manifests=[]
-    for source in (extracted/'snapshots').iterdir():
-        target=reconstructed/source.name;shutil.copytree(source,target)
-        manifest=json.loads((target/'export_manifest.json').read_text())
-        for relative,h in manifest['files'].items():
-            path=target/relative
-            if not path.exists():
-                assert relative.startswith('checkpoints/')
-                weight=extracted/prefix/relative
-                assert checksum(weight)==h
-                path.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(weight,path)
-        manifests.append(verify_snapshot(target))
-    return manifests
 
 def verify(evidence):
     started=time.perf_counter()

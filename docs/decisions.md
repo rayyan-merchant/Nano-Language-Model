@@ -1,3 +1,9 @@
+# Historical decisions and current navigation
+
+The dated decisions below are preserved. Their pending states and original root file paths describe the checkout at that time. Current research/status is in [the project map](README.md); the original handwritten artifact now lives at [docs/handwritten-assignment.pdf](handwritten-assignment.pdf), unchanged. Cleanup relocation mapping is in [the changelog](maintenance/cleanup_changelog.md).
+
+---
+
 # Decisions
 
 2026-10-11: authenticated GitHub owner rayyan-merchant has admin/push permission.

@@ -11,12 +11,10 @@ import torch
 from nano_lm.checkpoint import read_checkpoint, load_for_inference
 from nano_lm.generate import generate
 
-
-def checksum(path):
-    h=hashlib.sha256()
-    with path.open('rb') as f:
-        for chunk in iter(lambda:f.read(2**20),b''):h.update(chunk)
-    return h.hexdigest()
+if __package__:
+    from .archive_tools import checksum
+else:
+    from archive_tools import checksum
 
 
 def verify(evidence):

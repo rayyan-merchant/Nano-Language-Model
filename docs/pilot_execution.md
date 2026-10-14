@@ -1,3 +1,5 @@
+> Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
+
 # Authorized E01 seed42 pilot execution
 
 On 2026-10-12 Rayyan explicitly authorized E01 seed42, exactly 5000 completed

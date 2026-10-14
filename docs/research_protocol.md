@@ -1,3 +1,11 @@
+# Current authority and preserved research protocol
+
+The scientific data, model, optimization, scoring and checkpoint policies below remain binding. E01-E14 seed42, F01 and B01 research completed and was independently recovered. The user discontinued the original three-seed/42-run expansion and separately approved F01/B01 as documented later in this record. No new research run, test assessment or extension is authorized.
+
+See [current project map](README.md) for accepted reports. Staging, provisional, pending and authorization phrases below are chronological records at their respective dates; they do not renew execution approval. Cleanup changes no scientific/configuration/tokenizer path or byte.
+
+---
+
 # Research protocol
 
 ## Locked study
