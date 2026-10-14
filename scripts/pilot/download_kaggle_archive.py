@@ -5,9 +5,12 @@ import json
 from pathlib import Path
 import shutil
 import time
+import sys
 from concurrent.futures import ThreadPoolExecutor
 import requests
 from kaggle.api.kaggle_api_extended import KaggleApi, ApiListKernelSessionOutputRequest
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+from scripts.pilot.archive_names import archive_name
 
 
 def download(kernel, manifest, output, prefix=None, ranges=False, resume_pieces=None):
@@ -17,8 +20,7 @@ def download(kernel, manifest, output, prefix=None, ranges=False, resume_pieces=
     if resume_pieces is not None:
         assert json.loads((resume_pieces.parent/'artifact_manifest.json').read_text(encoding='utf-8'))==reference
         ranges=True
-    name=reference.get('archive_file',reference['run_id'].split('_seed42_')[0]+'_seed42_pilot.zip')
-    if Path(name).name!=name or '/' in name or '\\' in name:raise ValueError('Unsafe archive filename')
+    name=archive_name(reference)
     api=KaggleApi();api.authenticate()
     assert api.config_values[api.CONFIG_NAME_USER]==owner
     output.mkdir(parents=True,exist_ok=False);shutil.copyfile(manifest,output/'artifact_manifest.json')

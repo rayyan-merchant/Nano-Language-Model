@@ -1,0 +1,15 @@
+{
+  "label": "development-only maximum-budget estimates",
+  "warmup_updates_excluded": 2,
+  "updates_per_second": 3.0667823141587687,
+  "full_validation_seconds": 14.281195545000003,
+  "projected_maximum_training_seconds": 1630.3732993750232,
+  "projected_pipeline_with_margin_seconds": 3715.9972102750235,
+  "checkpoint_bytes": 37939338,
+  "peak_GPU_bytes": 184489984,
+  "snapshot_export_verify_seconds": 0.6316936590000068,
+  "storage_required_bytes": 8077460736,
+  "available_disk_bytes": 20560412672,
+  "time_feasible": true,
+  "storage_feasible": true
+}
