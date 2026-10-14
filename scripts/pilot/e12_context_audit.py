@@ -7,16 +7,10 @@ from nano_lm.model import GPT
 from nano_lm.generate import generate
 from nano_lm.evaluate import evaluate
 
-
-def token_budget(config, settings):
-    """Derive grouping from the resolved model rather than the E01 context."""
-    positions = config.context_length * settings.micro_batch_size
-    if settings.tokens_per_update % positions:
-        raise ValueError('Token budget must divide by resolved microbatch positions')
-    accumulation = settings.tokens_per_update // positions
-    return {'context_length': config.context_length, 'micro_batch_size': settings.micro_batch_size,
-            'accumulation': accumulation, 'sampled_windows_per_update': accumulation * settings.micro_batch_size,
-            'predicted_positions_per_update': positions * accumulation}
+if __package__:
+    from .context_audit import token_budget
+else:
+    from context_audit import token_budget
 
 
 def audit(root, device='cpu'):

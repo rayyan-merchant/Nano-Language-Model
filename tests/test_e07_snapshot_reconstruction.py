@@ -1,8 +1,10 @@
 """Snapshot archive references must recover exact bytes and reject corrupt weights."""
 import json
+import pytest
 from pathlib import Path
 from nano_lm.artifacts import digest, file_hash
 from scripts.pilot.verify_e07_archive import reconstruct_snapshots
+from scripts.pilot.verify_e12_archive import reconstruct_snapshots as reconstruct_e12
 
 
 def fixture(root):
@@ -14,18 +16,20 @@ def fixture(root):
     return cp,m
 
 
-def test_snapshot_metadata_and_shared_weights_recover_exact_bytes(tmp_path):
+@pytest.mark.parametrize('reconstruct',[reconstruct_snapshots,reconstruct_e12])
+def test_snapshot_metadata_and_shared_weights_recover_exact_bytes(tmp_path,reconstruct):
     archive=tmp_path/'archive';cp,m=fixture(archive)
-    manifests=reconstruct_snapshots(archive,'runs/run/',tmp_path/'restored')
+    manifests=reconstruct(archive,'runs/run/',tmp_path/'restored')
     assert manifests==[m]
     assert (tmp_path/'restored/snapshot250/checkpoints/step_000250.pt').read_bytes()==cp.read_bytes()
     assert (tmp_path/'restored/snapshot250/events.jsonl').read_bytes()==(archive/'snapshots/snapshot250/events.jsonl').read_bytes()
 
 
-def test_corrupt_shared_weight_fails_before_preservation_claim(tmp_path):
+@pytest.mark.parametrize('reconstruct',[reconstruct_snapshots,reconstruct_e12])
+def test_corrupt_shared_weight_fails_before_preservation_claim(tmp_path,reconstruct):
     archive=tmp_path/'archive';cp,_=fixture(archive);cp.write_bytes(b'corrupt')
     try:
-        reconstruct_snapshots(archive,'runs/run/',tmp_path/'restored')
+        reconstruct(archive,'runs/run/',tmp_path/'restored')
     except AssertionError:
         pass
     else:
