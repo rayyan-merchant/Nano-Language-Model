@@ -1,0 +1,118 @@
+{
+  "best": {
+    "step": 1750,
+    "loss": 3.1302449926911176,
+    "perplexity": 22.879584186765896,
+    "bpb": 1.983768166434642,
+    "nll_sum": 76334.1543917656,
+    "scored_tokens": 24386,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "final": {
+    "loss": 4.818145897432845,
+    "perplexity": 123.73545973231224,
+    "bpb": 3.053462101171743,
+    "nll_sum": 117495.30585479736,
+    "scored_tokens": 24386,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "step5000": {
+    "loss": 3.7151386035258116,
+    "perplexity": 41.064278343732674,
+    "bpb": 2.354439896166364,
+    "nll_sum": 90597.36998558044,
+    "scored_tokens": 24386,
+    "scored_bytes": 55514,
+    "conditioning_bytes": 256,
+    "evaluated_text_bytes": 55770,
+    "mode": "sliding",
+    "context_length": 128
+  },
+  "test": {
+    "label": "One final reserved held-out assessment after frozen validation selection",
+    "checkpoint_sha256": "ff30ec7b18237ff3e0578155f4c5c3f9958dd32b2e458d1a43d2fa61ecc3266f",
+    "metrics": {
+      "loss": 3.4820019014879655,
+      "perplexity": 32.52476832815771,
+      "bpb": 2.24333982984574,
+      "nll_sum": 86322.30913978815,
+      "scored_tokens": 24791,
+      "scored_bytes": 55514,
+      "conditioning_bytes": 256,
+      "evaluated_text_bytes": 55770,
+      "mode": "sliding",
+      "context_length": 128
+    },
+    "seconds": 24.291829400000097,
+    "partition_hash": "8b5a8c8af45905547ad03b7aae6980a277a5dd78924a6e6ac64b75d63d7d40bd",
+    "selection_frozen_before_evaluation": true
+  },
+  "gradient_norm": {
+    "median": 1.359267234802246,
+    "p95": 1.6669189870357513,
+    "maximum": 1.7834678888320923,
+    "clipped_updates": 6988,
+    "clip_fraction": 0.6988
+  },
+  "late_BPB_slope_per1000_updates_6000_to10000": 0.13526886383232103,
+  "first_recorded_below_E02_best": {
+    "step": 1250,
+    "BPB": 2.015892153324664,
+    "train_seconds": 533.8978291780006
+  },
+  "timing": {
+    "training_seconds": 4269.205575442972,
+    "validation_seconds": 945.4408569010009,
+    "checkpoint_seconds": 15.379975697001328,
+    "export_seconds": 80.29193995400283,
+    "journal_seconds": 36.63699558905364,
+    "wrapper_seconds_before_archive": 6161.319631514,
+    "archive_and_CRC_seconds": 156.122494233,
+    "measured_sequential_wrapper_component_sum": 6317.442125747,
+    "independent_download_seconds": 11213.970241100062,
+    "independent_archive_CPU_inspection_seconds": 205.5290250000544
+  },
+  "source_byte_sampling": {
+    "status": "independent_private_sampling_RNG_source_byte_exposure_and_union_passed",
+    "windows_per_update": 32,
+    "total_windows": 320000,
+    "target_positions": 40960000,
+    "original_source_byte_exposure": 99988450,
+    "unique_target_bytes": 1003829,
+    "step5000_target_source_bytes": 49991931,
+    "sampled_training_input_context_bytes": {
+      "mean": 312.459496875,
+      "minimum": 211,
+      "maximum": 401
+    },
+    "full_validation_preceding_context_bytes": {
+      "mean": 291.12777823341264,
+      "minimum": 204,
+      "maximum": 405
+    },
+    "train_text_sha256": "a9e24e23a1ec77744dad26844bfd5a09b6e041954e1eef0000e7f24cba6db735",
+    "scope": "Only sampler replay; zero optimization; BPE offsets from frozen train-only tokenizer"
+  },
+  "CPU_recovery": "published_archive_size_SHA256_inventory_CRC_file_hashes_and_CPU_inference_passed",
+  "CUDA_recovery": "published_F01_research_fresh_CUDA_full_state_passed_no_updates",
+  "selected_best_checkpoint_exposure": {
+    "optimizer_step": 1750,
+    "predicted_tokens": 7168000,
+    "original_source_byte_exposure": 17496609,
+    "training_seconds": 747.1737536529961
+  },
+  "fixed_generation_reproduction": {
+    "slots_exactly_reproduced": 100,
+    "additional_optimizer_updates": 0,
+    "strict_UTF8_invalid_outputs": 5,
+    "receipt": "evidence/research/generation_reproduction.json"
+  }
+}

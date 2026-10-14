@@ -1,0 +1,2245 @@
+{
+  "comparisons": [
+    {
+      "reference": "E01",
+      "step": 250,
+      "reference_BPB": 3.5551628420842443,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.0703997352159518,
+      "relative_BPB_percent": -30.108318036661885
+    },
+    {
+      "reference": "E01",
+      "step": 500,
+      "reference_BPB": 3.2709012669098967,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -0.9695417962932957,
+      "relative_BPB_percent": -29.64142654202603
+    },
+    {
+      "reference": "E01",
+      "step": 750,
+      "reference_BPB": 3.0472744670402525,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.8911553391279692,
+      "relative_BPB_percent": -29.24434109125483
+    },
+    {
+      "reference": "E01",
+      "step": 1000,
+      "reference_BPB": 2.882050619432758,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.8177903391935137,
+      "relative_BPB_percent": -28.37529409370576
+    },
+    {
+      "reference": "E01",
+      "step": 1250,
+      "reference_BPB": 2.7769368936841263,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.7610447403594622,
+      "relative_BPB_percent": -27.405906921773582
+    },
+    {
+      "reference": "E01",
+      "step": 1500,
+      "reference_BPB": 2.688529616446459,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.6923630626013331,
+      "relative_BPB_percent": -25.75248040289242
+    },
+    {
+      "reference": "E01",
+      "step": 1750,
+      "reference_BPB": 2.6172431688416427,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.6334750024070006,
+      "relative_BPB_percent": -24.20390317371115
+    },
+    {
+      "reference": "E01",
+      "step": 2000,
+      "reference_BPB": 2.538074439694494,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.5511596703894048,
+      "relative_BPB_percent": -21.715662148023817
+    },
+    {
+      "reference": "E01",
+      "step": 2250,
+      "reference_BPB": 2.4836697144233373,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.48569677232707464,
+      "relative_BPB_percent": -19.55561037389565
+    },
+    {
+      "reference": "E01",
+      "step": 2500,
+      "reference_BPB": 2.4422264957310995,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.4235633955702989,
+      "relative_BPB_percent": -17.34332979806207
+    },
+    {
+      "reference": "E01",
+      "step": 2750,
+      "reference_BPB": 2.4024800180567136,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.3608670463666064,
+      "relative_BPB_percent": -15.02060552655501
+    },
+    {
+      "reference": "E01",
+      "step": 3000,
+      "reference_BPB": 2.3652315733607856,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.3000112997319593,
+      "relative_BPB_percent": -12.684225219675627
+    },
+    {
+      "reference": "E01",
+      "step": 3250,
+      "reference_BPB": 2.333576030841135,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.23204623860436246,
+      "relative_BPB_percent": -9.943804510227238
+    },
+    {
+      "reference": "E01",
+      "step": 3500,
+      "reference_BPB": 2.3111872573541774,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.1692675385657254,
+      "relative_BPB_percent": -7.3238348830073186
+    },
+    {
+      "reference": "E01",
+      "step": 3750,
+      "reference_BPB": 2.291345962641597,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.12365432710437574,
+      "relative_BPB_percent": -5.396580399487982
+    },
+    {
+      "reference": "E01",
+      "step": 4000,
+      "reference_BPB": 2.2779194839735126,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": -0.07288173505502948,
+      "relative_BPB_percent": -3.199486881243818
+    },
+    {
+      "reference": "E01",
+      "step": 4250,
+      "reference_BPB": 2.25544039194206,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": -0.0050359342455208456,
+      "relative_BPB_percent": -0.22327942088439245
+    },
+    {
+      "reference": "E01",
+      "step": 4500,
+      "reference_BPB": 2.2270137340051126,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.05496169253274452,
+      "relative_BPB_percent": 2.4679548084286074
+    },
+    {
+      "reference": "E01",
+      "step": 4750,
+      "reference_BPB": 2.214057930481681,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.10716452727694614,
+      "relative_BPB_percent": 4.840186239103139
+    },
+    {
+      "reference": "E01",
+      "step": 5000,
+      "reference_BPB": 2.2159970425594078,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.13844285360695618,
+      "relative_BPB_percent": 6.247429529376047
+    },
+    {
+      "reference": "E02",
+      "step": 250,
+      "reference_BPB": 2.7645762171239405,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -0.27981311025564803,
+      "relative_BPB_percent": -10.121374427026819
+    },
+    {
+      "reference": "E02",
+      "step": 500,
+      "reference_BPB": 2.556976594804587,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -0.2556171241879861,
+      "relative_BPB_percent": -9.996850370369593
+    },
+    {
+      "reference": "E02",
+      "step": 750,
+      "reference_BPB": 2.4679241946516317,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.3118050667393484,
+      "relative_BPB_percent": -12.634304871076573
+    },
+    {
+      "reference": "E02",
+      "step": 1000,
+      "reference_BPB": 2.392149450904043,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.3278891706647986,
+      "relative_BPB_percent": -13.706884849559986
+    },
+    {
+      "reference": "E02",
+      "step": 1250,
+      "reference_BPB": 2.3345060437208245,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.3186138903961604,
+      "relative_BPB_percent": -13.64802165550797
+    },
+    {
+      "reference": "E02",
+      "step": 1500,
+      "reference_BPB": 2.2850965461607764,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.2889299923156503,
+      "relative_BPB_percent": -12.64410437279273
+    },
+    {
+      "reference": "E02",
+      "step": 1750,
+      "reference_BPB": 2.2413036924748138,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.2575355260401717,
+      "relative_BPB_percent": -11.490434201525135
+    },
+    {
+      "reference": "E02",
+      "step": 2000,
+      "reference_BPB": 2.2028998517870426,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.21598508248195336,
+      "relative_BPB_percent": -9.804580190367773
+    },
+    {
+      "reference": "E02",
+      "step": 2250,
+      "reference_BPB": 2.173840875931362,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.17586793383509924,
+      "relative_BPB_percent": -8.090193527148127
+    },
+    {
+      "reference": "E02",
+      "step": 2500,
+      "reference_BPB": 2.148968883853344,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.1303057836925432,
+      "relative_BPB_percent": -6.0636421807509056
+    },
+    {
+      "reference": "E02",
+      "step": 2750,
+      "reference_BPB": 2.120223799242137,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.07861082755202986,
+      "relative_BPB_percent": -3.707666501061302
+    },
+    {
+      "reference": "E02",
+      "step": 3000,
+      "reference_BPB": 2.0966917994581973,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.03147152582937096,
+      "relative_BPB_percent": -1.5010086765018804
+    },
+    {
+      "reference": "E02",
+      "step": 3250,
+      "reference_BPB": 2.088796304726169,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": 0.012733487510603325,
+      "relative_BPB_percent": 0.6096088681214251
+    },
+    {
+      "reference": "E02",
+      "step": 3500,
+      "reference_BPB": 2.0693907181490308,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": 0.07252900063942125,
+      "relative_BPB_percent": 3.5048480696914908
+    },
+    {
+      "reference": "E02",
+      "step": 3750,
+      "reference_BPB": 2.0444771021429613,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": 0.1232145333942598,
+      "relative_BPB_percent": 6.0267015592940565
+    },
+    {
+      "reference": "E02",
+      "step": 4000,
+      "reference_BPB": 2.0539999422581277,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": 0.1510378066603555,
+      "relative_BPB_percent": 7.353350092809996
+    },
+    {
+      "reference": "E02",
+      "step": 4250,
+      "reference_BPB": 2.0403323546574152,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": 0.21007210303912371,
+      "relative_BPB_percent": 10.295974700376508
+    },
+    {
+      "reference": "E02",
+      "step": 4500,
+      "reference_BPB": 2.037953986732813,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.24402143980504398,
+      "relative_BPB_percent": 11.973844424046675
+    },
+    {
+      "reference": "E02",
+      "step": 4750,
+      "reference_BPB": 2.040043084188263,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.28117937357036427,
+      "relative_BPB_percent": 13.783011532927802
+    },
+    {
+      "reference": "E02",
+      "step": 5000,
+      "reference_BPB": 2.026595212432371,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.3278446837339928,
+      "relative_BPB_percent": 16.17711725177251
+    },
+    {
+      "reference": "E03",
+      "step": 250,
+      "reference_BPB": 2.952206278350927,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -0.4674431714826346,
+      "relative_BPB_percent": -15.833689363459513
+    },
+    {
+      "reference": "E03",
+      "step": 500,
+      "reference_BPB": 2.7086109160370304,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -0.40725144542042946,
+      "relative_BPB_percent": -15.035435433313516
+    },
+    {
+      "reference": "E03",
+      "step": 750,
+      "reference_BPB": 2.5912712925606716,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.43515216464838824,
+      "relative_BPB_percent": -16.79299909267218
+    },
+    {
+      "reference": "E03",
+      "step": 1000,
+      "reference_BPB": 2.4869477201310333,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.42268743989178903,
+      "relative_BPB_percent": -16.996233433870422
+    },
+    {
+      "reference": "E03",
+      "step": 1250,
+      "reference_BPB": 2.410472094235409,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.3945799409107451,
+      "relative_BPB_percent": -16.36940505780483
+    },
+    {
+      "reference": "E03",
+      "step": 1500,
+      "reference_BPB": 2.352955615440784,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.3567890615956577,
+      "relative_BPB_percent": -15.163442066408027
+    },
+    {
+      "reference": "E03",
+      "step": 1750,
+      "reference_BPB": 2.30358190177191,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.31981373533726787,
+      "relative_BPB_percent": -13.883323839767447
+    },
+    {
+      "reference": "E03",
+      "step": 2000,
+      "reference_BPB": 2.2680579337149336,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.2811431644098443,
+      "relative_BPB_percent": -12.395766449816815
+    },
+    {
+      "reference": "E03",
+      "step": 2250,
+      "reference_BPB": 2.226244481166345,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.22827153907008224,
+      "relative_BPB_percent": -10.253659964178297
+    },
+    {
+      "reference": "E03",
+      "step": 2500,
+      "reference_BPB": 2.2010698474312216,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.18240674727042094,
+      "relative_BPB_percent": -8.287185773922644
+    },
+    {
+      "reference": "E03",
+      "step": 2750,
+      "reference_BPB": 2.1846323123984015,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.14301934070829425,
+      "relative_BPB_percent": -6.546609234726564
+    },
+    {
+      "reference": "E03",
+      "step": 3000,
+      "reference_BPB": 2.1637026325587767,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.09848235892995039,
+      "relative_BPB_percent": -4.551566257211881
+    },
+    {
+      "reference": "E03",
+      "step": 3250,
+      "reference_BPB": 2.1533619351279523,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.05183214289117988,
+      "relative_BPB_percent": -2.4070334877587585
+    },
+    {
+      "reference": "E03",
+      "step": 3500,
+      "reference_BPB": 2.130488441182497,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": 0.011431277605955081,
+      "relative_BPB_percent": 0.5365566592612225
+    },
+    {
+      "reference": "E03",
+      "step": 3750,
+      "reference_BPB": 2.114685379561169,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": 0.05300625597605224,
+      "relative_BPB_percent": 2.5065788267307987
+    },
+    {
+      "reference": "E03",
+      "step": 4000,
+      "reference_BPB": 2.115976739335216,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": 0.08906100958326713,
+      "relative_BPB_percent": 4.208978668227115
+    },
+    {
+      "reference": "E03",
+      "step": 4250,
+      "reference_BPB": 2.106437712763404,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": 0.143966744933135,
+      "relative_BPB_percent": 6.834607264236037
+    },
+    {
+      "reference": "E03",
+      "step": 4500,
+      "reference_BPB": 2.0863782802801936,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.19559714625766356,
+      "relative_BPB_percent": 9.374960816376765
+    },
+    {
+      "reference": "E03",
+      "step": 4750,
+      "reference_BPB": 2.0797353787461534,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.24148707901247368,
+      "relative_BPB_percent": 11.611432948650569
+    },
+    {
+      "reference": "E03",
+      "step": 5000,
+      "reference_BPB": 2.073270762394827,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.28116913377153674,
+      "relative_BPB_percent": 13.56162151472966
+    },
+    {
+      "reference": "E04",
+      "step": 250,
+      "reference_BPB": 3.600743949006282,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.1159808421379895,
+      "relative_BPB_percent": -30.99306304315177
+    },
+    {
+      "reference": "E04",
+      "step": 500,
+      "reference_BPB": 3.4895586416831024,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -1.1881991710665014,
+      "relative_BPB_percent": -34.05012762569317
+    },
+    {
+      "reference": "E04",
+      "step": 750,
+      "reference_BPB": 3.1278861733682173,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.971767045455934,
+      "relative_BPB_percent": -31.06785194838152
+    },
+    {
+      "reference": "E04",
+      "step": 1000,
+      "reference_BPB": 2.9479782814974516,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.8837180012582073,
+      "relative_BPB_percent": -29.977086561482913
+    },
+    {
+      "reference": "E04",
+      "step": 1250,
+      "reference_BPB": 2.8335641254788584,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.8176719721541943,
+      "relative_BPB_percent": -28.856660232314724
+    },
+    {
+      "reference": "E04",
+      "step": 1500,
+      "reference_BPB": 2.7401422844680416,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.7439757306229156,
+      "relative_BPB_percent": -27.150989013964566
+    },
+    {
+      "reference": "E04",
+      "step": 1750,
+      "reference_BPB": 2.6627611726232816,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.6789930061886396,
+      "relative_BPB_percent": -25.499583408740843
+    },
+    {
+      "reference": "E04",
+      "step": 2000,
+      "reference_BPB": 2.602790412116339,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.6158756428112497,
+      "relative_BPB_percent": -23.662129687594735
+    },
+    {
+      "reference": "E04",
+      "step": 2250,
+      "reference_BPB": 2.537031058617255,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.5390581165209922,
+      "relative_BPB_percent": -21.24759626769379
+    },
+    {
+      "reference": "E04",
+      "step": 2500,
+      "reference_BPB": 2.499536278356816,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.48087317819601516,
+      "relative_BPB_percent": -19.2384956505668
+    },
+    {
+      "reference": "E04",
+      "step": 2750,
+      "reference_BPB": 2.447055307782452,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.4054423360923449,
+      "relative_BPB_percent": -16.568580808243404
+    },
+    {
+      "reference": "E04",
+      "step": 3000,
+      "reference_BPB": 2.420136926528362,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.35491665289953556,
+      "relative_BPB_percent": -14.665147620744602
+    },
+    {
+      "reference": "E04",
+      "step": 3250,
+      "reference_BPB": 2.384321565769657,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.2827917735328844,
+      "relative_BPB_percent": -11.860471238140214
+    },
+    {
+      "reference": "E04",
+      "step": 3500,
+      "reference_BPB": 2.3466386241343296,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.20471890534587756,
+      "relative_BPB_percent": -8.723921239530352
+    },
+    {
+      "reference": "E04",
+      "step": 3750,
+      "reference_BPB": 2.3051498728974145,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.13745823736019336,
+      "relative_BPB_percent": -5.9630932884818355
+    },
+    {
+      "reference": "E04",
+      "step": 4000,
+      "reference_BPB": 2.3050151992484227,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": -0.09997745032993954,
+      "relative_BPB_percent": -4.337387899330913
+    },
+    {
+      "reference": "E04",
+      "step": 4250,
+      "reference_BPB": 2.277585438236031,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": -0.02718098053949225,
+      "relative_BPB_percent": -1.1934121145656618
+    },
+    {
+      "reference": "E04",
+      "step": 4500,
+      "reference_BPB": 2.2530406068643467,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.028934819673510415,
+      "relative_BPB_percent": 1.2842564659222955
+    },
+    {
+      "reference": "E04",
+      "step": 4750,
+      "reference_BPB": 2.23863056553144,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.0825918922271871,
+      "relative_BPB_percent": 3.6893935738602
+    },
+    {
+      "reference": "E04",
+      "step": 5000,
+      "reference_BPB": 2.237788693422635,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.11665120274372898,
+      "relative_BPB_percent": 5.21278899507327
+    },
+    {
+      "reference": "E05",
+      "step": 250,
+      "reference_BPB": 3.555669425882929,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.0709063190146364,
+      "relative_BPB_percent": -30.11827565349986
+    },
+    {
+      "reference": "E05",
+      "step": 500,
+      "reference_BPB": 3.2731353324124064,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -0.9717758617958054,
+      "relative_BPB_percent": -29.68944950649429
+    },
+    {
+      "reference": "E05",
+      "step": 750,
+      "reference_BPB": 3.0531478395421807,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.8970287116298974,
+      "relative_BPB_percent": -29.380454493956208
+    },
+    {
+      "reference": "E05",
+      "step": 1000,
+      "reference_BPB": 2.8818157170929615,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.8175554368537172,
+      "relative_BPB_percent": -28.36945582621877
+    },
+    {
+      "reference": "E05",
+      "step": 1250,
+      "reference_BPB": 2.7766409838432327,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.7607488305185686,
+      "relative_BPB_percent": -27.398170485317596
+    },
+    {
+      "reference": "E05",
+      "step": 1500,
+      "reference_BPB": 2.6958895023690124,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.6997229485238863,
+      "relative_BPB_percent": -25.955179094284276
+    },
+    {
+      "reference": "E05",
+      "step": 1750,
+      "reference_BPB": 2.6194716086644383,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.6357034422297962,
+      "relative_BPB_percent": -24.268384514154572
+    },
+    {
+      "reference": "E05",
+      "step": 2000,
+      "reference_BPB": 2.5663779382014074,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.5794631688963181,
+      "relative_BPB_percent": -22.579027050958167
+    },
+    {
+      "reference": "E05",
+      "step": 2250,
+      "reference_BPB": 2.495469724889818,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.49749678279355525,
+      "relative_BPB_percent": -19.935997533110573
+    },
+    {
+      "reference": "E05",
+      "step": 2500,
+      "reference_BPB": 2.468788285850736,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.4501251856899353,
+      "relative_BPB_percent": -18.232636158787663
+    },
+    {
+      "reference": "E05",
+      "step": 2750,
+      "reference_BPB": 2.429379857329411,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.3877668856393037,
+      "relative_BPB_percent": -15.961558439262413
+    },
+    {
+      "reference": "E05",
+      "step": 3000,
+      "reference_BPB": 2.394942389920199,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.3297221162913728,
+      "relative_BPB_percent": -13.767434142846302
+    },
+    {
+      "reference": "E05",
+      "step": 3250,
+      "reference_BPB": 2.365629470220999,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.2640996779842264,
+      "relative_BPB_percent": -11.164033983714027
+    },
+    {
+      "reference": "E05",
+      "step": 3500,
+      "reference_BPB": 2.341863609956352,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.19994389116790012,
+      "relative_BPB_percent": -8.537811097018865
+    },
+    {
+      "reference": "E05",
+      "step": 3750,
+      "reference_BPB": 2.3168759705652326,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.14918433502801154,
+      "relative_BPB_percent": -6.439029836871935
+    },
+    {
+      "reference": "E05",
+      "step": 4000,
+      "reference_BPB": 2.3021873091839793,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": -0.09714956026549615,
+      "relative_BPB_percent": -4.219880801094822
+    },
+    {
+      "reference": "E05",
+      "step": 4250,
+      "reference_BPB": 2.2810494833586623,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": -0.03064502566212335,
+      "relative_BPB_percent": -1.34346167786773
+    },
+    {
+      "reference": "E05",
+      "step": 4500,
+      "reference_BPB": 2.259116442074144,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.02285898446371304,
+      "relative_BPB_percent": 1.011855079179802
+    },
+    {
+      "reference": "E05",
+      "step": 4750,
+      "reference_BPB": 2.2459495137712304,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.0752729439873967,
+      "relative_BPB_percent": 3.3514975971567607
+    },
+    {
+      "reference": "E05",
+      "step": 5000,
+      "reference_BPB": 2.2426681262812513,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.11177176988511262,
+      "relative_BPB_percent": 4.983874723829529
+    },
+    {
+      "reference": "E06",
+      "step": 250,
+      "reference_BPB": 3.5448063518664683,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.0600432449981758,
+      "relative_BPB_percent": -29.904122814495203
+    },
+    {
+      "reference": "E06",
+      "step": 500,
+      "reference_BPB": 3.2282950028053006,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -0.9269355321886996,
+      "relative_BPB_percent": -28.712850944018985
+    },
+    {
+      "reference": "E06",
+      "step": 750,
+      "reference_BPB": 3.001139153290631,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.8450200253783477,
+      "relative_BPB_percent": -28.156642601920556
+    },
+    {
+      "reference": "E06",
+      "step": 1000,
+      "reference_BPB": 2.870776980640055,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.8065167004008109,
+      "relative_BPB_percent": -28.094021438788108
+    },
+    {
+      "reference": "E06",
+      "step": 1250,
+      "reference_BPB": 2.7479919834241024,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.7320998300994384,
+      "relative_BPB_percent": -26.64126513161127
+    },
+    {
+      "reference": "E06",
+      "step": 1500,
+      "reference_BPB": 2.6642133149421587,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.6680467610970326,
+      "relative_BPB_percent": -25.074822550818766
+    },
+    {
+      "reference": "E06",
+      "step": 1750,
+      "reference_BPB": 2.600943687554783,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.6171755211201408,
+      "relative_BPB_percent": -23.728907475900186
+    },
+    {
+      "reference": "E06",
+      "step": 2000,
+      "reference_BPB": 2.5410049610641665,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.5540901917590773,
+      "relative_BPB_percent": -21.805946869423888
+    },
+    {
+      "reference": "E06",
+      "step": 2250,
+      "reference_BPB": 2.4748809764384236,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.476908034342161,
+      "relative_BPB_percent": -19.26993818621834
+    },
+    {
+      "reference": "E06",
+      "step": 2500,
+      "reference_BPB": 2.426148584705299,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.4074854845444982,
+      "relative_BPB_percent": -16.795570028700237
+    },
+    {
+      "reference": "E06",
+      "step": 2750,
+      "reference_BPB": 2.390324024556989,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.34871105286688175,
+      "relative_BPB_percent": -14.58844279203988
+    },
+    {
+      "reference": "E06",
+      "step": 3000,
+      "reference_BPB": 2.355609466423414,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.29038919279458764,
+      "relative_BPB_percent": -12.327560953280315
+    },
+    {
+      "reference": "E06",
+      "step": 3250,
+      "reference_BPB": 2.329891033026158,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.2283612407893858,
+      "relative_BPB_percent": -9.801370001960175
+    },
+    {
+      "reference": "E06",
+      "step": 3500,
+      "reference_BPB": 2.3003491869149313,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.1584294681264793,
+      "relative_BPB_percent": -6.887192128380903
+    },
+    {
+      "reference": "E06",
+      "step": 3750,
+      "reference_BPB": 2.27741886053822,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.10972722500099907,
+      "relative_BPB_percent": -4.818052001864393
+    },
+    {
+      "reference": "E06",
+      "step": 4000,
+      "reference_BPB": 2.261367265999379,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": -0.05632951708089573,
+      "relative_BPB_percent": -2.49094952101917
+    },
+    {
+      "reference": "E06",
+      "step": 4250,
+      "reference_BPB": 2.240310164618329,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": 0.010094293078209748,
+      "relative_BPB_percent": 0.45057569427799926
+    },
+    {
+      "reference": "E06",
+      "step": 4500,
+      "reference_BPB": 2.2217439340742366,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.06023149246362047,
+      "relative_BPB_percent": 2.7110006486286586
+    },
+    {
+      "reference": "E06",
+      "step": 4750,
+      "reference_BPB": 2.205379890065283,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.11584256769334411,
+      "relative_BPB_percent": 5.252726218062809
+    },
+    {
+      "reference": "E06",
+      "step": 5000,
+      "reference_BPB": 2.206175527200144,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.14826436896621997,
+      "relative_BPB_percent": 6.7204248772708475
+    },
+    {
+      "reference": "E07",
+      "step": 250,
+      "reference_BPB": 3.5463501413031,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.0615870344348073,
+      "relative_BPB_percent": -29.93463679942018
+    },
+    {
+      "reference": "E07",
+      "step": 500,
+      "reference_BPB": 3.254214545007878,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -0.9528550743912771,
+      "relative_BPB_percent": -29.28064702596216
+    },
+    {
+      "reference": "E07",
+      "step": 750,
+      "reference_BPB": 3.0082986446839004,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.8521795167716171,
+      "relative_BPB_percent": -28.327623598060715
+    },
+    {
+      "reference": "E07",
+      "step": 1000,
+      "reference_BPB": 2.8599038358767053,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.795643555637461,
+      "relative_BPB_percent": -27.82064017874769
+    },
+    {
+      "reference": "E07",
+      "step": 1250,
+      "reference_BPB": 2.7650131634700315,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.7491210101453674,
+      "relative_BPB_percent": -27.092855109783155
+    },
+    {
+      "reference": "E07",
+      "step": 1500,
+      "reference_BPB": 2.676456632380371,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.680290078535245,
+      "relative_BPB_percent": -25.417564039893026
+    },
+    {
+      "reference": "E07",
+      "step": 1750,
+      "reference_BPB": 2.601223873409221,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.617455706974579,
+      "relative_BPB_percent": -23.737122870755755
+    },
+    {
+      "reference": "E07",
+      "step": 2000,
+      "reference_BPB": 2.544834369533139,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.5579196002280498,
+      "relative_BPB_percent": -21.923611489513263
+    },
+    {
+      "reference": "E07",
+      "step": 2250,
+      "reference_BPB": 2.49588431062874,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.4979113685324772,
+      "relative_BPB_percent": -19.94929678479561
+    },
+    {
+      "reference": "E07",
+      "step": 2500,
+      "reference_BPB": 2.447062807185172,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.42839970702437125,
+      "relative_BPB_percent": -17.5066902968933
+    },
+    {
+      "reference": "E07",
+      "step": 2750,
+      "reference_BPB": 2.4072446460365384,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.3656316743464312,
+      "relative_BPB_percent": -15.18880413540159
+    },
+    {
+      "reference": "E07",
+      "step": 3000,
+      "reference_BPB": 2.364161939392434,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.2989416657636075,
+      "relative_BPB_percent": -12.644720346036554
+    },
+    {
+      "reference": "E07",
+      "step": 3250,
+      "reference_BPB": 2.350172673612486,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.24864288137571355,
+      "relative_BPB_percent": -10.57977076184452
+    },
+    {
+      "reference": "E07",
+      "step": 3500,
+      "reference_BPB": 2.3171976451507827,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.17527792636233075,
+      "relative_BPB_percent": -7.564219941666872
+    },
+    {
+      "reference": "E07",
+      "step": 3750,
+      "reference_BPB": 2.292475566403283,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.12478393086606188,
+      "relative_BPB_percent": -5.4431956743529515
+    },
+    {
+      "reference": "E07",
+      "step": 4000,
+      "reference_BPB": 2.2734861155093715,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": -0.06844836659088838,
+      "relative_BPB_percent": -3.0107228772563888
+    },
+    {
+      "reference": "E07",
+      "step": 4250,
+      "reference_BPB": 2.2601816238375165,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": -0.009777166140977567,
+      "relative_BPB_percent": -0.4325832064936974
+    },
+    {
+      "reference": "E07",
+      "step": 4500,
+      "reference_BPB": 2.2302004618772533,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.05177496466060383,
+      "relative_BPB_percent": 2.321538603620521
+    },
+    {
+      "reference": "E07",
+      "step": 4750,
+      "reference_BPB": 2.2159836651258766,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.10523879263275049,
+      "relative_BPB_percent": 4.7490779958782925
+    },
+    {
+      "reference": "E07",
+      "step": 5000,
+      "reference_BPB": 2.2105152884263606,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.14392460774000337,
+      "relative_BPB_percent": 6.5109075921597315
+    },
+    {
+      "reference": "E08",
+      "step": 250,
+      "reference_BPB": 3.5375295165686267,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.0527664097003342,
+      "relative_BPB_percent": -29.759932878850115
+    },
+    {
+      "reference": "E08",
+      "step": 500,
+      "reference_BPB": 3.171973650876012,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -0.8706141802594112,
+      "relative_BPB_percent": -27.44708109473013
+    },
+    {
+      "reference": "E08",
+      "step": 750,
+      "reference_BPB": 2.930139511456522,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.7740203835442387,
+      "relative_BPB_percent": -26.415820151835923
+    },
+    {
+      "reference": "E08",
+      "step": 1000,
+      "reference_BPB": 2.7630439128593722,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.698783632620128,
+      "relative_BPB_percent": -25.29035566057951
+    },
+    {
+      "reference": "E08",
+      "step": 1250,
+      "reference_BPB": 2.6539534368784756,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.6380612835538115,
+      "relative_BPB_percent": -24.041917039218507
+    },
+    {
+      "reference": "E08",
+      "step": 1500,
+      "reference_BPB": 2.5822443474824746,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.5860777936373485,
+      "relative_BPB_percent": -22.696449861870637
+    },
+    {
+      "reference": "E08",
+      "step": 1750,
+      "reference_BPB": 2.511758074474596,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.5279899080399542,
+      "relative_BPB_percent": -21.020730993385893
+    },
+    {
+      "reference": "E08",
+      "step": 2000,
+      "reference_BPB": 2.4456925656602455,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.45877779635515625,
+      "relative_BPB_percent": -18.758604527683286
+    },
+    {
+      "reference": "E08",
+      "step": 2250,
+      "reference_BPB": 2.3681128359549066,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.370139893858644,
+      "relative_BPB_percent": -15.6301628975965
+    },
+    {
+      "reference": "E08",
+      "step": 2500,
+      "reference_BPB": 2.3498378126783543,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.3311747125175537,
+      "relative_BPB_percent": -14.093513634461408
+    },
+    {
+      "reference": "E08",
+      "step": 2750,
+      "reference_BPB": 2.310927684732939,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.26931471304283194,
+      "relative_BPB_percent": -11.653965410603284
+    },
+    {
+      "reference": "E08",
+      "step": 3000,
+      "reference_BPB": 2.2758699272236167,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.21064965359479038,
+      "relative_BPB_percent": -9.25578615346293
+    },
+    {
+      "reference": "E08",
+      "step": 3250,
+      "reference_BPB": 2.253054243390234,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.15152445115346147,
+      "relative_BPB_percent": -6.725290862303357
+    },
+    {
+      "reference": "E08",
+      "step": 3500,
+      "reference_BPB": 2.2184175999838582,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.07649788119540624,
+      "relative_BPB_percent": -3.4483084337215364
+    },
+    {
+      "reference": "E08",
+      "step": 3750,
+      "reference_BPB": 2.2010008885160794,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.03330925297885834,
+      "relative_BPB_percent": -1.5133684476300036
+    },
+    {
+      "reference": "E08",
+      "step": 4000,
+      "reference_BPB": 2.188800551362086,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": 0.016237197556397298,
+      "relative_BPB_percent": 0.74183084184134
+    },
+    {
+      "reference": "E08",
+      "step": 4250,
+      "reference_BPB": 2.1804802988023058,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": 0.0699241588942332,
+      "relative_BPB_percent": 3.2068236953409324
+    },
+    {
+      "reference": "E08",
+      "step": 4500,
+      "reference_BPB": 2.156255041767038,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.12572038477081904,
+      "relative_BPB_percent": 5.830496965136001
+    },
+    {
+      "reference": "E08",
+      "step": 4750,
+      "reference_BPB": 2.145489403825302,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.17573305393332506,
+      "relative_BPB_percent": 8.190814348465292
+    },
+    {
+      "reference": "E08",
+      "step": 5000,
+      "reference_BPB": 2.1475813155085146,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.20685858065784934,
+      "relative_BPB_percent": 9.632165225318534
+    },
+    {
+      "reference": "E09",
+      "step": 250,
+      "reference_BPB": 3.4977277988871354,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.0129646920188429,
+      "relative_BPB_percent": -28.960649606328303
+    },
+    {
+      "reference": "E09",
+      "step": 500,
+      "reference_BPB": 3.0830773174102886,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -0.7817178467936876,
+      "relative_BPB_percent": -25.355116538248613
+    },
+    {
+      "reference": "E09",
+      "step": 750,
+      "reference_BPB": 2.8669934280483482,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.7108743001360649,
+      "relative_BPB_percent": -24.79511439340756
+    },
+    {
+      "reference": "E09",
+      "step": 1000,
+      "reference_BPB": 2.710399237503568,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.6461389572643239,
+      "relative_BPB_percent": -23.83925394915085
+    },
+    {
+      "reference": "E09",
+      "step": 1250,
+      "reference_BPB": 2.605945631046829,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.5900534777221651,
+      "relative_BPB_percent": -22.642585888683175
+    },
+    {
+      "reference": "E09",
+      "step": 1500,
+      "reference_BPB": 2.5289567141468607,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.5327901603017346,
+      "relative_BPB_percent": -21.067587172264844
+    },
+    {
+      "reference": "E09",
+      "step": 1750,
+      "reference_BPB": 2.4434960856007915,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.4597279191661494,
+      "relative_BPB_percent": -18.814350547777302
+    },
+    {
+      "reference": "E09",
+      "step": 2000,
+      "reference_BPB": 2.385595835807929,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.39868106650283974,
+      "relative_BPB_percent": -16.71201217400762
+    },
+    {
+      "reference": "E09",
+      "step": 2250,
+      "reference_BPB": 2.3268495333839314,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.3288765912876688,
+      "relative_BPB_percent": -14.133986171825407
+    },
+    {
+      "reference": "E09",
+      "step": 2500,
+      "reference_BPB": 2.289911737101915,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.27124863694111445,
+      "relative_BPB_percent": -11.845375197054686
+    },
+    {
+      "reference": "E09",
+      "step": 2750,
+      "reference_BPB": 2.2596623986417264,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.2180494269516191,
+      "relative_BPB_percent": -9.649646207446194
+    },
+    {
+      "reference": "E09",
+      "step": 3000,
+      "reference_BPB": 2.2493001150058527,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.18407984137702638,
+      "relative_BPB_percent": -8.183871958613553
+    },
+    {
+      "reference": "E09",
+      "step": 3250,
+      "reference_BPB": 2.2089292378392207,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.1073994456024483,
+      "relative_BPB_percent": -4.862059126326146
+    },
+    {
+      "reference": "E09",
+      "step": 3500,
+      "reference_BPB": 2.1827850242477713,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.04086530545931932,
+      "relative_BPB_percent": -1.8721635436088069
+    },
+    {
+      "reference": "E09",
+      "step": 3750,
+      "reference_BPB": 2.1607379197220804,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": 0.006953715815140704,
+      "relative_BPB_percent": 0.3218213440728146
+    },
+    {
+      "reference": "E09",
+      "step": 4000,
+      "reference_BPB": 2.155262967321022,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": 0.04977478159746118,
+      "relative_BPB_percent": 2.309452830219172
+    },
+    {
+      "reference": "E09",
+      "step": 4250,
+      "reference_BPB": 2.146714910867963,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": 0.1036895468285759,
+      "relative_BPB_percent": 4.830149839815112
+    },
+    {
+      "reference": "E09",
+      "step": 4500,
+      "reference_BPB": 2.118622456294993,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.163352970242864,
+      "relative_BPB_percent": 7.710338845767395
+    },
+    {
+      "reference": "E09",
+      "step": 4750,
+      "reference_BPB": 2.100147365440216,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.22107509231841105,
+      "relative_BPB_percent": 10.526646651392069
+    },
+    {
+      "reference": "E09",
+      "step": 5000,
+      "reference_BPB": 2.116808586597174,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.23763130956918976,
+      "relative_BPB_percent": 11.225923358105238
+    },
+    {
+      "reference": "E10",
+      "step": 250,
+      "reference_BPB": 3.55011045737009,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.0653473505017974,
+      "relative_BPB_percent": -30.008850803222707
+    },
+    {
+      "reference": "E10",
+      "step": 500,
+      "reference_BPB": 3.301842322231356,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -1.000482851614755,
+      "relative_BPB_percent": -30.30074588597064
+    },
+    {
+      "reference": "E10",
+      "step": 750,
+      "reference_BPB": 3.060840086184891,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.9047209582726077,
+      "relative_BPB_percent": -29.55792961403204
+    },
+    {
+      "reference": "E10",
+      "step": 1000,
+      "reference_BPB": 2.9136923280959937,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.8494320478567494,
+      "relative_BPB_percent": -29.153114063070163
+    },
+    {
+      "reference": "E10",
+      "step": 1250,
+      "reference_BPB": 2.793450127403977,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.777557974079313,
+      "relative_BPB_percent": -27.835040491734752
+    },
+    {
+      "reference": "E10",
+      "step": 1500,
+      "reference_BPB": 2.720011923680288,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.7238453698351621,
+      "relative_BPB_percent": -26.611845467786388
+    },
+    {
+      "reference": "E10",
+      "step": 1750,
+      "reference_BPB": 2.6557627721378703,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.6719946057032282,
+      "relative_BPB_percent": -25.30326175038131
+    },
+    {
+      "reference": "E10",
+      "step": 2000,
+      "reference_BPB": 2.6088657484234075,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.6219509791183182,
+      "relative_BPB_percent": -23.839899753146597
+    },
+    {
+      "reference": "E10",
+      "step": 2250,
+      "reference_BPB": 2.5452116163806373,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.5472386742843747,
+      "relative_BPB_percent": -21.50071415525612
+    },
+    {
+      "reference": "E10",
+      "step": 2500,
+      "reference_BPB": 2.500867104236455,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.48220400407565434,
+      "relative_BPB_percent": -19.281472544414836
+    },
+    {
+      "reference": "E10",
+      "step": 2750,
+      "reference_BPB": 2.4631646630635586,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.4215516913734514,
+      "relative_BPB_percent": -17.11423104166925
+    },
+    {
+      "reference": "E10",
+      "step": 3000,
+      "reference_BPB": 2.423981864528211,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.35876159089938486,
+      "relative_BPB_percent": -14.800506396082792
+    },
+    {
+      "reference": "E10",
+      "step": 3250,
+      "reference_BPB": 2.398440326870808,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.2969105346340357,
+      "relative_BPB_percent": -12.37931714654783
+    },
+    {
+      "reference": "E10",
+      "step": 3500,
+      "reference_BPB": 2.3623718710971757,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.22045215230872373,
+      "relative_BPB_percent": -9.331814140097139
+    },
+    {
+      "reference": "E10",
+      "step": 3750,
+      "reference_BPB": 2.349907913989045,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.18221627845182375,
+      "relative_BPB_percent": -7.754188041458432
+    },
+    {
+      "reference": "E10",
+      "step": 4000,
+      "reference_BPB": 2.3293434410589002,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": -0.12430569214041709,
+      "relative_BPB_percent": -5.3365119951529705
+    },
+    {
+      "reference": "E10",
+      "step": 4250,
+      "reference_BPB": 2.314324203457951,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": -0.06391974576141202,
+      "relative_BPB_percent": -2.7619183892172994
+    },
+    {
+      "reference": "E10",
+      "step": 4500,
+      "reference_BPB": 2.2885229265314235,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": -0.006547499993566408,
+      "relative_BPB_percent": -0.2861015687306234
+    },
+    {
+      "reference": "E10",
+      "step": 4750,
+      "reference_BPB": 2.2696019564685193,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.05162050129010787,
+      "relative_BPB_percent": 2.2744297141173098
+    },
+    {
+      "reference": "E10",
+      "step": 5000,
+      "reference_BPB": 2.267118679758884,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.08732121640748014,
+      "relative_BPB_percent": 3.8516385219307114
+    },
+    {
+      "reference": "E11",
+      "step": 250,
+      "reference_BPB": 3.353409405760913,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -0.8686462988926205,
+      "relative_BPB_percent": -25.90337754168487
+    },
+    {
+      "reference": "E11",
+      "step": 500,
+      "reference_BPB": 2.992687134150637,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -0.691327663534036,
+      "relative_BPB_percent": -23.100565897619084
+    },
+    {
+      "reference": "E11",
+      "step": 750,
+      "reference_BPB": 2.8267528223894898,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.6706336944772064,
+      "relative_BPB_percent": -23.72452551087616
+    },
+    {
+      "reference": "E11",
+      "step": 1000,
+      "reference_BPB": 2.727196382218233,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.6629361019789886,
+      "relative_BPB_percent": -24.308337540392788
+    },
+    {
+      "reference": "E11",
+      "step": 1250,
+      "reference_BPB": 2.6415652199458584,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.6256730666211943,
+      "relative_BPB_percent": -23.68569444724965
+    },
+    {
+      "reference": "E11",
+      "step": 1500,
+      "reference_BPB": 2.5405173446897082,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.5443507908445822,
+      "relative_BPB_percent": -21.42676931462035
+    },
+    {
+      "reference": "E11",
+      "step": 1750,
+      "reference_BPB": 2.504889212087642,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.521121045653,
+      "relative_BPB_percent": -20.804155454790894
+    },
+    {
+      "reference": "E11",
+      "step": 2000,
+      "reference_BPB": 2.4379753594567766,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.4510605901516873,
+      "relative_BPB_percent": -18.501441714824864
+    },
+    {
+      "reference": "E11",
+      "step": 2250,
+      "reference_BPB": 2.376413231987802,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.37844028989153955,
+      "relative_BPB_percent": -15.924851991123823
+    },
+    {
+      "reference": "E11",
+      "step": 2500,
+      "reference_BPB": 2.336838586525155,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.3181754863643542,
+      "relative_BPB_percent": -13.615638161704469
+    },
+    {
+      "reference": "E11",
+      "step": 2750,
+      "reference_BPB": 2.301270262768866,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.2596572910787587,
+      "relative_BPB_percent": -11.283215851681039
+    },
+    {
+      "reference": "E11",
+      "step": 3000,
+      "reference_BPB": 2.2817990561329116,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.21657878250408524,
+      "relative_BPB_percent": -9.491579984748222
+    },
+    {
+      "reference": "E11",
+      "step": 3250,
+      "reference_BPB": 2.253983957622239,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.15245416538546674,
+      "relative_BPB_percent": -6.763764438957809
+    },
+    {
+      "reference": "E11",
+      "step": 3500,
+      "reference_BPB": 2.238189709354306,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.09626999056585417,
+      "relative_BPB_percent": -4.3012435524791615
+    },
+    {
+      "reference": "E11",
+      "step": 3750,
+      "reference_BPB": 2.2139012878629236,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.04620965232570251,
+      "relative_BPB_percent": -2.087249895875376
+    },
+    {
+      "reference": "E11",
+      "step": 4000,
+      "reference_BPB": 2.1995789295396797,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": 0.005458819378803437,
+      "relative_BPB_percent": 0.2481756533258883
+    },
+    {
+      "reference": "E11",
+      "step": 4250,
+      "reference_BPB": 2.184422552971693,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": 0.065981904724846,
+      "relative_BPB_percent": 3.0205650749706825
+    },
+    {
+      "reference": "E11",
+      "step": 4500,
+      "reference_BPB": 2.1691973000689866,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.11277812646887053,
+      "relative_BPB_percent": 5.199071862448101
+    },
+    {
+      "reference": "E11",
+      "step": 4750,
+      "reference_BPB": 2.1602356542449894,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.1609868035136377,
+      "relative_BPB_percent": 7.452279717598831
+    },
+    {
+      "reference": "E11",
+      "step": 5000,
+      "reference_BPB": 2.15396251403479,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.20047738213157373,
+      "relative_BPB_percent": 9.307375630973302
+    },
+    {
+      "reference": "E12",
+      "step": 250,
+      "reference_BPB": 3.5998441307210234,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.115081023852731,
+      "relative_BPB_percent": -30.975814045298343
+    },
+    {
+      "reference": "E12",
+      "step": 500,
+      "reference_BPB": 3.495763721895297,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -1.194404251278696,
+      "relative_BPB_percent": -34.16719052828681
+    },
+    {
+      "reference": "E12",
+      "step": 750,
+      "reference_BPB": 3.2565523979415225,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -1.1004332700292392,
+      "relative_BPB_percent": -33.791357716977835
+    },
+    {
+      "reference": "E12",
+      "step": 1000,
+      "reference_BPB": 3.073118529051898,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -1.0088582488126536,
+      "relative_BPB_percent": -32.82848478753279
+    },
+    {
+      "reference": "E12",
+      "step": 1250,
+      "reference_BPB": 2.9565268831498264,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.9406347298251623,
+      "relative_BPB_percent": -31.815531094478942
+    },
+    {
+      "reference": "E12",
+      "step": 1500,
+      "reference_BPB": 2.8654111694193567,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.8692446155742306,
+      "relative_BPB_percent": -30.3357725708305
+    },
+    {
+      "reference": "E12",
+      "step": 1750,
+      "reference_BPB": 2.7398665050176767,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.7560983385830347,
+      "relative_BPB_percent": -27.59617438288865
+    },
+    {
+      "reference": "E12",
+      "step": 2000,
+      "reference_BPB": 2.6992919499816854,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.7123771806765962,
+      "relative_BPB_percent": -26.391260889042755
+    },
+    {
+      "reference": "E12",
+      "step": 2250,
+      "reference_BPB": 2.608376585475274,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.6104036433790112,
+      "relative_BPB_percent": -23.401668561895526
+    },
+    {
+      "reference": "E12",
+      "step": 2500,
+      "reference_BPB": 2.5578540907492346,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.539190990588434,
+      "relative_BPB_percent": -21.07981813890317
+    },
+    {
+      "reference": "E12",
+      "step": 2750,
+      "reference_BPB": 2.4993067615889517,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.45769378989884446,
+      "relative_BPB_percent": -18.312829658727548
+    },
+    {
+      "reference": "E12",
+      "step": 3000,
+      "reference_BPB": 2.4547866527851667,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.3895663791563404,
+      "relative_BPB_percent": -15.869663406974443
+    },
+    {
+      "reference": "E12",
+      "step": 3250,
+      "reference_BPB": 2.455119049442182,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.3535892572054098,
+      "relative_BPB_percent": -14.402122670415817
+    },
+    {
+      "reference": "E12",
+      "step": 3500,
+      "reference_BPB": 2.3805428411089777,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.23862312232052574,
+      "relative_BPB_percent": -10.023895314959464
+    },
+    {
+      "reference": "E12",
+      "step": 3750,
+      "reference_BPB": 2.3664649709478893,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.19877333541066822,
+      "relative_BPB_percent": -8.399589169961363
+    },
+    {
+      "reference": "E12",
+      "step": 4000,
+      "reference_BPB": 2.3273000610370675,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": -0.1222623121185844,
+      "relative_BPB_percent": -5.253397022818929
+    },
+    {
+      "reference": "E12",
+      "step": 4250,
+      "reference_BPB": 2.3178200188451523,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": -0.06741556114861336,
+      "relative_BPB_percent": -2.9085761879907746
+    },
+    {
+      "reference": "E12",
+      "step": 4500,
+      "reference_BPB": 2.2895041743668925,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": -0.007528747829035343,
+      "relative_BPB_percent": -0.328837479893096
+    },
+    {
+      "reference": "E12",
+      "step": 4750,
+      "reference_BPB": 2.276134463493287,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.04508799426533994,
+      "relative_BPB_percent": 1.9809020507576491
+    },
+    {
+      "reference": "E12",
+      "step": 5000,
+      "reference_BPB": 2.2562788557000903,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.09816104046627361,
+      "relative_BPB_percent": 4.350572191832014
+    },
+    {
+      "reference": "E13",
+      "step": 250,
+      "reference_BPB": 3.5718008070379574,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.087037700169665,
+      "relative_BPB_percent": -30.433883603692045
+    },
+    {
+      "reference": "E13",
+      "step": 500,
+      "reference_BPB": 3.42129250886821,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -1.119933038251609,
+      "relative_BPB_percent": -32.73420893854211
+    },
+    {
+      "reference": "E13",
+      "step": 750,
+      "reference_BPB": 3.1721838659325154,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -1.0160647380202321,
+      "relative_BPB_percent": -32.03044908374324
+    },
+    {
+      "reference": "E13",
+      "step": 1000,
+      "reference_BPB": 2.990795476917312,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.9265351966780679,
+      "relative_BPB_percent": -30.97955723916872
+    },
+    {
+      "reference": "E13",
+      "step": 1250,
+      "reference_BPB": 2.8972643517717924,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.8813721984471283,
+      "relative_BPB_percent": -30.420841574505765
+    },
+    {
+      "reference": "E13",
+      "step": 1500,
+      "reference_BPB": 2.8057171566256613,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.8095506027805353,
+      "relative_BPB_percent": -28.853607031228822
+    },
+    {
+      "reference": "E13",
+      "step": 1750,
+      "reference_BPB": 2.725261961412337,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.741493794977695,
+      "relative_BPB_percent": -27.208165874572444
+    },
+    {
+      "reference": "E13",
+      "step": 2000,
+      "reference_BPB": 2.6912110830458675,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.7042963137407783,
+      "relative_BPB_percent": -26.17023681931584
+    },
+    {
+      "reference": "E13",
+      "step": 2250,
+      "reference_BPB": 2.626757123035745,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.6287841809394825,
+      "relative_BPB_percent": -23.937659687881464
+    },
+    {
+      "reference": "E13",
+      "step": 2500,
+      "reference_BPB": 2.598774586821067,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.5801114866602664,
+      "relative_BPB_percent": -22.32250113580969
+    },
+    {
+      "reference": "E13",
+      "step": 2750,
+      "reference_BPB": 2.5533786534091685,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.5117656817190612,
+      "relative_BPB_percent": -20.042686619776205
+    },
+    {
+      "reference": "E13",
+      "step": 3000,
+      "reference_BPB": 2.5183581370925827,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.4531378634637564,
+      "relative_BPB_percent": -17.993384530561617
+    },
+    {
+      "reference": "E13",
+      "step": 3250,
+      "reference_BPB": 2.4820466816366804,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.380516889399908,
+      "relative_BPB_percent": -15.330770859998177
+    },
+    {
+      "reference": "E13",
+      "step": 3500,
+      "reference_BPB": 2.448578386683742,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.30665866789528984,
+      "relative_BPB_percent": -12.523947346877318
+    },
+    {
+      "reference": "E13",
+      "step": 3750,
+      "reference_BPB": 2.423968493241122,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.25627685770390096,
+      "relative_BPB_percent": -10.572615049184474
+    },
+    {
+      "reference": "E13",
+      "step": 4000,
+      "reference_BPB": 2.4029696367337783,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": -0.19793188781529514,
+      "relative_BPB_percent": -8.23696998869835
+    },
+    {
+      "reference": "E13",
+      "step": 4250,
+      "reference_BPB": 2.381632016549495,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": -0.1312275588529559,
+      "relative_BPB_percent": -5.509984663503065
+    },
+    {
+      "reference": "E13",
+      "step": 4500,
+      "reference_BPB": 2.354316111286292,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": -0.07234068474843491,
+      "relative_BPB_percent": -3.0726835874606118
+    },
+    {
+      "reference": "E13",
+      "step": 4750,
+      "reference_BPB": 2.3437977699845773,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": -0.022575312225950217,
+      "relative_BPB_percent": -0.9631936899615168
+    },
+    {
+      "reference": "E13",
+      "step": 5000,
+      "reference_BPB": 2.3249584785019195,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.029481417664444454,
+      "relative_BPB_percent": 1.2680406096301944
+    },
+    {
+      "reference": "E14",
+      "step": 250,
+      "reference_BPB": 3.4912682405122983,
+      "F01_BPB": 2.4847631068682925,
+      "absolute_BPB_difference": -1.0065051336440058,
+      "relative_BPB_percent": -28.82921231788006
+    },
+    {
+      "reference": "E14",
+      "step": 500,
+      "reference_BPB": 3.0933651435438643,
+      "F01_BPB": 2.301359470616601,
+      "absolute_BPB_difference": -0.7920056729272633,
+      "relative_BPB_percent": -25.603368376353874
+    },
+    {
+      "reference": "E14",
+      "step": 750,
+      "reference_BPB": 2.8872168283212334,
+      "F01_BPB": 2.1561191279122833,
+      "absolute_BPB_difference": -0.7310977004089501,
+      "relative_BPB_percent": -25.321884149381514
+    },
+    {
+      "reference": "E14",
+      "step": 1000,
+      "reference_BPB": 2.732830780362562,
+      "F01_BPB": 2.0642602802392442,
+      "absolute_BPB_difference": -0.6685705001233178,
+      "relative_BPB_percent": -24.464394390150247
+    },
+    {
+      "reference": "E14",
+      "step": 1250,
+      "reference_BPB": 2.6514824929550773,
+      "F01_BPB": 2.015892153324664,
+      "absolute_BPB_difference": -0.6355903396304132,
+      "relative_BPB_percent": -23.97113091710622
+    },
+    {
+      "reference": "E14",
+      "step": 1500,
+      "reference_BPB": 2.543587504695143,
+      "F01_BPB": 1.996166553845126,
+      "absolute_BPB_difference": -0.547420950850017,
+      "relative_BPB_percent": -21.521608745110854
+    },
+    {
+      "reference": "E14",
+      "step": 1750,
+      "reference_BPB": 2.483952536456994,
+      "F01_BPB": 1.983768166434642,
+      "absolute_BPB_difference": -0.5001843700223518,
+      "relative_BPB_percent": -20.136631545133866
+    },
+    {
+      "reference": "E14",
+      "step": 2000,
+      "reference_BPB": 2.434451311825878,
+      "F01_BPB": 1.9869147693050893,
+      "absolute_BPB_difference": -0.4475365425207889,
+      "relative_BPB_percent": -18.383466547339957
+    },
+    {
+      "reference": "E14",
+      "step": 2250,
+      "reference_BPB": 2.3746355814880387,
+      "F01_BPB": 1.9979729420962626,
+      "absolute_BPB_difference": -0.376662639391776,
+      "relative_BPB_percent": -15.86191339539116
+    },
+    {
+      "reference": "E14",
+      "step": 2500,
+      "reference_BPB": 2.341081231093357,
+      "F01_BPB": 2.0186631001608006,
+      "absolute_BPB_difference": -0.3224181309325562,
+      "relative_BPB_percent": -13.772188963386679
+    },
+    {
+      "reference": "E14",
+      "step": 2750,
+      "reference_BPB": 2.31493905425433,
+      "F01_BPB": 2.0416129716901072,
+      "absolute_BPB_difference": -0.27332608256422297,
+      "relative_BPB_percent": -11.80705306525941
+    },
+    {
+      "reference": "E14",
+      "step": 3000,
+      "reference_BPB": 2.2807285480314627,
+      "F01_BPB": 2.0652202736288263,
+      "absolute_BPB_difference": -0.21550827440263642,
+      "relative_BPB_percent": -9.449097946734842
+    },
+    {
+      "reference": "E14",
+      "step": 3250,
+      "reference_BPB": 2.2570263158827544,
+      "F01_BPB": 2.1015297922367724,
+      "absolute_BPB_difference": -0.155496523645982,
+      "relative_BPB_percent": -6.889442207729202
+    },
+    {
+      "reference": "E14",
+      "step": 3500,
+      "reference_BPB": 2.221058339663981,
+      "F01_BPB": 2.141919718788452,
+      "absolute_BPB_difference": -0.07913862087552914,
+      "relative_BPB_percent": -3.5631041050232737
+    },
+    {
+      "reference": "E14",
+      "step": 3750,
+      "reference_BPB": 2.206670795448737,
+      "F01_BPB": 2.167691635537221,
+      "absolute_BPB_difference": -0.038979159911515904,
+      "relative_BPB_percent": -1.7664238812563515
+    },
+    {
+      "reference": "E14",
+      "step": 4000,
+      "reference_BPB": 2.197499837054276,
+      "F01_BPB": 2.205037748918483,
+      "absolute_BPB_difference": 0.0075379118642069365,
+      "relative_BPB_percent": 0.34302218080304314
+    },
+    {
+      "reference": "E14",
+      "step": 4250,
+      "reference_BPB": 2.1845338948261173,
+      "F01_BPB": 2.250404457696539,
+      "absolute_BPB_difference": 0.0658705628704217,
+      "relative_BPB_percent": 3.015314297774485
+    },
+    {
+      "reference": "E14",
+      "step": 4500,
+      "reference_BPB": 2.161017845195392,
+      "F01_BPB": 2.281975426537857,
+      "absolute_BPB_difference": 0.12095758134246504,
+      "relative_BPB_percent": 5.597250462849757
+    },
+    {
+      "reference": "E14",
+      "step": 4750,
+      "reference_BPB": 2.1418920827248416,
+      "F01_BPB": 2.321222457758627,
+      "absolute_BPB_difference": 0.17933037503378557,
+      "relative_BPB_percent": 8.372521495370933
+    },
+    {
+      "reference": "E14",
+      "step": 5000,
+      "reference_BPB": 2.145056080410206,
+      "F01_BPB": 2.354439896166364,
+      "absolute_BPB_difference": 0.20938381575615805,
+      "relative_BPB_percent": 9.761228047525773
+    }
+  ],
+  "scope": "280 actual matched observations; architecture/tokenizer/conditioning/cost differ. Not replications."
+}

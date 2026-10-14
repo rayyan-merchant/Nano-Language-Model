@@ -60,7 +60,7 @@ estimates, not research measurements. Conservative storage14690504228bytes versu
 (https://www.kaggle.com/docs/notebooks); wrapper conservatively budgets10h with
 2h provisioning/publication reserve. Quota before research:23.58GPU hours remained.
 
-## Authorized research — acceptance pending
+## Research launch gate — historical pre-completion record
 
 https://www.kaggle.com/code/rayyannmerchant/nano-f01-research-20261014-05b5949a
 was submitted once, after all gates passed. No research rerun occurred. Live log
@@ -73,6 +73,7 @@ learning-rate change is permitted. Full acceptance remains pending until10000/
 40validations, durable publication, independent all-checkpoint verification,
 CPU/freshCUDA restoration, complete fixed generation/reproduction and the final
 report pass. Reserved test is evaluated once, after immutable validation selection.
+The pending status in this launch record is superseded by the verified closure below.
 
 ## Reproducible interfaces
 
@@ -85,7 +86,8 @@ python -m scripts.final.build_notebook --commit EXACT_SHA --mode development-rec
 python -m scripts.final.build_notebook --commit EXACT_SHA --mode research --source rayyannmerchant/ACCEPTED_DEVELOPMENT_RECOVERY --output FRESH_RESEARCH
 python -m scripts.final.build_notebook --commit EXACT_SHA --mode research-recovery --source rayyannmerchant/PUBLISHED_RESEARCH --diagnostic-commit COMMITTED_HELPER_SHA --output FRESH_FINAL_RECOVERY
 python -m scripts.final.inspect --archive ZIP --manifest MANIFEST --output FRESH_VERIFIED --dataset DATA
-python -m scripts.final.report --root . --verified FRESH_VERIFIED --manifest MANIFEST --cuda-receipt CUDA_RECEIPT --generation-receipt GEN_RECEIPT --output report/final --kernel rayyannmerchant/RESEARCH_KERNEL
+python -m scripts.final.report --root . --verified FRESH_VERIFIED --manifest MANIFEST --cuda-receipt CUDA_RECEIPT --generation-receipt GEN_RECEIPT --output FRESH_REPORT --kernel rayyannmerchant/RESEARCH_KERNEL
+python -m scripts.final.delivery --root . --output FRESH_REPORT
 ```
 
 Building a notebook does not establish publication or successful execution.
@@ -96,3 +98,50 @@ pure inference using the frozen installed package. All100raw fixed outputs are
 reproduced and ByteLevel token bytes strictly diagnosed without repaired text.
 Large archives/weights/full journals remain on D: and private Kaggle saved outputs,
 outside Git. Save receipt hashes and retrieval/version identities before acceptance.
+
+The report renderer requires a fresh destination and the independently verified
+archive download receipt beside FRESH_VERIFIED. Copy the reviewed interpretation
+document into FRESH_REPORT before the delivery supplement. Promote reviewed
+documents into report/final only after checking immutable receipt and raw sample
+hashes. Existing destinations fail rather than silently overwriting evidence.
+
+## Verified research closure — 2026-10-14
+
+Research and recovery notebooks both saved version 1 COMPLETE. The one F01 run
+has exactly 10,000 authoritative and known physical journal updates, 40 complete
+full sliding validations, 40 audited resumable checkpoint states and 41 native
+immutable snapshots. No research failure, resume or replay was recorded.
+Best update 1,750: loss 3.13024499, BPB 1.98376817, perplexity 22.879584.
+Final update 10,000: loss 4.81814590, BPB 3.05346210, perplexity 123.735460.
+One reserved test assessment followed selection freeze: BPB 2.24333983.
+
+Actual training 4,269.206 s; validation 945.441 s; measured wrapper/archive
+components sum 6,317.442 s, excluding queue/provisioning/publication/retrieval.
+Archive 2,648,712,125 bytes, SHA256
+`96de06da78ecb1416c8029eaf792003991a45a3dfa160eade43157bbe6ed78ab`.
+Independent download took 11,213.970 s with retained partial range attempts;
+complete CRC/safe paths/82-file inventory/all hashes, all checkpoint counters,
+sampler replay and CPU inference passed in a separate 205.529 s inspection.
+Recovered best/final CPU and CUDA greedy probes match exactly. Fresh qualified
+CUDA restores all six full-state fields at 10,000 with zero additional updates,
+verifies every native snapshot and reproduces all 100 fixed generation strings.
+
+All 100 best/final and 50 internal 5k outputs remain unchanged. Strict ByteLevel
+reconstruction found five invalid-UTF8 temperature-1.2 outputs, preserved without
+repair. Late validation deterioration, greedy loops, malformed words and literal
+training-passage copying are documented as negative findings. Engineering
+acceptance does not establish semantic coherence or statistical superiority.
+
+See report/final/F01_10000_analysis.md, interpretation.md, acceptance_checklist.md,
+artifact_retrieval.md and evidence/research. PR19 remains unmerged for review.
+The frozen F01 config's AUTHORIZED_NOT_TRAINED field records its creation-time
+authorization; changing it would alter provenance. Current acceptance is recorded
+in immutable execution receipts and these status documents. Historical pilot
+definitions/results and all scientific source files remain unchanged.
+
+Operational limitations preserved: initial 14-config-only test assertion,
+independent float32 reference tolerance, local monitoring/test connection stalls,
+read-only log reconnects, long retried archive transfer, and an existing-report
+regeneration blocked by the no-replace writer. The latter was resolved using a
+fresh staging directory and hash-preserving report promotion. None caused an
+extra F01 research update or a scientific model modification.

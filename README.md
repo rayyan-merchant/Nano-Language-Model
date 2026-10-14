@@ -122,3 +122,23 @@ parameters and6.703% more measured training time. Complete100-slot grid and
 20PNG/20PDF figures preserved; greedy repetition remains despite lowerloss.
 No other seed/configuration/extension launched; single-seed and resource scopes
 are explicit, and broader study approval remains separate.
+
+## Accepted F01 final-model research evidence
+
+[F01 analysis](report/final/F01_10000_analysis.md) documents the one explicitly
+authorized combined BPE/RoPE/width240/eight-block seed42 run: 6,046,560 parameters,
+10,000 completed updates, 40 full sliding validations and independently verified
+published CPU/CUDA full-state recovery with zero extra research updates.
+Best validation BPB1.98376817 occurs at1750; final BPB3.05346210 shows substantial
+late deterioration. The selected state received one frozen reserved test
+assessment (BPB2.24333983). All100 genuine best/final outputs are preserved,
+including severe loops, malformed words and five invalidUTF8 samples.
+
+[Consolidated results](report/final/E01_E14_consolidated_analysis.md),
+[interpretation](report/final/interpretation.md),
+[retrieval instructions](report/final/artifact_retrieval.md) and
+[presentation support](report/final/presentation_support/README.md) distinguish
+predictive improvements, execution acceptance and text-quality limitations.
+The user discontinued the three-seed grid; historical pilot configurations and
+evidence remain frozen. No further research training is authorized. PR19 awaits
+review; no automatic merge or deployed API is claimed.

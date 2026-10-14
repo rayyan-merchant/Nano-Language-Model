@@ -3,6 +3,7 @@ import argparse
 import csv
 import json
 import math
+import re
 from pathlib import Path
 import shutil
 import numpy as np
@@ -14,6 +15,41 @@ from nano_lm.artifacts import atomic_json, file_hash
 from nano_lm.config import load_experiment
 from scripts.final.protocol import MODEL, PARAMETERS, parameter_breakdown
 from scripts.final.generation_diagnostics import describe
+
+
+def readable_prose(text):
+    """Format report prose without changing fenced evidence, links or hashes."""
+    from scripts.pilot.write_e14_report import prose_spacing
+    text=prose_spacing(text);result=[];fence=None
+    replacements={'full validations':'full validations','all40':'all 40','All40':'All 40',
+        'all14':'all 14','all100':'all 100','every100':'every 100','all six':'all six',
+        'bestBPB':'best BPB','finalBPB':'final BPB','bestCP':'best CP','step5000':'step 5000',
+        'step10000':'step 10000','atstep':'at step ','bestgreedy':'best greedy',
+        'first2':'first 2','first256':'first 256','head40':'head 40','source06291e1':'source 06291e1',
+        'launcher9a93b7a':'launcher 9a93b7a','wrapper10000':'wrapper 10000',
+        'before_archive':'before_archive','bytes/24386':'bytes / 24386',
+        'updates/s':'updates/s','microbatch4':'microbatch 4','accumulation8':'accumulation 8'}
+    for line in text.splitlines(keepends=True):
+        opening=re.match(r'^\s*(`{3,}|~{3,})',line)
+        if opening:
+            if fence is None:fence=opening.group(1)
+            elif opening.group(1)[0]==fence[0] and len(opening.group(1))>=len(fence):fence=None
+            result.append(line);continue
+        if fence is None:
+            # All literal hashes, inline code and URLs remain byte-for-byte.
+            parts=re.split(r'(`[^`]*`|!?\[[^\]]*\]\([^)]*\)|https?://\S+|[A-Za-z0-9_./-]+\.(?:md|json|png|pdf|csv|pt)|[0-9a-f]{64}(?![0-9a-f])|\b[0-9a-f]{40}\b)',line)
+            for i in range(0,len(parts),2):
+                value=parts[i]
+                for old,new in replacements.items():value=value.replace(old,new)
+                value=re.sub(r'([A-Za-z])(\d)',r'\1 \2',value)
+                value=re.sub(r'(\d)([A-Za-z])',r'\1 \2',value)
+                # Restore registry identifiers and natural scientific notation.
+                value=re.sub(r'\b([EF]) (\d{2})\b',r'\1\2',value)
+                value=value.replace('3 e-4','3e-4').replace('4 x','4×')
+                parts[i]=value
+            line=''.join(parts)
+        result.append(line)
+    return ''.join(result)
 
 
 def load(path):
@@ -28,16 +64,18 @@ def savefig(fig,folder,name):
 def architecture(folder):
     fig,ax=plt.subplots(figsize=(12,7));ax.set_xlim(0,12);ax.set_ylim(0,8);ax.axis('off')
     boxes=[(0.4,6.3,3,1.0,'Canonical Byte-BPE\n1024 tokens; train-only'),
-           (4.1,6.3,3.2,1.0,'Untied token embedding\n1024 × 240'),
+           (4.1,6.3,3.2,1.0,'Untied token embedding\n1024 × 240; dropout 0.1'),
            (8.1,6.3,3.4,1.0,'Eight independent blocks\nwidth 240; pre-LayerNorm'),
-           (0.4,3.5,5.1,1.8,'Each block: LN → Q/K/V projections\n6 heads × 40 coordinates\nRoPE(Q,K); V unchanged\nQKᵀ / √40 → causal mask → softmax → V'),
+           (0.4,3.5,5.1,1.8,'Each block: LN → Q/K/V projections\n6 heads × 40 coordinates\nRoPE(Q,K); V unchanged\nQKᵀ / √40 → causal mask\nsoftmax → dropout 0.1 → V'),
            (6.4,3.5,5.1,1.8,'Merge heads → 240 → dropout → residual\nLN → Linear 240→960 → GELU\nLinear 960→240 → dropout → residual\nDropout 0.1; eight repetitions'),
            (2.3,1.3,3.2,1.0,'Final LayerNorm\n480 trainable parameters'),
            (6.4,1.3,4.1,1.0,'Untied LM head 240→1024\nShifted next-token cross-entropy')]
     for x,y,w,h,text in boxes:
         ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.12',facecolor='#eef3f7',edgecolor='#34536d'))
         ax.text(x+w/2,y+h/2,text,ha='center',va='center',fontsize=10)
-    for a,b in [((3.5,6.8),(3.9,6.8)),((7.4,6.8),(7.9,6.8)),((6,6.1),(6,5.5)),((5.6,4.4),(6.2,4.4)),((6,3.3),(6,2.5))]:
+    ax.plot([9.8,9.8,3.],[6.1,5.7,5.7],color='#34536d',lw=1.8)
+    ax.plot([9.,9.,3.9],[3.3,2.7,2.7],color='#34536d',lw=1.8)
+    for a,b in [((3.5,6.8),(3.9,6.8)),((7.4,6.8),(7.9,6.8)),((3.,5.7),(3.,5.45)),((5.6,4.4),(6.2,4.4)),((3.9,2.7),(3.9,2.45)),((5.65,1.8),(6.25,1.8))]:
         ax.annotate('',xy=b,xytext=a,arrowprops=dict(arrowstyle='->',color='#34536d',lw=1.8))
     ax.text(6,.3,'6,046,560 parameters • context128 BPE tokens • FP32 • no additive position embedding in RoPE mode',ha='center',fontsize=10)
     ax.set_title('F01: actual frozen implementation and tensor dimensions',fontsize=14)
@@ -55,8 +93,11 @@ def architecture(folder):
 
 
 def write(root,verified,manifest_path,cuda_receipt,generation_receipt,out,kernel):
-    root,verified,out=Path(root),Path(verified),Path(out);out.mkdir(parents=True,exist_ok=True)
+    root,verified,out=Path(root),Path(verified),Path(out);out.mkdir(parents=True,exist_ok=False)
     manifest=load(manifest_path);cpu=load(verified/'independent_recovery.json');cuda=load(cuda_receipt)
+    transfer=load(verified.parent/'download_receipt.json')
+    assert transfer['status']=='authorized_download_size_SHA256_verified'
+    assert transfer['archive_sha256']==manifest['archive_sha256'] and transfer['archive_bytes']==manifest['archive_bytes']
     reproduced=load(generation_receipt)
     assert reproduced['status']=='all100_fixed_CUDA_generations_exactly_reproduced_with_token_and_byte_diagnostics'
     assert len(reproduced['samples'])==100 and reproduced['additional_optimizer_updates']==0
@@ -82,11 +123,13 @@ def write(root,verified,manifest_path,cuda_receipt,generation_receipt,out,kernel
     evidence=out/'evidence/research';evidence.mkdir(parents=True,exist_ok=True)
     for name in ['completion.json','environment.json','source_provenance.json','dataset_validation.json','hardware.json',
                  'CUDA_architecture_audit.json','selection_freeze.json','reserved_test_evaluation.json','io_timing.json',
-                 'wall_time.json','snapshot_index.json','independent_development_recovery_gate.json','independent_recovery.json']:
+                 'wall_time.json','snapshot_index.json','execution_command.json','independent_development_recovery_gate.json','independent_recovery.json']:
         shutil.copyfile(verified/name,evidence/name)
     shutil.copyfile(manifest_path,evidence/'artifact_manifest.json');shutil.copyfile(cuda_receipt,evidence/'CUDA_recovery.json')
+    shutil.copyfile(verified.parent/'download_receipt.json',evidence/'download_receipt.json')
     shutil.copyfile(generation_receipt,evidence/'generation_reproduction.json')
     shutil.copyfile(source_run/'metadata.json',evidence/'run_metadata.json')
+    shutil.copyfile(source_run/'dataset_manifest.json',evidence/'dataset_manifest.json')
     for name in ['summary.json','validation.csv','generation.json','generation.md']:
         shutil.copyfile(verified/'analysis'/name,out/name)
     shutil.copyfile(verified/'step5000_generation.json',out/'step5000_generation.json')
@@ -103,11 +146,17 @@ def write(root,verified,manifest_path,cuda_receipt,generation_receipt,out,kernel
         variant=load(root/f'experiments/configs/{eid}.json');config,_,_=load_experiment(root,eid,1024 if variant['tokenizer']=='bpe' else 65)
         records.append({'experiment':eid,'seed':42,'replicates':1,'standard_deviation':None,**config.to_dict(),
                         'head_dimension':config.d_model//config.n_heads,'MLP_hidden_dimension':config.d_model*config.mlp_expansion,
+                        'microbatch':4,'accumulation':4096//(4*config.context_length),
+                        'sampled_windows_per_update':4096//config.context_length,'target_positions_per_update':4096,
                         'tokenizer':variant['tokenizer'],'parameters':s['parameters'],'updates':s['completed_optimizer_updates'],
                         'best_step':s['best_validation']['step'],'best_BPB':s['best_validation']['bpb'],
                         'final_BPB':s['final_validation']['bpb'],'training_seconds':s['training_seconds'],
                         'validation_seconds':s['validation_seconds'],'peak_GPU_MiB':s['peak_gpu_bytes']/2**20,
-                        'training_source_bytes':s['training_source_bytes'],'source_commit':s['source_commit']})
+                        'training_source_bytes':s['training_source_bytes'],'unique_target_bytes':s['unique_target_bytes'],
+                        'source_commit':s['source_commit'],'aggregate_code_hash':s.get('code_hash'),
+                        'configuration_hash':s.get('config_hash'),
+                        'updates_per_training_second':s['completed_optimizer_updates']/s['training_seconds'],
+                        'target_positions_per_training_second':s['training_tokens']/s['training_seconds']})
     atomic_json(out/'master_comparison.json',{'runs':records,'scope':'Fourteen different seed42 configurations plus one combined F01, not independent replications; F01 budget doubled; no pooled SD'})
     with (out/'master_comparison.csv').open('w',newline='',encoding='utf-8') as f:
         w=csv.DictWriter(f,fieldnames=list(records[0]));w.writeheader();w.writerows(records)
@@ -121,6 +170,14 @@ def write(root,verified,manifest_path,cuda_receipt,generation_receipt,out,kernel
     atomic_json(out/'strongest_pilot_comparison.json',{'comparisons':comparisons,'equal_step_is_still_combined_architecture':True,'final_budget_is_10000_vs_5000':True})
     presentation=out/'presentation_support';presentation.mkdir(exist_ok=True);architecture(presentation)
     figures=out/'comparison_figures';figures.mkdir(exist_ok=True)
+    fig,ax=plt.subplots(figsize=(11,5));x=np.arange(len(records))
+    ax.bar(x-.18,[r['best_BPB'] for r in records],width=.36,label='Validation-selected best')
+    ax.bar(x+.18,[r['final_BPB'] for r in records],width=.36,label='Final authorized update')
+    ax.set_xticks(x,[r['experiment'] for r in records])
+    ax.set(ylabel='Conditional validation BPB',title='All 14 seed-42 pilots and F01: observed best versus final')
+    ax.legend();ax.grid(axis='y',alpha=.2)
+    fig.text(.5,.01,'One seed per distinct architecture; no uncertainty estimate. F01 10k/40 validations; pilots 5k/20.',ha='center',fontsize=9)
+    savefig(fig,figures,'all15_best_final_BPB')
     fig,ax=plt.subplots(figsize=(9,5))
     for eid in ['E01','E02','E03','E09','E14']:
         rows=list(csv.DictReader((root/f'report/pilots/{eid}_seed42/validation.csv').open(encoding='utf-8')))
@@ -172,7 +229,9 @@ def write(root,verified,manifest_path,cuda_receipt,generation_receipt,out,kernel
                         'checkpoint_seconds':timers['checkpoint'],'export_seconds':timers['export'],'journal_seconds':io['journal_seconds'],
                         'wrapper_seconds_before_archive':wall['pipeline_seconds_before_archive'],
                         'archive_and_CRC_seconds':manifest['archive_and_CRC_seconds'],
-                        'measured_sequential_wrapper_component_sum':wall['pipeline_seconds_before_archive']+manifest['archive_and_CRC_seconds']},
+                        'measured_sequential_wrapper_component_sum':wall['pipeline_seconds_before_archive']+manifest['archive_and_CRC_seconds'],
+                        'independent_download_seconds':transfer['seconds'],
+                        'independent_archive_CPU_inspection_seconds':cpu['seconds']},
               'source_byte_sampling':cpu['sampler'],'CPU_recovery':cpu['status'],'CUDA_recovery':cuda['status']}
     findings['selected_best_checkpoint_exposure']={'optimizer_step':best['step'],'predicted_tokens':best_row['training_tokens'],
         'original_source_byte_exposure':best_row['training_bytes'],'training_seconds':best_row['train_seconds']}
@@ -281,15 +340,17 @@ Selection receipt fixes checkpoint SHA256 `{freeze['checkpoint_sha256']}` atstep
 
 Saved research output version1 at https://www.kaggle.com/code/{kernel}. Archive {manifest['archive_bytes']:,}bytes; SHA256 `{manifest['archive_sha256']}`. Exact{cpu['verified_file_count']}file inventory, CRC, safe paths, every file hash,40optimizer/scheduler counters,10000history rows,40full validations and41snapshot manifests independently checked. Fresh qualifiedCUDA verified all native snapshot files and complete model/optimizer/scheduler/scaler/RNG/sampling/history roundtrip10000→10000with0additional updates. Best/finalCPU and CUDA inference receipts identify each checksum. Raw snapshots remain in published outputs; ZIP contains every research checkpoint once plus all native analysis/evidence and snapshot index.
 
+Independent Windows archive transfer took {transfer['seconds']:.3f}s, separately from training and notebook execution. Completed ranges and failed-attempt partial transfer evidence remain on D:; retries do not represent optimizer replay. Local complete archive/CPU inspection took {cpu['seconds']:.3f}s. The actual transfer duration must not be substituted for training-only cost or concealed inside an unmeasured whole-platform wall-clock claim.
+
 Authoritative10000updates; recorded journal attempts{cpu['journal_recorded_update_attempts']}; uninterrupted sequential journal={cpu['uninterrupted_sequential_journal']}. If any resume/failure/attempt discrepancy exists, the receipt records it and physical work needs explicit reconciliation; no attempt history is silently merged. HTTP chunked log-stream reconnects are preserved separately from training evidence and do not count as optimizer restarts. The initial development launcher redirected child logs tobootstrap.log; later committed launcher exposes progress and records its own commit without changing frozen scientific execution.
 
 ## Limitations and final interpretation
 
-The predictive outcome, actual generations and resource costs are separate results. A combined six-million-parameter model and doubled budget cannot isolate tokenizer/RoPE/depth/width contributions. Matchingseed42 does not imply identical initialization tensors across changed shapes. Original-byte exposure, effective byte context, single contiguous corpus, repeated validation-based choices, one seed and separate GPU sessions restrict generalization. No statistical-significance claim, general model superiority, reasoning competence or memorization conclusion follows from these observations. See interpretation.md for evidence-backed qualitative findings and demonstration recommendation. Further training/decoding work requires new authorization; this task stops at10000.
+The predictive outcome, actual generations and resource costs are separate results. A combined six-million-parameter model and doubled budget cannot isolate tokenizer/RoPE/depth/width contributions. Matchingseed42 does not imply identical initialization tensors across changed shapes. Original-byte exposure, effective byte context, single contiguous corpus, repeated validation-based choices, one seed and separate GPU sessions restrict generalization. No statistical-significance claim, general model superiority, reasoning competence or global memorization rate follows from these observations. Literal training-passage reproduction is recorded separately in fixed20_training_overlaps.json. See interpretation.md for evidence-backed qualitative findings and demonstration recommendation. Further training/decoding work requires new authorization; this task stops at10000.
 '''
-    (out/'F01_10000_analysis.md').write_text(report,encoding='utf-8')
+    (out/'F01_10000_analysis.md').write_text(readable_prose(report),encoding='utf-8')
     (out/'E01_E14_consolidated_analysis.md').write_text('# All fourteen seed42 pilots and accepted F01\n\n| Experiment | Width | Blocks | Tokenizer | Parameters | Best BPB | Final BPB | Best step | Training seconds |\n|---|---:|---:|---|---:|---:|---:|---:|---:|\n'+master+'\n\n'+
-        'The14configurations are different architectures, not14replications. F01adds combined factors and10000updates; others use5000. Mean/SD acrossseeds cannot be estimated. All original configs/reports remain unchanged. See master_comparison.csv/JSON forcomplete shapes, source-byte exposure and resource fields, F01_architecture_decision.md for the frozen rationale, and F01_10000_analysis.md for measured comparisons/negative outcomes. E02BPE and F01are ranked using same-byteBPB; token perplexities are incomparable acrosstokenizers. Context/depth/width affect information/capacity/compute together. E07/E12interruption and replay accounting remains in their original reports; retained summary time is not substituted for total known physical work. No test-set model selection occurred.\n\n![Actual validation curves](comparison_figures/validation_BPB_matched_updates.png)\n',encoding='utf-8')
+        'The 14 configurations are different architectures, not 14 replications. F01 adds combined factors and 10,000 updates; others use 5,000. Mean/SD across seeds cannot be estimated. All original configs/reports remain unchanged. See master_comparison.csv/JSON for complete shapes, source-byte exposure and resource fields, F01_architecture_decision.md for the frozen rationale, and F01_10000_analysis.md for measured comparisons/negative outcomes. E02 BPE and F01 are ranked using same-byte BPB; token perplexities are incomparable across tokenizers. Context/depth/width affect information/capacity/compute together. E07 replay accounting remains in its original report; retained trajectory time is not substituted for total known physical work. E12 records no observed replay. No test-set model selection occurred.\n\n![Actual validation curves](comparison_figures/validation_BPB_matched_updates.png)\n',encoding='utf-8')
     (presentation/'README.md').write_text('# F01 presentation evidence\n\nArchitecture and RoPE diagram are mathematical/implementation illustrations; loss/BPB/resource charts contain genuine recorded data. Full findings, limitations and unedited generated texts are linked in ../F01_10000_analysis.md and ../generation.md. Single seed; combined architecture and doubled budget; no inference that lower BPB proves coherent text. No additional training was launched.\n',encoding='utf-8')
 
 
