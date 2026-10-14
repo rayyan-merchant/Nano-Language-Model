@@ -1,0 +1,12 @@
+{
+  "experiment_id": "F01",
+  "baseline": "E01",
+  "factor": "separately_authorized_combined_final_model",
+  "model_overrides": {"d_model": 240, "n_layers": 8, "position": "rope"},
+  "tokenizer": "bpe",
+  "owner": "Rayyan",
+  "status": "AUTHORIZED_NOT_TRAINED",
+  "authorized_seed": 42,
+  "authorized_optimizer_updates": 10000,
+  "authorization": "User F01 final architecture request, 2026-10-14; one fresh trajectory only"
+}

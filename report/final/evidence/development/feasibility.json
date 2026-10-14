@@ -1,0 +1,22 @@
+{
+  "label": "F01 development estimates, not research measurements",
+  "benchmark_updates": 10,
+  "warmup_updates_excluded": 2,
+  "warmup_excluded_updates_per_second": 2.187108128916426,
+  "projected_10000_training_seconds": 4572.247648749936,
+  "full_validation_seconds": 21.494138084000042,
+  "projected_40_validation_seconds": 859.7655233600017,
+  "projected_pipeline_seconds_with_1800s_margin": 7232.013172109938,
+  "session_budget_seconds": 36000,
+  "checkpoint_bytes": 73782474,
+  "snapshot_bytes": 73851676,
+  "snapshot_export_verify_seconds": 1.3466197340000008,
+  "benchmark_wall_seconds": 33.153584013,
+  "peak_GPU_bytes": 265656320,
+  "conservative_storage_required_bytes": 14690504228,
+  "available_disk_bytes": 20349571072,
+  "time_feasible": true,
+  "storage_feasible": true,
+  "publication_margin_is_estimate": true,
+  "research_updates": 0
+}

@@ -529,3 +529,34 @@ failure/resume/replay; log-service disconnects retained separately. CPU69passed
 1CUDA-only skip; actual CUDA70passed. Single-seed/confounding/peak-sampling scopes
 are explicit. No other research run or extension launched; study-wide approval
 remains separately gated. See report/pilots/E14_seed42/E14_seed42_analysis.md.
+
+## F01 preparation — 2026-10-14
+
+The user separately authorized F01 seed42 (BPE/RoPE/eight blocks/width240),
+10,000 updates, and discontinued the three-seed grid. Reviewed main e4f768d
+includes accepted E14 PR17. Dedicated branch codex/f01-final-seed42-20261014
+preserves all pilot evidence and the frozen scientific package. The final
+configuration, parameter derivation, fourteen-pilot evidence inventory and
+independent numerical audit are being prepared. GPU/persistence/feasibility
+gates and research execution are pending; no F01 research completion is claimed.
+
+## F01 execution and acceptance closure — 2026-10-14
+
+The preparation record above is now superseded by verified single-run evidence.
+Frozen source `06291e11630eaaa316873740e8223b1fc00ba3cb`; unchanged scientific
+fingerprint `d5b205aecec5913cd11d921c0a84899badd95a014a490a7beaab3d2598c940f8`.
+F01 aggregate `0c3765c7e1d6a9c8698e12e0525496ecd59c6713998ece0d5b3218054c2ab8ff`.
+Exactly 10,000 journal/optimizer updates, 40 full sliding validations, 40 resumable
+checkpoint states, 41 native immutable snapshots and 40,960,000 predicted BPE
+targets. Independent archive CRC/all82 hashes/all counters/sampler replay/CPU
+inference and fresh CUDA full-state zero-update restoration pass; all100 fixed
+strings reproduce exactly. Best/final probes match between recovered CPU/CUDA.
+
+Best update1750 BPB1.98376817, final10000 BPB3.05346210; frozen reserved test
+BPB2.24333983. Strong sustained late validation deterioration accompanies lower
+training loss. Best greedy repetition, malformed text, five invalidUTF8 sampled
+outputs and late verbatim training passages remain explicit limitations.
+Small reports, machine tables, actual figures, presentation evidence and receipts
+are in report/final; large archive/weights/journals on D: and saved Kaggle version1.
+Reviewable PR19 is not merged automatically. The user discontinued the former
+three-seed grid; no further research run, seed or extension was launched.

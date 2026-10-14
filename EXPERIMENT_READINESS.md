@@ -529,3 +529,23 @@ failure/resume/replay; log-service disconnects retained separately. CPU69passed
 1CUDA-only skip; actual CUDA70passed. Single-seed/confounding/peak-sampling scopes
 are explicit. No other research run or extension launched; study-wide approval
 remains separately gated. See report/pilots/E14_seed42/E14_seed42_analysis.md.
+
+## F01 separately authorized final run — accepted 2026-10-14
+
+The user discontinued the three-seed grid and explicitly authorized one combined
+F01 seed42, 10,000-update trajectory. This supersedes future grid execution,
+without relabeling the historical single-seed pilots as a replicated study.
+All F01 engineering acceptance gates passed: independent numerical CPU/CUDA
+audit, qualified T4 environment, published development recovery before research,
+10,000 authoritative/known physical updates, 40 full validations, 40 checkpoint
+states, 41 native snapshots, complete archive/CPU verification and fresh CUDA
+exact full-state restoration with zero additional updates. All100 fixed
+best/final generation strings reproduced; complete50-slot internal5k grid retained.
+
+Best1750 BPB1.98376817; final10000 BPB3.05346210; one frozen testBPB2.24333983.
+The early predictive target was met, but sustained late deterioration, severe
+best greedy loops, malformed language and five invalidUTF8 outputs are negative
+scientific findings. Engineering GO applies to this completed, recoverable run;
+it does not claim coherent language, significance or authorize further training.
+See report/final/acceptance_checklist.md and F01_10000_analysis.md. PR19 remains
+reviewable and unmerged. Large evidence stays outside Git on D: and Kaggle.

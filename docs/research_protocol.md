@@ -87,3 +87,26 @@ The blocks evaluator and capped smoke metrics are different policies and must
 never be silently substituted in the scientific comparison. BPB still has
 context/token-boundary confounds explained in docs/bpb.md. Constant LR is the
 unchanged initial regime: extending the stop point never changes its schedule.
+
+## Separately approved final-model deviation — 2026-10-14
+
+The user discontinued the planned three-seed grid for time constraints and
+explicitly authorized one new combined F01 seed42 trajectory from scratch to
+10,000 updates. Historical E01–E14 definitions, seed42 records and the original
+design above remain unchanged. F01 is not a single-factor ablation or evidence
+of additive effects: BPE1024, width240, eight blocks, RoPE, six heads, context128,
+GELU, MLP4x and dropout0.1; 6,046,560 parameters, untied head. Preserve AdamW,
+constant3e-4, weight decay0.01, clipping1.0, FP32, microbatch4/accumulation8 and
+4096 targets/update. Forty full sliding validations score the common55,514-byte
+suffix after256 conditioning bytes. Forty validation states and the canonical
+final immutable summary snapshot are required.
+
+Research is gated on the actual combined CPU/CUDA numerical audit, qualified
+T4/freeze, measured resource feasibility, durable smoke publication/independent
+retrieval and fresh compatible exact full-state restoration with smoke-only
+continuity. Select the minimum validation BPB before one reserved final test
+assessment with the same256-byte conditioning exclusion; never select or train
+again from test results. No additional architecture, seed or extension is
+authorized. Record the changed aggregate hash caused by F01.json separately
+from the byte-verified unchanged scientific implementation fingerprint.
+See report/final/F01_architecture_decision.md. F01 acceptance is currently pending.

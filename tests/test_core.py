@@ -112,7 +112,8 @@ def test_locked_registry():
                 "E08": {"n_layers": 6}, "E09": {"n_layers": 8}, "E10": {"mlp_expansion": 2},
                 "E11": {"context_length": 64}, "E12": {"context_length": 256},
                 "E13": {"d_model": 144}, "E14": {"d_model": 240}}
-    assert len(list((root / "experiments/configs").glob("*.json"))) == 14
+    definitions={p.stem for p in (root / "experiments/configs").glob("*.json")}
+    assert definitions == set(expected) | {"E01", "F01"}  # Original grid plus separately approved final model.
     for eid, overrides in expected.items():
         model, settings, variant = load_experiment(root, eid, 65)
         delta = {k: v for k, v in model.to_dict().items() if baseline.to_dict()[k] != v}

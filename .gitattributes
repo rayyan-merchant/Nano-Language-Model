@@ -67,3 +67,10 @@ report/pilots/E12_seed42/E12_seed42_analysis.md whitespace=-blank-at-eol
 notebooks/kaggle_e12_seed42_*_executed.ipynb -text
 report/pilots/E12_seed42/matched_validation.csv -text whitespace=cr-at-eol
 report/pilots/E12_seed42/interpretation.md whitespace=-blank-at-eol
+# F01 native receipts and model strings retain their exact published bytes.
+report/final/evidence/** -text whitespace=cr-at-eol
+report/final/generation.* -text whitespace=-blank-at-eol,cr-at-eol
+report/final/summary.json -text whitespace=cr-at-eol
+report/final/validation.csv -text whitespace=cr-at-eol
+report/final/step5000_generation.json -text whitespace=cr-at-eol
+report/final/F01_10000_analysis.md whitespace=-blank-at-eol
