@@ -100,3 +100,23 @@ or download-helper commits do not change that execution source. Native Kaggle
 log-stream reconnections are read-only transport retries, not training restarts.
 Final acceptance requires actual stopped-run publication, independent archive
 verification and fresh zero-update CUDA recovery; submission is not acceptance.
+
+## Stopped-run publication and acceptance
+
+One research version1 completed at the first eligible early stop:4,500 updates,
+18 full sliding validations, best3,000 BPB1.9849309521722194 and final4,500
+BPB2.044457963659289. All18 checkpoints and37 canonical native snapshots are
+retained. Actual immutable archive604,825,667bytes has SHA256
+`41742da357777a6aee40bd7bc4a4063ee1e3d07f94b94e2344f082252a467edf`.
+Independent retrieval/CRC/safe exact96-file inventory/all hashes/all counters/
+stopping rule/sampling RNG/byte coverage/CPU inference passed. Fresh qualified
+CUDA notebook d2c9b763 version1 matches all six complete training-state fields
+at4500→4500, adds zero optimizer updates, verifies37 snapshots and reproduces
+the complete100-slot grid; independently compared256-token IDs all match.
+
+See `report/balanced/B01_acceptance.md`, `artifact_retrieval.md`, actual analysis
+and model-selection reports for receipts, commands, figures and limitations.
+No original test likelihood, additional corpus, model, seed or extension was
+executed. Early stopping is normal frozen termination; there is no unmeasured
+5,000-step result. Predictive competitiveness is distinct from greedy loops,
+invalidUTF8 output and other genuine generation failures.

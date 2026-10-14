@@ -79,3 +79,5 @@ report/balanced/evidence/** -text whitespace=cr-at-eol
 report/balanced/generation.* -text whitespace=-blank-at-eol,cr-at-eol
 report/balanced/validation.csv -text whitespace=cr-at-eol
 report/balanced/B01_seed42_analysis.md whitespace=-blank-at-eol
+report/balanced/*.json -text whitespace=cr-at-eol
+report/balanced/*.csv -text whitespace=cr-at-eol

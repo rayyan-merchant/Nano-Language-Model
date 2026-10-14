@@ -88,6 +88,9 @@ def write(root,verified,manifest_path,cuda_path,out,kernel,data):
         shutil.copyfile(verified/'analysis'/name,out/name)
     shutil.copytree(verified/'analysis/figures',out/'figures')
     grid=read(out/'generation.json');quality=generation_diagnostics(root,grid,data)
+    for probe in cpu['samples']:
+        original=next(r for r in grid['samples'] if r['checkpoint_policy']==probe['policy'] and r['prompt']=='ROMEO:\n' and r['greedy'])
+        assert original['checkpoint_sha256']==probe['checkpoint_sha256'] and original['text'].startswith(probe['text'])
     atomic_json(out/'generation_comparison.json',quality)
     histories=read(verified/'analysis/measured_history.json')['training'];val=[r for r in histories if 'validation' in r]
     assert len(histories)==target and [r['step'] for r in val]==list(range(250,target+1,250))
@@ -128,6 +131,7 @@ def write(root,verified,manifest_path,cuda_path,out,kernel,data):
     for row in rows:
         axes[0].scatter(row['parameters']/1e6,row['best_BPB']);axes[0].annotate(row['experiment'],(row['parameters']/1e6,row['best_BPB']),xytext=(5,5),textcoords='offset points')
     axes[0].set(xlabel='Parameters (millions)',ylabel='Selected validation BPB',title='Single-seed capacity/quality trade-off')
+    axes[0].margins(x=.15,y=.20)
     axes[1].bar([r['experiment'] for r in rows],[r['peak_GPU_MiB'] for r in rows]);axes[1].set(ylabel='Peak allocated GPU MiB',title='Canonical training telemetry scope')
     savefig(fig,figures,'parameters_quality_memory')
     fig,ax=plt.subplots(figsize=(8,4.5));greedy=[r for r in quality['groups'] if r['greedy'] and r['checkpoint_policy']=='best']
@@ -148,7 +152,15 @@ def write(root,verified,manifest_path,cuda_path,out,kernel,data):
     duplicate=file_hash(verified/c['best_checkpoint'])==file_hash(verified/c['final_checkpoint'])
     if duplicate:
         for a,b in zip([r for r in grid['samples'] if r['checkpoint_policy']=='best'],[r for r in grid['samples'] if r['checkpoint_policy']=='final']):assert a['text']==b['text']
+    io=read(evidence/'io_timing.json')['operations']
+    io_totals={kind:sum(r['seconds'] for r in io if r['operation']==kind) for kind in ['checkpoint','export']}
+    selected_history=histories[best['step']-1]
     findings={'best':best,'final':final,'actual_updates':target,'actual_validations':target//250,'stopping_reason':stop['stopping_reason'],
+        'selected_best_training_seconds':selected_history['train_seconds'],
+        'selected_best_training_tokens':selected_history['training_tokens'],
+        'selected_best_training_source_bytes':selected_history['training_bytes'],
+        'checkpoint_bytes':{policy:(verified/c[policy+'_checkpoint']).stat().st_size for policy in ['best','final']},
+        'measured_checkpoint_export_seconds':io_totals,
         'gradient_norm':{'median':float(np.median(norms)),'p95':float(np.quantile(norms,.95)),'maximum':float(norms.max()),
                          'clipped_updates':int((norms>1).sum()),'clipped_fraction':float((norms>1).mean())},
         'inference':inference,'model_CPU_loads':token_diagnostics['loads'],'duplicate_best_final_weights':duplicate,
@@ -209,6 +221,8 @@ Original nano_lm.train CLI runs complete250-update segments with the same run/co
 
 Training-only{s['training_seconds']:.3f}s; full validation{s['validation_seconds']:.3f}s; {target/s['training_seconds']:.6f}updates/s and{s['training_tokens']/s['training_seconds']:.3f}BPEtargets/s. Wrapper before archive{wall['pipeline_seconds_before_archive']:.3f}s; archive/hash/CRC{m['archive_and_CRC_seconds']:.3f}s. Inner train/validation/IO scopes overlap wrapper and must not be double-counted; bootstrap/queue/publication/retrieval are separate. Peak{s['peak_gpu_bytes']/2**20:.3f}MiB is sampled training allocator telemetry, not all device/driver memory. Each planned segment resets the peak counter and ends at validation; validation/inference peaks are not separately recorded. F01 uninterrupted telemetry could include prior validation peaks, so this memory comparison has a measurement-scope confound.
 
+Measured original checkpoint calls total{io_totals['checkpoint']:.3f}s and immutable export calls{io_totals['export']:.3f}s; these are included in wrapper time, not additional durations. Best/final full resumable checkpoints are{findings['checkpoint_bytes']['best']:,}/{findings['checkpoint_bytes']['final']:,}bytes, including optimization/history/provenance. Reaching selected update{best['step']} cost{selected_history['train_seconds']:.3f}s training and{selected_history['training_tokens']:,}targets/{selected_history['training_bytes']:,}source bytes. F01's selected1,750 cost747.174s training; fewer B01 parameters did not produce a cheaper observed selected minimum in these sessions.
+
 Actual predicted targets{s['training_tokens']:,}; original target-byte exposure{s['training_source_bytes']:,}; unique target bytes{s['unique_target_bytes']:,}. Independent sampler RNG/union replay passes. These are repeated target exposure, not complete epochs/FLOPs. Inference latency uses only the actual fixed grid, synchronized before/after original generation; first request per policy is cold and remaining49 statistics are in findings.json. CPU checkpoint-deserialize/model-build time excludes CUDA transfer and is cache-dependent. Comparable E02/F01 per-request latency was not recorded; no invented benchmark substitutes for it.
 
 Preclip norm median{findings['gradient_norm']['median']:.6f}, p95{findings['gradient_norm']['p95']:.6f}, max{findings['gradient_norm']['maximum']:.6f}; {findings['gradient_norm']['clipped_updates']}/{target} exceeded1.0. Every250-update interval is in gradient_intervals.json; no clipping-caused-overfitting or longitudinal per-layer gradient claim is inferred.
@@ -241,7 +255,10 @@ Early stopping is a predefined heuristic, not proven optimal, and changes the ob
 '''
     # Preserve generated grids separately; this report contains no copied output fence.
     from scripts.final.report import readable_prose
-    (out/'B01_seed42_analysis.md').write_text(readable_prose(report),encoding='utf-8')
+    formatted=readable_prose(report)
+    for old,new in [('B 01','B01'),('SHA 256','SHA256'),('UTF 8','UTF-8'),('cu 124','cu124'),('T 4','T4'),('FP 32','FP32'),('float 32','float32'),('sqrt 32','sqrt(32)')]:
+        formatted=formatted.replace(old,new)
+    (out/'B01_seed42_analysis.md').write_text(formatted,encoding='utf-8')
     verdict='B01 has a lower observed validation minimum than E02.' if best['bpb']<bpb2 else 'E02 retains the lower observed validation minimum with fewer parameters; B01 has not established a predictive-quality justification for its extra capacity.'
     (out/'B01_model_selection.md').write_text(f'''# B01 model selection — measured comparison
 

@@ -142,3 +142,23 @@ predictive improvements, execution acceptance and text-quality limitations.
 The user discontinued the three-seed grid; historical pilot configurations and
 evidence remain frozen. No further research training is authorized. PR19 awaits
 review; no automatic merge or deployed API is claimed.
+
+## B01 separately authorized balanced-model evidence
+
+The preceding F01 delivery status is historical; PR19 is now merged. The separately
+approved [B01 analysis](report/balanced/B01_seed42_analysis.md) records one fresh
+seed42 BPE/RoPE/width192/six-block model with3,062,784 parameters. Frozen validation
+early stopping ended at4,500 updates and18 full validations; best BPB1.98493095
+at3,000, final2.04445796. All18 checkpoints and37 native snapshots are published.
+Independent ZIP/all96 hashes/counter/sampling/CPU audit and fresh CUDA all-six-field
+zero-update restoration pass; all100 original256-token sequences reproduce.
+
+[Model selection](report/balanced/B01_model_selection.md) distinguishes near-F01
+selected likelihood at roughly half its parameters from poor genuine text quality.
+Greedy loops, malformed text and five invalidUTF8 outputs remain. E02 is smaller
+and cheaper; no single-seed superiority claim or B01 original-test assessment is
+made. [Recovery evidence](report/balanced/B01_acceptance.md) and
+[retrieval instructions](report/balanced/artifact_retrieval.md) identify immutable
+artifacts on D: and saved Kaggle versions. Reviewable PR20 is not merged
+automatically; no further model, seed, original-test evaluation or extension is
+authorized.

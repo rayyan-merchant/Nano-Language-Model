@@ -572,3 +572,48 @@ analysis and recovery checks are implemented. CPU numerical/continuation/raw
 roundtrip/headless checks pass; corrected CPU suite91passed1CUDA-onlyskip.
 Qualified GPU/published development/freshCUDA continuation remain pending;
 no B01 research run is launched. No test likelihood or external dataset is used.
+
+## B01 execution update — 2026-10-14
+
+The preceding preparation status is superseded by genuine qualified GPU and
+persistence receipts: 92 CUDA-environment tests passed; published development
+archive independent integrity/CPU inference and fresh CUDA full-state roundtrip
+and deterministic smoke continuation passed. One research trajectory was then
+submitted from clean frozen commit c2cf1c165d09e0fc8f64a2df714755a4d910d469.
+
+Live research validation receipts show the predefined early stop at 4,500 updates
+and 18 complete full sliding validations. Absolute minimum was step3,000,
+BPB1.9849309521722194; final BPB2.044457963659289, patience six. No update4,501
+or 5,000 is authorized after that stopping decision. Complete acceptance is
+pending published stopped-run artifacts, independent archive/CPU verification,
+fresh zero-update CUDA restoration and complete generation/report evidence.
+The local postprocessing/recovery suite passed99tests with one CUDA-only skip;
+this is separate from actual qualified GPU testing. No B01 test likelihood,
+external corpus, additional model, seed or extension has been executed.
+
+## B01 acceptance closed — 2026-10-14
+
+The pending stopped-run acceptance above is now resolved by genuine receipts.
+Research version1 COMPLETE: rayyannmerchant/nano-b01-research-20261014-33317a00.
+The604,825,667-byte ZIP was independently retrieved; CRC/safe exact96-file
+inventory/everySHA256/checkpoint counters/full journal/rule replay/private
+sampling RNG/source-byte union and best/final CPU inference passed. Fresh
+compatible CUDA recovery version1 d2c9b763 verifies37 native snapshots and all
+six nested state fields exactly at4500→4500 with zero additional optimizer
+updates. All100 fixed strings and every256-token ID sequence reproduce.
+
+The actual trajectory has4,500 authoritative/known physical updates,18 full
+validations,17 planned resumes and no recorded interruption replay. Training
+1,827.392s, validation264.547s;18,432,000 BPEtargets/44,992,723 original target-byte
+exposures,1,003,827 unique target bytes. Preclip norm exceeded1 on15updates.
+Best3000 loss3.13207979/BPB1.98493095; final4500 loss3.22600917/BPB2.04445796.
+All18 validation checkpoints and37 immutable snapshots are published.
+
+Detailed analysis/model selection/full100-slot grid/all300 matched E02/F01/B01
+texts/descriptors/actual12PNG+12PDF plots and lightweight receipts are under
+report/balanced. B01 is approximately half F01's parameter count with near-equal
+selected BPB, but worse selected greedy repetition than both E02/F01. Five raw
+invalidUTF8 outputs remain; longest fixed-grid literal training overlaps34/40
+characters best/final. No grammar/generalization superiority is inferred.
+PR20 is reviewable, not automatically merged. No further GPU training, original-
+test assessment, external dataset evaluation, seed or extension was launched.
