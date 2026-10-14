@@ -5,6 +5,7 @@ import io
 import json
 from pathlib import Path
 import uuid
+import subprocess
 from scripts.pilot.build_notebook import build as provision_template
 
 
@@ -30,8 +31,12 @@ def build(output, commit, mode, source=None):
     # Kaggle documents 12h CPU/GPU sessions. Use a conservative 10h pipeline
     # envelope, reserving 2h for provisioning/publication, not an API guarantee.
     code=before.replace(previous,kernel).replace("'NANO_SESSION_LIMIT_SECONDS':'7200'", "'NANO_SESSION_LIMIT_SECONDS':'36000'")+f"""print('F01 {mode}: exact source '+COMMIT,flush=True)
-command([str(PY),'-m','scripts.final.workflow','--root',str(ROOT),'--output',str(OUT/'final'),'--mode',{mode!r}],ROOT)
+result=subprocess.run([str(PY),'-m','scripts.final.workflow','--root',str(ROOT),'--output',str(OUT/'final'),'--mode',{mode!r}],cwd=ROOT,env=env)
+if result.returncode:raise RuntimeError('F01 workflow failed; preserve genuine partial evidence')
 """
+    notebook['metadata']['nano_lm_provenance']={'training_source_commit':commit,
+        'launcher_builder_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=Path(__file__).resolve().parents[2],text=True).strip(),
+        'mode':mode,'scope':'Launcher uses unchanged qualified provisioning, then invokes canonical package wrapper with visible logs'}
     notebook['cells'][0]['source']=[f'# F01 seed42 {mode}\nOne authorized fresh research trajectory, target 10000 updates and 40 full validations. Development evidence is separate. Recovery adds no research updates. Source: {commit}.']
     notebook['cells'][1]['source']=code.splitlines(True)
     metadata.update(id=kernel,title=kernel.split('/')[1],kernel_sources=[source] if source else [])
