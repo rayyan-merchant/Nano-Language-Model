@@ -529,3 +529,13 @@ failure/resume/replay; log-service disconnects retained separately. CPU69passed
 1CUDA-only skip; actual CUDA70passed. Single-seed/confounding/peak-sampling scopes
 are explicit. No other research run or extension launched; study-wide approval
 remains separately gated. See report/pilots/E14_seed42/E14_seed42_analysis.md.
+
+## F01 preparation — 2026-10-14
+
+The user separately authorized F01 seed42 (BPE/RoPE/eight blocks/width240),
+10,000 updates, and discontinued the three-seed grid. Reviewed main e4f768d
+includes accepted E14 PR17. Dedicated branch codex/f01-final-seed42-20261014
+preserves all pilot evidence and the frozen scientific package. The final
+configuration, parameter derivation, fourteen-pilot evidence inventory and
+independent numerical audit are being prepared. GPU/persistence/feasibility
+gates and research execution are pending; no F01 research completion is claimed.
