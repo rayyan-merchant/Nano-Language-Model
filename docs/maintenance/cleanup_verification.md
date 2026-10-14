@@ -3,7 +3,14 @@
 Cleanup is verified locally against reviewed main
 `cc7e345cee92c122cb1f7ad56a0d7627636934db`. This is an offline maintenance
 audit, not a new research qualification or final submission acceptance.
-GitHub CI status and the delivered commit are recorded in the cleanup PR.
+Delivery is [cleanup PR #21](https://github.com/rayyan-merchant/Nano-Language-Model/pull/21),
+left open for review rather than merged. Linux CPU CI on source
+`f49cb3ad699b89807ba17f1394bb09b3d8c054fc` passed in
+[workflow run 38620540504](https://github.com/rayyan-merchant/Nano-Language-Model/actions/runs/38620540504):
+121 passed, 1 CUDA-only skipped, 14 dependency warnings in 26.70 s. Its subsequent
+offline verifier also passed all 1,103 protected files, 16 configurations and 15
+notebooks, reporting the two unchanged historical link defects. This CI receipt
+documents that exact source; the PR checks cover subsequent documentation commits.
 
 ## Before and after
 
@@ -26,7 +33,7 @@ count while reducing root clutter and duplicated implementation. The complete
 mapping is in [cleanup_changelog.md](cleanup_changelog.md); the inventory retains
 all removed rows as well as every resulting repository file.
 
-Consolidation removes 39 duplicated function-body lines: three extra checksum
+Consolidation removes 39 duplicated function lines: three extra checksum
 copies (15 lines), one sparse reconstruction copy (15 lines), and one token-budget
 copy (9 lines). Public historical imports and direct script commands remain
 available. Environment-specific CUDA recovery gates were deliberately retained.
