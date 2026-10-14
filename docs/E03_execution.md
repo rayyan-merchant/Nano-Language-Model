@@ -1,3 +1,5 @@
+> Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
+
 # Authorized E03 seed42 execution
 
 Rayyan explicitly authorized one E03/RoPE run, seed42, exactly5000 completed

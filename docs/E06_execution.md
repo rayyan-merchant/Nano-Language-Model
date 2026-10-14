@@ -1,3 +1,5 @@
+> Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
+
 # E06 seed42 scoped execution — 2026-10-12
 
 Only E06 seed42 is authorized for exactly 5000 completed optimizer updates on

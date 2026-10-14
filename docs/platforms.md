@@ -1,3 +1,9 @@
+# Current platform records and preserved qualification guidance
+
+Completed run-specific qualification and CPU/CUDA recovery records are indexed in [the project map](README.md). Research used the approved isolated Python3.11.14/PyTorch2.5.1+cu124/CUDA12.4/T4 profile where recorded; each pilot retains its actual platform/dependency evidence. Earlier development-profile/second-account-pending statements below describe their original audit scope, not current research completion. No new GPU allocation or dependency-policy change is authorized by this page.
+
+---
+
 # Kaggle and Colab environments
 
 Use the same pinned code commit and train/evaluate entry points on both accounts.

@@ -1,0 +1,17 @@
+{
+  "checked_file_links": 363,
+  "broken": [
+    {
+      "source": "report/final/presentation_support/findings_and_limitations.md",
+      "target": "F01_10000_analysis.md",
+      "resolved": "report\\final\\presentation_support\\F01_10000_analysis.md"
+    },
+    {
+      "source": "report/final/presentation_support/findings_and_limitations.md",
+      "target": "generation.md",
+      "resolved": "report\\final\\presentation_support\\generation.md"
+    }
+  ],
+  "external_local_references": [],
+  "scope": "Relative file targets outside fenced/inline code; HTTP/private artifacts not downloaded; heading anchors not checked"
+}

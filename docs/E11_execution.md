@@ -1,3 +1,5 @@
+> Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
+
 # E11 seed42 execution record
 
 Reviewed main317ba670112ffa3123c4bc26baddf9fa1059c60c. Dedicated codex/e11-context64-seed42-20261013

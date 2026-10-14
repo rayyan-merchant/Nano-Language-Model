@@ -1,3 +1,11 @@
+# Current execution status and original experiment design
+
+E01-E14 have one completed seed42 trajectory each. The original seeds42/123/456 grid was discontinued; no missing seed is fabricated. F01/B01 are separately approved combined models, not single-factor ablations. [Current reports](README.md) record actual owners, source hashes, acceptance and limitations.
+
+The locked registry/configuration definition fields and original design below are preserved creation/planning records, not a live job-status database. Do not change immutable config metadata to relabel completed runs.
+
+---
+
 # Experiment design
 
 Canonical definitions: `experiments/registry.csv` and corresponding JSON overrides.

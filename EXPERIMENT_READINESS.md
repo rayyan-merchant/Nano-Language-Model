@@ -1,3 +1,11 @@
+# Current research completion and historical readiness record
+
+E01-E14 seed42, F01 and B01 are accepted according to their genuine research and independent recovery records. B01 PR20 is merged in reviewed main cc7e345. The planned three-seed/42-run expansion was discontinued; no new compute or original-test evaluation is authorized. Final academic submission, selected-model packaging, API/frontend/deployment and final demo/presentation remain pending. See [current project map](docs/README.md) and [cleanup verification](docs/maintenance/cleanup_verification.md).
+
+The original readiness and authorization diary below is preserved. Its dated CURRENT/PENDING/NO-GO phrases describe their recording time, not today's completion status. Individual-run acceptance is not a replicated-study or language-quality claim.
+
+---
+
 # Experiment readiness audit
 
 ## Scoped E02 seed42 Colab pilot — 2026-10-12
