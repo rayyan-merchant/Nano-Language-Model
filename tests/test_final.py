@@ -48,3 +48,4 @@ def test_f01_launcher_scope(tmp_path):
     assert 'torch==2.5.1+cu124' in source
     with pytest.raises(FileExistsError):build(tmp_path/'dev',commit,'development')
     with pytest.raises(ValueError):build(tmp_path/'wrong',commit,'research','another-account/notebook')
+    with pytest.raises(ValueError):build(tmp_path/'wrong-diag',commit,'research','rayyannmerchant/notebook',diagnostic_commit='a'*40)

@@ -1,0 +1,10 @@
+{
+  "experiment": "F01",
+  "source_commit": "06291e11630eaaa316873740e8223b1fc00ba3cb",
+  "aggregate_code_hash": "0c3765c7e1d6a9c8698e12e0525496ecd59c6713998ece0d5b3218054c2ab8ff",
+  "smoke_checkpoint": "smoke/F01_seed42_430a1356c9ef431bb0804640ebf3acb2/checkpoints/step_000001.pt",
+  "snapshot": "development_snapshots/F01_seed42_430a1356c9ef431bb0804640ebf3acb2_step000001_faf49f97a8b5",
+  "snapshot_hash": "2f5f3f7f9758c89080dc90dbd17c31db795ac7ca7fea53374700377a7d5aef6e",
+  "research_updates": 0,
+  "feasibility_passed": true
+}

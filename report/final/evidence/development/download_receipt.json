@@ -1,0 +1,9 @@
+{
+  "status": "authorized_download_size_SHA256_verified",
+  "kernel": "rayyannmerchant/nano-f01-development-20261014-f36bc7a7/1",
+  "archive_bytes": 134170219,
+  "archive_sha256": "fed6afe393ed333e9549d5160e3b0d528ec294aedfc298bad5885794e9c79479",
+  "seconds": 85.2409455999732,
+  "transport": "Official Kaggle API output URL; four bounded byte-range streams with exact206/Content-Range/size validation; retained0byte prefix and0 completed immutable ranges; full object SHA256 verified",
+  "credentials": "No signed URL or credentials recorded"
+}

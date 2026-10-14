@@ -6,16 +6,20 @@ import json
 from pathlib import Path
 import uuid
 import subprocess
+import hashlib
 from scripts.pilot.build_notebook import build as provision_template
 
 
-def build(output, commit, mode, source=None):
+def build(output, commit, mode, source=None, diagnostic_commit=None):
     if mode not in {'development','development-recovery','research','research-recovery'}:
         raise ValueError('Unknown F01 mode')
     if mode != 'development' and (not source or not source.startswith('rayyannmerchant/')):
         raise ValueError('Published same-account prerequisite is mandatory')
     if mode == 'development' and source:
         raise ValueError('Fresh development must not mount another run')
+    if diagnostic_commit is not None:
+        if mode!='research-recovery' or len(diagnostic_commit)!=40 or any(c not in '0123456789abcdef' for c in diagnostic_commit):
+            raise ValueError('Additional pure-inference diagnostics require a pinned helper commit and research-recovery mode')
     output=Path(output)
     # Only reuse package provisioning; replace the entire execution command.
     # No E14 experiment is executed or enabled by this builder.
@@ -37,6 +41,18 @@ if result.returncode:raise RuntimeError('F01 workflow failed; preserve genuine p
     notebook['metadata']['nano_lm_provenance']={'training_source_commit':commit,
         'launcher_builder_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=Path(__file__).resolve().parents[2],text=True).strip(),
         'mode':mode,'scope':'Launcher uses unchanged qualified provisioning, then invokes canonical package wrapper with visible logs'}
+    if diagnostic_commit:
+        helper_bytes=subprocess.check_output(['git','show',f'{diagnostic_commit}:scripts/final/reproduce_generation.py'],cwd=Path(__file__).resolve().parents[2])
+        helper_hash=hashlib.sha256(helper_bytes).hexdigest()
+        notebook['metadata']['nano_lm_provenance'].update(diagnostic_helper_commit=diagnostic_commit,diagnostic_helper_sha256=helper_hash)
+        code+=f"""import urllib.request, hashlib
+helper=Path('/tmp/f01-generation-reproduction.py')
+raw=urllib.request.urlopen('https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/{diagnostic_commit}/scripts/final/reproduce_generation.py').read()
+assert hashlib.sha256(raw).hexdigest()=={helper_hash!r}
+helper.write_bytes(raw)
+result=subprocess.run([str(PY),str(helper),'--root',str(ROOT),'--output',str(OUT/'generation_reproduction'),'--helper-commit',{diagnostic_commit!r}],cwd=ROOT,env={{**env,'PYTHONPATH':str(ROOT)}})
+if result.returncode:raise RuntimeError('Fixed generation reproduction failed; preserve original research artifacts')
+"""
     notebook['cells'][0]['source']=[f'# F01 seed42 {mode}\nOne authorized fresh research trajectory, target 10000 updates and 40 full validations. Development evidence is separate. Recovery adds no research updates. Source: {commit}.']
     notebook['cells'][1]['source']=code.splitlines(True)
     metadata.update(id=kernel,title=kernel.split('/')[1],kernel_sources=[source] if source else [])
@@ -48,4 +64,5 @@ if result.returncode:raise RuntimeError('F01 workflow failed; preserve genuine p
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--commit',required=True)
     p.add_argument('--mode',choices=['development','development-recovery','research','research-recovery'],required=True);p.add_argument('--source')
-    a=p.parse_args();print(json.dumps(build(a.output,a.commit,a.mode,a.source)))
+    p.add_argument('--diagnostic-commit')
+    a=p.parse_args();print(json.dumps(build(a.output,a.commit,a.mode,a.source,a.diagnostic_commit)))
