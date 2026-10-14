@@ -57,7 +57,7 @@ may explicitly cap512bytes and is labeled development only.
    exact100-slot generation reproduction, inference timing and reports/PR.
 
 Initial read-only quota:21.57GPUh remaining. This is not GPU allocation proof.
-No research run has launched. F01's severe late deterioration motivates B01 but
+At the initial preparation checkpoint, no research run had launched. F01's severe late deterioration motivates B01 but
 does not isolate parameter count or clipping as its cause. Early stopping changes
 selection opportunities/budget and does not guarantee better text. Original F01
 test exposure is acknowledged; it is not used or reevaluated in B01. An external
@@ -75,3 +75,28 @@ oneCUDA-onlyskip: the new tokenizer test relied on Windows cp1252 rather than
 explicit UTF8. Corrected all new text readers to UTF8; full suite91passed/
 oneCUDA-onlyskip in123.63s. No vocabulary, model or optimizer fix was needed.
 These are CPU development checks, not CUDA qualification or research results.
+
+## Actual GPU persistence gate and single research submission
+
+Qualified development notebook `rayyannmerchant/nano-b01-development-20261014-9812dbba/1`
+completed with 92 tests passing, actual CUDA architecture checks and uninterrupted
+versus segmented full-sliding validation equivalence. Its 203,352,277-byte archive
+SHA256 is `a2c23046cd5b40864ac38efd2f743d6e2cf9b5ce164f30745331653075d9b1e6`.
+Independent download, ZIP CRC, safe exact inventory, 59 file hashes and CPU
+inference passed. The first local downloader failed before transfer because an
+eager fallback required a missing legacy run_id; the filename resolver was fixed
+and tested without rerunning development or changing scientific execution.
+
+Fresh notebook `rayyannmerchant/nano-b01-development-recovery-20261014-44cabfe4/1`
+completed: all six full-state fields match on step2-to-step2 roundtrip with zero
+updates. Its two development-only resumed updates then match the published
+uninterrupted step4 scientific trajectory exactly. This is development evidence,
+not additional research training. Receipts are under `report/balanced/evidence/development`.
+
+Only after these gates, the single research notebook
+`rayyannmerchant/nano-b01-research-20261014-33317a00/1` was submitted. Its frozen
+execution commit is `c2cf1c165d09e0fc8f64a2df714755a4d910d469`; later local reporting
+or download-helper commits do not change that execution source. Native Kaggle
+log-stream reconnections are read-only transport retries, not training restarts.
+Final acceptance requires actual stopped-run publication, independent archive
+verification and fresh zero-update CUDA recovery; submission is not acceptance.

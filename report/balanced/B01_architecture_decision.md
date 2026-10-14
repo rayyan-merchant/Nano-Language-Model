@@ -33,7 +33,7 @@ not isolated causes. Gradient clipping is not established as causal.
 The user locked B01 to canonical BPE1024, RoPE, six independently allocated
 blocks, width192, six head32, MLP192→768→192/GELU, context128, preLN/dropout.1,
 untied output. Count3,062,784: embeddings196,608 + sixblocks2,669,184 + LN384 +
-head196,608. This is 49.3467% smaller than F01 and40.9437% larger than E02.
+head196,608. This is 49.3467% smaller than F01 and40.9436% larger than E02.
 The additional capacity over E02 requires measured quality/efficiency evidence;
 no additive forecast of pilot gains is made.
 

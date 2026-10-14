@@ -5,10 +5,12 @@ from pathlib import Path
 import time
 import zipfile
 import math
+from dataclasses import asdict
 import torch
 from nano_lm.artifacts import atomic_json, file_hash
 from nano_lm.checkpoint import read_checkpoint, load_for_inference
 from nano_lm.generate import generate
+from nano_lm.train import TrainSettings
 from scripts.final.inspect import sampling
 from scripts.balanced.protocol import MODEL, PARAMETERS
 from scripts.balanced.stopping import replay
@@ -33,8 +35,15 @@ def inspect(archive,manifest_path,out,data,development=False):
     else:
         c=json.loads((out/'completion.json').read_text(encoding='utf-8'));target=c['actual_completed_updates']
         run=(out/c['final_checkpoint']).parent.parent
+        metadata=json.loads((run/'metadata.json').read_text(encoding='utf-8'))
+        expected_settings=asdict(TrainSettings(device='cuda',run_kind='research',eval_every=250,checkpoint_every=500))
+        assert metadata['resolved']['training']==expected_settings
+        assert metadata['resolved']['experiment_id']=='B01' and metadata['resolved']['schedule']=='constant'
+        assert metadata['resolved']['tokenizer_kind']=='bpe'
+        assert metadata['resolved']['tokenizer_hash']=='2d7b1e84c8055eb5b9483a3fe6e4e3c9e348f5a28506ba19a0dc1644f0b36d55'
         for cp in sorted((run/'checkpoints').glob('step_*.pt')):
             payload,tok=read_checkpoint(cp);step=payload['step'];s=payload['training_state']
+            assert payload['metadata']==metadata and tok.checksum==metadata['resolved']['tokenizer_hash']
             assert payload['config']==MODEL and payload['metadata']['parameters']==PARAMETERS
             assert len(s['history'])==step==int(cp.stem.split('_')[1])
             assert [r['step'] for r in s['history']]==list(range(1,step+1))
