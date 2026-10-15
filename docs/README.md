@@ -1,5 +1,7 @@
 # Project map and current status
 
+The [final handout audit](submission/assignment_compliance_matrix.md), [ten-figure evidence index](submission/evidence/README.md) and [delivery readiness](submission/assignment_readiness.md) now distinguish verified technical evidence from pending Medium, recording, presentation and instructor actions. PR24 reproducibility was merged before this audit.
+
 Current application: [live NanoLM Studio](https://nanolm-studio-rayyan.vercel.app),
 public website/readiness rechecked2026-10-15. API and selected inference packaging
 are implemented; [hosting PR23](https://github.com/rayyan-merchant/Nano-Language-Model/pull/23)

@@ -1,3 +1,7 @@
+# Current assignment audit
+
+PR24 is merged. The [complete handout matrix](assignment_compliance_matrix.md), [ten required evidence items](evidence/README.md), and [readiness/remaining owner actions](assignment_readiness.md) are the current assignment-delivery index. Earlier PR-review statements below describe the reproducibility phase at capture time. The final Medium article and recording are separate pending deliveries.
+
 # Submission reproducibility and Colab demo
 
 **Verified:** independent fresh Linux/Colab and Windows clone inference, plus a complete executed Colab notebook. See the reports for observed environment corrections and remaining human review.

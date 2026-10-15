@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-15",
+  "repository": "rayyanmerchant/nanolm-studio-weights",
+  "revision": "719a7f3a4955225a9818e872b08c1503de601a81",
+  "private": false,
+  "authentication": "none",
+  "files": [
+    {
+      "path": "e02/metadata.json",
+      "bytes": 9085,
+      "sha256": "98c0506578ec682c01a78d2e9709ae3b0af1c86a5e70fa6924bed25a15455410",
+      "verification": "Fresh anonymous exact-byte metadata retrieval and SHA256"
+    },
+    {
+      "path": "e02/model.safetensors",
+      "bytes": 8698368,
+      "sha256": "5258e0db6839a2ee95b24083fc4bda43299c73d79310de5e8291d6bc3e4f7150",
+      "verification": "Anonymous Hub LFS metadata; bytes independently downloaded and verified in prior receipts"
+    },
+    {
+      "path": "b01/metadata.json",
+      "bytes": 8987,
+      "sha256": "9f91554e2f96f4b04c3c67cee498d77e10af7531459ecd178601984084cd422d",
+      "verification": "Fresh anonymous exact-byte metadata retrieval and SHA256"
+    },
+    {
+      "path": "b01/model.safetensors",
+      "bytes": 12260216,
+      "sha256": "0ea6ff2972740d2775f5d2da331d41395e2f75b36076436ec0b2a43ebcf18e3f",
+      "verification": "Anonymous Hub LFS metadata; bytes independently downloaded and verified in prior receipts"
+    },
+    {
+      "path": "f01/metadata.json",
+      "bytes": 9066,
+      "sha256": "151e633288551e1b032c16f5998f3aab301ffbd5ef22877aa6288f286d10cb0c",
+      "verification": "Fresh anonymous exact-byte metadata retrieval and SHA256"
+    },
+    {
+      "path": "f01/model.safetensors",
+      "bytes": 24198360,
+      "sha256": "b1e3d1c1f6c5386599b14e5311d59cc27d72743c6dfc5ea2dc9080fef8b09238",
+      "verification": "Anonymous Hub LFS metadata; bytes independently downloaded and verified in prior receipts"
+    }
+  ],
+  "instructor_acceptance": "PENDING: HF is not literally named GitHub/shareable Drive route; no mirror published"
+}
