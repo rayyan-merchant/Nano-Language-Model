@@ -1,0 +1,428 @@
+{
+  "scope": "New educational diagrams and independent inspection of historical executed receipts; zero training",
+  "starting_main": "ee2b941311cfb451a73dbc65207ad3dfabb5977f",
+  "manual_attention": {
+    "Q": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "K": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "V": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "scaled_scores": [
+      [
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475
+      ],
+      [
+        0.0,
+        0.7071067811865475,
+        0.7071067811865475
+      ],
+      [
+        0.7071067811865475,
+        0.7071067811865475,
+        1.414213562373095
+      ]
+    ],
+    "bidirectional": {
+      "weights": [
+        [
+          0.4011120926797859,
+          0.1977758146404282,
+          0.4011120926797859
+        ],
+        [
+          0.1977758146404282,
+          0.4011120926797859,
+          0.4011120926797859
+        ],
+        [
+          0.2482550782577231,
+          0.2482550782577231,
+          0.5034898434845538
+        ]
+      ],
+      "output": [
+        [
+          0.8022241853595719,
+          0.5988879073202141
+        ],
+        [
+          0.5988879073202141,
+          0.8022241853595719
+        ],
+        [
+          0.7517449217422769,
+          0.7517449217422769
+        ]
+      ]
+    },
+    "causal": {
+      "weights": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.3302384506733431,
+          0.6697615493266569,
+          0.0
+        ],
+        [
+          0.2482550782577231,
+          0.2482550782577231,
+          0.5034898434845538
+        ]
+      ],
+      "output": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.3302384506733431,
+          0.6697615493266569
+        ],
+        [
+          0.7517449217422769,
+          0.7517449217422769
+        ]
+      ]
+    }
+  },
+  "architecture_traces": {
+    "e02": {
+      "parameters": 2173056,
+      "shapes": {
+        "embedding": [
+          1,
+          12,
+          192
+        ],
+        "Q": [
+          1,
+          12,
+          192
+        ],
+        "K": [
+          1,
+          12,
+          192
+        ],
+        "V": [
+          1,
+          12,
+          192
+        ],
+        "output_projection": [
+          1,
+          12,
+          192
+        ],
+        "logits": [
+          1,
+          12,
+          1024
+        ],
+        "head_split": [
+          1,
+          6,
+          12,
+          32
+        ],
+        "scaled_scores": [
+          1,
+          6,
+          12,
+          12
+        ],
+        "attention_weights": [
+          1,
+          6,
+          12,
+          12
+        ],
+        "per_head_output": [
+          1,
+          6,
+          12,
+          32
+        ],
+        "concatenated": [
+          1,
+          12,
+          192
+        ]
+      },
+      "head_dimension": 32,
+      "scope": "Fresh CPU architecture trace, not trained attention or generation"
+    },
+    "b01": {
+      "parameters": 3062784,
+      "shapes": {
+        "embedding": [
+          1,
+          12,
+          192
+        ],
+        "Q": [
+          1,
+          12,
+          192
+        ],
+        "K": [
+          1,
+          12,
+          192
+        ],
+        "V": [
+          1,
+          12,
+          192
+        ],
+        "output_projection": [
+          1,
+          12,
+          192
+        ],
+        "logits": [
+          1,
+          12,
+          1024
+        ],
+        "head_split": [
+          1,
+          6,
+          12,
+          32
+        ],
+        "scaled_scores": [
+          1,
+          6,
+          12,
+          12
+        ],
+        "attention_weights": [
+          1,
+          6,
+          12,
+          12
+        ],
+        "per_head_output": [
+          1,
+          6,
+          12,
+          32
+        ],
+        "concatenated": [
+          1,
+          12,
+          192
+        ]
+      },
+      "head_dimension": 32,
+      "scope": "Fresh CPU architecture trace, not trained attention or generation"
+    },
+    "f01": {
+      "parameters": 6046560,
+      "shapes": {
+        "embedding": [
+          1,
+          12,
+          240
+        ],
+        "Q": [
+          1,
+          12,
+          240
+        ],
+        "K": [
+          1,
+          12,
+          240
+        ],
+        "V": [
+          1,
+          12,
+          240
+        ],
+        "output_projection": [
+          1,
+          12,
+          240
+        ],
+        "logits": [
+          1,
+          12,
+          1024
+        ],
+        "head_split": [
+          1,
+          6,
+          12,
+          40
+        ],
+        "scaled_scores": [
+          1,
+          6,
+          12,
+          12
+        ],
+        "attention_weights": [
+          1,
+          6,
+          12,
+          12
+        ],
+        "per_head_output": [
+          1,
+          6,
+          12,
+          40
+        ],
+        "concatenated": [
+          1,
+          12,
+          240
+        ]
+      },
+      "head_dimension": 40,
+      "scope": "Fresh CPU architecture trace, not trained attention or generation"
+    }
+  },
+  "historical_receipt_checks": {
+    "trained_attention_rows_normalized": true,
+    "future_attention_exactly_zero": true,
+    "API_response_matches_saved_generation": true,
+    "generation_cases": 30,
+    "notebooks": [
+      {
+        "path": "docs/submission/verification/colab-final/NanoLM_Submission_Demo_executed.ipynb",
+        "sha256": "b8c3c257f7c90f7e62ff070d03a6ef6f3c64e8f9815c0ae0ab33a9bd5ff70f6c",
+        "executed_code_cells": 13
+      }
+    ],
+    "independent_executions": [
+      {
+        "receipt_directory": "docs/submission/verification/colab-v3",
+        "files": 6,
+        "generation_cases": 30,
+        "exact_available_reference_matches": 12,
+        "fresh_process_models": 3
+      },
+      {
+        "receipt_directory": "docs/submission/verification/colab-final/receipts",
+        "files": 6,
+        "generation_cases": 30,
+        "exact_available_reference_matches": 12,
+        "fresh_process_models": 3
+      }
+    ],
+    "F01_validation_observations": 40,
+    "Linux_test_log": "151 passed, 1 skipped (historical executed receipt)"
+  },
+  "inputs_sha256": {
+    "docs/handwritten-assignment.pdf": "317fb3479a7629d37e9b38bf5ab227ede15801abfef18af4f4e33e5244951c3e",
+    "docs/submission/models.json": "b3aec0437d98e0d44c0d3ff9278ab978d76e8b47ce39b3060675741bd10495a5",
+    "docs/submission/verification/colab-final/receipts/api/receipt.json": "674652a98449793bc2d41cd39638528638645c8fce6af59ec5c9835f0833fe29",
+    "docs/submission/verification/colab-final/receipts/attention/receipt.json": "3f6044162d9a4dc8b95386676f64720c4d2c1d4e6d178b9bd553cdb8e9cf75ba",
+    "docs/submission/verification/colab-final/receipts/attention/trained_attention.png": "0ee2ca5c35e2c114c95c6ca3d2b8e6439092b7fbba12c7952f07d638af826844",
+    "docs/submission/verification/colab-final/receipts/core-tests.txt": "66c03a9585e2789e1a1fc3b73813a8c065ade498a345fdd6197a469b1f066b8d",
+    "docs/submission/verification/colab-final/receipts/download_receipt.json": "c063dbabdea5060f2f3a69269fc470f0f7c5351ccfbc310cc71c12aa1e4869b8",
+    "docs/submission/verification/colab-final/receipts/environment/receipt.json": "85109c36e5b3768b52537ba8ca2e59acf3ee6bc08ced9f6f1905fc0580a9b843",
+    "docs/submission/verification/colab-final/receipts/generation/receipt.json": "bd0653785b47554b2268c99da1845912113fea1b675d1e9226dddf629e7d52e2",
+    "docs/submission/verification/colab-final/receipts/models/receipt.json": "5eba6167797275245b4ad510ca7d5401e3e0eb425ddd47fdc98967aaea835c2c",
+    "docs/submission/verification/colab-final/receipts/native-environment.json": "242b26501223e6c6efd3581bfd2fa06211162ebdb2e1ff19a31675dfe23ce76a",
+    "docs/submission/verification/colab-final/receipts/restart/receipt.json": "51b8a0e894b4b622fd816f2232b97a327b2fe7d40ee83d1dba7aa1aceca872f3",
+    "docs/submission/verification/colab-final/receipts/summary.json": "e56ebadd656b9b83abb3695985a87e42d1d7a3b69c89c4bf8682cd516037d40c",
+    "docs/submission/verification/colab-v3/api/receipt.json": "92cd3976c97b41d7adab9a17017c2b11edcd9cca5e7f2fa13f2aaf48a46959ba",
+    "docs/submission/verification/colab-v3/attention/receipt.json": "b32f5eaf4b50f7bc5ff8eca78e09a40224c0d92266b61e59fd58b3725866104c",
+    "docs/submission/verification/colab-v3/attention/trained_attention.png": "0ee2ca5c35e2c114c95c6ca3d2b8e6439092b7fbba12c7952f07d638af826844",
+    "docs/submission/verification/colab-v3/core-tests.txt": "e43b0ca6587fdd36ac5d04ea4dfdcf3fed297703b8760b0c8a0c1c2a235f3a3e",
+    "docs/submission/verification/colab-v3/download_receipt.json": "c063dbabdea5060f2f3a69269fc470f0f7c5351ccfbc310cc71c12aa1e4869b8",
+    "docs/submission/verification/colab-v3/environment/receipt.json": "cb75593fab8ce99ab13cb47b9781018306c76d1d9223d8ef9c3774aee09549d8",
+    "docs/submission/verification/colab-v3/full-tests.json": "3946dca435c1a9ff3098a8359b14479475405aa3d4a521c0f08149fff2cb5425",
+    "docs/submission/verification/colab-v3/full-tests.txt": "52e2b4a9a4100bec6ea034434d2dd2e754a618789b07c8778d8ba580f43284a0",
+    "docs/submission/verification/colab-v3/generation/receipt.json": "309f94f7296b5dd2f6cadddd3f16f1add0a2c12ed554ad4aae5a98d05a27848b",
+    "docs/submission/verification/colab-v3/models/receipt.json": "90e333b9ae062ace7f4692221c947bdcd8166a9aa0c9879700d4920d8f7d7d1d",
+    "docs/submission/verification/colab-v3/native-environment.json": "242b26501223e6c6efd3581bfd2fa06211162ebdb2e1ff19a31675dfe23ce76a",
+    "docs/submission/verification/colab-v3/restart/receipt.json": "63a373cf889425f5a9690a5229087e37d91ef0cf67fe6cd6401380051d49ba26",
+    "docs/submission/verification/colab-v3/summary.json": "e7b4b7ca423fddb4ac3f895a24418befafb71a37769aea87dfd38eed9a9d5950",
+    "report/final/figures/combined_loss.png": "20bb83e3035fd64d0ac23bfcdb9f611902603a4e88265197703a44464cb357a4",
+    "report/final/master_comparison.csv": "c634d0ea7eccc62ca541640614966dc7dd936c827c5d50659f6009931ed3f09e",
+    "report/final/summary.json": "1d072d2df33d379aa3b24de0fa781f4cc5cf541d1635a09b83cb6e02d20f4db6",
+    "report/final/validation.csv": "810dfa981b3c8d4a831e1da0066a25e6ef8f939518b0792e98bc4b7e9816924e",
+    "report/pilots/E01_seed42/summary.json": "4c8905bd0e35d9cd4f0695a26131fbe64821c6566fb7b631bc6b570453eeddf9",
+    "report/pilots/E02_seed42/summary.json": "0e10a02701251f21b0b83c6afb9a0c2c2bf27ee97d18faf447e0991695aaf2b4",
+    "report/pilots/E03_seed42/summary.json": "1c7c54fd30c4bd056c4bfad3cad9943f2dbdd8bfb5c59b9344592a57924c2630",
+    "report/pilots/E04_seed42/summary.json": "50faf9d87144fac44be53ec7448d73b323ecd5fd1ea2e6e668116aa48c228202",
+    "report/pilots/E05_seed42/summary.json": "1d39540d35762c5216cc8ab320880382138f5a4e7ce053e11d2e60e24abe887a",
+    "report/pilots/E06_seed42/summary.json": "5e1a83558c59b1bc2d674102effe4b4e2d6f0e7087f0194b76ead746d565758e",
+    "report/pilots/E07_seed42/summary.json": "b66dfa8c8e078a56dd0567102d9327774c9dddd6749f68d7cfd6ac056cc93c55",
+    "report/pilots/E08_seed42/summary.json": "8de1b9a05ce802d0342d0063c4510af469907a6b54cbd9d6b5256b73f04af78a",
+    "report/pilots/E09_seed42/summary.json": "ffc70f7fbb41f401dc1bb71fd93cd0ab4f59469c43f45835083e086484103c88",
+    "report/pilots/E10_seed42/summary.json": "c5b7673260c259b3f119ba3028327ae7970b664111dea7fe9f163f73e610f286",
+    "report/pilots/E11_seed42/summary.json": "e2af3ef0a42aa1bd7c84d097466e0fbf701509c1f6964978796446fb75a5ae7b",
+    "report/pilots/E12_seed42/summary.json": "ffdea5c76a13bd85341e2e5060b75d41f12e1104398bc10d9d1ff056332b1db4",
+    "report/pilots/E13_seed42/summary.json": "75a76a04b018c59cad1a61104daf7fd9d54cc4be50707b02dcf14bc00f69e097",
+    "report/pilots/E14_seed42/summary.json": "76aaba289ebe311decd2fe577654aec3b61aaa3ddb094c8856fd88f3890b2b99"
+  },
+  "generated_sha256": {
+    "figure_01_attention_derivation.png": "464b98502ea50adbe859d44167fc2e25d6bc9767727e210efec5a1cc768566ea",
+    "figure_02_causal_mask.png": "319993cef65a777e065b94c1e9fc94799d3ad34ab0669e41b60824140fef8485",
+    "figure_03_tensor_shapes.png": "cf0eb412e7f7755a4b131bfd15fbcdd25aa9d21f67c1b8787afe123dcb6e899c",
+    "figure_04_sinusoidal.png": "0190edaebc13afd463bbdc48e5ebc5dc1f4697f7bac436a5b8187df8ac8adc9f",
+    "figure_05_architecture.png": "8e8638e7460a709eeb65a8d8323e24a7de262b445c0a4e2e6cfcb36c4382261c",
+    "figure_08_generations.png": "186d750e8f78a13bdbfc1cebb61f1c18fde9cc627a2b24e0cd15b47d39f567c0",
+    "figure_09_ablations.csv": "2b8c5efb9edcaee63e0a35b0112c8aee27e55b8469f4c799327d3f28af3c2643",
+    "figure_09_ablations.png": "91569ef8f49a2996508a0d5e6bd122fe659a3e53c4e2c2d00c2a78a9581b9627",
+    "figure_10_api.png": "798853c74f9228e39288ceb0bca75d8c321c43d33ed731d411848eee8acfd101",
+    "mlm_vs_clm.png": "7cd98a8c81b79a73fc3e618db3cbbe96a7523220f7e02f8c826e2773efbb7ece"
+  },
+  "public_API_request": {
+    "prompt": "ROMEO:\n",
+    "max_new_tokens": 32,
+    "temperature": 0.7,
+    "seed": 42,
+    "greedy": true,
+    "model_id": "b01"
+  }
+}

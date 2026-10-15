@@ -1,0 +1,522 @@
+{
+  "handout_sha256": "30e543d6d429f60bba96f7c20e2131d198551112b018520f6eae6dd8a23c6bdd",
+  "pages": 11,
+  "method": "Exact clauses checked as substrings after collapsing PDF extraction whitespace; matrix IDs map to these verbatim source anchors. Compound rows summarize related requirements in the matrix.",
+  "requirements": {
+    "1": {
+      "PDF_page": 2,
+      "exact_handout_clause": "The system must be reproducible from a clean checkout, and the report must contain evidence that the architecture behaves as intended.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "2a": {
+      "PDF_page": 2,
+      "exact_handout_clause": "Explain why Transformers can reduce sequential computation relative to recurrent architectures, including the idea of sequential/parallel depth.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "2b": {
+      "PDF_page": 2,
+      "exact_handout_clause": "Derive and implement scaled dot-product self-attention, including masking.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "2c": {
+      "PDF_page": 2,
+      "exact_handout_clause": "Implement multi-head attention and track tensor shapes through every transformation.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "2d": {
+      "PDF_page": 2,
+      "exact_handout_clause": "Assemble a Transformer block with attention, residual connections, normalization, and feed-forward MLP layers.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "2e": {
+      "PDF_page": 2,
+      "exact_handout_clause": "Differentiate bidirectional masked language modeling from autoregressive causal language modeling.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "2f": {
+      "PDF_page": 2,
+      "exact_handout_clause": "Construct the next-token prediction dataset and loss used by a GPT-style model.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "2g": {
+      "PDF_page": 2,
+      "exact_handout_clause": "Train and evaluate the constructed compact language model without loading a pretrained GPT checkpoint.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "2h": {
+      "PDF_page": 2,
+      "exact_handout_clause": "Package the trained model behind a simple API using FAST-API and deploy/host it on online platforms (like render etc.)",
+      "normalized_whitespace_substring_verified": true
+    },
+    "3a": {
+      "PDF_page": 3,
+      "exact_handout_clause": "Sequential vs parallel depth; speed/memory trade-off Hand analysis + one measured or reasoned comparison",
+      "normalized_whitespace_substring_verified": true
+    },
+    "3b": {
+      "PDF_page": 3,
+      "exact_handout_clause": "Q, K, V; scaled dot-product attention; masking Worked numeric example + implementation + unit test",
+      "normalized_whitespace_substring_verified": true
+    },
+    "3c": {
+      "PDF_page": 3,
+      "exact_handout_clause": "Multiple heads, reshape/split/merge Tensor-shape trace + attention output",
+      "normalized_whitespace_substring_verified": true
+    },
+    "3d": {
+      "PDF_page": 3,
+      "exact_handout_clause": "Order information added to token representations Visualization + explanation",
+      "normalized_whitespace_substring_verified": true
+    },
+    "3e": {
+      "PDF_page": 3,
+      "exact_handout_clause": "Attention + FFN + residuals + normalization Transformer block code + diagram + shape checks",
+      "normalized_whitespace_substring_verified": true
+    },
+    "3f": {
+      "PDF_page": 3,
+      "exact_handout_clause": "Why bidirectional masking differs from GPT Mask matrix + short comparison experiment",
+      "normalized_whitespace_substring_verified": true
+    },
+    "3g": {
+      "PDF_page": 3,
+      "exact_handout_clause": "Causal mask; shifted targets; next-token cross-entropy Training loop + loss curves + text generation",
+      "normalized_whitespace_substring_verified": true
+    },
+    "4a": {
+      "PDF_page": 3,
+      "exact_handout_clause": "One public or instructor-accessible Git repository containing the complete implementation.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "4b": {
+      "PDF_page": 3,
+      "exact_handout_clause": "A Google Collab Script",
+      "normalized_whitespace_substring_verified": true
+    },
+    "4c": {
+      "PDF_page": 3,
+      "exact_handout_clause": "A trained model checkpoint or a reproducible training command that loads the checkpoint either from GitHub or Shareable Google drive.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "4d": {
+      "PDF_page": 3,
+      "exact_handout_clause": "A final README with setup, dataset source, training command, inference command, expected output, and known limitations.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "4e": {
+      "PDF_page": 3,
+      "exact_handout_clause": "A technical report as Medium Article",
+      "normalized_whitespace_substring_verified": true
+    },
+    "4f": {
+      "PDF_page": 3,
+      "exact_handout_clause": "At least 6 required screenshots/evidence figures listed in Section 12.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "4g": {
+      "PDF_page": 3,
+      "exact_handout_clause": "An ablation results table and discussion.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "4h": {
+      "PDF_page": 3,
+      "exact_handout_clause": "A 5-10 minute screen-recorded demonstration showing the model running from a clean environment or recorded terminal session.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "4i": {
+      "PDF_page": 3,
+      "exact_handout_clause": "Class Presentations",
+      "normalized_whitespace_substring_verified": true
+    },
+    "4j": {
+      "PDF_page": 3,
+      "exact_handout_clause": "Other individuals should be able to clone your repository, install dependencies, run the provided tests, reproduce the core architecture checks, and generate text using your model without needing undocumented steps.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "5.M1": {
+      "PDF_page": 4,
+      "exact_handout_clause": "Numerical attention example and passing self-attention tests",
+      "normalized_whitespace_substring_verified": true
+    },
+    "5.M2": {
+      "PDF_page": 4,
+      "exact_handout_clause": "Shape-verified Transformer attention module and position visualization",
+      "normalized_whitespace_substring_verified": true
+    },
+    "5.M3": {
+      "PDF_page": 4,
+      "exact_handout_clause": "Complete block and mask comparison",
+      "normalized_whitespace_substring_verified": true
+    },
+    "5.M4": {
+      "PDF_page": 4,
+      "exact_handout_clause": "Loss decreases on a small overfit test set",
+      "normalized_whitespace_substring_verified": true
+    },
+    "5.M5": {
+      "PDF_page": 4,
+      "exact_handout_clause": "Model trains on full dataset and generates samples",
+      "normalized_whitespace_substring_verified": true
+    },
+    "5.M6": {
+      "PDF_page": 4,
+      "exact_handout_clause": "Ablation study, inference CLI/API, final report",
+      "normalized_whitespace_substring_verified": true
+    },
+    "6a": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Use a 3-token sequence with d_k = 2 and d_v = 2. Provide explicit Q, K, and V matrices.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "6b": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Calculate QK^T. 3. Divide by sqrt(d_k).",
+      "normalized_whitespace_substring_verified": true
+    },
+    "6c": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Apply row-wise softmax. 5. Multiply the attention weights by V.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "6d": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Add a causal mask that prevents token 1 from seeing tokens 2 and 3, token 2 from seeing token 3, etc. Show the masked score matrix.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "6e": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Before relying on PyTorch, demonstrate that you can compute the core operation manually. Put the following into your report.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "7a": {
+      "PDF_page": 5,
+      "exact_handout_clause": "A deterministic tokenizer with documented vocabulary size and special-token policy. Character-level or subword tokenization is acceptable.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "7b": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Sinusoidal positional encoding implemented by you; learned positions may be added as an experiment.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "7c": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Q/K/V projections, scaled dot-product attention, softmax, optional mask.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "7d": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Configurable number of heads; split/merge operations explicit in code.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "7e": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Two linear transformations with a nonlinearity. GELU is recommended.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "7f": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Upper-triangular future-token mask or equivalent implementation.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "7g": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Token-level cross-entropy with correctly shifted targets.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "7h": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Autoregressive sampling with max length and temperature; top-k or top-p is optional.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "8a": {
+      "PDF_page": 5,
+      "exact_handout_clause": "Do not load a pretrained GPT, GPT-2, Llama, Mistral, BERT, or other pretrained language-model checkpoint for the core model.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "8b": {
+      "PDF_page": 6,
+      "exact_handout_clause": "PyTorch tensors, autograd, optimizers, data loaders, and basic numerical utilities are allowed.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "8c": {
+      "PDF_page": 6,
+      "exact_handout_clause": "External code may be consulted for learning, but copied implementation must be cited and materially understood. You must be able to explain every major model component during the demo.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "8d": {
+      "PDF_page": 6,
+      "exact_handout_clause": "All experiments must be reproducible from a clean checkout using documented commands.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "8e": {
+      "PDF_page": 6,
+      "exact_handout_clause": "Never commit API keys, credentials, private datasets, or large generated artifacts unnecessarily. Use .gitignore and environment variables where appropriate.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "9": {
+      "PDF_page": 6,
+      "exact_handout_clause": "Tiny Shakespeare Fastest path to a working model Small text corpus suited to character or token language modeling",
+      "normalized_whitespace_substring_verified": true
+    },
+    "10": {
+      "PDF_page": 7,
+      "exact_handout_clause": "You may reorganize the repository, but the submitted README must make it obvious where the model, data pipeline, tests, experiments, and report live.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "11a": {
+      "PDF_page": 7,
+      "exact_handout_clause": "These are starting values, not target answers. Your report must justify the configuration you actually train.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "11b": {
+      "PDF_page": 7,
+      "exact_handout_clause": "These are starting values, not target answers. Your report must justify the configuration you actually train.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "11c": {
+      "PDF_page": 7,
+      "exact_handout_clause": "These are starting values, not target answers. Your report must justify the configuration you actually train.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "12.1": {
+      "PDF_page": 7,
+      "exact_handout_clause": "Hand-calculated attention example",
+      "normalized_whitespace_substring_verified": true
+    },
+    "12.2": {
+      "PDF_page": 7,
+      "exact_handout_clause": "Causal mask matrix or heatmap",
+      "normalized_whitespace_substring_verified": true
+    },
+    "12.3": {
+      "PDF_page": 7,
+      "exact_handout_clause": "Multi-head tensor-shape printout",
+      "normalized_whitespace_substring_verified": true
+    },
+    "12.4": {
+      "PDF_page": 7,
+      "exact_handout_clause": "Positional encoding visualization",
+      "normalized_whitespace_substring_verified": true
+    },
+    "12.5": {
+      "PDF_page": 7,
+      "exact_handout_clause": "Model summary / parameter count",
+      "normalized_whitespace_substring_verified": true
+    },
+    "12.6": {
+      "PDF_page": 8,
+      "exact_handout_clause": "Training vs validation loss curve",
+      "normalized_whitespace_substring_verified": true
+    },
+    "12.7": {
+      "PDF_page": 8,
+      "exact_handout_clause": "Attention visualization from a trained model",
+      "normalized_whitespace_substring_verified": true
+    },
+    "12.8": {
+      "PDF_page": 8,
+      "exact_handout_clause": "Generation samples",
+      "normalized_whitespace_substring_verified": true
+    },
+    "12.9": {
+      "PDF_page": 8,
+      "exact_handout_clause": "Ablation results table/plot",
+      "normalized_whitespace_substring_verified": true
+    },
+    "12.10": {
+      "PDF_page": 8,
+      "exact_handout_clause": "CLI or API inference call",
+      "normalized_whitespace_substring_verified": true
+    },
+    "13a": {
+      "PDF_page": 8,
+      "exact_handout_clause": "Run at least three controlled experiments. In each experiment, change one major factor while keeping the others as stable as practical.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "13b": {
+      "PDF_page": 8,
+      "exact_handout_clause": "Validation loss, parameter count, training time",
+      "normalized_whitespace_substring_verified": true
+    },
+    "13c": {
+      "PDF_page": 8,
+      "exact_handout_clause": "Your report must distinguish between observation and interpretation.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "14.1": {
+      "PDF_page": 8,
+      "exact_handout_clause": "Correctly explains attention, masking, position, Transformer blocks, and the BERT/GPT objective distinction.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "14.2": {
+      "PDF_page": 8,
+      "exact_handout_clause": "Self-attention and multi-head attention are implemented correctly and tested.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "14.3": {
+      "PDF_page": 8,
+      "exact_handout_clause": "Embedding, position, attention, FFN, normalization, residual paths, and LM head are integrated correctly.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "14.4": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Dataset construction, target shifting, causal masking, loss, training loop, and checkpointing work correctly.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "14.5": {
+      "PDF_page": 9,
+      "exact_handout_clause": "At least three controlled experiments with meaningful measurements and evidence-based conclusions.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "14.6": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Model generates coherent outputs and results are evaluated using fixed prompts plus quantitative loss/perplexity where appropriate.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "14.7": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Clean structure, tests, reproducibility, configuration, documentation, and usable inference command/API.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "14.8": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Clear report, required figures, concise explanation, and successful live/recorded demonstration.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "15.1": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Problem and scenario: What are you trying to build",
+      "normalized_whitespace_substring_verified": true
+    },
+    "15.2": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Transformer foundations: Explain the architecture with equations, tensor shapes, and the motivation for attention.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "15.3": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Implementation: Explain your tokenizer, model configuration, attention implementation, masking, and training loop.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "15.4": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Dataset and preprocessing: Describe source, size, split, tokenizer, vocabulary, context length, and any filtering.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "15.5": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Training setup: Hardware, hyperparameters, optimizer, batch size, number of steps/epochs, checkpoints.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "15.6": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Results: Loss curves, sample generations, parameter count, training time, and attention inspection.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "15.7": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Ablation study: Tables/plots and interpretation for the required experiments.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "15.8": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Failure analysis: Show at least two failure modes or limitations and explain likely causes.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "15.9": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Engineering packaging: Explain CLI/API, reproducibility, and how another user runs inference.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "15.10": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Conclusion: Summarize what the experiments demonstrate about Transformer-based causal language modeling.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "16a": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Install dependencies 2. Run unit tests",
+      "normalized_whitespace_substring_verified": true
+    },
+    "16b": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Training loss falls substantially on a tiny repeated batch, demonstrating that gradients and target shifting work.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "16c": {
+      "PDF_page": 9,
+      "exact_handout_clause": "A fresh process can load the saved weights and generate text.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "16d": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Generate from three fixed prompts",
+      "normalized_whitespace_substring_verified": true
+    },
+    "16e": {
+      "PDF_page": 9,
+      "exact_handout_clause": "A token at position t cannot use information from positions > t.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "16f": {
+      "PDF_page": 9,
+      "exact_handout_clause": "Verify README commands match the actual repository and confirm no secrets are committed.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "17.1–3": {
+      "PDF_page": 10,
+      "exact_handout_clause": "Show the repository structure and identify the core model file. 2. Show the attention implementation and causal mask. 3. Run the test suite or key architecture checks.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "17.4–6": {
+      "PDF_page": 10,
+      "exact_handout_clause": "Show the final model configuration and parameter count. 5. Show the training/validation loss curve. 6. Run one generation command from a fixed prompt.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "17.7–9": {
+      "PDF_page": 10,
+      "exact_handout_clause": "Show one attention visualization and explain what you observe. 8. Show deployed solution with live inferencing. 9. Summarize the most important ablation result and one limitation.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "18a": {
+      "PDF_page": 10,
+      "exact_handout_clause": "Each team member must understand the submitted model. The demo may include individual oral questions.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "18b": {
+      "PDF_page": 10,
+      "exact_handout_clause": "When using external code, tutorials, repositories, equations, or figures, cite the source in the report and identify what was adapted.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "18c": {
+      "PDF_page": 10,
+      "exact_handout_clause": "Generated text from the trained model is an experimental artifact, not a claim that the model is factually reliable.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "18d": {
+      "PDF_page": 10,
+      "exact_handout_clause": "Keep the project reproducible and avoid committing large checkpoints unless explicitly requested by the instructor.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "19": {
+      "PDF_page": 10,
+      "exact_handout_clause": "At least five generation samples are included.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "19.M": {
+      "PDF_page": 10,
+      "exact_handout_clause": "Technical report is submitted as Medium Article.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "19.S": {
+      "PDF_page": 10,
+      "exact_handout_clause": "All sources are cited.",
+      "normalized_whitespace_substring_verified": true
+    },
+    "20": {
+      "PDF_page": 11,
+      "exact_handout_clause": "The goal is to produce a small, understandable, tested, reproducible Transformer language model and to demonstrate, with evidence, why each architectural component exists.",
+      "normalized_whitespace_substring_verified": true
+    }
+  }
+}
