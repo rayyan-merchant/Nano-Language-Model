@@ -30,6 +30,7 @@ kaggle.json
 *.pem
 *.key
 .DS_Store
+.vercel/
 Thumbs.db
 /model_artifacts/
 node_modules/
