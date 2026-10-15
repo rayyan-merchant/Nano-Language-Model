@@ -41,11 +41,11 @@ rendered literally. Large serif headlines, readable UI sans and reduced-motion C
 - [x] Frontend: responsive pages, accessible controls, typed API integration;
   component tests, production build, browser workflows and desktop/mobile captures.
 - [x] Review delivery: scientific suite/integrity, container configuration/build in CI,
-  exists, dependency locks, startup/retrieval/deployment docs and reviewable PR.
+  dependency locks, startup/retrieval/deployment docs and reviewable PR.
 - [ ] Full three-model acceptance: obtain genuine E02 step5000, package and verify
   equivalence, benchmark it and pass the complete real-model browser workflow.
 
 Missing checkpoints do not block independent development but do block three-model
-acceptance. Docker absence is a container-verification blocker, not a passing build.
+acceptance. Local Docker was unavailable; the actual Linux CI build/liveness check passed.
 Fixtures are labeled test fixtures and cannot enter normal serving configuration.
 Only genuine runtime receipts establish model integration and performance.

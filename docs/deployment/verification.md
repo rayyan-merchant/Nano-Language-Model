@@ -58,6 +58,8 @@ weights and alternate steps were never substituted.
   passed all three jobs (Python/integrity, frontend and container) for source
   8198882b3cf4a03cb3bb1da2105dee7ae631ecd2. Later changes only document these receipts
   and extend browser keyboard coverage; their head CI is inspected separately in PR22.
+  CI logs record 140 passed, 1 skipped, 15 warnings in 37.96 s, and the same protected
+  file/configuration/notebook counts and two pre-existing frozen broken links.
 - A final genuine desktop repetition activated Generate with keyboard Enter for
   both available models and passed (14.0 s test / 18.0 s command).
 
