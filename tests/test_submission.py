@@ -63,6 +63,17 @@ def test_demo_uses_canonical_modules_and_all_fixed_prompts():
     assert submission_demo.PROMPTS[:3] == ['To be, or not to be', 'ROMEO:\n', 'JULIET:\n']
 
 
+def test_installed_modules_may_live_outside_checkout(monkeypatch, tmp_path):
+    from types import SimpleNamespace
+    from tools import submission_demo
+    outside = tmp_path / 'external-environment/site-packages/nano_lm/model.py'
+    monkeypatch.setattr(submission_demo.importlib, 'import_module', lambda _name: SimpleNamespace(__file__=str(outside)))
+    monkeypatch.setattr(submission_demo.subprocess, 'check_output', lambda *_a, **_k: '')
+    receipt = submission_demo.environment()
+    assert all(Path(p).is_absolute() for p in receipt['modules'].values())
+    assert str(outside.resolve()) in receipt['modules'].values()
+
+
 def test_submission_notebook_is_clean_pinned_and_compiles():
     notebook = json.loads((retrieval.ROOT / 'notebooks/NanoLM_Submission_Demo.ipynb').read_text(encoding='utf-8'))
     assert notebook['nbformat'] == 4

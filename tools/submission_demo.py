@@ -26,7 +26,7 @@ def environment():
             'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
             'git_dirty': bool(subprocess.check_output(['git', 'status', '--porcelain'], text=True).strip()),
             'freeze': subprocess.check_output([sys.executable, '-m', 'pip', 'freeze'], text=True).splitlines(),
-            'modules': {m: str(Path(importlib.import_module('nano_lm.' + m).__file__).relative_to(Path.cwd()))
+            'modules': {m: str(Path(importlib.import_module('nano_lm.' + m).__file__).resolve())
                         for m in ['model', 'attention', 'positions', 'bpe', 'generate']}}
 
 
