@@ -61,3 +61,17 @@ def test_demo_uses_canonical_modules_and_all_fixed_prompts():
     assert submission_demo.generate is generate
     assert len(submission_demo.PROMPTS) == 5
     assert submission_demo.PROMPTS[:3] == ['To be, or not to be', 'ROMEO:\n', 'JULIET:\n']
+
+
+def test_submission_notebook_is_clean_pinned_and_compiles():
+    notebook = json.loads((retrieval.ROOT / 'notebooks/NanoLM_Submission_Demo.ipynb').read_text(encoding='utf-8'))
+    assert notebook['nbformat'] == 4
+    code = [c for c in notebook['cells'] if c['cell_type'] == 'code']
+    assert len(code) == 13
+    for cell in code:
+        assert cell['execution_count'] is None and cell['outputs'] == []
+        compile(''.join(cell['source']), 'submission-cell', 'exec')
+    source = '\n'.join(''.join(c['source']) for c in code)
+    assert '7ba4d22dcd3818184a3495dc693ff7321ea99076' in source
+    assert 'nano_lm.train' not in source and 'auth login' not in source
+    assert 'tools.submission_models' in source and 'pip", "check' in source

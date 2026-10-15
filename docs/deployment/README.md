@@ -1,6 +1,6 @@
 # NanoLM Studio: private local operation and deployment preparation
 
-Implementation is authorized; public deployment and public weights are not.
+Current update2026-10-15: [Studio is live](https://nanolm-studio-rayyan.vercel.app), verified by actual HTTP200 website/readiness checks. The owner authorized public HF inference packages during [submission reproducibility](../submission/README.md). Historical deployment-preparation/authorization statements below retain their original scope; public rollout is documented in [PR23](https://github.com/rayyan-merchant/Nano-Language-Model/pull/23). This task makes no additional deployment.
 The scientific package and accepted evidence remain frozen. Studio is a wrapper
 around canonical GPT and generation, not an alternative model implementation.
 Current verification and blockers are recorded in [verification.md](verification.md).

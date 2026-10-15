@@ -1,9 +1,12 @@
 # Project map and current status
 
-NanoLM Studio implementation is documented in [the local/deployment guide](deployment/README.md)
-and [its verification record](deployment/verification.md). Genuine E02/B01/F01 inference
-is locally verified using the exact selected checkpoints. No public deployment or
-additional research execution is authorized.
+Current application: [live NanoLM Studio](https://nanolm-studio-rayyan.vercel.app),
+public website/readiness rechecked2026-10-15. API and selected inference packaging
+are implemented; [hosting PR23](https://github.com/rayyan-merchant/Nano-Language-Model/pull/23)
+retains deployment provenance. The [submission hub](submission/README.md) tracks
+fresh-clone and curated Colab verification separately from research acceptance.
+The model packages are now public at the owner's request; no new training/test
+assessment is authorized.
 
 Current reviewed research baseline: `cc7e345cee92c122cb1f7ad56a0d7627636934db`,
 including merged B01 PR20. **Research execution is complete; final project delivery
@@ -74,11 +77,11 @@ their exact instructions/hashes; it does not re-download or certify new platform
 availability. Never deserialize an untrusted checkpoint or rerun research notebooks
 for convenience. F01's reserved test was assessed once; B01 did not use that test.
 
-## Subsequent milestones — not implemented by cleanup
+## Subsequent milestones — status after application delivery
 
-Final academic/Medium report and handout-specific evidence audit; selected-model
-inference packaging; final reproducible demo notebook; FastAPI under [api](../api/README.md);
-frontend, deployment and recorded presentation. Existing source inference and
-research reports are available, but none proves those delivery milestones complete.
-No additional training/test assessment, new dependency policy or automatic PR merge
-is authorized. [AGENTS.md](../AGENTS.md) protects scientific paths and evidence.
+Final academic/Medium report, complete handout-specific evidence audit and recorded
+presentation remain pending. Selected inference packaging, FastAPI/frontend and
+public deployment now exist. Curated submission notebook and clean-environment
+acceptance status are recorded in [submission](submission/README.md), with explicit
+execution evidence boundaries. Historical cleanup statements remain historical.
+No additional research training/test assessment or automatic PR merge is authorized.
