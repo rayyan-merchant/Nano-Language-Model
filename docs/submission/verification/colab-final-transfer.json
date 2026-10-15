@@ -1,0 +1,16 @@
+{
+  "source_notebook_sha256": "497440a2bc74044a0f0306e1eb082756482e58eb815f11a40acecd15ce33921c",
+  "executed_notebook_sha256": "b8c3c257f7c90f7e62ff070d03a6ef6f3c64e8f9815c0ae0ab33a9bd5ff70f6c",
+  "archive_sha256": "bdf8146fa1d85e6eab0a47e727ad475f24015a3984cb1236bf29f7c755996b04",
+  "archive_bytes": 159180,
+  "crc_and_safe_paths_passed": true,
+  "code_and_markdown_match_clean_source": true,
+  "all_13_cells_executed": true,
+  "cell_errors": 0,
+  "embedded_trained_attention_images": 1,
+  "method": "nbclient0.10.2/nbformat5.10.4 on a second fresh Colab CPU runtime; anonymous pinned GitHub notebook fetch",
+  "runtime_fingerprint": "a87d151e0f2f4e0b98e5c1129e52b7fd",
+  "runtime_released_after_verified_export": true,
+  "public_executed_notebook_commit": "2303f56dd06ba7b857b339b3512ea185fe147163",
+  "public_executed_notebook_URL": "https://colab.research.google.com/github/rayyan-merchant/Nano-Language-Model/blob/2303f56dd06ba7b857b339b3512ea185fe147163/docs/submission/verification/colab-final/NanoLM_Submission_Demo_executed.ipynb"
+}

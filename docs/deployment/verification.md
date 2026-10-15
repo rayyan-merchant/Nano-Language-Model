@@ -1,6 +1,8 @@
 # NanoLM Studio verification and acceptance
 
-Status: **local three-model acceptance passed** after the user supplied the exact
+Current update2026-10-15: public website and /api/ready returnedHTTP200 in this task; actual rollout evidence remains in [PR23](https://github.com/rayyan-merchant/Nano-Language-Model/pull/23). The owner subsequently authorized public model packages for [submission](../submission/README.md). Earlier authorization/status statements below are historical.
+
+Historical status: **local three-model acceptance passed** after the user supplied the exact
 E02 checkpoint. Public deployment remains unauthorized. This document records actual evidence;
 pending checks are not claimed passed. Source baseline: reviewed main
 95b83f0ed8f8ac70f4b7f102a8f864acac824f66.

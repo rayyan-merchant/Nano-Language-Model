@@ -1,6 +1,11 @@
 # Notebook catalog
 
-All 15 notebook files and their provenance bytes/paths are preserved. Five other files in this directory are navigation/provenance records; the directory's20 files are not20 executable notebooks. None was executed by cleanup. These are thin wrappers around the pinned shared package, not separate training implementations.
+## Current submission entry point
+
+[NanoLM_Submission_Demo.ipynb](NanoLM_Submission_Demo.ipynb) is the new curated CPU demo using the real selected E02/B01/F01 packages, anonymous pinned retrieval, trained attention, causality and genuine inference. [Actual execution status](../docs/submission/colab_demo.md) is recorded separately. Historical notebooks below remain byte-for-byte preserved.
+
+
+All 15 historical notebook files and their provenance bytes/paths are preserved; the submission demo is one new notebook. Five other files in this directory are navigation/provenance records; the directory's20 files are not20 executable notebooks. None was executed by cleanup. These are thin wrappers around the pinned shared package, not separate training implementations.
 
 ## Current development entry points
 
@@ -10,7 +15,7 @@ All 15 notebook files and their provenance bytes/paths are preserved. Five other
 | [kaggle_research.ipynb](kaggle_research.ipynb) | Shared-package short CUDA verification; requires compatible isolated profile and actual storage qualification |
 | [colab_research.ipynb](colab_research.ipynb) | Shared-package short CUDA verification; not authorization for research training |
 
-Native cloud Python/PyTorch may differ from the qualified profile. Read [platform guidance](../docs/platforms.md) before any separately approved execution. The final demo/submission notebook remains a later task.
+Native cloud Python/PyTorch may differ from the qualified profile. Read [platform guidance](../docs/platforms.md) before any separately approved execution. The new submission notebook is indexed above; research notebooks below are historical.
 
 ## Source-only historical launchers
 

@@ -1,6 +1,6 @@
-# NanoLM Studio: private local operation and deployment preparation
+# NanoLM Studio: operation and deployment records
 
-Implementation is authorized; public deployment and public weights are not.
+Current update2026-10-15: [Studio is live](https://nanolm-studio-rayyan.vercel.app), verified by actual HTTP200 website/readiness checks. The owner authorized public HF inference packages during [submission reproducibility](../submission/README.md). Historical deployment-preparation/authorization statements below retain their original scope; public rollout is documented in [PR23](https://github.com/rayyan-merchant/Nano-Language-Model/pull/23). This task makes no additional deployment.
 The scientific package and accepted evidence remain frozen. Studio is a wrapper
 around canonical GPT and generation, not an alternative model implementation.
 Current verification and blockers are recorded in [verification.md](verification.md).
@@ -88,7 +88,7 @@ Normal serving cannot load the explicitly injected unit-test fixture registry.
 | POST /v1/compare | Sequential same-settings/same-seed inference; keeps each unavailable/failed model slot |
 
 Default: B01, sampling, temperature 0.7, seed 42, 128 new tokens. Requests permit
-1–256 new tokens, temperature 0.1–2.0, at most 4,000 prompt characters and 32 KiB
+1â€“256 new tokens, temperature 0.1â€“2.0, at most 4,000 prompt characters and 32 KiB
 JSON bodies. Blank, surrogate, wrong-type and extra-field requests fail validation.
 Responses report actual generated tokens, continuation characters, context cropping,
 effective seed, latency and replacement characters. UTF-8 is decoded over complete
@@ -171,7 +171,7 @@ immutable, versioned private safetensors package root; verify hashes before expo
 readiness. Start with one CPU worker and measure cold starts, timeouts and memory on
 the target platform. Local measurements are not hosting latency guarantees.
 
-Allow at least the measured process memory plus headroom; 512 MiB–1 GiB is a planning
+Allow at least the measured process memory plus headroom; 512 MiBâ€“1 GiB is a planning
 range, not a tested container limit. GPU serving is optional and unverified here.
 Confirm E02, then repeat all-model benchmarks before deciding final capacity.
 

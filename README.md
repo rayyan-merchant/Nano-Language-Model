@@ -1,16 +1,17 @@
 # Nano-Language-Model
 
-NanoLM Studio is implemented on its dedicated application branch. The writing
-studio, comparison/research pages and genuine E02/B01/F01 API inference are locally
-implemented with hash-verified selected checkpoint packages.
-Public deployment is not authorized. See [operation and deployment preparation](docs/deployment/README.md)
-and [actual verification status](docs/deployment/verification.md).
+[NanoLM Studio](https://nanolm-studio-rayyan.vercel.app) is deployed with genuine
+E02/B01/F01 inference (public website and readiness rechecked2026-10-15).
+The [submission workflow](docs/submission/README.md) retrieves the exact selected
+public inference packages without authentication. Clean-clone and Colab acceptance
+are tracked separately in the [execution report](docs/submission/reproducibility_report.md).
+Deployment implementation/evidence remains in [PR23](https://github.com/rayyan-merchant/Nano-Language-Model/pull/23).
 
 A decoder-only GPT built from scratch in PyTorch for a controlled Tiny Shakespeare study. Attention explicitly implements Q/K/V projections, head splitting, scaled scores, causal masking, softmax and value aggregation. There are no pretrained language-model weights or black-box Transformer layers.
 
 ## Completed research and remaining delivery work
 
-**E01–E14 seed 42 are complete:** fourteen single-factor ablations, each with a 5,000-update authoritative trajectory and 20 full sliding validations. The proposed three-seed/42-run expansion was discontinued; no replicated significance is claimed. Two separately approved combined models also completed and passed independent artifact and compatible CPU/CUDA recovery:
+**E01â€“E14 seed 42 are complete:** fourteen single-factor ablations, each with a 5,000-update authoritative trajectory and 20 full sliding validations. The proposed three-seed/42-run expansion was discontinued; no replicated significance is claimed. Two separately approved combined models also completed and passed independent artifact and compatible CPU/CUDA recovery:
 
 | Model | Parameters | Actual updates | Best update | Best conditional BPB |
 |---|---:|---:|---:|---:|
@@ -18,7 +19,7 @@ A decoder-only GPT built from scratch in PyTorch for a controlled Tiny Shakespea
 | F01 quality-focused | 6,046,560 | 10,000 | 1,750 | 1.98376817 |
 | B01 balanced | 3,062,784 | 4,500, frozen early stop | 3,000 | 1.98493095 |
 
-All reports retain negative results, genuine generations and recovery evidence. F01 deteriorated with prolonged training; B01 nearly matches its selected likelihood at roughly half its parameters but still produces greedy loops, malformed language and invalid byte sequences. Smaller size or lower BPB does not establish better text quality. The final academic report, standalone model packaging, FastAPI, frontend, deployment and final demo/presentation are **pending**. No further research training or test evaluation is currently authorized.
+All reports retain negative results, genuine generations and recovery evidence. F01 deteriorated with prolonged training; B01 nearly matches its selected likelihood at roughly half its parameters but still produces greedy loops, malformed language and invalid byte sequences. Smaller size or lower BPB does not establish better text quality. Model packaging, FastAPI, frontend and deployment are implemented. The curated submission notebook/reproducibility work is tracked separately; the final academic report, comprehensive assignment-evidence audit and recorded presentation remain pending. No further research training or test evaluation is currently authorized.
 
 Start with the [project map and current status](docs/README.md), [fourteen-run analysis](report/final/E01_E14_consolidated_analysis.md), [F01 report](report/final/F01_10000_analysis.md) and [B01 model selection](report/balanced/B01_model_selection.md).
 
@@ -28,6 +29,7 @@ Research pins: Python 3.10/3.11, PyTorch 2.5.1, NumPy 1.26.4, tokenizers 0.21.0,
 
 ```powershell
 python -m venv .venv
+.venv\Scripts\python -m pip install --upgrade pip==26.2.1
 .venv\Scripts\python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
 .venv\Scripts\python -m pip install -r requirements.txt
 .venv\Scripts\python -m pip install -e . --no-deps
@@ -64,7 +66,7 @@ training and verification. It has no standalone evaluation CLI.
 
 ## Results, checkpoints and reproducibility
 
-[report/pilots](report/pilots) contains E01–E14, [report/final](report/final) F01, and [report/balanced](report/balanced) B01. Figures, machine-readable tables, complete fixed generation grids, hashes and genuine recovery receipts are preserved. Large datasets, full checkpoints, archives and training journals are **outside Git**. For retrieval use each pilot report, [F01 instructions](report/final/artifact_retrieval.md) or [B01 instructions](report/balanced/artifact_retrieval.md). Only deserialize trusted project checkpoints; optimizer/RNG payloads use PyTorch pickle.
+[report/pilots](report/pilots) contains E01â€“E14, [report/final](report/final) F01, and [report/balanced](report/balanced) B01. Figures, machine-readable tables, complete fixed generation grids, hashes and genuine recovery receipts are preserved. Large datasets, full checkpoints, archives and training journals are **outside Git**. For retrieval use each pilot report, [F01 instructions](report/final/artifact_retrieval.md) or [B01 instructions](report/balanced/artifact_retrieval.md). Only deserialize trusted project checkpoints; optimizer/RNG payloads use PyTorch pickle.
 
 Conditional BPB scores the same 55,514 validation bytes after a 256-byte conditioning exclusion, with each model's context and explicit tokenizer-boundary policy. Token loss/perplexity is not comparable across tokenizers. Equal target-token budgets do not imply equal compute/source exposure. One seed supplies no cross-seed variance; initialization, capacity, context, hardware and stopping opportunities are confounders. F01 received one frozen reserved-test assessment; B01 did not reuse that test for tuning or evaluation. See [BPB policy](docs/bpb.md) and [research protocol](docs/research_protocol.md).
 

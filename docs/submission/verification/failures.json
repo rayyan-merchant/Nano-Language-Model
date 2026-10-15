@@ -1,0 +1,42 @@
+[
+  {
+    "attempt": 1,
+    "cell_index": 8,
+    "error": "RuntimeError",
+    "message": "Command failed (exit 1); stop and inspect output",
+    "cause": "Installed package outside checkout was incorrectly forced to relative path"
+  },
+  {
+    "attempt": 2,
+    "cell_index": 18,
+    "error": "RuntimeError",
+    "message": "Command failed (exit 1); stop and inspect output",
+    "cause": "Inherited Colab inline Matplotlib backend read before Agg selection"
+  },
+  {
+    "attempt": "Windows installer v1",
+    "source": "7178fc5208d8d2d62abf0b1b07e913eb14a7dc74",
+    "cause": "DNS retries and old pip23.0.1 dependency metadata normalization failure; then flit_core unavailable on CPU-only index",
+    "exit_code": 1,
+    "correction": "Documented pip26.2.1 upgrade before torch installation; separate fresh clone retry"
+  },
+  {
+    "attempt": "Windows full suite default Temp",
+    "source": "43b93e14326efae76a2b106dfc493d150d73f3dd",
+    "result": "100 passed,1 skipped,51 fixture setup errors,15 warnings in115.45s",
+    "cause": "WinError5 access denied to existing global pytest temp root",
+    "correction": "Unique checkout-local --basetemp; no system ACL change; failed log preserved"
+  },
+  {
+    "attempt": "Windows local temp first retry",
+    "result": "100 passed,1 skipped,51 fixture setup errors in61.20s",
+    "cause": "Harness omitted creation of outputs parent for explicit basetemp",
+    "correction": "Create outputs parent before pytest; preserve failed log and retry with unique path"
+  },
+  {
+    "attempt": "Windows full suite with deep local test temp",
+    "result": "149 passed,1 skipped,2 storage path failures in136.89s",
+    "cause": "WinError206 legacy Windows path length in deeply nested smoke snapshot paths",
+    "correction": "Rerun only affected storage tests with a short unique temp path; no scientific/storage algorithm change"
+  }
+]

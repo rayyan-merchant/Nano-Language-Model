@@ -1,0 +1,18 @@
+{
+  "source_commit": "43b93e14326efae76a2b106dfc493d150d73f3dd",
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "torch": "2.5.1+cpu",
+  "os": "Windows-10-10.0.19045-SP0",
+  "normal_wheel_installed_in_new_venv": true,
+  "no_developer_model_files_or_credentials_used": true,
+  "downloaded_files": 6,
+  "generation_cases": 30,
+  "canonical_reference_cases": 12,
+  "exact_raw_ID_matches": 12,
+  "causal_future_logit_error": 0.0,
+  "api_status": 200,
+  "independent_process_reload": true,
+  "full_suite": "149 passed,1 skipped,2 long-path storage failures; the2 affected tests then passed with short unique temp path",
+  "all_assertions_verified_after_environment_corrections": true,
+  "inference_seconds": 17.3424565000023
+}

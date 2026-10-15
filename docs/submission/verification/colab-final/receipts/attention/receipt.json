@@ -1,0 +1,362 @@
+{
+  "scope": "Submission CPU inference; zero research updates or test evaluation",
+  "environment": {
+    "python": "3.11.14 (main, Feb 12 2026, 00:42:50) [Clang 21.1.4 ]",
+    "executable": "/content/nanolm-submission-env/bin/python",
+    "os": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "torch": "2.5.1+cpu",
+    "cuda_available": false,
+    "source_commit": "1f402d9e3b902e7d3e78565969476d2d7af06502",
+    "git_dirty": false,
+    "freeze": [
+      "annotated-doc==0.0.5",
+      "annotated-types==0.8.0",
+      "anyio==4.15.1",
+      "certifi==2026.7.22",
+      "charset-normalizer==3.5.2",
+      "click==8.5.0",
+      "contourpy==1.3.3",
+      "cycler==0.12.1",
+      "exceptiongroup==1.3.1",
+      "fastapi==0.143.1",
+      "filelock==3.32.3",
+      "fonttools==4.67.0",
+      "fsspec==2026.7.0",
+      "h11==0.16.0",
+      "hf-xet==1.7.0",
+      "httpcore==1.0.9",
+      "httpx==0.28.1",
+      "huggingface_hub==0.36.2",
+      "idna==3.20",
+      "iniconfig==2.3.1",
+      "Jinja2==3.1.6",
+      "kiwisolver==1.5.1",
+      "MarkupSafe==3.0.3",
+      "matplotlib==3.9.4",
+      "mpmath==1.3.0",
+      "nano-language-model @ file:///content/NanoLM-submission",
+      "networkx==3.6.1",
+      "numpy==1.26.4",
+      "opentelemetry-api==1.45.1",
+      "packaging==26.3",
+      "pillow==12.3.0",
+      "pluggy==1.7.0",
+      "psutil==7.0.0",
+      "pydantic==2.10.6",
+      "pydantic_core==2.27.2",
+      "pyparsing==3.3.3",
+      "pytest==8.3.4",
+      "python-dateutil==2.9.0.post0",
+      "PyYAML==6.0.3",
+      "requests==2.34.2",
+      "safetensors==0.8.0",
+      "six==1.17.0",
+      "starlette==1.7.0",
+      "sympy==1.13.1",
+      "tokenizers==0.21.0",
+      "torch==2.5.1+cpu",
+      "tqdm==4.70.1",
+      "typing-inspection==0.4.4",
+      "typing_extensions==4.16.0",
+      "urllib3==2.8.0",
+      "uvicorn==0.34.0"
+    ],
+    "modules": {
+      "model": "/content/nanolm-submission-env/lib/python3.11/site-packages/nano_lm/model.py",
+      "attention": "/content/nanolm-submission-env/lib/python3.11/site-packages/nano_lm/attention.py",
+      "positions": "/content/nanolm-submission-env/lib/python3.11/site-packages/nano_lm/positions.py",
+      "bpe": "/content/nanolm-submission-env/lib/python3.11/site-packages/nano_lm/bpe.py",
+      "generate": "/content/nanolm-submission-env/lib/python3.11/site-packages/nano_lm/generate.py"
+    }
+  },
+  "files": [
+    {
+      "path": "e02/metadata.json",
+      "bytes": 9085,
+      "sha256": "98c0506578ec682c01a78d2e9709ae3b0af1c86a5e70fa6924bed25a15455410"
+    },
+    {
+      "path": "e02/model.safetensors",
+      "bytes": 8698368,
+      "sha256": "5258e0db6839a2ee95b24083fc4bda43299c73d79310de5e8291d6bc3e4f7150"
+    },
+    {
+      "path": "b01/metadata.json",
+      "bytes": 8987,
+      "sha256": "9f91554e2f96f4b04c3c67cee498d77e10af7531459ecd178601984084cd422d"
+    },
+    {
+      "path": "b01/model.safetensors",
+      "bytes": 12260216,
+      "sha256": "0ea6ff2972740d2775f5d2da331d41395e2f75b36076436ec0b2a43ebcf18e3f"
+    },
+    {
+      "path": "f01/metadata.json",
+      "bytes": 9066,
+      "sha256": "151e633288551e1b032c16f5998f3aab301ffbd5ef22877aa6288f286d10cb0c"
+    },
+    {
+      "path": "f01/model.safetensors",
+      "bytes": 24198360,
+      "sha256": "b1e3d1c1f6c5386599b14e5311d59cc27d72743c6dfc5ea2dc9080fef8b09238"
+    }
+  ],
+  "models": [
+    {
+      "id": "e02",
+      "selected_step": 5000,
+      "parameters": 2173056,
+      "architecture": {
+        "vocab_size": 1024,
+        "d_model": 192,
+        "n_heads": 6,
+        "n_layers": 4,
+        "context_length": 128,
+        "mlp_expansion": 4,
+        "activation": "gelu",
+        "position": "sinusoidal",
+        "dropout": 0.1
+      },
+      "historical_validation_bpb": 2.02659521
+    },
+    {
+      "id": "b01",
+      "selected_step": 3000,
+      "parameters": 3062784,
+      "architecture": {
+        "vocab_size": 1024,
+        "d_model": 192,
+        "n_heads": 6,
+        "n_layers": 6,
+        "context_length": 128,
+        "mlp_expansion": 4,
+        "activation": "gelu",
+        "position": "rope",
+        "dropout": 0.1
+      },
+      "historical_validation_bpb": 1.98493095
+    },
+    {
+      "id": "f01",
+      "selected_step": 1750,
+      "parameters": 6046560,
+      "architecture": {
+        "vocab_size": 1024,
+        "d_model": 240,
+        "n_heads": 6,
+        "n_layers": 8,
+        "context_length": 128,
+        "mlp_expansion": 4,
+        "activation": "gelu",
+        "position": "rope",
+        "dropout": 0.1
+      },
+      "historical_validation_bpb": 1.98376817
+    }
+  ],
+  "tokenizer": {
+    "sha256": "2d7b1e84c8055eb5b9483a3fe6e4e3c9e348f5a28506ba19a0dc1644f0b36d55",
+    "vocabulary": 1024,
+    "prompt": "To be, or not to be",
+    "ids": [
+      396,
+      304,
+      11,
+      529,
+      321,
+      287,
+      304
+    ],
+    "decoded": "To be, or not to be",
+    "context": 128,
+    "long_prompt_cropped_to_last_tokens": 128
+  },
+  "attention": {
+    "model": "b01",
+    "checkpoint_step": 3000,
+    "prompt": "ROMEO:\nTo be, or not to be",
+    "input_ids": [
+      813,
+      25,
+      198,
+      396,
+      304,
+      11,
+      529,
+      321,
+      287,
+      304
+    ],
+    "input_shape": [
+      1,
+      10
+    ],
+    "attention_shapes": [
+      [
+        1,
+        6,
+        10,
+        10
+      ],
+      [
+        1,
+        6,
+        10,
+        10
+      ],
+      [
+        1,
+        6,
+        10,
+        10
+      ],
+      [
+        1,
+        6,
+        10,
+        10
+      ],
+      [
+        1,
+        6,
+        10,
+        10
+      ],
+      [
+        1,
+        6,
+        10,
+        10
+      ]
+    ],
+    "head_dimension": 32,
+    "future_logit_max_abs_error": 0.0,
+    "future_attention_exactly_zero": true,
+    "layer": 0,
+    "head": 0,
+    "probabilities": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.03592252358794212,
+        0.9640774726867676,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0027976669371128082,
+        0.01722733862698078,
+        0.9799750447273254,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.12575866281986237,
+        0.4615609347820282,
+        0.19145594537258148,
+        0.22122451663017273,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.1894545555114746,
+        0.1672864407300949,
+        0.2832527756690979,
+        0.20738594233989716,
+        0.15262030065059662,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.1234544962644577,
+        0.001984027912840247,
+        0.8576193451881409,
+        0.0012325808638706803,
+        0.004477593582123518,
+        0.011232011951506138,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.029649965465068817,
+        0.039786744862794876,
+        0.44585204124450684,
+        0.05091283842921257,
+        0.048457421362400055,
+        0.31682083010673523,
+        0.06852023303508759,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.11366420984268188,
+        0.22283896803855896,
+        0.14935526251792908,
+        0.06871747225522995,
+        0.11964769661426544,
+        0.20393060147762299,
+        0.058442793786525726,
+        0.06340301781892776,
+        0.0,
+        0.0
+      ],
+      [
+        0.5218763947486877,
+        0.10696426033973694,
+        0.0014923032140359282,
+        0.03151096776127815,
+        0.055438313633203506,
+        0.007454205304384232,
+        0.05866911634802818,
+        0.08019956946372986,
+        0.13639484345912933,
+        0.0
+      ],
+      [
+        0.07525894790887833,
+        0.11291883140802383,
+        0.036313772201538086,
+        0.07813381403684616,
+        0.09938278049230576,
+        0.0827750489115715,
+        0.20551346242427826,
+        0.01960098370909691,
+        0.20242780447006226,
+        0.08767455071210861
+      ]
+    ],
+    "figure": "trained_attention.png"
+  },
+  "measured_seconds": 1.7798458859999755
+}

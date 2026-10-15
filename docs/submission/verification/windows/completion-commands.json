@@ -1,0 +1,59 @@
+[
+  {
+    "name": "storage-path-regression",
+    "argv": [
+      "C:\\Users\\RayyanMerchant.Inter\\Downloads\\nano language model\\outputs\\submission\\fresh-windows-v2\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_storage_results.py::test_export_restore_resume_and_corruption",
+      "tests/test_storage_results.py::test_aggregation_rejects_incomplete_smoke_and_metadata_tampering",
+      "-q",
+      "--basetemp",
+      "C:\\Users\\RayyanMerchant.Inter\\Downloads\\nano language model\\.pytest_cache\\s-4k_lrlcx"
+    ],
+    "exit_code": 0,
+    "seconds": 12.412810499998159
+  },
+  {
+    "name": "anonymous-download",
+    "argv": [
+      "C:\\Users\\RayyanMerchant.Inter\\Downloads\\nano language model\\outputs\\submission\\fresh-windows-v2\\.venv\\Scripts\\python.exe",
+      "-m",
+      "tools.submission_models",
+      "--output",
+      "model_artifacts"
+    ],
+    "exit_code": 0,
+    "seconds": 43.76764220000041
+  },
+  {
+    "name": "genuine-inference",
+    "argv": [
+      "C:\\Users\\RayyanMerchant.Inter\\Downloads\\nano language model\\outputs\\submission\\fresh-windows-v2\\.venv\\Scripts\\python.exe",
+      "-m",
+      "tools.submission_demo",
+      "--artifacts",
+      "model_artifacts",
+      "--output",
+      "outputs/acceptance-first"
+    ],
+    "exit_code": 0,
+    "seconds": 22.314121999996132
+  },
+  {
+    "name": "process-restart",
+    "argv": [
+      "C:\\Users\\RayyanMerchant.Inter\\Downloads\\nano language model\\outputs\\submission\\fresh-windows-v2\\.venv\\Scripts\\python.exe",
+      "-m",
+      "tools.submission_demo",
+      "--artifacts",
+      "model_artifacts",
+      "--section",
+      "models",
+      "--output",
+      "outputs/acceptance-restart"
+    ],
+    "exit_code": 0,
+    "seconds": 7.877118700002029
+  }
+]
