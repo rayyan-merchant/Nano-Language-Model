@@ -1,12 +1,54 @@
 # NanoLM Studio verification and acceptance
 
-Status: local implementation delivered for review; **three-model acceptance is NO-GO**
-until the selected E02 original is accessible and its packaging/integration checks
-pass. Public deployment remains unauthorized. This document records actual evidence;
+Status: **local three-model acceptance passed** after the user supplied the exact
+E02 checkpoint. Public deployment remains unauthorized. This document records actual evidence;
 pending checks are not claimed passed. Source baseline: reviewed main
 95b83f0ed8f8ac70f4b7f102a8f864acac824f66.
 
-## Verified models
+## E02 blocker closure and complete local acceptance
+
+The user supplied D:\Nano-Language-Model-artifacts\E02_seed42_checkpoint_archive_and_receipt.
+Its step_005000.pt SHA256 exactly matched the accepted original:
+80f2d80202f1af124fa18697258208ffc7bde9e3fa0d52009a8ceba591ab7606.
+The original directory was read only. The existing converter verified step 5000,
+2,173,056 parameters, clean training commit, configuration and canonical BPE hash.
+Exact tensor/dtype, logits and raw greedy/seeded token-ID equivalence all passed.
+No additional training or original-test assessment occurred.
+
+The private E02 safetensors package is 8,698,368 bytes, SHA256
+5258e0db6839a2ee95b24083fc4bda43299c73d79310de5e8291d6bc3e4f7150.
+See [package manifest/equivalence](evidence/e02-package.json),
+[six genuine API cases plus comparison](evidence/integration-three-models.json),
+and [all-model CPU measurements](evidence/benchmark-three-models.json).
+All six greedy/sampled API cases passed canonical decoding equivalence and /ready=200.
+
+Actual complete browser acceptance passed: E02, B01 and F01 generation, all-three
+comparison, research navigation, no page errors (15.7 s), and mobile/error workflow
+(4.8 s); command total 23.9 s. Screenshots below now show all three real outputs.
+The historical partial-availability test is conditional when all three are ready;
+it does not replace the strict full acceptance test, which ran and passed.
+The subsequent complete browser-suite command passed 2 tests and skipped only that
+historical partial-state case in 27.9 s. A refreshed
+[integrity audit](evidence/integrity-three-models.json) again verified all 1,103
+protected files, 16 configurations and 15 notebooks, with only the two existing
+frozen broken links. No runtime/scientific implementation changed during closure.
+
+Same local CPU/Python/torch profile as below, three warm repetitions per length:
+
+| Model | 64-token median | 128-token median | 256-token median | Cold load |
+|---|---:|---:|---:|---:|
+| E02 | 0.447 s | 1.628 s | 4.662 s | 0.114 s |
+| B01 | 2.246 s | 3.479 s | 7.822 s | 0.528 s |
+| F01 | 1.774 s | 12.371 s | 21.206 s | 0.877 s |
+
+Complete three-model 128-token comparison: 11.167 s. Concurrent requests returned
+200/429. Peak process working set: 286,830,592 bytes (273.54 MiB). System timing
+variation is visible against the prior two-model receipt; these repetitions do not
+establish stable hardware-independent throughput or model superiority. No overlapping
+build, test or browser inference was launched during this benchmark. Cloud resource
+limits, optional CUDA serving and public deployment remain unverified/unapproved.
+
+## Initial two-model verification history (superseded availability)
 
 B01 step 3000 and F01 step 1750 were discovered in the independently recovered D:
 artifact locations documented by their original retrieval guides. Their original

@@ -1,8 +1,8 @@
 # Nano-Language-Model
 
-NanoLM Studio is being implemented on its dedicated application branch. The writing
-studio, comparison/research pages and genuine B01/F01 API inference are locally
-implemented; full three-model acceptance still requires the verified E02 package.
+NanoLM Studio is implemented on its dedicated application branch. The writing
+studio, comparison/research pages and genuine E02/B01/F01 API inference are locally
+implemented with hash-verified selected checkpoint packages.
 Public deployment is not authorized. See [operation and deployment preparation](docs/deployment/README.md)
 and [actual verification status](docs/deployment/verification.md).
 

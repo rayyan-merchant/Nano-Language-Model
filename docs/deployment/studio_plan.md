@@ -42,7 +42,7 @@ rendered literally. Large serif headlines, readable UI sans and reduced-motion C
   component tests, production build, browser workflows and desktop/mobile captures.
 - [x] Review delivery: scientific suite/integrity, container configuration/build in CI,
   dependency locks, startup/retrieval/deployment docs and reviewable PR.
-- [ ] Full three-model acceptance: obtain genuine E02 step5000, package and verify
+- [x] Full three-model acceptance: obtain genuine E02 step5000, package and verify
   equivalence, benchmark it and pass the complete real-model browser workflow.
 
 Missing checkpoints do not block independent development but do block three-model

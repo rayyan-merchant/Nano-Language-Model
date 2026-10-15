@@ -144,6 +144,8 @@ npm run e2e -- studio.spec.ts
 The full browser test requires all three real packages and both local servers.
 `available-models.spec.ts` is explicitly partial B01/F01 evidence with a missing
 E02 slot; it cannot certify three-model acceptance. Unit fixtures are distinct from
+the complete workflow and this historical partial case skips when all three are ready.
+Unit fixtures are distinct from
 the genuine packaging, integration and browser receipts. On this Windows host a
 fresh workspace `PWTEST_CACHE_DIR` avoids a corrupted global transform cache.
 

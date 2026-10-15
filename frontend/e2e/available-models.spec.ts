@@ -3,7 +3,10 @@ import { test, expect } from "@playwright/test";
 test("genuine available B01/F01 integration and honest missing E02 slot", async ({
   page,
   context,
+  request,
 }) => {
+  const ready = await request.get((process.env.NEXT_PUBLIC_API_ORIGIN || 'http://127.0.0.1:8000') + '/ready');
+  test.skip(ready.status() === 200, 'Historical partial-availability workflow; full three-model acceptance is covered by studio.spec.ts');
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
