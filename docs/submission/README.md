@@ -1,5 +1,7 @@
 # Submission reproducibility and Colab demo
 
+**Verified:** independent fresh Linux/Colab and Windows clone inference, plus a complete executed Colab notebook. See the reports for observed environment corrections and remaining human review.
+
 This phase verifies the selected E02 step5000, B01 step3000 and F01 step1750
 inference packages. It does not retrain, select checkpoints or evaluate test data.
 The final academic report, comprehensive assignment-evidence audit and recorded
@@ -24,13 +26,15 @@ python -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.txt -r requirements-studio.txt
 .venv\Scripts\python -m pip install . --no-deps
 .venv\Scripts\python -m pip check
-.venv\Scripts\python -m pytest tests/test_core.py tests/test_submission.py -q
+New-Item -ItemType Directory -Force outputs | Out-Null
+$nanoTestTemp = Join-Path 'outputs' ('pytest-' + [guid]::NewGuid().ToString('N'))
+.venv\Scripts\python -m pytest tests/test_core.py tests/test_submission.py -q --basetemp $nanoTestTemp
 .venv\Scripts\python -m tools.submission_models --output model_artifacts
 .venv\Scripts\python -m tools.submission_demo --artifacts model_artifacts --output outputs/submission-first
 .venv\Scripts\python -m tools.submission_demo --artifacts model_artifacts --section models --output outputs/submission-restart
 ```
 
-Linux uses `.venv/bin/python` for each command after `python -m venv .venv`.
+Linux uses `.venv/bin/python` for each Python command after `python -m venv .venv`; omit the PowerShell `$nanoTestTemp` line and use ordinary `python -m pytest tests/test_core.py tests/test_submission.py -q` (actually verified in Colab). The unique checkout-local Windows temp argument avoids an observed host global Temp ACL failure and preserves earlier test directories.
 The notebook provisions Python3.11.14 when the native Colab interpreter differs.
 Run from the checkout root: the model catalog references immutable research records
 in that checkout. Installing the Python wheel alone does not bundle those records.
@@ -42,3 +46,5 @@ The checkout above pins the actual clean acceptance source. The submission PR
 remains reviewable and unmerged; review status is distinct from technical execution.
 The notebook pins wrapper source1f402d9 within that history; frozen scientific
 files are byte-identical to reviewed mainaa4bb5f. No moving branch is used by the demo.
+
+The immutable runtime checkout predates the final acceptance receipts by design. Use this current submission guide/report for closure evidence; the final documentation commits do not change its tested runtime implementation.

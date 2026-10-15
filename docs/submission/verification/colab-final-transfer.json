@@ -10,5 +10,7 @@
   "embedded_trained_attention_images": 1,
   "method": "nbclient0.10.2/nbformat5.10.4 on a second fresh Colab CPU runtime; anonymous pinned GitHub notebook fetch",
   "runtime_fingerprint": "a87d151e0f2f4e0b98e5c1129e52b7fd",
-  "runtime_released_after_verified_export": true
+  "runtime_released_after_verified_export": true,
+  "public_executed_notebook_commit": "2303f56dd06ba7b857b339b3512ea185fe147163",
+  "public_executed_notebook_URL": "https://colab.research.google.com/github/rayyan-merchant/Nano-Language-Model/blob/2303f56dd06ba7b857b339b3512ea185fe147163/docs/submission/verification/colab-final/NanoLM_Submission_Demo_executed.ipynb"
 }

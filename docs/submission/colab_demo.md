@@ -1,4 +1,4 @@
-# Google Colab submission demo — genuinely executed
+# Google Colab submission demo â€” genuinely executed
 
 [Open the clean pinned notebook in Colab](https://colab.research.google.com/github/rayyan-merchant/Nano-Language-Model/blob/43b93e14326efae76a2b106dfc493d150d73f3dd/notebooks/NanoLM_Submission_Demo.ipynb).
 The corrected notebook rendered in the actual browser. Its public GitHub notebook
@@ -10,11 +10,11 @@ anonymous public source retrieval, not by claiming a second Google account.
 [genuine executed copy](verification/colab-final/NanoLM_Submission_Demo_executed.ipynb).
 The executed copy retains actual nbclient cell outputs, timestamps and one embedded
 trained attention PNG, with no code/Markdown changes from the clean source.
-Its public Colab viewer link is recorded after evidence publication.
+[Open the actual executed copy in Colab](https://colab.research.google.com/github/rayyan-merchant/Nano-Language-Model/blob/2303f56dd06ba7b857b339b3512ea185fe147163/docs/submission/verification/colab-final/NanoLM_Submission_Demo_executed.ipynb). It rendered the actual120.689-second summary and genuine outputs in the browser; anonymous raw retrieval matched the independently exported notebook SHA256 exactly. See [access receipt](verification/notebook-access.json).
 
 ## Run it
 
-1. Open the clean link, choose a fresh CPU runtime with internet, then Runtime → Run all.
+1. Open the clean link, choose a fresh CPU runtime with internet, then Runtime â†’ Run all.
 2. Use your own ordinary Google sign-in to allocate free CPU compute. No HF token,
    Drive mount, D-drive path or developer setup is required.
 3. Let the notebook inspect native versions, create isolated Python3.11.14 and

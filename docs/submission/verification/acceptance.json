@@ -1,0 +1,20 @@
+{
+  "engineering_status": "PASS for documented Linux CPU/Colab and corrected Windows paths; human PR review pending",
+  "fresh_clone_install": "PASS",
+  "scientific_unit_tests": "151 passed,1 CUDA skip on clean Linux;149 Windows full passes plus2 corrected-path passes",
+  "tiny_overfit": "PASS: trusted60-update synthetic fixture; final loss below15% initial assertion",
+  "causal_invariance": "PASS: trained B01 earlier-logit error0.0 in all three independent environments",
+  "anonymous_downloads": "PASS: six immutable files in Windows and two independent Colab runtimes",
+  "model_identities": "PASS: E02 5000, B01 3000, F01 1750; no substitution",
+  "three_model_generation": "30 cases per environment;12/12 available raw-ID references matched per environment",
+  "api_and_process_restart": "PASS in all three environments",
+  "colab_execution": "13/13 cells twice;106.352s and120.689s",
+  "trained_attention": "PASS; actual trained PNG and genuine embedded notebook image",
+  "public_notebook_access": "PASS: anonymous exact-byte fetch plus Colab rendered outputs",
+  "secrets_pattern_check": "PASS; no credentials/tokens/signed model URLs intentionally used",
+  "scientific_changes": "none;1103 protected files verified; no new test likelihood or research training",
+  "gpu": "NOT TESTED/NOT REQUIRED",
+  "known_environment_failures": "Preserved in failures.json; pip, global Temp ACL, harness-parent and Windows path corrections documented",
+  "complete_assignment_audit": "OUT OF SCOPE",
+  "final_head_CI": "checked separately in PR24"
+}

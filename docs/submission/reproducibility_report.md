@@ -6,8 +6,7 @@
 research/selection/test results were not changed. The new submission PR24 remains
 unmerged pending review. This is technical reproduction acceptance, not completion
 of the academic report, comprehensive handout audit or recorded presentation.
-The separate fresh Windows retry is still being recorded; no Windows success is
-inferred from Linux or the existing development environment.
+The independent Windows clone also completed genuine download/loading/API/restart acceptance after the documented pip/temp/path corrections; its results are not inferred from Linux or the development environment.
 
 Reviewed main: `aa4bb5f51f4760d533c50c290a0d42c60b911e89`.
 Pinned clean source/notebook delivery: `43b93e14326efae76a2b106dfc493d150d73f3dd`.
@@ -190,10 +189,10 @@ No failed cell was hidden or relabeled successful.
 |API and independent process reload|PASS|
 |Actual Colab top-to-bottom execution|PASS twice,13 code cells each|
 |Public notebook access|Public GitHub source fetched anonymously; corrected notebook rendered in Colab browser|
-|Windows fresh setup|Separate retry in progress; see final update below|
+|Windows fresh setup/inference|PASS after environment corrections;149 full-suite passes plus2 corrected-path test passes,1 CUDA skip|
 |GPU inference|NOT TESTED/NOT REQUIRED; CPU only|
 |Protected science/config/tokenizers|1103 protected files unchanged; no scientific diff|
-|Link/notebook audit|16 notebooks before executed evidence; two pre-existing frozen link defects, zero new regressions|
+|Link/notebook audit|17 notebooks including new clean/executed copies; two pre-existing frozen link defects, zero new regressions|
 |CI|Source43b93e1: all3 jobs passed, run38740618809; final evidence-head status checked separately|
 |Human PR review/merge|PENDING; PR24, no automatic merge|
 |Complete assignment/report/presentation|OUT OF SCOPE, next phase|
@@ -205,3 +204,41 @@ not a fabricated handout acceptance claim. No original-test likelihood or new
 research experiment was run. Only bounded trusted correctness fixtures optimize
 synthetic models. Existing deployed service was checkedHTTP200; no new deployment
 was performed, and existing hosting PR23 was not merged or rewritten by this phase.
+
+## Independent Windows closure
+
+[Windows summary](verification/windows/summary.json), [actual inference/token IDs](verification/windows/inference.json),
+[anonymous download](verification/windows/download.json), [restart](verification/windows/restart.json),
+[install command receipts](verification/windows/install-commands.json) and
+[completion commands](verification/windows/completion-commands.json).
+A separate GitHub clone at43b93e1 used a **new Python3.10.11 venv**, pinned
+pip26.2.1/torch2.5.1+cpu and the documented requirements, with normal wheel install
+and `pip check` passed. PYTHONPATH/PYTHONHOME/old virtual-env and HF token variables
+were explicitly removed; Python user-site imports were disabled. This did not
+use the old development venv, original D-drive checkpoints or cached model files.
+
+Full suite after fixing temp-root permissions: **149 passed,1 skipped,2 storage
+path failures** in136.89s. The two failures were WinError206 from the acceptance
+clone's deeply nested Windows snapshot paths. Their unchanged assertions both
+passed in a short unique writable temp directory (see [rerun log](verification/windows/storage-short-path-rerun.txt)).
+Do not describe this as a single clean151-pass Windows invocation: all151 tests
+were verified across the full run and targeted corrected-environment rerun.
+Linux/CI separately passed all151 in one invocation. The earlier global Temp
+ACL error and missing local output-parent harness error remain in the failure
+record. No storage/model/scientific algorithm or OS security setting was changed.
+Use a short Windows checkout/temp path for the complete storage suite. The
+PowerShell submission commands create the output parent and use a unique temp;
+ordinary core tests do not create the long research snapshot names.
+
+All6 files were subsequently downloaded anonymously from the same pinned HF
+revision, all3 actual selected models loaded,30 genuine generations completed,
+all12 available raw-token references matched, trained future-logit error was0.0,
+API/readiness returned200 and a fresh Python process reloaded all3 packages.
+Actual new-venv environment/freeze, unedited text and timings remain in the receipt.
+
+The public executed notebook link rendered the genuine summary/generations in
+Colab; independent anonymous raw retrieval matched its exact149,462 exported bytes
+and SHA256 `b8c3c257f7c90f7e62ff070d03a6ef6f3c64e8f9815c0ae0ab33a9bd5ff70f6c`.
+[Notebook-access receipt](verification/notebook-access.json). No instructor Google
+account was impersonated: public source access is verified, and each instructor
+uses their own Google account for CPU execution. Human PR review remains pending.
