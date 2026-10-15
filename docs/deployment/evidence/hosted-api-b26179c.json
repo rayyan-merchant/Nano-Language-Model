@@ -1,0 +1,308 @@
+{
+  "origin": "https://nanolm-studio-api.vercel.app",
+  "deployment": "dpl_mu1RDb8zrXzuJLxmwiWD92L31yzP",
+  "scope": "Actual public HTTPS inference; zero training/test likelihood",
+  "health": {
+    "status": "alive",
+    "service": "NanoLM Studio",
+    "streaming": false
+  },
+  "health_seconds": 3.6369501000008313,
+  "ready_seconds": 1.3125319999999192,
+  "three_models_ready": true,
+  "generation_cases": [
+    {
+      "model": "e02",
+      "greedy": true,
+      "wall_seconds": 3.5150331999975606,
+      "exact_local_export_decoding_equal": true,
+      "actual_response": {
+        "model_id": "e02",
+        "model_name": "NanoLM Compact",
+        "checkpoint_step": 5000,
+        "prompt": "ROMEO:\n",
+        "continuation": "I'll tell you, sir, I'll tell you.\n\nROMEO:\nI'll tell you, I'll tell you.\n\nROMEO:\n",
+        "full_output": "ROMEO:\nI'll tell you, sir, I'll tell you.\n\nROMEO:\nI'll tell you, I'll tell you.\n\nROMEO:\n",
+        "generated_tokens": 32,
+        "output_characters": 81,
+        "prompt_tokens": 3,
+        "effective_context": 3,
+        "context_cropped": false,
+        "settings": {
+          "max_new_tokens": 32,
+          "temperature": 0.7,
+          "greedy": true
+        },
+        "latency_seconds": 0.25911004399998205,
+        "replacement_characters": false,
+        "seed": 42,
+        "request_id": "5ecb6e15058d48f8bd71c2ee96466821"
+      }
+    },
+    {
+      "model": "e02",
+      "greedy": false,
+      "wall_seconds": 0.6563668999988295,
+      "exact_local_export_decoding_equal": true,
+      "actual_response": {
+        "model_id": "e02",
+        "model_name": "NanoLM Compact",
+        "checkpoint_step": 5000,
+        "prompt": "ROMEO:\n",
+        "continuation": "I cannot tell thee.\n\nDUCHESS OF YORK:\nDear, by this, and I have forgive some speed",
+        "full_output": "ROMEO:\nI cannot tell thee.\n\nDUCHESS OF YORK:\nDear, by this, and I have forgive some speed",
+        "generated_tokens": 32,
+        "output_characters": 82,
+        "prompt_tokens": 3,
+        "effective_context": 3,
+        "context_cropped": false,
+        "settings": {
+          "max_new_tokens": 32,
+          "temperature": 0.7,
+          "greedy": false
+        },
+        "latency_seconds": 0.11633790900000918,
+        "replacement_characters": false,
+        "seed": 42,
+        "request_id": "46f5d6e905df4a518aa6eb3ce0e4572c"
+      }
+    },
+    {
+      "model": "b01",
+      "greedy": true,
+      "wall_seconds": 0.7475129999984347,
+      "exact_local_export_decoding_equal": true,
+      "actual_response": {
+        "model_id": "b01",
+        "model_name": "NanoLM Balanced",
+        "checkpoint_step": 3000,
+        "prompt": "ROMEO:\n",
+        "continuation": "I'll tell thee, I'll not be a king,\nAnd nothing but a man.\n\nJULIET:\nI know not, sir, if",
+        "full_output": "ROMEO:\nI'll tell thee, I'll not be a king,\nAnd nothing but a man.\n\nJULIET:\nI know not, sir, if",
+        "generated_tokens": 32,
+        "output_characters": 87,
+        "prompt_tokens": 3,
+        "effective_context": 3,
+        "context_cropped": false,
+        "settings": {
+          "max_new_tokens": 32,
+          "temperature": 0.7,
+          "greedy": true
+        },
+        "latency_seconds": 0.23117669499998783,
+        "replacement_characters": false,
+        "seed": 42,
+        "request_id": "bef69de1e6e24698aa7cc5ac7dff280e"
+      }
+    },
+    {
+      "model": "b01",
+      "greedy": false,
+      "wall_seconds": 0.7471951000006811,
+      "exact_local_export_decoding_equal": true,
+      "actual_response": {
+        "model_id": "b01",
+        "model_name": "NanoLM Balanced",
+        "checkpoint_step": 3000,
+        "prompt": "ROMEO:\n",
+        "continuation": "I cannot, my lord, and I know the hope,\nShould not the rankful till I do:\nAm I",
+        "full_output": "ROMEO:\nI cannot, my lord, and I know the hope,\nShould not the rankful till I do:\nAm I",
+        "generated_tokens": 32,
+        "output_characters": 78,
+        "prompt_tokens": 3,
+        "effective_context": 3,
+        "context_cropped": false,
+        "settings": {
+          "max_new_tokens": 32,
+          "temperature": 0.7,
+          "greedy": false
+        },
+        "latency_seconds": 0.19641498000000013,
+        "replacement_characters": false,
+        "seed": 42,
+        "request_id": "5d5bf3fac5c0407c8ab87b50562bf3f7"
+      }
+    },
+    {
+      "model": "f01",
+      "greedy": true,
+      "wall_seconds": 0.8102987999991456,
+      "exact_local_export_decoding_equal": true,
+      "actual_response": {
+        "model_id": "f01",
+        "model_name": "NanoLM Quality",
+        "checkpoint_step": 1750,
+        "prompt": "ROMEO:\n",
+        "continuation": "I am a king, and I am a king,\nTo be a far in my sorrow's best.\n\nKING RICHARD III:\n",
+        "full_output": "ROMEO:\nI am a king, and I am a king,\nTo be a far in my sorrow's best.\n\nKING RICHARD III:\n",
+        "generated_tokens": 32,
+        "output_characters": 82,
+        "prompt_tokens": 3,
+        "effective_context": 3,
+        "context_cropped": false,
+        "settings": {
+          "max_new_tokens": 32,
+          "temperature": 0.7,
+          "greedy": true
+        },
+        "latency_seconds": 0.39361296500001686,
+        "replacement_characters": false,
+        "seed": 42,
+        "request_id": "73e0fa5b0b8d4e0a92b803a1234024b5"
+      }
+    },
+    {
+      "model": "f01",
+      "greedy": false,
+      "wall_seconds": 0.6702441999987059,
+      "exact_local_export_decoding_equal": true,
+      "actual_response": {
+        "model_id": "f01",
+        "model_name": "NanoLM Quality",
+        "checkpoint_step": 1750,
+        "prompt": "ROMEO:\n",
+        "continuation": "I cannot tell thee.\n\nDUCHESS OF YORK:\nTherefore, I tell thee, and thou wilt be a king;\n",
+        "full_output": "ROMEO:\nI cannot tell thee.\n\nDUCHESS OF YORK:\nTherefore, I tell thee, and thou wilt be a king;\n",
+        "generated_tokens": 32,
+        "output_characters": 87,
+        "prompt_tokens": 3,
+        "effective_context": 3,
+        "context_cropped": false,
+        "settings": {
+          "max_new_tokens": 32,
+          "temperature": 0.7,
+          "greedy": false
+        },
+        "latency_seconds": 0.3077758769999974,
+        "replacement_characters": false,
+        "seed": 42,
+        "request_id": "6b1639db1fd146a7ad1b1868cc507e00"
+      }
+    }
+  ],
+  "comparison": {
+    "request_id": "3a0f2952c4874fada99e0088abf5fef3",
+    "seed": 42,
+    "results": [
+      {
+        "model_id": "e02",
+        "status": "completed",
+        "result": {
+          "model_id": "e02",
+          "model_name": "NanoLM Compact",
+          "checkpoint_step": 5000,
+          "prompt": "ROMEO:\n",
+          "continuation": "I cannot tell thee.\n\nDUCHESS OF YORK:\nDear, by this, and I have forgive some speed",
+          "full_output": "ROMEO:\nI cannot tell thee.\n\nDUCHESS OF YORK:\nDear, by this, and I have forgive some speed",
+          "generated_tokens": 32,
+          "output_characters": 82,
+          "prompt_tokens": 3,
+          "effective_context": 3,
+          "context_cropped": false,
+          "settings": {
+            "max_new_tokens": 32,
+            "temperature": 0.7,
+            "greedy": false
+          },
+          "latency_seconds": 0.25552793200000146,
+          "replacement_characters": false,
+          "seed": 42,
+          "request_id": "3a0f2952c4874fada99e0088abf5fef3"
+        },
+        "error": null
+      },
+      {
+        "model_id": "b01",
+        "status": "completed",
+        "result": {
+          "model_id": "b01",
+          "model_name": "NanoLM Balanced",
+          "checkpoint_step": 3000,
+          "prompt": "ROMEO:\n",
+          "continuation": "I cannot, my lord, and I know the hope,\nShould not the rankful till I do:\nAm I",
+          "full_output": "ROMEO:\nI cannot, my lord, and I know the hope,\nShould not the rankful till I do:\nAm I",
+          "generated_tokens": 32,
+          "output_characters": 78,
+          "prompt_tokens": 3,
+          "effective_context": 3,
+          "context_cropped": false,
+          "settings": {
+            "max_new_tokens": 32,
+            "temperature": 0.7,
+            "greedy": false
+          },
+          "latency_seconds": 0.23990679999999998,
+          "replacement_characters": false,
+          "seed": 42,
+          "request_id": "3a0f2952c4874fada99e0088abf5fef3"
+        },
+        "error": null
+      },
+      {
+        "model_id": "f01",
+        "status": "completed",
+        "result": {
+          "model_id": "f01",
+          "model_name": "NanoLM Quality",
+          "checkpoint_step": 1750,
+          "prompt": "ROMEO:\n",
+          "continuation": "I cannot tell thee.\n\nDUCHESS OF YORK:\nTherefore, I tell thee, and thou wilt be a king;\n",
+          "full_output": "ROMEO:\nI cannot tell thee.\n\nDUCHESS OF YORK:\nTherefore, I tell thee, and thou wilt be a king;\n",
+          "generated_tokens": 32,
+          "output_characters": 87,
+          "prompt_tokens": 3,
+          "effective_context": 3,
+          "context_cropped": false,
+          "settings": {
+            "max_new_tokens": 32,
+            "temperature": 0.7,
+            "greedy": false
+          },
+          "latency_seconds": 0.3860843779999996,
+          "replacement_characters": false,
+          "seed": 42,
+          "request_id": "3a0f2952c4874fada99e0088abf5fef3"
+        },
+        "error": null
+      }
+    ],
+    "total_latency_seconds": 0.8820768190000017
+  },
+  "compare_wall_seconds": 4.289973399998416,
+  "private_file_checks": [
+    {
+      "path": "/private_models/e02/model.safetensors",
+      "status": 404
+    },
+    {
+      "path": "/private_models/e02/metadata.json",
+      "status": 404
+    },
+    {
+      "path": "/private_models/b01/model.safetensors",
+      "status": 404
+    },
+    {
+      "path": "/private_models/b01/metadata.json",
+      "status": 404
+    },
+    {
+      "path": "/private_models/f01/model.safetensors",
+      "status": 404
+    },
+    {
+      "path": "/private_models/f01/metadata.json",
+      "status": 404
+    },
+    {
+      "path": "/.env.local",
+      "status": 404
+    },
+    {
+      "path": "/release.json",
+      "status": 404
+    }
+  ],
+  "raw_token_ID_cross_runtime_equality": "Not exposed by HTTP API; exact decoded results compared",
+  "all_checks_passed": true
+}

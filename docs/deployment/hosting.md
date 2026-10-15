@@ -37,8 +37,34 @@ same-seed comparisons, cold/warm latency, errors and frontend HTTPS integration.
 Only promote after these pass; no paid upgrade or merge is implied. Keep Hobby
 usage limits explicit and do not promise unlimited/free high-volume inference.
 
-Local hosting/serving suite after Vercel adaptation:30 passed, one dependency
-deprecation warning,5.98s. Public hosting acceptance remains pending actual builds.
+## Observed Vercel deployment
+
+API https://nanolm-studio-api.vercel.app was built from clean source
+b26179c5ffac9248818775ab4d31abb5d4973208, deployment
+dpl_mu1RDb8zrXzuJLxmwiWD92L31yzP. Vercel auto-assigned the project's first
+deployment to production; this CLI behavior was observed, not an intentional
+promotion of an untested preview. The website frontend was not deployed until
+the API's real HTTPS qualification passed.
+
+Build logs observed Python3.12, uv0.10.11 and Large Functions beta activation;
+PyTorch2.5.1+cpu and other serving dependencies were pinned in generated deployment
+metadata. Build succeeded in27s. Runtime memory/CPU are the Hobby function limits,
+not the larger 2-core/8GiB build machine reported by CLI.
+
+Actual HTTPS health200 (4.227s) and ready200 (3.872s) passed. All three exact model
+identities loaded; six greedy/sampled32-token cases exactly matched the local
+export decoded outputs, common-seed three-model comparison passed, and eight
+direct model/metadata/environment/release URLs returned404. Cross-runtime raw
+token IDs are not exposed by the HTTP API and are not claimed verified there.
+No training or original-test evaluation occurred.
+
+The first deployment attempt failed schema validation because includeFiles was
+an array; Vercel expects one glob string. Corrected in b26179c with a regression
+test. Hosting/serving suite:31 passed, one dependency warning,4.44s. Frontend proxy
+configuration tests and component regressions:12 passed; TypeScript passed.
+The frontend uses same-origin /api rewrites to the qualified backend; no Hub token
+or model files are included in the browser project. Public frontend/browser
+acceptance remains pending its actual deployment.
 
 ## Original HF proposal and preparation history
 
