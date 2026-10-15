@@ -1,5 +1,11 @@
 # Nano-Language-Model
 
+NanoLM Studio is implemented on its dedicated application branch. The writing
+studio, comparison/research pages and genuine E02/B01/F01 API inference are locally
+implemented with hash-verified selected checkpoint packages.
+Public deployment is not authorized. See [operation and deployment preparation](docs/deployment/README.md)
+and [actual verification status](docs/deployment/verification.md).
+
 A decoder-only GPT built from scratch in PyTorch for a controlled Tiny Shakespeare study. Attention explicitly implements Q/K/V projections, head splitting, scaled scores, causal masking, softmax and value aggregation. There are no pretrained language-model weights or black-box Transformer layers.
 
 ## Completed research and remaining delivery work

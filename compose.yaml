@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: ["./model_artifacts:/models:ro"]
+    environment:
+      NANOLM_CORS_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
+      NANOLM_TIMEOUT_SECONDS: "60"
+      NANOLM_REQUESTS_PER_MINUTE: "20"

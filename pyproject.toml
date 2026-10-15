@@ -12,7 +12,7 @@ dependencies = ["torch==2.5.1", "numpy==1.26.4", "tokenizers==0.21.0", "matplotl
 [project.optional-dependencies]
 dev = ["pytest==8.3.4"]
 bpe = ["tokenizers==0.21.0"]
-api = ["fastapi==0.115.6", "uvicorn==0.34.0"]
+api = ["fastapi==0.143.1", "uvicorn==0.34.0", "safetensors==0.8.0", "pydantic==2.10.6"]
 plots = ["matplotlib==3.9.4"]
 
 [tool.setuptools.packages.find]

@@ -1,0 +1,254 @@
+{
+  "label": "Actual local CPU serving benchmark, not research training",
+  "python": "3.10.11",
+  "torch": "2.5.1+cpu",
+  "cpu": "Intel64 Family 6 Model 142 Stepping 12, GenuineIntel",
+  "logical_cpus": 4,
+  "threads": 1,
+  "load_seconds": {
+    "b01": 0.14138450000018565,
+    "f01": 0.6202503999998044
+  },
+  "measurements": [
+    {
+      "model_id": "e02",
+      "status": "unavailable"
+    },
+    {
+      "model_id": "b01",
+      "status": "measured",
+      "new_tokens": 64,
+      "repeat": 0,
+      "seconds": 0.772206599999663,
+      "tokens_per_second": 82.87937450939674,
+      "rss_bytes": 227893248
+    },
+    {
+      "model_id": "b01",
+      "status": "measured",
+      "new_tokens": 64,
+      "repeat": 1,
+      "seconds": 0.8254485000002205,
+      "tokens_per_second": 77.53360748730285,
+      "rss_bytes": 227893248
+    },
+    {
+      "model_id": "b01",
+      "status": "measured",
+      "new_tokens": 64,
+      "repeat": 2,
+      "seconds": 0.7780490999998619,
+      "tokens_per_second": 82.25701951202225,
+      "rss_bytes": 227893248
+    },
+    {
+      "model_id": "b01",
+      "status": "measured",
+      "new_tokens": 128,
+      "repeat": 0,
+      "seconds": 2.5364951999999903,
+      "tokens_per_second": 50.463332238910006,
+      "rss_bytes": 232046592
+    },
+    {
+      "model_id": "b01",
+      "status": "measured",
+      "new_tokens": 128,
+      "repeat": 1,
+      "seconds": 2.7183915000000525,
+      "tokens_per_second": 47.08666871567158,
+      "rss_bytes": 232112128
+    },
+    {
+      "model_id": "b01",
+      "status": "measured",
+      "new_tokens": 128,
+      "repeat": 2,
+      "seconds": 2.5993279999997867,
+      "tokens_per_second": 49.24349678071044,
+      "rss_bytes": 232112128
+    },
+    {
+      "model_id": "b01",
+      "status": "measured",
+      "new_tokens": 256,
+      "repeat": 0,
+      "seconds": 7.140980199999831,
+      "tokens_per_second": 35.84942022385191,
+      "rss_bytes": 232116224
+    },
+    {
+      "model_id": "b01",
+      "status": "measured",
+      "new_tokens": 256,
+      "repeat": 1,
+      "seconds": 11.781808300000193,
+      "tokens_per_second": 21.728413286099368,
+      "rss_bytes": 232181760
+    },
+    {
+      "model_id": "b01",
+      "status": "measured",
+      "new_tokens": 256,
+      "repeat": 2,
+      "seconds": 19.898125400000026,
+      "tokens_per_second": 12.865533554231178,
+      "rss_bytes": 231407616
+    },
+    {
+      "model_id": "f01",
+      "status": "measured",
+      "new_tokens": 64,
+      "repeat": 0,
+      "seconds": 3.4847601999999824,
+      "tokens_per_second": 18.365682665912082,
+      "rss_bytes": 256921600
+    },
+    {
+      "model_id": "f01",
+      "status": "measured",
+      "new_tokens": 64,
+      "repeat": 1,
+      "seconds": 4.0025823000000855,
+      "tokens_per_second": 15.989677463970855,
+      "rss_bytes": 256921600
+    },
+    {
+      "model_id": "f01",
+      "status": "measured",
+      "new_tokens": 64,
+      "repeat": 2,
+      "seconds": 3.6158273999999437,
+      "tokens_per_second": 17.699959904059856,
+      "rss_bytes": 256921600
+    },
+    {
+      "model_id": "f01",
+      "status": "measured",
+      "new_tokens": 128,
+      "repeat": 0,
+      "seconds": 9.386555099999896,
+      "tokens_per_second": 13.636525715382145,
+      "rss_bytes": 260927488
+    },
+    {
+      "model_id": "f01",
+      "status": "measured",
+      "new_tokens": 128,
+      "repeat": 1,
+      "seconds": 8.02522110000018,
+      "tokens_per_second": 15.949716326195315,
+      "rss_bytes": 260931584
+    },
+    {
+      "model_id": "f01",
+      "status": "measured",
+      "new_tokens": 128,
+      "repeat": 2,
+      "seconds": 5.015337199999976,
+      "tokens_per_second": 25.521713674606087,
+      "rss_bytes": 261050368
+    },
+    {
+      "model_id": "f01",
+      "status": "measured",
+      "new_tokens": 256,
+      "repeat": 0,
+      "seconds": 11.851897500000177,
+      "tokens_per_second": 21.5999168065701,
+      "rss_bytes": 261009408
+    },
+    {
+      "model_id": "f01",
+      "status": "measured",
+      "new_tokens": 256,
+      "repeat": 1,
+      "seconds": 10.843394199999693,
+      "tokens_per_second": 23.608843806490707,
+      "rss_bytes": 261066752
+    },
+    {
+      "model_id": "f01",
+      "status": "measured",
+      "new_tokens": 256,
+      "repeat": 2,
+      "seconds": 14.557382599999983,
+      "tokens_per_second": 17.58557888009348,
+      "rss_bytes": 260939776
+    }
+  ],
+  "compare_wall_seconds": 8.178806400000212,
+  "comparison": {
+    "request_id": "950c1bf83d0b42f6b45926d86365ceb6",
+    "seed": 42,
+    "results": [
+      {
+        "model_id": "e02",
+        "status": "unavailable",
+        "result": null,
+        "error": "Verified model artifact unavailable"
+      },
+      {
+        "model_id": "b01",
+        "status": "completed",
+        "result": {
+          "model_id": "b01",
+          "model_name": "NanoLM Balanced",
+          "checkpoint_step": 3000,
+          "prompt": "ROMEO:\n",
+          "continuation": "I cannot, my lord, and I know the hope,\nShould not the rankful till I do:\nAm I return'd by my neck, that I cannot think,\nAy, but I had rather want all my sister.\n\nBUCKINGHAM:\nHail, there is ay, and then be no rotten;\nAnd all beats not the city and revolted\nTo gold chase\nWith traitor, but to be quarrel and t",
+          "full_output": "ROMEO:\nI cannot, my lord, and I know the hope,\nShould not the rankful till I do:\nAm I return'd by my neck, that I cannot think,\nAy, but I had rather want all my sister.\n\nBUCKINGHAM:\nHail, there is ay, and then be no rotten;\nAnd all beats not the city and revolted\nTo gold chase\nWith traitor, but to be quarrel and t",
+          "generated_tokens": 128,
+          "output_characters": 308,
+          "prompt_tokens": 3,
+          "effective_context": 3,
+          "context_cropped": false,
+          "settings": {
+            "max_new_tokens": 128,
+            "temperature": 0.7,
+            "greedy": false
+          },
+          "latency_seconds": 3.0335441000001993,
+          "replacement_characters": false,
+          "seed": 42,
+          "request_id": "950c1bf83d0b42f6b45926d86365ceb6"
+        },
+        "error": null
+      },
+      {
+        "model_id": "f01",
+        "status": "completed",
+        "result": {
+          "model_id": "f01",
+          "model_name": "NanoLM Quality",
+          "checkpoint_step": 1750,
+          "prompt": "ROMEO:\n",
+          "continuation": "I cannot tell thee.\n\nDUCHESS OF YORK:\nTherefore, I tell thee, and thou wilt be a king;\nAnd with thy hands, though I shall be so much.\nAy, but say, is he not so: I, he's a traitor!\n\nJULIET:\nAs shall I be, I am so needful,\nTo make a little aid but yet report.\n\nJULIET:\nCome, brother, then?\n\nMessenger:\nSTANLEY:\nI would you were bet",
+          "full_output": "ROMEO:\nI cannot tell thee.\n\nDUCHESS OF YORK:\nTherefore, I tell thee, and thou wilt be a king;\nAnd with thy hands, though I shall be so much.\nAy, but say, is he not so: I, he's a traitor!\n\nJULIET:\nAs shall I be, I am so needful,\nTo make a little aid but yet report.\n\nJULIET:\nCome, brother, then?\n\nMessenger:\nSTANLEY:\nI would you were bet",
+          "generated_tokens": 128,
+          "output_characters": 329,
+          "prompt_tokens": 3,
+          "effective_context": 3,
+          "context_cropped": false,
+          "settings": {
+            "max_new_tokens": 128,
+            "temperature": 0.7,
+            "greedy": false
+          },
+          "latency_seconds": 5.1373805999996875,
+          "replacement_characters": false,
+          "seed": 42,
+          "request_id": "950c1bf83d0b42f6b45926d86365ceb6"
+        },
+        "error": null
+      }
+    ],
+    "total_latency_seconds": 8.171491099999912
+  },
+  "concurrent_request_statuses": [
+    200,
+    429
+  ],
+  "rss_after_bytes": 266964992,
+  "peak_working_set_bytes": 276144128
+}
