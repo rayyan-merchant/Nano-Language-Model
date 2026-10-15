@@ -3,6 +3,7 @@ import argparse
 import importlib
 import importlib.metadata
 import json
+import os
 import platform
 from pathlib import Path
 import subprocess
@@ -37,10 +38,18 @@ def architectures(registry):
             for mid in registry.entries]
 
 
-def attention(registry, directory):
+def headless_pyplot():
+    # Colab's inherited inline backend may be absent from this isolated interpreter.
+    # Set before importing matplotlib: import itself consults MPLBACKEND.
+    os.environ['MPLBACKEND'] = 'Agg'
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
+    return plt
+
+
+def attention(registry, directory):
+    plt = headless_pyplot()
     model_id, prompt = 'b01', 'ROMEO:\nTo be, or not to be'
     model = registry.load(model_id)
     ids = torch.tensor([registry.tokenizer.encode(prompt)])

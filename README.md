@@ -11,7 +11,7 @@ A decoder-only GPT built from scratch in PyTorch for a controlled Tiny Shakespea
 
 ## Completed research and remaining delivery work
 
-**E01–E14 seed 42 are complete:** fourteen single-factor ablations, each with a 5,000-update authoritative trajectory and 20 full sliding validations. The proposed three-seed/42-run expansion was discontinued; no replicated significance is claimed. Two separately approved combined models also completed and passed independent artifact and compatible CPU/CUDA recovery:
+**E01â€“E14 seed 42 are complete:** fourteen single-factor ablations, each with a 5,000-update authoritative trajectory and 20 full sliding validations. The proposed three-seed/42-run expansion was discontinued; no replicated significance is claimed. Two separately approved combined models also completed and passed independent artifact and compatible CPU/CUDA recovery:
 
 | Model | Parameters | Actual updates | Best update | Best conditional BPB |
 |---|---:|---:|---:|---:|
@@ -29,6 +29,7 @@ Research pins: Python 3.10/3.11, PyTorch 2.5.1, NumPy 1.26.4, tokenizers 0.21.0,
 
 ```powershell
 python -m venv .venv
+.venv\Scripts\python -m pip install --upgrade pip==26.2.1
 .venv\Scripts\python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
 .venv\Scripts\python -m pip install -r requirements.txt
 .venv\Scripts\python -m pip install -e . --no-deps
@@ -65,7 +66,7 @@ training and verification. It has no standalone evaluation CLI.
 
 ## Results, checkpoints and reproducibility
 
-[report/pilots](report/pilots) contains E01–E14, [report/final](report/final) F01, and [report/balanced](report/balanced) B01. Figures, machine-readable tables, complete fixed generation grids, hashes and genuine recovery receipts are preserved. Large datasets, full checkpoints, archives and training journals are **outside Git**. For retrieval use each pilot report, [F01 instructions](report/final/artifact_retrieval.md) or [B01 instructions](report/balanced/artifact_retrieval.md). Only deserialize trusted project checkpoints; optimizer/RNG payloads use PyTorch pickle.
+[report/pilots](report/pilots) contains E01â€“E14, [report/final](report/final) F01, and [report/balanced](report/balanced) B01. Figures, machine-readable tables, complete fixed generation grids, hashes and genuine recovery receipts are preserved. Large datasets, full checkpoints, archives and training journals are **outside Git**. For retrieval use each pilot report, [F01 instructions](report/final/artifact_retrieval.md) or [B01 instructions](report/balanced/artifact_retrieval.md). Only deserialize trusted project checkpoints; optimizer/RNG payloads use PyTorch pickle.
 
 Conditional BPB scores the same 55,514 validation bytes after a 256-byte conditioning exclusion, with each model's context and explicit tokenizer-boundary policy. Token loss/perplexity is not comparable across tokenizers. Equal target-token budgets do not imply equal compute/source exposure. One seed supplies no cross-seed variance; initialization, capacity, context, hardware and stopping opportunities are confounders. F01 received one frozen reserved-test assessment; B01 did not reuse that test for tuning or evaluation. See [BPB policy](docs/bpb.md) and [research protocol](docs/research_protocol.md).
 

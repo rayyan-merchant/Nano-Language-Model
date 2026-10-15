@@ -75,6 +75,17 @@ def test_installed_modules_may_live_outside_checkout(monkeypatch, tmp_path):
     assert str(outside.resolve()) in receipt['modules'].values()
 
 
+def test_headless_plotting_overrides_inherited_colab_backend():
+    import os
+    import subprocess
+    import sys
+    result = subprocess.run([sys.executable, '-c',
+        'from tools.submission_demo import headless_pyplot; p=headless_pyplot(); '
+        'assert p.get_backend().lower()=="agg"'], capture_output=True, text=True,
+        env={**os.environ, 'MPLBACKEND': 'module://missing_colab_inline.backend'})
+    assert result.returncode == 0, result.stderr
+
+
 def test_submission_notebook_is_clean_pinned_and_compiles():
     notebook = json.loads((retrieval.ROOT / 'notebooks/NanoLM_Submission_Demo.ipynb').read_text(encoding='utf-8'))
     assert notebook['nbformat'] == 4

@@ -19,6 +19,7 @@ git clone https://github.com/rayyan-merchant/Nano-Language-Model.git
 cd Nano-Language-Model
 git switch codex/submission-reproducibility-colab
 python -m venv .venv
+.venv\Scripts\python -m pip install --upgrade pip==26.2.1
 .venv\Scripts\python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
 .venv\Scripts\python -m pip install -r requirements.txt -r requirements-studio.txt
 .venv\Scripts\python -m pip install . --no-deps
