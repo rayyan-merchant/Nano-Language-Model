@@ -3,7 +3,7 @@
 NanoLM Studio is implemented on its dedicated application branch. The writing
 studio, comparison/research pages and genuine E02/B01/F01 API inference are locally
 implemented with hash-verified selected checkpoint packages.
-The HF backend/Vercel frontend rollout is authorized and tracked in [hosting status](docs/deployment/hosting.md).
+The Vercel-only rollout (private HF model backup) is authorized and tracked in [hosting status](docs/deployment/hosting.md).
 See [operation and deployment preparation](docs/deployment/README.md)
 and [actual verification status](docs/deployment/verification.md).
 

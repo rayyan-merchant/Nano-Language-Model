@@ -1,4 +1,46 @@
-# Authorized HF backend and Vercel frontend rollout
+# Authorized application hosting rollout
+
+## Current route: Vercel-only, free Hobby
+
+After the HF API rejected Docker cpu-basic creation with HTTP402/PRO required,
+the user explicitly selected Vercel-only deployment. No HF subscription or paid
+hardware was allocated. The earlier free-HF recommendation missed the eligibility
+gate; current [HF rules](https://huggingface.co/docs/hub/spaces-overview) confirm it.
+The original HF proposal below is retained as preparation history, not the active route.
+
+The private HF repository rayyanmerchant/nanolm-studio-weights was successfully
+published at revision719a7f3a4955225a9818e872b08c1503de601a81; all six files passed
+independent authenticated read-back. See [receipt](evidence/private-model-publication.json)
+and the [HF eligibility failure](evidence/hf-space-eligibility.json).
+
+Vercel CLI64.2.0 authenticated as rayyan-merchant, email merchantrayyan43@gmail.com,
+team rayyan-merchants-projects / team_zLMpuHlQoIrk6zvpwfb0vwso, verified Hobby.
+The previously connected zaidbinnaveed account was not used. The connector remained
+broken, so deployment uses the authenticated official CLI. User requested the
+[official agent setup guide](https://vercel.com/get-started.md); global CLI installed,
+existing Vercel guidance reused, shared MCP endpoint registered separately for OAuth.
+
+Vercel requires Python3.12+; the deployment-only generated metadata pins3.12 and
+PyTorch2.5.1+cpu, NumPy1.26.4 and tokenizers0.21.0. Research requirements and source
+remain untouched. Hosted inference compatibility must pass before acceptance.
+
+`tools.prepare_vercel_backend` copies clean Git source and the six hash-verified
+inference files into an ignored PRIVATE deployment bundle. Model files are only
+server-function assets, never public/ files or static routes. This avoids storing
+a Hub token in the production runtime; the private HF repository remains a backup.
+Generated serving metadata excludes research-only pytest/Matplotlib dependencies.
+No quantization, architecture conversion, precision or sampling change occurs.
+
+The frontend and API will be separate projects on the same Vercel account. Verify
+the actual preview build, private-file404 responses, full three-model inference,
+same-seed comparisons, cold/warm latency, errors and frontend HTTPS integration.
+Only promote after these pass; no paid upgrade or merge is implied. Keep Hobby
+usage limits explicit and do not promise unlimited/free high-volume inference.
+
+Local hosting/serving suite after Vercel adaptation:30 passed, one dependency
+deprecation warning,5.98s. Public hosting acceptance remains pending actual builds.
+
+## Original HF proposal and preparation history
 
 The user authorized public application deployment on 2026-10-15. Only free CPU
 Space and Vercel Hobby resources are in scope; paid plans, GPUs, public weights,
