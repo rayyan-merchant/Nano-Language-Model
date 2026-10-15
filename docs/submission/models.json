@@ -31,7 +31,9 @@
       "precision": "float32",
       "metadata_sha256": "98c0506578ec682c01a78d2e9709ae3b0af1c86a5e70fa6924bed25a15455410",
       "metadata_bytes": 9085,
-      "research_report": "report/pilots/E02_seed42/E02_seed42_analysis.md"
+      "research_report": "report/pilots/E02_seed42/E02_seed42_analysis.md",
+      "verification_status": "Anonymous hash-verified download, strict CPU load, generation in colab-v3 receipts",
+      "retrieval_url": "https://huggingface.co/rayyanmerchant/nanolm-studio-weights/resolve/719a7f3a4955225a9818e872b08c1503de601a81/e02/model.safetensors"
     },
     "b01": {
       "id": "b01",
@@ -60,7 +62,9 @@
       "precision": "float32",
       "metadata_sha256": "9f91554e2f96f4b04c3c67cee498d77e10af7531459ecd178601984084cd422d",
       "metadata_bytes": 8987,
-      "research_report": "report/balanced/B01_seed42_analysis.md"
+      "research_report": "report/balanced/B01_seed42_analysis.md",
+      "verification_status": "Anonymous hash-verified download, strict CPU load, generation in colab-v3 receipts",
+      "retrieval_url": "https://huggingface.co/rayyanmerchant/nanolm-studio-weights/resolve/719a7f3a4955225a9818e872b08c1503de601a81/b01/model.safetensors"
     },
     "f01": {
       "id": "f01",
@@ -89,7 +93,9 @@
       "precision": "float32",
       "metadata_sha256": "151e633288551e1b032c16f5998f3aab301ffbd5ef22877aa6288f286d10cb0c",
       "metadata_bytes": 9066,
-      "research_report": "report/final/F01_10000_analysis.md"
+      "research_report": "report/final/F01_10000_analysis.md",
+      "verification_status": "Anonymous hash-verified download, strict CPU load, generation in colab-v3 receipts",
+      "retrieval_url": "https://huggingface.co/rayyanmerchant/nanolm-studio-weights/resolve/719a7f3a4955225a9818e872b08c1503de601a81/f01/model.safetensors"
     }
   }
 }

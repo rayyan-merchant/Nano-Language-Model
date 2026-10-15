@@ -1,0 +1,23 @@
+[
+  {
+    "attempt": 1,
+    "cell_index": 8,
+    "error": "RuntimeError",
+    "message": "Command failed (exit 1); stop and inspect output",
+    "cause": "Installed package outside checkout was incorrectly forced to relative path"
+  },
+  {
+    "attempt": 2,
+    "cell_index": 18,
+    "error": "RuntimeError",
+    "message": "Command failed (exit 1); stop and inspect output",
+    "cause": "Inherited Colab inline Matplotlib backend read before Agg selection"
+  },
+  {
+    "attempt": "Windows installer v1",
+    "source": "7178fc5208d8d2d62abf0b1b07e913eb14a7dc74",
+    "cause": "DNS retries and old pip23.0.1 dependency metadata normalization failure; then flit_core unavailable on CPU-only index",
+    "exit_code": 1,
+    "correction": "Documented pip26.2.1 upgrade before torch installation; separate fresh clone retry"
+  }
+]

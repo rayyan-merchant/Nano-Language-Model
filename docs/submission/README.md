@@ -17,7 +17,7 @@ presentation remain separate work.
 ```powershell
 git clone https://github.com/rayyan-merchant/Nano-Language-Model.git
 cd Nano-Language-Model
-git switch codex/submission-reproducibility-colab
+git checkout 43b93e14326efae76a2b106dfc493d150d73f3dd
 python -m venv .venv
 .venv\Scripts\python -m pip install --upgrade pip==26.2.1
 .venv\Scripts\python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
@@ -38,6 +38,7 @@ No editable/global install, local D-drive paths, HF credential or model cache is
 Use fresh output directories for subsequent invocations; reuse existing model
 packages only with `--verify-only`, never by silently overwriting them.
 
-This branch is reviewable submission implementation. Before final handoff, use the
-exact accepted commit recorded in the execution report; a moving branch is for
-review convenience, not an immutable research provenance identifier.
+The checkout above pins the actual clean acceptance source. The submission PR
+remains reviewable and unmerged; review status is distinct from technical execution.
+The notebook pins wrapper source1f402d9 within that history; frozen scientific
+files are byte-identical to reviewed mainaa4bb5f. No moving branch is used by the demo.

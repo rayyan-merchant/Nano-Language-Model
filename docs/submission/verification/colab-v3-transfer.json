@@ -1,0 +1,12 @@
+{
+  "archive_sha256": "a2f706bba455818c2e24f700ae43fc2a2e71315b83b6aae5ed3aa3df7034fcce",
+  "bytes": 78556,
+  "zip_crc_passed": true,
+  "paths_safe": true,
+  "runtime_released_after_verified_export": true,
+  "source_commit": "1f402d9e3b902e7d3e78565969476d2d7af06502",
+  "notebook_source_commit": "43b93e14326efae76a2b106dfc493d150d73f3dd",
+  "executed_code_cells": 13,
+  "cell_errors": 0,
+  "binary_MIME_capture": "Connector notebook capture omits image/png; actual PNG independently exported and preserved."
+}

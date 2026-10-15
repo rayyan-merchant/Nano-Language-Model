@@ -1,0 +1,17 @@
+{
+  "source_commit": "1f402d9e3b902e7d3e78565969476d2d7af06502",
+  "package_revision": "719a7f3a4955225a9818e872b08c1503de601a81",
+  "verified_models": [
+    "e02",
+    "b01",
+    "f01"
+  ],
+  "generation_cases": 30,
+  "raw_ID_reference_cases": 12,
+  "exact_raw_ID_matches": 12,
+  "trained_attention_future_error": 0.0,
+  "api_status": 200,
+  "total_measured_notebook_seconds": 106.35226891199997,
+  "research_optimizer_updates": 0,
+  "tiny_fixture_updates_per_test": 60
+}
