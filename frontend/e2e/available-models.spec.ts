@@ -32,7 +32,9 @@ test("genuine available B01/F01 integration and honest missing E02 slot", async 
   const literalOutput = await page.locator('.generated').textContent();
   await page.getByRole('button', {name:/Copy output/}).click();
   await expect(page.getByText('Copied ✓')).toBeVisible();
-  expect(await page.evaluate(()=>navigator.clipboard.readText())).toBe(literalOutput);
+  // Windows native clipboard converts LF to CRLF; application text stays literal.
+  const clipboard = await page.evaluate(()=>navigator.clipboard.readText());
+  expect(clipboard.replace(/\r\n/g, '\n')).toBe(literalOutput);
   await page.getByRole("link", { name: "Compare", exact: true }).click();
   await expect(page.getByText("Local inference connected")).toBeVisible();
   await page.getByLabel("New tokens").selectOption("64");

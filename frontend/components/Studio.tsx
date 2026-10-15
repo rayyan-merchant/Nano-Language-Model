@@ -88,6 +88,7 @@ function Output({
               Seed {result.seed} ·{" "}
               {result.settings.greedy ? "greedy" : "sampling"}
             </span>
+            <span>Temperature {String(result.settings.temperature)} · limit {String(result.settings.max_new_tokens)} tokens</span>
           </div>
           {result.context_cropped && (
             <p className="note">

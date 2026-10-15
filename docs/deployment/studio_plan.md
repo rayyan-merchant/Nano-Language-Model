@@ -34,14 +34,16 @@ rendered literally. Large serif headlines, readable UI sans and reduced-motion C
 
 ## Sequential milestones and checks
 
-- [ ] Packaging: catalog/hash tests, trusted converter, actual best-weight tensor,
+- [x] Packaging implementation: catalog/hash tests, trusted converter, actual best-weight tensor,
   logits, greedy and seeded-ID equivalence; receipt for each accessible model.
-- [ ] API: strict artifact tests, schema/resource/error tests, real-model integration,
+- [x] API for accessible B01/F01: strict artifact tests, schema/resource/error tests, real-model integration,
   CPU cold/warm/64/128/256-token and compare/concurrency benchmark receipts.
-- [ ] Frontend: responsive pages, accessible controls, typed API integration;
+- [x] Frontend: responsive pages, accessible controls, typed API integration;
   component tests, production build, browser workflows and desktop/mobile captures.
 - [ ] Delivery: scientific suite/integrity, container configuration/build if runtime
   exists, dependency locks, startup/retrieval/deployment docs and reviewable PR.
+- [ ] Full three-model acceptance: obtain genuine E02 step5000, package and verify
+  equivalence, benchmark it and pass the complete real-model browser workflow.
 
 Missing checkpoints do not block independent development but do block three-model
 acceptance. Docker absence is a container-verification blocker, not a passing build.

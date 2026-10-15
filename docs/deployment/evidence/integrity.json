@@ -1,0 +1,339 @@
+{
+  "integrity": {
+    "canonical_paths_and_bytes_checked": 1103,
+    "same_platform_raw_byte_checks": 1103,
+    "science_fingerprint": "d5b205aecec5913cd11d921c0a84899badd95a014a490a7beaab3d2598c940f8",
+    "current_aggregate": "4dd230985194865487254e2e750b07f79aeabec491e4fa8f8e483fedda1de741",
+    "historical_aggregate": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
+    "relocations_byte_identical": true,
+    "scope": "All scientific/config/tokenizer/research/notebook evidence unchanged; mutable navigation READMEs excluded"
+  },
+  "links": {
+    "checked_file_links": 541,
+    "broken": [
+      {
+        "source": "report/final/presentation_support/findings_and_limitations.md",
+        "target": "F01_10000_analysis.md",
+        "resolved": "report\\final\\presentation_support\\F01_10000_analysis.md"
+      },
+      {
+        "source": "report/final/presentation_support/findings_and_limitations.md",
+        "target": "generation.md",
+        "resolved": "report\\final\\presentation_support\\generation.md"
+      }
+    ],
+    "external_local_references": [],
+    "scope": "Relative file targets outside fenced/inline code; HTTP/private artifacts not downloaded; heading anchors not checked",
+    "new_broken_links": []
+  },
+  "notebooks": [
+    {
+      "path": "notebooks/E05_seed42_ReLU_Colab_pilot.ipynb",
+      "cells": 10,
+      "executed_cells": 10,
+      "compiled_Python_cells": 10,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/E07_seed42_EightHead_Colab_pilot.ipynb",
+      "cells": 1,
+      "executed_cells": 0,
+      "compiled_Python_cells": 1,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/bootstrap.ipynb",
+      "cells": 2,
+      "executed_cells": 0,
+      "compiled_Python_cells": 1,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/colab_e02_seed42_pilot.ipynb",
+      "cells": 16,
+      "executed_cells": 0,
+      "compiled_Python_cells": 15,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/colab_e05_seed42_pilot.ipynb",
+      "cells": 7,
+      "executed_cells": 0,
+      "compiled_Python_cells": 7,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/colab_e07_seed42_pilot.ipynb",
+      "cells": 7,
+      "executed_cells": 0,
+      "compiled_Python_cells": 7,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/colab_research.ipynb",
+      "cells": 4,
+      "executed_cells": 0,
+      "compiled_Python_cells": 2,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/kaggle_e07_seed42_qualification.ipynb",
+      "cells": 2,
+      "executed_cells": 0,
+      "compiled_Python_cells": 1,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/kaggle_e07_seed42_recovery_executed.ipynb",
+      "cells": 5,
+      "executed_cells": 5,
+      "compiled_Python_cells": 5,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/kaggle_e07_seed42_research.ipynb",
+      "cells": 5,
+      "executed_cells": 0,
+      "compiled_Python_cells": 5,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/kaggle_e07_seed42_research_executed.ipynb",
+      "cells": 3,
+      "executed_cells": 3,
+      "compiled_Python_cells": 3,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/kaggle_e12_seed42_recovery_executed.ipynb",
+      "cells": 1,
+      "executed_cells": 1,
+      "compiled_Python_cells": 1,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/kaggle_e12_seed42_research.ipynb",
+      "cells": 3,
+      "executed_cells": 0,
+      "compiled_Python_cells": 2,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/kaggle_e12_seed42_research_executed.ipynb",
+      "cells": 2,
+      "executed_cells": 2,
+      "compiled_Python_cells": 2,
+      "IPython_magic_cells_structurally_checked": 0
+    },
+    {
+      "path": "notebooks/kaggle_research.ipynb",
+      "cells": 4,
+      "executed_cells": 0,
+      "compiled_Python_cells": 2,
+      "IPython_magic_cells_structurally_checked": 0
+    }
+  ],
+  "interfaces": {
+    "imports": [
+      "nano_lm",
+      "nano_lm.artifacts",
+      "nano_lm.attention",
+      "nano_lm.bpe",
+      "nano_lm.checkpoint",
+      "nano_lm.config",
+      "nano_lm.data",
+      "nano_lm.evaluate",
+      "nano_lm.experiments",
+      "nano_lm.generate",
+      "nano_lm.model",
+      "nano_lm.plot_run",
+      "nano_lm.positions",
+      "nano_lm.prepare",
+      "nano_lm.results",
+      "nano_lm.smoke",
+      "nano_lm.storage",
+      "nano_lm.tokenizer",
+      "nano_lm.train",
+      "nano_lm.verification"
+    ],
+    "tokenizers": {
+      "character": "ed96787d2f3f9741d69eba15160f31634ba6755b47e4c261ffedbb975fa0af77",
+      "bpe": "2d7b1e84c8055eb5b9483a3fe6e4e3c9e348f5a28506ba19a0dc1644f0b36d55"
+    },
+    "configurations": [
+      {
+        "id": "B01",
+        "parameters": 3062784,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          1024
+        ]
+      },
+      {
+        "id": "E01",
+        "parameters": 1804800,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E02",
+        "parameters": 2173056,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          1024
+        ]
+      },
+      {
+        "id": "E03",
+        "parameters": 1804800,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E04",
+        "parameters": 1829376,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E05",
+        "parameters": 1804800,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E06",
+        "parameters": 1804800,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E07",
+        "parameters": 1804800,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E08",
+        "parameters": 2694528,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E09",
+        "parameters": 3584256,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E10",
+        "parameters": 1213440,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E11",
+        "parameters": 1804800,
+        "context": 64,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E12",
+        "parameters": 1804800,
+        "context": 256,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E13",
+        "parameters": 1021824,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "E14",
+        "parameters": 2808960,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          65
+        ]
+      },
+      {
+        "id": "F01",
+        "parameters": 6046560,
+        "context": 128,
+        "output_shape": [
+          1,
+          8,
+          1024
+        ]
+      }
+    ],
+    "CLI_help": [
+      "prepare",
+      "train",
+      "generate",
+      "storage",
+      "results",
+      "experiments",
+      "verification",
+      "smoke",
+      "plot_run"
+    ],
+    "evaluation_Python_API": "(model, tokenizer, text, conditioning_bytes=256, max_bytes=0, batch_size=32, mode='sliding')",
+    "scope": "CPU finite forwards/tokenizer roundtrip/help only; zero optimizer updates; no dataset/test likelihood/archive download"
+  }
+}

@@ -67,7 +67,7 @@ test("responsive mobile navigation and error handling", async ({ page }) => {
   });
   await page.route("**/v1/generate", (route) => route.abort());
   await page.getByRole("button", { name: /Regenerate/ }).click();
-  await expect(page.getByRole("alert")).toBeVisible();
+  await expect(page.locator(".output [role=alert]")).toBeVisible();
   await page.screenshot({
     path: "../outputs/studio/mobile-error.png",
     fullPage: true,

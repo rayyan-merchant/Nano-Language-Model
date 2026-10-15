@@ -19,7 +19,7 @@ const fixture = {
   prompt_tokens: 4,
   effective_context: 4,
   context_cropped: false,
-  settings: { greedy: false },
+  settings: { greedy: false, temperature: 0.7, max_new_tokens: 128 },
   latency_seconds: 0.25,
   replacement_characters: false,
   seed: 42,
@@ -131,4 +131,23 @@ it("cancel aborts and reports its honest server limitation", async () => {
   );
   fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
   await screen.findByText(/bounded server worker may still be finishing/);
+});
+it("changes decoding, temperature, token limit and seed and shows loading", async () => {
+  vi.mocked(api.generate).mockImplementation(() => new Promise(() => {}));
+  render(<Studio />);
+  await screen.findByText("Local inference connected");
+  fireEvent.change(screen.getByLabelText("Decoding"), { target: { value: "greedy" } });
+  expect(screen.getByLabelText("Temperature")).toBeDisabled();
+  fireEvent.change(screen.getByLabelText("Decoding"), { target: { value: "sample" } });
+  fireEvent.change(screen.getByLabelText("Temperature"), { target: { value: "1.2" } });
+  fireEvent.change(screen.getByLabelText("New tokens"), { target: { value: "64" } });
+  fireEvent.change(screen.getByLabelText("Seed"), { target: { value: "123" } });
+  const button = screen.getByRole("button", { name: /Generate continuation/ });
+  button.focus();
+  expect(button).toHaveFocus();
+  fireEvent.click(button);
+  await screen.findByText("Finding the next word.");
+  expect(api.generate).toHaveBeenCalledWith(expect.objectContaining({ greedy: false, temperature: 1.2, max_new_tokens: 64, seed: 123 }), "b01", expect.any(AbortSignal));
+  expect(screen.getByRole("button", { name: "Generating…" })).toBeDisabled();
+  fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
 });
