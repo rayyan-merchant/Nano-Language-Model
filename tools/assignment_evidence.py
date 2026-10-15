@@ -34,7 +34,12 @@ def read(path):
 
 
 def sha(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    data = path.read_bytes()
+    # Git's existing checkout normalization differs on Windows and Linux. This
+    # applies only to audit source text, never model/tokenizer package checksums.
+    if path.suffix in {'.json', '.csv', '.txt'}:
+        data = data.replace(b'\r\n', b'\n')
+    return hashlib.sha256(data).hexdigest()
 
 
 def manual_attention():
@@ -292,7 +297,7 @@ def build():
     save(fig, 'figure_09_ablations.png')
     fields = list(next(iter(rows.values())).keys())
     with (OUT / 'figure_09_ablations.csv').open('w', newline='', encoding='utf-8') as file:
-        writer = csv.DictWriter(file, fieldnames=fields)
+        writer = csv.DictWriter(file, fieldnames=fields, lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows[f'E{i:02}'] for i in range(1,15))
     api_text = 'Existing executed TestClient request: POST /v1/generate\n' + json.dumps(request.model_dump(), indent=2)
@@ -313,7 +318,9 @@ def build():
     receipt = {'scope': 'New educational diagrams and independent inspection of historical executed receipts; zero training',
                'starting_main': 'ee2b941311cfb451a73dbc65207ad3dfabb5977f',
                'manual_attention': math_result, 'architecture_traces': traces, 'historical_receipt_checks': receipt_audit,
+               'audit_source_hash_policy': 'JSON/CSV/TXT source hashes normalize CRLF to LF to match Git across Windows/Linux; binary PDF/PNG hashes are exact. Model/package verification uses original exact-byte hashes, never this normalization.',
                'inputs_sha256': {p: sha(ROOT / p) for p in sorted(inputs)},
+               'inputs_observed_Windows_bytes_sha256': {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in sorted(inputs)},
                'generated_sha256': {p.name: sha(p) for p in sorted(OUT.iterdir()) if p.suffix in {'.png','.csv'}},
                'public_API_request': request.model_dump()}
     (OUT.parent / 'verification/assignment_audit.json').write_text(json.dumps(receipt, indent=2)+'\n', encoding='utf-8')

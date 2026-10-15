@@ -21,7 +21,8 @@
   "CI": "Pending branch push; actual run recorded on PR",
   "failures_during_audit": [
     "Builder initially expected two retained executed notebooks; corrected to one final notebook plus first-run execution receipts.",
-    "Initial link check ran while new documentation was incomplete; final link check required before completion."
+    "Initial link check ran while new documentation was incomplete; final link check required before completion.",
+    "Pre-push committed-byte check found existing Windows CRLF checkout differences in source text. Audit source hashes now explicitly normalize JSON/CSV/TXT CRLF to LF and preserve observed Windows byte hashes separately. Binary and model package verification remains exact-byte."
   ],
   "prohibited_actions_performed": [],
   "embedded_trained_attention_png_sha256": "0ee2ca5c35e2c114c95c6ca3d2b8e6439092b7fbba12c7952f07d638af826844",

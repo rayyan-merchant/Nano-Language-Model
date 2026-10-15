@@ -123,6 +123,15 @@ hashes recorded, public access refreshed, and notebook outputs/relative links
 checked. The final integrity/CI outcome is recorded in the accompanying
 [audit execution receipt](verification/assignment_checks.json).
 
+The final six audit-specific tests passed again in1.21s after the hash portability
+correction. A committed-byte check found existing Windows CRLF checkout differences
+in several source JSON/CSV files. The audit now explicitly records LF-normalized
+text-source hashes alongside the observed Windows raw-byte hashes. Exact binary,
+model-weight and inference-package checksums are never normalized. This changes
+only new audit hashing; original scientific files and receipts remain untouched.
+Final branch CI is tracked on
+[PR25](https://github.com/rayyan-merchant/Nano-Language-Model/pull/25).
+
 No model/config/tokenizer bytes, accepted reports, selected identities or immutable
 verification receipts are changed. No new research updates, original-test
 assessment, new model package, mirror publication or presentation was performed.
