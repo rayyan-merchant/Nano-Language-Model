@@ -33,8 +33,8 @@ weights and alternate steps were never substituted.
 
 ## Actual checks so far
 
-- Full Python suite: 139 passed, 1 CUDA-only skipped, 15 dependency warnings,
-  197.41 s; pip check passed.
+- Final full Python suite: 140 passed, 1 CUDA-only skipped, 15 dependency warnings,
+  362.20 s; pip check passed. Earlier pre-size-cap suite passed 139/1 in 197.41 s.
 - New serving suite including artifact-size rejection: 19 passed, 1 test-client warning,
   5.12 s. Fast fixtures are explicitly injected and are not research-weight evidence.
 - TypeScript, seven frontend component tests, production Next.js build and npm audit
