@@ -40,7 +40,7 @@ rendered literally. Large serif headlines, readable UI sans and reduced-motion C
   CPU cold/warm/64/128/256-token and compare/concurrency benchmark receipts.
 - [x] Frontend: responsive pages, accessible controls, typed API integration;
   component tests, production build, browser workflows and desktop/mobile captures.
-- [ ] Delivery: scientific suite/integrity, container configuration/build if runtime
+- [x] Review delivery: scientific suite/integrity, container configuration/build in CI,
   exists, dependency locks, startup/retrieval/deployment docs and reviewable PR.
 - [ ] Full three-model acceptance: obtain genuine E02 step5000, package and verify
   equivalence, benchmark it and pass the complete real-model browser workflow.

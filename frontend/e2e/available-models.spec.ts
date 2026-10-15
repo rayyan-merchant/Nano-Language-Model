@@ -18,7 +18,8 @@ test("genuine available B01/F01 integration and honest missing E02 slot", async 
   for (const name of ["Balanced", "Quality"]) {
     await page.getByRole("button", { name: new RegExp(name) }).click();
     await page.getByLabel("New tokens").selectOption("64");
-    await page.getByRole("button", { name: /Generate continuation/ }).click();
+    await page.getByRole("button", { name: /Generate continuation/ }).focus();
+    await page.keyboard.press('Enter');
     await expect(page.getByText("64 new tokens")).toBeVisible({
       timeout: 90000,
     });

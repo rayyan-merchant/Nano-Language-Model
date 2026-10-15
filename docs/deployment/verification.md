@@ -44,8 +44,9 @@ weights and alternate steps were never substituted.
   API responses are in the integration receipt.
 - Offline integrity passed all 1,103 protected paths, all 16 configurations,
   both tokenizers and all 15 notebooks; the two pre-existing frozen links remain.
-- Docker is unavailable locally. Linux CI image build/liveness verification is
-  configured but not yet claimed passed. No image, weights or application is published.
+- Docker is unavailable locally. Linux CI actually built the image, ran /health
+  successfully and confirmed /ready=503 without private weights. No image, weights
+  or application was published.
 - Genuine two-model desktop browser workflow passed (20.0 s test / 29.5 s command),
   including switching, actual inference, exact clipboard content allowing only native
   Windows LF/CRLF conversion, comparison and research navigation, with no page errors.
@@ -53,8 +54,12 @@ weights and alternate steps were never substituted.
   390 px layout, 320 px overflow check and an intentionally aborted request/error state.
 - Complete three-model browser acceptance was actually executed and failed at its
   required readiness gate: expected 200, received 503. This is the missing E02 blocker.
-- PR CI remains pending at this documentation commit; actual workflow results must
-  be inspected before claiming CI or container success.
+- [CI run 38677912412](https://github.com/rayyan-merchant/Nano-Language-Model/actions/runs/38677912412)
+  passed all three jobs (Python/integrity, frontend and container) for source
+  8198882b3cf4a03cb3bb1da2105dee7ae631ecd2. Later changes only document these receipts
+  and extend browser keyboard coverage; their head CI is inspected separately in PR22.
+- A final genuine desktop repetition activated Generate with keyboard Enter for
+  both available models and passed (14.0 s test / 18.0 s command).
 
 ## Genuine evidence and measured CPU performance
 
