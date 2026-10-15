@@ -38,7 +38,7 @@ def prepare(destination, artifacts):
     (destination/'.python-version').write_text('3.12\n', encoding='utf-8')
     (destination/'vercel.json').write_text(json.dumps({
         '$schema': 'https://openapi.vercel.sh/vercel.json', 'framework': 'fastapi',
-        'functions': {'app.py': {'maxDuration': 300, 'includeFiles': ['private_models/**', 'configs/**', 'experiments/configs/**', 'assets/tokenizers/**', 'report/**', 'api/hosting_manifest.json']}}, 'regions': ['bom1']}, indent=2)+'\n', encoding='utf-8')
+        'functions': {'app.py': {'maxDuration': 300, 'includeFiles': '{private_models,configs,experiments,assets,report,api}/**'}}, 'regions': ['bom1']}, indent=2)+'\n', encoding='utf-8')
     # No public/ directory or static route exists; model files are private function assets.
     (destination/'README.md').write_text('# NanoLM Studio Vercel inference backend\n'
         'Private server-function weights, canonical GPT/generation, inference only.\n', encoding='utf-8')

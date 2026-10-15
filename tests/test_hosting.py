@@ -97,3 +97,30 @@ def test_vercel_invalid_private_bundle_is_sanitized(tmp_path, monkeypatch):
         registry.load('b01')
     assert 'filesystem' not in str(error.value)
     assert not registry.verified
+
+
+def test_vercel_builder_emits_supported_glob_and_cpu_only_profile(tmp_path, monkeypatch):
+    from tools import prepare_vercel_backend as builder
+    source = tmp_path/'weights'
+    (source/'e02').mkdir(parents=True)
+    (source/'e02/model.safetensors').write_bytes(b'explicit-private-fixture')
+    data = (source/'e02/model.safetensors').read_bytes()
+    manifest = tmp_path/'manifest.json'
+    manifest.write_text(json.dumps({'files': {'e02/model.safetensors': {
+        'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}}}))
+    monkeypatch.setattr(builder, 'MANIFEST', manifest)
+    def fixture_build(destination):
+        destination.mkdir()
+        (destination/'requirements-studio.txt').write_text('fastapi==0.143.1\n')
+        return {'source_commit': 'a'*40}
+    monkeypatch.setattr(builder, 'build', fixture_build)
+    destination = tmp_path/'private-function'
+    receipt = builder.prepare(destination, source)
+    config = json.loads((destination/'vercel.json').read_text())
+    assert isinstance(config['functions']['app.py']['includeFiles'], str)
+    assert 'private_models' in config['functions']['app.py']['includeFiles']
+    assert (destination/'private_models/e02/model.safetensors').read_bytes() == data
+    assert not (destination/'public').exists()
+    assert 'torch==2.5.1+cpu' in (destination/'requirements.txt').read_text()
+    assert 'matplotlib' not in (destination/'requirements.txt').read_text()
+    assert not receipt['public_static_model_files']
