@@ -63,8 +63,55 @@ an array; Vercel expects one glob string. Corrected in b26179c with a regression
 test. Hosting/serving suite:31 passed, one dependency warning,4.44s. Frontend proxy
 configuration tests and component regressions:12 passed; TypeScript passed.
 The frontend uses same-origin /api rewrites to the qualified backend; no Hub token
-or model files are included in the browser project. Public frontend/browser
-acceptance remains pending its actual deployment.
+or model files are included in the browser project. Public frontend/browser acceptance passed as recorded below.
+
+## Public website acceptance (2026-10-15)
+
+Live website: [NanoLM Studio](https://nanolm-studio-rayyan.vercel.app).
+Frontend source `49d6f4d8f9d00c2d74f9e2670a05e5fb7b9634eb`, deployment
+`dpl_DzKRsGJGurHUEBcxnH6LfMwWMMf1`, built in 19 seconds and promoted only
+following protected staging verification. The generic nanolm-studio.vercel.app
+name belonged to another project; its HTTP409 refusal was preserved and it was
+not overridden. The chosen free production domain needs no visitor login.
+Generated deployment/team aliases retain their standard access protection.
+
+Actual unauthenticated public desktop generation/model switching/comparison/research
+passed (12.3s); public mobile and error handling passed (23.4s). The initial full
+public suite's desktop API readiness preflight timed out before UI execution;
+a subsequent independent readiness request returned200 in3.841s and the unchanged
+desktop retry passed. These were separate passes, not one all-green public suite.
+Protected staging had2 passes and1 historical partial-state skip. Screenshots
+named hosted-*.png in evidence are genuine browser captures.
+
+The public same-origin API independently passed six genuine generation comparisons,
+a three-model comparison and eight private-file404 checks; see
+[public API receipt](evidence/hosted-frontend-public.json) and
+[release receipt](evidence/public-release.json). The source CI run38716456454
+passed Python, frontend and both-container checks. All nonsecret build/runtime
+settings were persisted to the two corresponding Vercel projects. No Hub token
+is needed by production. Models remain private server assets and private HF backup.
+
+Current release commands (run from clean matching source; private CLI login first):
+
+```powershell
+python -m tools.verify_hosted_studio --origin https://nanolm-studio-rayyan.vercel.app/api --deployment dpl_DzKRsGJGurHUEBcxnH6LfMwWMMf1 --output outputs/studio/deploy/public-check.json
+vercel inspect dpl_DzKRsGJGurHUEBcxnH6LfMwWMMf1 --scope rayyan-merchants-projects
+```
+
+For future releases, preserve the verified IDs above, build a preview with
+`--skip-domain`, qualify real inference/browser/private-file behavior, then promote
+the exact tested frontend artifact. Roll back the frontend with `vercel promote`
+using the prior verified deployment ID. The backend's current verified ID is
+recorded above; inspect and promote only a known tested backend artifact when
+needed. Do not rebuild or replace private weights merely to roll back the UI.
+
+This is free Hobby CPU inference subject to platform quotas, cold starts,
+transient readiness failures and Large Functions beta availability. One worker
+and conservative request admission are suitable for a low-volume demonstration;
+they do not establish distributed per-user abuse protection or high concurrency.
+No paid plan, new training, original-test scoring or public weight release occurred.
+The official remote Vercel MCP was registered and OAuth completed; this existing
+conversation still uses CLI because its older connector has a missing-link error.
 
 ## Original HF proposal and preparation history
 
@@ -148,7 +195,7 @@ Rollback keeps the previous tested Space source SHA, private weight revision and
 Vercel deployment ID. Never replace weights in place. On a failed new build,
 retain or restore the prior verified deployment; keep failure receipts.
 
-## Current status
+## Historical preparation status (superseded by public acceptance above)
 
 Hosting/serving tests passed 28 cases (9.42 s; one dependency deprecation warning),
 including immutable revision enforcement, corrupt/partial-download rejection,
@@ -166,3 +213,4 @@ inference. No alternative account was used and no credentials were requested in 
 References: [HF Docker runtime, ports and secrets](https://huggingface.co/docs/hub/spaces-sdks-docker),
 [HF token permissions](https://huggingface.co/docs/hub/security-tokens),
 [Vercel deployment configuration](https://vercel.com/docs/project-configuration).
+`scripts.maintenance.verify_repository` also passed after the final evidence update: 1,103 protected files unchanged, 16 configurations and 15 notebooks verified; two existing frozen broken links, zero new link regressions.
