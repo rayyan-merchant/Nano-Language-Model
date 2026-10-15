@@ -1,0 +1,76 @@
+"""Hosting transport boundaries; bounded fixtures are not research-model evidence."""
+import hashlib
+import json
+from pathlib import Path
+import pytest
+from api import hosting
+
+
+@pytest.fixture
+def fixture_manifest(tmp_path, monkeypatch):
+    source = tmp_path / 'source'
+    source.mkdir()
+    (source / 'model.bin').write_bytes(b'explicit-transport-test-fixture')
+    data = (source / 'model.bin').read_bytes()
+    manifest = tmp_path / 'manifest.json'
+    manifest.write_text(json.dumps({'files': {'e02/model.safetensors': {
+        'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}}}))
+    monkeypatch.setattr(hosting, 'MANIFEST', manifest)
+    return source / 'model.bin'
+
+
+def test_private_pinned_download_and_cached_restart(tmp_path, fixture_manifest):
+    calls = []
+    def download(**kwargs):
+        calls.append(kwargs)
+        return fixture_manifest
+    destination = hosting.prepare('owner/private-models', 'a'*40, tmp_path/'cache', 'test-secret', download)
+    assert (destination/'e02/model.safetensors').read_bytes() == fixture_manifest.read_bytes()
+    assert calls[0]['revision'] == 'a'*40 and calls[0]['token'] == 'test-secret'
+    assert hosting.prepare('owner/private-models', 'a'*40, tmp_path/'cache', 'test-secret', download) == destination
+    assert len(calls) == 1
+    (destination/'e02/model.safetensors').write_bytes(b'corrupt')
+    with pytest.raises(ValueError):
+        hosting.prepare('owner/private-models', 'a'*40, tmp_path/'cache', 'test-secret', download)
+
+
+@pytest.mark.parametrize('repo,revision,token', [
+    ('https://external/path', 'a'*40, 'test'), ('owner/repo', 'main', 'test'),
+    ('owner/repo', 'a'*40, ''), ('owner/repo/extra', 'a'*40, 'test')])
+def test_rejects_mutable_or_invalid_source(tmp_path, repo, revision, token):
+    with pytest.raises(ValueError):
+        hosting.prepare(repo, revision, tmp_path, token)
+
+
+def test_bad_download_does_not_publish_partial_model(tmp_path, fixture_manifest):
+    fixture_manifest.write_bytes(b'bad payload')
+    with pytest.raises(ValueError):
+        hosting.prepare('owner/repo', 'b'*40, tmp_path/'cache', 'test', lambda **_: fixture_manifest)
+    assert list((tmp_path/'cache').iterdir()) == []
+
+
+def test_manifest_contains_only_six_exact_selected_inference_files():
+    manifest = json.loads(hosting.MANIFEST.read_text())
+    assert set(manifest['files']) == {f'{m}/{f}' for m in ['e02','b01','f01']
+                                      for f in ['metadata.json','model.safetensors']}
+    for m in ['e02','b01','f01']:
+        receipt = json.loads(Path(f'docs/deployment/evidence/{m}-package.json').read_text(encoding='utf-8'))
+        assert manifest['files'][f'{m}/model.safetensors']['sha256'] == receipt['artifact_sha256']
+
+
+@pytest.mark.parametrize('identity,private', [('other-person', True), ('owner', False)])
+def test_publisher_rejects_wrong_account_or_public_repository(tmp_path, monkeypatch, identity, private):
+    from tools import publish_hf_models as publisher
+    class FakeAPI:
+        def whoami(self): return {'name': identity}
+        def create_repo(self, *args, **kwargs): assert kwargs['private'] is True
+        def repo_info(self, *args, **kwargs):
+            from types import SimpleNamespace
+            return SimpleNamespace(private=private)
+        def create_commit(self, *args, **kwargs):
+            pytest.fail('No file upload is allowed on wrong identity or public repository')
+    monkeypatch.setattr(publisher, 'HfApi', FakeAPI)
+    monkeypatch.setattr(publisher, 'verify', lambda *args: None)
+    with pytest.raises(ValueError):
+        publisher.publish('owner', 'owner/models', tmp_path, tmp_path/'receipt.json')
+    assert not (tmp_path/'receipt.json').exists()

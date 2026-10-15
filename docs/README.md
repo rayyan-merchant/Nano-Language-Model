@@ -2,8 +2,8 @@
 
 NanoLM Studio implementation is documented in [the local/deployment guide](deployment/README.md)
 and [its verification record](deployment/verification.md). Genuine E02/B01/F01 inference
-is locally verified using the exact selected checkpoints. No public deployment or
-additional research execution is authorized.
+is locally verified using the exact selected checkpoints. The user authorized the
+[HF/Vercel application rollout](deployment/hosting.md); additional research execution remains unauthorized.
 
 Current reviewed research baseline: `cc7e345cee92c122cb1f7ad56a0d7627636934db`,
 including merged B01 PR20. **Research execution is complete; final project delivery
