@@ -1,0 +1,2 @@
+# Hosting-only SDK; research dependency pins remain unchanged.
+huggingface-hub==0.36.2

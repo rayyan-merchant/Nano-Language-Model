@@ -1,7 +1,8 @@
 # NanoLM Studio verification and acceptance
 
 Status: **local three-model acceptance passed** after the user supplied the exact
-E02 checkpoint. Public deployment remains unauthorized. This document records actual evidence;
+E02 checkpoint. Public application deployment was subsequently authorized; see
+[current hosting evidence](hosting.md). Public weights remain unauthorized. This document records actual evidence;
 pending checks are not claimed passed. Source baseline: reviewed main
 95b83f0ed8f8ac70f4b7f102a8f864acac824f66.
 

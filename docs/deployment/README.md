@@ -1,6 +1,8 @@
 # NanoLM Studio: private local operation and deployment preparation
 
-Implementation is authorized; public deployment and public weights are not.
+The user authorized free Vercel-only public application deployment on 2026-10-15;
+public model weights and paid resources remain unauthorized. Current rollout and
+actual cloud evidence are recorded in [hosting.md](hosting.md).
 The scientific package and accepted evidence remain frozen. Studio is a wrapper
 around canonical GPT and generation, not an alternative model implementation.
 Current verification and blockers are recorded in [verification.md](verification.md).

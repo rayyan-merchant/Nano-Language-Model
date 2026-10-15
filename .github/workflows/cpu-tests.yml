@@ -15,6 +15,7 @@ jobs:
       - run: python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
       - run: python -m pip install -r requirements.txt
       - run: python -m pip install -r requirements-studio.txt
+      - run: python -m pip install -r requirements-hosting.txt
       - run: python -m pip install -e . --no-deps
       - run: python -m pytest -q
       - run: python -m scripts.maintenance.verify_repository --output outputs/cleanup/verification.json
@@ -41,6 +42,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker build -f api/Dockerfile -t nanolm-studio:test .
+      - run: docker build -f api/Dockerfile.hf -t nanolm-studio:hf-test .
+      - run: |
+          if docker run --rm nanolm-studio:hf-test > startup.txt 2>&1; then
+            echo "Hosting image must refuse startup without private configuration"
+            exit 1
+          fi
+          grep -q 'Verified private model startup failed' startup.txt
       - run: |
           docker run -d --name studio -p 127.0.0.1:8000:8000 nanolm-studio:test
           for attempt in $(seq 1 30); do

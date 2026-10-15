@@ -1,9 +1,12 @@
 # Nano-Language-Model
 
+**Live demo: [NanoLM Studio](https://nanolm-studio-rayyan.vercel.app)**
+
 NanoLM Studio is implemented on its dedicated application branch. The writing
 studio, comparison/research pages and genuine E02/B01/F01 API inference are locally
 implemented with hash-verified selected checkpoint packages.
-Public deployment is not authorized. See [operation and deployment preparation](docs/deployment/README.md)
+The Vercel-only rollout (private HF model backup) is authorized and tracked in [hosting status](docs/deployment/hosting.md).
+See [operation and deployment preparation](docs/deployment/README.md)
 and [actual verification status](docs/deployment/verification.md).
 
 A decoder-only GPT built from scratch in PyTorch for a controlled Tiny Shakespeare study. Attention explicitly implements Q/K/V projections, head splitting, scaled scores, causal masking, softmax and value aggregation. There are no pretrained language-model weights or black-box Transformer layers.
@@ -18,7 +21,7 @@ A decoder-only GPT built from scratch in PyTorch for a controlled Tiny Shakespea
 | F01 quality-focused | 6,046,560 | 10,000 | 1,750 | 1.98376817 |
 | B01 balanced | 3,062,784 | 4,500, frozen early stop | 3,000 | 1.98493095 |
 
-All reports retain negative results, genuine generations and recovery evidence. F01 deteriorated with prolonged training; B01 nearly matches its selected likelihood at roughly half its parameters but still produces greedy loops, malformed language and invalid byte sequences. Smaller size or lower BPB does not establish better text quality. The final academic report, standalone model packaging, FastAPI, frontend, deployment and final demo/presentation are **pending**. No further research training or test evaluation is currently authorized.
+All reports retain negative results, genuine generations and recovery evidence. F01 deteriorated with prolonged training; B01 nearly matches its selected likelihood at roughly half its parameters but still produces greedy loops, malformed language and invalid byte sequences. Smaller size or lower BPB does not establish better text quality. The final academic report and final demo/presentation remain pending. Model packaging, FastAPI, frontend and public Vercel deployment are implemented on the application/hosting branches; see the deployment evidence. No further research training or test evaluation is currently authorized.
 
 Start with the [project map and current status](docs/README.md), [fourteen-run analysis](report/final/E01_E14_consolidated_analysis.md), [F01 report](report/final/F01_10000_analysis.md) and [B01 model selection](report/balanced/B01_model_selection.md).
 
