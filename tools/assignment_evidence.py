@@ -320,7 +320,7 @@ def build():
                'manual_attention': math_result, 'architecture_traces': traces, 'historical_receipt_checks': receipt_audit,
                'audit_source_hash_policy': 'JSON/CSV/TXT source hashes normalize CRLF to LF to match Git across Windows/Linux; binary PDF/PNG hashes are exact. Model/package verification uses original exact-byte hashes, never this normalization.',
                'inputs_sha256': {p: sha(ROOT / p) for p in sorted(inputs)},
-               'inputs_observed_Windows_bytes_sha256': {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in sorted(inputs)},
+               'inputs_observed_checkout_bytes_sha256': {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in sorted(inputs)},
                'generated_sha256': {p.name: sha(p) for p in sorted(OUT.iterdir()) if p.suffix in {'.png','.csv'}},
                'public_API_request': request.model_dump()}
     (OUT.parent / 'verification/assignment_audit.json').write_text(json.dumps(receipt, indent=2)+'\n', encoding='utf-8')

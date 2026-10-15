@@ -18,7 +18,7 @@
   "handwritten_pages_visually_reviewed": 4,
   "matrix_rows": 103,
   "new_and_reused_figures_visually_reviewed": 10,
-  "CI": "Pending branch push; actual run recorded on PR",
+  "CI": "GitHub Actions runs linked on PR25; final head outcome recorded in PR after execution",
   "failures_during_audit": [
     "Builder initially expected two retained executed notebooks; corrected to one final notebook plus first-run execution receipts.",
     "Initial link check ran while new documentation was incomplete; final link check required before completion.",
@@ -29,8 +29,10 @@
   "embedded_notebook_image_matches_existing_PNG": true,
   "final_new_evidence_tests": {
     "passed": 6,
-    "seconds": 4.65,
-    "warnings": 14
+    "seconds": 1.21,
+    "warnings": 14,
+    "command": "python -m pytest tests/test_assignment_evidence.py -q --basetemp .pytest_cache/audit17",
+    "environment_option": "OMP_NUM_THREADS=1"
   },
   "repository_integrity": {
     "protected_files": 1103,
@@ -52,5 +54,11 @@
     "historical_research_aggregate": "cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6",
     "current_repository_aggregate": "4dd230985194865487254e2e750b07f79aeabec491e4fa8f8e483fedda1de741",
     "note": "The historical research aggregate is not relabeled as the current tree hash; byte-preserved source/evidence checks establish integrity."
-  }
+  },
+  "matrix_status_counts": {
+    "PASS": 75,
+    "PARTIAL": 8,
+    "PENDING HUMAN DELIVERY": 20
+  },
+  "review_PR": "https://github.com/rayyan-merchant/Nano-Language-Model/pull/25"
 }

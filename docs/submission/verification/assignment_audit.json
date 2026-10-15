@@ -406,7 +406,27 @@
     "report/pilots/E13_seed42/summary.json": "75a76a04b018c59cad1a61104daf7fd9d54cc4be50707b02dcf14bc00f69e097",
     "report/pilots/E14_seed42/summary.json": "76aaba289ebe311decd2fe577654aec3b61aaa3ddb094c8856fd88f3890b2b99"
   },
-  "inputs_observed_Windows_bytes_sha256": {
+  "generated_sha256": {
+    "figure_01_attention_derivation.png": "464b98502ea50adbe859d44167fc2e25d6bc9767727e210efec5a1cc768566ea",
+    "figure_02_causal_mask.png": "319993cef65a777e065b94c1e9fc94799d3ad34ab0669e41b60824140fef8485",
+    "figure_03_tensor_shapes.png": "cf0eb412e7f7755a4b131bfd15fbcdd25aa9d21f67c1b8787afe123dcb6e899c",
+    "figure_04_sinusoidal.png": "0190edaebc13afd463bbdc48e5ebc5dc1f4697f7bac436a5b8187df8ac8adc9f",
+    "figure_05_architecture.png": "8e8638e7460a709eeb65a8d8323e24a7de262b445c0a4e2e6cfcb36c4382261c",
+    "figure_08_generations.png": "186d750e8f78a13bdbfc1cebb61f1c18fde9cc627a2b24e0cd15b47d39f567c0",
+    "figure_09_ablations.csv": "a20051e7328bab2c9034664d4b16d9327c2cd71fa3f21de5673c8c80f4040f14",
+    "figure_09_ablations.png": "91569ef8f49a2996508a0d5e6bd122fe659a3e53c4e2c2d00c2a78a9581b9627",
+    "figure_10_api.png": "798853c74f9228e39288ceb0bca75d8c321c43d33ed731d411848eee8acfd101",
+    "mlm_vs_clm.png": "7cd98a8c81b79a73fc3e618db3cbbe96a7523220f7e02f8c826e2773efbb7ece"
+  },
+  "public_API_request": {
+    "prompt": "ROMEO:\n",
+    "max_new_tokens": 32,
+    "temperature": 0.7,
+    "seed": 42,
+    "greedy": true,
+    "model_id": "b01"
+  },
+  "inputs_observed_checkout_bytes_sha256": {
     "docs/handwritten-assignment.pdf": "317fb3479a7629d37e9b38bf5ab227ede15801abfef18af4f4e33e5244951c3e",
     "docs/submission/models.json": "b3aec0437d98e0d44c0d3ff9278ab978d76e8b47ce39b3060675741bd10495a5",
     "docs/submission/verification/colab-final/receipts/api/receipt.json": "674652a98449793bc2d41cd39638528638645c8fce6af59ec5c9835f0833fe29",
@@ -451,25 +471,5 @@
     "report/pilots/E12_seed42/summary.json": "ffdea5c76a13bd85341e2e5060b75d41f12e1104398bc10d9d1ff056332b1db4",
     "report/pilots/E13_seed42/summary.json": "75a76a04b018c59cad1a61104daf7fd9d54cc4be50707b02dcf14bc00f69e097",
     "report/pilots/E14_seed42/summary.json": "76aaba289ebe311decd2fe577654aec3b61aaa3ddb094c8856fd88f3890b2b99"
-  },
-  "generated_sha256": {
-    "figure_01_attention_derivation.png": "464b98502ea50adbe859d44167fc2e25d6bc9767727e210efec5a1cc768566ea",
-    "figure_02_causal_mask.png": "319993cef65a777e065b94c1e9fc94799d3ad34ab0669e41b60824140fef8485",
-    "figure_03_tensor_shapes.png": "cf0eb412e7f7755a4b131bfd15fbcdd25aa9d21f67c1b8787afe123dcb6e899c",
-    "figure_04_sinusoidal.png": "0190edaebc13afd463bbdc48e5ebc5dc1f4697f7bac436a5b8187df8ac8adc9f",
-    "figure_05_architecture.png": "8e8638e7460a709eeb65a8d8323e24a7de262b445c0a4e2e6cfcb36c4382261c",
-    "figure_08_generations.png": "186d750e8f78a13bdbfc1cebb61f1c18fde9cc627a2b24e0cd15b47d39f567c0",
-    "figure_09_ablations.csv": "a20051e7328bab2c9034664d4b16d9327c2cd71fa3f21de5673c8c80f4040f14",
-    "figure_09_ablations.png": "91569ef8f49a2996508a0d5e6bd122fe659a3e53c4e2c2d00c2a78a9581b9627",
-    "figure_10_api.png": "798853c74f9228e39288ceb0bca75d8c321c43d33ed731d411848eee8acfd101",
-    "mlm_vs_clm.png": "7cd98a8c81b79a73fc3e618db3cbbe96a7523220f7e02f8c826e2773efbb7ece"
-  },
-  "public_API_request": {
-    "prompt": "ROMEO:\n",
-    "max_new_tokens": 32,
-    "temperature": 0.7,
-    "seed": 42,
-    "greedy": true,
-    "model_id": "b01"
   }
 }
