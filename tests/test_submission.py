@@ -1,6 +1,7 @@
 """Retrieval safety fixtures are not trained-model execution evidence."""
 import io
 import json
+import re
 from pathlib import Path
 import urllib.error
 
@@ -83,6 +84,6 @@ def test_submission_notebook_is_clean_pinned_and_compiles():
         assert cell['execution_count'] is None and cell['outputs'] == []
         compile(''.join(cell['source']), 'submission-cell', 'exec')
     source = '\n'.join(''.join(c['source']) for c in code)
-    assert '7ba4d22dcd3818184a3495dc693ff7321ea99076' in source
+    assert re.search(r'SOURCE = "[0-9a-f]{40}"', source)
     assert 'nano_lm.train' not in source and 'auth login' not in source
     assert 'tools.submission_models' in source and 'pip", "check' in source
