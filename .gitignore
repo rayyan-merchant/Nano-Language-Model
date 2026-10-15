@@ -31,3 +31,11 @@ kaggle.json
 *.key
 .DS_Store
 Thumbs.db
+/model_artifacts/
+node_modules/
+.next/
+/frontend/playwright-report/
+/frontend/test-results/
+*.tsbuildinfo
+!/frontend/.env.example
+!/api/.env.example

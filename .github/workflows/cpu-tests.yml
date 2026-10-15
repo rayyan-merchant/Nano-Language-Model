@@ -14,6 +14,40 @@ jobs:
           python-version: '3.10'
       - run: python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
       - run: python -m pip install -r requirements.txt
+      - run: python -m pip install -r requirements-studio.txt
       - run: python -m pip install -e . --no-deps
       - run: python -m pytest -q
       - run: python -m scripts.maintenance.verify_repository --output outputs/cleanup/verification.json
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f api/Dockerfile -t nanolm-studio:test .
+      - run: |
+          docker run -d --name studio -p 127.0.0.1:8000:8000 nanolm-studio:test
+          for attempt in $(seq 1 30); do
+            if curl --fail http://127.0.0.1:8000/health; then break; fi
+            sleep 2
+          done
+          curl --fail http://127.0.0.1:8000/health
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8000/ready)" = 503
+      - if: always()
+        run: docker logs studio; docker rm -f studio

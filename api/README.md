@@ -1,6 +1,14 @@
-# API milestone
+# NanoLM Studio API
 
-FastAPI service is pending. It must load our own compatible checkpoint/tokenizer,
-validate prompt and generation limits, expose generation and health, record model
-identity and be deployed with actual inference evidence. No external LLM calls.
-Optional dependencies are pinned in pyproject.toml; no service is claimed here.
+Thin FastAPI serving wrappers around the frozen nano_lm package. Selected identities
+are anchored to accepted research manifests: E02 5000, B01 3000 and F01 1750.
+Serving loads verified float32 safetensors only; trusted offline pickle conversion
+is confined to tools/package_models.py. There are no checkpoint uploads or external
+LLM requests. Read [operation/deployment guide](../docs/deployment/README.md) and
+[actual verification](../docs/deployment/verification.md) before claiming acceptance.
+
+Start from repository root with `python -m uvicorn api.main:app --host 127.0.0.1
+--port 8000 --workers 1`. Set NANOLM_ARTIFACTS to an immutable private package root.
+Liveness is separate from all-model readiness. One inference worker, finite request
+limits and canonical per-call sampling generators prevent silent model substitution
+and overlapping model mode changes. Error clients receive no internal paths.
