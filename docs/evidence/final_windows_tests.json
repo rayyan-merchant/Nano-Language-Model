@@ -1,9 +1,0 @@
-{
-  "command": ".venv\\Scripts\\python -m pytest -q",
-  "passed": 32,
-  "skipped": 1,
-  "seconds": 227.06,
-  "exit_code": 0,
-  "scope": "Stable source after Windows UTF-8 CLI fix; CUDA skipped on local CPU",
-  "gpu_evidence": "Separate earlier T4 suite: 32 passed; additional CLI regression was not run on GPU"
-}

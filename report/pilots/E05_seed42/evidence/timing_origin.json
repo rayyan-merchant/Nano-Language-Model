@@ -1,8 +1,0 @@
-{
-  "start_utc": "2026-10-12T11:11:32.816Z",
-  "source": "Google Drive metadata created_time of the preflight.log opened immediately before preflight subprocess launch",
-  "start_file_id": "1TbQCU7ABHZTK3ZlzHesPUSF9oUrRSPLg",
-  "scope": "Observed workflow envelope from preflight launch through independent verification; includes research, interactive gaps, postprocessing and retrieval. Excludes earlier environment bootstrap and Drive mount. Timestamp-source latency/precision caveat applies.",
-  "initial_setup_GPU_timestamp_utc": "2026-10-12T11:07:05Z",
-  "initial_setup_timestamp_source": "Actual notebook nvidia-smi output, one-second precision"
-}
