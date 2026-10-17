@@ -22,7 +22,7 @@ See [commands](../docs/commands.md), [BPB](../docs/bpb.md),
 [storage](../docs/storage.md) and [recorded analysis](../docs/results_analysis.md).
 The usual wheel contains the Python package; reproducible research also requires
 the matching Git checkout/configs and separately verified dataset/checkpoints.
-Standalone selected-model distribution is a later milestone.
+Selected-model inference packages are available through `tools.submission_models`; see [model access](../docs/submission/model_access.md).
 
 ## Artifact and analysis tools
 
@@ -52,26 +52,25 @@ source versions, account access and existing retrieval evidence.
 | [pilot](pilot) | E01–E14 specific mathematical audits, original narrow platform wrappers, interrupted-run reconciliation, comparisons and report writers |
 | [final](final) | Separately approved F01 shape/10k/test policy, source guards, numerical references and exact recovery |
 | [balanced](balanced) | B01's frozen stopping controller, no-refit data reuse, segmented-equivalence checks and variable-stop recovery |
-| [kaggle_qualification](kaggle_qualification) | Historical account qualification; smoke-specific manifests/profile/state and genuine failure lineage |
+| [kaggle_qualification](https://github.com/rayyan-merchant/Nano-Language-Model/tree/8f88edee89dfceb6d0a8c84e385a886c4e058356/scripts/kaggle_qualification) | Historical account qualification; smoke-specific manifests/profile/state and genuine failure lineage |
 | [maintenance](maintenance) | Offline inventory and source/evidence/link/notebook/interface checks |
 
 Similar filenames do not imply interchangeable archive formats, model counts,
 test policies, authorization gates or accounts. Legacy execution guards require
 their recorded source commit/profile; do not remove those checks to run on current
-main. Completed/failed notebook captures and accepted outputs remain at their
-original paths. To reproduce a historical workflow, inspect its report and pinned
+main. Completed/failed notebook captures and intermediate outputs remain available at their
+original pinned historical paths; final submission evidence stays in the current tree. To reproduce a historical workflow, inspect its report and pinned
 commit first; any new execution needs separate approval.
 
 ## Maintenance commands
 
 ```text
 python -m scripts.maintenance.verify_repository --output outputs/cleanup/verification.json
-python -m scripts.maintenance.repository_audit --help
+python -m tools.submission_models --verify-only --output model_artifacts
 ```
 
-The audit captures a baseline from a matching reviewed checkout before edits;
-do not rerun it over the committed cleanup baseline to redefine preservation.
-The verifier makes CPU finite-forward checks only: zero optimization, no corpus
-download, no original-test likelihood and no external checkpoint loading. Existing
-ordinary tests retain their trusted fixtures. [Inventory](../docs/maintenance/repository_inventory.csv)
-and [changelog](../docs/maintenance/cleanup_changelog.md) describe every disposition.
+The verifier separates current-tree scientific and submission integrity from
+historical Git-object preservation. It also checks all sixteen configurations,
+CPU finite forwards, CLI interfaces, tokenizer identities, notebooks and current
+relative file links. It does not train, download weights or evaluate the test set.
+See the [preservation contract](../docs/maintenance/README.md).

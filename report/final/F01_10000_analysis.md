@@ -45,7 +45,7 @@ Primary predictive target: beat E02 best conditional BPB 2.02659521. **Observati
 
 The eight blocks are independently allocated, pre-LayerNorm, with 240→960→240 GELU MLPs. Six heads use 40 coordinates; explicit QKᵀ scores divide by√40, then causal mask/softmax/value aggregation. RoPE rotates adjacent projected Q/K pairs at local positions 0–127 using m·10000^(−2 i/40); V remains unrotated. No additive sinusoidal or learned positional table is active. Embedding and LM projection are untied. The manual-attention/rotary ideas are related to [Attention Is All You Need](https://arxiv.org/abs/1706.03762) and [RoFormer](https://arxiv.org/abs/2104.09864); our basic-layer decoder and its exact implementation are in the frozen project package, without pretrained weights or ready-made Transformer blocks.
 
-![Actual architecture](presentation_support/F01_architecture.png)
+![Actual architecture](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/final/presentation_support/F01_architecture.png)
 
 ## Source, environment and verification
 
@@ -129,8 +129,8 @@ F01 step 5000 BPB 2.35443990, step 10000 BPB 3.05346210; absolute change +0.6990
 
 Equal-step comparisons still vary multiple architectural factors, parameters, original-byte context/exposure, initialization and compute. Final F01 comparisons additionally double the update budget. One seed supplies no variance or significance estimate. Validation selection across architectures/checkpoints is exploratory; final reserved test assessment follows selection.
 
-![Actual matching validation points](comparison_figures/validation_BPB_matched_updates.png)
-![Capacity and full training cost](comparison_figures/capacity_and_training_cost.png)
+![Actual matching validation points](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/final/comparison_figures/validation_BPB_matched_updates.png)
+![Capacity and full training cost](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/final/comparison_figures/capacity_and_training_cost.png)
 
 ## Resources and gradient observations
 
@@ -140,7 +140,7 @@ Checkpoint IO 15.380 s; immutable exports 80.292 s; journal/fsync 36.637 s. Wrap
 
 Global preclip gradient median 1.359267, p 95 1.666919, maximum 1.783468; 6988/10000 updates exceeded 1.0. Connectivity probes cover every block. Aggregate norms do not establish longitudinal vanishing/exploding layer gradients.
 
-![Resource measurements](comparison_figures/resource_cost.png)
+![Resource measurements](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/final/comparison_figures/resource_cost.png)
 
 ## Complete genuine generation evidence
 
@@ -527,7 +527,7 @@ S
 
 All 600 matched outputs for F01/E01/E02/E03/E09/E14 are compared in generation_diagnostics.json. Word spans, training-lexicon novelty, speaker labels, distinct ngrams and repeated 24/48 character phrases are string statistics. Novel words include legitimate names/unseen vocabulary; they are not an automatic grammar score. Prompt-prefix preservation is not semantic prompt adherence. Replacement counts retain native decoding failures without repaired output. Fresh compatibleCUDA independently reproduced every 100 fixed text outputs exactly and retained their generated token IDs; strict byte reconstruction found 5 invalid-UTF 8 outputs. Original and reproduced decoded texts remain unchanged. Unequal BPE/character lengths affect repetition measures. Manual observations and demonstration-temperature recommendation are in interpretation.md; no unvalidated repetition penalty/top-k/top-p/decoding change was introduced.
 
-![All fixed greedy prompts](comparison_figures/fixed_greedy_repetition.png)
+![All fixed greedy prompts](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/final/comparison_figures/fixed_greedy_repetition.png)
 
 ## Frozen final test assessment
 

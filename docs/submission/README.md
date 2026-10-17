@@ -8,10 +8,10 @@ PR24 is merged. The [complete handout matrix](assignment_compliance_matrix.md), 
 
 This phase verifies the selected E02 step5000, B01 step3000 and F01 step1750
 inference packages. It does not retrain, select checkpoints or evaluate test data.
-The final academic report, comprehensive assignment-evidence audit and recorded
-presentation remain separate work.
+The comprehensive assignment-evidence audit is complete. The final article, recording
+and presentation remain separate human deliveries.
 
-- [Baseline](reproducibility_baseline.md)
+- [Baseline](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/docs/submission/reproducibility_baseline.md)
 - [Pinned models and provenance](models.json)
 - [Public model retrieval](model_access.md)
 - [Actual reproducibility report](reproducibility_report.md)
@@ -46,8 +46,8 @@ No editable/global install, local D-drive paths, HF credential or model cache is
 Use fresh output directories for subsequent invocations; reuse existing model
 packages only with `--verify-only`, never by silently overwriting them.
 
-The checkout above pins the actual clean acceptance source. The submission PR
-remains reviewable and unmerged; review status is distinct from technical execution.
+The checkout above pins the actual clean acceptance source. That reproducibility PR was merged; its pinned execution remains historical evidence.
+For the simplified public tree use the current reviewed checkout and the same commands.
 The notebook pins wrapper source1f402d9 within that history; frozen scientific
 files are byte-identical to reviewed mainaa4bb5f. No moving branch is used by the demo.
 

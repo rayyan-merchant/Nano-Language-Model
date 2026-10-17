@@ -81,7 +81,7 @@ Actual 4,500 authoritative and known physical updates, 18 full validations, stop
 Best update 3000: loss 3.13207979, BPB 1.98493095, perplexity 22.921602. Final update 4500: loss 3.22600917, BPB 2.04445796, perplexity 25.178971. Final training loss 2.39718363; trailing 100 mean 2.42289018. First training step 1 and validation 250 are recorded; no fake step-zero measurement.
 
 ![Actual loss](figures/combined_loss.png)
-![Matched BPB](comparison_figures/validation_BPB_comparison.png)
+![Matched BPB](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/balanced/comparison_figures/validation_BPB_comparison.png)
 
 ## Exact segmented execution and persistence preflight
 
@@ -97,7 +97,7 @@ Actual predicted targets 18,432,000; original target-byte exposure 44,992,723; u
 
 Preclip norm median 0.725126, p 950.954938, max 1.043929; 15/4500 exceeded 1.0. Every 250-update interval is in gradient_intervals.json; no clipping-caused-overfitting or longitudinal per-layer gradient claim is inferred.
 
-![Observed gradient norms](figures/gradient_norm.png)
+![Observed gradient norms](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/balanced/figures/gradient_norm.png)
 
 ## E02/F01/B01 measured comparison
 
@@ -109,13 +109,13 @@ Preclip norm median 0.725126, p 950.954938, max 1.043929; 15/4500 exceeded 1.0. 
 
 B01 selected-best difference versus E02=-0.04166426 BPB (-2.056%); versus F01-best=+0.00116279 BPB. Size is 49.3467% lower than F01 and 40.9436% above E02. Comparisons vary depth/position/capacity/initialization, stopping/budgets and selection opportunities. The relevant F01 reference is its early selected 1,750, not its worse final 10,000. Equal BPE/context aligns token/byte coverage but does not imply equal compute. No statistical significance or cross-seed SD.
 
-![Capacity and memory](comparison_figures/parameters_quality_memory.png)
+![Capacity and memory](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/balanced/comparison_figures/parameters_quality_memory.png)
 
 ## Genuine fixed generation and limitations
 
 All 100 best/final slots are preserved in generation.json/md: five prompts, greedy, temperatures 0.7/1/1.2, sampling seeds 42/123/456 and 256 new BPE tokens. No repair, filtering, external-model rewriting, top-k/top-p or repetition penalty. Duplicate best/final weights=False; identical policy outputs are not independent samples. All 300 matched E02/F01/B01 strings/descriptors remain unedited in generation_comparison.json. All 100 B01 train-only longest literal substrings exclude prompt and record source offsets. Repetition/word diversity/speaker labels do not measure grammar or understanding; manual observations follow in B01_model_selection.md. Raw token/byte diagnostics found 5 invalid-UTF-8 outputs, retained without correction. The recovered fixed grid reproduces exactly.
 
-![Fixed greedy repetition](comparison_figures/fixed_greedy_repetition.png)
+![Fixed greedy repetition](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/balanced/comparison_figures/fixed_greedy_repetition.png)
 
 ## Durable publication and independent recovery
 

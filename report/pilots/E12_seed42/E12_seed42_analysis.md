@@ -167,25 +167,25 @@ Observed best BPB difference E12−E01: +0.04222093. These are matching recorded
 
 ![Measured combined_loss](figures/combined_loss.png)
 
-![Measured context_bpb](figures/context_bpb.png)
+![Measured context_bpb](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E12_seed42/figures/context_bpb.png)
 
-![Measured context_loss](figures/context_loss.png)
+![Measured context_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E12_seed42/figures/context_loss.png)
 
-![Measured generalization_gap](figures/generalization_gap.png)
+![Measured generalization_gap](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E12_seed42/figures/generalization_gap.png)
 
-![Measured gradient_norm](figures/gradient_norm.png)
+![Measured gradient_norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E12_seed42/figures/gradient_norm.png)
 
-![Measured learning_rate](figures/learning_rate.png)
+![Measured learning_rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E12_seed42/figures/learning_rate.png)
 
-![Measured throughput](figures/throughput.png)
+![Measured throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E12_seed42/figures/throughput.png)
 
-![Measured training_loss](figures/training_loss.png)
+![Measured training_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E12_seed42/figures/training_loss.png)
 
-![Measured training_time](figures/training_time.png)
+![Measured training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E12_seed42/figures/training_time.png)
 
 ![Measured validation_bpb](figures/validation_bpb.png)
 
-![Measured validation_loss](figures/validation_loss.png)
+![Measured validation_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E12_seed42/figures/validation_loss.png)
 
 ## Genuine generation and qualitative assessment
 

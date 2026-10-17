@@ -165,17 +165,17 @@ with single-seed and separate-session caveats. Capacity and MLP architecture cha
 together. SD is undefined for one seed, not zero; no significance or superiority
 claim follows merely from a smaller/faster model.
 
-![Measured E01/E10 comparison: comparison_bpb](comparison/comparison_bpb.png)
+![Measured E01/E10 comparison: comparison_bpb](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/comparison/comparison_bpb.png)
 
-![Measured E01/E10 comparison: comparison_bpb_training_time](comparison/comparison_bpb_training_time.png)
+![Measured E01/E10 comparison: comparison_bpb_training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/comparison/comparison_bpb_training_time.png)
 
-![Measured E01/E10 comparison: comparison_loss](comparison/comparison_loss.png)
+![Measured E01/E10 comparison: comparison_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/comparison/comparison_loss.png)
 
-![Measured E01/E10 comparison: comparison_resources](comparison/comparison_resources.png)
+![Measured E01/E10 comparison: comparison_resources](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/comparison/comparison_resources.png)
 
-![Measured E01/E10 comparison: comparison_throughput](comparison/comparison_throughput.png)
+![Measured E01/E10 comparison: comparison_throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/comparison/comparison_throughput.png)
 
-![Measured E01/E10 comparison: comparison_training](comparison/comparison_training.png)
+![Measured E01/E10 comparison: comparison_training](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/comparison/comparison_training.png)
 
 ## Actual optimizer and gradient descriptors
 
@@ -207,21 +207,21 @@ Training-only 5.4269 updates/s and 22228.72 targets/s. Inner scopes overlap the 
 
 ![Measured E10: combined_loss](figures/combined_loss.png)
 
-![Measured E10: generalization_gap](figures/generalization_gap.png)
+![Measured E10: generalization_gap](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/figures/generalization_gap.png)
 
-![Measured E10: gradient_norm](figures/gradient_norm.png)
+![Measured E10: gradient_norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/figures/gradient_norm.png)
 
-![Measured E10: learning_rate](figures/learning_rate.png)
+![Measured E10: learning_rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/figures/learning_rate.png)
 
-![Measured E10: throughput](figures/throughput.png)
+![Measured E10: throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/figures/throughput.png)
 
-![Measured E10: training_loss](figures/training_loss.png)
+![Measured E10: training_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/figures/training_loss.png)
 
-![Measured E10: training_time](figures/training_time.png)
+![Measured E10: training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/figures/training_time.png)
 
 ![Measured E10: validation_bpb](figures/validation_bpb.png)
 
-![Measured E10: validation_loss](figures/validation_loss.png)
+![Measured E10: validation_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E10_seed42/figures/validation_loss.png)
 
 ## Convergence descriptors
 

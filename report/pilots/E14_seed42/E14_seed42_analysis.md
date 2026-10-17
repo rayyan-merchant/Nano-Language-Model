@@ -501,40 +501,40 @@ artifact_retrieval.md for immutable saved versions/checkpoint locations.
 
 ![combined_loss](figures/combined_loss.png)
 
-![generalization_gap](figures/generalization_gap.png)
+![generalization_gap](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/figures/generalization_gap.png)
 
-![gradient_norm](figures/gradient_norm.png)
+![gradient_norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/figures/gradient_norm.png)
 
-![learning_rate](figures/learning_rate.png)
+![learning_rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/figures/learning_rate.png)
 
-![throughput](figures/throughput.png)
+![throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/figures/throughput.png)
 
-![training_loss](figures/training_loss.png)
+![training_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/figures/training_loss.png)
 
-![training_time](figures/training_time.png)
+![training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/figures/training_time.png)
 
 ![validation_bpb](figures/validation_bpb.png)
 
-![validation_loss](figures/validation_loss.png)
+![validation_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/figures/validation_loss.png)
 
-![comparison_bpb](comparison/comparison_bpb.png)
+![comparison_bpb](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/comparison/comparison_bpb.png)
 
-![comparison_bpb_training_time](comparison/comparison_bpb_training_time.png)
+![comparison_bpb_training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/comparison/comparison_bpb_training_time.png)
 
-![comparison_loss](comparison/comparison_loss.png)
+![comparison_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/comparison/comparison_loss.png)
 
-![comparison_resources](comparison/comparison_resources.png)
+![comparison_resources](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/comparison/comparison_resources.png)
 
-![comparison_throughput](comparison/comparison_throughput.png)
+![comparison_throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/comparison/comparison_throughput.png)
 
-![comparison_training](comparison/comparison_training.png)
+![comparison_training](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/comparison/comparison_training.png)
 
-![width_bpb_parameters](width_comparison/width_bpb_parameters.png)
+![width_bpb_parameters](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/width_comparison/width_bpb_parameters.png)
 
-![width_bpb_training_time](width_comparison/width_bpb_training_time.png)
+![width_bpb_training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/width_comparison/width_bpb_training_time.png)
 
-![width_resources](width_comparison/width_resources.png)
+![width_resources](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/width_comparison/width_resources.png)
 
-![width_validation_bpb](width_comparison/width_validation_bpb.png)
+![width_validation_bpb](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/width_comparison/width_validation_bpb.png)
 
-![width_validation_loss](width_comparison/width_validation_loss.png)
+![width_validation_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E14_seed42/width_comparison/width_validation_loss.png)

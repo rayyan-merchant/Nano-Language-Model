@@ -157,7 +157,7 @@ Development steps were separate and excluded from the reseeded research history.
 After reporting changes, the final Windows full suite passed44 tests with1
 CUDA-only skip in174.53s. Final local checks, including figure/sample counts,
 relative report links and preservation of prior science/results, are recorded
-in [evidence/final_checks.json](evidence/final_checks.json).
+in [evidence/final_checks.json](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E08_seed42/evidence/final_checks.json).
 
 The independent archive inspector verified exact archive byte size/SHA256, ZIP
 CRC, safe paths, exact59-file set and every manifest file hash. It loaded best

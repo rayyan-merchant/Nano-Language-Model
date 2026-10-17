@@ -133,23 +133,23 @@ Lines connect observed validation points, not invented intermediate evaluations.
 Training smoothing is the declared100-step trailing mean. PDFs remain in the
 verified full artifact; the PNG copies below are provided for the research report.
 
-![training loss](figures/training_loss.png)
+![training loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E01_seed42/figures/training_loss.png)
 
-![validation loss](figures/validation_loss.png)
+![validation loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E01_seed42/figures/validation_loss.png)
 
 ![combined loss](figures/combined_loss.png)
 
 ![validation bpb](figures/validation_bpb.png)
 
-![generalization gap](figures/generalization_gap.png)
+![generalization gap](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E01_seed42/figures/generalization_gap.png)
 
-![throughput](figures/throughput.png)
+![throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E01_seed42/figures/throughput.png)
 
-![training time](figures/training_time.png)
+![training time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E01_seed42/figures/training_time.png)
 
-![gradient norm](figures/gradient_norm.png)
+![gradient norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E01_seed42/figures/gradient_norm.png)
 
-![learning rate](figures/learning_rate.png)
+![learning rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E01_seed42/figures/learning_rate.png)
 
 ## Convergence observations
 

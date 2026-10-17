@@ -1,3 +1,7 @@
+> Historical execution workflow. Commands and notebook paths refer to the
+> pinned trained source in the corresponding [research report](../report/README.md),
+> not necessarily the current submission tree. See [historical retrieval](maintenance/README.md).
+
 > Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
 
 # E12 seed42 execution and delivery
@@ -56,7 +60,7 @@ remain off. Working-directory files alone were not accepted as persistence.
 Research first verifies durable smoke continuation, then starts only E12 seed42
 and stops at 5,000. Recovery selects the recorded complete E12 lineage and runs
 no training. Historical executed captures must not be blindly rerun; see
-[notebook provenance](../notebooks/E12_notebook_provenance.md).
+[notebook provenance](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/notebooks/E12_notebook_provenance.md).
 
 `verify_e12_archive.py` validates published part/file hashes, safe paths, checkpoint
 counters/history, all snapshots, complete generation grid and CPU inference.

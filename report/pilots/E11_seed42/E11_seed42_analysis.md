@@ -189,35 +189,35 @@ excludes validation/IO. Separately measured overheads:
 
 Lower loss/BPB is better. Speed and memory are observed in separate T4 sessions; no controlled repeated timing or statistical significance is claimed. Same parameter count does not imply equal computation.
 
-![Observed comparison: comparison_bpb](comparison/comparison_bpb.png)
+![Observed comparison: comparison_bpb](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/comparison/comparison_bpb.png)
 
-![Observed comparison: comparison_bpb_training_time](comparison/comparison_bpb_training_time.png)
+![Observed comparison: comparison_bpb_training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/comparison/comparison_bpb_training_time.png)
 
-![Observed comparison: comparison_loss](comparison/comparison_loss.png)
+![Observed comparison: comparison_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/comparison/comparison_loss.png)
 
-![Observed comparison: comparison_resources](comparison/comparison_resources.png)
+![Observed comparison: comparison_resources](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/comparison/comparison_resources.png)
 
-![Observed comparison: comparison_throughput](comparison/comparison_throughput.png)
+![Observed comparison: comparison_throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/comparison/comparison_throughput.png)
 
-![Observed comparison: comparison_training](comparison/comparison_training.png)
+![Observed comparison: comparison_training](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/comparison/comparison_training.png)
 
 ![Measured E11: combined_loss](figures/combined_loss.png)
 
-![Measured E11: generalization_gap](figures/generalization_gap.png)
+![Measured E11: generalization_gap](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/figures/generalization_gap.png)
 
-![Measured E11: gradient_norm](figures/gradient_norm.png)
+![Measured E11: gradient_norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/figures/gradient_norm.png)
 
-![Measured E11: learning_rate](figures/learning_rate.png)
+![Measured E11: learning_rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/figures/learning_rate.png)
 
-![Measured E11: throughput](figures/throughput.png)
+![Measured E11: throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/figures/throughput.png)
 
-![Measured E11: training_loss](figures/training_loss.png)
+![Measured E11: training_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/figures/training_loss.png)
 
-![Measured E11: training_time](figures/training_time.png)
+![Measured E11: training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/figures/training_time.png)
 
 ![Measured E11: validation_bpb](figures/validation_bpb.png)
 
-![Measured E11: validation_loss](figures/validation_loss.png)
+![Measured E11: validation_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/figures/validation_loss.png)
 
 ## Convergence and gradient observations
 
@@ -352,14 +352,14 @@ Interpretation and budget recommendation must follow actual late validation tren
 
 ## Executed tests and operational evidence
 
-CPU initial58passed1skip92.80s; final59passed1CUDA-only skip105.72s; focused13passed3.07s. Actual Kaggle suite60passed33.76s. CPU/CUDA context audits passed14checks each. [Actual commands](evidence/commands.json), [test/CI receipts](evidence/execution_review.json), [interpretation](interpretation.md), [operational failures and remaining gate](operations.md). No fresh GPU success is claimed until a genuine recovery receipt is available.
+CPU initial58passed1skip92.80s; final59passed1CUDA-only skip105.72s; focused13passed3.07s. Actual Kaggle suite60passed33.76s. CPU/CUDA context audits passed14checks each. [Actual commands](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/commands.json), [test/CI receipts](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/execution_review.json), [interpretation](interpretation.md), [operational failures and remaining gate](operations.md). No fresh GPU success is claimed until a genuine recovery receipt is available.
 
 ### Resolved platform delay
 
-The zero-update fresh CUDA recovery submission is over two hours old, including queue time. User-visible status confirms stillqueued/running; API statusRUNNING, empty failure_message, log endpointHTTP500, no recovery receipt. This is not a measured GPU execution duration or proof that restoration failed. This was the original delivery status; the same recovery job has now completed and passed full-state verification. Independent publication/archive/CPUinference are already passed. No duplicate recovery or training was launched. [All21 independently downloaded snapshotmanifest/index checks](evidence/snapshot_manifest_verification.json) passed; physical snapshotexports were verified natively before publication.
+The zero-update fresh CUDA recovery submission is over two hours old, including queue time. User-visible status confirms stillqueued/running; API statusRUNNING, empty failure_message, log endpointHTTP500, no recovery receipt. This is not a measured GPU execution duration or proof that restoration failed. This was the original delivery status; the same recovery job has now completed and passed full-state verification. Independent publication/archive/CPUinference are already passed. No duplicate recovery or training was launched. [All21 independently downloaded snapshotmanifest/index checks](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/snapshot_manifest_verification.json) passed; physical snapshotexports were verified natively before publication.
 
-Final delivery rerun:59passed/1CUDA-only skip110.70s. SourceCI38355927555 and reportingCI38360929613 bothsuccess. [Available acceptance checks](evidence/final_checks.json) passed with freshCUDArestoration now verified. Driver580.178.04 advertisesCUDA13.0 maximum compatibility; the approved PyTorch build/runtime remainsCUDA12.4. NativeKaggle packages were untouched.
+Final delivery rerun:59passed/1CUDA-only skip110.70s. SourceCI38355927555 and reportingCI38360929613 bothsuccess. [Available acceptance checks](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/final_checks.json) passed with freshCUDArestoration now verified. Driver580.178.04 advertisesCUDA13.0 maximum compatibility; the approved PyTorch build/runtime remainsCUDA12.4. NativeKaggle packages were untouched.
 
 ## Final acceptance resolution
 
-The existing recovery notebook version1 is nowCOMPLETE. Its independently retrieved genuine receipt verifies all six state groups exactly,5000→5000optimizer updates and zeroextra. Source/environment/core hashes match, and best/final CUDA generations match independently recovered CPU outputs. [Current recovery receipt](evidence/cuda_recovery.json), [historical pending status](evidence/cuda_recovery_pending_history.json). AllE11acceptance criteria now pass. No additional research run or extension was launched. Study-wide authorization remains separately gated.
+The existing recovery notebook version1 is nowCOMPLETE. Its independently retrieved genuine receipt verifies all six state groups exactly,5000→5000optimizer updates and zeroextra. Source/environment/core hashes match, and best/final CUDA generations match independently recovered CPU outputs. [Current recovery receipt](evidence/cuda_recovery.json), [historical pending status](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/cuda_recovery_pending_history.json). AllE11acceptance criteria now pass. No additional research run or extension was launched. Study-wide authorization remains separately gated.

@@ -20,11 +20,11 @@
 
 The 14 configurations are different architectures, not 14 replications. F01 adds combined factors and 10,000 updates; others use 5,000. Mean/SD across seeds cannot be estimated. All original configs/reports remain unchanged. See master_comparison.csv/JSON for complete shapes, source-byte exposure and resource fields, F01_architecture_decision.md for the frozen rationale, and F01_10000_analysis.md for measured comparisons/negative outcomes. E02 BPE and F01 are ranked using same-byte BPB; token perplexities are incomparable across tokenizers. Context/depth/width affect information/capacity/compute together. E07 replay accounting remains in its original report; retained trajectory time is not substituted for total known physical work. E12 records no observed replay. No test-set model selection occurred.
 
-![Actual validation curves](comparison_figures/validation_BPB_matched_updates.png)
+![Actual validation curves](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/final/comparison_figures/validation_BPB_matched_updates.png)
 
 ## Actual efficiency and baseline-relative prediction
 
-![All observed best/final BPB values](comparison_figures/all15_best_final_BPB.png)
+![All observed best/final BPB values](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/final/comparison_figures/all15_best_final_BPB.png)
 
 | Experiment | Best BPB change vs E01 | Parameters vs E01 | Retained training seconds | Updates/s | Peak allocated MiB | Full-validation seconds |
 |---|---:|---:|---:|---:|---:|---:|

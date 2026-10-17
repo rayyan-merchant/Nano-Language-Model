@@ -49,8 +49,8 @@ history lengths independently match their checkpoint step numbers.
 
 All128 position vectors changed from the unmodified canonical seed42 initialization.
 Final/best mean vector norm is13.05181885; mean L2 change is1.61847425.
-[Measured row profiles](figures/position_norms.png) and
-[machine-readable table diagnostics](evidence/learned_table.json) are descriptive.
+[Measured row profiles](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/figures/position_norms.png) and
+[machine-readable table diagnostics](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/evidence/learned_table.json) are descriptive.
 They do not demonstrate learned syntax, useful position specialization or the
 cause of the loss difference. Position indices describe each cropped local context,
 not absolute document offsets. Full sliding scoring mostly predicts at the last
