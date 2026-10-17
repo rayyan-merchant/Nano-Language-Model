@@ -114,3 +114,30 @@ def test_corrupt_preservation_ledger_cannot_shrink_protection(tmp_path):
     path.write_text('path,action\nsrc/nano_lm/model.py,ARCHIVE\n')
     with pytest.raises(AssertionError,match='Preservation ledger changed'):
         ledger(tmp_path)
+
+
+def test_delivery_document_updates_remain_exact_and_tampering_fails(tmp_path):
+    import json
+    from scripts.maintenance.verify_repository import documentation_updates
+    manifest=ROOT/'docs/maintenance/document_updates.json'
+    target=tmp_path/'docs/maintenance/document_updates.json'
+    target.parent.mkdir(parents=True)
+    target.write_bytes(manifest.read_bytes())
+    files=json.loads(manifest.read_text(encoding='utf-8'))['files']
+    for name in files:
+        path=tmp_path/name
+        path.parent.mkdir(parents=True,exist_ok=True)
+        path.write_bytes((ROOT/name).read_bytes())
+    assert documentation_updates(tmp_path)==files
+    (tmp_path/'docs/submission/assignment_readiness.md').write_text('Unreviewed status')
+    with pytest.raises(AssertionError,match='assignment_readiness'):
+        documentation_updates(tmp_path)
+
+
+def test_article_publication_does_not_certify_recording_or_course_submission():
+    import json
+    receipt=json.loads((ROOT/'docs/submission/verification/delivery_status_20261017.json').read_text(encoding='utf-8'))
+    assert receipt['article']['status']=='PUBLICATION_VERIFIED'
+    assert receipt['recording']['url'] is None and not receipt['recording']['content_verified']
+    assert receipt['class_presentation']['status']=='OWNER_REPORTED_DELIVERED_EVIDENCE_PENDING'
+    assert receipt['course_submission']=='NOT_INDEPENDENTLY_CONFIRMED'

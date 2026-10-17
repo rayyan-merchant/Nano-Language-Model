@@ -1,12 +1,22 @@
 # Current assignment compliance and historical initialization audit
 
-Current 2026-10-15: the [complete original-handout matrix](submission/assignment_compliance_matrix.md) and [evidence/readiness package](submission/assignment_readiness.md) supersede pending audit statements below. Historical records are retained; the final Medium article and human presentation deliveries remain pending.
+Current delivery review: **2026-10-17**. The [complete handout matrix](submission/assignment_compliance_matrix.md)
+and [readiness page](submission/assignment_readiness.md) are authoritative for
+current delivery status. The [published Medium article](https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca) is public and was inspected
+in the browser. The owner reports that the recording and class presentation are
+delivered; their evidence links have not yet been supplied.
 
-Research pipeline, genuine Tiny Shakespeare training/validation, conditional BPB, all14 single-seed ablations, F01/B01 inference/generations, measured resource plots and independent recovery are complete. Existing F01 architecture/RoPE material is [indexed here](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/final/presentation_support/README.md).
+Accepted research, selected-model inference, the deployed application, clean
+Colab demonstrations and the ten-item handout evidence audit are complete within
+their recorded scopes. [Corrected hand calculations](submission/evidence/hand_calculation_audit.md)
+and [the evidence index](submission/evidence/README.md) document actual verification.
+Course-submission receipts, author/instructor review and HF hosting acceptance
+remain distinct from technical completion. See the
+[delivery receipt](submission/verification/delivery_status_20261017.json).
 
-Selected-model safetensors packaging, genuine FastAPI/frontend and public Vercel deployment are implemented. [Submission reproducibility and Colab](submission/README.md) are this phase and have separate execution gates. The final academic/Medium report, recorded presentation and comprehensive handout audit remain pending. The relocated [handwritten assignment PDF](handwritten-assignment.pdf) is preserved byte-for-byte; this cleanup does not certify its calculation correctness. Handout-specific manual three-token derivation/heatmaps, MLM-versus-CLM presentation and trained-attention evidence must be checked for the final submission, rather than inferred from model unit tests.
-
-The original bootstrap audit below is preserved as historical context; its pending training/ablation statements have been superseded by accepted research. No final-submission-complete claim is made.
+The original initialization audit below is historical. Its pending implementation,
+audit and article statements describe earlier phases and are superseded by the
+current pages above; they are not new requirements or present delivery status.
 
 ---
 

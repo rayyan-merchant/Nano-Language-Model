@@ -5,6 +5,16 @@ Audit baseline: reviewed main `ee2b941311cfb451a73dbc65207ad3dfabb5977f`,
 was merged at 2026-10-15 14:10:56 UTC; this work is based on that merge, not an
 unmerged dependency. No research or selected-checkpoint definitions were changed.
 
+## Current delivery update — 2026-10-17
+
+The [published Medium article](https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca) is publicly readable under Rayyan Merchant's name.
+Publication and section coverage were checked in the browser; the original October
+15 technical receipts were not rewritten. [Delivery verification](verification/delivery_status_20261017.json)
+records the check and its limits. The owner reports both recording and presentation
+delivered; evidence links are pending. PARTIAL for those items means delivery was
+reported but has not been independently checked, not that it must be produced again.
+Publication is distinct from course submission and instructor acceptance.
+
 ## Authority and method
 
 All **11 pages** of the supplied `A1_AIE.pdf` were read, including Sections 1–20.
@@ -25,6 +35,8 @@ some evidence exists but a literal requirement or quality dimension is unresolve
 external decision prevents closure. **PENDING HUMAN DELIVERY** means an owner or
 instructor action, oral explanation, publication or presentation remains.
 “None” in corrective action means no technical correction identified within scope.
+
+Additional delivery evidence: **M** = [published Medium article](https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca); **D** = [October 17 delivery receipt](verification/delivery_status_20261017.json).
 
 Abbreviations below link to real inspected evidence:
 
@@ -62,11 +74,11 @@ Abbreviations below link to real inspected evidence:
 | 4b / 3 | Google Colab script | Executable independent demo | [Guide](colab_demo.md), N, R | 13 final executed cells, no errors; earlier transfer/receipts checked | PASS | Instructor uses own Google account |
 | 4c / 3 | Trained checkpoint or command loading from GitHub/shareable Drive | Accessible trained artifacts | [Model access](model_access.md), [manifest](models.json), public HF | Anonymous immutable HF metadata and six-file receipts match hashes | PARTIAL | Ask instructor to accept HF instead of named GitHub/Drive; do not publish a mirror without approval |
 | 4d / 3 | README: setup, dataset, training, inference, expected output, limitations | Commands and usable documentation | [README](../../README.md), R, [submission guide](README.md) | Inspected commands against actual CLI and installed receipts | PASS | No new training authorized merely by documenting commands |
-| 4e / 3 | Medium technical report, recommended 8–12 pages | Submitted final integrated article | Q/B/P are source material, not that delivery | No final submitted Medium article receipt found | PENDING HUMAN DELIVERY | Write/review/publish separately; use Section 15 mapping below |
-| 4f / 3 | At least six evidence items; Section 12 lists ten | Complete evidence index | F1–F10 | All ten content checks and visual review | PASS | Include all ten in future report |
+| 4e / 3 | Medium technical report, recommended 8–12 pages | Submitted final integrated article | M/D; public Medium article by Rayyan Merchant | Browser verified public article and ten main sections | PASS | Retain course-submission receipt; instructor/author review is not inferred from publication |
+| 4f / 3 | At least six evidence items; Section 12 lists ten | Complete evidence index | F1–F10 | All ten content checks and visual review | PASS | Confirm all required evidence is represented in the published article and linked submission package |
 | 4g / 3 | Ablation table and discussion | At least three controlled comparisons | F9/P | Depth, heads, context and all-14 table checked against summaries | PASS | Preserve confound and single-seed caveats |
-| 4h / 3 | 5–10 minute recorded demonstration | Actual recording | N is execution evidence, not a recording | No final screen-recorded submission found | PENDING HUMAN DELIVERY | Record 5–7 minutes, satisfying Section 17's tighter duration |
-| 4i / 3 | Class presentations | Delivered presentation and individual explanation | No delivery receipt | Cannot infer presentation from notebooks | PENDING HUMAN DELIVERY | Prepare and deliver separately |
+| 4h / 3 | 5–10 minute recorded demonstration | Actual recording | D; owner reports recording delivered | No recording URL supplied; duration/content/access unverified | PARTIAL | Provide existing recording link; verify 5–7 minutes and required walkthrough items |
+| 4i / 3 | Class presentations | Delivered presentation and individual explanation | D; owner reports class presentation delivered | No independent delivery acknowledgement supplied | PARTIAL | Attach presentation evidence; do not infer individual oral mastery |
 | 4j / 3 | Clone/install/tests/generate without undocumented setup | Clean-environment acceptance | R, L, Windows install/restart receipts | Independent receipt inspection, exact selected package identities | PASS | Use documented short Windows temp path |
 
 ## Sections 5–8: milestones, handwritten work, implementation and constraints
@@ -78,7 +90,7 @@ Abbreviations below link to real inspected evidence:
 | 5.M3 / 4 | Full decoder and MLM contrast | Integrated block and comparison | F5/C | Pre-LN source, complete objective demonstration | PASS | None |
 | 5.M4 / 4 | Fixed contexts, shifted targets, CE, tiny overfit, loss/LR/step/sample logs | Passing small test and training logs | L, core `test_tiny_overfit`, P/Q/B, G | Existing 60-update fixture must end below .15 initial loss; executed log includes pass | PASS | Synthetic test is not Shakespeare research evidence |
 | 5.M5 / 4 | Real corpus run, parameters/config/hardware/time/final losses/five prompts | Actual research records | P/Q/B, summaries, F8/G | Real summaries and deterministic five-prompt selection inspected | PASS | Retained time differs from physical replay cost |
-| 5.M6 / 5 | Ablations, CLI/API hosting, report | Measured comparisons, deployed demo and final report | P/F9/F10, R | Technical portions demonstrated; final article absent | PARTIAL | Deliver final Medium report and presentation separately |
+| 5.M6 / 5 | Ablations, CLI/API hosting, report | Measured comparisons, deployed demo and final report | P/F9/F10, R, M/D | Ablations and API evidence retained; final article now public | PASS | Recording/presentation evidence and course acceptance remain separately tracked |
 | 6a / 5 | Three tokens, d_k=d_v=2, explicit Q/K/V | Handwritten matrices | Original PDF p1, F1 companion | All four original pages visually inspected | PASS | None |
 | 6b / 5 | QK transpose and sqrt(d_k) scaling | Intermediate arithmetic | Original p1, corrected companion | Exact integer products and float64 scalar reference | PASS | None |
 | 6c / 5 | Row softmax and multiplication by V | Normalized weights and output | Original p2–3, companion | Rounding/truncation discrepancies documented, corrected full-precision values checked | PASS | Submit original with companion; do not conceal correction |
@@ -132,39 +144,41 @@ Abbreviations below link to real inspected evidence:
 | 14.5 / 9 | Experiments and analysis (15%) | Controlled meaningful results | P/F9 | All-14 metrics and limitations verified | PASS | No independent-seed variance estimated |
 | 14.6 / 9 | Generation quality and evaluation (10%) | Coherent samples plus quantitative evaluation | G/F8, Q/B diagnostics | Genuine outputs include loops, malformed spelling and incomplete coherence | PARTIAL | Discuss limits; cannot guarantee the rubric's coherence standard or full credit |
 | 14.7 / 9 | Software engineering (10%) | Reproducible tested clean package | R/L/N, current CI/integrity | Existing fresh execution and current focused checks | PASS | Review new PR; technical checks do not guarantee marks |
-| 14.8 / 9 | Report and demo (5%) | Clear final report, figures and demonstration | Figures ready; article/recording absent | No human delivery receipt | PENDING HUMAN DELIVERY | Produce/review/submit separately |
-| 15.1 / 9 | Problem statement | Final report section | Q/B/P objectives | Research source material sufficient, final article not written | PENDING HUMAN DELIVERY | Adapt source material into final report section |
-| 15.2 / 9 | Foundations: attention/shapes/positions/Transformer/MLM/CLM | Final report section | C/F1–5 | Newly completed technical foundations | PENDING HUMAN DELIVERY | Integrate and cite in final article |
-| 15.3 / 9 | Implementation: tokenizer/config/attention/mask/train | Final report section | Source/C/R/Q/B | Technical artifacts verified | PENDING HUMAN DELIVERY | Explain design in final article |
-| 15.4 / 9 | Dataset: source/size/split/vocab/context/filtering | Final report section | Data guide/Q/B/P | Pinned original text and train-only tokenization documented | PENDING HUMAN DELIVERY | Include exact bytes/hashes and no undocumented filtering |
-| 15.5 / 9 | Setup: hardware/hyperparameters/optimizer/batch/steps/checkpoints | Final report section | Summaries/Q/B/P | Genuine resolved metadata inspected | PENDING HUMAN DELIVERY | Separate training environment from CPU demo environment |
-| 15.6 / 9 | Results: losses/samples/counts/time/attention | Final report section | F5–8, Q/B | Report-ready evidence available | PENDING HUMAN DELIVERY | Include genuine figures/captions and best/final distinction |
-| 15.7 / 9 | Ablations | Final report section | F9/P | Controlled measured comparisons available | PENDING HUMAN DELIVERY | Retain single-seed and compute caveats |
-| 15.8 / 9 | At least two failure modes and likely causes | Final report section | F01 deterioration, B01 greedy loops/malformed bytes, G/Q/B | Observations verified; causes hypotheses, not established mechanisms | PENDING HUMAN DELIVERY | Discuss at least two failures explicitly without inventing causation |
-| 15.9 / 9 | CLI/API and reproducibility | Final report section | F10/R/model access | Executed request, clean install/reload receipts | PENDING HUMAN DELIVERY | Include exact commands, pinned revision, access question |
-| 15.10 / 9 | Conclusion | Final report section | Existing measured interpretations | Final integrated conclusion not delivered | PENDING HUMAN DELIVERY | Conclude within evidence; avoid universal superiority claims |
+| 14.8 / 9 | Report and demo (5%) | Clear final report, figures and demonstration | Figures, M/D; recording owner-reported delivered | Article inspected; recording content/delivery not independently checked | PARTIAL | Attach recording evidence and retain instructor assessment; no marks guaranteed |
+| 15.1 / 9 | Problem statement | Final report section | M plus linked original research records | Section 1: corpus constraint, motivation and project question; browser text inspected | PASS | Section coverage verified; detailed grading, formatting and author attribution remain human review |
+| 15.2 / 9 | Foundations: attention/shapes/positions/Transformer/MLM/CLM | Final report section | M plus linked original research records | Section 2: attention, shapes, positions, residual block, MLM/CLM; browser text inspected | PASS | Section coverage verified; detailed grading, formatting and author attribution remain human review |
+| 15.3 / 9 | Implementation: tokenizer/config/attention/mask/train | Final report section | M plus linked original research records | Sections 2–4 and 9: tokenizer, decoder, causal targets and implementation; browser text inspected | PASS | Section coverage verified; detailed grading, formatting and author attribution remain human review |
+| 15.4 / 9 | Dataset: source/size/split/vocab/context/filtering | Final report section | M plus linked original research records | Section 3: original bytes, split, vocabulary and conditioning policy; browser text inspected | PASS | Section coverage verified; detailed grading, formatting and author attribution remain human review |
+| 15.5 / 9 | Setup: hardware/hyperparameters/optimizer/batch/steps/checkpoints | Final report section | M plus linked original research records | Section 4 and F01/B01 sections: T4, optimizer/LR, batching, updates and selected checkpoints; browser text inspected | PASS | Section coverage verified; detailed grading, formatting and author attribution remain human review |
+| 15.6 / 9 | Results: losses/samples/counts/time/attention | Final report section | M plus linked original research records | Sections 4–7: measured plots, parameters, runtime, attention and genuine output limitations; browser text inspected | PASS | Section coverage verified; detailed grading, formatting and author attribution remain human review |
+| 15.7 / 9 | Ablations | Final report section | M plus linked original research records | Section 4: controlled variant families and single-seed caveats; browser text inspected | PASS | Section coverage verified; detailed grading, formatting and author attribution remain human review |
+| 15.8 / 9 | At least two failure modes and likely causes | Final report section | M plus linked original research records | Sections 5–7: generalization deterioration, repetition and malformed outputs; causal explanations qualified; browser text inspected | PASS | Section coverage verified; detailed grading, formatting and author attribution remain human review |
+| 15.9 / 9 | CLI/API and reproducibility | Final report section | M plus linked original research records | Section 9: genuine API evidence, selected packages and pinned reproducibility notebook; browser text inspected | PASS | Section coverage verified; detailed grading, formatting and author attribution remain human review |
+| 15.10 / 9 | Conclusion | Final report section | M plus linked original research records | Section 10: measured conclusions, limitations and unanswered questions; browser text inspected | PASS | Section coverage verified; detailed grading, formatting and author attribution remain human review |
 | 16a / 9 | Fresh install and unit tests without manual edits | Clean install and complete test evidence | Windows install commands, L/R |151 Linux passes/1 CUDA skip; Windows149 +2 corrected-path passes | PASS | Do not call Windows a single clean151-pass invocation |
 | 16b / 9 | Tiny-overfit loss decreases substantially | Real bounded correctness test | Core `test_tiny_overfit`, L | 60 synthetic updates, final<15% initial assertion, executed suite pass | PASS | No new research training needed |
 | 16c / 9 | Reload final checkpoint in a fresh process | Genuine trained reload/generation | Restart receipts for all three, E02 terminal5000 | Hash/config/count identities and fresh-process selected models checked | PASS | B01/F01 are selected-best submission states, not terminal training states |
 | 16d / 9 | Generate from three fixed prompts | Actual outputs | G (five prompts × three models × two modes) | 30 genuine cases;12 available references match raw IDs in both Colab runs | PASS | Other18 cases have no old raw-ID reference; do not claim30 reference matches |
 | 16e / 9 | Future-token exclusion | Logits invariant, future weights zero | F7/A/core tests/L | Trained B01 earlier-logit error0.0, upper triangle zero | PASS | None |
 | 16f / 9 | README command accuracy/config consistency/no secrets | Commands, content checks | README/R/current checks | Actual interfaces and historical executed commands checked | PASS | No blanket proof about every historic secret |
-| 17.1–3 / 10 | Show repo/core file, attention/mask and passing tests | Recorded/live walkthrough | Technical evidence ready | No finished presentation/recording | PENDING HUMAN DELIVERY | Demonstrate these items in5–7 minute recording |
-| 17.4–6 / 10 | Show config/counts, curves, fixed generation command | Recorded/live walkthrough | F5/F6/F8/F10 | Evidence ready, delivery absent | PENDING HUMAN DELIVERY | Include actual selected checkpoint identity |
-| 17.7–9 / 10 | Interpret attention, deployed live inference, ablations/limitation | Recorded/live walkthrough | F7/F9/deployed Studio | Historical deployment evidence is not a live class demonstration | PENDING HUMAN DELIVERY | Recheck hosting then demonstrate live; preserve offline Colab fallback |
-| 18a / 10 | Each team member understands implementation and contributes | Attribution and individual oral answers | Research ownership records, AGENTS | Execution ownership recorded, personal competence not certifiable here | PENDING HUMAN DELIVERY | Confirm contribution statement and each member's oral readiness |
-| 18b / 10 | Cite code/equations/figures and explain adaptations | Complete source attribution | C/new captions/research reports | New artifacts attributed; historical completeness remains human review | PARTIAL | Review original sources/adaptations before publishing article |
+| 17.1–3 / 10 | Show repo/core file, attention/mask and passing tests | Recorded/live walkthrough | D; existing recording owner-reported delivered | Video unavailable for content inspection | PARTIAL | Provide the existing recording and check these walkthrough items |
+| 17.4–6 / 10 | Show config/counts, curves, fixed generation command | Recorded/live walkthrough | F5/F6/F8/F10, D | Owner reports delivery; no recording link to verify content | PARTIAL | Inspect existing recording for counts/curves/generation and checkpoint identity |
+| 17.7–9 / 10 | Interpret attention, deployed live inference, ablations/limitation | Recorded/live walkthrough | F7/F9/Studio, D | Owner reports delivery; no recording/live presentation receipt inspected | PARTIAL | Verify attention interpretation, live inference and ablation/limitation in supplied evidence |
+| 18a / 10 | Each team member understands implementation and contributes | Attribution and individual oral answers | Research ownership records, D | Owner reports presentation delivered; personal understanding not independently assessable | PARTIAL | Retain contribution statement and presentation acknowledgement |
+| 18b / 10 | Cite code/equations/figures and explain adaptations | Complete source attribution | C/new captions/research reports | New artifacts attributed; historical completeness remains human review | PARTIAL | Review attribution completeness in the published article |
 | 18c / 10 | Allowed corpus; experimental outputs not reliable facts | Data provenance and limitations | Data guide, Q/B, Studio model limitations | Public literary corpus identified; experimental generation caveats present | PASS | Authors confirm course/data permission expectations |
 | 18d / 10 | Reproducible commands; avoid large checkpoints unless requested | Small Git repository plus accessible models | model access/R/scoped size checks | Weights external, hashes pinned, no new large artifacts | PASS | HF hosting approval separately unresolved |
 | 19 / 10 | Final checklist: repo, README, manual/mask/shapes/positions/architecture/curves, five samples, three ablations, counts/config, CLI/API | Accessible required evidence | F1–10/R | All listed technical checklist items inspected | PASS | Use index, not historical pending statuses |
-| 19.M / 10 | Medium report submitted | Publication/submission receipt | None found | Source reports do not establish submission | PENDING HUMAN DELIVERY | Publish and submit in next phase |
+| 19.M / 10 | Medium report submitted | Publication/submission receipt | M/D; article publication verified | No course-submission receipt supplied | PARTIAL | Retain the article submission/acknowledgement; publication alone does not establish course receipt |
 | 19.S / 10 | No secrets/large unnecessary artifacts; all sources cited | Technical checks and author review | Current checks/C | Scoped checks pass; complete historical attribution remains review | PARTIAL | Complete author citation review |
 | 20 / 11 | Learning resources and final principle: understandable tested implementation | Appropriate attribution and understanding | C, explicit source, tests | New educational work linked to primary papers and handout curriculum | PARTIAL | Authors demonstrate understanding; references alone are not proof |
 
 ## Overall decision
 
-Technical evidence is prepared with explicit limits. The overall assignment is
-**not submitted or complete**. Final Medium publication, screen recording, class
-presentation, individual understanding/attribution review and instructor acceptance
-of HF checkpoint hosting remain. No rubric score or guaranteed grade is assigned.
-See [readiness and owner actions](assignment_readiness.md) for delivery gates.
+Technical evidence and public Medium publication are established within their
+recorded scopes. Recording and class presentation are owner-reported delivered;
+their evidence links are pending. Overall course submission, individual
+understanding/attribution and instructor acceptance of HF hosting are not
+independently established. No rubric score or guaranteed grade is assigned.
+See [readiness and owner actions](assignment_readiness.md) for the remaining
+verification actions; no new research is required by this status maintenance.

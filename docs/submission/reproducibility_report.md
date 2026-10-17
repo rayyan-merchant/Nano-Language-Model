@@ -1,5 +1,12 @@
 # Reproducibility execution report — 2026-10-15
 
+
+**Current navigation update — 2026-10-17:** PR24 and the subsequent handout audit
+were merged. The [published Medium article](https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca) is public; recording/presentation are
+owner-reported delivered, evidence links pending. [Current readiness](assignment_readiness.md)
+supersedes delivery expectations in the historical October 15 execution narrative
+below. Original commands, results and failure descriptions are retained.
+
 ## Scope and status
 
 **Linux clean-clone and actual fresh Colab CPU execution passed.** The original

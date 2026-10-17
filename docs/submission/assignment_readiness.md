@@ -1,4 +1,4 @@
-# Final assignment readiness — technical evidence, not submission
+# Assignment readiness and delivery status
 
 Audit date: 2026-10-15. Starting reviewed main:
 `ee2b941311cfb451a73dbc65207ad3dfabb5977f`. PR24 was merged before this branch
@@ -6,9 +6,23 @@ was created. The [complete matrix](assignment_compliance_matrix.md) maps every
 handout section and rubric category to content, execution evidence and actions.
 The [ten-figure index](evidence/README.md) provides captions and working links.
 
-**Decision: technical evidence prepared; final submission NO-GO until human
-deliveries and instructor access acceptance are resolved.** This audit is not
-the final Medium article, screen recording or class presentation.
+**Status: technical evidence and article publication verified; overall submission
+acceptance remains unconfirmed pending delivery evidence and instructor access
+acceptance.** The original technical audit did not itself produce the article,
+recording or presentation; their updated statuses are recorded below.
+
+## Delivery refresh — 2026-10-17
+
+The [published Medium article](https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca) is publicly readable and attributed to Rayyan Merchant;
+its ten main sections were inspected in the browser. Automated HTTP access returned
+403, while the browser successfully displayed the article without sign-in.
+The owner reports that the demo recording and class presentation have both been
+delivered. Their links/receipts have not yet been supplied, so duration, content
+and delivery are not independently verified. See the
+[delivery receipt](verification/delivery_status_20261017.json).
+
+The October 15 technical audit below remains dated evidence. Publication is now
+verified; course submission and instructor acceptance are separate from publication.
 
 ## Readiness by delivery
 
@@ -25,12 +39,12 @@ the final Medium article, screen recording or class presentation.
 | Deployment | Implemented, time-dependent | [Deployment records](../deployment/README.md); existing receipts establish prior live operation. This audit's Figure10 proves actual local API execution, not present public uptime |
 | Generation quality | PARTIAL | Genuine samples include coherent local fragments, repeated phrases, malformed words and incomplete endings; no guaranteed coherence grade or significance |
 | Historical source attribution and individual understanding | Human review pending | New equations/figures attributed. Each author must review historical adaptations, confirm contributions and explain implementation orally |
-| Final integrated Medium article | PENDING HUMAN DELIVERY | Write/review/publish separately; recommended8–12 pages excluding appendix; no article drafted in this phase |
-| Screen-recorded demo | PENDING HUMAN DELIVERY | Record5–7 minutes (satisfies Section4's5–10 and Section17's5–7), using genuine inference and all nine requested items |
-| Class presentation / oral defense | PENDING HUMAN DELIVERY | Prepare/deliver separately; no delivery receipt inferred from notebooks |
-| Final review and submission | PENDING HUMAN DELIVERY | Review this audit PR, resolve access question and submit repository/article/recording links through course process |
+| Final integrated Medium article | PUBLICATION VERIFIED | [published Medium article](https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca); public title/author and section coverage checked October 17. Publication does not prove course submission or instructor approval of length/content |
+| Screen-recorded demo | OWNER-REPORTED DELIVERED; EVIDENCE PENDING | Owner confirmed delivery October 17; provide the recording link. Duration (5–7 minutes), walkthrough content and access have not been checked |
+| Class presentation / oral defense | OWNER-REPORTED DELIVERED; EVIDENCE PENDING | Owner confirmed delivery October 17; provide a delivery receipt or instructor acknowledgement. No independent attendance/oral assessment claimed |
+| Final review and submission | PENDING HUMAN DELIVERY | Retain evidence of course submission, provide the recording/presentation evidence, and resolve the HF access-acceptance question |
 
-## Verified acceptance evidence, with boundaries
+## Historical technical acceptance evidence — October 15
 
 The [prior full Linux log](verification/colab-v3/full-tests.txt) contains
 `151 passed, 1 skipped` in46.41s. The CUDA-only skip is expected for that CPU
@@ -79,24 +93,20 @@ requirement instead of GitHub or shareable Google Drive?” If not, the owner mu
 authorize a mirror, then publish the same verified bytes, record checksums and
 test anonymous instructor retrieval. This audit does not publish another copy.
 
-## Remaining report and demonstration work
+## Remaining delivery verification
 
-The final Medium article must cover all ten Section15 sections: problem,
-foundations, implementation, dataset, setup, results, ablations, at least two
-failure modes with qualified likely causes, CLI/API/reproducibility and conclusion.
-Use the figure index and accepted reports as primary sources; distinguish combined
-models from controlled ablations and preserve single-seed, context, byte-exposure,
-runtime/replay and generation-quality limitations. No fabricated step-zero
-validation, significance or test-based model selection is permitted.
+The [published Medium article](https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca) now covers the main report themes: problem,
+foundations, implementation, data/scoring, experimental setup, results, ablations,
+failure modes, inference/reproducibility and conclusion. The compliance matrix
+records the observed coverage; publication is not an instructor grading decision.
+Author attribution/format review and evidence of course submission remain distinct.
 
-The recording should show repository/core code, attention/mask, passing tests,
-configuration/counts, loss curves, fixed-prompt inference command, trained attention
-interpretation, deployed live inference, and an ablation plus limitation. Recheck
-hosting on delivery day; have the verified Colab route available. Each member
-must understand and explain their contribution. Producing these human deliverables
-is the next separately requested phase, not an automatic continuation of this audit.
+The owner reports recording and presentation delivery. Remaining maintenance is to
+attach their actual links/receipts and verify access, duration and the Section 17
+walkthrough items. Do not describe them as not yet produced, and do not infer a
+verified recording from the executed Colab notebook. No new training is required.
 
-## Current audit commands and verification
+## Historical audit commands and verification — October 15
 
 Executed from this checkout using existing Windows Python3.10.11 CPU environment:
 

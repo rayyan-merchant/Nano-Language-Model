@@ -208,5 +208,7 @@ No new research training or reserved-test assessment is authorized by these exam
 computation/byte exposure, and generated repetition or malformed text. A lower
 validation minimum does not prove better language quality or general superiority.
 Model hosting availability can change. Instructor acceptance of HF as the
-checkpoint-sharing route, author review, recording and presentation remain separate
-submission decisions; dated audit records describe their capture-time status.
+checkpoint-sharing route and final course acceptance remain separate. The owner reports
+recording and presentation delivered; their evidence links are pending. See
+[current delivery status](docs/submission/assignment_readiness.md); dated audits
+describe their capture-time status.
