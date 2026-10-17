@@ -127,5 +127,7 @@ container-build evidence. GPU verification was not executed and is not claimed.
 
 The [machine-readable record](public_cleanup_verification.json) contains exact
 hashes, counters, observed model identities, API receipt and verification limits.
-Medium author approval/publication, instructor acceptance of HF hosting, recording
-and class presentation remain separate human deliveries.
+At cleanup capture, article publication, HF acceptance, recording and presentation
+were separate human deliveries. Their current status is tracked in
+[assignment readiness](../submission/assignment_readiness.md); this historical
+cleanup receipt does not establish current delivery status.

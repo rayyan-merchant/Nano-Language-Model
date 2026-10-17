@@ -80,8 +80,25 @@ def link_regressions(root, result):
     return result['broken']
 
 
+def documentation_updates(root):
+    """Verify explicit reviewed documentation revisions without mutable exemptions."""
+    root=Path(root).resolve()
+    manifest=root/'docs/maintenance/document_updates.json'
+    raw=manifest.read_bytes().replace(b'\r\n',b'\n')
+    assert hashlib.sha256(raw).hexdigest()=='3a98b3944ae49a91dc078118a84d04c3e039bfa6d8cc43b3c493e045cf5179e7', 'Documentation revision manifest changed'
+    record=json.loads(raw)
+    assert record['schema_version']==1
+    for name,expected in record['files'].items():
+        path=(root/name).resolve()
+        assert path.is_relative_to(root/'docs/submission'),name
+        assert path.suffix in {'.md','.json'},name
+        assert hashlib.sha256(path.read_bytes().replace(b'\r\n',b'\n')).hexdigest()==expected,name
+    return record['files']
+
+
 def integrity(root, baseline=None):
     root=Path(root);rows=ledger(root)
+    doc_updates=documentation_updates(root)
     names=[r['path'] for r in rows]
     values=blobs(root,BASE,names)
     historical_checked=current_checked=link_only_checked=0
@@ -99,7 +116,10 @@ def integrity(root, baseline=None):
         if not name.startswith(protected_prefixes) or name in mutable:
             continue
         actual=path.read_bytes()
-        if name.endswith('.md'):
+        if name in doc_updates:
+            # Exact reviewed text revision was checked independently above.
+            pass
+        elif name.endswith('.md'):
             expected=relink(old.decode('utf-8'),name,rows)
             assert actual.decode('utf-8').replace('\r\n','\n')==expected,name
             link_only_checked+=old.decode('utf-8')!=expected
@@ -118,7 +138,7 @@ def integrity(root, baseline=None):
     historical={n:raw.decode('utf-8').replace('\r\n','\n') for n,raw in blobs(root,previous,old_names).items()}
     assert digest(historical)=='cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6'
     return {'canonical_paths_and_bytes_checked':current_checked,'historical_git_blobs_checked':historical_checked,
-            'archived_paths':sum(r['action']=='ARCHIVE' for r in rows),'link_only_research_migrations':link_only_checked,
+            'archived_paths':sum(r['action']=='ARCHIVE' for r in rows),'reviewed_documentation_updates':len(doc_updates),'link_only_research_migrations':link_only_checked,
             'science_fingerprint':digest(core),'current_aggregate':digest(aggregate),'historical_aggregate':digest(historical),
             'scope':'Current retained scientific/research/submission artifacts plus separate full historical Git-object verification; no blanket deletion exemptions'}
 

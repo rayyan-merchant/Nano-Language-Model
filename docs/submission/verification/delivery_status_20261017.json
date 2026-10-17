@@ -1,0 +1,41 @@
+{
+  "review_date": "2026-10-17",
+  "scope": "Delivery-status documentation maintenance, not new research or a repeated full assignment audit",
+  "article": {
+    "url": "https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca",
+    "title": "We built and deployed a GPT from scratch. The scores improved. The writing didn’t always follow.",
+    "author": "Rayyan Merchant",
+    "status": "PUBLICATION_VERIFIED",
+    "method": "Read-only browser view with Sign in/Sign up controls; complete article text and ten main section headings visible without sign-in",
+    "automated_HTTP_check": "HTTP 403; not interpreted as publication failure after successful browser verification",
+    "sections": [
+      "A small corpus and a model we could inspect",
+      "Building causal attention",
+      "Splitting Shakespeare and choosing a metric",
+      "What changed across fourteen experiments",
+      "F01 improved early, then overfit",
+      "B01 came close with half the parameters",
+      "The attention worked. Here is what the model wrote",
+      "If we had ten times more data, would these results change?",
+      "Trying the models in NanoLM Studio",
+      "Where we ended up"
+    ],
+    "verification_limit": "Publication, authorship display and section coverage inspected; not a fresh figure-by-figure audit, instructor grading or course-submission receipt"
+  },
+  "recording": {
+    "status": "OWNER_REPORTED_DELIVERED_EVIDENCE_PENDING",
+    "owner_confirmation": "Both delivered; I’ll provide evidence",
+    "url": null,
+    "duration": null,
+    "content_verified": false
+  },
+  "class_presentation": {
+    "status": "OWNER_REPORTED_DELIVERED_EVIDENCE_PENDING",
+    "owner_confirmation": "Both delivered; I’ll provide evidence",
+    "delivery_receipt": null,
+    "independently_verified": false
+  },
+  "course_submission": "NOT_INDEPENDENTLY_CONFIRMED",
+  "instructor_HF_acceptance": "NO_NEW_EVIDENCE",
+  "historical_records": "Original technical execution receipts and accepted scientific results unchanged"
+}
