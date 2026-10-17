@@ -1,73 +1,96 @@
 # Nano-Language-Model
 
-[NanoLM Studio](https://nanolm-studio-rayyan.vercel.app) is deployed with genuine
-E02/B01/F01 inference (public website and readiness rechecked2026-10-15).
-The [submission workflow](docs/submission/README.md) retrieves the exact selected
-public inference packages without authentication. Clean-clone and Colab acceptance
-are tracked separately in the [execution report](docs/submission/reproducibility_report.md).
-Deployment implementation/evidence remains in [PR23](https://github.com/rayyan-merchant/Nano-Language-Model/pull/23).
+A small decoder-only GPT built from scratch in PyTorch for a controlled Tiny
+Shakespeare study. Attention explicitly implements Q/K/V projections, head
+splitting, scaling, causal masking, softmax and value aggregation. No pretrained
+language-model weights or black-box Transformer architecture are used.
 
-A decoder-only GPT built from scratch in PyTorch for a controlled Tiny Shakespeare study. Attention explicitly implements Q/K/V projections, head splitting, scaled scores, causal masking, softmax and value aggregation. There are no pretrained language-model weights or black-box Transformer layers.
+**Try it:** [NanoLM Studio](https://nanolm-studio-rayyan.vercel.app) ·
+[Google Colab demo](https://colab.research.google.com/github/rayyan-merchant/Nano-Language-Model/blob/main/notebooks/NanoLM_Submission_Demo.ipynb) ·
+[Public pinned models](docs/submission/model_access.md)
 
-## Completed research and remaining delivery work
+## Results and limitations
 
-**E01â€“E14 seed 42 are complete:** fourteen single-factor ablations, each with a 5,000-update authoritative trajectory and 20 full sliding validations. The proposed three-seed/42-run expansion was discontinued; no replicated significance is claimed. Two separately approved combined models also completed and passed independent artifact and compatible CPU/CUDA recovery:
+The completed study contains **one E01 baseline plus thirteen E02–E14 controlled
+variants**, each at seed 42 with 5,000 authoritative updates, and two separately
+approved combined models. These are single-seed observations, not replicated
+statistical evidence. The planned three-seed expansion was discontinued.
 
-| Model | Parameters | Actual updates | Best update | Best conditional BPB |
+| Selected inference model | Parameters | Completed training updates | Selected update | Validation BPB |
 |---|---:|---:|---:|---:|
-| E02 BPE reference | 2,173,056 | 5,000 | 5,000 | 2.02659521 |
-| F01 quality-focused | 6,046,560 | 10,000 | 1,750 | 1.98376817 |
-| B01 balanced | 3,062,784 | 4,500, frozen early stop | 3,000 | 1.98493095 |
+| E02 Compact | 2,173,056 | 5,000 | 5,000 | 2.02659521 |
+| B01 Balanced | 3,062,784 | 4,500, frozen early stop | 3,000 | 1.98493095 |
+| F01 Quality | 6,046,560 | 10,000 | 1,750 | 1.98376817 |
 
-All reports retain negative results, genuine generations and recovery evidence. F01 deteriorated with prolonged training; B01 nearly matches its selected likelihood at roughly half its parameters but still produces greedy loops, malformed language and invalid byte sequences. Smaller size or lower BPB does not establish better text quality. Model packaging, FastAPI, frontend and deployment are implemented. The curated submission notebook/reproducibility work is tracked separately; the comprehensive [assignment audit](docs/submission/assignment_readiness.md) and ten-item evidence index are prepared; final Medium article, recorded presentation and instructor access acceptance remain pending. No further research training or test evaluation is currently authorized.
+[The research index](report/README.md) links every experiment, canonical tables,
+figures, generation grids and checkpoint recovery instructions. Lower BPB does
+not imply better writing: genuine samples include repetition, malformed words
+and incomplete dialogue. F01 deteriorated after its early validation minimum.
 
-Start with the [project map and current status](docs/README.md), [fourteen-run analysis](report/final/E01_E14_consolidated_analysis.md), [F01 report](report/final/F01_10000_analysis.md) and [B01 model selection](report/balanced/B01_model_selection.md).
+## Install and verify
 
-## Installation and verification
+Use Python 3.10 or 3.11 in an isolated environment. For **CPU** use:
 
-Research pins: Python 3.10/3.11, PyTorch 2.5.1, NumPy 1.26.4, tokenizers 0.21.0, Matplotlib 3.9.4 and pytest 8.3.4. Use an isolated environment. For local **CPU** work:
-
-```powershell
+```text
 python -m venv .venv
-.venv\Scripts\python -m pip install --upgrade pip==26.2.1
-.venv\Scripts\python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
-.venv\Scripts\python -m pip install -r requirements.txt
-.venv\Scripts\python -m pip install -e . --no-deps
-.venv\Scripts\python -m pytest -q
-.venv\Scripts\python -m pip check
 ```
 
-On Linux use the selected environment's `python`. Qualified GPU research used isolated Python 3.11.14/PyTorch 2.5.1+cu124/CUDA 12.4/Tesla T4; **do not install the CPU wheel into a CUDA environment**. See [platforms](docs/platforms.md) and the [qualified dependency freeze](docs/qualifications/evidence/rayyan_requirements_freeze.txt).
-
-## Scientific package and commands
-
-The authoritative implementation is [src/nano_lm](src/nano_lm). Stable configuration paths are [configs](configs) and [experiments/configs](experiments/configs). Character vocabulary 65 and byte BPE 1024 fit only training text; canonical artifacts are in [assets/tokenizers](assets/tokenizers). Pinned original text has contiguous 90/5/5 partitions with no crossing windows; see [data provenance](data/README.md).
-
-The following are interface/reproducibility examples, not authorization to launch another scientific run:
+Activate it (`.venv\Scripts\Activate.ps1` on Windows,
+`source .venv/bin/activate` on Linux), then:
 
 ```text
-python -m nano_lm.prepare --help
-python -m nano_lm.train --help
-python -m nano_lm.verification --help
-python -m nano_lm.generate --help
-python -m nano_lm.storage --help
+python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements.txt -r requirements-studio.txt
+python -m pip install -e . --no-deps
+python -m pytest -q
+python -m pip check
+python -m scripts.maintenance.verify_repository --output outputs/public-cleanup/verification.json
 ```
 
-For a fresh local development dataset, `python -m nano_lm.prepare --output DATA` followed by `--output DATA --validate` acquires and checks the pinned corpus. Research reproduction must use its exact trained commit, configuration and tokenizer; F01/B01 reuse audited vocabulary artifacts without refitting. Generation from a trusted recovered model uses:
+On Windows with a restricted system Temp directory, give pytest a new local
+`--basetemp outputs/pytest-local` path. Historical-object verification requires
+full Git history (`git fetch --unshallow` for a shallow clone).
+
+Qualified GPU research used Python 3.11.14, PyTorch 2.5.1+cu124, CUDA 12.4 and a
+Tesla T4. Do not install the CPU wheel into that environment. See
+[platforms](docs/platforms.md) and [commands](docs/commands.md).
+
+## Run the selected models
+
+Download the exact public packages and run genuine CPU inference:
 
 ```text
-python -m nano_lm.generate --checkpoint CHECKPOINT --prompt "ROMEO:" --max-new-tokens 256 --greedy
+python -m tools.submission_models --output model_artifacts
+python -m tools.submission_demo --artifacts model_artifacts --section generation --output outputs/my-generation
+python -m tools.submission_demo --artifacts model_artifacts --section api --output outputs/my-api
 ```
 
-Complete commands and resume/storage boundaries are in [docs/commands.md](docs/commands.md) and [scripts/README.md](scripts/README.md). Historical notebooks and failed attempts are indexed in [notebooks/README.md](notebooks/README.md); do not blindly rerun them.
+Existing destinations are not overwritten. For the server and frontend use the
+[API guide](api/README.md) and [frontend guide](frontend/README.md).
+[Submission instructions](docs/submission/README.md) include package hashes,
+fresh-process checks and the executed Colab demonstration.
 
-Evaluation is the reusable Python function `nano_lm.evaluate.evaluate`, called by
-training and verification. It has no standalone evaluation CLI.
+## Repository map
 
-## Results, checkpoints and reproducibility
+| What to inspect | Location |
+|---|---|
+| Explicit architecture and scientific engine | [src/nano_lm](src/nano_lm) |
+| Sixteen frozen experiment definitions | [registry](experiments/registry.csv), [configs](experiments/configs) |
+| Training, evaluation, resume and storage | [commands](docs/commands.md), [protocol](docs/research_protocol.md), [BPB](docs/bpb.md), [storage](docs/storage.md) |
+| All research findings and numerical data | [research index](report/README.md) |
+| Correctness and regression tests | [tests](tests) |
+| Reusable analysis/recovery tools | [scripts](scripts/README.md), [tools](tools) |
+| Ten assignment figures and handwritten correction | [evidence index](docs/submission/evidence/README.md) |
+| Assignment acceptance and remaining deliveries | [readiness](docs/submission/assignment_readiness.md) |
+| Historical development material and exact retrieval | [preservation contract](docs/maintenance/README.md) |
 
-[report/pilots](report/pilots) contains E01â€“E14, [report/final](report/final) F01, and [report/balanced](report/balanced) B01. Figures, machine-readable tables, complete fixed generation grids, hashes and genuine recovery receipts are preserved. Large datasets, full checkpoints, archives and training journals are **outside Git**. For retrieval use each pilot report, [F01 instructions](report/final/artifact_retrieval.md) or [B01 instructions](report/balanced/artifact_retrieval.md). Only deserialize trusted project checkpoints; optimizer/RNG payloads use PyTorch pickle.
+Datasets, large research checkpoints, journals and local article renders stay
+outside Git. Canonical measurements and essential accepted evidence stay in the
+active tree; development history is available at pinned commits. Cloning still
+retrieves Git history: this cleanup reduces the active checkout, not historical
+object storage.
 
-Conditional BPB scores the same 55,514 validation bytes after a 256-byte conditioning exclusion, with each model's context and explicit tokenizer-boundary policy. Token loss/perplexity is not comparable across tokenizers. Equal target-token budgets do not imply equal compute/source exposure. One seed supplies no cross-seed variance; initialization, capacity, context, hardware and stopping opportunities are confounders. F01 received one frozen reserved-test assessment; B01 did not reuse that test for tuning or evaluation. See [BPB policy](docs/bpb.md) and [research protocol](docs/research_protocol.md).
-
-The [cleanup verification](docs/maintenance/cleanup_verification.md) records source, configuration, tokenizer, evidence and notebook integrity plus build/link checks. [AGENTS.md](AGENTS.md) governs future changes. Submit reviewed feature PRs; never force-push, overwrite evidence or merge without authorization.
+The Medium article is under editorial preparation and is not approved for GitHub
+publication. Recording, presentation, author review and instructor acceptance of
+HF hosting remain separate delivery items. No new research training or reserved
+test evaluation is authorized. See [AGENTS.md](AGENTS.md).

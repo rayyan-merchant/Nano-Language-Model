@@ -1,8 +1,0 @@
-{
-  "phase": "Drive upload staging",
-  "failed_part_bytes": 209715200,
-  "bridge_limit_bytes": 104857600,
-  "error": "HTTP 413 prior to Drive action invocation",
-  "resolution": "Seven checksum-tracked parts at most 64 MiB; original ZIP bytes and SHA256 unchanged",
-  "research_optimizer_updates_affected": 0
-}

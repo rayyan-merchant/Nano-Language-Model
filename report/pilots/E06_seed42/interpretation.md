@@ -140,8 +140,8 @@ failure was involved. The report commit's CI run38287295207 passed.
 
 The clean trained source is `fc08577afb63d4bd3ecad43bf33355c65ddd985c`.
 The exact shared research CLI is in
-[execution_command.json](evidence/execution_command.json), and actualCUDA
-preflight in [preflight.json](evidence/preflight.json). No alternate trainer was used.
+[execution_command.json](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E06_seed42/evidence/execution_command.json), and actualCUDA
+preflight in [preflight.json](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E06_seed42/evidence/preflight.json). No alternate trainer was used.
 Actual local commands include full `pytest -q` with theD qualification
 `pytest` and `pytest-final` temporary directories; `inspect_archive.py` on the
 downloaded ZIP/manifest into `verified`; `diagnostics.py` on that extraction and

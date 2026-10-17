@@ -12,7 +12,7 @@ import subprocess
 import sys
 from urllib.parse import unquote, urlsplit
 
-from scripts.maintenance.repository_audit import BASE, MOVES, REMOVALS, blobs, git, protected
+from scripts.maintenance.archive_refs import BASE, blobs, git, git_blob, ledger, relink
 
 
 def files(root):
@@ -76,31 +76,38 @@ def notebooks(root, names):
 
 
 def link_regressions(root, result):
-    baseline=json.loads((Path(root)/'docs/maintenance/baseline_links.json').read_text(encoding='utf-8'))
-    known={(r['source'],r['target']) for r in baseline['broken']}
-    assert known=={('report/final/presentation_support/findings_and_limitations.md',target)
-                   for target in ['F01_10000_analysis.md','generation.md']}
-    return [r for r in result['broken'] if (r['source'],r['target']) not in known]
+    # Current public tree has no grandfathered broken-link exceptions.
+    return result['broken']
 
 
-def integrity(root, baseline):
-    root=Path(root);record=json.loads(Path(baseline).read_text(encoding='utf-8'))
-    names=git(root,'ls-tree','-r','--name-only',record['starting_main']).decode().splitlines()
-    values=blobs(root,record['starting_main'],names)
-    raw_checked=canonical_checked=0
-    for name,expected in record['protected'].items():
-        raw=(root/name).read_bytes()
-        canonical=raw if expected['checkout_normalization']=='exact' else raw.replace(b'\r\n',b'\n')
-        assert hashlib.sha256(canonical).hexdigest()==expected['git_sha256'],name
-        canonical_checked+=1
-        if platform.system()==record['baseline_platform']:
-            assert hashlib.sha256(raw).hexdigest()==expected['working_sha256'],name
-            raw_checked+=1
-    for old,new in MOVES.items():
-        current=(root/new).read_bytes()
-        assert current==values[old] if old.endswith('.pdf') else current.replace(b'\r\n',b'\n')==values[old].replace(b'\r\n',b'\n'),old
-    assert all(not (root/name).exists() for name in REMOVALS)
-    # Both reference scopes are calculated independently; no training/evaluation.
+def integrity(root, baseline=None):
+    root=Path(root);rows=ledger(root)
+    names=[r['path'] for r in rows]
+    values=blobs(root,BASE,names)
+    historical_checked=current_checked=link_only_checked=0
+    protected_prefixes=('src/','configs/','experiments/configs/','assets/tokenizers/',
+                        'report/','docs/submission/','notebooks/')
+    mutable={'report/README.md','notebooks/README.md','docs/submission/README.md'}
+    for row in rows:
+        name=row['path'];old=values[name];path=root/name
+        assert git_blob(old)==row['git_blob'],f'Historical blob changed: {name}'
+        historical_checked+=1
+        if row['action']=='ARCHIVE':
+            assert not path.exists(),f'Archived path remains active: {name}'
+            continue
+        assert path.is_file(),f'Missing retained file: {name}'
+        if not name.startswith(protected_prefixes) or name in mutable:
+            continue
+        actual=path.read_bytes()
+        if name.endswith('.md'):
+            expected=relink(old.decode('utf-8'),name,rows)
+            assert actual.decode('utf-8').replace('\r\n','\n')==expected,name
+            link_only_checked+=old.decode('utf-8')!=expected
+        elif name.endswith(('.py','.json','.csv','.txt','.ipynb','.jsonl','.gitattributes')) and not name.startswith('assets/tokenizers/'):
+            assert actual.replace(b'\r\n',b'\n')==old.replace(b'\r\n',b'\n'),name
+        else:
+            assert actual==old,name
+        current_checked+=1
     from nano_lm.artifacts import digest
     core={n:(root/n).read_text(encoding='utf-8') for n in names if n.startswith('src/') and n.endswith('.py')}
     assert digest(core)=='d5b205aecec5913cd11d921c0a84899badd95a014a490a7beaab3d2598c940f8'
@@ -110,10 +117,10 @@ def integrity(root, baseline):
     old_names=[n for n in git(root,'ls-tree','-r','--name-only',previous).decode().splitlines() if n.startswith(('src/','configs/','experiments/configs/')) and Path(n).suffix in {'.py','.json'}]
     historical={n:raw.decode('utf-8').replace('\r\n','\n') for n,raw in blobs(root,previous,old_names).items()}
     assert digest(historical)=='cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6'
-    return {'canonical_paths_and_bytes_checked':canonical_checked,'same_platform_raw_byte_checks':raw_checked,
+    return {'canonical_paths_and_bytes_checked':current_checked,'historical_git_blobs_checked':historical_checked,
+            'archived_paths':sum(r['action']=='ARCHIVE' for r in rows),'link_only_research_migrations':link_only_checked,
             'science_fingerprint':digest(core),'current_aggregate':digest(aggregate),'historical_aggregate':digest(historical),
-            'relocations_byte_identical':True,
-            'scope':'All scientific/config/tokenizer/research/notebook evidence unchanged; mutable navigation READMEs excluded'}
+            'scope':'Current retained scientific/research/submission artifacts plus separate full historical Git-object verification; no blanket deletion exemptions'}
 
 
 def interfaces(root):
@@ -171,6 +178,6 @@ def verify(root, baseline, output):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root',type=Path,default=Path('.'))
-    parser.add_argument('--baseline',type=Path,default=Path('docs/maintenance/baseline_integrity.json'))
+    parser.add_argument('--baseline',type=Path,default=Path('docs/maintenance/public_tree.csv'))
     parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args();verify(args.root,args.baseline,args.output)

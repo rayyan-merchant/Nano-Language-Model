@@ -58,7 +58,7 @@ or stop exactly at the unknown optimum. No B01 4,750/5,000/10,000 likelihood is
 invented. The relevant F01 comparator is its early selected minimum, not its poor
 final state. The counterfactual B01 curve under another stop rule was not measured.
 
-![Measured conditional trajectories](comparison_figures/validation_BPB_comparison.png)
+![Measured conditional trajectories](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/balanced/comparison_figures/validation_BPB_comparison.png)
 
 ## Compactness, cost and actual inference
 

@@ -16,7 +16,7 @@ The unchanged implementation projects Q/K/V from 192 to 192, splits to `(batch,8
 
 CPU and qualified CUDA numerical audits inspected all four actual Transformer blocks. Manual sqrt(24) probabilities/output matched; incorrect sqrt(32) and sqrt(192) references differed numerically. QKV/logit/merge shapes, per-head key softmax, future mask, train/eval dropout scaling, GELU MLP 192→768→192, sinusoidal positions and absence of ReLU/RoPE/learned positions passed. All 68 initial E01/E07 state tensors matched under seed42 in the same environment. CUDA initial parameter-byte SHA256: `993d795eb33782ad0e1524e2e6f5ac202f1c052cd0319134ead5e7dfcd6582ba`.
 
-Shifted next-token targets, manual cross-entropy, finite forward/backward/all parameter gradients and nonzero gradients for every Q/K/V/output projection passed. Altering future tokens preserved earlier logits. One greedy generation token matched prediction from the last128-token cropped context. Parameter count exactly **1,804,800**. No scientific implementation fix was needed. [Full audit](evidence/heads_audit.json), [existing suite](evidence/tests.json), [focused attention test](evidence/attention_test.json). Test counts/times are recorded in those actual outputs.
+Shifted next-token targets, manual cross-entropy, finite forward/backward/all parameter gradients and nonzero gradients for every Q/K/V/output projection passed. Altering future tokens preserved earlier logits. One greedy generation token matched prediction from the last128-token cropped context. Parameter count exactly **1,804,800**. No scientific implementation fix was needed. [Full audit](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/evidence/heads_audit.json), [existing suite](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/evidence/tests.json), [focused attention test](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/evidence/attention_test.json). Test counts/times are recorded in those actual outputs.
 
 ## 3. Source, software and hardware
 
@@ -29,7 +29,7 @@ Shifted next-token targets, manual cross-entropy, finite forward/backward/all pa
 - Isolated Python 3.11.14, PyTorch 2.5.1+cu124, torch CUDA 12.4, NumPy 1.26.4, tokenizers 0.21.0, Matplotlib 3.9.4, pytest 8.3.4. Exact 46-package qualified transitive freeze matched E01/E02/E05 apart from editable project location.
 - Tesla T4; 2 visible devices, cuda:0 used for this one run. Per-device total memory 15,636,037,632bytes. Driver/hardware in [hardware receipt](evidence/hardware.json); full freeze/platform details in [environment](evidence/environment.json).
 
-The original execution wrapper is preserved as [exact original saved notebook](../../../notebooks/kaggle_e07_seed42_research_executed.ipynb), and continuation/final processing as [exact saved recovery notebook](../../../notebooks/kaggle_e07_seed42_recovery_executed.ipynb). Their code indentation and genuine stdout were captured from the saved rendered notebook PRE blocks, with execution counts and capture provenance. Version-history preview text collapses literal indentation, so it was not used as executable source. The preserved recovery wrapper metadata identifies native Python 3.13.15; every scientific subprocess uses the isolated Python 3.11.14 interpreter. Historic notebook output still labels Drive retrieval pending at its execution time; the later independent publication receipt records completion.
+The original execution wrapper is preserved as [exact original saved notebook](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/notebooks/kaggle_e07_seed42_research_executed.ipynb), and continuation/final processing as [exact saved recovery notebook](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/notebooks/kaggle_e07_seed42_recovery_executed.ipynb). Their code indentation and genuine stdout were captured from the saved rendered notebook PRE blocks, with execution counts and capture provenance. Version-history preview text collapses literal indentation, so it was not used as executable source. The preserved recovery wrapper metadata identifies native Python 3.13.15; every scientific subprocess uses the isolated Python 3.11.14 interpreter. Historic notebook output still labels Drive retrieval pending at its execution time; the later independent publication receipt records completion.
 
 Kaggle native Python 3.13/PyTorch 2.11 was left unchanged and did not train/evaluate/generate the research model. `MPLBACKEND=Agg`, deterministic settings and OMP threads 1 reproduced the qualified workflow. E01 also ran Kaggle/T4/driver580.178.04; software and accelerator matches reduce runtime confounds, while different host/session scheduling and thermal/load conditions remain uncontrolled. No isolated head-count speed mechanism or FLOP claim.
 
@@ -43,7 +43,7 @@ Every full sliding validation uses complete 55,770-byte validation text,256 cond
 
 Decoder-only from-scratch GPT, character vocabulary 65, width 192,4 blocks,8 heads / 24 dimensions per head, context 128, MLP expansion 4 (192→768→192), GELU, sinusoidal, dropout 0.1. Sole intended E01 change `n_heads:8`; parameters 1,804,800.
 
-Seed 42, float32 CUDA, AdamW, learning rate 0.0003, constant LR, weight decay 0.01, clipping 1.0, microbatch 4, accumulation 8,4,096 predicted targets per update.5000 completed updates; no AMP-skipped updates. Validation every 250 updates / periodic checkpoints every 500 with every validation state preserved. Full optimizer/scheduler/scaler/RNG/sampling/history state retained; no fine-tuning or dynamic hyperparameter changes. [Execution receipt](evidence/execution.json).
+Seed 42, float32 CUDA, AdamW, learning rate 0.0003, constant LR, weight decay 0.01, clipping 1.0, microbatch 4, accumulation 8,4,096 predicted targets per update.5000 completed updates; no AMP-skipped updates. Validation every 250 updates / periodic checkpoints every 500 with every validation state preserved. Full optimizer/scheduler/scaler/RNG/sampling/history state retained; no fine-tuning or dynamic hyperparameter changes. [Execution receipt](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/evidence/execution.json).
 
 ## 6. Genuine training and matched full validation curves
 
@@ -74,19 +74,19 @@ Recorded update 1 train loss 4.45922834; first full validation at 250 loss 2.458
 
 [Matched 20-point CSV](matched_validation.csv), [full E07 validation/perplexity table](validation.csv).
 
-![Training loss](figures/training_loss.png)
+![Training loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/training_loss.png)
 
-![Full sliding validation loss](figures/validation_loss.png)
+![Full sliding validation loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/validation_loss.png)
 
 ![Conditional BPB](figures/validation_bpb.png)
 
-![Matched loss](figures/e01_e07_validation_loss.png)
+![Matched loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/e01_e07_validation_loss.png)
 
-![Matched BPB](figures/e01_e07_validation_bpb.png)
+![Matched BPB](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/e01_e07_validation_bpb.png)
 
 Lines join measured validation endpoints. Smoothing is descriptive. Dropout-active sampled train loss is not full train-corpus likelihood; its gap with evaluation-mode validation alone cannot establish overfitting. One final fluctuation does not prove convergence or deterioration.
 
-![Matched loss difference](figures/e01_e07_loss_difference.png)
+![Matched loss difference](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/e01_e07_loss_difference.png)
 
 ## 7. Endpoint and efficiency comparison
 
@@ -113,17 +113,17 @@ Loss decrease3k→5k: E01 0.10344149, E07 0.10649974. Descriptive late fitted lo
 
 Timing scope: **resumed segment only; prior checkpoint/export overhead unavailable**. The saved checkpoint retains cumulative training/validation times, while absent prior IO measurements and lost volatile runtime are not reconstructed or invented. Measured local checkpoint overhead 1.244s; snapshot export into Kaggle saved-output staging 3.357s (**Kaggle local exports**, not Drive upload latency); journal/fsync 8.009s; engine wall 642.875s. Archive construction/local staged publication 33.467s. Platform saved-version publication and later Drive uploads are distinct stages; only separately recorded timings are claimed. Peak allocated memory excludes reserved memory/driver overhead.
 
-![Matched measured efficiency](figures/e01_e07_efficiency.png)
+![Matched measured efficiency](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/e01_e07_efficiency.png)
 
-![Throughput](figures/throughput.png)
-![Training time](figures/training_time.png)
+![Throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/throughput.png)
+![Training time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/training_time.png)
 
 ## 8. Gradients and head-related observations
 
 All 5,000 gradient norms finite. Mean 0.496471, median 0.507738, min 0.251173, max 1.837447, final 0.567897. 7 updates exceeded 1.0 (0.140%). E01 clipping 0.140%. [Actual diagnostics](evidence/gradient_diagnostics.json).
 
-![Gradient norm](figures/gradient_norm.png)
-![Constant learning rate](figures/learning_rate.png)
+![Gradient norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/gradient_norm.png)
+![Constant learning rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/learning_rate.png)
 
 Finite gradients and the preflight math audit establish observed numerical correctness; they do not identify a learned attention diversity mechanism. No systematic trained-head specialization, causal head ablation or representation-diversity audit was collected. Loss changes alone cannot establish those mechanisms.
 
@@ -311,9 +311,9 @@ Steps 2,751–2,957 were replayed. Every recorded training loss, pre-clipping gr
 
 The retained trajectory records **946.000384 seconds** of training and **425.209041 seconds** of full validation. The 207 superseded original attempts add **38.317729 measured training seconds** and **847,872 predicted target bytes/tokens** outside that retained trajectory. Thus known physical research execution is at least **5,207 updates**, **21,327,872 predicted tokens** and **984.318113 training seconds**. Later unsaved original progress and complete physical pipeline time are unknown. No extension beyond checkpoint step 5,000 was launched. [Timing/exposure accounting](evidence/replay_timing.json).
 
-Checkpoint/export/journal/engine-wall measurements cover the resumed segment only. The final processing phase measured 245.799442 seconds, including 206.576958 seconds before archive construction and 33.467406 seconds of archive construction/local staged publication; the remaining phase time includes part creation and verification. Those nested times must not be added again to the complete finish phase. Independent reconstruction/inference timings are in their receipts and exclude downloads. Initial IO overhead, complete transfer latency and total physical pipeline wall time are unavailable; no estimates replace them. The recorded creation-to-final-step timestamp span is 17016.268 seconds, including the interruption and recovery staging; [scope and timestamps](evidence/observed_wall_span.json) distinguish it from training-only and later pipeline phases.
+Checkpoint/export/journal/engine-wall measurements cover the resumed segment only. The final processing phase measured 245.799442 seconds, including 206.576958 seconds before archive construction and 33.467406 seconds of archive construction/local staged publication; the remaining phase time includes part creation and verification. Those nested times must not be added again to the complete finish phase. Independent reconstruction/inference timings are in their receipts and exclude downloads. Initial IO overhead, complete transfer latency and total physical pipeline wall time are unavailable; no estimates replace them. The recorded creation-to-final-step timestamp span is 17016.268 seconds, including the interruption and recovery staging; [scope and timestamps](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/evidence/observed_wall_span.json) distinguish it from training-only and later pipeline phases.
 
-Drive first rejected a 209,715,200-byte part at its 104,857,600-byte upload bridge limit before invoking the Drive action. The same verified ZIP was repartitioned into seven parts of at most 67,108,864 bytes. All published Drive parts and manifests were then independently downloaded, reconstructed and verified. The complete ZIP SHA256 stayed unchanged. [Transfer event](evidence/transfer_failure.json), [publication/read-back receipt](evidence/Drive_publication.json).
+Drive first rejected a 209,715,200-byte part at its 104,857,600-byte upload bridge limit before invoking the Drive action. The same verified ZIP was repartitioned into seven parts of at most 67,108,864 bytes. All published Drive parts and manifests were then independently downloaded, reconstructed and verified. The complete ZIP SHA256 stayed unchanged. [Transfer event](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/evidence/transfer_failure.json), [publication/read-back receipt](evidence/Drive_publication.json).
 
 A local transfer helper initially used `hashlib.file_digest`, unavailable on the host Python 3.10; it was replaced with streaming SHA256 before copying/verifying parts. An early verifier invocation consequently found missing staged parts and failed. Successful preservation was claimed only after the subsequent complete hash/CRC/state/inference checks passed. These utility failures affected no research model or optimizer state.
 
@@ -337,9 +337,9 @@ E06 is now merged in reviewed main `d1ca09df3d20478aabcdd3b4999f8cef6e0d5782` (P
 | E01 | 6 | 32 | 1804800 | 4750 | 1.53466801 | 2.21405793 | 1.53601210 | 2.21599704 |
 | E07 | 8 | 24 | 1804800 | 5000 | 1.53221244 | 2.21051529 | 1.53221244 | 2.21051529 |
 
-![Three-way validation loss](figures/three_heads_loss.png)
+![Three-way validation loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/three_heads_loss.png)
 
-![Three-way conditional BPB](figures/three_heads_bpb.png)
+![Three-way conditional BPB](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E07_seed42/figures/three_heads_bpb.png)
 
 [Matched 20-point table](matched_three_heads.csv). E06 has the lowest best/final loss in this seed. Separate sessions, stochastic optimization trajectories and one seed prevent significance or a general head-count ranking.
 

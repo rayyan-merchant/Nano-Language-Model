@@ -2,7 +2,7 @@
 
 Current 2026-10-15: the [complete original-handout matrix](submission/assignment_compliance_matrix.md) and [evidence/readiness package](submission/assignment_readiness.md) supersede pending audit statements below. Historical records are retained; the final Medium article and human presentation deliveries remain pending.
 
-Research pipeline, genuine Tiny Shakespeare training/validation, conditional BPB, all14 single-seed ablations, F01/B01 inference/generations, measured resource plots and independent recovery are complete. Existing F01 architecture/RoPE material is [indexed here](../report/final/presentation_support/README.md).
+Research pipeline, genuine Tiny Shakespeare training/validation, conditional BPB, all14 single-seed ablations, F01/B01 inference/generations, measured resource plots and independent recovery are complete. Existing F01 architecture/RoPE material is [indexed here](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/final/presentation_support/README.md).
 
 Selected-model safetensors packaging, genuine FastAPI/frontend and public Vercel deployment are implemented. [Submission reproducibility and Colab](submission/README.md) are this phase and have separate execution gates. The final academic/Medium report, recorded presentation and comprehensive handout audit remain pending. The relocated [handwritten assignment PDF](handwritten-assignment.pdf) is preserved byte-for-byte; this cleanup does not certify its calculation correctness. Handout-specific manual three-token derivation/heatmaps, MLM-versus-CLM presentation and trained-attention evidence must be checked for the final submission, rather than inferred from model unit tests.
 

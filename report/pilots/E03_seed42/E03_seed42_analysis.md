@@ -197,13 +197,13 @@ These are retrospective thresholds on actual250-update observations, not exact
 crossing times, interpolated measurements or a modified stopping rule. Both runs
 completed5000 updates irrespective of intermediate comparisons.
 
-![E01 vs E03 loss](comparison/comparison_loss.png)
+![E01 vs E03 loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/comparison/comparison_loss.png)
 
-![E01 vs E03 bpb](comparison/comparison_bpb.png)
+![E01 vs E03 bpb](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/comparison/comparison_bpb.png)
 
-![E01 vs E03 training](comparison/comparison_training.png)
+![E01 vs E03 training](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/comparison/comparison_training.png)
 
-![E01 vs E03 throughput](comparison/comparison_throughput.png)
+![E01 vs E03 throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/comparison/comparison_throughput.png)
 
 ## Runtime, throughput and overhead
 
@@ -232,23 +232,23 @@ genuine. No measured dollars or full-session lifetime is invented.
 Validation lines connect only20 actual observations. Training smoothing uses the
 declared100-step trailing mean. Full PNG/PDF evidence is in the verified archive.
 
-![training_loss](figures/training_loss.png)
+![training_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/figures/training_loss.png)
 
-![validation_loss](figures/validation_loss.png)
+![validation_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/figures/validation_loss.png)
 
 ![combined_loss](figures/combined_loss.png)
 
 ![validation_bpb](figures/validation_bpb.png)
 
-![generalization_gap](figures/generalization_gap.png)
+![generalization_gap](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/figures/generalization_gap.png)
 
-![throughput](figures/throughput.png)
+![throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/figures/throughput.png)
 
-![training_time](figures/training_time.png)
+![training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/figures/training_time.png)
 
-![gradient_norm](figures/gradient_norm.png)
+![gradient_norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/figures/gradient_norm.png)
 
-![learning_rate](figures/learning_rate.png)
+![learning_rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E03_seed42/figures/learning_rate.png)
 
 ## Convergence descriptors and interpretation boundary
 

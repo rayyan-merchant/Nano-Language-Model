@@ -168,23 +168,23 @@ three genuine5000-step histories. Private sampling RNG and coverage arrays match
 Equal update/token counts do not equal FLOPs or wall time. Sample SD is undefined
 for one seed, not zero. No statistical significance or test-selected winner.
 
-![Measured three-way comparison: bpb_memory](comparison/bpb_memory.png)
+![Measured three-way comparison: bpb_memory](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/comparison/bpb_memory.png)
 
-![Measured three-way comparison: bpb_parameters](comparison/bpb_parameters.png)
+![Measured three-way comparison: bpb_parameters](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/comparison/bpb_parameters.png)
 
-![Measured three-way comparison: bpb_training_cost](comparison/bpb_training_cost.png)
+![Measured three-way comparison: bpb_training_cost](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/comparison/bpb_training_cost.png)
 
-![Measured three-way comparison: memory](comparison/memory.png)
+![Measured three-way comparison: memory](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/comparison/memory.png)
 
-![Measured three-way comparison: training_seconds](comparison/training_seconds.png)
+![Measured three-way comparison: training_seconds](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/comparison/training_seconds.png)
 
-![Measured three-way comparison: validation_bpb](comparison/validation_bpb.png)
+![Measured three-way comparison: validation_bpb](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/comparison/validation_bpb.png)
 
-![Measured three-way comparison: validation_bpb_training_time](comparison/validation_bpb_training_time.png)
+![Measured three-way comparison: validation_bpb_training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/comparison/validation_bpb_training_time.png)
 
-![Measured three-way comparison: validation_loss](comparison/validation_loss.png)
+![Measured three-way comparison: validation_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/comparison/validation_loss.png)
 
-![Measured three-way comparison: validation_seconds](comparison/validation_seconds.png)
+![Measured three-way comparison: validation_seconds](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/comparison/validation_seconds.png)
 
 Separate contextual E03 RoPE best BPB2.07327076,parameters1804800: a position ablation, not a depth control or combined-architecture result.
 
@@ -219,21 +219,21 @@ Training-only2.7607 updates/s,11307.89 targets/s. Pipeline excludes queue, final
 
 ![Measured E09: combined_loss](figures/combined_loss.png)
 
-![Measured E09: generalization_gap](figures/generalization_gap.png)
+![Measured E09: generalization_gap](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/figures/generalization_gap.png)
 
-![Measured E09: gradient_norm](figures/gradient_norm.png)
+![Measured E09: gradient_norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/figures/gradient_norm.png)
 
-![Measured E09: learning_rate](figures/learning_rate.png)
+![Measured E09: learning_rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/figures/learning_rate.png)
 
-![Measured E09: throughput](figures/throughput.png)
+![Measured E09: throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/figures/throughput.png)
 
-![Measured E09: training_loss](figures/training_loss.png)
+![Measured E09: training_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/figures/training_loss.png)
 
-![Measured E09: training_time](figures/training_time.png)
+![Measured E09: training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/figures/training_time.png)
 
 ![Measured E09: validation_bpb](figures/validation_bpb.png)
 
-![Measured E09: validation_loss](figures/validation_loss.png)
+![Measured E09: validation_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E09_seed42/figures/validation_loss.png)
 
 ## Complete fixed generation protocol
 

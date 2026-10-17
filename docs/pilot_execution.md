@@ -1,3 +1,7 @@
+> Historical execution workflow. Commands and notebook paths refer to the
+> pinned trained source in the corresponding [research report](../report/README.md),
+> not necessarily the current submission tree. See [historical retrieval](maintenance/README.md).
+
 > Historical execution procedure. Current reports record experiment acceptance; individual earlier attempts may have failed. This is not renewed training authorization. Use [current reports and status](README.md) for actual acceptance and artifact retrieval. Pinned commands/source versions remain preserved below.
 
 # Authorized E01 seed42 pilot execution

@@ -1,7 +1,0 @@
-{
-  "status": "smoke_export_restore_and_ZIP_verified",
-  "smoke_checkpoint_bytes": 15670986,
-  "conservative_required_free_bytes": 3714582248,
-  "available_bytes": 20877737984,
-  "plan": "20 checkpoints plus21 best/latest snapshots and archive;100 weight-file equivalents plus2GiB margin"
-}

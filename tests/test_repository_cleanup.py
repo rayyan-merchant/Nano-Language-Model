@@ -10,7 +10,7 @@ import sys
 import pytest
 from nano_lm.config import ModelConfig
 from nano_lm.train import TrainSettings
-from scripts.maintenance.repository_audit import BASE, git
+from scripts.maintenance.archive_refs import ORIGINAL_BASE as BASE, git
 from scripts.maintenance.verify_repository import markdown_links, link_regressions
 from scripts.pilot.archive_tools import checksum, reconstruct_snapshots
 from scripts.pilot.context_audit import token_budget
@@ -85,3 +85,32 @@ def test_relative_markdown_file_targets_have_no_new_defects():
 def test_known_historical_defect_does_not_hide_new_broken_source():
     result={'broken':[{'source':'docs/new.md','target':'generation.md'}]}
     assert link_regressions(ROOT,result)==result['broken']
+
+
+def test_archived_paths_have_exact_public_history_and_no_active_copies():
+    from scripts.maintenance.archive_refs import BASE as history, blobs, git_blob, ledger
+    rows=ledger(ROOT)
+    assert len(rows)==1417
+    archived=[r for r in rows if r['action']=='ARCHIVE']
+    assert len(archived)==611
+    originals=blobs(ROOT,history,[r['path'] for r in archived])
+    for row in archived:
+        assert not (ROOT/row['path']).exists()
+        assert git_blob(originals[row['path']])==row['git_blob']
+
+
+def test_historical_link_migration_changes_only_the_target():
+    from scripts.maintenance.archive_refs import BASE as history, relink
+    rows=[{'path':'report/old.png','action':'ARCHIVE'},{'path':'report/data.csv','action':'KEEP'}]
+    text='Measured BPB 2.21405793. ![Actual figure](old.png) [data](data.csv)'
+    result=relink(text,'report/a.md',rows)
+    assert result==text.replace('](old.png)',f'](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/{history}/report/old.png)')
+
+
+def test_corrupt_preservation_ledger_cannot_shrink_protection(tmp_path):
+    from scripts.maintenance.archive_refs import ledger
+    path=tmp_path/'docs/maintenance/public_tree.csv'
+    path.parent.mkdir(parents=True)
+    path.write_text('path,action\nsrc/nano_lm/model.py,ARCHIVE\n')
+    with pytest.raises(AssertionError,match='Preservation ledger changed'):
+        ledger(tmp_path)

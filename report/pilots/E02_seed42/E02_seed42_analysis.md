@@ -20,7 +20,7 @@ Authorization covered E02 seed42 for exactly 5,000 completed updates. No additio
 - Colab's native Python 3.13.15 / PyTorch 2.11.0+cu130 remained installed. It did not execute research training. Standard-library archive finalization used the notebook's native Python; likelihood, recovery model inference, generation and figures used the qualified isolated environment.
 - T4 CUDA matrix forward/backward and finite-gradient checks passed. The full automated suite passed: **35 tests in 30.96 seconds**.
 
-The E02 checkpoint was freshly initialized with seed 42. No E01 weights were loaded. The committed analysis scripts import the shared package. The [thin launcher](../../../notebooks/colab_e02_seed42_pilot.ipynb) records the source and commands, with research execution disabled by default. [Executed Colab notebook](https://colab.research.google.com/drive/1Jiu1tKIHBN714tDjB4nu_6YGGE0-DSCJ).
+The E02 checkpoint was freshly initialized with seed 42. No E01 weights were loaded. The committed analysis scripts import the shared package. The [thin launcher](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/notebooks/colab_e02_seed42_pilot.ipynb) records the source and commands, with research execution disabled by default. [Executed Colab notebook](https://colab.research.google.com/drive/1Jiu1tKIHBN714tDjB4nu_6YGGE0-DSCJ).
 
 ## 3. Dataset and tokenizer provenance
 
@@ -75,11 +75,11 @@ Initial recorded step loss: 7.11164474. Final batch loss: 2.78892311; final trai
 | 4750 | 3.21904281 | 25.00417493 | 2.04004308 |
 | 5000 | 3.19782302 | 24.47918155 | 2.02659521 |
 
-![E02 training loss](figures/training_loss.png)
-![E02 validation loss](figures/validation_loss.png)
+![E02 training loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E02_seed42/figures/training_loss.png)
+![E02 validation loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E02_seed42/figures/validation_loss.png)
 ![E02 combined token losses](figures/combined_loss.png)
 ![E02 conditional BPB](figures/validation_bpb.png)
-![Same-byte E01/E02 BPB comparison](figures/e01_e02_validation_bpb.png)
+![Same-byte E01/E02 BPB comparison](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E02_seed42/figures/e01_e02_validation_bpb.png)
 
 Lines join recorded validation points; no intermediate validation measurements were invented. Validation improved from BPB 2.09669180 at 3k to 2.02659521 at 5k, a decrease of 0.07009659. Small increases occurred from 3,750 to 4,000 and from 4,500 to 4,750. The final point was best; the run does not demonstrate a plateau. The within-E02 3k-to-5k token-NLL decrease was 0.11060743. A descriptive fitted late NLL slope was -0.05193113 per 1,000 updates; it is not a forecast or significance test.
 
@@ -110,9 +110,9 @@ All possible sampled training 128-token contexts span mean **312.514 original by
 
 Both runs used the Tesla T4 model and matched software pins. E01 allocated two GPUs but trained on GPU0; E02's preflight exposed one. Kaggle versus Colab, host/driver and runtime conditions remain uncontrolled. E02 training-only time was 23.15% higher, while full-validation time was lower. Fewer BPE validation targets are a relevant workload difference. These timings do not isolate a causal tokenizer speed effect.
 
-![Training throughput](figures/throughput.png)
-![Gradient norm](figures/gradient_norm.png)
-![Learning rate](figures/learning_rate.png)
+![Training throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E02_seed42/figures/throughput.png)
+![Gradient norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E02_seed42/figures/gradient_norm.png)
+![Learning rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E02_seed42/figures/learning_rate.png)
 
 ## 7. Genuine fixed-protocol generation
 

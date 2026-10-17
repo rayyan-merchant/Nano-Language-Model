@@ -174,31 +174,31 @@ discuss interval behavior, comparative learning and future budget recommendation
 Validation markers are actual observations; connecting lines are not extra
 measurements. Training smoother is a declared100-update trailing mean.
 
-![training_loss](figures/training_loss.png)
+![training_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/figures/training_loss.png)
 
-![validation_loss](figures/validation_loss.png)
+![validation_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/figures/validation_loss.png)
 
 ![combined_loss](figures/combined_loss.png)
 
 ![validation_bpb](figures/validation_bpb.png)
 
-![generalization_gap](figures/generalization_gap.png)
+![generalization_gap](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/figures/generalization_gap.png)
 
-![throughput](figures/throughput.png)
+![throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/figures/throughput.png)
 
-![training_time](figures/training_time.png)
+![training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/figures/training_time.png)
 
-![gradient_norm](figures/gradient_norm.png)
+![gradient_norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/figures/gradient_norm.png)
 
-![learning_rate](figures/learning_rate.png)
+![learning_rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/figures/learning_rate.png)
 
-![comparison loss](comparison/comparison_loss.png)
+![comparison loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/comparison/comparison_loss.png)
 
-![comparison bpb](comparison/comparison_bpb.png)
+![comparison bpb](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/comparison/comparison_bpb.png)
 
-![comparison training](comparison/comparison_training.png)
+![comparison training](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/comparison/comparison_training.png)
 
-![comparison throughput](comparison/comparison_throughput.png)
+![comparison throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E04_seed42/comparison/comparison_throughput.png)
 
 ## Genuine fixed-protocol generations
 

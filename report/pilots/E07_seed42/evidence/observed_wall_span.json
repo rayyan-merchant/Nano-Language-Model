@@ -1,6 +1,0 @@
-{
-  "original_run_created_utc": "2026-10-12T17:27:27.708220+00:00",
-  "authoritative_step_5000_event_utc": "2026-10-12T22:11:03.976687+00:00",
-  "recorded_elapsed_span_seconds": 17016.268467,
-  "scope": "Creation-to-final-step timestamp span includes interruption, recovery staging, and unknown volatile progress. It excludes later archive/Drive/report work and is not training-only or complete pipeline runtime."
-}

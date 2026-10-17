@@ -37,7 +37,7 @@
   Do not split dataset, tokenizer, training, evaluation or checkpoint modules
   across agents. Completed execution ownership is in the accepted research records.
 
-Start with docs/README.md for current status/navigation. docs/progress.md is a
-preserved chronological record; its earlier pending states are historical.
+Start with README.md and report/README.md for current status and research navigation.
+Historical chronological records are retrievable through docs/maintenance/README.md.
 See docs/assignment_compliance.md for completed research versus remaining
 handout/submission requirements and docs/maintenance for cleanup safeguards.

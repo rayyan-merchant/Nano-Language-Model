@@ -40,3 +40,25 @@ node_modules/
 *.tsbuildinfo
 !/frontend/.env.example
 !/api/.env.example
+
+# Local development and publication products, never canonical evidence.
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.idea/
+.vscode/
+*.swp
+~$*.docx
+/frontend/out/
+/frontend/coverage/
+/scratch/
+/notebooks/scratch/
+/notebooks/*_scratch.ipynb
+/notebooks/*_draft.ipynb
+/docs/submission/.render/
+/report/**/training_journal.jsonl
+/report/**/events.jsonl
+/report/**/measured_history.json

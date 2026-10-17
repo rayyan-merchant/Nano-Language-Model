@@ -25,7 +25,7 @@ The actual `TransformerBlock` MLP construction and strict `ModelConfig` resolver
 - Backpropagation through each entire actual MLP confirms zero gradient at sampled negative preactivation inputs, with finite and nonzero MLP weight gradients.
 - Shifted next-token targets, manual cross-entropy equivalence, finite CUDA logits/loss/all parameter gradients, causal masks and invariance of earlier logits to altered future tokens passed.
 
-[CUDA activation audit](evidence/relu_audit.json), [existing tests](evidence/tests.json), [activation-specific test](evidence/activation_test.json). Existing suite: 39 tests passed in 36.25s; added activation test passed in 0.65s. No implementation bug or scientific-source fix was required.
+[CUDA activation audit](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/evidence/relu_audit.json), [existing tests](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/evidence/tests.json), [activation-specific test](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/evidence/activation_test.json). Existing suite: 39 tests passed in 36.25s; added activation test passed in 0.65s. No implementation bug or scientific-source fix was required.
 
 ## 3. Exact source and environment
 
@@ -52,7 +52,7 @@ Validation used the entire 55,770-byte validation text, with the first 256 origi
 
 Decoder-only from-scratch causal GPT: width 192, blocks 4, heads 6, head dimension 32, context 128, MLP expansion 4, **ReLU**, sinusoidal positions, dropout 0.1, vocabulary 65, **1,804,800 trainable parameters**. Explicit canonical attention is unchanged; no pretrained model or combined successful factors.
 
-AdamW, constant LR 0.0003, weight decay 0.01, gradient clipping 1.0, seed42, float32, CUDA. Microbatch 4, accumulation 8, 4,096 predicted tokens/update; exactly 5,000 completed updates and zero AMP-skipped updates. Full validation every 250; nominal periodic checkpointing every 500 also saves every validation/best state. Optimizer/scheduler/scaler/RNG/sampling and complete histories are retained. [Execution settings](evidence/execution.json).
+AdamW, constant LR 0.0003, weight decay 0.01, gradient clipping 1.0, seed42, float32, CUDA. Microbatch 4, accumulation 8, 4,096 predicted tokens/update; exactly 5,000 completed updates and zero AMP-skipped updates. Full validation every 250; nominal periodic checkpointing every 500 also saves every validation/best state. Optimizer/scheduler/scaler/RNG/sampling and complete histories are retained. [Execution settings](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/evidence/execution.json).
 
 ## 6. Actual learning curves and full matched validation
 
@@ -83,11 +83,11 @@ Initial recorded training loss: **4.45605695** at update 1. First full validatio
 
 [All 20 matched measurements](matched_validation.csv), [E05 loss/perplexity/BPB table](validation.csv).
 
-![Training loss](figures/training_loss.png)
-![Full validation loss](figures/validation_loss.png)
+![Training loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/training_loss.png)
+![Full validation loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/validation_loss.png)
 ![Conditional BPB](figures/validation_bpb.png)
-![E01 vs E05 validation loss](figures/e01_e05_validation_loss.png)
-![E01 vs E05 BPB](figures/e01_e05_validation_bpb.png)
+![E01 vs E05 validation loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/e01_e05_validation_loss.png)
+![E01 vs E05 BPB](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/e01_e05_validation_bpb.png)
 
 Lines connect observed validation endpoints; intermediate validation values are not measurements. The training smoother is descriptive. Sampled train batches use dropout, whereas validation uses evaluation mode; their gap alone is not evidence of overfitting. A single late fluctuation cannot establish deterioration or convergence.
 
@@ -116,17 +116,17 @@ Best loss/BPB relative reduction for E05: **-1.2922%**; final loss/BPB reduction
 
 This architectural comparison matches parameter count, tokenizer, source-byte context, initial parameter tensors, effective batch, optimizer and update budget. E02's parameter/context/exposure confounds do not apply here. Platform runtime confounds and single-seed uncertainty remain.
 
-Actual original save/export calls were timed by forwarding their unchanged arguments and return values. Local checkpoint saves: **2.819s**; verified Drive exports: **10.304s**; journal writes/fsync: **19.283s**. Engine observed wall time through completed final export: **1563.173s**. These operations are separate from training/evaluation time. Archive construction/publication: **36.476s**. Observed notebook workflow envelope from the first recorded setup GPU timestamp to independent verification: **2769.636s** (about 46.16minutes). This includes provisioning, mount, preflight, research, interactive pauses, recovery, generation, publication and retrieval, but excludes later report/PR work. It is derived from recorded clock endpoints with one-second start precision and different-host clock-source caveats, rather than a single continuous timer. Finish phase: **286.861s**; independent integrity/inference verification excludes download and took **8.150s**. [Timing provenance](evidence/pipeline_timing.json). Peak allocated memory excludes driver overhead/reserved memory. No FLOP measurement exists.
+Actual original save/export calls were timed by forwarding their unchanged arguments and return values. Local checkpoint saves: **2.819s**; verified Drive exports: **10.304s**; journal writes/fsync: **19.283s**. Engine observed wall time through completed final export: **1563.173s**. These operations are separate from training/evaluation time. Archive construction/publication: **36.476s**. Observed notebook workflow envelope from the first recorded setup GPU timestamp to independent verification: **2769.636s** (about 46.16minutes). This includes provisioning, mount, preflight, research, interactive pauses, recovery, generation, publication and retrieval, but excludes later report/PR work. It is derived from recorded clock endpoints with one-second start precision and different-host clock-source caveats, rather than a single continuous timer. Finish phase: **286.861s**; independent integrity/inference verification excludes download and took **8.150s**. [Timing provenance](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/evidence/pipeline_timing.json). Peak allocated memory excludes driver overhead/reserved memory. No FLOP measurement exists.
 
-![Throughput](figures/throughput.png)
-![Accumulated training time](figures/training_time.png)
+![Throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/throughput.png)
+![Accumulated training time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/training_time.png)
 
 ## 8. Gradient and measured activation behavior
 
 All 5,000 recorded gradient norms are finite. Before clipping: mean0.523708, median0.536769, range0.257642–2.100657, final0.583081. 6 updates exceeded1.0 (0.120%), compared with E01's 0.140%. E01's complete norm aggregate is not in the committed summary; its original figure and recorded clipping fraction are the reference. [E05 diagnostics](evidence/gradient_diagnostics.json).
 
-![Gradient norms](figures/gradient_norm.png)
-![Learning rate](figures/learning_rate.png)
+![Gradient norms](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/gradient_norm.png)
+![Learning rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/learning_rate.png)
 
 After training, best/final ReLU outputs were measured without optimizer updates on four predetermined 128-character training windows starting 0,10000,100000,900000 (512 positions), in evaluation mode. These are real activation statistics on a finite diagnostic sample, not validation/test selection.
 
@@ -141,7 +141,7 @@ After training, best/final ReLU outputs were measured without optimizer updates 
 | final | 3 | 0.632642 | 0.367358 | 0  / 768 |
 | final | 4 | 0.643038 | 0.356962 | 0  / 768 |
 
-[Full activation evidence](evidence/activation_diagnostics.json). Zero activations are expected for ReLU. A unit inactive on512 positions is not proven permanently dead; these data do not establish a dying-ReLU problem or its causal contribution. There is no longitudinal all-corpus unit-activity audit.
+[Full activation evidence](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/evidence/activation_diagnostics.json). Zero activations are expected for ReLU. A unit inactive on512 positions is not proven permanently dead; these data do not establish a dying-ReLU problem or its causal contribution. There is no longitudinal all-corpus unit-activity audit.
 
 ## 9. Genuine best/final text grid and qualitative observations
 

@@ -194,35 +194,35 @@ Lower loss/BPB is better; fewer parameters alone do not establish superior quali
 
 Both private samplers were independently replayed and final RNG/target unions match E01. Model/global initialization/dropout RNG are not assumed equal across widths.
 
-![Measured E13 evidence: comparison_bpb](comparison/comparison_bpb.png)
+![Measured E13 evidence: comparison_bpb](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/comparison/comparison_bpb.png)
 
-![Measured E13 evidence: comparison_bpb_training_time](comparison/comparison_bpb_training_time.png)
+![Measured E13 evidence: comparison_bpb_training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/comparison/comparison_bpb_training_time.png)
 
-![Measured E13 evidence: comparison_loss](comparison/comparison_loss.png)
+![Measured E13 evidence: comparison_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/comparison/comparison_loss.png)
 
-![Measured E13 evidence: comparison_resources](comparison/comparison_resources.png)
+![Measured E13 evidence: comparison_resources](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/comparison/comparison_resources.png)
 
-![Measured E13 evidence: comparison_throughput](comparison/comparison_throughput.png)
+![Measured E13 evidence: comparison_throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/comparison/comparison_throughput.png)
 
-![Measured E13 evidence: comparison_training](comparison/comparison_training.png)
+![Measured E13 evidence: comparison_training](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/comparison/comparison_training.png)
 
 ![Measured E13 evidence: combined_loss](figures/combined_loss.png)
 
-![Measured E13 evidence: generalization_gap](figures/generalization_gap.png)
+![Measured E13 evidence: generalization_gap](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/figures/generalization_gap.png)
 
-![Measured E13 evidence: gradient_norm](figures/gradient_norm.png)
+![Measured E13 evidence: gradient_norm](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/figures/gradient_norm.png)
 
-![Measured E13 evidence: learning_rate](figures/learning_rate.png)
+![Measured E13 evidence: learning_rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/figures/learning_rate.png)
 
-![Measured E13 evidence: throughput](figures/throughput.png)
+![Measured E13 evidence: throughput](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/figures/throughput.png)
 
-![Measured E13 evidence: training_loss](figures/training_loss.png)
+![Measured E13 evidence: training_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/figures/training_loss.png)
 
-![Measured E13 evidence: training_time](figures/training_time.png)
+![Measured E13 evidence: training_time](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/figures/training_time.png)
 
 ![Measured E13 evidence: validation_bpb](figures/validation_bpb.png)
 
-![Measured E13 evidence: validation_loss](figures/validation_loss.png)
+![Measured E13 evidence: validation_loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/figures/validation_loss.png)
 
 ## Convergence and gradient observations
 
@@ -346,4 +346,4 @@ Journal:0research failure events,0resume events. In the absence of interruptions
 
 ## Final delivery verification
 
-FinalWindows63passed/1CUDA-only skip157.49s; actualKaggle64passed34.95s; focused14passed1.85s andreporting17passed4.27s. [Commands](evidence/commands.json), [PhaseA E11closure](evidence/phaseA_E11_acceptance.json), [independent21snapshotchecks](evidence/snapshot_manifest_verification.json), [retrievalinstructions](artifact_retrieval.md), [operationalfailures](operations.md). SourceCI38382465043 andreportingCI38384086965 success. FullE13single-runacceptance passed; study-wideauthorization remains separatelygated.
+FinalWindows63passed/1CUDA-only skip157.49s; actualKaggle64passed34.95s; focused14passed1.85s andreporting17passed4.27s. [Commands](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/evidence/commands.json), [PhaseA E11closure](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/evidence/phaseA_E11_acceptance.json), [independent21snapshotchecks](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/evidence/snapshot_manifest_verification.json), [retrievalinstructions](artifact_retrieval.md), [operationalfailures](operations.md). SourceCI38382465043 andreportingCI38384086965 success. FullE13single-runacceptance passed; study-wideauthorization remains separatelygated.
