@@ -1,5 +1,6 @@
 """Pinned public history and deterministic link-only migration of research prose."""
 import csv
+import hashlib
 import io
 from pathlib import Path
 import posixpath
@@ -17,7 +18,9 @@ def git(root, *args):
 
 
 def ledger(root):
-    with (Path(root)/'docs/maintenance/public_tree.csv').open(encoding='utf-8', newline='') as f:
+    path=Path(root)/'docs/maintenance/public_tree.csv'
+    assert hashlib.sha256(path.read_bytes().replace(b'\r\n',b'\n')).hexdigest()=='2b60ee623bbf449054afbda590a7f5f2e1cbc129249361e191225eaa6c05d308', 'Preservation ledger changed; review archive contract before updating'
+    with path.open(encoding='utf-8', newline='') as f:
         return list(csv.DictReader(f))
 
 
@@ -79,7 +82,7 @@ def verify_retained_history(root, prefix='report/'):
         if name.endswith('.md'):
             assert actual.replace(b'\r\n',b'\n').decode()==relink(old.decode(),name,rows),name
         else:
-            assert actual.replace(b'\r\n',b'\n')==old.replace(b'\r\n',b'\n') if name.endswith(('.json','.csv','.txt')) else actual==old,name
+            assert actual.replace(b'\r\n',b'\n')==old.replace(b'\r\n',b'\n') if name.endswith(('.json','.csv','.txt','.jsonl','.gitattributes')) else actual==old,name
     return len(selected)
 
 

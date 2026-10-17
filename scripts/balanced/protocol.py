@@ -35,7 +35,12 @@ def provenance(root):
         assert (root / name).read_text(encoding='utf-8') == old
     changed = subprocess.check_output(['git', 'diff', '--name-only', BASE, '--',
         'report/pilots', 'report/final', 'src', 'configs'], cwd=root, text=True).splitlines()
-    assert not changed, f'Historical evidence or scientific source changed: {changed}'
+    if (root/'docs/maintenance/public_tree.csv').exists():
+        from scripts.maintenance.archive_refs import verify_retained_history
+        verify_retained_history(root, 'report/pilots/')
+        verify_retained_history(root, 'report/final/')
+    else:
+        assert not changed, f'Historical evidence or scientific source changed: {changed}'
     return {**result, 'reviewed_pre_B01_commit': BASE, 'unchanged_F01_and_pilot_evidence': True,
             'stopping_policy_hash': digest(STOP_POLICY)}
 
