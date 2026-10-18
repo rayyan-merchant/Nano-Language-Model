@@ -42,6 +42,5 @@ Failures/corrections and binary-MIME capture boundaries are documented in the
 [execution report](reproducibility_report.md). The first two unsuccessful attempts
 are not concealed. The final executed copy came directly from standard nbclient,
 not reconstructed cell text or manually inserted images. Source43b93e1 CI passed
-all three jobs; submission PR review remains pending. No GPU result is claimed.
-The comprehensive handout evidence audit, academic report and recorded demo remain
-separate pending work. This phase does not certify overall assignment completion.
+all three jobs; PR24 was subsequently merged. No GPU result is claimed.
+At this reproducibility capture, the handout audit, article and recording were outside scope. The audit is now complete and the [published Medium article](https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca) is public; the owner reports recording/presentation delivered, with evidence links pending. See [current readiness](assignment_readiness.md). This historical execution does not certify course submission.

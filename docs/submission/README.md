@@ -1,6 +1,6 @@
 # Current assignment audit
 
-PR24 is merged. The [complete handout matrix](assignment_compliance_matrix.md), [ten required evidence items](evidence/README.md), and [readiness/remaining owner actions](assignment_readiness.md) are the current assignment-delivery index. Earlier PR-review statements below describe the reproducibility phase at capture time. The final Medium article and recording are separate pending deliveries.
+PR24 is merged. The [complete handout matrix](assignment_compliance_matrix.md), [ten required evidence items](evidence/README.md), and [readiness/remaining owner actions](assignment_readiness.md) are the current assignment-delivery index. Earlier PR-review statements below describe the reproducibility phase at capture time. The [published Medium article](https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca) is verified public. Recording and presentation are owner-reported delivered; their evidence links are pending verification in the readiness page.
 
 # Submission reproducibility and Colab demo
 
@@ -8,8 +8,7 @@ PR24 is merged. The [complete handout matrix](assignment_compliance_matrix.md), 
 
 This phase verifies the selected E02 step5000, B01 step3000 and F01 step1750
 inference packages. It does not retrain, select checkpoints or evaluate test data.
-The comprehensive assignment-evidence audit is complete. The final article, recording
-and presentation remain separate human deliveries.
+The comprehensive assignment-evidence audit is complete. Article publication is verified; recording and presentation are owner-reported delivered, with evidence links pending. Course submission is not inferred.
 
 - [Baseline](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/docs/submission/reproducibility_baseline.md)
 - [Pinned models and provenance](models.json)
