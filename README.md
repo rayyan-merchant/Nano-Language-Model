@@ -15,7 +15,15 @@ pretrained model wrapper.
 
 **Jump to:** [The project](#the-project) · [Try the models](#try-the-models) ·
 [All 16 experiments](#all-16-experiments) · [Repository guide](#repository-guide) ·
-[Assignment evidence](#assignment-evidence) · [Reproduce the work](#reproduce-the-work)
+[Assignment evidence](#assignment-evidence) · [Team](#team) · [Reproduce the work](#reproduce-the-work)
+
+## Team
+
+| Name | Roll number |
+|---|---|
+| Rayyan Merchant | 23K-0073 |
+| Syeda Rija Ali | 23K-0057 |
+| Riya Bhart | 23K-0063 |
 
 ## The project
 
