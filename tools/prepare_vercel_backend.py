@@ -34,7 +34,7 @@ def prepare(destination, artifacts):
         '[tool.vercel]\nentrypoint="app:app"\n'
         '[[tool.uv.index]]\nname="pytorch-cpu"\nurl="https://download.pytorch.org/whl/cpu"\nexplicit=true\n'
         '[tool.uv.sources]\ntorch={index="pytorch-cpu"}\n', encoding='utf-8')
-    (destination/'app.py').write_text('from api.vercel_runtime import create_hosted_app\napp = create_hosted_app()\n', encoding='utf-8')
+    (destination/'app.py').write_text('from api.bundled_runtime import create_hosted_app\napp = create_hosted_app()\n', encoding='utf-8')
     (destination/'.python-version').write_text('3.12\n', encoding='utf-8')
     (destination/'vercel.json').write_text(json.dumps({
         '$schema': 'https://openapi.vercel.sh/vercel.json', 'framework': 'fastapi',

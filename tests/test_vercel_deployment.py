@@ -25,3 +25,11 @@ def test_frontend_retains_backend_proxy_and_nextjs_profile():
     assert 'NANOLM_BACKEND_ORIGIN' in source
     assert "source: '/api/:path*'" in source
     assert 'url.protocol' in source and 'url.password' in source
+
+
+def test_platform_runtime_package_is_not_shadowed_by_api_source():
+    # Vercel imports vercel_runtime.vc_init before our ASGI entrypoint.
+    assert not (ROOT / 'api/vercel_runtime.py').exists()
+    assert not (ROOT / 'api/vercel_runtime').exists()
+    adapter = (ROOT / 'tools/prepare_vercel_backend.py').read_text()
+    assert 'from api.bundled_runtime import create_hosted_app' in adapter

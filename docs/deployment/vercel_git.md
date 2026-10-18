@@ -26,3 +26,10 @@ reported LAMBDA_SIZE_EXCEEDED at approximately 5.18 GB. The earlier successful
 production deployments used locally staged serving profiles; the Git-connected
 project roots had not been configured to reproduce them. New previews verify the
 separate profiles; production is not promoted by this repair.
+
+Runtime naming safeguard: Vercel imports its own `vercel_runtime.vc_init` before
+loading the ASGI app. Do not create `api/vercel_runtime.py` or an equivalent
+package at the API project root: it shadows the platform package. The historical
+private-bundle adapter is named `api/bundled_runtime.py`. The October 18 merge
+exposed this import collision despite successful builds; production invocation
+logs identified it, and the adapter and legacy builder were renamed together.

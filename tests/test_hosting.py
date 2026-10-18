@@ -77,22 +77,22 @@ def test_publisher_rejects_wrong_account_or_public_repository(tmp_path, monkeypa
 
 
 def test_vercel_bundle_is_verified_once_and_uses_canonical_registry(tmp_path, monkeypatch):
-    from api import vercel_runtime
+    from api import bundled_runtime
     calls = []
-    monkeypatch.setattr(vercel_runtime, 'verify', lambda *args: calls.append(args))
-    monkeypatch.setattr(vercel_runtime.Registry, 'load', lambda self, key: key)
-    registry = vercel_runtime.BundledRegistry(tmp_path)
+    monkeypatch.setattr(bundled_runtime, 'verify', lambda *args: calls.append(args))
+    monkeypatch.setattr(bundled_runtime.Registry, 'load', lambda self, key: key)
+    registry = bundled_runtime.BundledRegistry(tmp_path)
     assert registry.load('e02') == 'e02'
     assert registry.load('f01') == 'f01'
     assert len(calls) == 1 and registry.verified
 
 
 def test_vercel_invalid_private_bundle_is_sanitized(tmp_path, monkeypatch):
-    from api import vercel_runtime
+    from api import bundled_runtime
     from api.registry import ModelUnavailable
     def fail(*args): raise RuntimeError('private filesystem details fixture')
-    monkeypatch.setattr(vercel_runtime, 'verify', fail)
-    registry = vercel_runtime.BundledRegistry(tmp_path)
+    monkeypatch.setattr(bundled_runtime, 'verify', fail)
+    registry = bundled_runtime.BundledRegistry(tmp_path)
     with pytest.raises(ModelUnavailable) as error:
         registry.load('b01')
     assert 'filesystem' not in str(error.value)
