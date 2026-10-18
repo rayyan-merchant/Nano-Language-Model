@@ -38,6 +38,7 @@ node_modules/
 /frontend/playwright-report/
 /frontend/test-results/
 *.tsbuildinfo
+.vercel/
 !/frontend/.env.example
 !/api/.env.example
 
