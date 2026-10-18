@@ -62,3 +62,6 @@ htmlcov/
 /report/**/training_journal.jsonl
 /report/**/events.jsonl
 /report/**/measured_history.json
+
+# Vercel deployment staging, including downloaded public weights.
+/api/_runtime/
