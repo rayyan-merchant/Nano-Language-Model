@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_cpu_deployment_profile_and_runtime_entrypoint():
     profile = (ROOT / 'api/pyproject.toml').read_text()
     assert 'torch==2.5.1+cpu' in profile
+    assert 'package=false' in profile
     assert 'torch={index="pytorch-cpu"}' in profile
     assert 'entrypoint="app:app"' in profile
     config = json.loads((ROOT / 'api/vercel.json').read_text())
