@@ -30,8 +30,8 @@ dependencies=[
   "typing-inspection==0.4.4",
   "uvicorn==0.34.0"
 ]
-[tool.setuptools.packages.find]
-where=["_runtime/src"]
+[tool.uv]
+package=false
 [tool.vercel]
 entrypoint="app:app"
 [[tool.uv.index]]
