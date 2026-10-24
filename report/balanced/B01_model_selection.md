@@ -119,7 +119,7 @@ precision, dropout, tokenizer fit, clipping threshold or extra seed was tried.
 The complete 100 B01 slots and 300 matched E02/F01/B01 strings are retained.
 All five greedy and all 45 sampled outputs from each B01 checkpoint were read.
 Detailed zero-based slot observations are in
-[B01_generation_observations.md](B01_generation_observations.md).
+[B01_generation_observations.md](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/balanced/B01_generation_observations.md).
 
 | Selected best outputs | E02 | F01 | B01 |
 |---|---:|---:|---:|
@@ -204,4 +204,4 @@ The predefined rule appropriately ended the authorized trajectory at4,500 and
 preserved the selected3,000 state. No alternative patience rule, new seed,
 additional architecture, original-test evaluation or extension was executed.
 Engineering acceptance, complete original/recovered token reproduction and
-durable evidence are documented in [B01_acceptance.md](B01_acceptance.md).
+durable evidence are documented in [B01_acceptance.md](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/balanced/B01_acceptance.md).

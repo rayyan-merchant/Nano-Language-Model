@@ -237,7 +237,7 @@ Training-only2.7607 updates/s,11307.89 targets/s. Pipeline excludes queue, final
 
 ## Complete fixed generation protocol
 
-[All100 unedited samples](generation.md) and generation.json preserve best/final,
+[All100 unedited samples](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E09_seed42/generation.md) and generation.json preserve best/final,
 five prompts,greedy,temperatures.7/1/1.2,seeds42/123/456,256 new tokens.
 Five predetermined best greedy outputs follow; no external text editing/model.
 

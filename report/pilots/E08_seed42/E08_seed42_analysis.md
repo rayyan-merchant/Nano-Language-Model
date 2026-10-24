@@ -210,7 +210,7 @@ completed5000 updates irrespective of intermediate comparisons.
 ## Depth comparison framework
 
 E01 has4 blocks; E08 has6. E09 has8 blocks but was not authorized or trained here.
-Its metric fields remain null in [depth_framework.json](comparison/depth_framework.json).
+Its metric fields remain null in [depth_framework.json](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E08_seed42/comparison/depth_framework.json).
 Depth and model capacity change together; no isolated depth-causality claim is made.
 
 ## Separate positional-ablation context (not depth controls)
@@ -285,7 +285,7 @@ steps. No claim about double descent or long-context extrapolation is implied.
 
 ## Genuine fixed-protocol text generation
 
-[Complete unedited100-sample grid](generation.md) and generation.json preserve all
+[Complete unedited100-sample grid](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E08_seed42/generation.md) and generation.json preserve all
 five prompts, best/final checkpoints, greedy seed42 and temperatures0.7/1.0/1.2
 with seeds42/123/456,256 new tokens. No external model generated or edited text.
 Five predetermined best-checkpoint greedy outputs follow, without cherry-picking.

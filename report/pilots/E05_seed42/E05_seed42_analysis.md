@@ -36,7 +36,7 @@ The actual `TransformerBlock` MLP construction and strict `ModelConfig` resolver
 - E05 orchestration was separately versioned on its dedicated feature branch; the notebook records that commit. The installed `nano_lm` package points to the pinned clean main checkout. No notebook model/training loop exists.
 - [Executed notebook](https://colab.research.google.com/drive/1jXE5OshAxWDrT4i0F8bw7OuFM59HXUjz).
 - Python `3.11.14`, PyTorch `2.5.1+cu124`, torch CUDA `12.4`; NumPy 1.26.4, tokenizers 0.21.0, pytest 8.3.4, Matplotlib 3.9.4. Exact 46-package E01/E02 transitive freeze matched, excluding editable project location.
-- GPU `Tesla T4`, 1 visible device(s), training oncuda:0. Total GPU bytes 15,637,086,208. Full driver output and software freeze are preserved in [hardware](evidence/hardware.json) and [environment](evidence/environment.json).
+- GPU `Tesla T4`, 1 visible device(s), training oncuda:0. Total GPU bytes 15,637,086,208. Full driver output and software freeze are preserved in [hardware](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/evidence/hardware.json) and [environment](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/evidence/environment.json).
 
 Colab's native newer interpreter/framework was left intact and did not execute research training, evaluation or model generation. Isolated Python3.11.14/CUDA wheels were provisioned through the previously qualified workflow. `MPLBACKEND=Agg` was set before postprocessing.
 
@@ -44,7 +44,7 @@ E01 used Kaggle GPU0 of two allocated T4s, driver 580.178.04; this Colab run use
 
 ## 4. Data, tokenizer and evaluation controls
 
-Pinned Tiny Shakespeare revision `6f9487a6fe5b420b7ca9afb0d7c078e37c1d1b4e`. Raw SHA256 `86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed`; character tokenizer SHA256 `ed96787d2f3f9741d69eba15160f31634ba6755b47e4c261ffedbb975fa0af77`. Vocabulary65. All source/split/tokenizer/manifest reference fields match E01. Original contiguous train/validation/test byte counts are1,003,854/55,770/55,770. Train-only tokenizer fitting and shifted windows preserve partition separation. [Verification](evidence/dataset_verification.json).
+Pinned Tiny Shakespeare revision `6f9487a6fe5b420b7ca9afb0d7c078e37c1d1b4e`. Raw SHA256 `86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed`; character tokenizer SHA256 `ed96787d2f3f9741d69eba15160f31634ba6755b47e4c261ffedbb975fa0af77`. Vocabulary65. All source/split/tokenizer/manifest reference fields match E01. Original contiguous train/validation/test byte counts are1,003,854/55,770/55,770. Train-only tokenizer fitting and shifted windows preserve partition separation. [Verification](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/evidence/dataset_verification.json).
 
 Validation used the entire 55,770-byte validation text, with the first 256 original bytes conditioning-only and exactly 55,514 target bytes/characters scored once per measurement. Full sliding evaluation batch 32/context 128 resets local positional indices exactly as E01. No cap, sampled validation or test likelihood. BPB is total NLL divided by `ln(2)×55,514`; with this identical ASCII character tokenizer it equals loss/ln(2). Both token cross-entropy and BPB compare directly across E01/E05. Perplexity is exp(loss). Best checkpoint selection minimizes full-validation loss.
 
@@ -81,7 +81,7 @@ Initial recorded training loss: **4.45605695** at update 1. First full validatio
 | 4750 | 1.53466801 | 1.55677357 | 2.21405793 | 2.24594951 | +0.02210556 |
 | 5000 | 1.53601210 | 1.55449909 | 2.21599704 | 2.24266813 | +0.01848699 |
 
-[All 20 matched measurements](matched_validation.csv), [E05 loss/perplexity/BPB table](validation.csv).
+[All 20 matched measurements](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/matched_validation.csv), [E05 loss/perplexity/BPB table](validation.csv).
 
 ![Training loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/training_loss.png)
 ![Full validation loss](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/validation_loss.png)
@@ -123,7 +123,7 @@ Actual original save/export calls were timed by forwarding their unchanged argum
 
 ## 8. Gradient and measured activation behavior
 
-All 5,000 recorded gradient norms are finite. Before clipping: mean0.523708, median0.536769, range0.257642–2.100657, final0.583081. 6 updates exceeded1.0 (0.120%), compared with E01's 0.140%. E01's complete norm aggregate is not in the committed summary; its original figure and recorded clipping fraction are the reference. [E05 diagnostics](evidence/gradient_diagnostics.json).
+All 5,000 recorded gradient norms are finite. Before clipping: mean0.523708, median0.536769, range0.257642–2.100657, final0.583081. 6 updates exceeded1.0 (0.120%), compared with E01's 0.140%. E01's complete norm aggregate is not in the committed summary; its original figure and recorded clipping fraction are the reference. [E05 diagnostics](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/evidence/gradient_diagnostics.json).
 
 ![Gradient norms](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/gradient_norm.png)
 ![Learning rate](https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E05_seed42/figures/learning_rate.png)
@@ -145,7 +145,7 @@ After training, best/final ReLU outputs were measured without optimizer updates 
 
 ## 9. Genuine best/final text grid and qualitative observations
 
-The unchanged `configs/generation_protocol.json` defines five prompts, greedy decoding, temperatures 0.7/1.0/1.2, seeds 42/123/456 and 256 new character tokens. Both checkpoint policies supply 50 settings each: **100 unedited labeled records**. [Complete JSON grid](generation.json), [complete readable grid](generation.md). Every record names the real checkpoint and checksum. No other language model generated or rewrote these outputs.
+The unchanged `configs/generation_protocol.json` defines five prompts, greedy decoding, temperatures 0.7/1.0/1.2, seeds 42/123/456 and 256 new character tokens. Both checkpoint policies supply 50 settings each: **100 unedited labeled records**. [Complete JSON grid](generation.json), [complete readable grid](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/generation.md). Every record names the real checkpoint and checksum. No other language model generated or rewrote these outputs.
 
 Best and final are the same step5000 weights; their matching outputs are duplicate labels and supply 50 unique settings, not100 independent samples.
 
@@ -250,22 +250,22 @@ Repetition counts use character8-gram positions in the256-character continuation
 
 Before research, actual Drive quota and a fresh exclusive E05 directory were verified. Smoke checkpoint size22,767,372bytes; conservative storage budget3,350,479,024bytes; actual quota free approximately390,460,000,000bytes as shown in Drive UI. Drive FUSE disk usage was not treated as account quota. All 3 smoke manifests/file hashes verified; fresh-directory checkpoint checksum, actual CUDA loading/inference and complete-state continuation passed.
 
-Research run: `E05_seed42_f36219171999455dbc35c098ad8458f9`. All 20 validation checkpoint states and extra completed-summary snapshot survived verified export. Every checkpoint's optimizer counters, scheduler epoch, history length and byte/token exposure were audited. Research failure/resume events: **0**; histories retain actual events. [Checkpoint audit](evidence/checkpoint_audit.json), [snapshot index](evidence/snapshot_index.json).
+Research run: `E05_seed42_f36219171999455dbc35c098ad8458f9`. All 20 validation checkpoint states and extra completed-summary snapshot survived verified export. Every checkpoint's optimizer counters, scheduler epoch, history length and byte/token exposure were audited. Research failure/resume events: **0**; histories retain actual events. [Checkpoint audit](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/evidence/checkpoint_audit.json), [snapshot index](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/evidence/snapshot_index.json).
 
-Fresh compatible CUDA process restored model, AdamW, scheduler, scaler, Python/NumPy/torch/CUDA/sampling RNG and training state. A save/read roundtrip compared all state structures exactly; all passed. Best/final GPU inference ran from restored snapshots, with **zero additional optimizer updates**. [CUDA recovery receipt](evidence/cuda_recovery.json).
+Fresh compatible CUDA process restored model, AdamW, scheduler, scaler, Python/NumPy/torch/CUDA/sampling RNG and training state. A save/read roundtrip compared all state structures exactly; all passed. Best/final GPU inference ran from restored snapshots, with **zero additional optimizer updates**. [CUDA recovery receipt](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/evidence/cuda_recovery.json).
 
 - [Private durable E05 folder](https://drive.google.com/drive/folders/1Yevhub7gVALet12-4w-YRfevLSeO7U8r).
 - [Complete archive](https://drive.google.com/file/d/10ZPEIBH_rfB-tuh7Y3NrXf44pbvnFme2/view): **402,733,955bytes**.
 - Archive SHA256: `c965eb22ca41bcd884e74ff74743d983d62942c53b1212e7c1e3df062a33b859`.
-- [Archive manifest](evidence/artifact_manifest.json), [ordered part checksums](evidence/archive_parts.json).
+- [Archive manifest](evidence/artifact_manifest.json), [ordered part checksums](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/evidence/archive_parts.json).
 
-The archive was published using the tested staged-rename publisher, then read back and hash-verified. Every internal entry's CRC/hash was checked. Numbered parts under the connector's transfer cap were independently downloaded and concatenated. Independent local checks verified exact archive SHA256, 64entry hashes/paths/CRC, all20 actual checkpoint optimizer/scheduler states,5000 histories and20 full validations. Authentic generation checkpoint hashes and best/final CPU inference passed. [Independent retrieval receipt](evidence/independent_verification.json).
+The archive was published using the tested staged-rename publisher, then read back and hash-verified. Every internal entry's CRC/hash was checked. Numbered parts under the connector's transfer cap were independently downloaded and concatenated. Independent local checks verified exact archive SHA256, 64entry hashes/paths/CRC, all20 actual checkpoint optimizer/scheduler states,5000 histories and20 full validations. Authentic generation checkpoint hashes and best/final CPU inference passed. [Independent retrieval receipt](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/evidence/independent_verification.json).
 
 Local CPU inference used Python3.10.0 / torch2.11.0 for inference migration only. Exact training resume was validated on the locked CUDA environment, not this newer CPU framework. Large weights and datasets remain outside GitHub. The pinned manifest permits data reacquisition without including source text in the archive.
 
 ## 11. Failures and scientific limitations
 
-Initial notebook authoring produced an unterminated string syntax error before any setup or training executed. The cell was corrected and the environment provisioned successfully. Host pytest was unavailable; qualified Colab executed the real test suite and new activation test. These preflight/authoring observations are separated from research logs. Independent local part00 download encountered HTTP/2 INTERNAL_ERROR92 after a partial transfer; part01 completed and matched its hash. Part00 resumed over HTTP/1.1 through a refreshed authenticated file reference, then both hashes and the complete reconstructed archive passed. The incomplete transfer was not counted as preservation evidence. [Failure history](evidence/failures.json). No unresolved execution or preservation failure remains.
+Initial notebook authoring produced an unterminated string syntax error before any setup or training executed. The cell was corrected and the environment provisioned successfully. Host pytest was unavailable; qualified Colab executed the real test suite and new activation test. These preflight/authoring observations are separated from research logs. Independent local part00 download encountered HTTP/2 INTERNAL_ERROR92 after a partial transfer; part01 completed and matched its hash. Part00 resumed over HTTP/1.1 through a refreshed authenticated file reference, then both hashes and the complete reconstructed archive passed. The incomplete transfer was not counted as preservation evidence. [Failure history](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E05_seed42/evidence/failures.json). No unresolved execution or preservation failure remains.
 
 One seed supplies no variance estimate or statistical significance. Only the original architecture/budget was tested. Equal initial weights and sample budget improve control, but distinct nonlinearities lead to distinct gradient trajectories. Kaggle/Colab driver/host differences limit runtime attribution. Evaluation is conditional sliding likelihood, not whole-file entropy. Generated text coherence is qualitative;8-gram repetition is not a human quality measure. Limited post-training activation samples cannot establish permanent inactive units or causal failure mechanisms. No test likelihood, unseen-factor interaction or5k→10k continuation was performed.
 

@@ -1,5 +1,0 @@
-experiment_id,seed,tokenizer,parameters,completed_updates,best_step,best_conditional_bpb,final_conditional_bpb,training_predicted_tokens,training_source_byte_exposure,comparison_scope
-E01,42,character,1804800,5000,4750,2.214057930481681,2.2159970425594078,20480000,20480000,Character positional comparison;E04 adds capacity and changes initialization RNG consumption
-E02,42,BPE,2173056,5000,5000,2.026595212432371,2.026595212432371,20480000,49991931,Contextual BPE comparison;capacity/byte-context/exposure differ
-E03,42,character,1804800,5000,5000,2.073270762394827,2.073270762394827,20480000,20480000,Character positional comparison;E04 adds capacity and changes initialization RNG consumption
-E04,42,character,1829376,5000,5000,2.237788693422635,2.237788693422635,20480000,20480000,Character positional comparison;E04 adds capacity and changes initialization RNG consumption

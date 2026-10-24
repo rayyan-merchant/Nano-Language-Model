@@ -45,11 +45,11 @@ These inspectors may deserialize trusted project states after integrity checks.
 Use each [research report](../report/README.md) for exact arguments/input schemas,
 source versions, account access and existing retrieval evidence.
 
-## Why historical families remain
+## Retained tools and historical workflows
 
 | Directory | Purpose and boundary |
 |---|---|
-| [pilot](pilot) | E01–E14 specific mathematical audits, original narrow platform wrappers, interrupted-run reconciliation, comparisons and report writers |
+| [pilot](pilot) | E01–E14 mathematical audits, retained platform/recovery wrappers and comparison tools; one-off report writers are archived |
 | [final](final) | Separately approved F01 shape/10k/test policy, source guards, numerical references and exact recovery |
 | [balanced](balanced) | B01's frozen stopping controller, no-refit data reuse, segmented-equivalence checks and variable-stop recovery |
 | [kaggle_qualification](https://github.com/rayyan-merchant/Nano-Language-Model/tree/8f88edee89dfceb6d0a8c84e385a886c4e058356/scripts/kaggle_qualification) | Historical account qualification; smoke-specific manifests/profile/state and genuine failure lineage |

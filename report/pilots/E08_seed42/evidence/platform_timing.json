@@ -1,7 +1,0 @@
-{
-  "start_clone_timestamp": 8.353031778,
-  "archive_complete_timestamp": 2610.50037921,
-  "pipeline_wall_seconds": 2602.147347432,
-  "scope": "Actual platform log source-clone to last archive-complete marker; excludes queue and final conversion/publication/network retrieval",
-  "duplicate_progress_lines": "Platform duplicate lines retained; research journals/checkpoints authoritative"
-}

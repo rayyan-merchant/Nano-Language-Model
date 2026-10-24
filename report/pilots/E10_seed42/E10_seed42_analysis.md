@@ -229,7 +229,7 @@ Observed3k–5k NLL improvement 0.10872927; late observed-point slope -0.0553246
 
 ## Complete genuine generation protocol
 
-[All100 unedited outputs](generation.md) preserve five fixed prompts, best/final, greedy, temperatures0.7/1/1.2, seeds42/123/456 and256 new tokens. Five predetermined best greedy samples follow, including poor outputs. No external model generated or improved text.
+[All100 unedited outputs](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E10_seed42/generation.md) preserve five fixed prompts, best/final, greedy, temperatures0.7/1/1.2, seeds42/123/456 and256 new tokens. Five predetermined best greedy samples follow, including poor outputs. No external model generated or improved text.
 
 ### 'To be, or not to be'
 

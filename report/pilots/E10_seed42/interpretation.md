@@ -118,7 +118,7 @@ each MLP do not prove absence of vanishing/exploding gradients throughout traini
 
 ## Genuine generation observations and failures
 
-[All100 unedited outputs](generation.md) retain five fixed prompts, both checkpoint
+[All100 unedited outputs](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E10_seed42/generation.md) retain five fixed prompts, both checkpoint
 policies, greedy decoding, temperatures0.7/1/1.2, seeds42/123/456 and256 new tokens.
 Best and final are the identical5,000-step state: their separately labeled50-row
 grids duplicate the same settings, not independent model draws. The main report

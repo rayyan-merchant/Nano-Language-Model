@@ -1,9 +1,0 @@
-{
-  "status": "authorized_download_size_SHA256_verified",
-  "kernel": "rayyannmerchant/nano-e14-pilot-20261013-82e48728/1",
-  "archive_bytes": 623713697,
-  "archive_sha256": "e41393c4a97c2ec565558df4ca0997d74275cf62e69c57b466c4794855b26fd7",
-  "seconds": 1129.8429145999253,
-  "transport": "Official Kaggle API output URL; four bounded byte-range streams with exact206/Content-Range/size validation; retained0byte prefix and0 completed immutable ranges; full object SHA256 verified",
-  "credentials": "No signed URL or credentials recorded"
-}

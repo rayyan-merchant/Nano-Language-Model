@@ -1,5 +1,27 @@
 # Public tree integrity and historical retrieval
 
+## Internal-material cleanup — 2026-10-24
+
+397 internal-only files were removed from the current public tree. Exact paths,
+Git blob IDs, sizes and reasons are in [internal_archive.csv](internal_archive.csv).
+Their immutable source is commit `5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430`;
+use `git show 5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430:PATH` or the pinned links
+in retained reports to inspect historical receipts. A checksum-verified local
+backup is stored outside Git in `outputs/internal-archive-20261024.zip`.
+Exact anchored ignore rules prevent these operational records from being
+accidentally re-added. This does not make earlier public history private.
+
+The active tree retains every experiment analysis, summary, validation CSV,
+complete generation JSON, selected plots and artifact manifest; all scientific
+source/config/tokenizer bytes, the app and final assignment evidence remain.
+Internal receipts, duplicate derived comparisons, old execution plans, repeated
+deployment screenshots and one-off report drafts are historical-only.
+The verifier checks both archival ledgers and original Git blobs, with no
+blanket missing-file exemptions. New internal documents belong in `outputs/`,
+not among the submission files.
+
+## Earlier cleanup history
+
 The submission tree keeps the scientific implementation, every experiment's
 analysis and canonical measurements, complete generations, final recovery
 evidence, selected plots, application and final assignment evidence. Intermediate

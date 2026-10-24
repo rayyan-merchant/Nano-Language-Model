@@ -103,7 +103,7 @@ and in the private published notebook output. The source checkout remains on C.
 
 ## Genuine text generation and failure modes
 
-[generation.md](generation.md) and [generation.json](generation.json) preserve
+[generation.md](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E08_seed42/generation.md) and [generation.json](generation.json) preserve
 all100 outputs:50 settings each for best4750 and final5000. Each continuation has
 256 new characters. All five prompts, greedy decoding, temperatures0.7/1.0/1.2
 and sampling seeds42/123/456 are unchanged. These are actual CUDA-generated texts,
@@ -131,7 +131,7 @@ semantic dialogue control. All poor samples remain in the grid.
 Across15 best-checkpoint samples per temperature, repeated8-window fractions
 average0.005087 (0.7),0.000535 (1.0) and0 (1.2). The final equivalents are0.007229,
 0.000535 and0. Higher diversity is not equivalent to grammatical correctness.
-The matching E01/E08100-row comparison is in [generation_quality.json](generation_quality.json).
+The matching E01/E08100-row comparison is in [generation_quality.json](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E08_seed42/generation_quality.json).
 Its fixed-window repetition statistic is a transparent descriptive heuristic,
 not a validated language-quality score or independent replicated experiment.
 
@@ -205,7 +205,7 @@ No10000-step extension has been started.
 
 Analysis commands actually executed after retrieval use inspect_archive.py,
 diagnostics.py, compare_depth.py, compare_generation_grid.py and
-write_e08_report.py. [commands.json](commands.json) records their exact paths and
+write_e08_report.py. [commands.json](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E08_seed42/commands.json) records their exact paths and
 arguments plus the training command read from the published execution receipt.
 They reproduce tables/figures from genuine checkpoints/journals; the narrative
 interpretation is editorial and explicitly separate from measured data.

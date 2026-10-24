@@ -66,7 +66,7 @@ trajectory would improve held-out prediction.
 
 All five fixed prompts, all three temperatures and all three sampling seeds
 remain present for both best and final checkpoints. The full 100-slot grid is
-in [generation.md](generation.md); the predeclared 50-slot 5,000-step grid is in
+in [generation.md](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/final/generation.md); the predeclared 50-slot 5,000-step grid is in
 `step5000_generation.json`. Every output contains 256 new BPE token IDs, not
 necessarily 256 characters. Character-model comparisons therefore have unequal
 continuation lengths. Automatic string diversity and training-lexicon novelty

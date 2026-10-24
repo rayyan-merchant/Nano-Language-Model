@@ -133,11 +133,11 @@ cost and all fixed outputs separately. B01 best greedy repeated8gram fraction
 checked against training text: maximum exact overlaps34 characters best and40
 final, largely speaker labels/common phrases, with source offsets recorded.
 No long copied passage appeared in this grid; this is not a global absence-of-
-memorization claim. [Full-grid observations](B01_generation_observations.md)
+memorization claim. [Full-grid observations](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/balanced/B01_generation_observations.md)
 include every poor-output category and all five invalidUTF8 slot identities.
 
-[Acceptance checklist](B01_acceptance.md), [artifact retrieval](artifact_retrieval.md)
-and [executed commands](B01_commands.md) provide the evidence chain, actual
+[Acceptance checklist](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/balanced/B01_acceptance.md), [artifact retrieval](artifact_retrieval.md)
+and [executed commands](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/balanced/B01_commands.md) provide the evidence chain, actual
 failures/corrections, zero-update recovery and untouched historical boundaries.
 Original published figures and measurements remain immutable; comparative
 figures and interpretation are post-recovery deliverables. No research checkpoint,

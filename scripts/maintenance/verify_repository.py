@@ -12,7 +12,7 @@ import subprocess
 import sys
 from urllib.parse import unquote, urlsplit
 
-from scripts.maintenance.archive_refs import BASE, blobs, git, git_blob, ledger, relink
+from scripts.maintenance.archive_refs import BASE, blobs, git, git_blob, ledger, relink, internal_links, verify_internal_archive
 
 
 def files(root):
@@ -85,7 +85,7 @@ def documentation_updates(root):
     root=Path(root).resolve()
     manifest=root/'docs/maintenance/document_updates.json'
     raw=manifest.read_bytes().replace(b'\r\n',b'\n')
-    assert hashlib.sha256(raw).hexdigest()=='3a98b3944ae49a91dc078118a84d04c3e039bfa6d8cc43b3c493e045cf5179e7', 'Documentation revision manifest changed'
+    assert hashlib.sha256(raw).hexdigest()=='9375d4c4bab84894e3798b2b38d214a0ffec9d478d850699c27f4ff5f435d1ef', 'Documentation revision manifest changed'
     record=json.loads(raw)
     assert record['schema_version']==1
     for name,expected in record['files'].items():
@@ -99,6 +99,7 @@ def documentation_updates(root):
 def integrity(root, baseline=None):
     root=Path(root);rows=ledger(root)
     doc_updates=documentation_updates(root)
+    internal=verify_internal_archive(root)
     names=[r['path'] for r in rows]
     values=blobs(root,BASE,names)
     historical_checked=current_checked=link_only_checked=0
@@ -109,6 +110,8 @@ def integrity(root, baseline=None):
         name=row['path'];old=values[name];path=root/name
         assert git_blob(old)==row['git_blob'],f'Historical blob changed: {name}'
         historical_checked+=1
+        if name in internal:
+            continue
         if row['action']=='ARCHIVE':
             assert not path.exists(),f'Archived path remains active: {name}'
             continue
@@ -120,7 +123,7 @@ def integrity(root, baseline=None):
             # Exact reviewed text revision was checked independently above.
             pass
         elif name.endswith('.md'):
-            expected=relink(old.decode('utf-8'),name,rows)
+            expected=internal_links(root,relink(old.decode('utf-8'),name,rows),name)
             assert actual.decode('utf-8').replace('\r\n','\n')==expected,name
             link_only_checked+=old.decode('utf-8')!=expected
         elif name.endswith(('.py','.json','.csv','.txt','.ipynb','.jsonl','.gitattributes')) and not name.startswith('assets/tokenizers/'):
@@ -138,7 +141,7 @@ def integrity(root, baseline=None):
     historical={n:raw.decode('utf-8').replace('\r\n','\n') for n,raw in blobs(root,previous,old_names).items()}
     assert digest(historical)=='cdea42adb930904fb0cefcd282d784bb3ac8caa311d3f1e12ef568622f9c12d6'
     return {'canonical_paths_and_bytes_checked':current_checked,'historical_git_blobs_checked':historical_checked,
-            'archived_paths':sum(r['action']=='ARCHIVE' for r in rows),'reviewed_documentation_updates':len(doc_updates),'link_only_research_migrations':link_only_checked,
+            'archived_paths':sum(r['action']=='ARCHIVE' for r in rows),'internal_paths_removed':len(internal),'reviewed_documentation_updates':len(doc_updates),'link_only_research_migrations':link_only_checked,
             'science_fingerprint':digest(core),'current_aggregate':digest(aggregate),'historical_aggregate':digest(historical),
             'scope':'Current retained scientific/research/submission artifacts plus separate full historical Git-object verification; no blanket deletion exemptions'}
 

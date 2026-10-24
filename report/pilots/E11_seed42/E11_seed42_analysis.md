@@ -254,7 +254,7 @@ Aggregate norms are pre-clipping; no longitudinal per-layer gradient measurement
 
 ## Complete genuine text generation
 
-[All100 unedited outputs](generation.md) include best/final, five fixed prompts, greedy and temperatures0.7/1/1.2 with seeds42/123/456,256 new tokens. Context64 enforced at every step. No output editing or favorable-only selection. Five predetermined best greedy examples follow.
+[All100 unedited outputs](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E11_seed42/generation.md) include best/final, five fixed prompts, greedy and temperatures0.7/1/1.2 with seeds42/123/456,256 new tokens. Context64 enforced at every step. No output editing or favorable-only selection. Five predetermined best greedy examples follow.
 
 ### Prompt 'To be, or not to be'
 
@@ -352,7 +352,7 @@ Interpretation and budget recommendation must follow actual late validation tren
 
 ## Executed tests and operational evidence
 
-CPU initial58passed1skip92.80s; final59passed1CUDA-only skip105.72s; focused13passed3.07s. Actual Kaggle suite60passed33.76s. CPU/CUDA context audits passed14checks each. [Actual commands](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/commands.json), [test/CI receipts](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/execution_review.json), [interpretation](interpretation.md), [operational failures and remaining gate](operations.md). No fresh GPU success is claimed until a genuine recovery receipt is available.
+CPU initial58passed1skip92.80s; final59passed1CUDA-only skip105.72s; focused13passed3.07s. Actual Kaggle suite60passed33.76s. CPU/CUDA context audits passed14checks each. [Actual commands](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/commands.json), [test/CI receipts](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/execution_review.json), [interpretation](interpretation.md), [operational failures and remaining gate](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E11_seed42/operations.md). No fresh GPU success is claimed until a genuine recovery receipt is available.
 
 ### Resolved platform delay
 
@@ -362,4 +362,4 @@ Final delivery rerun:59passed/1CUDA-only skip110.70s. SourceCI38355927555 and re
 
 ## Final acceptance resolution
 
-The existing recovery notebook version1 is nowCOMPLETE. Its independently retrieved genuine receipt verifies all six state groups exactly,5000→5000optimizer updates and zeroextra. Source/environment/core hashes match, and best/final CUDA generations match independently recovered CPU outputs. [Current recovery receipt](evidence/cuda_recovery.json), [historical pending status](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/cuda_recovery_pending_history.json). AllE11acceptance criteria now pass. No additional research run or extension was launched. Study-wide authorization remains separately gated.
+The existing recovery notebook version1 is nowCOMPLETE. Its independently retrieved genuine receipt verifies all six state groups exactly,5000→5000optimizer updates and zeroextra. Source/environment/core hashes match, and best/final CUDA generations match independently recovered CPU outputs. [Current recovery receipt](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E11_seed42/evidence/cuda_recovery.json), [historical pending status](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E11_seed42/evidence/cuda_recovery_pending_history.json). AllE11acceptance criteria now pass. No additional research run or extension was launched. Study-wide authorization remains separately gated.

@@ -87,7 +87,7 @@ cross-seed uncertainty estimate; each condition has only one observed seed.
 The pre-run decision retained BPE, RoPE, eight blocks and width 240 from the
 strongest relevant pilot directions, and preserved the explicitly approved
 six-head/GELU/MLP4×/context128 settings. It did not sum pilot improvements or
-search combinations. [The frozen decision](F01_architecture_decision.md) records
+search combinations. [The frozen decision](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/final/F01_architecture_decision.md) records
 that reasoning before the F01 trajectory began.
 
 F01's early selected BPB is lower than all pilot minima, but its 5,000- and
