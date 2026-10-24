@@ -10,7 +10,7 @@ E06 has lower validation loss at 19 of 20 matched checkpoints. At 2000 it is
 slightly higher: 1.76129042 versus 1.75925914, a 0.00203128-nat difference.
 Both runs select update4750. E06 improves best loss by 0.00601516 nats
 (0.39195%) and best BPB by 0.00867804. Final loss improves by 0.00680776
-nats (0.44321%). See [all twenty matched points](comparison/matched_validation.csv).
+nats (0.44321%). See [all twenty matched points](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E06_seed42/comparison/matched_validation.csv).
 Four heads offer a small observed advantage here, with no significance estimate
 or claim that the result generalizes to other widths, depths or seeds.
 
@@ -56,7 +56,7 @@ perfectly partition the pipeline duration.
 
 ## Genuine generation and failures
 
-[All100 unedited samples](generation.md) cover best/final, five prompts,
+[All100 unedited samples](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E06_seed42/generation.md) cover best/final, five prompts,
 greedy seed42, temperatures0.7/1.0/1.2 and seeds42/123/456,256 new characters.
 The primary report includes all five predetermined best greedy examples.
 Best greedy ROMEO begins "I would not so do the so die to the soul" and
@@ -80,7 +80,7 @@ continuations is0.447390 forE06 versus0.522892 forE01. Best temperature0.7
 fractions are0.005355 versus0.001339. The direction depends on decoding;
 this descriptive measure ignores grammar and semantics and establishes no
 global quality ranking. All continuations are256 characters; no replacement
-characters were found. [Every matched setting](generation_quality.json) is kept.
+characters were found. [Every matched setting](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E06_seed42/generation_quality.json) is kept.
 A predetermined subset of ten best outputs has longest exact training-text
 overlaps of13-24 characters, often labels or ordinary phrases. This limited
 check neither proves nor excludes memorization and is not a corpus-wide test.
@@ -147,7 +147,7 @@ Actual local commands include full `pytest -q` with theD qualification
 downloaded ZIP/manifest into `verified`; `diagnostics.py` on that extraction and
 canonical training text; `compare_heads.py` against the independently verifiedE01
 directory; and `compare_generation_grid.py` against the two genuine100-row grids.
-[commands.json](commands.json) records complete argument lists and their paths.
+[commands.json](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E06_seed42/commands.json) records complete argument lists and their paths.
 `write_e06_report.py` rendered this report from the verified artifacts, comparison,
 platform timing, CUDA recovery, manifest, diagnostics and execution-review receipts.
 

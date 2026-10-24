@@ -169,7 +169,7 @@ overfitting nor double descent is inferred solely from a local fluctuation.
 
 ## Genuine generations and limitations
 
-[Complete unedited generation grid](generation.md) and generation.json preserve
+[Complete unedited generation grid](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E01_seed42/generation.md) and generation.json preserve
 all5 fixed prompts, greedy decoding and temperatures0.7/1.0/1.2 with sampling
 seeds42/123/456,256 new tokens, from both best and final checkpoints. GPU samples
 come directly from this project's generate function. No external model produced

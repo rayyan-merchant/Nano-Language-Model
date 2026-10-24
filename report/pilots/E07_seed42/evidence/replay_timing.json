@@ -1,9 +1,0 @@
-{
-  "authoritative_trajectory_training_seconds": 946.0003841339926,
-  "known_superseded_attempt_training_seconds": 38.31772855999952,
-  "known_minimum_physical_training_seconds": 984.3181126939921,
-  "authoritative_predicted_tokens": 20480000,
-  "known_superseded_attempt_tokens": 847872,
-  "known_minimum_physical_predicted_tokens": 21327872,
-  "scope": "Genuine cumulative engine timings/counters. Unknown later volatile progress excluded; complete physical runtime is unavailable."
-}

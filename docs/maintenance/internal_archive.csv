@@ -1,0 +1,398 @@
+path,git_blob,bytes,reason
+docs/B01_execution.md,3a134d94dd7d3f5730776830daa21b7a9d8da557,8456,Duplicate or one-off internal analysis and execution material
+docs/E03_execution.md,60f4eeffcc17260ccd5e567ff13be1ae1e4a673d,6144,Duplicate or one-off internal analysis and execution material
+docs/E04_execution.md,d34415f3ea3147e7c92150922d70cfb3fb731ff2,5104,Duplicate or one-off internal analysis and execution material
+docs/E05_COLAB_EXECUTION.md,36a4de20c488715087b3455d721d193880086f1a,5214,Duplicate or one-off internal analysis and execution material
+docs/E06_execution.md,9a91f51095c63fdd3d2354f44ffce419a2721a92,4354,Duplicate or one-off internal analysis and execution material
+docs/E07_COLAB_EXECUTION.md,11e5dedd4238be0fe443a81b18799ca1d05a5c2f,4622,Duplicate or one-off internal analysis and execution material
+docs/E08_execution.md,bac0043cd12a12c517ca6cc0f27578b631281a41,5540,Duplicate or one-off internal analysis and execution material
+docs/E09_execution.md,2ca926eb430fa3cb148ff3417e8a8107c6e645fd,6931,Duplicate or one-off internal analysis and execution material
+docs/E10_execution.md,2a3245c7a15dafdc4c8335d305fd9c0e1d242dbd,6582,Duplicate or one-off internal analysis and execution material
+docs/E11_execution.md,fbfe4ea7ddfb469abad374092fc011edd1e82d39,2712,Duplicate or one-off internal analysis and execution material
+docs/E12_execution.md,bc5e94d3b8b3a2f84be260b38f4878731bd65ffd,5213,Duplicate or one-off internal analysis and execution material
+docs/E13_execution.md,8f2a071bcb961d1fad37604a01c5782ef991c16a,2452,Duplicate or one-off internal analysis and execution material
+docs/E14_execution.md,b0b3ab31943ff8d4cfff4b607b83b8968c42167c,2878,Duplicate or one-off internal analysis and execution material
+docs/F01_execution.md,40ea727165310914508205f0cb9fe47988fa4a8c,10497,Duplicate or one-off internal analysis and execution material
+docs/deployment/evidence/benchmark-three-models.json,bb6e4d1926c3e39e7eac042d253eaa891eca46ce,11089,Internal operations and verification receipt
+docs/deployment/evidence/benchmark.json,d500df4db77407cd5afe2379a816c23b0e96cf90,7831,Internal operations and verification receipt
+docs/deployment/evidence/desktop-compare.png,12417038d1f7f3b69402364128f79b2dedfaff26,160184,Internal operations and verification receipt
+docs/deployment/evidence/desktop-home.png,a3aecaba6ae7244a565a6f67e971fed6f5aed6f6,222698,Internal operations and verification receipt
+docs/deployment/evidence/desktop-playground.png,d009ed8e15a11d3b3c00a47388bd6fef5b23878c,225535,Internal operations and verification receipt
+docs/deployment/evidence/desktop-research.png,c5428f309e93790716e7a462ca79e5f9191db6d3,254035,Internal operations and verification receipt
+docs/deployment/evidence/hf-space-eligibility.json,0ed79227a8c2ec15c67bd1009af4d286fd9d9cff,412,Internal operations and verification receipt
+docs/deployment/evidence/hosted-api-b26179c.json,b92f5ae4d815a335646f0ffc604f0aa82a72fe69,10333,Internal operations and verification receipt
+docs/deployment/evidence/hosted-desktop-compare.png,fbc64fe83d66ee092b22e12e1ffef64a6143ec20,161710,Internal operations and verification receipt
+docs/deployment/evidence/hosted-desktop-playground.png,35f0328117f4f62d8cd15b2dd82bc73b270ee38e,227066,Internal operations and verification receipt
+docs/deployment/evidence/hosted-desktop-research.png,c5428f309e93790716e7a462ca79e5f9191db6d3,254035,Internal operations and verification receipt
+docs/deployment/evidence/hosted-frontend-public.json,40ba9d41bd5c38cd4d6fd7db10c7b35754902e43,10338,Internal operations and verification receipt
+docs/deployment/evidence/hosted-mobile-error.png,f01a999b7ef7e993650e6b299dae4f19b558b951,165796,Internal operations and verification receipt
+docs/deployment/evidence/hosted-mobile-playground.png,a63efffe8c607ffb9932d655443622b2a60259de,178965,Internal operations and verification receipt
+docs/deployment/evidence/integration-three-models.json,dcca03274b4110cc7abb56e78ae27107d6dd6a81,9073,Internal operations and verification receipt
+docs/deployment/evidence/integration.json,f5c120739dce44f14074c363af4fc2f47c2d28b1,6385,Internal operations and verification receipt
+docs/deployment/evidence/integrity-three-models.json,24c6c84994e8183d1c2900f4fe784db49b170bc2,8249,Internal operations and verification receipt
+docs/deployment/evidence/integrity.json,252db46e3aea132384226c3f59aafa2923396708,8249,Internal operations and verification receipt
+docs/deployment/evidence/mobile-error.png,8f2a8ac040ff9c662e8e8c086b65b439d746e09a,164942,Internal operations and verification receipt
+docs/deployment/evidence/mobile-playground.png,4def4c1abe67996471bb10efe6945adc302f23f0,178212,Internal operations and verification receipt
+docs/deployment/evidence/private-model-publication.json,1477753a3d39df31de40bdc78e5d58fb56bdceb2,1078,Internal operations and verification receipt
+docs/deployment/evidence/public-release.json,38dee8df31c707519e8076f37af1e976c8f01046,1665,Internal operations and verification receipt
+docs/deployment/hosting.md,41ebec92d2c09151ecc7eafee2d41a7f26a7678c,14291,Duplicate or one-off internal analysis and execution material
+docs/deployment/verification.md,26a57f03545ecb9fb2f13937ec9fbdb534d741ca,11509,Duplicate or one-off internal analysis and execution material
+docs/maintenance/public_cleanup.md,4f2cc17c91cbe3ad4e4fae354ae8add5cd68fc1e,7889,Duplicate or one-off internal analysis and execution material
+docs/maintenance/public_cleanup_verification.json,274421f625b45f3ca0316acca651ddd79f434575,12824,Duplicate or one-off internal analysis and execution material
+docs/pilot_execution.md,a7232dc99081466c7e5179f2e3e27916516f4b7e,4776,Duplicate or one-off internal analysis and execution material
+docs/qualifications/KAGGLE_RAYYAN_20261011.md,0dbdf71f4c680ef34270911aba50137343f6f802,13574,Duplicate or one-off internal analysis and execution material
+docs/qualifications/evidence/rayyan_fresh_gpu_recovery.json,ff3f7632bf606ba7cc8d2f9bfe95737c0279ce86,2489,Internal operations and verification receipt
+docs/submission/verification/changed_files.txt,fc0adf8f350f2b5108371692546dd5749b82b8c1,2996,Internal operations and verification receipt
+docs/submission/verification/windows/completion-commands.json,8577243ca8b350788080318c5a031b7c4244acf0,1783,Internal operations and verification receipt
+docs/submission/verification/windows/download.json,2065f0702b686e97a635bc4da8ff5e678e922c09,1157,Internal operations and verification receipt
+docs/submission/verification/windows/full-tests-with-deep-path-failures.txt,07476e1203f8ab59e2399572ba1626b076f21522,9255,Internal operations and verification receipt
+docs/submission/verification/windows/inference.json,fa61b0e9434d2423ab7caf237d939fa5aabb674d,39715,Internal operations and verification receipt
+docs/submission/verification/windows/install-commands.json,945e83bb93bd01be31e3d1570fd527fbf6b7ab99,2704,Internal operations and verification receipt
+docs/submission/verification/windows/pip-check.txt,c688d8ccdad82420475fc31cb40020cccfeeef2b,30,Internal operations and verification receipt
+docs/submission/verification/windows/restart.json,70711a825b1536d78b99b9718e568383dbd9da8c,5519,Internal operations and verification receipt
+docs/submission/verification/windows/storage-short-path-rerun.txt,d0c13034f2d4f9b086885be9a986c2f75f97cb5b,98,Internal operations and verification receipt
+docs/submission/verification/windows/summary.json,1eaae5a6ab4d4fd92fd5ce4f0d98b478f0dfdcfa,774,Internal operations and verification receipt
+docs/submission/verification/windows/wheel-install.txt,113d241df93091828721bb60a42168e475c9389e,1044,Internal operations and verification receipt
+report/balanced/B01_acceptance.md,9a898cf2a60cb912daf46ed416e7c55e38245a69,6387,Duplicate or one-off internal analysis and execution material
+report/balanced/B01_architecture_decision.md,c2365c0ab12571fbbb50b94fd52d1c67b0cb32ee,3297,Duplicate or one-off internal analysis and execution material
+report/balanced/B01_commands.md,3961c062ead885d844cdb25ab9b6fddf18a2f0bc,7586,Duplicate or one-off internal analysis and execution material
+report/balanced/B01_generation_observations.md,5785606ab4a8c2e03cc59727ee4a232b32a934db,4840,Duplicate or one-off internal analysis and execution material
+report/balanced/E02_F01_B01_comparison.json,fd39d8059d83842ef76c15e8c1a5e79f7cd90e28,1647,Duplicate or one-off internal analysis and execution material
+report/balanced/evidence/research/CUDA_generation_reproduction.json,db1a9d754e6f68906ee52d900b60bc95d244a8ee,362454,Internal operations and verification receipt
+report/balanced/evidence/research/CUDA_recovery.json,9830d4214fb41d140e460e07340732d59645c8be,2901,Internal operations and verification receipt
+report/balanced/evidence/research/completion.json,12f60f294090facebeed28701e56ccbb52156c52,11960,Internal operations and verification receipt
+report/balanced/evidence/research/dataset_manifest.json,8f2ef66207c712d978c3b0dae9b7dc536faf9cb4,2121,Internal operations and verification receipt
+report/balanced/evidence/research/dataset_validation.json,1fc4977a4ce00e367d88e293be0b65ea485b0d1e,2294,Internal operations and verification receipt
+report/balanced/evidence/research/download_receipt.json,480bf6bb126a7c2f8f5b8ab4501dd09d01b88e5b,554,Internal operations and verification receipt
+report/balanced/evidence/research/environment.json,39c6bf9fb1762c0a17919658bba59008ea727b5e,1759,Internal operations and verification receipt
+report/balanced/evidence/research/hardware.json,d018c38f7ec7fac37501af2e14500614f0e276b2,2332,Internal operations and verification receipt
+report/balanced/evidence/research/independent_recovery.json,ea9641c50a404ad4c65b7143b87ecc3b5af41dad,4081,Internal operations and verification receipt
+report/balanced/evidence/research/io_timing.json,42f620c9120cfba40e6a3ae8fa305e407f0b98b4,10255,Internal operations and verification receipt
+report/balanced/evidence/research/snapshot_index.json,7fd17693d5bbb649e6a296dbfeef9fa3027bfa4d,66553,Internal operations and verification receipt
+report/balanced/evidence/research/source_provenance.json,def1e8f08d21c3822ba9172e6e28f46ffef730f3,2822,Internal operations and verification receipt
+report/balanced/evidence/research/stopping_summary.json,75fb52e834c55a72a9c2c3298f610eb28086fcc0,11682,Internal operations and verification receipt
+report/balanced/evidence/research/wall_time.json,009877d4b527100be8a707b40ebf21c9c22f5576,178,Internal operations and verification receipt
+report/balanced/generation.md,acc53cc82ade5b6fb102c8a77ef63e726f1107ff,75391,Duplicate or one-off internal analysis and execution material
+report/balanced/generation_comparison.json,26e8f7f4266114779a63c22ed92e3e8902017607,752939,Duplicate or one-off internal analysis and execution material
+report/balanced/generation_token_diagnostics.json,ea5809476168408302dd592d88058d59d8e80e14,358944,Duplicate or one-off internal analysis and execution material
+report/balanced/gradient_intervals.json,5cf94f8958745de61889847fed0454d400a06ce4,3470,Duplicate or one-off internal analysis and execution material
+report/balanced/matched_validation_comparison.csv,5a01bd4630ddc4e11c5cbd544f627ace52f9728a,3991,Duplicate or one-off internal analysis and execution material
+report/final/F01_architecture_decision.md,22594d94119c8a893531cfbd3d1c4375e84e4a01,5905,Duplicate or one-off internal analysis and execution material
+report/final/acceptance_checklist.md,e9e31336253d9c4ffeb8f585096f2392db5b4cdf,3057,Duplicate or one-off internal analysis and execution material
+report/final/all_pilots_matched_validation.json,f24162d70a55b04564766101b69c99ab90d1f12f,67704,Duplicate or one-off internal analysis and execution material
+report/final/evidence/research/CUDA_recovery.json,49a9faebe272cd92c072ccca08f9efa1cac518c8,3494,Internal operations and verification receipt
+report/final/evidence/research/completion.json,e627eeee9ea14473c43514feef0b5b97aba76579,1080,Internal operations and verification receipt
+report/final/evidence/research/dataset_manifest.json,8f2ef66207c712d978c3b0dae9b7dc536faf9cb4,2121,Internal operations and verification receipt
+report/final/evidence/research/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/final/evidence/research/download_receipt.json,c171ba6432c9afc3efa51023977e58d3499dc3b3,556,Internal operations and verification receipt
+report/final/evidence/research/environment.json,bf59ac7bebaa35f9e2c797b4a746e68889ea85ae,1759,Internal operations and verification receipt
+report/final/evidence/research/generation_reproduction.json,5ad0918b80843a44bd4ebd19f9047626d4939cd7,379909,Internal operations and verification receipt
+report/final/evidence/research/hardware.json,3ae1b63b7538f5fcb211ed52bef3857808813448,2341,Internal operations and verification receipt
+report/final/evidence/research/independent_recovery.json,981782a52df5183f1bad1c8ed1e496bc292198d6,14000,Internal operations and verification receipt
+report/final/evidence/research/io_timing.json,48ecd1fe8bf8ec4663bace06531fda02251b977c,15302,Internal operations and verification receipt
+report/final/evidence/research/recovered_CPU_CUDA_probe_equality.json,9ac2f9d034ec409b8358306effe0328c8c104452,724,Internal operations and verification receipt
+report/final/evidence/research/reserved_test_evaluation.json,a4005cdce2552387ae5be0a07c5b8b243689ddc0,670,Internal operations and verification receipt
+report/final/evidence/research/selection_freeze.json,a7c87fc2f06e8dbff3cf13f269e5ad016b198b3d,1005,Internal operations and verification receipt
+report/final/evidence/research/snapshot_index.json,85b48eb774fc836a01791c800516fedc04c17195,39018,Internal operations and verification receipt
+report/final/evidence/research/source_provenance.json,593659907ad6f857dab9963f99637f97e9a6e18b,2611,Internal operations and verification receipt
+report/final/evidence/research/wall_time.json,745c751393a4187cdc01e9b757f6acf0fefb4094,181,Internal operations and verification receipt
+report/final/execution_evidence.md,35aeb70c96f09a6237dec22848004def11b81298,7440,Duplicate or one-off internal analysis and execution material
+report/final/fixed20_training_overlaps.json,73aa877463f55420f2573434ef14ca1bebfda7fc,11190,Duplicate or one-off internal analysis and execution material
+report/final/fixed_pilot_generation_comparison.json,f5c93ad20168062ce169a04995d09f72e7de3fc4,430081,Duplicate or one-off internal analysis and execution material
+report/final/generation.md,eed21e6207c53975d5d3e10a5d72337a5be4f2f6,75216,Duplicate or one-off internal analysis and execution material
+report/final/master_comparison.json,e31b3832cc65edf768a72ea757b975783fa4446c,19767,Duplicate or one-off internal analysis and execution material
+report/final/pilot_master_metrics.csv,39429d881d0afd60048f139a6c797421ae7e0a00,3433,Duplicate or one-off internal analysis and execution material
+report/final/pilot_master_metrics.json,b60159a3564517ac3f6d6cbcf67ca6daa4c41821,34426,Duplicate or one-off internal analysis and execution material
+report/final/step5000_generation.json,0ae77680e800e2ce419913869246f1922c262e1d,52128,Duplicate or one-off internal analysis and execution material
+report/final/strongest_pilot_comparison.json,20ed7ee9b214923ff91a16e0ecf58c08445a856b,2118,Duplicate or one-off internal analysis and execution material
+report/pilots/E01_seed42/evidence/completion.json,411fe8cad865d15c844ab458d30b605c9cdd7d51,741,Internal operations and verification receipt
+report/pilots/E01_seed42/evidence/cuda_recovery.json,b75602035e44a1060a92c537e7b5217a1d18ddd4,3306,Internal operations and verification receipt
+report/pilots/E01_seed42/evidence/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E01_seed42/evidence/environment.json,08e12d43d906e5f0450ea34044f9e863dfe70780,1759,Internal operations and verification receipt
+report/pilots/E01_seed42/evidence/failure.json,fae8042fb7eb63e80601195a98e9241c9d276b97,348,Internal operations and verification receipt
+report/pilots/E01_seed42/evidence/hardware.json,9066fa41b64f948551f5f0836428dee0d231629f,2632,Internal operations and verification receipt
+report/pilots/E01_seed42/evidence/independent_recovery.json,12716b7647e63b1612a4156d5cfc6a1567f1916f,1303,Internal operations and verification receipt
+report/pilots/E01_seed42/evidence/io_timing.json,aecfea66f372b363098b40f8eaa9e4ccbd33da31,8494,Internal operations and verification receipt
+report/pilots/E01_seed42/evidence/original_platform_timing.json,220759bd5441736669f07c79df63a263de7fa01c,713,Internal operations and verification receipt
+report/pilots/E01_seed42/evidence/postprocessing_recovery.json,1772678da594e0e42ed4ca33843764448ff21f73,2362,Internal operations and verification receipt
+report/pilots/E01_seed42/evidence/snapshot_index.json,d4d98f4c4128313cfe87362c02e32b9a9345c48b,14795,Internal operations and verification receipt
+report/pilots/E01_seed42/generation.md,f1225d5f86886562fcddb826fcf962e4dab3837d,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E01_seed42/pilot_observations.json,2041bd9af8a519734b1a0f1d82356d5e25cc5b41,521,Duplicate or one-off internal analysis and execution material
+report/pilots/E02_seed42/evidence/archive_parts.json,9655c7c6098eaed62d8c01ea8b88e4f8e834141a,737,Internal operations and verification receipt
+report/pilots/E02_seed42/evidence/checkpoint_audit.json,8295b992b115f7c7f40a1a840a155bd2c7bebc6b,5720,Internal operations and verification receipt
+report/pilots/E02_seed42/evidence/code_equivalence.json,8b2ac6fb962d24a6db31fbdd1503a4e9aea116bc,425,Internal operations and verification receipt
+report/pilots/E02_seed42/evidence/environment_hashes.json,4f1328e64e173cf2ce560828f27e8a2b5c3e0b8b,484,Internal operations and verification receipt
+report/pilots/E02_seed42/evidence/failures.json,391e3cf924d8974bbc31c9df64bf6c8db70ddd7c,1570,Internal operations and verification receipt
+report/pilots/E02_seed42/evidence/independent_verification.json,2a6b5453913d08ae34564ed403e0ecd6cda86705,1475,Internal operations and verification receipt
+report/pilots/E02_seed42/evidence/recovery_environment.json,d06392ae1f3a736a765ea502c03268540fb2b1b6,1804,Internal operations and verification receipt
+report/pilots/E02_seed42/evidence/snapshot_index.json,30aa705542ac28f121b98b9ea05a06b60ac1e4d0,18449,Internal operations and verification receipt
+report/pilots/E02_seed42/evidence/source_byte_context.json,d8a6c2346a2a8ec26abd8f3b6fddfcb37aa90563,609,Internal operations and verification receipt
+report/pilots/E02_seed42/evidence/training_environment.json,52a592b9f2ec842cb5c62def7cc338f68e213bda,1803,Internal operations and verification receipt
+report/pilots/E02_seed42/generation.md,335137f8443df77a972e999e90ef404b1c4922e6,73859,Duplicate or one-off internal analysis and execution material
+report/pilots/E03_seed42/comparison/aggregate.csv,907bfdc30524831781f09fee71285bb73bf96200,402,Duplicate or one-off internal analysis and execution material
+report/pilots/E03_seed42/comparison/comparison.json,657f525277c739fb3caf830c5d66b254c366cf46,17606,Duplicate or one-off internal analysis and execution material
+report/pilots/E03_seed42/comparison/matched_validation.csv,af437304834bd088906365af1df78c7812f5ee9c,4875,Duplicate or one-off internal analysis and execution material
+report/pilots/E03_seed42/comparison/summary_comparison.csv,1d624c26d499599d5bf85aeac7e0ecb4ddc9ad2c,759,Duplicate or one-off internal analysis and execution material
+report/pilots/E03_seed42/comparison/verified_runs.csv,f6bd5ba94d4c378e162c88b1df9f580f36314086,791,Duplicate or one-off internal analysis and execution material
+report/pilots/E03_seed42/evidence/completion.json,2351e87e613484d984a77698d74421239371a0d5,741,Internal operations and verification receipt
+report/pilots/E03_seed42/evidence/cuda_recovery.json,1c9812aa1a544d70f97c5f611d0d7e5af34530dc,3305,Internal operations and verification receipt
+report/pilots/E03_seed42/evidence/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E03_seed42/evidence/environment.json,d8794dff4da7346aa00d297aa8a2ec9850fea406,1759,Internal operations and verification receipt
+report/pilots/E03_seed42/evidence/hardware.json,e81d3ae5a40ef734b2447f5905e3d56820cfe6e7,2632,Internal operations and verification receipt
+report/pilots/E03_seed42/evidence/independent_recovery.json,bf91393f3d8578605ffa56c2fbbff554bb708ee6,1303,Internal operations and verification receipt
+report/pilots/E03_seed42/evidence/io_timing.json,e9041b218e727c77f574c0a1f1deb1410769f92f,8500,Internal operations and verification receipt
+report/pilots/E03_seed42/evidence/platform_timing.json,ff3e5228d73328c5a18a54f854a402e9174d1c75,711,Internal operations and verification receipt
+report/pilots/E03_seed42/evidence/snapshot_index.json,46b6dcd71ca8cefb86617e15e766dab169c897ae,14691,Internal operations and verification receipt
+report/pilots/E03_seed42/evidence/wall_time.json,8c0c71797713ee712962cf0c75ed66fa68a04ac6,208,Internal operations and verification receipt
+report/pilots/E03_seed42/generation.md,962f6f222683b51a374041009f436c27ac6742cc,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E03_seed42/observations.json,f781c00260452ba3a67fa7f61c8404aa11823ccf,567,Duplicate or one-off internal analysis and execution material
+report/pilots/E04_seed42/comparison/aggregate.csv,c7d621f9fe63f4fb2056d86c8e0de074cdd5c08d,492,Duplicate or one-off internal analysis and execution material
+report/pilots/E04_seed42/comparison/comparison.json,8129e322cf0ea5cf1b0b8cefb2e3ad212606cbcc,27828,Duplicate or one-off internal analysis and execution material
+report/pilots/E04_seed42/comparison/matched_validation.csv,89dacc5f631d71660d7df93277247dd1470b786f,6782,Duplicate or one-off internal analysis and execution material
+report/pilots/E04_seed42/comparison/overall_bpb.csv,84401df8a15d571fc8e741097bc8c23bcd66fa48,878,Duplicate or one-off internal analysis and execution material
+report/pilots/E04_seed42/comparison/summary_comparison.csv,61dc6db75799470c8e006251339e3087378e86b1,1311,Duplicate or one-off internal analysis and execution material
+report/pilots/E04_seed42/comparison/verified_runs.csv,39400bc28ded6c6c4918eedf13059ea57913cedb,1094,Duplicate or one-off internal analysis and execution material
+report/pilots/E04_seed42/evidence/completion.json,2a77483692ec35ab907ef5634916e6c308fa41e7,741,Internal operations and verification receipt
+report/pilots/E04_seed42/evidence/cuda_recovery.json,b8ebc0692518e7d02461d4e43c746b4579c3b3b3,3305,Internal operations and verification receipt
+report/pilots/E04_seed42/evidence/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E04_seed42/evidence/environment.json,8ccfd34f442c8e613f84f0c2b065af370d54a0bd,1759,Internal operations and verification receipt
+report/pilots/E04_seed42/evidence/hardware.json,2bcd9e1c995ed35dd97aa63608b5b0b2189c2424,2632,Internal operations and verification receipt
+report/pilots/E04_seed42/evidence/independent_recovery.json,406c09d980a85797be353c78f4b3d283ce49eb1e,1302,Internal operations and verification receipt
+report/pilots/E04_seed42/evidence/io_timing.json,18a7d02d0799a83e2398653d19421907c080cfe4,8493,Internal operations and verification receipt
+report/pilots/E04_seed42/evidence/platform_timing.json,98bc0e59e3db33a5a59a3b41650cec99480a98f4,778,Internal operations and verification receipt
+report/pilots/E04_seed42/evidence/snapshot_index.json,41df51bfb283a143d5942cd7fc5fe296cb1c0210,14587,Internal operations and verification receipt
+report/pilots/E04_seed42/evidence/wall_time.json,7c2c2773a2a9ac578b576d7844a9b7163028c450,198,Internal operations and verification receipt
+report/pilots/E04_seed42/generation.md,988e3ae295850f5b15ed1f6258b89e6f23f9ee42,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E04_seed42/generation_quality_summary.json,12ba9565286e29c20bad5012fe782b11feaf6941,869,Duplicate or one-off internal analysis and execution material
+report/pilots/E04_seed42/observations.json,8e39d88542d39564bc6f4d4b1141c67dd63bdced,281,Duplicate or one-off internal analysis and execution material
+report/pilots/E05_seed42/.gitattributes,6e4b740fbfd2f2cc98576c76403265976a459311,254,Duplicate or one-off internal analysis and execution material
+report/pilots/E05_seed42/evidence/archive_parts.json,3e34393ff5e264cd3e3b341ad643050eb071975a,480,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/artifact_links.json,58aeb0c1da6411c58737ceac091ae49856b00331,618,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/checkpoint_audit.json,b906961aedfe0f81d17215e3315f504ac58f1333,5083,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/code_equivalence.json,076822c62808340da84332d98e2bb7bcdbfe5a94,686,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/completion.json,ac2c70890ea7f2c6dc81ca671c446cf5795d1ae4,621,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/cuda_recovery.json,0b73cc91a55e662bea38c2e9dac97cc3d8f78fab,3350,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/dataset_verification.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/environment.json,7c228d6afb02ba4946603bc6c305dccd110ecaac,1804,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/failures.json,f618cdda5d34c7b0894d361a14ac4432e2045cbc,983,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/gradient_diagnostics.json,b3669d5d3e1d6c56e0cc14572f4d561cbf6e2f30,274,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/hardware.json,f02117f050c0430fad039683807df711a53e8b99,1945,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/independent_verification.json,1398a69adb676866e2962730545c7b2d4fa29fa4,5802,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/io_timing.json,48a8371b88e59adf4ca4ce76b09e23cc73121730,9990,Internal operations and verification receipt
+report/pilots/E05_seed42/evidence/snapshot_index.json,61df9612018b100fb96fbd1cce70ee74eaec60bf,18241,Internal operations and verification receipt
+report/pilots/E05_seed42/generation.md,32aeb232613c7ed7812cf2f2d14119306b5a2f0f,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E05_seed42/matched_validation.csv,62e8cecb1910267c6a36a0cc5343a8fb3398e74a,2979,Duplicate or one-off internal analysis and execution material
+report/pilots/E05_seed42/qualitative_observations.md,8b8554abdc4bdebb3ae6c206559864af996631bf,3768,Duplicate or one-off internal analysis and execution material
+report/pilots/E06_seed42/commands.json,d08574b02d1278e091fffc2474f105ea9188badd,1875,Duplicate or one-off internal analysis and execution material
+report/pilots/E06_seed42/comparison/aggregate.csv,60008048c9743b6ab2c491e1a7ed0e21b346b074,402,Duplicate or one-off internal analysis and execution material
+report/pilots/E06_seed42/comparison/comparison.json,b7c55c064fe80a1c2b7358c98437f3c2024e5364,17740,Duplicate or one-off internal analysis and execution material
+report/pilots/E06_seed42/comparison/matched_validation.csv,e37ca6dddc480920c9cb051d0896f7189cd670b0,4978,Duplicate or one-off internal analysis and execution material
+report/pilots/E06_seed42/comparison/summary_comparison.csv,3074e2b6e28e83cfc80d43016168cde6ebca9aea,792,Duplicate or one-off internal analysis and execution material
+report/pilots/E06_seed42/comparison/verified_runs.csv,34f12420292ffee1975435d0600f504815a9ca65,791,Duplicate or one-off internal analysis and execution material
+report/pilots/E06_seed42/contextual_bpb.json,55bc344acb3562d40a3348fa6c848f510bfe0271,739,Duplicate or one-off internal analysis and execution material
+report/pilots/E06_seed42/evidence/completion.json,f8bb4e71050c1adf144fef4d31073c83c11dd368,745,Internal operations and verification receipt
+report/pilots/E06_seed42/evidence/cuda_recovery.json,8e5404f6d7398e91501909e3ea461c4813545716,3305,Internal operations and verification receipt
+report/pilots/E06_seed42/evidence/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E06_seed42/evidence/environment.json,d6b6588f896cbd1c4a7e98b15d92e2119f826f01,1759,Internal operations and verification receipt
+report/pilots/E06_seed42/evidence/hardware.json,fb35859d446c8feabc3e6e902c86827bbfaa3f80,2632,Internal operations and verification receipt
+report/pilots/E06_seed42/evidence/independent_recovery.json,c9b1a6497e58328b4d6b0ee37280560b7bf5d4cf,1302,Internal operations and verification receipt
+report/pilots/E06_seed42/evidence/io_timing.json,2e447fbb60e82fa3f78c72bff9ff578896882b9c,8490,Internal operations and verification receipt
+report/pilots/E06_seed42/evidence/platform_timing.json,1bac5e19bd6585fc8b3ace8e614b6ceb7cb2e9eb,778,Internal operations and verification receipt
+report/pilots/E06_seed42/evidence/snapshot_index.json,17d63fae64d5a20a1c8460f6bd64a934d61f40c0,14795,Internal operations and verification receipt
+report/pilots/E06_seed42/evidence/wall_time.json,96ec7c6c2536e5de28d53b6cd48c250023eaed0a,200,Internal operations and verification receipt
+report/pilots/E06_seed42/generation.md,58b2ffef15fd31513ac145fbe9ea95b53c9c5c64,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E06_seed42/generation_quality.json,3793a96c4b6abb33dcb2fa8a9a8cb0ff511bb0e2,74326,Duplicate or one-off internal analysis and execution material
+report/pilots/E06_seed42/observations.json,74d7f6655799821a3a4402e72498399dd2bd7fa2,559,Duplicate or one-off internal analysis and execution material
+report/pilots/E07_seed42/evidence/Drive_publication.json,d3b599e7b84cc892890450c47edf0b5c84b24222,1657,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/Kaggle_archive_parts.json,2dc8d3824bde72001e6c88d72ae9c5150a0a94ec,480,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/Kaggle_independent_verification.json,6ff990b71ff700b57fd0f07e3ad0776b8a1d5273,5858,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/archive_parts.json,597b2688f2a73c8fde175887fb21d1eaba60f058,1373,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/artifact_links.json,e75767913ca31758ac1f018d55867b4f7d5e5fc9,2306,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/checkpoint_audit.json,bbd62c3f83c8240e72a0716a8629aedbeba89a57,7341,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/completion.json,e0dc46ddc3487918c196ac7544c683f0500ceb40,621,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/cuda_recovery.json,7ec74c242cecb091cfea56fe760c4eacc22edc94,3311,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/dataset_verification.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/environment.json,aa52cff5b9fe3d1f9818d4224f2014bd2e16214c,1765,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/gradient_diagnostics.json,838e3f6903922be4611163c13b040d55a3ce3689,275,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/hardware.json,141f9d42ed23590c6b6279b442dd1e81d2d3861f,2356,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/independent_verification.json,88d866d41b940b62e555f8e276168f76a59479f9,6607,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/io_timing.json,e6787b003f2d0a862a7da6deab679987ba2c1c60,4183,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/original_execution.json,4081211ea7917b1d9566c991d4983251ce04cfaf,638,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/original_saved_attempts.json,449e603f9a3cfee0ac895f543c85eb6a6c44b31b,1785879,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/replay_timing.json,11a69b4d0113508e464107e52ecb72f477f0c5a6,487,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/replayed_attempt_comparison.json,401294e4dcdcd61a6d972afc9260677bd6b47b69,2712,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/report_supplement_recovery.json,b98c29a0cacb0a59c71b64ce34e89566b5e3fded,528,Internal operations and verification receipt
+report/pilots/E07_seed42/evidence/snapshot_index.json,b67df0c05eeb866adbcd1ba3d409c5ea2cf604b2,18241,Internal operations and verification receipt
+report/pilots/E07_seed42/generation.md,e9d32e0b56929878a3bc2c42e5e8fe2f4397e1e5,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E07_seed42/matched_three_heads.csv,f7bb3ed98d1cafe3497ca7b0081dfb4739e8e94b,2394,Duplicate or one-off internal analysis and execution material
+report/pilots/E07_seed42/matched_validation.csv,eaeeae91d2eaef5b37c5787af2f213d71b663ae0,2995,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/commands.json,1e46575114dc9ed433296e9c6520079a8c8fcede,4235,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/comparison/aggregate.csv,921bf45b8178c520b1b8d9c4a6078b6bf70d311a,403,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/comparison/comparison.json,6dcba216ec0f99bef37e7ba08b2e41f909701a6b,17757,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/comparison/depth_framework.json,f351ae80e8881c397f93c56d160f64116a62bb21,837,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/comparison/gradient_comparison.json,d72f7e461814e495a5ba800ac4ad91c39b1771cb,797,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/comparison/matched_validation.csv,61437761a43fc4e66bc17e0d5719769731383348,4886,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/comparison/summary_comparison.csv,c51f25eb020259a43bb8c63fae567d0e958862fe,796,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/comparison/verified_runs.csv,9ee0ac2422c70c828bf74e18740ea0b5acc9e168,792,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/contextual_bpb.json,1de9b4f159d9fd2c76f08bb57711813446e01403,739,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/evidence/completion.json,2a213c68871791005f23ecb61bb70f8044793fe3,741,Internal operations and verification receipt
+report/pilots/E08_seed42/evidence/cuda_recovery.json,06579d3747707f71a1bdb38d73c996e26eaebbfc,3305,Internal operations and verification receipt
+report/pilots/E08_seed42/evidence/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E08_seed42/evidence/environment.json,b1ffda7b542bc9b6bd42acedcef3f83ab83ca226,1759,Internal operations and verification receipt
+report/pilots/E08_seed42/evidence/hardware.json,d7eca357fa440231ee5286aabfb762e410fa27c2,2632,Internal operations and verification receipt
+report/pilots/E08_seed42/evidence/independent_recovery.json,7bf3feec3b836019acbc074d539243719348c218,1302,Internal operations and verification receipt
+report/pilots/E08_seed42/evidence/io_timing.json,85946252146e998eb3fb3b49a96e638e7dfd1c4e,8493,Internal operations and verification receipt
+report/pilots/E08_seed42/evidence/platform_timing.json,ae370a858dac2e1467a3c1f62941dcb3a9b95820,396,Internal operations and verification receipt
+report/pilots/E08_seed42/evidence/snapshot_index.json,df3d0ade2ed617cbd1d3e02df54634500799a93a,14795,Internal operations and verification receipt
+report/pilots/E08_seed42/evidence/wall_time.json,1e15afed0570e3290ec54c1ecd331deaf92a3ff7,204,Internal operations and verification receipt
+report/pilots/E08_seed42/generation.md,d9bcff2bbe58352909e244c62fa9a78c10b6d35b,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/generation_quality.json,db1f1c945fddd9526efeeb9d379d195524e197b3,74304,Duplicate or one-off internal analysis and execution material
+report/pilots/E08_seed42/observations.json,683764b6d7fa77ddd3bd7ca2be498759f5daab32,558,Duplicate or one-off internal analysis and execution material
+report/pilots/E09_seed42/comparison/aggregate.csv,f16dc3380dbad1861fc0feb5b6c01ce4039b7244,493,Duplicate or one-off internal analysis and execution material
+report/pilots/E09_seed42/comparison/comparison.json,9f91dcede597d1fe5661d3191f5e1c958642f9ed,35661,Duplicate or one-off internal analysis and execution material
+report/pilots/E09_seed42/comparison/gradients.csv,ba71c3448302a20f08e02e631aa759943fd7f3f4,615,Duplicate or one-off internal analysis and execution material
+report/pilots/E09_seed42/comparison/matched_validation.csv,1ead0c736bce3a226cf7538b8c94c5a813c4012a,4688,Duplicate or one-off internal analysis and execution material
+report/pilots/E09_seed42/comparison/pairwise_differences.csv,901e6098e1a64819140496c2f3d0ae52fc7d4ac5,2216,Duplicate or one-off internal analysis and execution material
+report/pilots/E09_seed42/comparison/verified_runs.csv,382684d288de48517018e9fcfdda596c6cf36c32,1094,Duplicate or one-off internal analysis and execution material
+report/pilots/E09_seed42/evidence/completion.json,2633f65e6e85d849cb8624e16132ce7defeb61ce,745,Internal operations and verification receipt
+report/pilots/E09_seed42/evidence/cuda_recovery.json,0550b37a4c027e34f0d686ec53d8506a94dc3d5b,3309,Internal operations and verification receipt
+report/pilots/E09_seed42/evidence/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E09_seed42/evidence/environment.json,b5ddbc730049e39e6374145a35df06f5f5a9c2d8,1759,Internal operations and verification receipt
+report/pilots/E09_seed42/evidence/hardware.json,06d64072bb16729a9e4ebb34f3618d18c87ea943,2632,Internal operations and verification receipt
+report/pilots/E09_seed42/evidence/independent_recovery.json,e62caade75a7f4401f47dae558b4d55a8f1c1bb0,1307,Internal operations and verification receipt
+report/pilots/E09_seed42/evidence/io_timing.json,94e26d5f7458ab07a32369d75303a9a7493f857c,8476,Internal operations and verification receipt
+report/pilots/E09_seed42/evidence/platform_timing.json,1ec5e45afadc3d6dc34f907d3393974c48dbd364,403,Internal operations and verification receipt
+report/pilots/E09_seed42/evidence/snapshot_index.json,4844dded51e899925e831c27d2c5f073c46cf2a7,14795,Internal operations and verification receipt
+report/pilots/E09_seed42/evidence/wall_time.json,c0ac50c8c0fa6a907bd869afa852f56edf874755,204,Internal operations and verification receipt
+report/pilots/E09_seed42/generation.md,5168d9bbcce04046d5c679f52cda18124a576520,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E09_seed42/generation_quality.json,8ac739b354c1a1163ee40acb94a5d5a453273181,74323,Duplicate or one-off internal analysis and execution material
+report/pilots/E09_seed42/observations.json,1e8b88a828f13363d8315c769e21e01493b3b755,741,Duplicate or one-off internal analysis and execution material
+report/pilots/E10_seed42/comparison/aggregate.csv,ed86b170d6ce18e5515d3c6e353b4978a992969a,402,Duplicate or one-off internal analysis and execution material
+report/pilots/E10_seed42/comparison/comparison.json,24f337db4c7a887573cad41e20146fe6126b286e,20927,Duplicate or one-off internal analysis and execution material
+report/pilots/E10_seed42/comparison/matched_validation.csv,fa86c5d8574c2cda88d67aaa3c6b27a6e1f353d4,5582,Duplicate or one-off internal analysis and execution material
+report/pilots/E10_seed42/comparison/summary_comparison.csv,a7fb6922502eb8e6ce761d432cee4b7aa1b01113,795,Duplicate or one-off internal analysis and execution material
+report/pilots/E10_seed42/comparison/verified_runs.csv,5856bb85e43f4b783087e8e8c7006aa5574b7025,790,Duplicate or one-off internal analysis and execution material
+report/pilots/E10_seed42/evidence/completion.json,994bfba55e2b8de217ad776e7e5f338d5a97d22a,741,Internal operations and verification receipt
+report/pilots/E10_seed42/evidence/cuda_recovery.json,3d7e8394232ebbe0c9ec1a09591b36ff3c367aa9,3305,Internal operations and verification receipt
+report/pilots/E10_seed42/evidence/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E10_seed42/evidence/download_receipt.json,740f2986a65ce05bb2b28e366690efca1066a73d,518,Internal operations and verification receipt
+report/pilots/E10_seed42/evidence/environment.json,b566113f38619c6d4b80e3f119551964e1f8c3f1,1759,Internal operations and verification receipt
+report/pilots/E10_seed42/evidence/hardware.json,e7c921c50988eea7e9627176d0374a581d32dffd,2632,Internal operations and verification receipt
+report/pilots/E10_seed42/evidence/independent_recovery.json,67c956f199a2ac551fbff7136f966b0a84e76a95,1302,Internal operations and verification receipt
+report/pilots/E10_seed42/evidence/io_timing.json,88026497822f721645ef381efac8a5b817352e50,8496,Internal operations and verification receipt
+report/pilots/E10_seed42/evidence/platform_timing.json,49e77b39c10a579f5d83ae28b5188025d9ca9f87,389,Internal operations and verification receipt
+report/pilots/E10_seed42/evidence/snapshot_index.json,e70458d207f6b05b0b52863216c55028dd764287,14587,Internal operations and verification receipt
+report/pilots/E10_seed42/evidence/wall_time.json,5ca324f232f8f76172bace7621ad19d4a87add45,200,Internal operations and verification receipt
+report/pilots/E10_seed42/generation.md,0e67624d7a59c6f5b484bd04665b8715046734df,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E10_seed42/generation_quality.json,212af2603135afe79990875da785a391aaaf4a9e,74191,Duplicate or one-off internal analysis and execution material
+report/pilots/E10_seed42/observations.json,bd19ebd53905a5c31ebbfeca3f8e7eb6cb1bcc60,941,Duplicate or one-off internal analysis and execution material
+report/pilots/E11_seed42/comparison/aggregate.csv,29c78d3baf13972164cdb70efa833e6a9e1df5b1,402,Duplicate or one-off internal analysis and execution material
+report/pilots/E11_seed42/comparison/comparison.json,a0f2e19be66af2bdd4cd3199d84fee39714c1470,21491,Duplicate or one-off internal analysis and execution material
+report/pilots/E11_seed42/comparison/context_study_framework.json,c41b56d4cfa743f8aebfe8b1952f1f2a145eb8b1,8594,Duplicate or one-off internal analysis and execution material
+report/pilots/E11_seed42/comparison/matched_validation.csv,c2868b0a24864c7e95e96f7781e1ead891645746,5649,Duplicate or one-off internal analysis and execution material
+report/pilots/E11_seed42/comparison/summary_comparison.csv,ed62acef6f2f55e4b252c6af466c55ba1e0d2cda,779,Duplicate or one-off internal analysis and execution material
+report/pilots/E11_seed42/comparison/verified_runs.csv,ac0a356ff0b55930b2f9029e8b3c43b70744eebb,791,Duplicate or one-off internal analysis and execution material
+report/pilots/E11_seed42/evidence/completion.json,b969150443730bab6963dcd1e4470f0473b05808,745,Internal operations and verification receipt
+report/pilots/E11_seed42/evidence/cuda_recovery.json,1ed4a1a63aea23cb005bc2aa3b144f2d7aff990f,3305,Internal operations and verification receipt
+report/pilots/E11_seed42/evidence/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E11_seed42/evidence/download_receipt.json,6e5e5ec5c07fa6a9fce540e40a2bb53b4d731279,552,Internal operations and verification receipt
+report/pilots/E11_seed42/evidence/environment.json,d72d0c26c85a42b806e4d55f8d3b1f4c3cbc0bf2,1759,Internal operations and verification receipt
+report/pilots/E11_seed42/evidence/hardware.json,21867490aceaf72226c29bfbad17860609d1c380,2632,Internal operations and verification receipt
+report/pilots/E11_seed42/evidence/independent_recovery.json,1da2ac26da7899680ae130164290c053df6c58b9,1302,Internal operations and verification receipt
+report/pilots/E11_seed42/evidence/io_timing.json,f833c1e38079b3dae374211a6eb5ca54f9a99135,8489,Internal operations and verification receipt
+report/pilots/E11_seed42/evidence/platform_timing.json,9758684bdbadb95a810b2d97fc555088a0f81b3a,319,Internal operations and verification receipt
+report/pilots/E11_seed42/evidence/snapshot_index.json,eb9e2b378ec72e7f141820b8f67aa326362089ba,14587,Internal operations and verification receipt
+report/pilots/E11_seed42/evidence/wall_time.json,3d5b967d69e7fc96db42eb875ffbeda4821e0620,200,Internal operations and verification receipt
+report/pilots/E11_seed42/generation.md,d6bd1034d550a06e95d4a5ef7d9eea4e60a00505,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E11_seed42/generation_quality.json,92d5a126af5be5cff55ec367287fe23a9abcf4aa,74181,Duplicate or one-off internal analysis and execution material
+report/pilots/E11_seed42/observations.json,c2c7de7e39dfb30c48c0908146debb3a760fef6f,356,Duplicate or one-off internal analysis and execution material
+report/pilots/E11_seed42/operations.md,03feba2736ab6cb153e95c170501c54185ba510f,2853,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/comparison.json,3f4c3b25bc814b224a092d018aac127b52e05438,27269,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/evidence/archive_parts.json,883bcea914075ed31af48522760bd965d1e7f4b3,1227,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/checkpoint_audit.json,393975d7eb57b48f6376f768e9707448b971128d,5082,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/completion.json,7437d2499c7d45ad411f50def8b44221e2c4279a,621,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/dataset_verification.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/download_receipt.json,676b242f0de40dc9a1f1dd93437d507ee0d89326,282,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/environment.json,886bff4363901382a288464e63ef7472c9d7cb3f,1759,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/fresh_final_CUDA_recovery.json,b2579f709c6d89b66305654ffee01af4282d72c0,3305,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/gradient_diagnostics.json,b58890a86a2630b0b374cd102c86838a6df9346e,274,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/hardware.json,0484ac5fcec94ece999189f6d0dd5720b953dc2b,2422,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/independent_verification.json,922907558b61c7daf01e1e5811ef6efd78160bd8,6883,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/io_timing.json,5cb15bf02b5d15c8b7327568a24cbe3642abd255,8877,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/native_prepublication_CUDA_recovery.json,b2579f709c6d89b66305654ffee01af4282d72c0,3305,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/operational_failures.json,30bd2dfd84c0209a8ae404d1b638b9845b7a4d56,2034,Internal operations and verification receipt
+report/pilots/E12_seed42/evidence/snapshot_index.json,0ff8ba46708f6db111ad865341fc21d6714ff918,18345,Internal operations and verification receipt
+report/pilots/E12_seed42/generation.md,aaef5afd6198108add02077035c230ff8e450800,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/generation_quality.json,ba65169e990a477593e2acf540c22859da0c6ec8,55961,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/matched_validation.csv,b393ee4bae7f6727c368a39aad361c37dbd4b334,5148,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/measured_history.json,c71770aeef43913555addaae24232a59ef4cf7e8,2373693,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/attention_test.json,be20df5187112e6d476be176a7440f8ace0c74d1,138,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/context_audit.json,10b4ffff65cac0c05d0522b475440eb31a5fc7bd,1255,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/dataset_verification.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/environment.json,5022ff8e792140680a28e93df8b2e2362d191e14,1765,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/export_throughput_observed.json,b1f8d5e1402bcbd288d7687d200d6868f4dec598,540,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/hardware.json,1ed246ebdbc03b86856e929d580e6eb7ea5297bf,2422,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/independent_download.json,c29b5764def13f838aa35409b57b317435d1d1e3,435,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/local_smoke_recovery.json,bf64e40517db648b84bb31f61de062d9cc37ed53,357,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/preflight.json,5e0b6eefd6aba5541025f2c59d7ad69ea8b08b2f,760,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/resource_benchmark.json,ebf40066fd31754346488f90f256c3906ec310fd,864,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/saved_smoke_manifest_capture.json,7ef32c660db535e666ad0b7b719410f94004f68b,2213,Duplicate or one-off internal analysis and execution material
+report/pilots/E12_seed42/preflight_evidence/tests.json,2959e12a9fc1eb3da73cd4b6ace1b02f6688f158,140,Duplicate or one-off internal analysis and execution material
+report/pilots/E13_seed42/comparison/aggregate.csv,2e5134fb464b2e74106c442a895574ca45057048,402,Duplicate or one-off internal analysis and execution material
+report/pilots/E13_seed42/comparison/comparison.json,ade5c436bf7a105c89cd9b0050dfbab10e7d4a5c,21460,Duplicate or one-off internal analysis and execution material
+report/pilots/E13_seed42/comparison/matched_validation.csv,88faae71c2782932527c92920630ee1977de17db,5517,Duplicate or one-off internal analysis and execution material
+report/pilots/E13_seed42/comparison/summary_comparison.csv,d141a1a2a1d45e0ea21048150db6aefb420f07ba,793,Duplicate or one-off internal analysis and execution material
+report/pilots/E13_seed42/comparison/verified_runs.csv,7f401fd0780172e88c47cedd3bddb9327658a92e,791,Duplicate or one-off internal analysis and execution material
+report/pilots/E13_seed42/comparison/width_study_framework.json,31fbab402e90dd10d72bb612144b597e39acd661,8670,Duplicate or one-off internal analysis and execution material
+report/pilots/E13_seed42/evidence/completion.json,e825a7d96f28dd37ef5a0f8e15260d8a6d69cdf1,745,Internal operations and verification receipt
+report/pilots/E13_seed42/evidence/cuda_recovery.json,31be71a07a84cfb2321f321b149fc745f6249fc7,3305,Internal operations and verification receipt
+report/pilots/E13_seed42/evidence/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E13_seed42/evidence/download_receipt.json,202c1a45ab1112af31187e7c8505d732a2d9b6dc,551,Internal operations and verification receipt
+report/pilots/E13_seed42/evidence/environment.json,813ddc237f30b56c6bda32c78430246886130931,1759,Internal operations and verification receipt
+report/pilots/E13_seed42/evidence/hardware.json,7ffe693e14da4ab4e8a625dd3af5911f3b93da97,2632,Internal operations and verification receipt
+report/pilots/E13_seed42/evidence/independent_recovery.json,a8f0491d4ccbaa8716841e4a7c29e7e1b0515c72,1302,Internal operations and verification receipt
+report/pilots/E13_seed42/evidence/io_timing.json,33eaec943a1c49fd321eeb0118e6db8d764af5b1,8505,Internal operations and verification receipt
+report/pilots/E13_seed42/evidence/platform_timing.json,690ade8a691b209640cd4ac3734c39331bc610b8,273,Internal operations and verification receipt
+report/pilots/E13_seed42/evidence/snapshot_index.json,494ea84de0ea5b005787ab800e88cec484f02ea2,14587,Internal operations and verification receipt
+report/pilots/E13_seed42/evidence/wall_time.json,fee5dee186821fb530d0a76f6907f01623ae2b07,200,Internal operations and verification receipt
+report/pilots/E13_seed42/generation.md,18f8eba41a46d573adb20e263e87e96f3b97c8c6,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E13_seed42/generation_quality.json,7ebbc67c09e87403bda1c49b78b9f7d8525b09cd,74253,Duplicate or one-off internal analysis and execution material
+report/pilots/E13_seed42/observations.json,1459ffb04a9ae3c6b9ab6c20ff1ac4c05d17f4da,354,Duplicate or one-off internal analysis and execution material
+report/pilots/E13_seed42/operations.md,ceee14afcf06801416098c2591fc8209bcff75be,1317,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/comparison/aggregate.csv,796c6f27c78fc79c56a3f5d95b67c4a54b0a2c9e,402,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/comparison/comparison.json,26cb5ebd8c91541ddc742bffa95d9105e69e46ac,21645,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/comparison/matched_validation.csv,21b53bafdc31062994bfed55ed4b539f4a91a63e,5642,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/comparison/summary_comparison.csv,8ba7ec379ddef235887d50b9165bb0ed1a8e5d72,799,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/comparison/verified_runs.csv,8e6f46e67250499f799f2593f499a912566dd0a6,791,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/evidence/completion.json,7841cd8c350288a4bafb86d9c117300c12a5977a,745,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/cuda_recovery.json,524635c29552ed5419ec69c0ae7554eaf474d65c,3305,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/dataset_validation.json,2089426ecf75c55ec04d40cb2c84f18bc86c9a29,2307,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/download_receipt.json,83d90f9e84a4a1d4f30e47e6e44e64ec0ec2ed9d,552,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/environment.json,be4587089f24866f781137088d8e1e6c0a69d474,1759,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/hardware.json,62c4599c7d422ee874df5b5cb1402a3fd77f5438,2632,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/independent_recovery.json,8b45db3dfdd5bd712fae284f7eb20629878b9227,1302,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/io_timing.json,a4bc6e38d1045d837cea0606c55ddd695797cd15,8481,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/platform_timing.json,bfbde14e47db46d756e8f52aeca148296f1bbf6c,253,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/preparation_incidents.json,2408018a832c8137c9c71d548faf13d807f8d423,1190,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/snapshot_index.json,0f7da7c5d43326638c9044958e4ad13e6ebe37fb,14795,Internal operations and verification receipt
+report/pilots/E14_seed42/evidence/wall_time.json,b2da7866f9ea2c90a98595a467484bf98077068b,204,Internal operations and verification receipt
+report/pilots/E14_seed42/generation.md,b5412f5132a2a03ed69dccbe37fe3af747f699a6,37539,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/generation_quality.json,6bb49e4a070c5d71c0f58098a827a578635ce1f0,74224,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/observations.json,59524ab3d8d581275fdd8634b19b8886802e13ca,370,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/operations.md,67785d91de8affa4dd7a562d62cdf07b2ba06660,8992,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/width_comparison/width_comparison.json,250918dfa77ee6e9ca16973d8eb2b8b214b6c419,13815,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/width_comparison/width_matched_validation.csv,08080e41f564937ed637c615646157093a17f4fd,3525,Duplicate or one-off internal analysis and execution material
+report/pilots/E14_seed42/width_comparison/width_resources.csv,1aba8ef35e57a76cef710aba084c7a0f3ba2d426,929,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e02_report.py,9a1e8779ac2dd08b83b744e04c003a66f6702652,25267,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e03_report.py,90946afa8d44069a1bfd02f7021937ea3684841d,19026,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e04_report.py,472c7f7d4f2cdba18c9ee00d72c402c105db804b,14897,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e05_report.py,00b8dc5606222f36b8972b79127c3116ae237756,24021,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e06_report.py,98061dfaab48d166628226f49288ed0f37b51575,20420,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e07_report.py,879969fdbc9671061b928baa966226bb3c8427bc,19511,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e08_report.py,147ee5c2feae48985745a20819abc45f7de4e6ab,21415,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e09_report.py,91b95157ea5cac54cf959148dc2c33f96684e73a,28855,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e10_report.py,57f006cb344ccd68d375a4c8b16c488e7f7cba08,29495,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e11_report.py,5252c1141139a4056d25968f753604ea10c015ab,16316,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e12_report.py,6352d63eec1ef5bb557cfe7e8fb8892e3eee8470,30064,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_e13_report.py,d77a7145bf7150a7896aa23429f985c4ff2bde6b,16618,Duplicate or one-off internal analysis and execution material
+scripts/pilot/write_report.py,1c730885f9ee492dd873c44f9602a30ab2e2a3a1,13600,Duplicate or one-off internal analysis and execution material

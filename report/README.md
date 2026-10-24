@@ -33,12 +33,13 @@ Selected loss/BPB plots remain in each pilot's figures directory.
 
 | Model | Analysis and selection | Numerical inputs | Genuine generation | Large checkpoint retrieval |
 |---|---|---|---|---|
-| F01 | [complete report](final/F01_10000_analysis.md), [interpretation](final/interpretation.md), [acceptance](final/acceptance_checklist.md) | [summary](final/summary.json), [validation](final/validation.csv) | [grid](final/generation.json), [readable](final/generation.md) | [instructions](final/artifact_retrieval.md) |
-| B01 | [complete report](balanced/B01_seed42_analysis.md), [selection](balanced/B01_model_selection.md), [acceptance](balanced/B01_acceptance.md) | [summary](balanced/summary.json), [validation](balanced/validation.csv), [comparison](balanced/E02_F01_B01_comparison.csv) | [grid](balanced/generation.json), [readable](balanced/generation.md) | [instructions](balanced/artifact_retrieval.md) |
+| F01 | [complete report](final/F01_10000_analysis.md), [interpretation](final/interpretation.md), [acceptance](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/final/acceptance_checklist.md) | [summary](final/summary.json), [validation](final/validation.csv) | [grid](final/generation.json), [readable](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/final/generation.md) | [instructions](final/artifact_retrieval.md) |
+| B01 | [complete report](balanced/B01_seed42_analysis.md), [selection](balanced/B01_model_selection.md), [acceptance](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/balanced/B01_acceptance.md) | [summary](balanced/summary.json), [validation](balanced/validation.csv), [comparison](balanced/E02_F01_B01_comparison.csv) | [grid](balanced/generation.json), [readable](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/balanced/generation.md) | [instructions](balanced/artifact_retrieval.md) |
 
 The selected loss and BPB plots are in [F01 figures](final/figures) and
-[B01 figures](balanced/figures). Final artifact manifests, environments and
-independent recovery receipts remain under each report's evidence directory.
+[B01 figures](balanced/figures). Artifact manifests remain under each report's evidence directory. Detailed
+environment and independent recovery receipts are available through the
+[pinned historical archive](../docs/maintenance/README.md).
 
 ## Reproduce and interpret
 

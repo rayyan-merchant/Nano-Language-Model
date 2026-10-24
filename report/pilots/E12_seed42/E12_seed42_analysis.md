@@ -189,7 +189,7 @@ Observed best BPB difference E12−E01: +0.04222093. These are matching recorded
 
 ## Genuine generation and qualitative assessment
 
-[All 100 unedited outputs](generation.md) and `generation.json` preserve both
+[All 100 unedited outputs](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E12_seed42/generation.md) and `generation.json` preserve both
 checkpoint policies, all five predetermined prompts, greedy decoding, temperatures
 0.7/1.0/1.2, seeds 42/123/456, and 256 new tokens. The unchanged protocol SHA256 is
 `fd27b0ced14a8c2aea456a01f7ab426bb69b91c4403720ff7c7f7d7703e52c7c`. Generation crops to the final

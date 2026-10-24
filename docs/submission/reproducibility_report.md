@@ -214,10 +214,10 @@ was performed, and existing hosting PR23 was not merged or rewritten by this pha
 
 ## Independent Windows closure
 
-[Windows summary](verification/windows/summary.json), [actual inference/token IDs](verification/windows/inference.json),
-[anonymous download](verification/windows/download.json), [restart](verification/windows/restart.json),
-[install command receipts](verification/windows/install-commands.json) and
-[completion commands](verification/windows/completion-commands.json).
+[Windows summary](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/docs/submission/verification/windows/summary.json), [actual inference/token IDs](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/docs/submission/verification/windows/inference.json),
+[anonymous download](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/docs/submission/verification/windows/download.json), [restart](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/docs/submission/verification/windows/restart.json),
+[install command receipts](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/docs/submission/verification/windows/install-commands.json) and
+[completion commands](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/docs/submission/verification/windows/completion-commands.json).
 A separate GitHub clone at43b93e1 used a **new Python3.10.11 venv**, pinned
 pip26.2.1/torch2.5.1+cpu and the documented requirements, with normal wheel install
 and `pip check` passed. PYTHONPATH/PYTHONHOME/old virtual-env and HF token variables
@@ -227,7 +227,7 @@ use the old development venv, original D-drive checkpoints or cached model files
 Full suite after fixing temp-root permissions: **149 passed,1 skipped,2 storage
 path failures** in136.89s. The two failures were WinError206 from the acceptance
 clone's deeply nested Windows snapshot paths. Their unchanged assertions both
-passed in a short unique writable temp directory (see [rerun log](verification/windows/storage-short-path-rerun.txt)).
+passed in a short unique writable temp directory (see [rerun log](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/docs/submission/verification/windows/storage-short-path-rerun.txt)).
 Do not describe this as a single clean151-pass Windows invocation: all151 tests
 were verified across the full run and targeted corrected-environment rerun.
 Linux/CI separately passed all151 in one invocation. The earlier global Temp

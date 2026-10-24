@@ -8,7 +8,7 @@ Primary predictive target: beat E02 best conditional BPB 2.02659521. **Observati
 
 ## Frozen rationale and confounders
 
-[Pre-training architecture decision](F01_architecture_decision.md) records all 14 pilot outcomes and fixed choices. BPE, RoPE, eight blocks and width 240 were jointly approved. Context 128, six heads, GELU and MLP 4× were retained. Hypothesis: the combined capacity/representation might improve validation coding and text; interactions and longer training might instead worsen either outcome. The pilot gains were never added to forecast F01. This is an exploratory combined architecture, not a single-factor ablation.
+[Pre-training architecture decision](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/final/F01_architecture_decision.md) records all 14 pilot outcomes and fixed choices. BPE, RoPE, eight blocks and width 240 were jointly approved. Context 128, six heads, GELU and MLP 4× were retained. Hypothesis: the combined capacity/representation might improve validation coding and text; interactions and longer training might instead worsen either outcome. The pilot gains were never added to forecast F01. This is an exploratory combined architecture, not a single-factor ablation.
 
 ## Architecture and parameter derivation
 

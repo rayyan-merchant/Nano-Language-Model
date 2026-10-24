@@ -270,7 +270,7 @@ steps. No claim about double descent or long-context extrapolation is implied.
 
 ## Genuine fixed-protocol text generation
 
-[Complete unedited100-sample grid](generation.md) and generation.json preserve all
+[Complete unedited100-sample grid](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E06_seed42/generation.md) and generation.json preserve all
 five prompts, best/final checkpoints, greedy seed42 and temperatures0.7/1.0/1.2
 with seeds42/123/456,256 new tokens. No external model generated or edited text.
 Five predetermined best-checkpoint greedy outputs follow, without cherry-picking.

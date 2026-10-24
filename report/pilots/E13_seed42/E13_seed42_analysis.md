@@ -259,7 +259,7 @@ Aggregate pre-clipping norms establish neither longitudinal per-layer behavior n
 
 ## Complete genuine model generation
 
-[All100 unedited outputs](generation.md) preserve five fixed prompts, greedy, temperatures0.7/1/1.2, seeds42/123/456,256new tokens, best/final and128-token crops. Five predetermined best greedy examples follow, including poor outputs. No external model produced or improved them.
+[All100 unedited outputs](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E13_seed42/generation.md) preserve five fixed prompts, greedy, temperatures0.7/1/1.2, seeds42/123/456,256new tokens, best/final and128-token crops. Five predetermined best greedy examples follow, including poor outputs. No external model produced or improved them.
 
 ### Prompt 'To be, or not to be'
 
@@ -346,4 +346,4 @@ Journal:0research failure events,0resume events. In the absence of interruptions
 
 ## Final delivery verification
 
-FinalWindows63passed/1CUDA-only skip157.49s; actualKaggle64passed34.95s; focused14passed1.85s andreporting17passed4.27s. [Commands](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/evidence/commands.json), [PhaseA E11closure](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/evidence/phaseA_E11_acceptance.json), [independent21snapshotchecks](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/evidence/snapshot_manifest_verification.json), [retrievalinstructions](artifact_retrieval.md), [operationalfailures](operations.md). SourceCI38382465043 andreportingCI38384086965 success. FullE13single-runacceptance passed; study-wideauthorization remains separatelygated.
+FinalWindows63passed/1CUDA-only skip157.49s; actualKaggle64passed34.95s; focused14passed1.85s andreporting17passed4.27s. [Commands](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/evidence/commands.json), [PhaseA E11closure](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/evidence/phaseA_E11_acceptance.json), [independent21snapshotchecks](https://github.com/rayyan-merchant/Nano-Language-Model/blob/8f88edee89dfceb6d0a8c84e385a886c4e058356/report/pilots/E13_seed42/evidence/snapshot_manifest_verification.json), [retrievalinstructions](artifact_retrieval.md), [operationalfailures](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E13_seed42/operations.md). SourceCI38382465043 andreportingCI38384086965 success. FullE13single-runacceptance passed; study-wideauthorization remains separatelygated.

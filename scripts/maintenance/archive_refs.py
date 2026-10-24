@@ -2,6 +2,7 @@
 import csv
 import hashlib
 import io
+from functools import lru_cache
 from pathlib import Path
 import posixpath
 import re
@@ -38,7 +39,7 @@ def blobs(root, base, names):
     return values
 
 
-def relink(text, source, rows):
+def relink(text, source, rows, base=BASE):
     """Only replace file/directory Markdown targets archived by this cleanup.
 
     Prose, numbers, captions and generated text are otherwise byte-preserved.
@@ -59,10 +60,54 @@ def relink(text, source, rows):
         if name not in removed and name not in gone_dirs:
             return match[0]
         is_image=match[1].startswith('!')
-        prefix=f'https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/{BASE}/' if is_image else f'{REPOSITORY}/{"tree" if name in gone_dirs else "blob"}/{BASE}/'
+        prefix=f'https://raw.githubusercontent.com/rayyan-merchant/Nano-Language-Model/{base}/' if is_image else f'{REPOSITORY}/{"tree" if name in gone_dirs else "blob"}/{base}/'
         suffix=('#'+url.fragment) if url.fragment else ''
         return match[1]+prefix+name+suffix+match[3]
     return re.sub(r'(!?\[[^\]\n]*\]\()([^\)\n]+)(\))',replace,text)
+
+
+INTERNAL_BASE = '5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430'
+
+
+def internal_archive(root):
+    """Explicit second cleanup scope; the original preservation ledger stays intact."""
+    path=Path(root)/'docs/maintenance/internal_archive.csv'
+    raw=path.read_bytes().replace(b'\r\n',b'\n')
+    assert hashlib.sha256(raw).hexdigest()=='7f8b5fbad5d2180518d0f60f1d9973403caabd5a4205e3c3083c15df191da9f1', 'Internal archive ledger changed'
+    rows=list(csv.DictReader(io.StringIO(raw.decode('utf-8'))))
+    names=[r['path'] for r in rows]
+    assert len(names)==len(set(names))
+    for name in names:
+        assert name.startswith(('report/','docs/','scripts/pilot/write_')),name
+        assert '..' not in Path(name).parts,name
+    return rows
+
+
+def internal_links(root, text, source):
+    rows=internal_archive(root)
+    removed={r['path'] for r in rows}
+    tracked=_internal_source_paths(str(Path(root).resolve()))
+    scope=[dict(r,action='ARCHIVE') for r in rows]
+    scope += [{'path':n,'action':'KEEP'} for n in tracked if n not in removed]
+    return relink(text,source,scope,base=INTERNAL_BASE)
+
+
+@lru_cache(maxsize=4)
+def _internal_source_paths(root):
+    # The source tree is an immutable commit, unlike a working index.
+    return git(root,'ls-tree','-r','--name-only',INTERNAL_BASE).decode().splitlines()
+
+
+def verify_internal_archive(root):
+    rows=internal_archive(root)
+    originals=blobs(root,INTERNAL_BASE,[r['path'] for r in rows])
+    tracked=set(git(root,'ls-files').decode().splitlines())
+    for row in rows:
+        name=row['path']
+        assert name not in tracked,f'Internal file still tracked: {name}'
+        assert git_blob(originals[name])==row['git_blob'],name
+        assert len(originals[name])==int(row['bytes']),name
+    return {r['path'] for r in rows}
 
 
 def verify_retained_history(root, prefix='report/'):
@@ -70,9 +115,12 @@ def verify_retained_history(root, prefix='report/'):
     rows=ledger(root)
     selected=[r for r in rows if r['path'].startswith(prefix)]
     originals=blobs(root,BASE,[r['path'] for r in selected])
+    internal=verify_internal_archive(root)
     for row in selected:
         name=row['path']; path=Path(root)/name; old=originals[name]
         assert git_blob(old)==row['git_blob'],name
+        if name in internal:
+            continue
         if row['action']=='ARCHIVE':
             assert not path.exists(),f'Archived file still in public tree: {name}'
             continue
@@ -80,7 +128,7 @@ def verify_retained_history(root, prefix='report/'):
             continue
         actual=path.read_bytes()
         if name.endswith('.md'):
-            assert actual.replace(b'\r\n',b'\n').decode()==relink(old.decode(),name,rows),name
+            assert actual.replace(b'\r\n',b'\n').decode()==internal_links(root,relink(old.decode(),name,rows),name),name
         else:
             assert actual.replace(b'\r\n',b'\n')==old.replace(b'\r\n',b'\n') if name.endswith(('.json','.csv','.txt','.jsonl','.gitattributes')) else actual==old,name
     return len(selected)

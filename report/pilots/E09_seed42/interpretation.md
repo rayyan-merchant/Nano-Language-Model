@@ -93,7 +93,7 @@ the absence of vanishing/exploding gradients during all research updates.
 
 ## Complete genuine generation evaluation
 
-[All 100 unedited outputs](generation.md) preserve both checkpoint policies,
+[All 100 unedited outputs](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E09_seed42/generation.md) preserve both checkpoint policies,
 five fixed prompts, greedy decoding, temperatures 0.7/1.0/1.2, seeds 42/123/456
 and 256 new characters. The measured report shows all five predetermined best
 greedy samples, including their failures. No external model edited these outputs.

@@ -141,3 +141,35 @@ def test_article_publication_does_not_certify_recording_or_course_submission():
     assert receipt['recording']['url'] is None and not receipt['recording']['content_verified']
     assert receipt['class_presentation']['status']=='OWNER_REPORTED_DELIVERED_EVIDENCE_PENDING'
     assert receipt['course_submission']=='NOT_INDEPENDENTLY_CONFIRMED'
+
+
+def test_internal_records_are_untracked_ignored_and_exactly_retrievable():
+    from scripts.maintenance.archive_refs import internal_archive, verify_internal_archive
+    rows=internal_archive(ROOT)
+    assert len(rows)==397
+    assert len(verify_internal_archive(ROOT))==397
+    paths=''.join(row['path']+'\n' for row in rows)
+    # Git's stdin path list uses LF even on Windows; text mode adds CR bytes.
+    result=subprocess.run(['git','check-ignore','--no-index','--stdin'],cwd=ROOT,
+                          input=paths.encode('utf-8'),capture_output=True,check=True)
+    assert set(result.stdout.decode('utf-8').splitlines())=={r['path'] for r in rows}
+    assert not any(r['path'].startswith(('src/','configs/','experiments/configs/','assets/tokenizers/')) for r in rows)
+
+
+def test_internal_archive_ledger_tampering_is_rejected(tmp_path):
+    from scripts.maintenance.archive_refs import internal_archive
+    path=tmp_path/'docs/maintenance/internal_archive.csv'
+    path.parent.mkdir(parents=True)
+    path.write_bytes((ROOT/'docs/maintenance/internal_archive.csv').read_bytes()+b'corrupt')
+    with pytest.raises(AssertionError,match='Internal archive ledger changed'):
+        internal_archive(tmp_path)
+
+
+def test_second_cleanup_preserves_results_while_only_relinking_internal_evidence():
+    from scripts.maintenance.archive_refs import relink, INTERNAL_BASE
+    rows=[{'path':'report/evidence/environment.json','action':'ARCHIVE'},
+          {'path':'report/summary.json','action':'KEEP'}]
+    original='Measured BPB 2.21405793. [environment](evidence/environment.json) [summary](summary.json)'
+    result=relink(original,'report/analysis.md',rows,base=INTERNAL_BASE)
+    assert result==original.replace('](evidence/environment.json)',
+        f'](https://github.com/rayyan-merchant/Nano-Language-Model/blob/{INTERNAL_BASE}/report/evidence/environment.json)')

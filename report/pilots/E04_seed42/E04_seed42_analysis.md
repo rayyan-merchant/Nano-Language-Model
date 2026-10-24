@@ -202,7 +202,7 @@ measurements. Training smoother is a declared100-update trailing mean.
 
 ## Genuine fixed-protocol generations
 
-[Complete unedited100-row grid](generation.md), generation.json: all five prompts,
+[Complete unedited100-row grid](https://github.com/rayyan-merchant/Nano-Language-Model/blob/5f3bfd8b3a95c346be9f70aa0404e1cdf2fbd430/report/pilots/E04_seed42/generation.md), generation.json: all five prompts,
 greedy seed42 and temperatures.7/1/1.2,seeds42/123/456,256new tokens,best/final.
 No external model edited outputs. Five preselected best greedy samples follow.
 
