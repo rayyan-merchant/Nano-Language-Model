@@ -12,7 +12,7 @@ pretrained model wrapper.
 [![Read the Medium report](assets/readme/medium.svg)](https://medium.com/@negation/we-built-and-deployed-a-gpt-from-scratch-the-scores-improved-the-writing-didnt-always-follow-feaf0b8943ca)
 [![Get the model artifacts](assets/readme/models.svg)](https://huggingface.co/rayyanmerchant/nanolm-studio-weights/tree/719a7f3a4955225a9818e872b08c1503de601a81)
 [![Run the reproducibility notebook](assets/readme/colab.svg)](https://colab.research.google.com/github/rayyan-merchant/Nano-Language-Model/blob/main/notebooks/NanoLM_Submission_Demo.ipynb)
-[![Watch Demo](assets/readme/demo.svg)](https://drive.google.com/file/d/1QMXvL0O5KochwFkKeA7nkwVaOR8Hc_Po/view?usp=sharing)
+<a href="https://drive.google.com/file/d/1QMXvL0O5KochwFkKeA7nkwVaOR8Hc_Po/view?usp=sharing"><img src="https://img.shields.io/badge/%E2%96%B6%20Watch%20Demo-2563EB?style=for-the-badge" alt="Watch Demo" height="38" /></a>
 
 **Jump to:** [The project](#the-project) · [Try the models](#try-the-models) ·
 [All 16 experiments](#all-16-experiments) · [Repository guide](#repository-guide) ·
